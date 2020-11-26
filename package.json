@@ -18,7 +18,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "dev": "npm run storybook"
+    "dev": "npm run storybook",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     "@storybook/addon-a11y": "^6.1.6",
     "@storybook/addon-actions": "^6.1.6",
     "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addon-jest": "^6.1.6",
     "@storybook/addon-links": "^6.1.6",
     "@storybook/node-logger": "^6.1.6",
     "@storybook/preset-create-react-app": "^3.1.5",

@@ -8,6 +8,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
     "@storybook/addon-a11y",
-    'storybook-addon-themes'
+    'storybook-addon-themes',     // https://github.com/tonai/storybook-addon-themes
+    '@storybook/addon-jest'       // https://github.com/storybookjs/storybook/tree/next/addons/jest
   ]
 }
