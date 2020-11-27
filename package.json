@@ -1,14 +1,19 @@
 {
-  "name": "northants-design-system",
+  "name": "test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -18,8 +23,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "dev": "npm run storybook",
-    "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
+    "dev": "npm run storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -40,15 +44,12 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.1.6",
+    "@storybook/addon-a11y": "^6.1.7",
     "@storybook/addon-actions": "^6.1.6",
     "@storybook/addon-essentials": "^6.1.6",
-    "@storybook/addon-jest": "^6.1.6",
     "@storybook/addon-links": "^6.1.6",
     "@storybook/node-logger": "^6.1.6",
     "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.6",
-    "npm-run-all": "^4.1.5",
-    "storybook-addon-themes": "^6.0.0"
+    "@storybook/react": "^6.1.6"
   }
 }
