@@ -1,8 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
-import './button.css';
-
-const StyledButton = styled.button``
+import { StyledButton } from './styles';
 
 export interface ButtonProps {
   /**
