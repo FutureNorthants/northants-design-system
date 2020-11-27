@@ -7,10 +7,6 @@ export interface ButtonProps {
    */
   primary?: boolean;
   /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
    * How large should the button be?
    */
   size?: 'small' | 'medium' | 'large';
@@ -30,7 +26,6 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }) => {
@@ -39,7 +34,6 @@ export const Button: React.FC<ButtonProps> = ({
     <StyledButton
       type="button"
       className={[`button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
       {...props}
     >
       {label}
