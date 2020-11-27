@@ -1,37 +1,33 @@
 import styled from "styled-components";
 
-export const CoreButton = styled.button`
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+export const StyledButton = styled.button`
     font-weight: 700;
     border: 0;
-    border-radius: 3em;
     cursor: pointer;
     display: inline-block;
     line-height: 1;
+    font-family: ${props => props.theme.fontstack};
+    border-radius: ${props => props.theme.borderRadius};
 
-    &.storybook-button--primary {
+    &.button--primary {
         color: white;
-        background-color: #1ea7fd;
+        background-color: ${props => props.theme.colours.action};
     }
-    &.storybook-button--secondary {
+    &.button--secondary {
         color: #333;
         background-color: transparent;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
     }
-    &.storybook-button--small {
+    &.button--small {
         font-size: 12px;
         padding: 10px 16px;
     }
-    &.storybook-button--medium {
+    &.button--medium {
         font-size: 14px;
         padding: 11px 20px;
     }
-    &.storybook-button--large {
+    &.button--large {
         font-size: 16px;
         padding: 12px 24px;
     }
-`
-
-export const StyledButton = styled(CoreButton)`
-    border-radius: 0em;
 `
