@@ -7,7 +7,17 @@ const theme = {
         xl: "1440px", // large desktops only
     },
     colours: {
+        black: "#000000",
+        grey_dark: "#807F80",
+        grey: "#C6C6C6",
+        grey_light: "#F5F5F5",
+        white: "#FFFFFF",
+
         action: "#05873A",
+        positive: "#1A9DD9",
+        negative: "#B73131",
+
+        focus: "#fd0fd0"
     },
     fontstack: "Arial, Helvetica, sans-serif",
     fontSizes: {
