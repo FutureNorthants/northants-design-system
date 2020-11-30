@@ -7,6 +7,6 @@ export * from "./stories/components/Heading/Heading"
 export * from "./stories/components/PageMain/PageMain"
 
 // Themes
-export { GDS_theme } from "./themes/theme_gds"
-export { North_theme } from "./themes/theme_north"
-export { West_theme } from "./themes/theme_west"
+export * as GDS_theme from "./themes/theme_gds"
+export * as North_theme from "./themes/theme_north"
+export * as West_theme from "./themes/theme_west"
