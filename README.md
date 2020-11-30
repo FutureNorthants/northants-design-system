@@ -14,6 +14,8 @@ This is a living documentation powered by [Storybook](https://storybook.js.org/)
 
 ## Using the design system
 
+You can find the design system [on NPM here](https://www.npmjs.com/package/northants-design-system).
+
 ```
 npm install northants-design-system
 

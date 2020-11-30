@@ -19,6 +19,7 @@ export const PageMain: React.FC<PageMainProps> = ({
   return (
     <StyledPageMain
       role="main" 
+      id="main" 
       className={classes}
       {...props}
     >
