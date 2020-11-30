@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPageMain = styled.main`
+    font-family: ${props => props.theme.fontstack};
     margin-right: 15px;
     margin-left: 15px;
 
