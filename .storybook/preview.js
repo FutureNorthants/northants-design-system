@@ -8,6 +8,12 @@ import WestTheme from '../src/themes/theme_west';
 
 addDecorator(withThemes(ThemeProvider, [GDSTheme, NorthTheme, WestTheme]));
 
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
 }
