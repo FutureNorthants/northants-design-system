@@ -1,4 +1,4 @@
-const theme = {
+export const GDS_theme = {
     name: "GDS theme",
     breakpoints: {
         s: "550px",
@@ -27,5 +27,3 @@ const theme = {
     },
     borderRadius: "0px"
 }
-
-export default theme;

@@ -1,4 +1,4 @@
-const theme = {
+export const north_theme = {
     name: "North Northants theme",
     breakpoints: {
         s: "550px",
@@ -27,5 +27,3 @@ const theme = {
     },
     borderRadius: "3px"
 }
-
-export default theme;

@@ -2,11 +2,11 @@ import { ThemeProvider } from 'styled-components';
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
 
-import GDSTheme from '../src/themes/theme_gds';
-import NorthTheme from '../src/themes/theme_north';
-import WestTheme from '../src/themes/theme_west';
+import { GDS_theme } from '../src/themes/theme_gds';
+import { north_theme } from '../src/themes/theme_north';
+import { west_theme } from '../src/themes/theme_west';
 
-addDecorator(withThemes(ThemeProvider, [GDSTheme, NorthTheme, WestTheme]));
+addDecorator(withThemes(ThemeProvider, [GDS_theme, north_theme, west_theme]));
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
