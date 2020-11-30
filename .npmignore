@@ -1,0 +1,11 @@
+src
+.storybook
+__mocks__
+netlify.toml
+.circleci
+.babelrc
+rollup.config.js
+*.gif
+*.png
+*.svg
+src/docs

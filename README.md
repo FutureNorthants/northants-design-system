@@ -8,7 +8,7 @@ A new design system for Future Nothants - North Northamptonshire & West Northamp
 
 ## Demo and docs
 
-👉 **[You can view the design system here](northants-design-system.netlify.app)**
+👉 **[You can view the design system here](https://northants-design-system.netlify.app)**
 
 This is a living documentation powered by [Storybook](https://storybook.js.org/), where you can see all the available components, their variations and documentation.
 
