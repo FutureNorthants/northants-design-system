@@ -1,13 +1,13 @@
 // Generated with util/create-component.js
 import React from "react";
 
-import { PageMainProps } from "./PageMain.types";
-import * as Styles from "./PageMain.styles";
+import { HeaderProps } from "./Header.types";
+import * as Styles from "./Header.styles";
 
 /**
  * A container for holding the main content of a page
  */
-const PageMain: React.FC<PageMainProps> = ({
+const Header: React.FC<HeaderProps> = ({
   children,
   classes,
   ...props
@@ -15,13 +15,12 @@ const PageMain: React.FC<PageMainProps> = ({
   <Styles.Container
     role="main" 
     id="main" 
-    data-testid="main" 
     className={classes}
     {...props}
   >
-    {children}
+    this is the header
   </Styles.Container>
 );
 
-export default PageMain;
+export default Header;
 
