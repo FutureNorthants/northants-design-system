@@ -30,6 +30,14 @@ npm install northants-design-system
 npm install react react-dom styled-components @reach/router
 ```
 
+This design system uses theming - **it will not work without a theme wrapped around the components** - to use a theme you will need to include a `ThemeProvider` from styled components, [you can find out more about how this works here](https://styled-components.com/docs/advanced#theming). Then you will need to import one of the three themes from the design system, or create your own. The three avaliable are `GDS_theme` (a basic style based on the [GDS design system](https://design-system.service.gov.uk/)), `west_theme` and `north_theme` (themes for North and West Northamptonshire styled components). 
+
+```
+import { ThemeProvider } from 'styled-components';
+
+```
+
+
 Import the components you'd like to use into your app. For example:
 
 ```
