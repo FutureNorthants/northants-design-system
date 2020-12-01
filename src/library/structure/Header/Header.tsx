@@ -1,24 +1,31 @@
 // Generated with util/create-component.js
 import React from "react";
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
 
 /**
- * A container for holding the main content of a page
+ * The header that should appear at the top of every page.
  */
 const Header: React.FC<HeaderProps> = ({
   children,
-  classes,
+  isHomepage = false,
   ...props
 }) => (
   <Styles.Container
     role="main" 
     id="main" 
-    className={classes}
+    isHomepage={isHomepage ? "true" : "false"}
     {...props}
   >
-    this is the header
+    <MaxWidthContainer>
+      {isHomepage ? 
+        <Styles.LogoColoured />   
+        :
+        <Styles.LogoWhite />   
+      }
+    </MaxWidthContainer>
   </Styles.Container>
 );
 

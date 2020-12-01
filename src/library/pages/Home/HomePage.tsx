@@ -1,5 +1,5 @@
 import React from 'react';
-import PageMain from '../../structure/PageMain/PageMain';
+import { PageMain } from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 
 export interface HomePageProps {

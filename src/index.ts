@@ -1,14 +1,11 @@
 // Components
 import Button from "./library/Components/Button/Button";
-export { Button };
 import Heading from "./library/Components/Heading/Heading";
-export { Heading };
+
+export { Button, Heading };
 
 // Structure
-import PageMain from "./library/Structure/PageMain/PageMain";
-export { PageMain };
-import MaxWidthContainer from "./library/Structure/MaxWidthContainer/MaxWidthContainer";
-export { MaxWidthContainer };
+export { Header, PageMain, MaxWidthContainer } from "./library/Structure/PageStructures";
 
 // Themes
 export * from "./themes/theme_gds"

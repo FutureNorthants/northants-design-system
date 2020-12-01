@@ -1,6 +1,6 @@
 export interface HeaderProps {
   /**
-   * Any unique class names to apply to the page container
+   * Is the page this component on the homepage? Defaults to false
    */
-  classes?: string;
+  isHomepage?: boolean;
 }
