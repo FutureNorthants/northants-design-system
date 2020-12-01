@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    font-family: ${props => props.theme.fontstack};
-    color: ${props => props.theme.colours.black};
     margin-right: 15px;
     margin-left: 15px;
     font-size: 16px;
