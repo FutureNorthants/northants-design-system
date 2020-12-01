@@ -26,6 +26,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
+    "build-storybook": "build-storybook -s public",
     "prepublishOnly": "npm run build",
     "dev": "npm run storybook"
   },
