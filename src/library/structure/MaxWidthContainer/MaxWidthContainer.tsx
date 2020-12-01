@@ -1,27 +1,25 @@
 // Generated with util/create-component.js
 import React from "react";
 
-import { PageMainProps } from "./PageMain.types";
-import * as Styles from "./PageMain.styles";
+import { MaxWidthContainerProps } from "./MaxWidthContainer.types";
+import * as Styles from "./MaxWidthContainer.styles";
 
 /**
  * A container for holding the main content of a page
  */
-const PageMain: React.FC<PageMainProps> = ({
+const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   children,
   classes,
   ...props
 }) => (
   <Styles.Container
-    role="main" 
-    id="main" 
-    data-testid="main" 
     className={classes}
+    data-testid="test-maxwidth"
     {...props}
   >
     {children}
   </Styles.Container>
 );
 
-export default PageMain;
+export default MaxWidthContainer;
 
