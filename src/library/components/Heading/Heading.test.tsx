@@ -2,26 +2,26 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Button from "./Button";
-import { ButtonProps } from "./Button.types";
+import Heading from "./Heading";
+import { HeadingProps } from "./Heading.types";
 
 describe("Test Component", () => {
-  let props: ButtonProps;
+  let props: HeadingProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      text: "example heading"
     };
   });
 
-  const renderComponent = () => render(<Button {...props} />);
+  const renderComponent = () => render(<Heading {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "example content";
+  it("should render text text correctly", () => {
+    props.text = "example heading";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("Button");
+    const component = getByTestId("test-heading");
 
-    expect(component).toHaveTextContent("example content");
+    expect(component).toHaveTextContent("example heading");
   });
 });

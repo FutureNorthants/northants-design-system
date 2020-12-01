@@ -2,26 +2,26 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Button from "./Button";
-import { ButtonProps } from "./Button.types";
+import PageMain from "./PageMain";
+import { PageMainProps } from "./PageMain.types";
 
-describe("Test Component", () => {
-  let props: ButtonProps;
+describe("Page Main Container", () => {
+  let props: PageMainProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      classes: "bar"
     };
   });
 
-  const renderComponent = () => render(<Button {...props} />);
+  const renderComponent = () => render(<PageMain {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "example content";
+  it("should render classes class correctly", () => {
+    props.classes = "testclass";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("Button");
+    const component = getByTestId("main");
 
-    expect(component).toHaveTextContent("example content");
+    expect(component).toHaveClass("testclass");
   });
 });

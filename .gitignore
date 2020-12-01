@@ -14,6 +14,9 @@
 /build
 dist
 dist/bundle.js
+node_modules/
+build/
+storybook-static/
 
 # misc
 .DS_Store
