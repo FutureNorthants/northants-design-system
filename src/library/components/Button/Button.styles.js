@@ -7,12 +7,12 @@ export const StyledButton = styled.button`
     cursor: pointer;
     display: inline-block;
     line-height: 1;
-    font-family: ${props => props.theme.fontstack};
-    border-radius: ${props => props.theme.borderRadius};
+    font-family: ${props => props.theme.theme_vars.fontstack};
+    border-radius: ${props => props.theme.theme_vars.borderRadius};
 
     &.button--primary {
         color: white;
-        background-color: ${props => props.theme.colours.action};
+        background-color: ${props => props.theme.theme_vars.colours.action};
     }
     &.button--secondary {
         color: #333;

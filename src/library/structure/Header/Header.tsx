@@ -1,6 +1,5 @@
 // Generated with util/create-component.js
 import React from "react";
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -19,28 +18,36 @@ import WestColoured from "./assets/west_coloured.jsx";
 const Header: React.FC<HeaderProps> = ({
   children,
   isHomepage = false,
+  homeLink = "/",
+  allServicesLink = "/",
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
 
   return(
     <Styles.Container
-      role="main" 
-      id="main" 
       isHomepage={isHomepage ? "true" : "false"}
+
       {...props}
     >
-      <MaxWidthContainer>
-        {isHomepage ? 
-          <Styles.LogoColoured>
-            {themeContext.name === "North Northants theme" ? <NorthColoured /> : (themeContext.name === "West Northants theme" ? <WestColoured /> : <GDSColoured />)}
-          </Styles.LogoColoured>   
-          :
-          <Styles.LogoWhite>
-            {themeContext.name === "North Northants theme" ? <NorthWhite /> : (themeContext.name === "West Northants theme" ? <WestWhite /> : <GDSWhite />)}
-          </Styles.LogoWhite>
+      <Styles.StyledMaxWidthContainer>
+        <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
+          {isHomepage ? 
+            <Styles.LogoColoured>
+              {themeContext.theme_vars.name === "North Northants theme" ? <NorthColoured alt="North Northamptonshire Council" /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestColoured alt="West Northamptonshire Council" /> : <GDSColoured alt="Example Council" />)}
+            </Styles.LogoColoured>   
+            :
+            <Styles.LogoWhite>
+              {themeContext.theme_vars.name === "North Northants theme" ? <NorthWhite alt="North Northamptonshire Council" /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestWhite alt="West Northamptonshire Council" /> : <GDSWhite alt="Example Council" />)}
+            </Styles.LogoWhite>
+          }
+        </Styles.HomeLink>
+        {allServicesLink && 
+          <Styles.AllServicesLink href={allServicesLink} title="See all services" id="all-services">
+            All services
+          </Styles.AllServicesLink>
         }
-      </MaxWidthContainer>
+      </Styles.StyledMaxWidthContainer>
     </Styles.Container>
 )};
 
