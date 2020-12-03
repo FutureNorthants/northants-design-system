@@ -1,4 +1,4 @@
-const theme_vars = {
+export const west_vars = {
     name: "West Northants theme",
     breakpoints: {
         s: "550px",
@@ -27,25 +27,4 @@ const theme_vars = {
         large: "3em"
     },
     borderRadius: "3px"
-}
-
-export const west_theme = { theme_vars, 
-    linkStyles: `
-        color: ${theme_vars.colours.action};
-        font-weight: 700;
-        text-decoration: underline;
-        border-bottom: 2px solid transparent;
-    `,
-    linkStylesHover: `
-        color: ${theme_vars.colours.action_dark};
-        text-decoration: underline;
-        text-decoration-style: dotted;
-    `,
-    linkStylesFocus: `
-        color: ${theme_vars.colours.black};
-        background: ${theme_vars.colours.focus};
-        outline: none;
-        text-decoration: none;
-        border-bottom-color: ${theme_vars.colours.black};
-    `
 }
