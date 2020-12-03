@@ -27,7 +27,6 @@ const Header: React.FC<HeaderProps> = ({
   return(
     <Styles.Container
       isHomepage={isHomepage ? "true" : "false"}
-
       {...props}
     >
       <Styles.StyledMaxWidthContainer>
@@ -43,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
           }
         </Styles.HomeLink>
         {allServicesLink && 
-          <Styles.AllServicesLink href={allServicesLink} title="See all services" id="all-services">
+          <Styles.AllServicesLink href={allServicesLink} title="See all services" id="all-services" isHomepage={isHomepage ? "true" : "false"}>
             All services
           </Styles.AllServicesLink>
         }

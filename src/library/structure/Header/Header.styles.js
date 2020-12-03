@@ -45,7 +45,7 @@ export const HomeLink = styled.a`
 
 export const AllServicesLink = styled.a`
     ${props => props.theme.linkStyles};
-    color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action};
+    color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
 
     &:hover {
         ${props => props.theme.linkStylesHover};
