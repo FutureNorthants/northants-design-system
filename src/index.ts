@@ -8,6 +8,4 @@ export { Button, Heading };
 export { Header, PageMain, MaxWidthContainer } from "./library/Structure/PageStructures";
 
 // Themes
-export * from "./themes/theme_gds"
-export * from "./themes/theme_north"
-export * from "./themes/theme_west"
+export { GDS_theme, north_theme, west_theme } from '../src/themes/theme_generator';

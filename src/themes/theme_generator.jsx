@@ -3,7 +3,9 @@ import { north_vars } from "./theme_north";
 import { west_vars } from "./theme_west";
 
 const generate_theme = (theme_vars) => {
-    return { theme_vars, 
+    return { 
+        name: theme_vars.name, 
+        theme_vars, 
         linkStyles: `
             color: ${theme_vars.colours.action};
             font-weight: 700;

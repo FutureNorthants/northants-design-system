@@ -5,12 +5,12 @@ import { ThemeContext } from 'styled-components';
 
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
-import GDSWhite from "./assets/gds_white.jsx";
-import NorthWhite from "./assets/north_white.jsx";
-import WestWhite from "./assets/west_white.jsx";
-import GDSColoured from "./assets/gds_coloured.jsx";
-import NorthColoured from "./assets/north_coloured.jsx";
-import WestColoured from "./assets/west_coloured.jsx";
+import GDSWhite from "./assets/gds_white";
+import NorthWhite from "./assets/north_white";
+import WestWhite from "./assets/west_white";
+import GDSColoured from "./assets/gds_coloured";
+import NorthColoured from "./assets/north_coloured";
+import WestColoured from "./assets/west_coloured";
 
 /**
  * The header that should appear at the top of every page.
@@ -34,11 +34,11 @@ const Header: React.FC<HeaderProps> = ({
         <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
           {isHomepage ? 
             <Styles.LogoColoured>
-              {themeContext.theme_vars.name === "North Northants theme" ? <NorthColoured alt="North Northamptonshire Council" /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestColoured alt="West Northamptonshire Council" /> : <GDSColoured alt="Example Council" />)}
+              {themeContext.theme_vars.name === "North Northants theme" ? <NorthColoured /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestColoured /> : <GDSColoured />)}
             </Styles.LogoColoured>   
             :
             <Styles.LogoWhite>
-              {themeContext.theme_vars.name === "North Northants theme" ? <NorthWhite alt="North Northamptonshire Council" /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestWhite alt="West Northamptonshire Council" /> : <GDSWhite alt="Example Council" />)}
+              {themeContext.theme_vars.name === "North Northants theme" ? <NorthWhite /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestWhite /> : <GDSWhite />)}
             </Styles.LogoWhite>
           }
         </Styles.HomeLink>

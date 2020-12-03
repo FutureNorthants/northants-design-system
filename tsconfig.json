@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "custom.d.ts"],
+  "files": ["custom.d.ts"],
   "exclude": [
     "node_modules",
     "build",
