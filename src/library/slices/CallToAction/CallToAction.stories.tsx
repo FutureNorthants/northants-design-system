@@ -1,16 +1,16 @@
 // Generated with util/create-component.js
 import React from "react";
-import Button from "./Button";
-import { ButtonProps } from "./Button.types";
+import CallToAction from "./CallToAction";
+import { ButtonProps } from "../../components/Button/Button.types";
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Components/Button',
-    component: Button
+    title: 'Library/Slices/CallToAction',
+    component: CallToAction
 };
 
-const Template: Story<ButtonProps> = (args) => <SBPadding><Button {...args} /></SBPadding>;
+const Template: Story<ButtonProps> = (args) => <SBPadding><CallToAction {...args} /></SBPadding>;
 
 export const Primary = Template.bind({});
 Primary.args = {

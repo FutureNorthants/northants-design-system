@@ -1,7 +1,7 @@
 // Generated with util/create-component.js
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.a`
     font-weight: 700;
     border: 0;
     cursor: pointer;
@@ -9,15 +9,35 @@ export const StyledButton = styled.button`
     line-height: 1;
     font-family: ${props => props.theme.theme_vars.fontstack};
     border-radius: ${props => props.theme.theme_vars.borderRadius};
+    text-decoration: none;
 
     &.button--primary {
         color: white;
         background-color: ${props => props.theme.theme_vars.colours.action};
+
+        &:hover {
+            background-color: ${props => props.theme.theme_vars.colours.action_dark};
+        }
+        &:focus {
+            outline: none;
+            color: ${props => props.theme.theme_vars.colours.black};
+            background-color: ${props => props.theme.theme_vars.colours.focus};
+            border-bottom: 2px solid ${props => props.theme.theme_vars.colours.black};
+        }
     }
     &.button--secondary {
-        color: #333;
+        color: ${props => props.theme.theme_vars.colours.action};
         background-color: transparent;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+        border: 2px solid ${props => props.theme.theme_vars.colours.action};
+
+        &:hover {
+            background-color: ${props => props.theme.theme_vars.colours.action}1A;
+        }
+        &:focus {
+            outline: none;
+            border: 2px solid ${props => props.theme.theme_vars.colours.focus};
+            background-color: ${props => props.theme.theme_vars.colours.action}1A;
+        }
     }
     &.button--small {
         font-size: 12px;

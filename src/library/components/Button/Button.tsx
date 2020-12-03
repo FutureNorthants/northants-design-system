@@ -8,16 +8,21 @@ import * as Styles from "./Button.styles";
  * Primary UI component for user interaction
  */
 const Button: React.FC<ButtonProps> = ({
-    primary = false,
+    primary = true,
     size = 'medium',
     label,
+    url,
+    isExternalLink = false,
+    isDisabled = false,
     ...props
   }) => {
     const mode = primary ? 'button--primary' : 'button--secondary';
     return (
       <Styles.StyledButton
-        type="button"
         className={[`button--${size}`, mode].join(' ')}
+        href={isDisabled ? false : url}
+        title={"Go to " + label}
+        target={isExternalLink ? "_blank" : "_self"}
         {...props}
       >
         {label}

@@ -21,6 +21,12 @@ const generate_theme = (theme_vars) => {
             outline: none;
             text-decoration: none;
             border-bottom-color: ${theme_vars.colours.black};
+        `,
+        elementBaseStyles: `
+            border-bottom: 2px solid transparent;
+        `,
+        elementFocusStyles: `
+            outline: none;
         `
     }
 }
