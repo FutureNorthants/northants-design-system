@@ -1,4 +1,4 @@
-// Generated with util/create-component.js
+
 import React from "react";
 import Heading from "./Heading";
 import { HeadingProps } from "./Heading.types";

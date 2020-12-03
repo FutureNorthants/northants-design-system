@@ -1,4 +1,4 @@
-// Generated with util/create-component.js
+
 import React from "react";
 import PageMain from "./PageMain";
 import { PageMainProps } from "./PageMain.types";

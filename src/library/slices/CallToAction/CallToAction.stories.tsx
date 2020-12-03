@@ -1,4 +1,4 @@
-// Generated with util/create-component.js
+
 import React from "react";
 import CallToAction from "./CallToAction";
 import { ButtonProps } from "../../components/Button/Button.types";

@@ -1,4 +1,4 @@
-// Generated with util/create-component.js
+
 import React from "react";
 import MaxWidthContainer from "./MaxWidthContainer";
 import { MaxWidthContainerProps } from "./MaxWidthContainer.types";

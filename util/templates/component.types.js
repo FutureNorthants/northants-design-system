@@ -1,7 +1,10 @@
 module.exports = (componentName) => ({
-  content: `// Generated with util/create-component.js
+  content: `
 export interface ${componentName}Props {
-    foo: string;
+  /**
+   * What is this?
+   */
+  foo: string;
 }
 `,
   extension: `.types.ts`
