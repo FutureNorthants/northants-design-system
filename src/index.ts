@@ -1,11 +1,18 @@
 // Components
-import Button from "./library/Components/Button/Button";
 import Heading from "./library/Components/Heading/Heading";
 
-export { Button, Heading };
+export { Heading };
+
+
+// Slices
+import CallToAction from "./library/Slices/CallToAction/CallToAction";
+
+export { CallToAction };
+
 
 // Structure
-export { Header, PageMain, MaxWidthContainer } from "./library/Structure/PageStructures";
+export { Breadcrumbs, Header, PageMain, MaxWidthContainer } from "./library/Structure/PageStructures";
+
 
 // Themes
 export { GDS_theme, north_theme, west_theme } from '../src/themes/theme_generator';

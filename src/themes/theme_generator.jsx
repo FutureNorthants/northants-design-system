@@ -6,6 +6,19 @@ const generate_theme = (theme_vars) => {
     return { 
         name: theme_vars.name, 
         theme_vars, 
+        fontStyles: `
+            font-family: ${theme_vars.fontstack};
+            color: ${theme_vars.colours.black};
+            font-size: 16px;
+            font-size: 1rem;
+            line-height: 1.25;
+        
+            @media screen and (min-width: ${theme_vars.breakpoints.m}){
+                font-size: 19px;
+                font-size: 1.1875rem;
+                line-height: 1.31579;
+            }
+        `,
         linkStyles: `
             color: ${theme_vars.colours.action};
             font-weight: 700;

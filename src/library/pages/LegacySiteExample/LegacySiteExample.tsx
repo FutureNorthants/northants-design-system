@@ -9,7 +9,18 @@ export interface LegacySiteExampleProps {
 export const LegacySiteExample: React.FC<LegacySiteExampleProps> = ({  }) => (
   <>
     <PageStructures.Header />
-    breadcrumbs
+    <PageStructures.Breadcrumbs 
+      breadcrumbsArray={[
+        {
+            title: "Home",
+            url: "/"
+        },
+        {
+            title: "Bin collection, recycling and waste",
+            url: "/"
+        }
+      ]}
+    />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <Heading level={1} text="Find your bin collection day" />
