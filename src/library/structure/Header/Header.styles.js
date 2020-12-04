@@ -4,8 +4,10 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 export const Container = styled.header`
     font-family: ${props => props.theme.theme_vars.fontstack};
     color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
-    background-color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action};
-    border-bottom: ${props => props.isHomepage === "true" ? "5px solid "+props.theme.theme_vars.colours.action : "none"};
+    background-color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.white
+                        : props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.action};
+    border-bottom: ${props => props.isHomepage === "true" ? "5px solid "+(props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black 
+                        : props.theme.theme_vars.colours.action) : "none"};
     padding: 3px 0;
 `
 

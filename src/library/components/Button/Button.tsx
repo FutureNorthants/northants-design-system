@@ -25,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
         target={isExternalLink ? "_blank" : "_self"}
         {...props}
       >
+        {/* TODO: add aria roles etc */}
         {label}
       </Styles.StyledButton>
     );

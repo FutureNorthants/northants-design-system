@@ -13,11 +13,12 @@ export const gds_vars = {
         grey_light: "#F5F5F5",
         white: "#FFFFFF",
 
-        action: "#000000",
-        action_dark: "#333333",
+        action: "#1d70b8",
+        action_dark: "#003078",
         positive: "#6C9A36",
         negative: "#9D0B1D",
-
+    
+        visited: "#4c2c92",
         focus: "#fd0"
     },
     fontstack: "GDS Transport, Helvetica, Arial, sans-serif",

@@ -17,8 +17,8 @@ Example${componentName}.args = {
   foo: "bar"
 };
 
-export const Example${componentName}2 = Template.bind({});    
-Example${componentName}.args = {
+export const AnotherExample${componentName} = Template.bind({});    
+AnotherExample${componentName}.args = {
   foo: "foo"
 };
 `,

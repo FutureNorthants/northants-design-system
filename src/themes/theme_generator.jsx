@@ -16,7 +16,11 @@ const generate_theme = (theme_vars) => {
             @media screen and (min-width: ${theme_vars.breakpoints.m}){
                 font-size: 19px;
                 font-size: 1.1875rem;
-                line-height: 1.31579;
+                line-height: 1.45;
+
+                p {
+                    max-width: 38em;
+                }
             }
         `,
         linkStyles: `

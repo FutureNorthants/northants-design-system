@@ -11,7 +11,7 @@ export { CallToAction };
 
 
 // Structure
-export { Breadcrumbs, Header, PageMain, MaxWidthContainer } from "./library/Structure/PageStructures";
+export { Breadcrumbs, Header, PageMain, SectionLinks, MaxWidthContainer } from "./library/Structure/PageStructures";
 
 
 // Themes

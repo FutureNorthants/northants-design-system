@@ -7,7 +7,6 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
 `
 
 export const Container = styled.ol`
-    ${props => props.theme.fontStyles}
     list-style: none;
     padding-left: 0px;
     margin-top: 0;
@@ -26,7 +25,6 @@ export const Crumb = styled.li`
         margin: 0px 10px;
         content: ">";
         color: ${props => props.theme.theme_vars.colours.grey};
-        vertical-align: middle;
     }
     &:last-of-type:after{
         display: none;

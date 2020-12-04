@@ -12,8 +12,8 @@ export default {
 const Template: Story<BreadcrumbsProps> = (args) => <SBPadding><Breadcrumbs {...args} /></SBPadding>;
 
 
-export const BreadcrumbsExam = Template.bind({});    
-BreadcrumbsExam.args = {
+export const BreadcrumbsExample = Template.bind({});    
+BreadcrumbsExample.args = {
     breadcrumbsArray: [
         {
             title: "Home",
