@@ -2,11 +2,11 @@ import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 
-export interface LegacySiteExampleProps {
+export interface SignpostPageExampleProps {
 
 }
 
-export const LegacySiteExample: React.FC<LegacySiteExampleProps> = ({  }) => (
+export const SignpostPageExample: React.FC<SignpostPageExampleProps> = ({  }) => (
   <>
     <PageStructures.Header />
     <PageStructures.Breadcrumbs 

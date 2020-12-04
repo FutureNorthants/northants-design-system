@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const SectionTitle = styled(Heading)`
   background: ${props => props.theme.theme_vars.colours.grey_light};
-  padding: 5px 15px;
+  padding: 10px 15px;
 `
 
 export const LinksList = styled.div`
@@ -18,6 +18,17 @@ export const LinksList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+`
+
+export const PagelinkBlank = styled.div`
+  display: none;
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    display: block;
+    padding: 15px;
+    width: calc(33.333% - 61px);
+    margin-bottom: 31px;
+  }
 `
 
 export const Pagelink = styled.a`

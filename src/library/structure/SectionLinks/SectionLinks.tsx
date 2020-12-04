@@ -21,6 +21,15 @@ const SectionLinks: React.FC<SectionLinksProps> = ({
                     <Styles.Summary>{link.summary}</Styles.Summary>
                 </Styles.Pagelink>
             )}
+            {/* TODO: change this very lazy if statement - 
+            ** need to place a blank page link in every time the list ends with 2 page links as we are usig flexbox space-between to evenly space elements - I cant be bothered to figure this out now
+            ** Or else change space-between, but if you dont use it then you need set margins, which have to be customised for each breakpoint
+            ** THE CURRENT VERSION WILL NOT WORK with any trailing two links with 14 links and above
+            */}
+
+            {pageLinksArray.length > 1 && (pageLinksArray.length === 2 || pageLinksArray.length === 5 || pageLinksArray.length === 8 || pageLinksArray.length === 11) &&
+                <Styles.PagelinkBlank />
+            }
         </Styles.LinksList>
     </Styles.Container>
 );
