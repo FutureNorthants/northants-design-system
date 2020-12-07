@@ -13,7 +13,7 @@ const CallToAction: React.FC<ButtonProps> = ({
     size,
     label,
     url,
-    isExternalLink,
+    isExternal,
     isDisabled,
     ...props
   }) => {
@@ -24,7 +24,7 @@ const CallToAction: React.FC<ButtonProps> = ({
           size={size} 
           label={label}
           url={url}
-          isExternalLink={isExternalLink}
+          isExternal={isExternal}
           isDisabled={isDisabled}
         />
       </Styles.Container>

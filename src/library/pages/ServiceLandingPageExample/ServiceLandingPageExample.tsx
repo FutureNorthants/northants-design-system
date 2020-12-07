@@ -100,5 +100,33 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
         />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
+    <PageStructures.Footer 
+      footerLinksArray={[
+        {
+          title: "About",
+          url: "/"
+        },
+        {
+          title: "Accessibility",
+          url: "/"
+        },
+        {
+          title: "Cookies",
+          url: "/"
+        },
+        {
+          title: "Contact us",
+          url: "/"
+        },
+        {
+          title: "Jobs",
+          url: "/"
+        },
+        {
+          title: "Newsletter",
+          url: "/"
+        }
+      ]}
+    />
   </>
 );

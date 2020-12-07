@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
     size = 'medium',
     label,
     url,
-    isExternalLink = false,
+    isExternal = false,
     isDisabled = false,
     ...props
   }) => {
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
         className={[`button--${size}`, mode].join(' ')}
         href={isDisabled ? false : url}
         title={"Go to " + label}
-        target={isExternalLink ? "_blank" : "_self"}
+        target={isExternal ? "_blank" : "_self"}
         {...props}
       >
         {/* TODO: add aria roles etc */}

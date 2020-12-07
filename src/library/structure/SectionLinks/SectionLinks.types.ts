@@ -30,4 +30,8 @@ export interface PageLinkProp {
     * URL of the page
     */
     url: string;
+    /**
+    * Is the link to an external website?
+    */
+    isExternal?: boolean;
 }

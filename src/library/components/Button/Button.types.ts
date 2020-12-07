@@ -18,7 +18,7 @@ export interface ButtonProps {
   /**
    * Is the link to an external page?
    */
-  isExternalLink?: boolean;
+  isExternal?: boolean;
   /**
    * Is the button disabled?
    */

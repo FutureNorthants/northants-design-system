@@ -1,6 +1,7 @@
 export const gds_vars = {
     theme_name: "GDS theme",
     cardinal_name: "gds",
+    full_name: "FutureGov Template",    
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
