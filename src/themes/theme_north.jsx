@@ -1,5 +1,8 @@
 export const north_vars = {
-    name: "North Northants theme",
+    theme_name: "North Northants theme",
+    full_name: "North Northamptonshire",
+    cardinal_name: "north",
+    council_link: "http://northnorthants.gov.uk",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
@@ -26,5 +29,5 @@ export const north_vars = {
         medium: "2em",
         large: "3em"
     },
-    borderRadius: "3px"
+    border_radius: "3px"
 }

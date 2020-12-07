@@ -7,7 +7,7 @@ export const StyledButton = styled.a`
     display: inline-block;
     line-height: 1;
     font-family: ${props => props.theme.theme_vars.fontstack};
-    border-radius: ${props => props.theme.theme_vars.borderRadius};
+    border-radius: ${props => props.theme.theme_vars.border_radius};
     text-decoration: none;
 
     &.button--primary {

@@ -4,7 +4,9 @@ import { west_vars } from "./theme_west";
 
 const generate_theme = (theme_vars) => {
     return { 
-        name: theme_vars.name, 
+        name: theme_vars.theme_name, 
+        full_name: theme_vars.full_name, 
+        cardinal_name: theme_vars.cardinal_name, 
         theme_vars, 
         fontStyles: `
             font-family: ${theme_vars.fontstack};

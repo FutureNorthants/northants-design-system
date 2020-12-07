@@ -34,11 +34,11 @@ const Header: React.FC<HeaderProps> = ({
         <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
           {isHomepage ? 
             <Styles.LogoColoured>
-              {themeContext.theme_vars.name === "North Northants theme" ? <NorthColoured /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestColoured /> : <GDSColoured />)}
+              {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
             </Styles.LogoColoured>   
             :
             <Styles.LogoWhite>
-              {themeContext.theme_vars.name === "North Northants theme" ? <NorthWhite /> : (themeContext.theme_vars.name === "West Northants theme" ? <WestWhite /> : <GDSWhite />)}
+              {themeContext.cardinal_name === "north" ? <NorthWhite /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
             </Styles.LogoWhite>
           }
         </Styles.HomeLink>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Heading from "../../components/Heading/Heading";
 
 export const Container = styled.div`
-  display: block;
+  
 `
 
 export const SectionTitle = styled(Heading)`
@@ -36,7 +36,7 @@ export const Pagelink = styled.a`
   text-decoration: none;
   display: block;
   padding: 15px;
-  border-radius: ${props => props.theme.theme_vars.borderRadius};
+  border-radius: ${props => props.theme.theme_vars.border_radius};
   width: 100%;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
@@ -52,6 +52,7 @@ export const Pagelink = styled.a`
 
     p:first-of-type {
       color: ${props => props.theme.theme_vars.colours.action_dark};
+      text-decoration-style: dotted;
     }
   }
   &:focus {

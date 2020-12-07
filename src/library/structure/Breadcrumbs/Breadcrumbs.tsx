@@ -1,5 +1,4 @@
 import React from "react";
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 import { BreadcrumbsProps } from "./Breadcrumbs.types";
 import * as Styles from "./Breadcrumbs.styles";

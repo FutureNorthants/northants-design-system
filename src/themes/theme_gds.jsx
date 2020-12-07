@@ -1,5 +1,6 @@
 export const gds_vars = {
-    name: "GDS theme",
+    theme_name: "GDS theme",
+    cardinal_name: "gds",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
@@ -27,5 +28,5 @@ export const gds_vars = {
         medium: "2em",
         large: "3em"
     },
-    borderRadius: "0px",
+    border_radius: "0px",
 }

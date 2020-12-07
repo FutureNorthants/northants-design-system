@@ -1,5 +1,8 @@
 export const west_vars = {
-    name: "West Northants theme",
+    theme_name: "West Northants theme",
+    full_name: "West Northamptonshire",
+    cardinal_name: "west",
+    council_link: "http://westnorthants.gov.uk",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
@@ -26,5 +29,5 @@ export const west_vars = {
         medium: "2em",
         large: "3em"
     },
-    borderRadius: "3px"
+    border_radius: "3px"
 }
