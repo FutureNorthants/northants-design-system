@@ -39,3 +39,7 @@ ExampleFooter.args = {
     }
   ]
 };
+
+export const ExampleFooterWithoutLinks = Template.bind({});    
+ExampleFooter.args = {
+};

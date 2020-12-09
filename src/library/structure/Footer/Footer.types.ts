@@ -3,7 +3,7 @@ export interface FooterProps {
   /**
    * What is this?
    */
-  footerLinksArray: Array<FooterLinkProp>;
+  footerLinksArray?: Array<FooterLinkProp>;
   /**
    * What is this?
    */
