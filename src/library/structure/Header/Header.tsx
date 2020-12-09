@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
             </Styles.LogoWhite>
           }
         </Styles.HomeLink>
-        {allServicesLink && 
+        {allServicesLink && !isHomepage &&
           <Styles.AllServicesLink href={allServicesLink} title="See all services" id="all-services" isHomepage={isHomepage ? "true" : "false"}>
             All services
           </Styles.AllServicesLink>

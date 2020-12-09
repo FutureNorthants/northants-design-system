@@ -6,7 +6,7 @@ import { SignpostLinksProps } from "./SignpostLinks.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "Library/Structure/SignpostLinks"
+    title: "Library/Structure/Signpost Links"
 };
 
 const Template: Story<SignpostLinksProps> = (args) => <SBPadding><SignpostLinks {...args} /></SBPadding>;
