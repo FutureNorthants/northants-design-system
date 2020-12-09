@@ -20,10 +20,13 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
             <Styles.SignpostList>
                 {SignpostLinksArray.map((link) =>
                     <Styles.SignpostListItem>
+                        {/* TODO: add icons to links */}
                         <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>{link.areaName}</Styles.SignpostLink>
                     </Styles.SignpostListItem>
                 )}   
             </Styles.SignpostList>
+            
+            {/* TODO: add postcode checker */}
 
             {(OtherCouncilLink || themeContext.theme_vars.council_link) &&
                 <Styles.Paragraph>

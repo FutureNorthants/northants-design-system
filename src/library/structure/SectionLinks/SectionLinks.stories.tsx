@@ -43,6 +43,7 @@ ExampleSectionLinks.args = {
 export const ExampleSectionLinksWithoutTitle = Template.bind({});    
 ExampleSectionLinksWithoutTitle.args = {
   sectionTitle: "Section title",
+  displayTitle: false,
   sectionSlug: "section-title",
   pageLinksArray: [ 
     {
