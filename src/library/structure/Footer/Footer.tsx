@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const Footer: React.FC<FooterProps> = ({ 
-    footerLinksArray,
+    footerLinksArray = null,
     year = "2020"
 }) => {
     const themeContext = useContext(ThemeContext);

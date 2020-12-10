@@ -9,6 +9,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
             {breadcrumbsArray.map((crumb) =>
                 <Styles.Crumb key={crumb.title}>
                     {
+                        // TODO: add back link icon and link on mobile + hide breadcrumbs
                         <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>{crumb.title}</Styles.BreadcrumbLink>
                     }
                 </Styles.Crumb>
