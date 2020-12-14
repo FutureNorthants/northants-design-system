@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import { FooterProps } from "./Footer.types";
 
 export default {
-    title: "Library/Structure/Footer"
+    title: "Library/structure/Footer"
 };
 
 const Template: Story<FooterProps> = (args) => <Footer {...args} />;

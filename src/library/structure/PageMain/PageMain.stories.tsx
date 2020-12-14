@@ -5,7 +5,7 @@ import { PageMainProps } from "./PageMain.types";
 import { Story } from '@storybook/react/types-6-0';
 
 export default {
-    title: 'Library/Structure/Page Main Container',
+    title: 'Library/structure/Page Main Container',
     component: PageMain
 };
 

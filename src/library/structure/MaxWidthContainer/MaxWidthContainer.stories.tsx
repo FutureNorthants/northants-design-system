@@ -5,7 +5,7 @@ import { MaxWidthContainerProps } from "./MaxWidthContainer.types";
 import { Story } from '@storybook/react/types-6-0';
 
 export default {
-    title: 'Library/Structure/Max width Container',
+    title: 'Library/structure/Max width Container',
     component: MaxWidthContainer
 };
 

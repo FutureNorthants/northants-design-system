@@ -5,7 +5,7 @@ import { HeaderProps } from "./Header.types";
 import { Story } from '@storybook/react/types-6-0';
 
 export default {
-    title: 'Library/Structure/Header',
+    title: 'Library/structure/Header',
     component: Header
 };
 
