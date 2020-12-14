@@ -40,12 +40,12 @@ export const H3 = styled.h3`
     font-family: ${props => props.theme.theme_vars.fontstack};
 
     font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.04167;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 36px;
-        font-size: 2.25rem;
+        font-size: 1.5rem;
         line-height: 1.11111;
     }
 `

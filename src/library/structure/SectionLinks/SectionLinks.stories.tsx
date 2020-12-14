@@ -6,7 +6,7 @@ import { SectionLinksProps } from "./SectionLinks.types";
 import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
 
 export default {
-    title: "Library/structure/Section Links"
+    title: "library/Structure/Section Links"
 };
 
 const Template: Story<SectionLinksProps> = (args) => <MaxWidthContainer><SectionLinks {...args} /></MaxWidthContainer>;
