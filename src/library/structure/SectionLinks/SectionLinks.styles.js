@@ -8,6 +8,12 @@ export const Container = styled.div`
 export const SectionTitle = styled(Heading)`
   background: ${props => props.theme.theme_vars.colours.grey_light};
   padding: 10px 15px;
+  width: 100%;
+  margin-left: -15px;
+  
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    margin-left: 0;
+  }
 `
 
 export const LinksList = styled.div`

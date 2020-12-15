@@ -11,14 +11,12 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
         <Styles.LinksList>
             {serviceLinksArray.map((link) =>
                 <Styles.PagelinkBlock key={link.url}>
-                    <Styles.ServiceTitle>
-                        <Styles.ServiceTitleLink 
-                            href={link.url} 
-                            title={"Go to " + link.title}
-                        >
-                            {link.title}
-                        </Styles.ServiceTitleLink>
-                    </Styles.ServiceTitle>
+                    <Styles.ServiceTitleLink 
+                        href={link.url} 
+                        title={"Go to " + link.title}
+                    >
+                        <Styles.ServiceTitle text={link.title} />
+                    </Styles.ServiceTitleLink>
 
                     {link.quickLinksArray.length > 0 && 
                         <Styles.QuicklinkList>

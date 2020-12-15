@@ -38,11 +38,11 @@ export const PagelinkBlock = styled.div`
   }
 `
 export const ServiceTitle = styled(Heading)`
-  margin-top: 0;
+  margin: 0;
 
   font-size: 24px;
   font-size: 1.3rem;
-  line-height: 1.04167;
+  line-height: 1.4;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     font-size: 36px;
@@ -51,13 +51,30 @@ export const ServiceTitle = styled(Heading)`
   }
 `
 export const ServiceTitleLink = styled.a`
-  ${props => props.theme.linkStyles}
+  display: block;
+  padding: 15px 0;
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){  
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 15px;
+  }
 
   &:hover {
-    ${props => props.theme.linkStylesHover}
+    text-decoration: none;
+  }
+  h2 {
+    ${props => props.theme.linkStyles}
+  }
+  &:hover {
+    h2 {
+      ${props => props.theme.linkStylesHover}
+    }
   }
   &:focus {
-    ${props => props.theme.linkStylesFocus}
+    outline: none;
+    h2 {
+      ${props => props.theme.linkStylesFocus}
+    }
   }
 `
 

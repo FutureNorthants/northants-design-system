@@ -5,19 +5,20 @@ import * as Styles from "./Breadcrumbs.styles";
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
     <Styles.StyledMaxWidthContainer>
-        <Styles.Container>
+        <Styles.List>
             {breadcrumbsArray.map((crumb) =>
                 <Styles.Crumb key={crumb.title}>
                     {
-                        // TODO: add back link icon and link on mobile + hide breadcrumbs
                         <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>{crumb.title}</Styles.BreadcrumbLink>
                     }
                 </Styles.Crumb>
-                
             )}            
-        </Styles.Container>
+        </Styles.List>
+        <Styles.MobileCrumb>
+            {/* TODO: add in back icon */}
+            <Styles.BreadcrumbLink href={breadcrumbsArray[breadcrumbsArray.length-1].url} title={"Go back to previous page"}>Back</Styles.BreadcrumbLink>
+        </Styles.MobileCrumb>
     </Styles.StyledMaxWidthContainer>
 );
 
 export default Breadcrumbs;
-

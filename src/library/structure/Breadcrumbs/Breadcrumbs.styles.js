@@ -6,7 +6,7 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey};
 `
 
-export const Container = styled.ol`
+export const List = styled.ol`
     list-style: none;
     padding-left: 0px;
     margin-top: 0;
@@ -27,6 +27,15 @@ export const Crumb = styled.li`
         color: ${props => props.theme.theme_vars.colours.grey};
     }
     &:last-of-type:after{
+        display: none;
+    }
+`
+export const MobileCrumb = styled.div`
+    display: block;
+    padding: 15px 0;
+    margin-top: -15px;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         display: none;
     }
 `

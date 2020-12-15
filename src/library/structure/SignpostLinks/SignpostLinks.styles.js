@@ -14,6 +14,15 @@ export const Container = styled.div`
     p:first-of-type {
         margin-top: 0;
     }
+
+    width: 100%;
+    margin-left: -15px;
+    padding: 15px;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        margin-left: 0;
+        padding: 20px;
+    }
 `
 export const Paragraph = styled.p`
     
