@@ -52,6 +52,8 @@ const MyComponent = () =>
 
 Each component has documentation in the design system explaining the avaliable props, how to use it, and any guidance on using it.
 
+We are also using a [CSS reset](http://meyerweb.com/eric/tools/css/reset/) which you should add to your frontend when using this design system, to ensure the styles are correct.
+
 ### Putting it all together
 
 ```

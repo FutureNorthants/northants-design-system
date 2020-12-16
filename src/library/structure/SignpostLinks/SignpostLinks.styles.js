@@ -13,6 +13,7 @@ export const Container = styled.div`
     }
     p:first-of-type {
         margin-top: 0;
+        margin-bottom: 15px;
     }
 
     width: 100%;
@@ -25,7 +26,7 @@ export const Container = styled.div`
     }
 `
 export const Paragraph = styled.p`
-    
+
 `
 export const SignpostList = styled.ul`
     padding-left: 10px;

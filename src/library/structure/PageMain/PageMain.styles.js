@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+    padding-top: 30px;
 
-
+    p {
+        margin-bottom: 15px;
+    }
 
     // TABLE STYLES
     table { 
