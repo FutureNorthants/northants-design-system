@@ -10,9 +10,11 @@ export const SectionTitle = styled(Heading)`
   padding: 10px 15px;
   width: 100%;
   margin-left: -15px;
-  
+  margin-bottom: 15px;
+
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     margin-left: 0;
+    margin-bottom: 25px;
   }
 `
 

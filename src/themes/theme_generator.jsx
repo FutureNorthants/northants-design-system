@@ -20,8 +20,8 @@ const generate_theme = (theme_vars) => {
                 font-size: 1.1875rem;
                 line-height: 1.45;
 
-                p {
-                    max-width: 38em;
+                p, h2, h3, h4 {
+                    max-width: 750px;
                 }
             }
         `,

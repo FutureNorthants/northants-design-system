@@ -3,6 +3,7 @@ import Heading from "../../components/Heading/Heading";
 
 export const Container = styled.div`
   ${props => props.theme.fontStyles}
+  margin-top: 30px;
 `
 
 export const LinksList = styled.div`

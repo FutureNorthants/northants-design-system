@@ -11,4 +11,4 @@ export default {
 
 const Template: Story<ServicePageExampleProps> = (args) => <ServicePageExample {...args} />;
 
-export const FindYourBinCollectionDayExample = Template.bind({});
+export const ExamplePageWithContent = Template.bind({});
