@@ -43,6 +43,11 @@ export const HomeLink = styled.a`
             opacity 0.8;
         }
     }
+    &:focus {
+        outline: none;
+        box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+        transition: box-shadow 0.3s ease 0s;
+    }
 `
 
 export const AllServicesLink = styled.a`
