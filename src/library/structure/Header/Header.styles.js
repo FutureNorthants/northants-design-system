@@ -51,6 +51,8 @@ export const AllServicesLink = styled.a`
 
     &:hover {
         ${props => props.theme.linkStylesHover};
+        color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.white};
+        opacity: ${props => props.isHomepage === "true" ? "1" : "0.8"};
     }
     &:focus {
         ${props => props.theme.linkStylesFocus};
