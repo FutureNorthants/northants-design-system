@@ -17,6 +17,7 @@ export const north_vars = {
         white: "#FFFFFF",
 
         action: "#05873A",
+        action_light: "#F3F9F5",
         action_dark: "#065325",
         positive: "#1A9DD9",
         negative: "#B73131",
@@ -25,9 +26,16 @@ export const north_vars = {
     },
     fontstack: "Arial, Helvetica, sans-serif",
     fontSizes: {
+        extra_small: ".8em",
         small: "1em",
         medium: "2em",
         large: "3em"
     },
-    border_radius: "3px"
+    border_radius: "3px",
+    spacingSizes: {
+        extra_small: "5px",
+        small: "10px",
+        medium: "20px",
+        large: "30px"
+    }
 }
