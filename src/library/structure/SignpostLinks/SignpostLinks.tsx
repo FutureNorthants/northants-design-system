@@ -26,7 +26,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
                 )}   
             </Styles.SignpostList>
             
-            {/* TODO: add postcode checker */}
+            {/* TODO: add postcode checker if event included */}
 
             {(OtherCouncilLink || themeContext.theme_vars.council_link) &&
                 <Styles.Paragraph>

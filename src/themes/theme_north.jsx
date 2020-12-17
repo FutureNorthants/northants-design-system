@@ -11,7 +11,7 @@ export const north_vars = {
     },
     colours: {
         black: "#000000",
-        grey_dark: "#807F80",
+        grey_dark: "#757575",
         grey: "#C6C6C6",
         grey_light: "#F5F5F5",
         white: "#FFFFFF",
