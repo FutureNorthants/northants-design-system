@@ -1,17 +1,17 @@
 
 import React from "react";
 import { Story } from '@storybook/react/types-6-0';
-import TitledLinkList from "./TitledLinkList";
-import { TitledLinkListProps } from "./TitledLinkList.types";
+import SectionLinksSidebar from "./SectionLinksSidebar";
+import { SectionLinksSidebarProps } from "./SectionLinksSidebar.types";
 import { SBPadding } from '../../../../.storybook/SBPadding'; 
 
 export default {
-  title: 'Library/Components/Title Linked list',
-  component: TitledLinkList
+  title: 'Library/Structure/Section Links - sidebar',
+  component: SectionLinksSidebar
 };
 
 
-const Template: Story<TitledLinkListProps> = (args) => <SBPadding><TitledLinkList {...args} /></SBPadding>;
+const Template: Story<SectionLinksSidebarProps> = (args) => <SBPadding><div style={{maxWidth: "340px"}}><SectionLinksSidebar {...args} /></div></SBPadding>;
 
 export const ExampleSection = Template.bind({});    
 ExampleSection.args = {
@@ -21,24 +21,28 @@ ExampleSection.args = {
         SectionTitle: "Your bins and rubbish",
         SectionLinks: [
             {
-                title: "Contact the council",
+                title: "Find your bin collection day",
                 url: "/",
                 isCurrent: true
             },
             {
-                title: "Give feedback on our services",
+                title: "Arrange bulky item collection",
                 url: "/"
             },
             {
-                title: "Requesting information from the council",
+                title: "Report a missed collection",
                 url: "/"
             },
             {
-                title: "Privacy",
+                title: "Request a new or replacement bin",
                 url: "/"
             },
             {
-                title: "Policies",
+                title: "Find a household waste recycling centre",
+                url: "/"
+            },
+            {
+                title: "What to recycle and where?",
                 url: "/"
             }
         ]
@@ -46,8 +50,23 @@ ExampleSection.args = {
   ]
 };
 
-export const ExampleMultipleSections = Template.bind({});    
-ExampleMultipleSections.args = {
+export const ExampleRelated = Template.bind({});    
+ExampleRelated.args = {
+  Title: "Also found in",
+  Sections: [
+      {
+        SectionLinks: [
+            {
+                title: "Bin collection, recycling and waste",
+                url: "/"
+            }
+        ]
+      }
+  ]
+};
+
+export const ExampleMultiple = Template.bind({});    
+ExampleMultiple.args = {
   Title: "Pages in this section",
   Sections: [
     {
@@ -106,20 +125,8 @@ ExampleMultipleSections.args = {
   ]
 };
 
-export const ExampleRelated = Template.bind({});    
-ExampleRelated.args = {
-  Title: "Also found in",
-  Sections: [
-      {
-        SectionLinks: [
-            {
-                title: "Bin collection, recycling and waste",
-                url: "/"
-            }
-        ]
-      }
-  ]
-};
+
+
 
 
 export const ExampleReallyLongLinkText = Template.bind({});    

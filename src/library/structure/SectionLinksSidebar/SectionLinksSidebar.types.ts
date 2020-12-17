@@ -1,5 +1,5 @@
 
-export interface TitledLinkListProps {
+export interface SectionLinksSidebarProps {
   /**
    * What is this?
    */
@@ -7,13 +7,10 @@ export interface TitledLinkListProps {
   Sections: Array<SectionsProps>
 }
 
-
 export interface SectionsProps {
   SectionTitle?: string;
   SectionLinks: Array<LinksProp>;
-
 }
-
 
 export interface LinksProp {
     /**

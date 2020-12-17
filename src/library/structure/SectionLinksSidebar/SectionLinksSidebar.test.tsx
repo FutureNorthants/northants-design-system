@@ -2,11 +2,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import TitledLinkList from "./TitledLinkList";
-import { TitledLinkListProps } from "./TitledLinkList.types";
+import SectionLinksSidebar from "./SectionLinksSidebar";
+import { SectionLinksSidebarProps } from "./SectionLinksSidebar.types";
 
 describe("Test Component", () => {
-  let props: TitledLinkListProps;
+  let props: SectionLinksSidebarProps;
 
   beforeEach(() => {
     props = {
@@ -15,13 +15,13 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<TitledLinkList {...props} />);
+  const renderComponent = () => render(<SectionLinksSidebar {...props} />);
 
   it("should render foo text correctly", () => {
     props.Title = "example content";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("TitledLinkList");
+    const component = getByTestId("SectionLinksSidebar");
 
     expect(component).toHaveTextContent("example content");
   });
