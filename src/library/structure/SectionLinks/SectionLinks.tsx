@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import { SectionLinksProps } from "./SectionLinks.types";
