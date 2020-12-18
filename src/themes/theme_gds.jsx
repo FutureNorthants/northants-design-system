@@ -16,6 +16,7 @@ export const gds_vars = {
         white: "#FFFFFF",
 
         action: "#1d70b8",
+        action_light: "#FAFAFA",
         action_dark: "#003078",
         positive: "#6C9A36",
         negative: "#d4351c",
@@ -25,9 +26,16 @@ export const gds_vars = {
     },
     fontstack: "GDS Transport, Helvetica, Arial, sans-serif",
     fontSizes: {
+        extra_small: ".8em",
         small: "1em",
         medium: "2em",
         large: "3em"
     },
     border_radius: "0px",
+    spacingSizes: {
+        extra_small: "5px",
+        small: "10px",
+        medium: "20px",
+        large: "30px"
+    }
 }

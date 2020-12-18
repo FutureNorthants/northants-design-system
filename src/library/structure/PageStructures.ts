@@ -3,8 +3,9 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import PageMain from './PageMain/PageMain';
 import SectionLinks from './SectionLinks/SectionLinks';
+import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
 
-export { Breadcrumbs, Footer, Header, PageMain, SectionLinks, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { Breadcrumbs, Footer, Header, PageMain, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };

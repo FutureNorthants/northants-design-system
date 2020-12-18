@@ -34,11 +34,28 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({  }) => (
         <p>ultricies auctor gravida dui sollicitudin praesent hac neque curae. Ridiculus iaculis enim bibendum ligula orci elementum rhoncus hac sodales tempus sapien eget, non velit ultrices posuere leo curabitur egestas facilisis erat nam. Litora mollis quisque nullam sollicitudin fringilla lectus risus porta quam magna curabitur non, orci odio class scelerisque metus in sapien hac pharetra torquent ornare massa, laoreet et penatibus dictum euismod morbi felis nostra senectus inceptos cum.</p>
         <p>Varius suscipit tortor diam sociosqu pellentesque fames dignissim aenean, fermentum ridiculus sodales phasellus urna blandit quis pulvinar vivamus, et convallis augue dapibus id sem morbi.</p> 
         <p>Vestibulum integer nisl litora potenti dui montes libero mi viverra eleifend, sociosqu himenaeos rhoncus imperdiet hendrerit in dapibus lobortis fringilla donec, metus ullamcorper curae neque fusce fermentum felis feugiat tempor.</p>
+        <p>An unordered list:</p>
+        <ul>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+          <li>List item 4</li>
+          <li>List item 5</li>
+        </ul>
         <p>Porttitor tempus cursus convallis sed curae ridiculus suspendisse lectus, dapibus platea himenaeos nisl eleifend pellentesque risus luctus purus, cras condimentum mus pulvinar scelerisque senectus sapien.</p>
+        <p><strong>Example</strong>, <em>using</em>, <em><strong>all</strong></em>, <sup>the</sup>, <abbr title="What you see is what you get">WYSIWYG</abbr> <sub>options</sub></p>
 
         <Heading level={2} text="A 2nd level heading" />
         <Heading level={3} text="Sometimes 3rd level headings come straight after the title and sometimes not" />
         <p>Varius suscipit tortor diam sociosqu pellentesque fames dignissim aenean, fermentum ridiculus sodales phasellus urna blandit quis pulvinar vivamus, et convallis augue dapibus id sem morbi.</p> 
+        <p>An ordered list:</p>
+        <ol>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+          <li>List item 4</li>
+          <li>List item 5</li>
+        </ol>
         <p>Vestibulum integer nisl litora potenti dui montes libero mi viverra eleifend, sociosqu himenaeos rhoncus imperdiet hendrerit in dapibus lobortis fringilla donec, metus ullamcorper curae neque fusce fermentum felis feugiat tempor.</p>
         <Heading level={3} text="Another 3rd level heading" />
         <p>Porttitor tempus cursus convallis sed curae ridiculus suspendisse lectus, dapibus platea himenaeos nisl eleifend pellentesque risus luctus purus, cras condimentum mus pulvinar scelerisque senectus sapien.</p>
