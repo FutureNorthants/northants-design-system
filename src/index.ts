@@ -6,8 +6,9 @@ export { Heading };
 
 // Slices
 import CallToAction from "./library/Slices/CallToAction/CallToAction";
+import Divider from "./library/Slices/Divider/Divider";
 
-export { CallToAction };
+export { CallToAction, Divider };
 
 
 // Structure
