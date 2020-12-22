@@ -6,7 +6,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Slices/CallToAction',
+    title: 'Library/Slices/Call to action',
     component: CallToAction
 };
 
