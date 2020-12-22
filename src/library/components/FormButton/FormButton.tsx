@@ -1,18 +1,17 @@
 
 import React from "react";
 
-import { ButtonProps } from "./Button.types";
-import * as Styles from "./Button.styles";
+import { FormButtonProps } from "./FormButton.types";
+import * as Styles from "./FormButton.styles";
 
 /**
  * Primary UI component for user interaction
  */
-const Button: React.FC<ButtonProps> = ({
+const FormButton: React.FC<FormButtonProps> = ({
     primary = true,
     size = 'medium',
     text,
-    url,
-    isExternal = false,
+    type = "submit",
     isDisabled = false,
     ...props
   }) => {
@@ -20,9 +19,6 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <Styles.StyledButton
         className={[`button--${size}`, mode].join(' ')}
-        href={isDisabled ? false : url}
-        title={"Go to " + text}
-        target={isExternal ? "_blank" : "_self"}
         {...props}
       >
         {/* TODO: add aria roles etc */}
@@ -32,5 +28,5 @@ const Button: React.FC<ButtonProps> = ({
   };
   
 
-export default Button;
+export default FormButton;
 

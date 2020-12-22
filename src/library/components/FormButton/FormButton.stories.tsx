@@ -1,41 +1,41 @@
 
 import React from "react";
-import Button from "./Button";
-import { ButtonProps } from "./Button.types";
+import FormButton from "./FormButton";
+import { FormButtonProps } from "./FormButton.types";
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Components/Button',
-    component: Button
+    title: 'Library/Components/FormButton',
+    component: FormButton
 };
 
-const Template: Story<ButtonProps> = (args) => <SBPadding><Button {...args} /></SBPadding>;
+const Template: Story<FormButtonProps> = (args) => <SBPadding><FormButton {...args} /></SBPadding>;
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  text: 'Button label',
+  text: 'FormButton label',
   url: "https://futurenorthantswest.org/"
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   primary: false,
-  text: 'Button label',
+  text: 'FormButton label',
   url: "https://futurenorthantswest.org/"
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
-  text: 'Button label',
+  text: 'FormButton label',
   url: "https://futurenorthantswest.org/"
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
-  text: 'Button label',
+  text: 'FormButton label',
   url: "https://futurenorthantswest.org/"
 };

@@ -47,7 +47,7 @@ import React from "react"
 import { Button } from "northants-design-system"
 
 const MyComponent = () =>
-    <Button label="Button Label" />
+    <Button text="Button Label" />
 ```
 
 Each component has documentation in the design system explaining the avaliable props, how to use it, and any guidance on using it.
@@ -64,7 +64,7 @@ import { GDS_theme } from "northants-design-system";
 
 const MyComponent = () =>
   <ThemeProvider theme={GDS_theme}>
-    <Button label="Button Label" />
+    <Button text="Button Label" />
   </ThemeProvider>
 ```
 

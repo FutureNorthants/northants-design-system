@@ -11,7 +11,7 @@ import * as Styles from "./CallToAction.styles";
 const CallToAction: React.FC<ButtonProps> = ({
     primary,
     size,
-    label,
+    text,
     url,
     isExternal,
     isDisabled,
@@ -22,7 +22,7 @@ const CallToAction: React.FC<ButtonProps> = ({
         <Button 
           primary={primary} 
           size={size} 
-          label={label}
+          text={text}
           url={url}
           isExternal={isExternal}
           isDisabled={isDisabled}

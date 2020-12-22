@@ -1,4 +1,8 @@
-export interface ButtonProps {
+export interface FormButtonProps {
+  /**
+   * Button label
+   */
+  text: string;
   /**
    * Is this the principal Button on the page?
    */
@@ -8,17 +12,9 @@ export interface ButtonProps {
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Button label
+   * Button type, defaults to submit
    */
-  text: string;
-  /**
-   * The URL for where to load when a user clicks on the Button
-   */
-  url: string;
-  /**
-   * Is the link to an external page?
-   */
-  isExternal?: boolean;
+  type?: string;
   /**
    * Is the button disabled?
    */
