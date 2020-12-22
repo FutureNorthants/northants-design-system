@@ -7,8 +7,9 @@ export { Heading };
 // Slices
 import CallToAction from "./library/Slices/CallToAction/CallToAction";
 import Divider from "./library/Slices/Divider/Divider";
+import BlockQuote from "./library/Slices/BlockQuote/BlockQuote";
 
-export { CallToAction, Divider };
+export { CallToAction, Divider, BlockQuote };
 
 
 // Structure
