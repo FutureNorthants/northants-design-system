@@ -81,19 +81,24 @@ export const ServiceTitleLink = styled.a`
 
 export const QuicklinkList = styled.ul`
   display: none;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     display: block;
-    padding-left: 20px;
+    padding-left: 20px !important;
   }
 `
 
 export const QuicklinkItem = styled.li`
   margin-bottom: 10px;
+  padding: 0 !important;
+  &:before {
+    content: none !important;
+  }
 
   &:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 `
 
