@@ -3,6 +3,10 @@ import styled, {css} from "styled-components";
 export const Container = styled.div`
   ${props => props.theme.fontStyles}
   /* background-color: ${props => props.theme.theme_vars.colours.action}; */
+
+  float: right;
+  /* color: ${props => props.isInline === "true" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white}; */
+    
 `
 
 export const Title = styled.div`
@@ -25,8 +29,8 @@ export const SectionTitle = styled.h3`
 
 export const List = styled.ul`
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 `
 
 const focusListItem = css`
@@ -39,6 +43,16 @@ const focusListItem = css`
 
 
 export const ListItem = styled.li`
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  &::before {
+    display: none;
+    position: relative;
+  }
+
+
   &[aria-current] a {
     background-color: ${props => props.theme.theme_vars.colours.action_light};
     color: ${props => props.theme.theme_vars.colours.black};
