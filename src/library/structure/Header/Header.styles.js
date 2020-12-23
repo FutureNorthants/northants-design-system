@@ -12,13 +12,17 @@ export const Container = styled.header`
 `
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
-    display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        display: flex;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
 `
 
 const LogoStyles = `
@@ -40,7 +44,7 @@ export const HomeLink = styled.a`
         opacity: 0.8;
 
         svg {
-            opacity 0.8;
+            opacity: 0.8;
         }
     }
     &:focus {
@@ -48,11 +52,13 @@ export const HomeLink = styled.a`
         box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
         transition: box-shadow 0.3s ease 0s;
     }
+    flex-grow: 1;
 `
 
 export const AllServicesLink = styled.a`
     ${props => props.theme.linkStyles};
     color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
+    padding: 0 ${props => props.theme.theme_vars.spacingSizes.small};
 
     &:hover {
         ${props => props.theme.linkStylesHover};
@@ -64,5 +70,19 @@ export const AllServicesLink = styled.a`
     }
     &:active{
         ${props => props.theme.linkStylesActive}
+    }
+
+
+    display: none;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        display: inline-block;
+    }
+`
+
+export const Search = styled.div`
+    padding: ${props => props.theme.theme_vars.spacingSizes.small} 0;
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        max-width: 320px;
     }
 `
