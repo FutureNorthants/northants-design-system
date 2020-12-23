@@ -37,5 +37,45 @@ export const west_vars = {
         small: "10px",
         medium: "20px",
         large: "30px"
-    }
+    },
+    h1: `
+        font-size: 32px;
+        font-size: 2rem;
+        font-weight: 700;
+
+        @media (min-width: 40.0625em) {
+            font-size: 48px;
+            font-size: 3rem;
+        }
+    `,
+    h2: `
+        font-size: 24px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        
+        @media (min-width: 40.0625em) {
+            font-size: 36px;
+            font-size: 2.25rem;
+        }
+    `,
+    h3: `
+        font-size: 18px;
+        font-size: 1.125rem;
+        font-weight: 700;
+        
+        @media (min-width: 40.0625em) {
+            font-size: 24px;
+            font-size: 1.5rem;
+        }
+    `,
+    h4: `
+        font-size: 16px;
+        font-size: 1rem;
+        font-weight: 700;
+        
+        @media (min-width: 40.0625em) {
+            font-size: 19px;
+            font-size: 1.1875rem;
+        }
+    `
 }

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Blockquote = styled.blockquote `
-
-${props => props.theme.fontStyles}
+    ${props => props.theme.fontStyles}
     margin: 20px 0px;
     padding: 15px 0px 15px 40px;
     border-left: 5px solid ${props => props.theme.theme_vars.colours.action};
