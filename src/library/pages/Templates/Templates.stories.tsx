@@ -14,7 +14,3 @@ SingleColTemplate.args = {type: 'singleCol'};
 
 export const TwoColTemplate = Template.bind({});    
 TwoColTemplate.args = {type: 'twoCol'};
-
-export const FullWidthTemplate = Template.bind({});    
-FullWidthTemplate.args = {type: 'fullWidth'};
-

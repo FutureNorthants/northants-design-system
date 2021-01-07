@@ -4,7 +4,6 @@ export const Container = styled.div`
   ${props => props.theme.fontStyles}
   /* background-color: ${props => props.theme.theme_vars.colours.action}; */
 
-  float: right;
   /* color: ${props => props.isInline === "true" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white}; */
     
 `

@@ -23,6 +23,7 @@ export const Container = styled.div`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         margin-left: 0;
         padding: 20px;
+        max-width: calc(100% - 40px);
     }
 `
 export const Paragraph = styled.p`

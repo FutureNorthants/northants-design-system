@@ -13,7 +13,7 @@ export { CallToAction, Divider, BlockQuote };
 
 
 // Structure
-export { Breadcrumbs, Footer, Header, SkipToMainContent, PageMain, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
+export { Breadcrumbs, Footer, Header, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
 
 
 // Themes

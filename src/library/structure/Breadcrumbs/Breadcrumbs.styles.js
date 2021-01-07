@@ -3,7 +3,7 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     margin-top: 20px;
-    border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey};
+    border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey}80;
 `
 
 export const List = styled.ol`
