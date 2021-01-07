@@ -5,11 +5,12 @@ export { Heading };
 
 
 // Slices
-import CallToAction from "./library/Slices/CallToAction/CallToAction";
-import Divider from "./library/Slices/Divider/Divider";
 import BlockQuote from "./library/Slices/BlockQuote/BlockQuote";
+import CallToAction from "./library/Slices/CallToAction/CallToAction";
+import DownloadableFiles from "./library/Slices/DownloadableFiles/DownloadableFiles";
+import Divider from "./library/Slices/Divider/Divider";
 
-export { CallToAction, Divider, BlockQuote };
+export { BlockQuote, CallToAction, Divider, DownloadableFiles };
 
 
 // Structure

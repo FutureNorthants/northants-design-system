@@ -51,8 +51,35 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
         ]} />
 
         <p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-       
+        <div className="table_container">
+          <table>
+            <caption>Month you apply</caption>
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Rate for vehicles</th>
+                <th scope="col">Rate for bicycles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">First 6 weeks</th>
+                <td>£109.80 per week</td>
+                <td>£59.10 per week</td>
+              </tr>
+              <tr>
+                <th scope="row">Next 33 weeks</th>
+                <td>£159.80 per week</td>
+                <td>£89.10 per week</td>
+              </tr>
+              <tr>
+                <th scope="row">Total estimated pay</th>
+                <td>£4,282.20</td>
+                <td>£2,182.20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer 
