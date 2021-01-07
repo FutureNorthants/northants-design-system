@@ -51,6 +51,7 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
         <PageStructures.SkipToMainContent />
         <PageStructures.Header isHomepage />
         <PageStructures.MaxWidthContainer>
+          <PageStructures.PageWithSidebarContainer>
             <PageStructures.PageMain>
               <Heading level={1} text="Two column page" />
       
@@ -64,41 +65,43 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
 
               <p>Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
             </PageStructures.PageMain>
-
-          <PageStructures.SectionLinksSidebar
-            Title="Pages in this section" 
-            Sections={[
-              {
-                  SectionTitle: "Your bins and rubbish",
-                  SectionLinks: [
-                      {
-                          title: "Find your bin collection day",
-                          url: "/",
-                          isCurrent: true
-                      },
-                      {
-                          title: "Arrange bulky item collection",
-                          url: "/"
-                      },
-                      {
-                          title: "Report a missed collection",
-                          url: "/"
-                      },
-                      {
-                          title: "Request a new or replacement bin",
-                          url: "/"
-                      },
-                      {
-                          title: "Find a household waste recycling centre",
-                          url: "/"
-                      },
-                      {
-                          title: "What to recycle and where?",
-                          url: "/"
-                      }
-                  ]
-              }
-            ]}></PageStructures.SectionLinksSidebar>
+            <PageStructures.PageSidebar>
+              <PageStructures.SectionLinksSidebar
+                Title="Pages in this section" 
+                Sections={[
+                  {
+                      SectionTitle: "Your bins and rubbish",
+                      SectionLinks: [
+                          {
+                              title: "Find your bin collection day",
+                              url: "/",
+                              isCurrent: true
+                          },
+                          {
+                              title: "Arrange bulky item collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Report a missed collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Request a new or replacement bin",
+                              url: "/"
+                          },
+                          {
+                              title: "Find a household waste recycling centre",
+                              url: "/"
+                          },
+                          {
+                              title: "What to recycle and where?",
+                              url: "/"
+                          }
+                      ]
+                  }
+                ]} />
+              </PageStructures.PageSidebar>
+            </PageStructures.PageWithSidebarContainer>
           </PageStructures.MaxWidthContainer>
 
           <PageStructures.Footer />

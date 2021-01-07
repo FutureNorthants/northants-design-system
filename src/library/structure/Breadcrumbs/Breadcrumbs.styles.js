@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
-export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
+export const Container = styled.div`
     margin-top: 20px;
     border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey}80;
 `

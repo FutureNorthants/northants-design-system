@@ -11,19 +11,19 @@ export const SignpostPageExample: React.FC<SignpostPageExampleProps> = ({  }) =>
   <>
     <PageStructures.SkipToMainContent />
     <PageStructures.Header />
-    <PageStructures.Breadcrumbs 
-      breadcrumbsArray={[
-        {
-            title: "Home",
-            url: "/"
-        },
-        {
-            title: "Bin collection, recycling and waste",
-            url: "/?path=/story/page-examples-service-landing-page-examples--bin-collection-example"
-        }
-      ]}
-    />
     <PageStructures.MaxWidthContainer>
+      <PageStructures.Breadcrumbs 
+        breadcrumbsArray={[
+          {
+              title: "Home",
+              url: "/"
+          },
+          {
+              title: "Bin collection, recycling and waste",
+              url: "/?path=/story/page-examples-service-landing-page-examples--bin-collection-example"
+          }
+        ]}
+      />
       <PageStructures.PageWithSidebarContainer>
         <PageStructures.PageMain>
           <Heading level={1} text="Find your bin collection day" />
