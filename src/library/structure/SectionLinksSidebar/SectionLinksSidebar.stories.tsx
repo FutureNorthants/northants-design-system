@@ -27,7 +27,8 @@ ExampleSection.args = {
             },
             {
                 title: "Arrange bulky item collection",
-                url: "/"
+                url: "/",
+                isCurrent: false
             },
             {
                 title: "Report a missed collection",
@@ -106,19 +107,23 @@ ExampleMultiple.args = {
             },
             {
                 title: "Give feedback on our services",
-                url: "/"
+                url: "/",
+                isCurrent: false
             },
             {
                 title: "Requesting information from the council",
-                url: "/"
+                url: "/",
+                isCurrent: false
             },
             {
                 title: "Privacy",
-                url: "/"
+                url: "/",
+                isCurrent: false
             },
             {
                 title: "Policies",
-                url: "/"
+                url: "/",
+                isCurrent: false
             }
         ]
     }
