@@ -13,7 +13,7 @@ const generate_theme = (theme_vars) => {
             color: ${theme_vars.colours.black};
             font-size: 16px;
             font-size: 1rem;
-            line-height: 1.25;
+            line-height: 1.4;
         
             @media screen and (min-width: ${theme_vars.breakpoints.m}){
                 font-size: 19px;

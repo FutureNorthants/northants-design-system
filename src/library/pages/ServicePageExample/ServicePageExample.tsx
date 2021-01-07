@@ -11,23 +11,23 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({  }) => (
   <>
     <PageStructures.SkipToMainContent />
     <PageStructures.Header />
-    <PageStructures.Breadcrumbs 
-      breadcrumbsArray={[
-        {
-            title: "Home",
-            url: "/"
-        },
-        {
-            title: "Bin collection, recycling and waste",
-            url: "/?path=/story/page-examples-service-landing-page-examples--bin-collection-example"
-        },
-        {
-            title: "Find your bin collection day",
-            url: "#main"
-        }
-      ]}
-    />
     <PageStructures.MaxWidthContainer>
+      <PageStructures.Breadcrumbs 
+        breadcrumbsArray={[
+          {
+              title: "Home",
+              url: "/"
+          },
+          {
+              title: "Bin collection, recycling and waste",
+              url: "/?path=/story/page-examples-service-landing-page-examples--bin-collection-example"
+          },
+          {
+              title: "Find your bin collection day",
+              url: "#main"
+          }
+        ]}
+      />
       <PageStructures.PageMain>
         <Heading level={1} text="A fourth level basic page" />
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit libero ligula iaculis, ad tempor penatibus varius faucibus vulputate pharetra est ornare</p>

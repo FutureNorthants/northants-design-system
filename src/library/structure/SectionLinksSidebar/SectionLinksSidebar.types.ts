@@ -1,7 +1,7 @@
 
 export interface SectionLinksSidebarProps {
   /**
-   * What is this?
+   * Title
    */
   Title: string;
   Sections: Array<SectionsProps>

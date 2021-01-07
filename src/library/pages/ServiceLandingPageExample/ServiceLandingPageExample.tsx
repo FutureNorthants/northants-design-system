@@ -10,15 +10,15 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
   <>
     <PageStructures.SkipToMainContent />
     <PageStructures.Header />
-    <PageStructures.Breadcrumbs 
-      breadcrumbsArray={[
-        {
-            title: "Home",
-            url: "/"
-        }
-      ]}
-    />
     <PageStructures.MaxWidthContainer>
+      <PageStructures.Breadcrumbs 
+        breadcrumbsArray={[
+          {
+              title: "Home",
+              url: "/"
+          }
+        ]}
+      />
       <PageStructures.PageMain>
         <Heading level={1} text="Bin collection, recycling and waste" />
         <PageStructures.SectionLinks 
