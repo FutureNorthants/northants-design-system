@@ -43,6 +43,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
             </Styles.Container>
             <Styles.ViewMoreButtonContainer>
                 <Styles.ViewMoreButton onClick={() => open ? setOpen(false) : setOpen(true)}>
+                    {/* TODO: add in icon for this? */}
                     View { open ? "less" : "more" } services
                 </Styles.ViewMoreButton>
             </Styles.ViewMoreButtonContainer>
