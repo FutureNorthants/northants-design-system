@@ -26,7 +26,7 @@ export const north_vars = {
     },
     fontstack: "Arial, Helvetica, sans-serif",
     fontSizes: {
-        extra_small: ".8em",
+        extra_small: ".9em",
         small: "1em",
         medium: "2em",
         large: "3em"
