@@ -75,7 +75,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
         <p>Click this button!</p>
         <CallToAction text="Test button" url="http://google.com" />
         <p>Example table:</p>
-        <div className="table_container">
+        <div className="table-container">
           <table>
             <caption>Month you apply</caption>
             <thead>
