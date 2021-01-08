@@ -8,7 +8,6 @@ export interface HomePageProps {
 
 export const HomePage: React.FC<HomePageProps> = ({  }) => (
   <>
-  <PageStructures.SkipToMainContent />
   <PageStructures.Header isHomepage />
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>

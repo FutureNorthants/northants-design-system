@@ -8,7 +8,6 @@ export interface ServiceLandingPageExampleProps {
 
 export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps> = ({  }) => (
   <>
-    <PageStructures.SkipToMainContent />
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs 

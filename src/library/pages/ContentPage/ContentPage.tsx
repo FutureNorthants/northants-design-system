@@ -16,7 +16,6 @@ export interface ContentPageProps {
 
 export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
     <>
-  <PageStructures.SkipToMainContent />
   <PageStructures.Header isHomepage />
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>

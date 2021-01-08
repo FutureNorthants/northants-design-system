@@ -23,7 +23,6 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
     case 'singleCol':
       return (
         <>
-        <PageStructures.SkipToMainContent />
         <PageStructures.Header isHomepage />
         <PageStructures.MaxWidthContainer>
             <PageStructures.PageMain>
@@ -48,7 +47,6 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
     case 'twoCol':
       return (
         <>
-        <PageStructures.SkipToMainContent />
         <PageStructures.Header isHomepage />
         <PageStructures.MaxWidthContainer>
           <PageStructures.PageWithSidebarContainer>

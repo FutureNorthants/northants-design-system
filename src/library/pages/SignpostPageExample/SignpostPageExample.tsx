@@ -9,7 +9,6 @@ export interface SignpostPageExampleProps {
 
 export const SignpostPageExample: React.FC<SignpostPageExampleProps> = ({  }) => (
   <>
-    <PageStructures.SkipToMainContent />
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs 

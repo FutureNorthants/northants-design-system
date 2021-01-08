@@ -9,7 +9,6 @@ export interface ServicePageExampleProps {
 
 export const ServicePageExample: React.FC<ServicePageExampleProps> = ({  }) => (
   <>
-    <PageStructures.SkipToMainContent />
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs 
