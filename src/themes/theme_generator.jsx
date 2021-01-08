@@ -2,6 +2,8 @@ import { gds_vars } from "./theme_gds";
 import { north_vars } from "./theme_north";
 import { west_vars } from "./theme_west";
 
+
+
 const generate_theme = (theme_vars) => {
     return { 
         name: theme_vars.theme_name, 
@@ -23,6 +25,20 @@ const generate_theme = (theme_vars) => {
                 p, h2, h3, h4 {
                     max-width: 750px;
                 }
+            }
+        `,
+        headingStyles: `
+            h1 {
+                ${theme_vars.h1}
+            }
+            h2 {
+                ${theme_vars.h2}
+            }
+            h3 {
+                ${theme_vars.h3}
+            }
+            h4 {
+                ${theme_vars.h4}
             }
         `,
         linkStyles: `
@@ -48,6 +64,19 @@ const generate_theme = (theme_vars) => {
         `,
         elementFocusStyles: `
             outline: none;
+        `,
+        visuallyHidden: `
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+            -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+            border: 0 !important;
+            white-space: nowrap !important;
         `
     }
 }
