@@ -21,7 +21,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
       <PageStructures.PageMain>
         <Heading level={1} text="Home page" />
 
-        <p>Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Nulla vitae elit <a href="http://google.com">libero</a>, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
 
         <BlockQuote quote="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." citation="Porta Commodo" />

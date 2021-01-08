@@ -3,6 +3,16 @@ import styled from "styled-components";
 export const Container = styled.main`
     padding-top: 30px;
 
+    a {
+        ${props => props.theme.linkStyles}
+        &:hover{
+            ${props => props.theme.linkStylesHover}
+        }
+        &:focus{
+            ${props => props.theme.linkStylesFocus}
+        }
+    }
+
     p {
         margin-bottom: 15px;
     }
