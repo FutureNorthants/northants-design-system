@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-addDecorator(withThemes(ThemeProvider, [GDS_theme, north_theme, west_theme]));
+addDecorator(withThemes(ThemeProvider, [north_theme, west_theme, GDS_theme]));
 addDecorator(style => <><GlobalStyle />{style()}</>);
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
