@@ -1,11 +1,11 @@
 
 export interface FooterProps {
   /**
-   * What is this?
+   * An array of links for the bottom of the footer, for things like cookie and privacy policies 
    */
   footerLinksArray?: Array<FooterLinkProp>;
   /**
-   * What is this?
+   * The year for the copyright
    */
   year?: string;
 }

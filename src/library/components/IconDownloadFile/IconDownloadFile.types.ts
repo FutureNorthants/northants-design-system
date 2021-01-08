@@ -1,7 +1,7 @@
 
 export interface IconDownloadFileProps {
   /**
-   * What is this?
+   * The colour of the icon
    */
   colourFill: string;
 }

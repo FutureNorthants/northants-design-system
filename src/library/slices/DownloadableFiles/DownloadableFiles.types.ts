@@ -2,7 +2,7 @@ import { FileDownloadProps } from '../../components/FileDownload/FileDownload.ty
 
 export interface DownloadableFilesProps {
   /**
-   * What is this?
+   * An array of downloadable files
    */
   files: Array<FileDownloadProps>;
 }
