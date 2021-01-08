@@ -13,7 +13,7 @@ export const Outer = styled.div`
                 position: absolute;
                 left: 0;
                 top: -15px;
-                background: ${props => props.theme.theme_vars.colours.action};
+                background: ${props => props.theme.theme_vars.colours.grey_dark}80;
         }
     }
    }
