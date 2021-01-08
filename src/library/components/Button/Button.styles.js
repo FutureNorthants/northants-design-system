@@ -8,10 +8,10 @@ export const StyledButton = styled.a`
     line-height: 1;
     font-family: ${props => props.theme.theme_vars.fontstack};
     border-radius: ${props => props.theme.theme_vars.border_radius};
-    text-decoration: none;
+    text-decoration: none !important;
 
     &.button--primary {
-        color: white;
+        color: white !important;
         background-color: ${props => props.theme.theme_vars.colours.action};
 
         &:hover {
@@ -19,13 +19,13 @@ export const StyledButton = styled.a`
         }
         &:focus {
             outline: none;
-            color: ${props => props.theme.theme_vars.colours.black};
+            color: ${props => props.theme.theme_vars.colours.black} !important;
             background-color: ${props => props.theme.theme_vars.colours.focus};
             border-bottom: 2px solid ${props => props.theme.theme_vars.colours.black};
         }
     }
     &.button--secondary {
-        color: ${props => props.theme.theme_vars.colours.action};
+        color: ${props => props.theme.theme_vars.colours.action} !important;
         background-color: transparent;
         border: 2px solid ${props => props.theme.theme_vars.colours.action};
 
