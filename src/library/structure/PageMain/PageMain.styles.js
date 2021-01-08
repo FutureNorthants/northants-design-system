@@ -75,7 +75,7 @@ export const Container = styled.main`
     table { 
         width: 100%; 
         border-collapse: collapse; 
-        margin: 50px auto;
+        margin-bottom: 25px;
         max-width: 100%;
         overflow: scroll;
 
