@@ -54,7 +54,6 @@ export const Section = styled.div`
 `
 
 export const SectionHeader = styled.div`
-
     ${props => props.theme.headingStyles}
     position: relative;
     padding-right: 40px;
@@ -171,6 +170,12 @@ export const SectionContent = styled.div`
     display: none;
     padding-top: 15px;
     padding-bottom: 15px;
+
+    h2, h3, h4, h5 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 
     @media (min-width: 40.0625em) {
         padding-top: 15px

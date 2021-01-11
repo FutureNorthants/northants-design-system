@@ -106,17 +106,17 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
           </table>
         </div>
         <Accordion sections={[
-    {
-      title: "Tortor Magna",
-      summary: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
-      content: `<p><strong>Maecenas faucibus mollis interdum.</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>`,
-      isExpanded: true
-    },
-    {
-      title: "Fusce Risus Malesuada",
-      content: `<p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>`
-    }
-  ]} />
+          {
+            title: "Tortor Magna",
+            summary: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            content: <p><strong>Maecenas faucibus mollis interdum.</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>,
+            isExpanded: true
+          },
+          {
+            title: "Fusce Risus Malesuada",
+            content: <><Heading level={2} text="A slice within an accordion" /><p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p><Divider /><p><strong>Maecenas faucibus mollis interdum.</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p></>
+          }
+        ]} />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer 

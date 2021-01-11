@@ -14,7 +14,7 @@ export interface AccordionSectionProps {
   /**
    * Section content
    */
-  content: string
+  content: React.ReactNode
   /**
    * Section summary
    */
@@ -24,7 +24,11 @@ export interface AccordionSectionProps {
    */
   isExpanded?: boolean,
   /**
-   * 
+   * Identify the section so sections can have the same title
    */
-  onToggle: ((title, value) => void)
+  accordionSectionId: number,
+  /**
+   * Method used internally for opening closing eelment
+   */
+  onToggle?: ((title, value) => void)
 } 

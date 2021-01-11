@@ -75,8 +75,5 @@
     "styled-components": "^5.1.1",
     "ts-jest": "^26.4.4",
     "typescript": "^3.7.2"
-  },
-  "dependencies": {
-    "html-react-parser": "^1.0.0"
   }
 }
