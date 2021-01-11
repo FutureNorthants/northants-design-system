@@ -14,7 +14,7 @@ export interface AccordionSectionProps {
   /**
    * Section content
    */
-  content: string
+  content: React.ReactNode
   /**
    * Section summary
    */

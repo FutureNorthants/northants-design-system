@@ -1,6 +1,5 @@
 
 import React from "react";
-import parse from "html-react-parser"
 import { AccordionSectionProps } from "./Accordion.types";
 import * as Styles from "./Accordion.styles";
 
@@ -25,7 +24,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                     }
                 </Styles.SectionHeader>
                 <Styles.SectionContent id={`${key}-content`} aria-labelledby={`${key}-heading`}>
-                    {parse(content, { htmlparser2: { decodeEntities: true } })}
+                    {content}
                 </Styles.SectionContent>
             </Styles.Section>
     );
