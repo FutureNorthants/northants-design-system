@@ -17,7 +17,7 @@ export interface ContentPageProps {
 
 export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
     <>
-  <PageStructures.Header isHomepage />
+  <PageStructures.Header />
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <Heading level={1} text="Example page with all slices" />
