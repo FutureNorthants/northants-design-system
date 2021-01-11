@@ -16,6 +16,7 @@ export const Container = styled.main`
     p {
         margin-bottom: 15px;
     }
+    
     strong, bold {
         font-weight: 700;
     }

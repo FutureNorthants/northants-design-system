@@ -7,6 +7,7 @@ import Divider from '../../slices/Divider/Divider';
 import BlockQuote from '../../slices/BlockQuote/BlockQuote';
 import DownloadableFiles from "../../slices/DownloadableFiles/DownloadableFiles";
 import CallToAction from "../../slices/CallToAction/CallToAction";
+import Accordion from "../../slices/Accordion/Accordion";
 
 
 export interface ContentPageProps {
@@ -104,6 +105,18 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
             </tbody>
           </table>
         </div>
+        <Accordion sections={[
+    {
+      title: "Tortor Magna",
+      summary: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+      content: `<p><strong>Maecenas faucibus mollis interdum.</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>`,
+      isExpanded: true
+    },
+    {
+      title: "Fusce Risus Malesuada",
+      content: `<p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>`
+    }
+  ]} />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer 
