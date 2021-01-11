@@ -19,8 +19,8 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                     </Styles.SectionHeading>
 
                     {summary && <Styles.SectionSummary id={`${key}-summary`}>
-                            {summary}
-                        </Styles.SectionSummary>
+                        {summary}
+                    </Styles.SectionSummary>
                     }
                 </Styles.SectionHeader>
                 <Styles.SectionContent id={`${key}-content`} aria-labelledby={`${key}-heading`}>

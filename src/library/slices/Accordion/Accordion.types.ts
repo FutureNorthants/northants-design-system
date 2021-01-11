@@ -26,5 +26,5 @@ export interface AccordionSectionProps {
   /**
    * 
    */
-  onToggle: ((title, value) => void)
+  onToggle?: ((title, value) => void)
 } 
