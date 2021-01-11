@@ -24,7 +24,11 @@ export interface AccordionSectionProps {
    */
   isExpanded?: boolean,
   /**
-   * 
+   * Identify the section so sections can have the same title
+   */
+  accordionSectionId: number,
+  /**
+   * Method used internally for opening closing eelment
    */
   onToggle?: ((title, value) => void)
 } 
