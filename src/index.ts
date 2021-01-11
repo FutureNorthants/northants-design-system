@@ -5,12 +5,13 @@ export { Heading };
 
 
 // Slices
+import Accordion from "./library/Slices/Accordion/Accordion";
 import BlockQuote from "./library/Slices/BlockQuote/BlockQuote";
 import CallToAction from "./library/Slices/CallToAction/CallToAction";
 import DownloadableFiles from "./library/Slices/DownloadableFiles/DownloadableFiles";
 import Divider from "./library/Slices/Divider/Divider";
 
-export { BlockQuote, CallToAction, Divider, DownloadableFiles };
+export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles };
 
 
 // Structure
