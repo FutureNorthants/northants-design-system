@@ -58,7 +58,7 @@ export const ServiceTitle = styled(Heading)`
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     font-size: 36px;
     font-size: 1.5rem;
-    line-height: 1.11111;
+    line-height: 1.3;
   }
 `
 export const ServiceTitleLink = styled.a`
