@@ -42,7 +42,7 @@ export const PagelinkBlank = styled.div`
 
 export const Pagelink = styled.a`
   color: ${props => props.theme.theme_vars.colours.black};
-  text-decoration: none;
+  text-decoration: none !important;
   display: block;
   padding: 15px;
   border-radius: ${props => props.theme.theme_vars.border_radius};
@@ -83,4 +83,6 @@ export const Title = styled.p`
 
 export const Summary = styled.p`
   margin: 0;
+  color: ${props => props.theme.theme_vars.colours.black} !important;
+  font-weight: 400;
 `
