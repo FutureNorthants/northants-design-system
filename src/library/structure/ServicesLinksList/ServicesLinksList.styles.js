@@ -104,7 +104,8 @@ export const QuicklinkItem = styled.li`
   margin-bottom: 10px;
   padding: 0 !important;
   &:before {
-    content: none !important;
+    background: ${props => props.theme.theme_vars.colours.grey} !important;  
+    margin-left: -15px;
   }
 
   &:last-of-type {
@@ -114,10 +115,13 @@ export const QuicklinkItem = styled.li`
 
 export const Quicklink = styled.a`
   ${props => props.theme.linkStyles}
-  font-weight: 400;
+  font-weight: 400 !important;
+  text-decoration: none !important;
 
   &:hover {
     ${props => props.theme.linkStylesHover}
+    text-decoration: underline !important;
+    text-decoration-style: dotted !important;
   }
   &:focus {
     ${props => props.theme.linkStylesFocus}

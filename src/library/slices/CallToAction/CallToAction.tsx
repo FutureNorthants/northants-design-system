@@ -21,7 +21,7 @@ const CallToAction: React.FC<ButtonProps> = ({
       <Styles.Container>
         <Button 
           primary={primary} 
-          size={size} 
+          size="large" 
           text={text}
           url={url}
           isExternal={isExternal}

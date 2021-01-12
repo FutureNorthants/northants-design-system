@@ -5,7 +5,7 @@ export const H1 = styled.h1`
     margin-left: 0;
     font-weight: 700;
     font-family: ${props => props.theme.theme_vars.fontstack};
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     font-size: 32px;
     font-size: 2rem;
