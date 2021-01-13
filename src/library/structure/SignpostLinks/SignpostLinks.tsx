@@ -5,6 +5,7 @@ import * as Styles from "./SignpostLinks.styles";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
+import LinkIcon from '../../components/icons/LinkIcon/LinkIcon';
 
 const SignpostLinks: React.FC<SignpostLinksProps> = ({ 
     SignpostLinksArray,
@@ -21,8 +22,12 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
             <Styles.SignpostList>
                 {SignpostLinksArray.map((link) =>
                     <Styles.SignpostListItem>
-                        {/* TODO: add icons to links */}
-                        <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>{link.areaName}</Styles.SignpostLink>
+                        <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>
+                            <Styles.IconWrapper>
+                                <LinkIcon />
+                            </Styles.IconWrapper>
+                            {link.areaName}
+                        </Styles.SignpostLink>
                     </Styles.SignpostListItem>
                 )}   
             </Styles.SignpostList>

@@ -31,7 +31,7 @@ export const Paragraph = styled.p`
 `
 export const SignpostList = styled.ul`
     padding-left: 10px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     list-style-type: none;
 
     li:last-of-type {
@@ -41,13 +41,30 @@ export const SignpostList = styled.ul`
 export const SignpostListItem = styled.li`
     margin-bottom: 10px;
 `
+export const IconWrapper = styled.div`
+    display: inline-block;
+    margin-right: 10px;
+    svg {
+        vertical-align: middle;
+    }
+`
 export const SignpostLink = styled.a`
     ${props => props.theme.linkStyles}
 
+    svg {
+        fill: ${props => props.theme.theme_vars.colours.action};
+    }
+
     &:hover{
         ${props => props.theme.linkStylesHover}
+        svg {
+            fill: ${props => props.theme.theme_vars.colours.action_darl};
+        }
     }
     &:focus{
         ${props => props.theme.linkStylesFocus}
+        svg {
+            fill: ${props => props.theme.theme_vars.colours.black};
+        }
     }
 `
