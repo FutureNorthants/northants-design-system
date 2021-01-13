@@ -11,7 +11,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
     OtherCouncilLink
 }) => {
     const themeContext = useContext(ThemeContext);
-    const councilLink = OtherCouncilLink ? OtherCouncilLink : themeContext.theme_vars.council_link;
+    const councilLink = OtherCouncilLink ? OtherCouncilLink : themeContext.theme_vars.other_council_link;
     
     return(
         <Styles.Container>
@@ -28,11 +28,11 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
             
             {/* TODO: add postcode checker if event included */}
 
-            {(OtherCouncilLink || themeContext.theme_vars.council_link) &&
+            {(OtherCouncilLink || themeContext.theme_vars.other_council_link) &&
                 <Styles.Paragraph>
                     Are you a resident of&nbsp;
-                    <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.full_name}>
-                        {themeContext.full_name}
+                    <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.theme_vars.other_council_name}>
+                        {themeContext.theme_vars.other_council_name}
                     </Styles.SignpostLink>
                     ?
                 </Styles.Paragraph>

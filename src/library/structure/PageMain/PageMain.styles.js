@@ -68,9 +68,13 @@ export const Container = styled.main`
 
     // TABLE STYLES
     .table-container {
-        @media only screen and (max-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        @media only screen and (max-width: ${props => props.theme.theme_vars.breakpoints.m}){
             max-width: 100%;
             overflow: scroll;
+
+            table { 
+                max-width: none;
+            }
         }
     }
     table { 

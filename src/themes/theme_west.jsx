@@ -3,6 +3,8 @@ export const west_vars = {
     full_name: "West Northamptonshire",
     cardinal_name: "west",
     council_link: "http://westnorthants.gov.uk",
+    other_council_link: "http://northnorthants.gov.uk",
+    other_council_name: "North Northamptonshire",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger

@@ -56,7 +56,7 @@ const generate_theme = (theme_vars) => {
             color: ${theme_vars.colours.black};
             background: ${theme_vars.colours.focus};
             outline: none;
-            text-decoration: none;
+            text-decoration: none !important;
             border-bottom-color: ${theme_vars.colours.black};
         `,
         elementBaseStyles: `
