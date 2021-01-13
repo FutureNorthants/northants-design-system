@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FileDownloadProps } from "./FileDownload.types";
 import * as Styles from "./FileDownload.styles";
 
-import IconDownloadFile from '../../components/IconDownloadFile/IconDownloadFile';
+import DownloadFileIcon from '../icons/DownloadFileIcon/DownloadFileIcon';
 
 const FileDownload: React.FC<FileDownloadProps> = ({
     title,
@@ -26,7 +26,7 @@ const FileDownload: React.FC<FileDownloadProps> = ({
         >
 
           {/* // @TODO either remove the need for theme props here or bring props in here */}
-            <IconDownloadFile colourFill={isHovered ? '#666' : '#ccc'} />
+            <DownloadFileIcon colourFill={isHovered ? '#666' : '#ccc'} />
             {/* TODO: add in different icons for different types */}
 
             <Styles.FileDetails className="file-details">

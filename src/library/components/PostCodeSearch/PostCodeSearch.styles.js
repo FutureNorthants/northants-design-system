@@ -3,13 +3,18 @@ import styled from "styled-components";
 export const Container = styled.div`
     
 `
-
+export const IconWrapper = styled.div`
+    display: inline-block;
+    margin-right: 15px;
+    padding-left: 3px;
+`
 export const DropDownButton = styled.button`
     background: transparent;
     border: 0;    
     ${props => props.theme.linkStyles}
     font-weight: 400;
     padding-left: 0;
+    color: ${props => props.theme.theme_vars.colours.black};
 
     font-size: 16px;
     font-size: 1rem;
@@ -35,6 +40,7 @@ export const DropDownContent = styled.div`
     
     input {
         margin-top: 15px;
+        margin-bottom: 15px;
     }
 `
 

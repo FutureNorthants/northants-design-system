@@ -1,5 +1,5 @@
 
-export interface IconDownloadFileProps {
+export interface DownloadFileIconProps {
   /**
    * The colour of the icon
    */

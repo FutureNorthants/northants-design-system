@@ -4,6 +4,7 @@ import { SignpostLinksProps } from "./SignpostLinks.types";
 import * as Styles from "./SignpostLinks.styles";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
 
 const SignpostLinks: React.FC<SignpostLinksProps> = ({ 
     SignpostLinksArray,
@@ -26,7 +27,8 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
                 )}   
             </Styles.SignpostList>
             
-            {/* TODO: add postcode checker if event included */}
+            {/* TODO: add functionality to postcode checker */}
+            <PostCodeSearch />
 
             {(OtherCouncilLink || themeContext.theme_vars.other_council_link) &&
                 <Styles.Paragraph>

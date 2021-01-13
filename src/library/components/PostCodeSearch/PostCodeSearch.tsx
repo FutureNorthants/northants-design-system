@@ -10,11 +10,13 @@ import FormWithLine from "../FormWithLine/FormWithLine";
 import Input from "../Input/Input";
 import FormButton from "../FormButton/FormButton";
 
+import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
+
 /**
  * The functionality for searching for a postcode
  */
 const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
-    title = "Find your area based on your postcode"
+    title = "Find your local area based on your postcode"
   }) => {
     const themeContext = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
@@ -23,6 +25,9 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
       <Styles.Container>
         {/* TODO: add in icon to dropdown button */}
         <Styles.DropDownButton onClick={() => setOpen(open ? false : true)}>
+          <Styles.IconWrapper>
+            <ChevronIcon direction={open ? "up" : "down"} colourFill={themeContext.theme_vars.colours.black} />
+          </Styles.IconWrapper>
           {title}
         </Styles.DropDownButton>
         {open && 

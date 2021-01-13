@@ -1,9 +1,9 @@
 
 import React from "react";
 
-import { IconDownloadFileProps } from "./IconDownloadFile.types";
+import { DownloadFileIconProps } from "./DownloadFileIcon.types";
 
-const IconDownload: React.FC<IconDownloadFileProps> = ({ colourFill }) => {
+const IconDownload: React.FC<DownloadFileIconProps> = ({ colourFill }) => {
 
     return (
         <svg
