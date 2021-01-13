@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { ServicesLinksListProps } from "./ServicesLinksList.types";
 import * as Styles from "./ServicesLinksList.styles";
+import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
     serviceLinksArray 
@@ -43,7 +44,9 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
             </Styles.Container>
             <Styles.ViewMoreButtonContainer>
                 <Styles.ViewMoreButton onClick={() => open ? setOpen(false) : setOpen(true)}>
-                    {/* TODO: add in icon for this? */}
+                    <Styles.IconWrapper>
+                        <ChevronIcon direction={open ? "up" : "down"} colourFill="#000000" />
+                    </Styles.IconWrapper>
                     View { open ? "less" : "more" } services
                 </Styles.ViewMoreButton>
             </Styles.ViewMoreButtonContainer>

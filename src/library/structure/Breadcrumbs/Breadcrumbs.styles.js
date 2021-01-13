@@ -19,15 +19,15 @@ export const List = styled.ol`
 
 export const Crumb = styled.li`
     display: inline;
-    &:after{
-        // TODO: replace this with a nicer icon
-        margin: 0px 10px;
-        content: ">";
-        color: ${props => props.theme.theme_vars.colours.grey};
-    }
-    &:last-of-type:after{
+    margin-right: 10px;
+    &:last-of-type svg {
         display: none;
     }
+`
+export const IconWrapper = styled.div`
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
 `
 export const MobileCrumb = styled.div`
     display: block;
@@ -38,15 +38,26 @@ export const MobileCrumb = styled.div`
         display: none;
     }
 `
-
+export const BackIconWrapper = styled.div`
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+`
 export const BreadcrumbLink = styled.a`
     ${props => props.theme.linkStyles}
     font-weight: 400;
+
+    svg {
+        fill: ${props => props.theme.theme_vars.colours.action};
+    }
 
     &:hover{
         ${props => props.theme.linkStylesHover}
     }
     &:focus{
         ${props => props.theme.linkStylesFocus}
+        svg {
+            fill: ${props => props.theme.theme_vars.colours.black};
+        }
     }
 `

@@ -84,7 +84,7 @@ export const ServiceTitleLink = styled.a`
   &:focus {
     outline: none;
     h2 {
-      ${props => props.theme.linkStylesFocus}
+      text-decoration: none;
     }
   }
 `
@@ -150,4 +150,11 @@ export const ViewMoreButton = styled.button`
     outline: none;
     ${props => props.theme.linkStylesFocus}
   }
+`
+
+export const IconWrapper = styled.div`
+    display: inline-block;
+    margin-right: 15px;
+    padding-left: 3px;
+    vertical-align: middle;
 `

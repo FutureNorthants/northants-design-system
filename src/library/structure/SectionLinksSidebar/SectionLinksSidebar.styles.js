@@ -15,17 +15,33 @@ export const MobileTitleButton = styled.button`
   background: none;
   border: none;
   text-align: left;
-  border-bottom: 1px solid ${props => props.theme.theme_vars.colours.action};
+  border-bottom: 2px solid ${props => props.theme.theme_vars.colours.action};
   padding: ${props => props.theme.theme_vars.spacingSizes.small};
   font-size: 1em;
 
+  svg {
+    fill: ${props => props.theme.theme_vars.colours.action};
+    vertical-align: middle;
+  }
+
   &:focus {
-    outline: 2px solid ${props => props.theme.theme_vars.colours.focus};
+    outline: none;
+    ${props => props.theme.linkStylesFocus}
+    border-bottom: 2px solid;
+    svg {
+      fill: ${props => props.theme.theme_vars.colours.black};
+    }
   }
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){  
     display: none;
   }
+`
+export const IconWrapper = styled.div`
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 5px;
+    float: right;
 `
 
 export const Title = styled.div`

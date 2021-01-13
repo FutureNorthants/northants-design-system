@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { SectionLinksSidebarProps } from "./SectionLinksSidebar.types";
 import * as Styles from "./SectionLinksSidebar.styles";
+import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const SectionLinksSidebar: React.FC<SectionLinksSidebarProps> = ({ Title, Sections }) => {
     const [open, setOpen] = useState(false);
@@ -10,7 +11,9 @@ const SectionLinksSidebar: React.FC<SectionLinksSidebarProps> = ({ Title, Sectio
         <Styles.Container data-testid="SectionLinksSidebar">
             <Styles.MobileTitleButton onClick={() => open ? setOpen(false) : setOpen(true)}>
                 {Title}
-                {/* TODO: add in icon for mobile dropdown */}
+                <Styles.IconWrapper>
+                    <ChevronIcon direction={open ? "up" : "down"} />
+                </Styles.IconWrapper>
             </Styles.MobileTitleButton>
             <Styles.Title>
                 {Title}

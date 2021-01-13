@@ -23,7 +23,6 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
     return(
       <Styles.Container>
-        {/* TODO: add in icon to dropdown button */}
         <Styles.DropDownButton onClick={() => setOpen(open ? false : true)}>
           <Styles.IconWrapper>
             <ChevronIcon direction={open ? "up" : "down"} colourFill={themeContext.theme_vars.colours.black} />
@@ -35,6 +34,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
             <FormWithLine lineColour={themeContext.theme_vars.colours.grey_dark}>
               <Styles.Label for="postcode">Enter your postcode</Styles.Label>
               <HintText text={"For example NN16 0AP"} />
+              
               {/* TODO replace input and button with reusable components */}
               <Input type="text" placeholder="Search" name="postcode" />
               <FormButton type="submit" aria-label="Submit" text="Find" />

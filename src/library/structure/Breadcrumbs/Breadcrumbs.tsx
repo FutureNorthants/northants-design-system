@@ -2,6 +2,7 @@ import React from "react";
 
 import { BreadcrumbsProps } from "./Breadcrumbs.types";
 import * as Styles from "./Breadcrumbs.styles";
+import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
     <Styles.Container>
@@ -9,14 +10,23 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
             {breadcrumbsArray.map((crumb) =>
                 <Styles.Crumb key={crumb.title}>
                     {
-                        <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>{crumb.title}</Styles.BreadcrumbLink>
+                        <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>
+                            {crumb.title}
+                            <Styles.IconWrapper>
+                                <ChevronIcon direction={"right"} colourFill="#C6C6C6" />
+                            </Styles.IconWrapper>
+                        </Styles.BreadcrumbLink>
                     }
                 </Styles.Crumb>
             )}            
         </Styles.List>
         <Styles.MobileCrumb>
-            {/* TODO: add in back icon */}
-            <Styles.BreadcrumbLink href={breadcrumbsArray[breadcrumbsArray.length-1].url} title={"Go back to previous page"}>Back</Styles.BreadcrumbLink>
+            <Styles.BreadcrumbLink href={breadcrumbsArray[breadcrumbsArray.length-1].url} title={"Go back to previous page"}>
+                <Styles.BackIconWrapper>
+                    <ChevronIcon direction={"left"} />
+                </Styles.BackIconWrapper>
+                Back
+            </Styles.BreadcrumbLink>
         </Styles.MobileCrumb>
     </Styles.Container>
 );

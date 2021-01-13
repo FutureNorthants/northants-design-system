@@ -34,7 +34,6 @@ const Header: React.FC<HeaderProps> = ({
         {...props}
       >
         <Styles.StyledMaxWidthContainer>
-          {/* TODO: add skip to main content button */}
           <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
             {isHomepage ? 
               <Styles.LogoColoured>
