@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({
                         {footerLinksArray.map((link) =>
                             <Styles.FooterListItem>
                                 <Styles.FooterLink 
-                                    key={link.url} 
+                                    key={link.title} 
                                     href={link.url} 
                                     title={"Go to " + link.title}
                                     target={link.isExternal ? "_blank" : "_self"}

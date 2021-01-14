@@ -83,9 +83,14 @@ export const ServiceTitleLink = styled.a`
   }
   &:focus {
     outline: none;
+    text-decoration: none;
+    ${props => props.theme.linkStylesFocus}
     h2 {
       text-decoration: none;
     }
+  }
+  &:active{
+    ${props => props.theme.linkStylesActive}
   }
 `
 
@@ -126,6 +131,9 @@ export const Quicklink = styled.a`
   &:focus {
     ${props => props.theme.linkStylesFocus}
   }
+  &:active{
+    ${props => props.theme.linkStylesActive}
+  }
 `
 export const ViewMoreButtonContainer = styled.div`
   text-align: center;
@@ -150,6 +158,9 @@ export const ViewMoreButton = styled.button`
     outline: none;
     ${props => props.theme.linkStylesFocus}
   }
+  &:active{
+    ${props => props.theme.linkStylesActive}
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -157,4 +168,62 @@ export const IconWrapper = styled.div`
     margin-right: 15px;
     padding-left: 3px;
     vertical-align: middle;
+`
+
+export const ReorderControl = styled.div`
+  margin-top: 15px;
+  margin-bottom: 10px;
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+`
+export const ReorderButton = styled.button`
+  background: transparent;
+  border: 2px solid ${props => props.theme.theme_vars.colours.action};
+  box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
+  -webkit-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
+  -moz-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
+  border-bottom: none;
+  border-radius: ${props => props.theme.theme_vars.border_radius};
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px 12px;
+  line-height: 1.5;
+  font-size: 0.9em;
+  cursor: pointer;
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+
+  &:hover {
+    background: ${props => props.theme.theme_vars.colours.action_light};
+  }
+
+  &.chosen {
+    cursor: default;
+    borer: none;
+    box-shadow: none;
+    color: ${props => props.theme.theme_vars.colours.white};
+    background: ${props => props.theme.theme_vars.colours.action};
+  }
+  &:focus {
+    outline: none;
+    border-color: transparent;
+    background: ${props => props.theme.theme_vars.colours.focus};
+    color: ${props => props.theme.theme_vars.colours.black};
+    border-color: ${props => props.theme.theme_vars.colours.focus};
+    box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -webkit-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -moz-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+  }
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+  }
 `
