@@ -14,7 +14,6 @@ const Template: Story<ServicesLinksListProps> = (args) => <MaxWidthContainer><Se
 const exampleData = [ {
   title: "Council tax", 
   url: "/",
-  originalOrder: 0,
   quickLinksArray: [
     {
       title: "Paying Council Tax", 
@@ -33,7 +32,6 @@ const exampleData = [ {
 {
   title: "Bin collection, recycling and waste", 
   url: "/",
-  originalOrder: 1,
   quickLinksArray: [
     {
       title: "Find your collection day", 
@@ -52,7 +50,6 @@ const exampleData = [ {
 {
   title: "Housing and benefits", 
   url: "/",
-  originalOrder: 2,
   quickLinksArray: [
     {
       title: "Reporting a change of address", 
@@ -71,7 +68,6 @@ const exampleData = [ {
 {
   title: "Adult social services", 
   url: "/",
-  originalOrder: 3,
   quickLinksArray: [
     {
       title: "Support and care for adults, their families and carers", 
@@ -90,7 +86,6 @@ const exampleData = [ {
 {
   title: "Children and families", 
   url: "/",
-  originalOrder: 4,
   quickLinksArray: [
     {
       title: "Report a concern about a child", 
@@ -109,7 +104,6 @@ const exampleData = [ {
 {
   title: "Planning and building control", 
   url: "/",
-  originalOrder: 5,
   quickLinksArray: [
     {
       title: "Planning applications", 
@@ -128,7 +122,6 @@ const exampleData = [ {
 {
   title: "Schools and education", 
   url: "/",
-  originalOrder: 6,
   quickLinksArray: [
     {
       title: "Find a school", 
@@ -147,7 +140,6 @@ const exampleData = [ {
 {
   title: "Environment", 
   url: "/",
-  originalOrder: 7,
   quickLinksArray: [
     {
       title: "Country parks", 
@@ -166,7 +158,6 @@ const exampleData = [ {
 {
   title: "Business and Licensing", 
   url: "/",
-  originalOrder: 8,
   quickLinksArray: [
     {
       title: "Business rates", 
@@ -185,7 +176,6 @@ const exampleData = [ {
 {
   title: "Parking, roads and transport", 
   url: "/",
-  originalOrder: 9,
   quickLinksArray: [
     {
       title: "Parking", 
@@ -204,7 +194,7 @@ const exampleData = [ {
 {
   title: "Your council", 
   url: "/",
-  originalOrder: 10,
+
   quickLinksArray: [
     {
       title: "Council and democracy", 
@@ -223,7 +213,7 @@ const exampleData = [ {
 {
   title: "Births, deaths marriages and civil partnerships", 
   url: "/",
-  originalOrder: 11,
+
   quickLinksArray: [
     {
       title: "Register a birth", 
@@ -242,7 +232,7 @@ const exampleData = [ {
 {
   title: "Culture and tourism", 
   url: "/",
-  originalOrder: 12,
+
   quickLinksArray: [
     {
       title: "Leisure and community facilities", 
@@ -261,7 +251,7 @@ const exampleData = [ {
 {
   title: "Community and safety", 
   url: "/",
-  originalOrder: 13,
+
   quickLinksArray: [
     {
       title: "Community safety", 
@@ -282,11 +272,5 @@ const exampleData = [ {
 export const ExampleServicesLinksList = Template.bind({});    
 ExampleServicesLinksList.args = {
   serviceLinksArray: exampleData
-};
-
-export const ServicesLinksListWithReorder = Template.bind({});    
-ServicesLinksListWithReorder.args = {
-  serviceLinksArray: exampleData,
-  withReorder: true
 };
 

@@ -16,12 +16,10 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
         <p>This is where the example home page would go - combining components to create an example of a total page together</p>
 
         <PageStructures.ServicesLinksList 
-          withReorder={true}
           serviceLinksArray={[
             {
               title: "Council tax", 
               url: "/",
-              originalOrder: 0,
               quickLinksArray: [
                 {
                   title: "Paying Council Tax", 
@@ -40,7 +38,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Bin collection, recycling and waste", 
               url: "/",
-              originalOrder: 1,
               quickLinksArray: [
                 {
                   title: "Find your collection day", 
@@ -59,7 +56,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Housing and benefits", 
               url: "/",
-              originalOrder: 2,
               quickLinksArray: [
                 {
                   title: "Reporting a change of address", 
@@ -78,7 +74,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Adult social services", 
               url: "/",
-              originalOrder: 3,
               quickLinksArray: [
                 {
                   title: "Support and care for adults, their families and carers", 
@@ -97,7 +92,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Children and families", 
               url: "/",
-              originalOrder: 4,
               quickLinksArray: [
                 {
                   title: "Report a concern about a child", 
@@ -116,7 +110,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Planning and building control", 
               url: "/",
-              originalOrder: 5,
               quickLinksArray: [
                 {
                   title: "Planning applications", 
@@ -135,7 +128,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Schools and education", 
               url: "/",
-              originalOrder: 6,
               quickLinksArray: [
                 {
                   title: "Find a school", 
@@ -154,7 +146,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Environment", 
               url: "/",
-              originalOrder: 7,
               quickLinksArray: [
                 {
                   title: "Country parks", 
@@ -173,7 +164,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Business and Licensing", 
               url: "/",
-              originalOrder: 8,
               quickLinksArray: [
                 {
                   title: "Business rates", 
@@ -192,7 +182,6 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Parking, roads and transport", 
               url: "/",
-              originalOrder: 9,
               quickLinksArray: [
                 {
                   title: "Parking", 
@@ -211,7 +200,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Your council", 
               url: "/",
-              originalOrder: 10,
+
               quickLinksArray: [
                 {
                   title: "Council and democracy", 
@@ -230,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Births, deaths marriages and civil partnerships", 
               url: "/",
-              originalOrder: 11,
+
               quickLinksArray: [
                 {
                   title: "Register a birth", 
@@ -249,7 +238,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Culture and tourism", 
               url: "/",
-              originalOrder: 12,
+
               quickLinksArray: [
                 {
                   title: "Leisure and community facilities", 
@@ -268,7 +257,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Community and safety", 
               url: "/",
-              originalOrder: 13,
+
               quickLinksArray: [
                 {
                   title: "Community safety", 

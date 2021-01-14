@@ -5,8 +5,7 @@ import * as Styles from "./ServicesLinksList.styles";
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
-    serviceLinksArray,
-    withReorder = false
+    serviceLinksArray
 }) => { 
     const [open, setOpen] = useState(false);
     const [currentOrder, setCurrentOrder] = useState(0);
@@ -14,11 +13,11 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
 
     const reorderClick = (reorderCode) => {
         if(reorderCode === 0) {
-            linksArray.sort((a, b) => (a.originalOrder > b.originalOrder ? 1 : -1));
+            updateLinksArray(serviceLinksArray);
         } else {
             linksArray.sort((a, b) => (a.title > b.title ? 1 : -1));
+            updateLinksArray(linksArray);
         }
-        updateLinksArray(linksArray);
         setCurrentOrder(reorderCode)
     }
 
@@ -51,13 +50,11 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     return(
         <>
             <Styles.Container id="all-services" className={open && "open"}>
-                {withReorder &&
-                    <Styles.ReorderControl>
-                        Order services by<br/>
-                        <Styles.ReorderButton onClick={() => reorderClick(0)} className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
-                        <Styles.ReorderButton onClick={() => reorderClick(1)} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
-                    </Styles.ReorderControl>
-                }
+                <Styles.ReorderControl>
+                    Order services by<br/>
+                    <Styles.ReorderButton onClick={() => reorderClick(0)} className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
+                    <Styles.ReorderButton onClick={() => reorderClick(1)} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
+                </Styles.ReorderControl>
                 <Styles.LinksList>
                     {linksArray.map((link) =>
                         renderElements(link)

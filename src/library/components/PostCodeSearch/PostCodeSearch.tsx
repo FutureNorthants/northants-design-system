@@ -27,7 +27,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
       <Styles.Container>
         <Styles.DropDownButton onClick={() => setOpen(open ? false : true)}>
           <Styles.IconWrapper>
-            <ChevronIcon direction={open ? "up" : "down"} colourFill={themeContext.theme_vars.colours.black} />
+            <ChevronIcon direction={open ? "down" : "right"} colourFill={themeContext.theme_vars.colours.black} />
           </Styles.IconWrapper>
           {title}
         </Styles.DropDownButton>
