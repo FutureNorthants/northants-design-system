@@ -16,10 +16,12 @@ import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
  * The functionality for searching for a postcode
  */
 const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
-    title = "Find your local area based on your postcode"
+    title = "Find your local area based on your postcode",
+    formError = false
   }) => {
     const themeContext = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
+    const [isError, setisError] = useState(formError);
 
     return(
       <Styles.Container>
@@ -31,7 +33,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         </Styles.DropDownButton>
         {open && 
           <Styles.DropDownContent>
-            <FormWithLine lineColour={themeContext.theme_vars.colours.grey_dark}>
+            <FormWithLine isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
               <Styles.Label for="postcode">Enter your postcode</Styles.Label>
               <HintText text={"For example NN16 0AP"} />
               

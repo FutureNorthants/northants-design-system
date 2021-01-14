@@ -32,6 +32,9 @@ export const MobileTitleButton = styled.button`
       fill: ${props => props.theme.theme_vars.colours.black};
     }
   }
+  &:active{
+    ${props => props.theme.linkStylesActive}
+  }
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){  
     display: none;

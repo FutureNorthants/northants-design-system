@@ -21,7 +21,15 @@ export const StyledButton = styled.a`
             outline: none;
             color: ${props => props.theme.theme_vars.colours.black} !important;
             background-color: ${props => props.theme.theme_vars.colours.focus};
-            border-bottom: 2px solid ${props => props.theme.theme_vars.colours.black};
+            box-shadow: 0px 3px 0px 0px ${props => props.theme.theme_vars.colours.black};
+            -webkit-box-shadow: 0px 3px 0px 0px ${props => props.theme.theme_vars.colours.black};
+            -moz-box-shadow: 0px 3px 0px 0px ${props => props.theme.theme_vars.colours.black};
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black};
+            -webkit-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black};
+            -moz-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black};
         }
     }
     &.button--secondary {

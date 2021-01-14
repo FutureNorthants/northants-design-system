@@ -9,13 +9,15 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
         <Styles.List>
             {breadcrumbsArray.map((crumb) =>
                 <Styles.Crumb key={crumb.title}>
-                    {
+                    {  
+                        <>
                         <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>
                             {crumb.title}
-                            <Styles.IconWrapper>
-                                <ChevronIcon direction={"right"} colourFill="#C6C6C6" />
-                            </Styles.IconWrapper>
                         </Styles.BreadcrumbLink>
+                        <Styles.IconWrapper>
+                            <ChevronIcon direction={"right"} colourFill="#C6C6C6" />
+                        </Styles.IconWrapper>
+                        </>
                     }
                 </Styles.Crumb>
             )}            

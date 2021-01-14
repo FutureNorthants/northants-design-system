@@ -66,8 +66,15 @@ export const Pagelink = styled.a`
   }
   &:focus {
     outline: none;
-    box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
-    transition: box-shadow 0.3s ease 0s;
+    box-shadow: 0px 4px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
+    -webkit-box-shadow: 0px 4px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
+    -moz-box-shadow: 0px 4px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
+  }
+  &:active {
+    transform: translate(3px);
+    box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
+    -webkit-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
+    -moz-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.black} !important;
   }
 `
 

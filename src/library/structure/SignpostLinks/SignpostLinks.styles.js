@@ -67,4 +67,7 @@ export const SignpostLink = styled.a`
             fill: ${props => props.theme.theme_vars.colours.black};
         }
     }
+    &:active{
+        ${props => props.theme.linkStylesActive}
+    }
 `

@@ -22,9 +22,9 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
       <PageStructures.PageMain>
         <Heading level={1} text="Example page with all slices" />
 
-        <p>Nulla vitae elit <a href="http://google.com">libero</a>, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Nulla vitae elit <a href="http://google.com" target="_blank">libero</a>, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <p><strong>Bold</strong>, <em>italic</em>, <sup>sub1</sup>, <sub>sub2</sub>, <a href="http://google.com">link</a></p>
+        <p><strong>Bold</strong>, <em>italic</em>, <sup>sub1</sup>, <sub>sub2</sub>, <a href="http://google.com" target="_blank">link</a></p>
 
         <BlockQuote quote="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." citation="Porta Commodo" />
         <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.</p>

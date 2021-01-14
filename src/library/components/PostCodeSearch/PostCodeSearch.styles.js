@@ -33,6 +33,9 @@ export const DropDownButton = styled.button`
     &:focus{
         ${props => props.theme.linkStylesFocus}
     }
+    &:active{
+        ${props => props.theme.linkStylesActive}
+    }
 `
 
 export const DropDownContent = styled.div`

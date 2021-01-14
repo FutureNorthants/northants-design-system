@@ -62,4 +62,7 @@ export const AllServicesLink = styled.a`
     &:focus {
         ${props => props.theme.linkStylesFocus};
     }
+    &:active{
+        ${props => props.theme.linkStylesActive}
+    }
 `

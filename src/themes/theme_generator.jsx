@@ -45,7 +45,7 @@ const generate_theme = (theme_vars) => {
             color: ${theme_vars.colours.action};
             font-weight: 700;
             text-decoration: underline;
-            border-bottom: 2px solid transparent;
+            display: inline-block;
         `,
         linkStylesHover: `
             color: ${theme_vars.colours.action_dark};
@@ -57,7 +57,15 @@ const generate_theme = (theme_vars) => {
             background: ${theme_vars.colours.focus};
             outline: none;
             text-decoration: none !important;
-            border-bottom-color: ${theme_vars.colours.black};
+            box-shadow: 0px 2px 0px 0px ${theme_vars.colours.black};
+            -webkit-box-shadow: 0px 2px 0px 0px ${theme_vars.colours.black};
+            -moz-box-shadow: 0px 2px 0px 0px ${theme_vars.colours.black};
+        `,
+        linkStylesActive: `
+            transform: translateY(1px);
+            box-shadow: 0px 1px 0px 0px ${theme_vars.colours.black};
+            -webkit-box-shadow: 0px 1px 0px 0px ${theme_vars.colours.black};
+            -moz-box-shadow: 0px 1px 0px 0px ${theme_vars.colours.black};
         `,
         elementBaseStyles: `
             border-bottom: 2px solid transparent;

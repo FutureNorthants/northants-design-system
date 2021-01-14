@@ -16,6 +16,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
         <p>This is where the example home page would go - combining components to create an example of a total page together</p>
 
         <PageStructures.ServicesLinksList 
+          withReorder={true}
           serviceLinksArray={[
             {
               title: "Council tax", 

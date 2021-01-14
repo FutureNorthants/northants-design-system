@@ -11,6 +11,9 @@ export const Container = styled.main`
         &:focus{
             ${props => props.theme.linkStylesFocus}
         }
+        &:active{
+            ${props => props.theme.linkStylesActive}
+        }
     }
 
     p {
