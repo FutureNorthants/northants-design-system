@@ -21,24 +21,20 @@ export const OpenAllButton = styled.button`
     position: relative;
     z-index: 1;
     margin: 0;
+    margin-bottom: 15px;
     padding: 0;
     border-width: 0;
     color: ${props => props.theme.theme_vars.colours.action};
     background: none;
     cursor: pointer;
-
+    &:hover {
+        ${props => props.theme.linkStylesHover};
+    }
     &:focus {
-        outline: 3px solid transparent;
-        color: ${props => props.theme.theme_vars.colours.black};
-        background-color: ${props => props.theme.theme_vars.colours.focus};
-        -webkit-box-shadow: 0 -2px ${props => props.theme.theme_vars.colours.focus}, 0 4px ${props => props.theme.theme_vars.colours.black};
-        box-shadow: 0 -2px ${props => props.theme.theme_vars.colours.focus}, 0 4px ${props => props.theme.theme_vars.colours.black};
-        text-decoration: none;
-        color: ${props => props.theme.theme_vars.colours.black};
-        
-        &:hover {
-            color: #003078;
-        }
+        ${props => props.theme.linkStylesFocus};
+    }
+    &:active {
+        ${props => props.theme.linkStylesActive};
     }
 `
 
@@ -65,8 +61,8 @@ export const SectionHeader = styled.div`
 
     &:hover {
         border-top-color: ${props => props.theme.theme_vars.colours.action};
-        -webkit-box-shadow: inset 0 3px 0 0 ${props => props.theme.theme_vars.colours.action};
-        box-shadow: inset 0 3px 0 0 ${props => props.theme.theme_vars.colours.action}
+        -webkit-box-shadow: inset 0 2px 0 0 ${props => props.theme.theme_vars.colours.action};
+        box-shadow: inset 0 2px 0 0 ${props => props.theme.theme_vars.colours.action}
     }
 `
 
@@ -144,7 +140,7 @@ export const AccordionIcon = styled.span`
         height: 25%;
         margin: auto;
         border: 2px solid transparent;
-        background-color: ${props => props.theme.theme_vars.colours.black}
+        background-color: ${props => props.theme.theme_vars.colours.black};
     }
 
     &:before {
@@ -164,6 +160,7 @@ export const AccordionIcon = styled.span`
 export const SectionSummary = styled.div`
     margin-top: 10px;
     margin-bottom: 0;
+    color: ${props => props.theme.theme_vars.colours.black};
 `
 
 export const SectionContent = styled.div`
@@ -182,7 +179,7 @@ export const SectionContent = styled.div`
     }
 
     @media (min-width: 40.0625em) {
-        padding-bottom: 15px
+        padding-bottom: 25px
     }
 
     >:last-child {

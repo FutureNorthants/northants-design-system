@@ -6,7 +6,7 @@ import { SkipToMainContentProps } from "./SkipToMainContent.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/structure/Skip to main content',
+    title: 'Library/Structure/Skip to main content',
     component: SkipToMainContent
 };
 

@@ -89,8 +89,9 @@ const focusListItem = css`
     color: ${props => props.theme.theme_vars.colours.black};
     background-color: ${props => props.theme.theme_vars.colours.focus};
     outline: none;
-    border-bottom-color: ${props => props.theme.theme_vars.colours.black};
-    transition: background-color 0.3s ease 0s border-bottom-color 0.3s ease 0s;
+    box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -webkit-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -moz-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
 `
 
 
@@ -127,7 +128,7 @@ export const ListItemLink = styled.a`
   color: ${props => props.theme.theme_vars.colours.action};
   padding: 5px 10px;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  
 
   &:hover {
     cursor: pointer;
@@ -137,6 +138,12 @@ export const ListItemLink = styled.a`
 
   &:focus {
     ${focusListItem}
+  }
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
   }
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){  
