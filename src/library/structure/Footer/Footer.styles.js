@@ -35,15 +35,15 @@ export const FooterLink = styled.a`
     }
   &:focus{
       ${props => props.theme.linkStylesFocus}
-      box-shadow: 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.white};
-      -webkit-box-shadow: 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.white};
-      -moz-box-shadow: 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.white};
+      box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
+      -webkit-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
+      -moz-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
   }
   &:active{
     ${props => props.theme.linkStylesActive}
-    box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.white};
-    -webkit-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.white};
-    -moz-box-shadow: 0px 1px 0px 0px ${props => props.theme.theme_vars.colours.white};
+    box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
+    -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
+    -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.white};
   }
 `
 export const FooterCopy = styled.p`
