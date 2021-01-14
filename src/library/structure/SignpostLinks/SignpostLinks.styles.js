@@ -40,6 +40,11 @@ export const SignpostList = styled.ul`
 `
 export const SignpostListItem = styled.li`
     margin-bottom: 10px;
+    padding-left: 0 !important;
+
+    &:before {
+        content: none !important;
+    }
 `
 export const IconWrapper = styled.div`
     display: inline-block;
