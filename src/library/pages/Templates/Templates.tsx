@@ -98,6 +98,23 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
                       ]
                   }
                 ]} />
+                <PageStructures.SectionLinksSidebar
+                  Title="Also found in"
+                  Sections={[
+                      {
+                        SectionLinks: [
+                            {
+                                title: "Another service that includes this page",
+                                url: "/"
+                            },
+                            {
+                              title: "And yet another service that includes this page",
+                              url: "/"
+                            }
+                        ]
+                      }
+                  ]}
+                />
               </PageStructures.PageSidebar>
             </PageStructures.PageWithSidebarContainer>
           </PageStructures.MaxWidthContainer>

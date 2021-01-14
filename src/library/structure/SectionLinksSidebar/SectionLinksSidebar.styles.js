@@ -4,6 +4,7 @@ export const Container = styled.div`
   ${props => props.theme.fontStyles}
   background-color: ${props => props.theme.theme_vars.colours.action_light}; 
   border-radius: ${props => props.theme.theme_vars.border_radius};
+  margin-bottom: 25px;
   
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){  
     background-color: transparent; 
