@@ -11,6 +11,20 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     font-size: 14px;
     font-size: 0.8rem;
     line-height: 1.2;
+
+    a {
+        ${props => props.theme.linkStyles}
+        font-weight: 400;
+        &:hover{
+            ${props => props.theme.linkStylesHover}
+        }
+        &:focus{
+            ${props => props.theme.linkStylesFocus}
+        }
+        &:active{
+            ${props => props.theme.linkStylesActive}
+        }
+    }
         
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 19px;

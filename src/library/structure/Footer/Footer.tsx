@@ -31,7 +31,10 @@ const Footer: React.FC<FooterProps> = ({
                     </Styles.FooterList>
                 }
                 <Styles.FooterCopy>
-                    &copy;&nbsp;{themeContext.full_name}&nbsp;{year}
+                    {/* TODO add this back in once legal is sorted */}
+                    {/* &copy;&nbsp; */}
+                    {themeContext.full_name}
+                    {/* &nbsp;{year} */}
                 </Styles.FooterCopy>
             </Styles.StyledMaxWidthContainer>
         </Styles.Container>
