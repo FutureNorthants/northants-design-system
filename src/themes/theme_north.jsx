@@ -2,8 +2,8 @@ export const north_vars = {
     theme_name: "North Northants theme",
     full_name: "North Northamptonshire",
     cardinal_name: "north",
-    council_link: "http://northnorthants.gov.uk",
-    other_council_link: "http://westnorthants.gov.uk",
+    council_link: "https://beta.northnorthants.gov.uk",
+    other_council_link: "https://beta.westnorthants.gov.uk",
     other_council_name: "West Northamptonshire",
     breakpoints: {
         s: "550px",

@@ -9,7 +9,7 @@ export default {
     title: "library/Structure/Phase Banner"
 };
 
-const Template: Story<PhaseBannerProps> = (args) => <SBPadding><PhaseBanner {...args} /></SBPadding>;
+const Template: Story<PhaseBannerProps> = (args) => <PhaseBanner {...args} />;
 
 
 export const PhaseBannerExample = Template.bind({});    

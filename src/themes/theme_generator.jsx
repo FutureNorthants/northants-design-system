@@ -57,15 +57,19 @@ const generate_theme = (theme_vars) => {
             background: ${theme_vars.colours.focus};
             outline: none;
             text-decoration: none !important;
-            box-shadow: 0px -2px 0px 0px inset ${theme_vars.colours.black};
-            -webkit-box-shadow: 0px -2px 0px 0px inset ${theme_vars.colours.black};
-            -moz-box-shadow: 0px -2px 0px 0px inset ${theme_vars.colours.black};
+            box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
         `,
         linkStylesActive: `
+            color: ${theme_vars.colours.black};
+            background: ${theme_vars.colours.focus};
+            outline: none;
+            text-decoration: none !important;
             transform: translateY(1px);
-            box-shadow: 0px -1px 0px 0px inset ${theme_vars.colours.black};
-            -webkit-box-shadow: 0px -1px 0px 0px inset ${theme_vars.colours.black};
-            -moz-box-shadow: 0px -1px 0px 0px inset ${theme_vars.colours.black};
+            box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
         `,
         elementBaseStyles: `
             border-bottom: 2px solid transparent;

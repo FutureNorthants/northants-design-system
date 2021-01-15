@@ -3,7 +3,7 @@ import Heading from "../../components/Heading/Heading";
 
 export const Container = styled.div`
   ${props => props.theme.fontStyles}
-  max-height: 320px;
+  max-height: 385px;
   overflow: hidden;
 
   &.open {
@@ -182,9 +182,9 @@ export const ReorderControl = styled.div`
 export const ReorderButton = styled.button`
   background: transparent;
   border: 2px solid ${props => props.theme.theme_vars.colours.action};
-  box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
-  -webkit-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
-  -moz-box-shadow: 0px -2px 0px 0px inset ${props => props.theme.theme_vars.colours.action};
+  box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.action} inset;
+  -webkit-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.action} inset;
+  -moz-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.action} inset;
   border-bottom: none;
   border-radius: ${props => props.theme.theme_vars.border_radius};
   margin-top: 10px;
@@ -216,14 +216,18 @@ export const ReorderButton = styled.button`
     background: ${props => props.theme.theme_vars.colours.focus};
     color: ${props => props.theme.theme_vars.colours.black};
     border-color: ${props => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-    -webkit-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-    -moz-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+    -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+    -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
   }
   &:active {
     transform: translateY(2px);
-    box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-    -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-    -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+    border-color: transparent;
+    background: ${props => props.theme.theme_vars.colours.focus};
+    color: ${props => props.theme.theme_vars.colours.black};
+    border-color: ${props => props.theme.theme_vars.colours.focus};
+    box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+    -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+    -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
   }
 `

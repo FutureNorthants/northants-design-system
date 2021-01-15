@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
     font-weight: 700;
-    border: 2px solid transparent;
+    border: none;
     cursor: pointer;
     display: inline-block;
     line-height: 1;
@@ -19,13 +19,19 @@ export const StyledButton = styled.button`
         }
         &:focus {
             outline: none;
-            color: ${props => props.theme.theme_vars.colours.black};
+            color: ${props => props.theme.theme_vars.colours.black} !important;
             background-color: ${props => props.theme.theme_vars.colours.focus};
-            border-bottom: 2px solid ${props => props.theme.theme_vars.colours.black};
+            box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
         }
         &:active {
-            top: 2px;
-            border-bottom: transparent;
+            transform: translateY(2px);
+            color: ${props => props.theme.theme_vars.colours.black} !important;
+            background-color: ${props => props.theme.theme_vars.colours.focus};
+            box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
         }
     }
     &.button--secondary {

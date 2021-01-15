@@ -66,15 +66,15 @@ export const Pagelink = styled.a`
   }
   &:focus {
     outline: none;
-    box-shadow: 0px -4px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
-    -webkit-box-shadow: 0px -4px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
-    -moz-box-shadow: 0px -4px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
+    box-shadow: 0px -4px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
+    -webkit-box-shadow: 0px -4px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
+    -moz-box-shadow: 0px -4px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
   }
   &:active {
     transform: translate(3px);
-    box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
-    -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
-    -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black} !important;
+    box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
+    -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
+    -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset !important;
   }
 `
 

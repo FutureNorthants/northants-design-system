@@ -21,15 +21,17 @@ export const StyledButton = styled.a`
             outline: none;
             color: ${props => props.theme.theme_vars.colours.black} !important;
             background-color: ${props => props.theme.theme_vars.colours.focus};
-            box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-            -webkit-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-            -moz-box-shadow: 0px -3px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+            box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
         }
         &:active {
             transform: translateY(2px);
-            box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-            -webkit-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
-            -moz-box-shadow: 0px -1px 0px 0px inset ${props => props.theme.theme_vars.colours.black};
+            color: ${props => props.theme.theme_vars.colours.black} !important;
+            background-color: ${props => props.theme.theme_vars.colours.focus};
+            box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
         }
     }
     &.button--secondary {
