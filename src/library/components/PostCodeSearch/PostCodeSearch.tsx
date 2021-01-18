@@ -16,7 +16,7 @@ import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
  * The functionality for searching for a postcode
  */
 const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
-    title = "Find your local area based on your postcode",
+    title = "Enter your postcode to find your area",
     formError = false
   }) => {
     const themeContext = useContext(ThemeContext);
