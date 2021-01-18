@@ -30,8 +30,9 @@ export const Paragraph = styled.p`
 
 `
 export const SignpostList = styled.ul`
+    margin: 0 !important;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     list-style-type: none;
 
     li:last-of-type {

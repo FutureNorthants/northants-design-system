@@ -15,7 +15,8 @@ export const DropDownButton = styled.button`
     font-weight: 400;
     padding-left: 0;
     color: ${props => props.theme.theme_vars.colours.black};
-
+    text-align: left;
+    
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;

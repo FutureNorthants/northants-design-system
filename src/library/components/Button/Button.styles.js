@@ -9,7 +9,13 @@ export const StyledButton = styled.a`
     font-family: ${props => props.theme.theme_vars.fontstack};
     border-radius: ${props => props.theme.theme_vars.border_radius};
     text-decoration: none !important;
+    width: calc(100% - 48px);
+    width: -webkit-fill-available;
+    text-align: center;
 
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        width: auto;
+    }
     &.button--primary {
         color: white !important;
         background-color: ${props => props.theme.theme_vars.colours.action};
