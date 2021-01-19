@@ -13,6 +13,7 @@ import NorthColoured from "./assets/north_coloured";
 import WestColoured from "./assets/west_coloured";
 import { SkipToMainContent } from "../PageStructures";
 import { PhaseBanner } from "../PageStructures";
+import Searchbar from "../Searchbar/Searchbar";
 
 /**
  * The header that should appear at the top of every page.
@@ -50,6 +51,15 @@ const Header: React.FC<HeaderProps> = ({
               All services
             </Styles.AllServicesLink>
           }
+
+          <Styles.Search>
+            {isHomepage ? 
+                <Searchbar isLight={true} />
+                :
+                <Searchbar />
+            }
+          </Styles.Search>
+
         </Styles.StyledMaxWidthContainer>
       </Styles.Container>
       <PhaseBanner />

@@ -13,6 +13,7 @@ export const west_vars = {
     },
     colours: {
         black: "#3C3C3B",
+        grey_darkest: "#3C3C3B",
         grey_dark: "#757575",
         grey: "#C6C6C6",
         grey_light: "#F5F5F5",
