@@ -16,7 +16,7 @@ const PhaseBanner: React.FC<PhaseBannerProps> = () => {
                 <a href={
                     themeContext.cardinal_name === "west" ? "https://northamptonshire-self.achieveservice.com/service/West_Northamptonshire_Beta_website_comment_form" : 
                     themeContext.cardinal_name === "north" ? "http://northamptonshire-self.achieveservice.com/service/North_Northamptonshire_Beta_website_feedback_form" : "#"
-                 } target="_blank" title="Give us feedback">feedback</a> 
+                 } target="_blank" rel="noopener" title="Give us feedback">feedback</a> 
                 &nbsp;will help us to improve it.
             </Styles.PhaseText>
         </Styles.StyledMaxWidthContainer>
