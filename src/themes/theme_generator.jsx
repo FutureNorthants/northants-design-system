@@ -45,7 +45,6 @@ const generate_theme = (theme_vars) => {
             color: ${theme_vars.colours.action};
             font-weight: 700;
             text-decoration: underline;
-            display: inline-block;
         `,
         linkStylesHover: `
             color: ${theme_vars.colours.action_dark};
@@ -57,19 +56,19 @@ const generate_theme = (theme_vars) => {
             background: ${theme_vars.colours.focus};
             outline: none;
             text-decoration: none !important;
-            box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
-            -webkit-box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
-            -moz-box-shadow: 0px -2px 0px 0px ${theme_vars.colours.black} inset;
+            box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
+            -webkit-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
+            -moz-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
         `,
         linkStylesActive: `
             color: ${theme_vars.colours.black};
             background: ${theme_vars.colours.focus};
             outline: none;
             text-decoration: none !important;
-            transform: translateY(1px);
-            box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
-            -webkit-box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
-            -moz-box-shadow: 0px -1px 0px 0px ${theme_vars.colours.black} inset;
+            transform: translateY(2px);
+            box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
+            -webkit-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
+            -moz-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
         `,
         elementBaseStyles: `
             border-bottom: 2px solid transparent;
