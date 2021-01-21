@@ -12,8 +12,4 @@ export interface PaginationProps {
    * What is the total number of results
    */
   totalResults: number;
-  /**
-   * the maximim number of numbers that will show  - defaults to 5
-   */
-  maxNumbers?: number
 }
