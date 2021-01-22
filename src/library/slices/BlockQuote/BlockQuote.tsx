@@ -1,5 +1,6 @@
 
 import React from "react";
+import parse from "html-react-parser"
 
 import { BlockQuoteProps } from "./BlockQuote.types";
 import * as Styles from "./BlockQuote.styles";
@@ -8,8 +9,8 @@ import * as Styles from "./BlockQuote.styles";
 
 const BlockQuote: React.FC<BlockQuoteProps> = ({ quote, citation }) => (
     <Styles.Blockquote data-testid="BlockQuote">
-        <Styles.Quote>{quote}</Styles.Quote>
-        <Styles.Citation>{citation}</Styles.Citation>
+        <Styles.Quote>{parse(quote)}</Styles.Quote>
+        {citation && <Styles.Citation>{citation}</Styles.Citation>}
     </Styles.Blockquote>
 );
 
