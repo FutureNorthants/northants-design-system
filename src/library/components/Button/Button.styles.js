@@ -43,15 +43,28 @@ export const StyledButton = styled.a`
     &.button--secondary {
         color: ${props => props.theme.theme_vars.colours.action} !important;
         background-color: transparent;
-        border: 2px solid ${props => props.theme.theme_vars.colours.action};
+        border: 3px solid ${props => props.theme.theme_vars.colours.action};
 
         &:hover {
             background-color: ${props => props.theme.theme_vars.colours.action}1A;
         }
         &:focus {
             outline: none;
-            border: 2px solid ${props => props.theme.theme_vars.colours.focus};
-            background-color: ${props => props.theme.theme_vars.colours.action}1A;
+            color: ${props => props.theme.theme_vars.colours.black} !important;
+            background-color: ${props => props.theme.theme_vars.colours.focus};
+            border-color: transparent;
+            box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+        }
+        &:active {
+            transform: translateY(2px);
+            color: ${props => props.theme.theme_vars.colours.black} !important;
+            background-color: ${props => props.theme.theme_vars.colours.focus};
+            border-color: transparent !important;
+            box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+            -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
         }
     }
     &.button--small {
@@ -61,6 +74,10 @@ export const StyledButton = styled.a`
     &.button--medium {
         font-size: 14px;
         padding: 11px 20px;
+
+        &.button--secondary {
+            padding: 8px 12px;
+        }
     }
     &.button--large {
         font-size: 16px;

@@ -57,8 +57,7 @@ ExampleAccordionExpanded.args = {
     {
       title: "Fusce Risus Malesuada",
       summary: "Tortor Ultricies Nullam Malesuada Pellentesque",
-      content: <p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>,
-      isExpanded: true
+      content: <p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
     },
     {
       title: "Tortor Magna",
