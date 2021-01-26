@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import axios from 'axios'
 
 import { PostCodeSearchProps } from "./PostCodeSearch.types";
 import * as Styles from "./PostCodeSearch.styles";
@@ -22,6 +23,24 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const themeContext = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
     const [isError, setisError] = useState(formError);
+
+    const postcode = "nn11de";
+    let [responseData, setResponseData] = React.useState('');
+
+    useEffect(() => {
+      axios({
+        method: "GET",
+        url: `https://3lxq8pmgad.execute-api.eu-west-2.amazonaws.com/dev/check-postcode/${postcode}`,
+        headers: { 'x-api-key': 'kBexTqkLpj6ZOkGUNguti58JijxQcGvf9tLqBWWh' }
+      })
+      .then((response) => {
+        setResponseData(response.data)
+        console.log(responseData)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    }, [setResponseData, responseData])
 
     return(
       <Styles.Container>

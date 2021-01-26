@@ -18,6 +18,10 @@ export interface SignpostLinksProps {
 }
 export interface SignpostLinkProp {
     /**
+    * The number that represents the local area - based on the list of all local areas in alphabetical order
+    */
+    sovereignCode: number;
+    /**
     * The name of the local area
     */
     areaName: string;
