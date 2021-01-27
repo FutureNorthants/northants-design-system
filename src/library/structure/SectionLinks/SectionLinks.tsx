@@ -19,7 +19,6 @@ const SectionLinks: React.FC<SectionLinksProps> = ({
                     key={link.url} 
                     href={link.url} 
                     title={"Go to " + link.title}
-                    target={link.isExternal ? "_blank" : "_self"}
                 >
                     <Styles.Title>{link.title}</Styles.Title>
                     <Styles.Summary>{link.summary}</Styles.Summary>

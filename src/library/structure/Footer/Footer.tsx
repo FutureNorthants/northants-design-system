@@ -22,7 +22,6 @@ const Footer: React.FC<FooterProps> = ({
                                     key={link.title} 
                                     href={link.url} 
                                     title={"Go to " + link.title}
-                                    target={link.isExternal ? "_blank" : "_self"}
                                 >
                                     {link.title}
                                 </Styles.FooterLink>

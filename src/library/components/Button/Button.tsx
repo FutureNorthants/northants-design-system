@@ -22,7 +22,6 @@ const Button: React.FC<ButtonProps> = ({
         className={[`button--${size}`, mode].join(' ')}
         href={isDisabled ? false : url}
         title={"Go to " + text}
-        target={isExternal ? "_blank" : "_self"}
         {...props}
       >
         {/* TODO: add aria roles etc */}
