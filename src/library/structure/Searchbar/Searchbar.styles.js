@@ -87,6 +87,17 @@ export const Button = styled.button`
     background: ${props => props.theme.theme_vars.colours.black};
   }
 
+  .is-light & { 
+    background: ${props => props.theme.theme_vars.colours.action};
+    &:hover {
+      background: ${props => props.theme.theme_vars.colours.action_dark};
+    }
+  }
+
+  .is-large & { 
+    padding: ${props => props.theme.theme_vars.spacingSizes.medium};
+  }
+
   &:focus {
     outline: none;
     background: ${props => props.theme.theme_vars.colours.focus};
@@ -103,14 +114,6 @@ export const Button = styled.button`
     box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black};
     border-top-color: ${props => props.theme.theme_vars.colours.black};
     border-bottom-color: transparent;
-  }
-
-  .is-light & { 
-    background: ${props => props.theme.theme_vars.colours.action};
-  }
-
-  .is-large & { 
-    padding: ${props => props.theme.theme_vars.spacingSizes.medium};
   }
 `
 
