@@ -5,7 +5,9 @@ import * as Styles from "./SignpostLinks.styles";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
-import LinkIcon from '../../components/icons/LinkIcon/LinkIcon';
+import SignpostLinksList from "../../components/SignpostLinksList/SignpostLinksList";
+
+
 
 const SignpostLinks: React.FC<SignpostLinksProps> = ({ 
     signpostLinksArray,
@@ -19,18 +21,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
         <Styles.Container>
             <Styles.Paragraph>{TopLineText}</Styles.Paragraph>
 
-            <Styles.SignpostList>
-                {signpostLinksArray.map((link) =>
-                    <Styles.SignpostListItem>
-                        <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>
-                            <Styles.IconWrapper>
-                                <LinkIcon />
-                            </Styles.IconWrapper>
-                            {link.areaName}
-                        </Styles.SignpostLink>
-                    </Styles.SignpostListItem>
-                )}   
-            </Styles.SignpostList>
+            <SignpostLinksList signpostLinksArray={signpostLinksArray} />
             
             <PostCodeSearch otherCouncilLink={councilLink} signPostLinks={signpostLinksArray} />
 

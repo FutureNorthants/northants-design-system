@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export { SignpostLink } from '../../components/SignpostLinksList/SignpostLinksList.styles';
+
+
 export const Container = styled.div`
     ${props => props.theme.fontStyles}
     max-width: 500px;
@@ -30,51 +33,4 @@ export const LastParagraph = styled.p`
     margin-top: 25px;
     margin-bottom: 0;
 `
-export const SignpostList = styled.ul`
-    margin: 0 !important;
-    padding-left: 10px;
-    margin-bottom: 20px !important;
-    list-style-type: none;
 
-    li:last-of-type {
-        margin-bottom: 0;
-    }
-`
-export const SignpostListItem = styled.li`
-    margin-bottom: 10px;
-    padding-left: 0 !important;
-
-    &:before {
-        content: none !important;
-    }
-`
-export const IconWrapper = styled.div`
-    display: inline-block;
-    margin-right: 10px;
-    svg {
-        vertical-align: middle;
-    }
-`
-export const SignpostLink = styled.a`
-    ${props => props.theme.linkStyles}
-
-    svg {
-        fill: ${props => props.theme.theme_vars.colours.action};
-    }
-
-    &:hover{
-        ${props => props.theme.linkStylesHover}
-        svg {
-            fill: ${props => props.theme.theme_vars.colours.action_darl};
-        }
-    }
-    &:focus{
-        ${props => props.theme.linkStylesFocus}
-        svg {
-            fill: ${props => props.theme.theme_vars.colours.black};
-        }
-    }
-    &:active{
-        ${props => props.theme.linkStylesActive}
-    }
-`
