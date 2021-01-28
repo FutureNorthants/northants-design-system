@@ -3,6 +3,7 @@ import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 import SearchResultsList from '../../structure/SearchResultsList/SearchResultsList';
 import Searchbar from '../../structure/Searchbar/Searchbar';
+import Pagination from '../../components/Pagination/Pagination';
 
 export interface SearchResultsPageExampleProps {
 
@@ -99,6 +100,13 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
         :
         <SearchResultsList results={[]} searchTerm={SearchResultsListData.searchTerm} />
         }
+
+
+        {results &&
+          <Pagination currentPage={1} totalResults={5}  />
+        }
+
+
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer />

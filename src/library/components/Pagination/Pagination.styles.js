@@ -21,10 +21,15 @@ export const NumbersContainer = styled.ul`
   margin: 0;
   padding: 0;
   display: inline-block;
+  list-style: none;
 `
 
 export const NumberContainer = styled.li`
   display: inline-block;
+
+  &:before {
+    display: none;
+  }
 `
 
 

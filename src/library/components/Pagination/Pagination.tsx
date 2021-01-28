@@ -38,8 +38,8 @@ const pagination = (c,m) => {
     return rangeWithDots;
 }
     
-    
-const numberOfNumbers = totalResults / resultsPerPage;
+if(resultsPerPage === undefined) resultsPerPage = 10;
+const numberOfNumbers = Math.ceil(totalResults / resultsPerPage);
 
 
 const allNumbers = Array.from({ length: numberOfNumbers }, (v, i) => i + 1);
@@ -48,7 +48,7 @@ const numbers = pagination(currentPage, numberOfNumbers);
 // const numbers = allNumbers;
 
 
-
+if(numbers.length > 1) {
 return (
     <Styles.Container data-testid="Pagination" role="navigation" aria-label="Pagination">
 
@@ -78,6 +78,8 @@ return (
 
     </Styles.Container>
     );
+}
+return null
 }
 
 export default Pagination;

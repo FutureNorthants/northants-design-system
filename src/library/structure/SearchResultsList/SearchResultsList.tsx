@@ -26,7 +26,7 @@ const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, resul
                 
                 {results.map((result,i) => 
                     
-                    <Styles.Result>
+                    <Styles.Result key={i}>
                         <Styles.Title href={result.link}>{result.title}</Styles.Title>
                         <Styles.Summary>{result.summary}</Styles.Summary>
                         {result.signpostLinksArray &&
