@@ -35,30 +35,29 @@ const Header: React.FC<HeaderProps> = ({
         {...props}
       >
         <Styles.StyledMaxWidthContainer>
-          <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
-            {isHomepage ? 
-              <Styles.LogoColoured>
-                {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
-              </Styles.LogoColoured>   
-              :
-              <Styles.LogoWhite>
-                {themeContext.cardinal_name === "north" ? <NorthWhite /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
-              </Styles.LogoWhite>
-            }
-          </Styles.HomeLink>
+          <Styles.LogoWrapper>
+            <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
+              {isHomepage ? 
+                <Styles.LogoColoured>
+                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
+                </Styles.LogoColoured>   
+                :
+                <Styles.LogoWhite>
+                  {themeContext.cardinal_name === "north" ? <NorthWhite /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
+                </Styles.LogoWhite>
+              }
+            </Styles.HomeLink>
+          </Styles.LogoWrapper>
           {allServicesLink &&
             <Styles.AllServicesLink href={isHomepage ? "#all-services" : allServicesLink + "#all-services"} title="See all services" isHomepage={isHomepage ? "true" : "false"}>
               All services
             </Styles.AllServicesLink>
           }
-
-          <Styles.Search>
-            {isHomepage ? 
-                <Searchbar isLight={true} />
-                :
+          {!isHomepage &&
+            <Styles.SearchWrapper>
                 <Searchbar />
-            }
-          </Styles.Search>
+            </Styles.SearchWrapper>
+          }
 
         </Styles.StyledMaxWidthContainer>
       </Styles.Container>

@@ -52,13 +52,13 @@ export const Phase = styled.div`
     margin-right: 10px;
     background: ${props => props.theme.theme_vars.colours.action}1A;
     float: left;
-    vertical-align: middle;
-    margin-top: 5px;
+    margin-top: -3px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         display: inline-block;
         float: none;
         margin-right: 15px;
         margin-top: 0px;
+        vertical-align: middle;
     }
 `

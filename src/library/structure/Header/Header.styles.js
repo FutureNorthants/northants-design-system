@@ -12,17 +12,14 @@ export const Container = styled.header`
 `
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
-
-
-    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-        display: flex;
-        -webkit-flex-direction: row;
-        -moz-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-    }
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 `
 
 const LogoStyles = `
@@ -38,8 +35,17 @@ export const LogoColoured = styled.div`
 export const LogoWhite = styled.div`
     ${LogoStyles}
 `
-
+export const LogoWrapper = styled.div`
+    display: inline-block;
+    
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        flex-grow: 1;
+        display: block;
+    }
+`
 export const HomeLink = styled.a`
+    display: inline-block;
+
     &:hover {
         opacity: 0.8;
 
@@ -52,13 +58,13 @@ export const HomeLink = styled.a`
         box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
         transition: box-shadow 0.3s ease 0s;
     }
-    flex-grow: 1;
 `
 
 export const AllServicesLink = styled.a`
     ${props => props.theme.linkStyles};
     color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
     padding: 0 ${props => props.theme.theme_vars.spacingSizes.small};
+    vertical-align: middle;
 
     &:hover {
         ${props => props.theme.linkStylesHover};
@@ -72,17 +78,24 @@ export const AllServicesLink = styled.a`
         ${props => props.theme.linkStylesActive}
     }
 
-
-    display: none;
+    display: inline-block;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        display: none;
+    }
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         display: inline-block;
     }
 `
 
-export const Search = styled.div`
-    padding: ${props => props.theme.theme_vars.spacingSizes.small} 0;
+export const SearchWrapper = styled.div`
+    padding-bottom: ${props => props.theme.theme_vars.spacingSizes.small};
+    flex: 0 0 100%;
+
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        flex: auto;
         max-width: 320px;
+        margin-left: 15px;
+        padding: ${props => props.theme.theme_vars.spacingSizes.small} 0;
     }
 `

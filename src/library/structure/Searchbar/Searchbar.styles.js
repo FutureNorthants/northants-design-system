@@ -35,7 +35,7 @@ export const InputWrapper = styled.div`
   position: relative;
   width: auto;
   border: 3px solid transparent;
-  border-radius: ${props => props.theme.theme_vars.border_radius};
+  border-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
 
   &:focus {
     outline: none;
@@ -50,11 +50,11 @@ export const InputWrapper = styled.div`
 
 export const Input = styled.input`
   margin: 0;
-  padding: ${props => props.theme.theme_vars.spacingSizes.small};
+  padding: 5px ${props => props.theme.theme_vars.spacingSizes.small};
   background: ${props => props.theme.theme_vars.colours.white};
   border: 1px solid transparent;
-  border-top-left-radius: ${props => props.theme.theme_vars.border_radius};
-  border-bottom-left-radius: ${props => props.theme.theme_vars.border_radius};
+  border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
+  border-bottom-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
   width: 100%;
 
@@ -75,13 +75,14 @@ export const Input = styled.input`
 `
 
 export const Button = styled.button`
+  cursor: pointer;
   margin: 0;
-  padding: ${props => props.theme.theme_vars.spacingSizes.small};
+  padding: ${props => props.theme.theme_vars.spacingSizes.small} 12px;
   background: ${props => props.theme.theme_vars.colours.grey_darkest};
   color: ${props => props.theme.theme_vars.colours.white};
   border: 1px solid transparent;
-  border-top-right-radius: ${props => props.theme.theme_vars.border_radius};
-  border-bottom-right-radius: ${props => props.theme.theme_vars.border_radius};
+  border-top-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
+  border-bottom-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   width: 100%;
   text-align: center;
 
