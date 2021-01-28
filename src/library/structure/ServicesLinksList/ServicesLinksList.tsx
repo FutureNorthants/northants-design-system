@@ -43,8 +43,8 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
             <Styles.Container id="all-services" className={open && "open"}>
                 <Styles.ReorderControl>
                     Order services by<br/>
-                    <Styles.ReorderButton onClick={() => setCurrentOrder(0)} className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
-                    <Styles.ReorderButton onClick={() => setCurrentOrder(1)} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
+                    <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={currentOrder === 0 && "-1"}  className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
+                    <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={currentOrder === 1 && "-1"} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
                 </Styles.ReorderControl>
                 <Styles.LinksList>
                     {currentOrder === 0 ?

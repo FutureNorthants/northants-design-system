@@ -207,10 +207,14 @@ export const ReorderButton = styled.button`
     cursor: default;
     borer: none;
     box-shadow: none;
-    color: ${props => props.theme.theme_vars.colours.white};
-    background: ${props => props.theme.theme_vars.colours.action};
+    color: ${props => props.theme.theme_vars.colours.black};
+    background: ${props => props.theme.theme_vars.colours.focus};
+    border-color: ${props => props.theme.theme_vars.colours.focus};
+    &:focus {
+      outline: none;
+    }
   }
-  &:focus {
+  &:focus:not(.chosen) {
     outline: none;
     border-color: transparent;
     background: ${props => props.theme.theme_vars.colours.focus};
@@ -220,7 +224,7 @@ export const ReorderButton = styled.button`
     -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
     -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
   }
-  &:active {
+  &:active:not(.chosen) {
     transform: translateY(2px);
     border-color: transparent;
     background: ${props => props.theme.theme_vars.colours.focus};
