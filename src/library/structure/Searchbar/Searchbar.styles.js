@@ -41,10 +41,7 @@ export const InputWrapper = styled.div`
     outline: none;
   }
 
-  &:focus-within {
-    border: 3px solid ${props => props.theme.theme_vars.colours.focus};
-    background-color: ${props => props.theme.theme_vars.colours.focus};
-  }
+  
 `
 
 
@@ -52,14 +49,14 @@ export const Input = styled.input`
   margin: 0;
   padding: 5px ${props => props.theme.theme_vars.spacingSizes.small};
   background: ${props => props.theme.theme_vars.colours.white};
-  border: 1px solid transparent;
+  border: 3px solid transparent;  
   border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   border-bottom-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
-  width: 100%;
 
   &:focus {
     outline: none;
+    border: 3px solid ${props => props.theme.theme_vars.colours.focus};
   }
 
   .is-light & {
@@ -86,12 +83,26 @@ export const Button = styled.button`
   width: 100%;
   text-align: center;
 
-  &:focus {
-    outline: none;
-  }
-
   &:hover {
     background: ${props => props.theme.theme_vars.colours.black};
+  }
+
+  &:focus {
+    outline: none;
+    background: ${props => props.theme.theme_vars.colours.focus};
+
+    svg {
+      path{
+        fill: ${props => props.theme.theme_vars.colours.black};
+      }
+    }
+  }
+  &:active {
+    transform: translateY(1px);
+    background-color: ${props => props.theme.theme_vars.colours.focus};
+    box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black};
+    border-top-color: ${props => props.theme.theme_vars.colours.black};
+    border-bottom-color: transparent;
   }
 
   .is-light & { 
