@@ -12,4 +12,8 @@ export interface SearchbarProps {
      * If its used on its own (eg search results page) then its slightly larger
      */
     isLarge?: boolean;
+    /**
+     * The searched for term
+     */
+    searchTerm?: string;
 }

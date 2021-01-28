@@ -24,22 +24,10 @@ ExampleSearchbarDefaultWest.parameters = {
 };
 
 
-export const ExampleSearchbarWhite = Template.bind({});    
-ExampleSearchbarWhite.args = {
+export const ExampleSearchbarWhiteBackground = Template.bind({});    
+ExampleSearchbarWhiteBackground.args = {
     isLight: true
 };
-
-export const ExampleSearchbarWhiteDifferentPlaceholder = Template.bind({}); 
-ExampleSearchbarWhiteDifferentPlaceholder.args = {
-    placeholder: 'Different placeholder text'
-};
-
-
-export const ExampleSearchbarLarge = Template.bind({});    
-ExampleSearchbarWhite.args = {
-    isLarger: true
-};
-
 
 
 export const ExampleSearchPage = Template.bind({});    
