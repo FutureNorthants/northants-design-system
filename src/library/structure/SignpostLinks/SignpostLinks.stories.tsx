@@ -13,39 +13,45 @@ const Template: Story<SignpostLinksProps> = (args) => <SBPadding><SignpostLinks 
 
 export const NorthSignpostLinksExample = Template.bind({});    
 NorthSignpostLinksExample.args = {
-    SignpostLinksArray: [
+    signpostLinksArray: [
         {
+            sovereignCode: 1,
             areaName: "Corby",
             url: "/"
         },
         {
+            sovereignCode: 3,
             areaName: "East Northamptonshire",
             url: "/"
         },
         {
+            sovereignCode: 4,
             areaName: "Kettering",
             url: "/"
         },
         {
+            sovereignCode: 7,
             areaName: "Wellingborough",
             url: "/"
         }
     ]
 };
 
-
 export const WestSignpostLinksExample = Template.bind({});    
 WestSignpostLinksExample.args = {
-    SignpostLinksArray: [
+    signpostLinksArray: [
         {
+            sovereignCode: 2,
             areaName: "Daventry",
             url: "/"
         },
         {
+            sovereignCode: 5,
             areaName: "Northampton",
             url: "/"
         },
         {
+            sovereignCode: 6,
             areaName: "South Northamptonshire",
             url: "/"
         }

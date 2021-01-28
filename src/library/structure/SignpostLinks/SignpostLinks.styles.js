@@ -7,10 +7,7 @@ export const Container = styled.div`
     padding: 20px;
     background-color: ${props => props.theme.theme_vars.colours.grey_light};
 
-    p:last-of-type {
-        margin-top: 30px;
-        margin-bottom: 0;
-    }
+
     p:first-of-type {
         margin-top: 0;
         margin-bottom: 15px;
@@ -28,6 +25,10 @@ export const Container = styled.div`
 `
 export const Paragraph = styled.p`
 
+`
+export const LastParagraph = styled.p`
+    margin-top: 25px;
+    margin-bottom: 0;
 `
 export const SignpostList = styled.ul`
     margin: 0 !important;

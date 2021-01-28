@@ -8,19 +8,27 @@ export interface FormWithLineProps {
    */
   hideLine?: boolean;
   /**
-   * The role of the form, defualts to "search"
+   * The role of the form
    */
   formRole?: string;
   /**
-   * The method of the form, defualts to "get"
+   * The method of the form
    */
   formMethod?: string;
   /**
-   * The url of the form, defualts to ?
+   * The url of the form
    */
   formURL?: string;
   /**
    * An optional boolean to set the form as an error - if true, the lineColour will be replaced with red
    */
   isError?: boolean;
+  /**
+   * An optional string to explain the error
+   */
+  errorSummary?: string;
+  /**
+   * An optional function to be called on the submit of the form
+   */
+  onSubmit?: React.ReactNode;
 }

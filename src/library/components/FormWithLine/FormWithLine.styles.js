@@ -19,3 +19,12 @@ export const Line = styled.div`
     width: 5px;
     border-radius: 2px;
 `
+
+export const ErrorSummary = styled.div`
+    color: ${props => props.theme.theme_vars.colours.negative};
+    font-weight: bold;
+    border-radius: ${props => props.theme.theme_vars.border_radius};
+    border: 3px solid ${props => props.theme.theme_vars.colours.negative};
+    margin-bottom: 15px;
+    padding: 15px;
+`

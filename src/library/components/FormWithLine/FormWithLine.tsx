@@ -10,17 +10,19 @@ import * as Styles from "./FormWithLine.styles";
 const FormWithLine: React.FC<FormWithLineProps> = ({
   lineColour = "#C6C6C6",
   hideLine = false, 
-  formRole = "search",
-  formMethod = "get",
-  // TODO: default URL ?? or make it required? Or remove it and use an event? 
-  formURL = "/api/v1/area-finder/",
+  formRole,
+  formMethod,
+  formURL,
   isError = false,
+  errorSummary,
+  onSubmit,
   children
   }) => {
     return (
       <Styles.Container>
         <Styles.Line lineColour={lineColour} hideLine={hideLine} isError={isError} />
-        <Styles.Form hideLine={hideLine} role={formRole} method={formMethod} url={formURL}>
+        <Styles.Form onSubmit={onSubmit} hideLine={hideLine} role={formRole} method={formMethod} url={formURL}>
+          {errorSummary && <Styles.ErrorSummary>{errorSummary}</Styles.ErrorSummary>}
           {children}
         </Styles.Form>
       </Styles.Container>

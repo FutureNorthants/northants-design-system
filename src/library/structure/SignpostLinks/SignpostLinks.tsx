@@ -8,19 +8,19 @@ import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
 import LinkIcon from '../../components/icons/LinkIcon/LinkIcon';
 
 const SignpostLinks: React.FC<SignpostLinksProps> = ({ 
-    SignpostLinksArray,
+    signpostLinksArray,
     TopLineText = "Select your local area for more information:",
-    OtherCouncilLink
+    otherCouncilLink
 }) => {
     const themeContext = useContext(ThemeContext);
-    const councilLink = OtherCouncilLink ? OtherCouncilLink : themeContext.theme_vars.other_council_link;
+    const councilLink = otherCouncilLink ? otherCouncilLink : themeContext.theme_vars.other_council_link;
     
     return(
         <Styles.Container>
             <Styles.Paragraph>{TopLineText}</Styles.Paragraph>
 
             <Styles.SignpostList>
-                {SignpostLinksArray.map((link) =>
+                {signpostLinksArray.map((link) =>
                     <Styles.SignpostListItem>
                         <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>
                             <Styles.IconWrapper>
@@ -32,16 +32,15 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
                 )}   
             </Styles.SignpostList>
             
-            {/* TODO: add functionality to postcode checker */}
-            <PostCodeSearch />
+            <PostCodeSearch otherCouncilLink={councilLink} signPostLinks={signpostLinksArray} />
 
-            {(OtherCouncilLink || themeContext.theme_vars.other_council_link) &&
-                <Styles.Paragraph>
+            {(otherCouncilLink || themeContext.theme_vars.other_council_link) &&
+                <Styles.LastParagraph>
                     If your area isn't listed, you may be a resident of&nbsp;
                     <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.theme_vars.other_council_name}>
                         {themeContext.theme_vars.other_council_name}
                     </Styles.SignpostLink>
-                </Styles.Paragraph>
+                </Styles.LastParagraph>
             }
         </Styles.Container>
     )
