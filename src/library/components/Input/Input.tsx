@@ -10,10 +10,15 @@ import * as Styles from "./Input.styles";
 const Input: React.FC<InputProps> = ({
     type = "text",
     placeholder = "",
+    isErrored = false,
+    errorText,
     name
   }) => {
     return (
-      <Styles.StyledInput type={type} placeholder={placeholder} name={name} />
+      <>
+      {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
+      <Styles.StyledInput type={type} placeholder={isErrored ? "Enter a postcode" : placeholder} name={name} isErrored={isErrored} />
+      </>
     );
   };
   

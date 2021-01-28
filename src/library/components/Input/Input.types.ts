@@ -10,5 +10,13 @@ export interface InputProps {
   /**
    * The name of the input
    */
+  isErrored?: boolean;
+  /**
+   * An optional string to explain the error
+   */
+  errorText?: string;
+  /**
+   * The name of the input
+   */
   name: string;
 }
