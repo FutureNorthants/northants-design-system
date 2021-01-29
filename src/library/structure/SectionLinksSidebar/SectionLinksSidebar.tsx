@@ -26,7 +26,7 @@ const SectionLinksSidebar: React.FC<SectionLinksSidebarProps> = ({ Title, Sectio
                     }
                     <Styles.List>
                         {Section.SectionLinks.map((link) =>
-                            <Styles.ListItem aria-current={link.isCurrent ? "true" : null}>
+                            <Styles.ListItem key={link.title} aria-current={link.isCurrent ? "true" : null}>
                                 <Styles.ListItemLink href={link.url} title={"View more at " + link.title + " area"}>{link.title}</Styles.ListItemLink>
                             </Styles.ListItem>
                         )}
