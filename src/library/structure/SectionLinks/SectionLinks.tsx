@@ -14,9 +14,9 @@ const SectionLinks: React.FC<SectionLinksProps> = ({
             <Styles.SectionTitle text={sectionTitle} />
         }
         <Styles.LinksList>
-            {pageLinksArray.map((link) =>
+            {pageLinksArray.map((link, i) =>
                 <Styles.Pagelink 
-                    key={link.url} 
+                    key={i} 
                     href={link.url} 
                     title={"Go to " + link.title}
                 >
