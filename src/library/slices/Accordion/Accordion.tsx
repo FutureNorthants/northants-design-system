@@ -52,7 +52,7 @@ const Accordion: React.FC<AccordionProps> = ({ sections }) => {
 
     return (
         <Styles.Container data-testid="Accordion">
-            {showControls && <Styles.AccordionControls>
+            {showControls && sections.length > 1 && <Styles.AccordionControls>
                 <Styles.OpenAllButton onClick={toggleAll} type="button" aria-expanded={!openAll}>
                     {openAll ? "Open all" : "Close all"}
                     <Styles.VisuallyHidden> sections</Styles.VisuallyHidden>
