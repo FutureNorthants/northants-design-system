@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
+import Searchbar from '../../structure/Searchbar/Searchbar';
 
 export interface HomePageProps {
 
@@ -14,6 +15,8 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
         <Heading level={1} text="Home page" />
 
         <p>This is where the example home page would go - combining components to create an example of a total page together</p>
+
+        <Searchbar isLarge isLight />
 
         <PageStructures.ServicesLinksList 
           serviceLinksArray={[
