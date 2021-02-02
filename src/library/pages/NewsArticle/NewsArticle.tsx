@@ -5,16 +5,18 @@ import Heading from '../../components/Heading/Heading';
 
 import BlockQuote from '../../slices/BlockQuote/BlockQuote';
 import Button from "../../components/Button/Button";
-import NewsArticleDate from "../../components/NewsArticleDate/NewsArticleDate";
-import NewsArticleOldBanner from "../../components/NewsArticleOldBanner/NewsArticleOldBanner";
+import NewsArticleDate from "../../structure/NewsArticleDate/NewsArticleDate";
+import NewsArticleImage from "../../structure/NewsArticleImage/NewsArticleImage";
+import NewsArticleOldBanner from "../../structure/NewsArticleOldBanner/NewsArticleOldBanner";
 
 export interface NewsArticleProps {
   withImage?: string;
+  imagePlaceholder?: string;
   isOld?: boolean;
 }
 
 
-export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, isOld = false }) => (
+export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceholder, isOld = false }) => (
     <>
   <PageStructures.Header />
   <PageStructures.MaxWidthContainer>
@@ -26,7 +28,7 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, isOld = fal
         <Button primary={false} text="Schools &amp; education" url="#" />
         <NewsArticleDate text="15 January 2021" />
 
-        {withImage && <p>{withImage}</p>}
+        {withImage && <NewsArticleImage image1920x1080={withImage} image192x108={imagePlaceholder} />}
 
         <p><strong>Pupils who are eligible for Free School Meals will receive support from Northamptonshire County Council during the February Half Term.</strong></p>
         <p>As stated in December, prior to the Christmas break, the council will use some of the funding it has received from the government’s COVID Winter Grant Scheme to offer help.</p>
