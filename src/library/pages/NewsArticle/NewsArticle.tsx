@@ -6,21 +6,25 @@ import Heading from '../../components/Heading/Heading';
 import BlockQuote from '../../slices/BlockQuote/BlockQuote';
 import Button from "../../components/Button/Button";
 import NewsArticleDate from "../../components/NewsArticleDate/NewsArticleDate";
-
+import NewsArticleOldBanner from "../../components/NewsArticleOldBanner/NewsArticleOldBanner";
 
 export interface NewsArticleProps {
   withImage?: string;
+  isOld?: boolean;
 }
 
 
-export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage }) => (
+export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, isOld = false }) => (
     <>
   <PageStructures.Header />
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
+        {isOld &&
+          <NewsArticleOldBanner />
+        }
         <Heading level={1} text="Northamptonshire pupils eligible for free school meals will get support in February half term" />
         <Button primary={false} text="Schools &amp; education" url="#" />
-        <NewsArticleDate text="15 January 2021" withMargin={withImage ? false : true} />
+        <NewsArticleDate text="15 January 2021" />
 
         {withImage && <p>{withImage}</p>}
 

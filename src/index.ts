@@ -1,8 +1,11 @@
 // Components
+import Button from "./library/Components/Button/Button";
 import Heading from "./library/Components/Heading/Heading";
+import NewsArticleDate from "./library/Components/NewsArticleDate/NewsArticleDate";
+import NewsArticleOldbanner from "./library/Components/NewsArticleOldbanner/NewsArticleOldbanner";
 import Pagination from "./library/Components/Pagination/Pagination";
 
-export { Heading, Pagination };
+export { Button, Heading, NewsArticleDate, NewsArticleOldbanner, Pagination };
 
 
 // Slices

@@ -15,3 +15,8 @@ export const ExampleNewsArticleWithImage = Template.bind({});
 ExampleNewsArticleWithImage.args = {
   withImage: "Image goes here"
 }
+
+export const ExampleNewsArticleThatIsOld = Template.bind({});    
+ExampleNewsArticleThatIsOld.args = {
+  isOld: true
+}

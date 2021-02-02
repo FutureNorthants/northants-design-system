@@ -8,11 +8,10 @@ import * as Styles from "./NewsArticleDate.styles";
  * Form element - hint text
  */
 const NewsArticleDate: React.FC<NewsArticleDateProps> = ({
-    text,
-    withMargin
+    text
   }) => {
     return (
-      <Styles.NewsArticleDate withMargin={withMargin}>
+      <Styles.NewsArticleDate>
         {text}
       </Styles.NewsArticleDate>
     );
