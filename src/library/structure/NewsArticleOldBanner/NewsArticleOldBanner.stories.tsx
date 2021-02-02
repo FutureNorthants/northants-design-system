@@ -2,11 +2,11 @@ import React from "react";
 import NewsArticleOldBanner from "./NewsArticleOldBanner";
 import { NewsArticleOldBannerProps } from "./NewsArticleOldBanner.types";
 import { Story } from '@storybook/react/types-6-0';
-import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Components/Forms - Hint text',
+    title: 'Library/Structure/News Article Old Banner',
     component: NewsArticleOldBanner
 };
 

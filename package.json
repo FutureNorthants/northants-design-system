@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "html-react-parser": "^1.2.1"
+    "html-react-parser": "^1.2.1",
+    "react-lazy-progressive-image": "^1.5.5"
   }
 }
