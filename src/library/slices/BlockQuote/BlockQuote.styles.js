@@ -5,6 +5,7 @@ export const Blockquote = styled.blockquote `
     margin: 20px 0px;
     padding: 15px 0px 15px 40px;
     border-left: 5px solid ${props => props.theme.theme_vars.colours.action};
+    max-width: 750px;
 `
 
 export const Quote = styled.q `

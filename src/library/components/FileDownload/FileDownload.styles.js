@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Outer = styled.div`
    ${props => props.theme.fontStyles}
-    max-width: 70%;
+    max-width: 725px;
     &:not(:first-child) {
         a {
             margin-top: 30px;
@@ -14,8 +14,8 @@ export const Outer = styled.div`
                 left: 0;
                 top: -15px;
                 background: ${props => props.theme.theme_vars.colours.grey_dark}80;
+            }
         }
-    }
    }
 `
 export const Link = styled.a`

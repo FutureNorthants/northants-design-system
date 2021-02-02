@@ -14,6 +14,7 @@ export const H1 = styled.h1`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 44px;
         font-size: 2.6rem;
+        max-width: 960px;
     }
 `
 export const H2 = styled.h2`
@@ -31,6 +32,7 @@ export const H2 = styled.h2`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 36px;
         font-size: 1.75rem;
+        max-width: 960px;
     }
 `
 export const H3 = styled.h3`
@@ -48,6 +50,7 @@ export const H3 = styled.h3`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 36px;
         font-size: 1.5rem;
+        max-width: 960px;
     }
 `
 export const H4 = styled.h4`
