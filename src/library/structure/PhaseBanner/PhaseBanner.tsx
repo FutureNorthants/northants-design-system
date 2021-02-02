@@ -12,7 +12,7 @@ const PhaseBanner: React.FC<PhaseBannerProps> = () => {
         <Styles.StyledMaxWidthContainer>
             <Styles.Phase>BETA</Styles.Phase> 
             <Styles.PhaseText>
-                This is a new website - your&nbsp;
+                This website is in development, launching on 1 April 2021 - your&nbsp;
                 <a href={
                     themeContext.cardinal_name === "west" ? "https://northamptonshire-self.achieveservice.com/service/West_Northamptonshire_Beta_website_comment_form" : 
                     themeContext.cardinal_name === "north" ? "http://northamptonshire-self.achieveservice.com/service/North_Northamptonshire_Beta_website_feedback_form" : "#"
