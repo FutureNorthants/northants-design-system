@@ -130,3 +130,89 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
     />
   </>
 );
+
+
+export const ServiceLandingPageExampleOneSection: React.FC<ServiceLandingPageExampleProps> = ({  }) => (
+  <>
+    <PageStructures.Header />
+    <PageStructures.MaxWidthContainer>
+      <PageStructures.Breadcrumbs 
+        breadcrumbsArray={[
+          {
+              title: "Home",
+              url: "/"
+          }
+        ]}
+      />
+      <PageStructures.PageMain>
+        <Heading level={1} text="Bin collection, recycling and waste" />
+        <p>Text and slices for the landing page go here.</p>
+        <PageStructures.SectionLinks 
+          displayTitle={false}
+          sectionTitle="Your bins and rubbish"
+          sectionSlug="your-bins-and-rubbish"
+          pageLinksArray={[ 
+            {
+              title: "Find your bin collection day", 
+              summary: "Find your bin collection day using your post code and see your waste and recycling calendar.", 
+              url: "/"
+            },
+            {
+              title: "Arrange bulky item collection", 
+              summary: "Arrange collection for large waste items, like sofas, fridges or washing machines.", 
+              url: "/"
+            },
+            {
+              title: "Report a missed collection", 
+              summary: "Let us know if your bins have not been collected.", 
+              url: "/"
+            },
+            {
+              title: "Request a new or replacement bin", 
+              summary: "Order a new bin, or let us know if your bin is damaged, lost or stolen.", 
+              url: "/"
+            },
+            {
+              title: "Find a household waste recycling centre", 
+              summary: "Find your nearest recycling centre, it’s opening times and charges for non-household waste.", 
+              url: "/"
+            },
+            {
+              title: "What to recycle and where?", 
+              summary: "Find out how waste and recycling colelction works in your local area and what goes in each bin.", 
+              url: "/"
+            }
+          ]}
+        />
+      </PageStructures.PageMain>
+    </PageStructures.MaxWidthContainer>
+    <PageStructures.Footer 
+      footerLinksArray={[
+        {
+          title: "About",
+          url: "/"
+        },
+        {
+          title: "Accessibility",
+          url: "/"
+        },
+        {
+          title: "Cookies",
+          url: "/"
+        },
+        {
+          title: "Contact us",
+          url: "/"
+        },
+        {
+          title: "Jobs",
+          url: "/"
+        },
+        {
+          title: "Newsletter",
+          url: "/"
+        }
+      ]}
+    />
+  </>
+);

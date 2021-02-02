@@ -10,8 +10,10 @@ const SectionLinks: React.FC<SectionLinksProps> = ({
     pageLinksArray 
 }) => (
     <Styles.Container id={sectionSlug}>
-        {displayTitle && 
+        {displayTitle ?
             <Styles.SectionTitle text={sectionTitle} />
+            :
+            <br />
         }
         <Styles.LinksList>
             {pageLinksArray.map((link, i) =>
