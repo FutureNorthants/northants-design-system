@@ -11,6 +11,7 @@ export default {
 };
 
 const Template: Story<ButtonProps> = (args) => <SBPadding><CallToAction {...args} /></SBPadding>;
+const Template2: Story<ButtonProps> = (args) => <SBPadding><CallToAction {...args} /><CallToAction primary text="Second button" url="#" /></SBPadding>;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -36,6 +37,13 @@ Large.args = {
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
+  text: 'Button label',
+  url: "https://futurenorthantswest.org/"
+};
+
+export const MultipleBtns = Template2.bind({});
+MultipleBtns.args = {
+  primary: true,
   text: 'Button label',
   url: "https://futurenorthantswest.org/"
 };
