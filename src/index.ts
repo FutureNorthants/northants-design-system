@@ -1,7 +1,8 @@
 // Components
 import Heading from "./library/Components/Heading/Heading";
+import Pagination from "./library/Components/Pagination/Pagination";
 
-export { Heading };
+export { Heading, Pagination };
 
 
 // Slices
@@ -15,7 +16,7 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles };
 
 
 // Structure
-export { Breadcrumbs, Footer, Header, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
+export { Breadcrumbs, Footer, Header, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, Searchbar, SearchResultsList, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
 
 
 // Themes
