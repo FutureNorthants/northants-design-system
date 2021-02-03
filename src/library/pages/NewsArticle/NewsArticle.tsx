@@ -28,7 +28,7 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
         <Button primary={false} text="Schools &amp; education" url="#" />
         <NewsArticleDate text="15 January 2021" />
 
-        {withImage && <NewsArticleImage image1920x1080={withImage} image192x108={imagePlaceholder} />}
+        {withImage && <NewsArticleImage image1440x810={withImage} image144x81={imagePlaceholder} />}
 
         <p><strong>Pupils who are eligible for Free School Meals will receive support from Northamptonshire County Council during the February Half Term.</strong></p>
         <p>As stated in December, prior to the Christmas break, the council will use some of the funding it has received from the government’s COVID Winter Grant Scheme to offer help.</p>

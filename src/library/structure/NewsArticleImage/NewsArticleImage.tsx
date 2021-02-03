@@ -9,16 +9,16 @@ import LazyImage from "react-lazy-progressive-image"
  * Form element - hint text
  */
 const NewsArticleImage: React.FC<NewsArticleImageProps> = ({
-    image1920x1080,
-    image192x108,
+    image1440x810,
+    image144x81,
     imageAltText,
     imageCaption
   }) => {
     return (
       <Styles.ImageContainer>
         <LazyImage
-            src={image1920x1080}
-            placeholder={image192x108}
+            src={image1440x810}
+            placeholder={image144x81}
             visibilitySensorProps={{
                 partialVisibility: true
             }}

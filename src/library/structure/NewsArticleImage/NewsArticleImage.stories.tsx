@@ -14,20 +14,20 @@ const Template: Story<NewsArticleImageProps> = (args) => <SBPadding><MaxWidthCon
 
 export const Example = Template.bind({});
 Example.args = {
-  image1920x1080: "http://placehold.it/1920x1080",
-  image192x108: "http://placehold.it/192x108",
+  image1440x810: "http://placehold.it/1440x810",
+  image144x81: "http://placehold.it/144x81",
 };
 
 export const ExampleWithAlt = Template.bind({});
 ExampleWithAlt.args = {
-  image1920x1080: "http://placehold.it/1920x1080",
-  image192x108: "http://placehold.it/192x108",
+  image1440x810: "http://placehold.it/1440x810",
+  image144x81: "http://placehold.it/144x81",
   imageAltText: "This is the alt text"
 };
 
 export const ExampleWithCaption = Template.bind({});
 ExampleWithCaption.args = {
-  image1920x1080: "http://placehold.it/1920x1080",
-  image192x108: "http://placehold.it/192x108",
+  image1440x810: "http://placehold.it/1440x810",
+  image144x81: "http://placehold.it/144x81",
   imageCaption: "This is the caption"
 };

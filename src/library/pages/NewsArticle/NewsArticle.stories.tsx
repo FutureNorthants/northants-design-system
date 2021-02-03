@@ -13,8 +13,8 @@ export const ExampleNewsArticle = Template.bind({});
 
 export const ExampleNewsArticleWithImage = Template.bind({});    
 ExampleNewsArticleWithImage.args = {
-  withImage: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1920/1080/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg",
-  imagePlaceholder: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/192/108/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
+  withImage: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg",
+  imagePlaceholder: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/144/81/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
 }
 
 export const ExampleNewsArticleThatIsOld = Template.bind({});    
