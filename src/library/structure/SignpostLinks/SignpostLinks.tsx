@@ -30,7 +30,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
                     If your area isn't listed, you may be a resident of&nbsp;
                     <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.theme_vars.other_council_name}>
                         {themeContext.theme_vars.other_council_name}
-                    </Styles.SignpostLink>
+                    </Styles.SignpostLink>.
                 </Styles.LastParagraph>
             }
         </Styles.Container>
