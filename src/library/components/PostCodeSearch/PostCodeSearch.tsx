@@ -50,7 +50,11 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         // headers: { 'x-api-key': 'kBexTqkLpj6ZOkGUNguti58JijxQcGvf9tLqBWWh' }
       })
       .then((response) => {
-        setResponseData(response.data)
+        if (response.data.unitary) {
+          setResponseData(response.data)
+        } else {
+          handleError(true);
+        }
       })
       .catch((error) => {
         handleError(true);
@@ -58,7 +62,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
       })
     }
 
-    const handleError = (error, errorMsg = "There is an issue with the postcode you entered, if your property is new there may be a 6 week delay with new post codes.") => {
+    const handleError = (error, errorMsg = "There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay with new post codes.") => {
       setErrorText(errorMsg)
       setisError(error)
     }
