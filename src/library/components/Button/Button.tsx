@@ -17,10 +17,11 @@ const Button: React.FC<ButtonProps> = ({
     ...props
   }) => {
     const mode = primary ? 'button--primary' : 'button--secondary';
+    const href = (isDisabled) ? null : {href: url};
     return (
       <Styles.StyledButton
-        className={[`button--${size}`, mode].join(' ')}
-        href={isDisabled ? false : url}
+        className={[`button--${size}`, mode].join(' ')} 
+        {...href}
         title={"Go to " + text}
         {...props}
       >
