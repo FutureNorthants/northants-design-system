@@ -23,4 +23,8 @@ export interface ButtonProps {
    * Is the button disabled?
    */
   isDisabled?: boolean;
+  /**
+   * onClick
+   */
+  onClick?: Function;
 }
