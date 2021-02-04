@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = ({
 
     return(
         <Styles.Container>
-            <Styles.StyledMaxWidthContainer>
+            <Styles.StyledMaxWidthContainer noBackground>
                 {footerLinksArray &&
                     <Styles.FooterList>
                         {footerLinksArray.map((link) =>

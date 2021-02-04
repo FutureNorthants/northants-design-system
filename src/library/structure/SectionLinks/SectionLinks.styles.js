@@ -6,12 +6,13 @@ export const Container = styled.div`
 `
 
 export const SectionTitle = styled(Heading)`
-  background: ${props => props.theme.theme_vars.colours.grey_light};
+  background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.grey : props.theme.theme_vars.colours.grey_light};
   padding: 10px 15px;
   width: 100%;
   margin-left: -15px;
   margin-bottom: 15px;
   max-width: none !important;
+  border-radius: ${props => props.theme.theme_vars.border_radius};
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     margin-left: 0;

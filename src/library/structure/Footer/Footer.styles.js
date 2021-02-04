@@ -4,7 +4,6 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 export const Container = styled.footer`
   background-color: ${props => props.theme.theme_vars.colours.black};
   padding: 25px 0;
-  margin-top: 50px;
 `
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
   color: ${props => props.theme.theme_vars.colours.white};

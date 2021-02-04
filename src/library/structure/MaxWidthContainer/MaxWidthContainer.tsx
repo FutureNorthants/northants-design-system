@@ -9,14 +9,17 @@ import * as Styles from "./MaxWidthContainer.styles";
 const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   children,
   classes,
+  noBackground = false,
   ...props
 }) => (
-  <Styles.Container
-    className={classes}
-    data-testid="test-maxwidth"
-    {...props}
-  >
-    {children}
+  <Styles.Container noBackground={noBackground}>
+    <Styles.MaxWidth 
+      className={classes}
+      data-testid="test-maxwidth"
+      {...props}
+    >
+      {children}
+    </Styles.MaxWidth>
   </Styles.Container>
 );
 

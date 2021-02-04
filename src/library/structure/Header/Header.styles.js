@@ -3,10 +3,10 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export const Container = styled.header`
     font-family: ${props => props.theme.theme_vars.fontstack};
-    color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
-    background-color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.white
+    color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
+    background-color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.white
                         : props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.action};
-    border-bottom: ${props => props.isHomepage === "true" ? "5px solid "+(props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black 
+    border-bottom: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? "5px solid "+(props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black 
                         : props.theme.theme_vars.colours.action) : "none"};
     padding: 3px 0;
 `
@@ -24,7 +24,7 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
 
 const LogoStyles = `
     svg {
-        width: 200px;
+        width: 240px;
         height: auto;
         vertical-align: middle;
     }
@@ -62,14 +62,14 @@ export const HomeLink = styled.a`
 
 export const AllServicesLink = styled.a`
     ${props => props.theme.linkStyles};
-    color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
+    color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
     padding: 0 ${props => props.theme.theme_vars.spacingSizes.small};
     vertical-align: middle;
 
     &:hover {
         ${props => props.theme.linkStylesHover};
-        color: ${props => props.isHomepage === "true" ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.white};
-        opacity: ${props => props.isHomepage === "true" ? "1" : "0.8"};
+        color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.white};
+        opacity: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? "1" : "0.8"};
     }
     &:focus {
         ${props => props.theme.linkStylesFocus};

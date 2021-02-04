@@ -6,13 +6,11 @@ import { ThemeContext } from 'styled-components';
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
 import GDSWhite from "./assets/gds_white";
-import NorthWhite from "./assets/north_white";
 import WestWhite from "./assets/west_white";
 import GDSColoured from "./assets/gds_coloured";
 import NorthColoured from "./assets/north_coloured";
 import WestColoured from "./assets/west_coloured";
 import { SkipToMainContent } from "../PageStructures";
-import { PhaseBanner } from "../PageStructures";
 import Searchbar from "../Searchbar/Searchbar";
 
 /**
@@ -34,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
         isHomepage={isHomepage ? "true" : "false"}
         {...props}
       >
-        <Styles.StyledMaxWidthContainer>
+        <Styles.StyledMaxWidthContainer noBackground>
           <Styles.LogoWrapper>
             <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
               {isHomepage ? 
@@ -43,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({
                 </Styles.LogoColoured>   
                 :
                 <Styles.LogoWhite>
-                  {themeContext.cardinal_name === "north" ? <NorthWhite /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
+                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
                 </Styles.LogoWhite>
               }
             </Styles.HomeLink>
@@ -55,13 +53,12 @@ const Header: React.FC<HeaderProps> = ({
           }
           {!isHomepage &&
             <Styles.SearchWrapper>
-                <Searchbar />
+                <Searchbar isLight={themeContext.cardinal_name === "north" ? true : false} />
             </Styles.SearchWrapper>
           }
 
         </Styles.StyledMaxWidthContainer>
       </Styles.Container>
-      <PhaseBanner />
     </>
 )};
 

@@ -1,5 +1,3 @@
-import {SignpostLinkProp} from '../SignpostLinksList/SignpostLinksList.types'
-
 export interface SignpostLinksProps {
     /**
      * Optional override for the top line of text
@@ -14,3 +12,18 @@ export interface SignpostLinksProps {
      */
     otherCouncilLink?: string;
 }
+
+export interface SignpostLinkProp {
+    /**
+    * The number that represents the local area - based on the list of all local areas in alphabetical order
+    */
+    sovereignCode: number;
+    /**
+    * The name of the local area
+    */
+    areaName: string;
+    /**
+    * URL of this service on the local area's website
+    */
+    url: string;
+  }

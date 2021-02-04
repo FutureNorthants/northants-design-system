@@ -12,6 +12,7 @@ export const SignpostPageExample: React.FC<SignpostPageExampleProps> = ({ signpo
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
+      <PageStructures.PhaseBanner />
       <PageStructures.Breadcrumbs 
         breadcrumbsArray={[
           {
