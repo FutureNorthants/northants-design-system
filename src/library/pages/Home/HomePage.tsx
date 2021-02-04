@@ -10,10 +10,10 @@ export interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({  }) => (
   <>
   <PageStructures.CookieBanner 
-  title="Tell us whether you accept cookies"
-  paragraph={<p>We use <a href="#">cookies to collect information</a> about how you use GOV.UK. We use this information to make the website work as well as possible and improve government services.</p>}
-  acceptButtonText="Accept all cookies"
-  rejectButtonText= "Reject all cookies"
+  title="We use cookies on this site to enhance your user experience"
+  paragraph={<p>By clicking the Accept button, you agree to us doing so. <a href="#">More info on our cookie policy</a></p>}
+  acceptButtonText="Accept cookies policy"
+  rejectButtonText= "No, thanks"
   acceptCallback={() => {
     console.log('loading trackers');
     var tag = document.createElement("script");
