@@ -17,7 +17,7 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles };
 
 
 // Structure
-export { Breadcrumbs, Footer, Header, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, Searchbar, SearchResultsList, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
+export { Breadcrumbs, CookieBanner, Footer, Header, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, Searchbar, SearchResultsList, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
 
 
 // Themes
