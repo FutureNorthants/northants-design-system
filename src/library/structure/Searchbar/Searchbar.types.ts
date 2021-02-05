@@ -16,4 +16,32 @@ export interface SearchbarProps {
      * The searched for term
      */
     searchTerm?: string;
+    /**
+     * 
+     */
+    submitInfo: Array<SubmitInfoProps>;
 }
+
+export interface SubmitInfoProps {
+  /**
+   * where we're posting the form to eg /search or /news
+   */
+  postTo: string;
+  /**
+   * combined
+   */
+  params: object;
+}
+
+
+export interface ParamsProps {
+    /**
+     * where we're posting the form to eg /search or /news
+     */
+    key: string;
+    /**
+     * Link to page
+     */
+    value: string;
+  }
+  

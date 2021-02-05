@@ -10,28 +10,51 @@ export default {
     component: Searchbar
 };
 
+const submitInfo = [{
+    postTo: "/search",
+    params: {
+        type: "search"
+    }
+}]
+
+
 const Template: Story<SearchbarProps> = (args) => <SBPadding><Searchbar {...args} /></SBPadding>;
 
 export const ExampleSearchbarDefaultNorth = Template.bind({});    
 ExampleSearchbarDefaultNorth.parameters = {
     backgrounds: { default: 'north' }
 };
-
+ExampleSearchbarDefaultNorth.args = {
+    submitInfo
+}
 
 export const ExampleSearchbarDefaultWest = Template.bind({});    
 ExampleSearchbarDefaultWest.parameters = {
     backgrounds: { default: 'west' }
 };
+ExampleSearchbarDefaultWest.args = {
+    submitInfo
+}
 
 
 export const ExampleSearchbarWhiteBackground = Template.bind({});    
 ExampleSearchbarWhiteBackground.args = {
-    isLight: true
+    isLight: true,
+    submitInfo
 };
 
 
 export const ExampleSearchPage = Template.bind({});    
 ExampleSearchPage.args = {
     isLight: true,
-    isLarge: true
+    isLarge: true,
+    submitInfo
+};
+
+export const ExampleSearchPageWithTerm = Template.bind({});    
+ExampleSearchPageWithTerm.args = {
+    isLight: true,
+    isLarge: true,
+    searchTerm: "council tax",
+    submitInfo
 };

@@ -93,7 +93,13 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
     />
       <PageStructures.PageMain>
         <Heading level={1} text="Search results" />
-        <Searchbar isLight={true} isLarge={true} searchTerm="council tax" />
+        <Searchbar isLight={true} isLarge={true} searchTerm="council tax" submitInfo={[{
+            postTo: "/search",
+            params: {
+                type: "search",
+                searchTerm: "council tax"
+            }
+        }]} />
 
         {results ?
         <SearchResultsList results={SearchResultsListData.results} searchTerm={SearchResultsListData.searchTerm} />

@@ -11,6 +11,7 @@ export default {
 
 const Template: Story<SearchResultsPageExampleProps> = (args) => <SearchResultsPageExample {...args} />;
 
+
 export const SearchResultsExample = Template.bind({});
 SearchResultsExample.args = {
   results: true
