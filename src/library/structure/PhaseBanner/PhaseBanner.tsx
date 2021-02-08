@@ -10,7 +10,9 @@ const PhaseBanner: React.FC<PhaseBannerProps> = () => {
     
     return(
         <Styles.StyledMaxWidthContainer>
-            <Styles.Phase>BETA</Styles.Phase> 
+            <Styles.PhaseContainer>
+                <Styles.Phase>BETA</Styles.Phase> 
+            </Styles.PhaseContainer>
             <Styles.PhaseText>
                 This website is in development, launching on 1 April 2021 - your&nbsp;
                 <a href={

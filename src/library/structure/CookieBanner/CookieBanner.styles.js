@@ -10,7 +10,7 @@ export const Container = styled.div`
 `
 
 export const CookieMessage = styled.div`
-      margin-right: 15px;
+    margin-right: 15px;
     margin-left: 15px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
@@ -46,14 +46,32 @@ export const CookieParagraph = styled.div`
         }
     }
 `
+export const ButtonsContainer = styled.div`
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: left;
 
-export const AcceptButton = styled.span`
-  display: inline-block;
-  margin: 0 10px 0 0;
+  .button--primary {
+    margin-right: 10px;
+    line-height: 1.3;
+
+    &:last-of-type {
+      margin-right: 0;
+      line-height: 36px;
+    }
+  }
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    display: block;
+
+    .button--primary {
+      &:last-of-type {
+        line-height: 1.3;
+
+      }
+    }
+  }
 `
-
-export const RejectButton = styled.span`
-  display: inline-block;
-  margin: 0 10px;
-`
-

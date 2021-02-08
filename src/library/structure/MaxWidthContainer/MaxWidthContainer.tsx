@@ -15,7 +15,6 @@ const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   <Styles.Container noBackground={noBackground}>
     <Styles.MaxWidth 
       className={classes}
-      data-testid="test-maxwidth"
       {...props}
     >
       {children}

@@ -87,12 +87,10 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
                 <Styles.CookieMessage>
                     <Styles.CookieHeading>{title}</Styles.CookieHeading>
                     <Styles.CookieParagraph>{paragraph}</Styles.CookieParagraph>
-                    <Styles.AcceptButton>
+                    <Styles.ButtonsContainer>
                         <Button primary={true} text={acceptButtonText} url="#" isDisabled={true} onClick={acceptCookies} />
-                    </Styles.AcceptButton>
-                    <Styles.RejectButton>
                         <Button primary={true} text={rejectButtonText} url="#" isDisabled={true} onClick={rejectCookies} />
-                    </Styles.RejectButton>
+                    </Styles.ButtonsContainer>
                 </Styles.CookieMessage>
             </Styles.Container>
         );

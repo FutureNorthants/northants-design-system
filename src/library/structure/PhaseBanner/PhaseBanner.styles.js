@@ -5,6 +5,12 @@ export const StyledMaxWidthContainer = styled.div`
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey}80;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: left;
 
     font-family: ${props => props.theme.theme_vars.fontstack};
     color: ${props => props.theme.theme_vars.colours.black};
@@ -25,7 +31,7 @@ export const StyledMaxWidthContainer = styled.div`
             ${props => props.theme.linkStylesActive}
         }
     }
-        
+
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 19px;
         font-size: 1.1875rem;
@@ -39,25 +45,33 @@ export const StyledMaxWidthContainer = styled.div`
 
 export const PhaseText = styled.span`
     vertical-align: middle;
-    margin-top: 5px;
+    padding: 5px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-        margin-top: 0;
+
+    }
+`
+
+export const PhaseContainer = styled.div`
+    padding: 5px 0;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        padding: 0;
     }
 `
 
 export const Phase = styled.div`
     font-weight: bold;
     padding: 5px 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     background: ${props => props.theme.theme_vars.colours.action}1A;
     float: left;
-    margin-top: -3px;
+    vertical-align: middle;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         display: inline-block;
         float: none;
-        margin-right: 15px;
+        margin-right: 10px;
         margin-top: 0px;
         vertical-align: middle;
     }
