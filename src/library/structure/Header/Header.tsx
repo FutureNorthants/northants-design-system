@@ -53,7 +53,15 @@ const Header: React.FC<HeaderProps> = ({
           }
           {!isHomepage &&
             <Styles.SearchWrapper>
-                <Searchbar isLight={themeContext.cardinal_name === "north" ? true : false} />
+                <Searchbar 
+                  isLight={themeContext.cardinal_name === "north" ? true : false} 
+                  submitInfo={[{
+                    postTo: "/search",
+                    params: {
+                        type: "search"
+                    }
+                  }]}
+                />
             </Styles.SearchWrapper>
           }
 
