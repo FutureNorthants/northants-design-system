@@ -15,27 +15,23 @@ const Template: Story<FormButtonProps> = (args) => <SBPadding><FormButton {...ar
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  text: 'FormButton label',
-  url: "https://futurenorthantswest.org/"
+  text: 'FormButton label'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   primary: false,
-  text: 'FormButton label',
-  url: "https://futurenorthantswest.org/"
+  text: 'FormButton label'
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
-  text: 'FormButton label',
-  url: "https://futurenorthantswest.org/"
+  text: 'FormButton label'
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
-  text: 'FormButton label',
-  url: "https://futurenorthantswest.org/"
+  text: 'FormButton label'
 };

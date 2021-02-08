@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 
 import { CookieBannerProps } from "./CookieBanner.types";
 import * as Styles from "./CookieBanner.styles";
-import Button from "./../../components/Button/Button"
+import FormButton from "./../../components/FormButton/FormButton"
 
 import {cookieName, getCookie} from './CookieHelpers';
 
@@ -88,8 +88,8 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
                     <Styles.CookieHeading>{title}</Styles.CookieHeading>
                     <Styles.CookieParagraph>{paragraph}</Styles.CookieParagraph>
                     <Styles.ButtonsContainer>
-                        <Button primary={true} text={acceptButtonText} url="#" isDisabled={true} onClick={acceptCookies} />
-                        <Button primary={true} text={rejectButtonText} url="#" isDisabled={true} onClick={rejectCookies} />
+                        <FormButton primary={true} text={acceptButtonText} isDisabled={true} onClick={acceptCookies} />
+                        <FormButton primary={true} text={rejectButtonText} isDisabled={true} onClick={rejectCookies} />
                     </Styles.ButtonsContainer>
                 </Styles.CookieMessage>
             </Styles.Container>

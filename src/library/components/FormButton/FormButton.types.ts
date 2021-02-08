@@ -19,4 +19,8 @@ export interface FormButtonProps {
    * Is the button disabled?
    */
   isDisabled?: boolean;
+  /**
+   * Is the button disabled?
+   */
+  onClick?: React.ReactNode;
 }
