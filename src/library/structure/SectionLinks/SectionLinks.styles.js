@@ -59,7 +59,7 @@ export const Pagelink = styled.a`
   }
 
   &:hover, &:focus {
-    background: ${props => props.theme.theme_vars.colours.grey_light};
+    background: ${props => props.theme.cardinal_name === "north" ? (props.theme.theme_vars.colours.grey+"7a") : props.theme.theme_vars.colours.grey_light};
 
     p:first-of-type {
       color: ${props => props.theme.theme_vars.colours.action_dark};
