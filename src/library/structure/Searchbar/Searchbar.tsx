@@ -12,8 +12,6 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     classes += (isLight) ? " is-light" : "";
     classes += (isLarge) ? " is-large" : "";
 
-    
-    
   const {postTo, params} = (submitInfo !== undefined && submitInfo.length > 1) ? submitInfo[0] : { postTo: '', params: {}};
 
   const encodeParams = (params) => {
@@ -31,8 +29,6 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     let queryString = '';
     let submitParams = params;
 
-    console.log(submitParams)
-
     if(inputs.searchTerm !== searchTerm || !('searchTerm' in submitParams)) {
       submitParams = {...submitParams, searchTerm: inputs.searchTerm}
     }
@@ -42,8 +38,8 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     }
 
 
-    console.log(`${postTo}${queryString}`)
-    // window.location.href = `${postTo}${queryString}`;
+    // console.log(`${postTo}${queryString}`)
+    window.location.href = `${postTo}${queryString}`;
   }
 
   const handleInputChange = (event) => {
@@ -60,7 +56,7 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
                     <Styles.Label htmlFor="search">{placeholder ? placeholder : 'Search'}</Styles.Label>
                     <Styles.InputWrapper>
                         {/* @TODO you cant update the value here */}
-                        <Styles.Input id="search" type="text" name="searchTerm" placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm}  />
+                        <Styles.Input id="search" type="text" name="searchTerm" placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} required />
                         <Styles.Button type="submit" value="Search">
                             <SearchIcon colourFill="#fff" />
                             <Styles.ButtonText>Search</Styles.ButtonText>
