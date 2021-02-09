@@ -58,6 +58,7 @@ export const ButtonsContainer = styled.div`
   .button--primary {
     margin-right: 10px;
     line-height: 1.3;
+    width: 50%;
 
     &:last-of-type {
       margin-right: 0;
@@ -69,6 +70,7 @@ export const ButtonsContainer = styled.div`
     display: block;
 
     .button--primary {
+      width: auto;
       &:last-of-type {
         line-height: 1.3;
 
