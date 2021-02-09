@@ -12,7 +12,7 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     classes += (isLight) ? " is-light" : "";
     classes += (isLarge) ? " is-large" : "";
 
-  const {postTo, params} = (submitInfo !== undefined && submitInfo.length > 1) ? submitInfo[0] : { postTo: '', params: {}};
+  const {postTo, params} = submitInfo[0];
 
   const encodeParams = (params) => {
     return Object.keys(params).map(function(key) {
@@ -20,7 +20,7 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     }).join('&');
   }
 
-  const initialValues = {searchTerm: searchTerm}
+  const initialValues = {searchTerm: (searchTerm === undefined) ? "" : searchTerm}
 
 
   const [inputs, setInputs] = useState(initialValues);
@@ -46,8 +46,6 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     event.persist();
     setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
   }
-
-
 
     return (
         <Styles.Container data-testid="Searchbar" className={classes}>
