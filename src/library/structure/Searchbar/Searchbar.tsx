@@ -55,7 +55,6 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
                 <Styles.Search role="search">
                     <Styles.Label htmlFor="search">{placeholder ? placeholder : 'Search'}</Styles.Label>
                     <Styles.InputWrapper>
-                        {/* @TODO you cant update the value here */}
                         <Styles.Input id="search" type="text" name="searchTerm" placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} required />
                         <Styles.Button type="submit" value="Search">
                             <SearchIcon colourFill="#fff" />
