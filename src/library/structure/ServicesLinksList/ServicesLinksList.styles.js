@@ -31,7 +31,6 @@ export const PagelinkBlank = styled.div`
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     display: block;
-    padding: 15px;
     width: calc(33.333% - 21px);
     margin-bottom: 31px;
   }
