@@ -4,6 +4,7 @@ export const Container = styled.div`
   ${props => props.theme.fontStyles}
   background-color: ${props => props.theme.theme_vars.colours.grey_light};
   padding: ${props => props.theme.theme_vars.spacingSizes.medium} 0;
+  padding-bottom: 25px;
   width: 100%;
   display: block;
   box-sizing: border-box;
