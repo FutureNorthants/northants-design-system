@@ -5,16 +5,45 @@ export const Container = styled.div`
   display: block;
   border-top: 1px solid ${props => props.theme.theme_vars.colours.grey};
   padding-top: ${props => props.theme.theme_vars.spacingSizes.small};
-  
 `
 
-export const Previous = styled.a`
-  ${props => props.theme.linkStyles};
-  display: inline-block;
+const resetButtonStyles = `
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 15px;
 `
 
-export const Next = styled.a`
-  ${props => props.theme.linkStyles};
+export const Previous = styled.button`
+  ${resetButtonStyles}
+  ${props => props.theme.fontStyles}
+  ${props => props.theme.linkStyles}
+
+  &:hover {
+    ${props => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${props => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${props => props.theme.linkStylesActive}
+  }
+`
+
+export const Next = styled.button`
+  ${resetButtonStyles}
+  ${props => props.theme.fontStyles}
+  ${props => props.theme.linkStyles}
+
+  &:hover {
+    ${props => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${props => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${props => props.theme.linkStylesActive}
+  }
 `
 
 export const NumbersContainer = styled.ul`
@@ -33,21 +62,24 @@ export const NumberContainer = styled.li`
 `
 
 
-export const Number = styled.a`
-  ${props => props.theme.linkStyles};
-  text-decoration: ${props => props.isCurrent ? 'none' : 'underline'};
-  font-weight: ${props => props.isCurrent ? 'normal' : '700'};
-  padding: ${props => props.theme.theme_vars.spacingSizes.small};
+export const Number = styled.button`
+  ${resetButtonStyles}
+  padding: 8px 12px;
+  ${props => props.theme.fontStyles}
+  ${props => props.theme.linkStyles}
 
-   &:focus {
-      outline: none;
-      color: ${props => props.theme.theme_vars.colours.black} !important;
-      background-color: ${props => props.theme.theme_vars.colours.focus};
-      box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -3px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
+  &:hover {
+    ${props => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${props => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${props => props.theme.linkStylesActive}
   }
 
+  text-decoration: ${props => props.isCurrent ? 'none' : 'underline'};
+  font-weight: ${props => props.isCurrent ? 'normal' : '700'};
 `
 
 export const VisuallyHidden = styled.span`
