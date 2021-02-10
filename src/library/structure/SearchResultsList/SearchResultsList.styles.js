@@ -17,7 +17,7 @@ export const Result = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.a`
   ${props => props.theme.linkStyles};
   font-size: 1.2em;
   margin: ${props => props.theme.theme_vars.spacingSizes.small} 0;
