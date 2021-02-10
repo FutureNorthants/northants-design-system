@@ -40,7 +40,7 @@ export const north_vars = {
         small: "10px",
         medium: "20px",
         large: "30px",
-        x_large: "40px;"
+        x_large: "45px;"
     },
     h1: `
         font-size: 32px;

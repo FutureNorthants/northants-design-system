@@ -29,7 +29,7 @@ export const ServiceArea = styled.p`
   font-size: 0.8rem;
   line-height: 1.3;
   color: ${props => props.theme.theme_vars.colours.grey_dark};
-  margin-bottom: 3px;
+  margin-bottom: 3px !important;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     font-size: 16px;
@@ -46,6 +46,10 @@ export const SignpostContainer = styled.div`
   font-size: 14px;
   font-size: 0.8rem;
   line-height: 1.3;
+
+  p {
+    margin-bottom: 10px !important;
+  }
 
   ul {
     margin-top: 8px !important;
