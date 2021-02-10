@@ -74,7 +74,7 @@ export const Body = styled.div`
   }
 `
 
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.p`
   margin: ${props => props.theme.theme_vars.spacingSizes.extra_small} 0;
   padding: ${props => props.theme.theme_vars.spacingSizes.small};
   font-weight: bold;

@@ -36,6 +36,7 @@ export const InputWrapper = styled.div`
   width: auto;
   border: 3px solid transparent;
   border-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
+  max-width: 750px;
 
   &:focus {
     outline: none;
@@ -67,7 +68,7 @@ export const Input = styled.input`
   }
 
   .is-large & { 
-    padding: ${props => props.theme.theme_vars.spacingSizes.medium};
+    padding: 10px 15px;
   }
 `
 
@@ -95,7 +96,8 @@ export const Button = styled.button`
   }
 
   .is-large & { 
-    padding: ${props => props.theme.theme_vars.spacingSizes.medium};
+    padding: 10px 15px;
+    padding-top: 12px;
   }
 
   &:focus {
