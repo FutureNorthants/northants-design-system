@@ -27,10 +27,14 @@ const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, resul
                 {results.map((result,i) => 
                     
                     <Styles.Result key={i}>
+                        {result.service && <Styles.ServiceArea>{result.service}</Styles.ServiceArea>}
                         <Styles.Title href={result.link}>{result.title}</Styles.Title>
                         <Styles.Summary>{result.summary}</Styles.Summary>
                         {result.signpostLinksArray &&
-                            <SignpostLinksList signpostLinksArray={result.signpostLinksArray} />
+                            <Styles.SignpostContainer>
+                                <p>Select your local area for information:</p>
+                                <SignpostLinksList signpostLinksArray={result.signpostLinksArray} />
+                            </Styles.SignpostContainer>
                         }
                     </Styles.Result>
                     

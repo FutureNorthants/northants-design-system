@@ -37,7 +37,8 @@ export const gds_vars = {
         extra_small: "5px",
         small: "10px",
         medium: "20px",
-        large: "30px"
+        large: "30px",
+        x_large: "40px;"
     },
     h1: `
         font-size: 32px;

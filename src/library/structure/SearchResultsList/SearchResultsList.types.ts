@@ -28,5 +28,9 @@ export interface SearchResultProps {
    * If it contains signposting links include them here
    */
   signpostLinksArray?: Array<SignpostLinkProp>;
+  /**
+   * If there is a service area tied to the result
+   */
+  service: string;
 }
 

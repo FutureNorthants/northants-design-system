@@ -89,3 +89,56 @@ ExampleNoSearchResultsList.args = {
   searchTerm: "Council tax",
   results: []
 }
+
+
+export const ExampleSearchResultsListWithServiceArea = Template.bind({});    
+ExampleSearchResultsListWithServiceArea.args = {
+  searchTerm: "Council tax",
+  results: [
+    {
+      service: "Council tax",
+      title: "Council tax",
+      link: "/council-tax",
+      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
+    },
+    {
+      service: "Council tax",
+      title: "Paying council tax",
+      link: "/",
+      summary: "Pay your council tax online",
+      signpostLinksArray: [
+        {
+          sovereignCode: 1,
+          areaName: "Corby",
+          url: "/"
+      },
+      {
+          sovereignCode: 3,
+          areaName: "East Northamptonshire",
+          url: "/"
+      },
+      {
+          sovereignCode: 4,
+          areaName: "Kettering",
+          url: "/"
+      },
+      {
+          sovereignCode: 7,
+          areaName: "Wellingborough",
+          url: "/"
+      }
+    ]
+    },
+    {
+      service: "Bins, recycling and waste",
+      title: "Council tax not same area",
+      link: "/council-tax",
+      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
+    },
+    {
+      title: "Council tax without service area",
+      link: "/council-tax",
+      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
+    }
+]
+};
