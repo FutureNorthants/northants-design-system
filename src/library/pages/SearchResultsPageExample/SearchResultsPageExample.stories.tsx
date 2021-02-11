@@ -14,10 +14,17 @@ const Template: Story<SearchResultsPageExampleProps> = (args) => <SearchResultsP
 
 export const SearchResultsExample = Template.bind({});
 SearchResultsExample.args = {
-  results: true
+  results: true,
+  pageNumber: 1
 }
 
 export const SearchNoResultsExample = Template.bind({});
 SearchNoResultsExample.args = {
   results: false
+}
+
+export const SearchLotsOfResultsExample = Template.bind({});
+SearchLotsOfResultsExample.args = {
+  results: true,
+  pageNumber: 3
 }

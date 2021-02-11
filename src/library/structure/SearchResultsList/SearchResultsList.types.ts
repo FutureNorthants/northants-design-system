@@ -8,6 +8,10 @@ export interface SearchResultsListProps {
    * Array of results
    */
   results: Array<SearchResultProps>;
+  /**
+   * The current page number
+   */
+  pageNumber?: number;
 }
 
 
