@@ -9,6 +9,10 @@ export interface SearchResultsListProps {
    */
   results: Array<SearchResultProps>;
   /**
+   * The total number of results
+   */
+  totalResults?: number;
+  /**
    * The current page number
    */
   pageNumber?: number;

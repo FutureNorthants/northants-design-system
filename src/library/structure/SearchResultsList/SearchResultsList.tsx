@@ -5,9 +5,7 @@ import { SearchResultsListProps } from "./SearchResultsList.types";
 import * as Styles from "./SearchResultsList.styles";
 import SignpostLinksList from "../../components/SignpostLinksList/SignpostLinksList";
 
-const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, results, pageNumber = 0 }) => {
-
-    const totalResults = results.length;
+const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, results, totalResults = 0, pageNumber = 0 }) => {
 
     if(totalResults === 0) {
         return (
@@ -22,7 +20,7 @@ const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, resul
             <Styles.Container data-testid="SearchResultsList">
 
 
-                <Styles.ResultInfo>{pageNumber > 1 && ("Page " + pageNumber + " of ")}{totalResults} results for '{searchTerm}'</Styles.ResultInfo>
+                <Styles.ResultInfo>{pageNumber > 1 && ("Page " + pageNumber + " of ")}{totalResults} total results for '{searchTerm}'</Styles.ResultInfo>
                 
                 {results.map((result,i) => 
                     

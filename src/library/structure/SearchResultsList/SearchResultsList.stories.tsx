@@ -16,6 +16,7 @@ export const ExampleSearchResultsList = Template.bind({});
 ExampleSearchResultsList.args = {
   searchTerm: "Council tax",
   pageNumber: 1,
+  totalResults: 23,
   results: [
     {
       title: "Council tax",
@@ -95,6 +96,7 @@ ExampleNoSearchResultsList.args = {
 export const ExampleSearchResultsListWithServiceArea = Template.bind({});    
 ExampleSearchResultsListWithServiceArea.args = {
   searchTerm: "Council tax",
+  totalResults: 23,
   results: [
     {
       service: "Council tax",
@@ -147,6 +149,7 @@ ExampleSearchResultsListWithServiceArea.args = {
 export const ExampleSearchResultsListNextPage = Template.bind({});    
 ExampleSearchResultsListNextPage.args = {
   searchTerm: "Council tax",
+  totalResults: 58,
   pageNumber: 3,
   results: [
     {
