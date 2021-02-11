@@ -47,7 +47,7 @@ export const Next = styled.button`
 `
 
 export const NumbersContainer = styled.ul`
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   display: inline-block;
   list-style: none;
@@ -55,6 +55,7 @@ export const NumbersContainer = styled.ul`
 
 export const NumberContainer = styled.li`
   display: inline-block;
+  padding-left: 0 !important;
 
   &:before {
     display: none;
