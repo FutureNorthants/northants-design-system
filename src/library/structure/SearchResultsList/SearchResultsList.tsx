@@ -20,7 +20,7 @@ const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, resul
             <Styles.Container data-testid="SearchResultsList">
 
 
-                <Styles.ResultInfo>{pageNumber > 1 && ("Page " + pageNumber + " of ")}{totalResults} total results for '{searchTerm}'</Styles.ResultInfo>
+                <Styles.ResultInfo>{(pageNumber+1) > 1 && ("Page " + (pageNumber+1) + " of ")}{totalResults} total results for '{searchTerm}'</Styles.ResultInfo>
                 
                 {results.map((result,i) => 
                     
