@@ -3,6 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { SearchResultsPageExample, SearchResultsPageExampleProps } from './SearchResultsPageExample';
+import { isExpressionWithTypeArguments } from 'typescript';
 
 export default {
   title: 'Page Examples/Search Results Page Examples',
@@ -14,17 +15,10 @@ const Template: Story<SearchResultsPageExampleProps> = (args) => <SearchResultsP
 
 export const SearchResultsExample = Template.bind({});
 SearchResultsExample.args = {
-  results: true,
-  pageNumber: 1
+  results: true
 }
 
 export const SearchNoResultsExample = Template.bind({});
 SearchNoResultsExample.args = {
   results: false
-}
-
-export const SearchLotsOfResultsExample = Template.bind({});
-SearchLotsOfResultsExample.args = {
-  results: true,
-  pageNumber: 3
 }

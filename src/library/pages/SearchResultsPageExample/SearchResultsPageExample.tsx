@@ -6,7 +6,7 @@ import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
 import {SignpostLinkProp} from '../../components/SignpostLinksList/SignpostLinksList.types'
 
-interface SearchResultsPageExampleProps {
+export interface SearchResultsPageExampleProps {
   results: Array<SearchResultProps>
 }
 interface SearchResultProps {
@@ -37,11 +37,13 @@ const SearchResultsListData = {
   searchTerm: "Council tax",
   results: [
     {
+      service: "Council tax",
       title: "Council tax",
       link: "/council-tax",
       summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
     },
     {
+      service: "Council tax",
       title: "Paying council tax",
       link: "/",
       summary: "Pay your council tax online",
@@ -69,16 +71,19 @@ const SearchResultsListData = {
     ]
     },
     {
+      service: "Council tax",
       title: "Council tax",
       link: "/council-tax",
       summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
     },
     {
+      service: "Council tax",
       title: "Council tax",
       link: "/council-tax",
       summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
     },
     {
+      service: "Council tax",
       title: "Paying council tax",
       link: "/",
       summary: "Pay your council tax online",
@@ -100,7 +105,8 @@ const SearchResultsListData = {
       }
     ]
     },
-]
+],
+pageNumber: 0
 }
 
 export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
@@ -126,7 +132,7 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
         }]} />
 
         {results ?
-        <SearchResultsList results={SearchResultsListData.results} searchTerm={SearchResultsListData.searchTerm} />
+        <SearchResultsList results={SearchResultsListData.results} searchTerm={SearchResultsListData.searchTerm} pageNumber={SearchResultsListData.pageNumber} />
         :
         <SearchResultsList results={[]} searchTerm={SearchResultsListData.searchTerm} />
         }
