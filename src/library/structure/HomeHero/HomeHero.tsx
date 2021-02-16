@@ -42,6 +42,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
             <Styles.StyledMaxWidthContainer>
               <Styles.MainBox>
                 <Styles.Topline>{topline}</Styles.Topline>
+                <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
                 <Styles.LogoColoured>
                   {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
                 </Styles.LogoColoured>   

@@ -32,6 +32,9 @@ export const StyledMaxWidthContainer = styled.div`
         max-width: ${props => props.theme.theme_vars.breakpoints.l};
     }
 `
+export const HiddenH1 = styled.h1`
+    visibility: hidden;
+`
 
 export const MainBox = styled.div`
     margin-bottom: 60px;
@@ -55,7 +58,7 @@ export const Topline = styled.p`
 
 export const LogoColoured = styled.div`
     svg {
-        margin-top: -10px;
+        margin-top: -35px;
         max-width: 450px;
         width: 95%;
         height: auto;
