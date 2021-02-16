@@ -34,7 +34,6 @@ export const InputWrapper = styled.div`
   /* justify-content: flex-start; */
   position: relative;
   width: auto;
-  border: 3px solid transparent;
   border-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   max-width: 750px;
 
@@ -50,14 +49,16 @@ export const Input = styled.input`
   margin: 0;
   padding: 5px ${props => props.theme.theme_vars.spacingSizes.small};
   background: ${props => props.theme.theme_vars.colours.white};
-  border: 3px solid transparent;  
   border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   border-bottom-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
 
   &:focus {
     outline: none;
-    border: 3px solid ${props => props.theme.theme_vars.colours.focus};
+    border: 1px solid ${props => props.theme.theme_vars.colours.focus} !important;
+    box-shadow: 0px 0px 0px 2px ${props => props.theme.theme_vars.colours.focus};
+    -webkit-box-shadow: 0px 0px 0px 2px ${props => props.theme.theme_vars.colours.focus};
+    -moz-box-shadow: 0px 0px 0px 2px ${props => props.theme.theme_vars.colours.focus};
   }
 
   .is-light & {

@@ -55,15 +55,43 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
 
     }}
   />
-  <PageStructures.Header isHomepage />
+  <PageStructures.HomeHero 
+    promotedLinksArray={[
+        {
+            title: "Make a payment",
+            url: "/"
+        },
+        {
+            title: "Contact the council",
+            url: "/"
+        },
+        {
+            title: "About our new website",
+            url: "/"
+        }
+    ]}
+    imagesArray={[
+        {
+            image1440x810: "http://placehold.it/1440x810",
+            image144x81: "http://placehold.it/144x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1340x810",
+            image144x81: "http://placehold.it/134x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1240x810",
+            image144x81: "http://placehold.it/124x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1140x810",
+            image144x81: "http://placehold.it/114x81"
+        }
+    ]}
+  />
+
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
-        <Heading level={1} text="Home page" />
-
-        <p>This is where the example home page would go - combining components to create an example of a total page together</p>
-
-        <PageStructures.Searchbar isLarge isLight submitInfo={submitInfo} />
-
         <PageStructures.ServicesLinksList 
           serviceLinksArray={[
             {

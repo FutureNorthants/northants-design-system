@@ -3,7 +3,7 @@ import React from "react";
 
 import { NewsArticleImageProps } from "./NewsArticleImage.types";
 import * as Styles from "./NewsArticleImage.styles";
-import LazyImage from "react-lazy-progressive-image"
+import LazyImage from "react-lazy-progressive-image";
 
 /**
  * Form element - hint text
