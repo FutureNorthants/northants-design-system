@@ -169,13 +169,31 @@ export const IconWrapper = styled.div`
     vertical-align: middle;
 `
 
+export const HomeTitle = styled.div`  
+  margin-bottom: 15px;
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_dark};
+    margin-bottom: 25px;
+    
+    h2 {
+      margin-top: 30px;
+    }
+  }
+`
+
+
 export const ReorderControl = styled.div`
-  margin-top: 15px;
   margin-bottom: 10px;
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     text-align: right;
-    margin-top: 0;
-    margin-bottom: 25px;
   }
 `
 export const ReorderButton = styled.button`

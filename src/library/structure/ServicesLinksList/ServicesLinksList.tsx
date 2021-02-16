@@ -3,14 +3,15 @@ import React, { useState } from "react";
 import { ServicesLinksListProps } from "./ServicesLinksList.types";
 import * as Styles from "./ServicesLinksList.styles";
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
+import Heading from "../../components/Heading/Heading";
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
     serviceLinksArray
 }) => { 
     const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
-    const [open, setOpen] = useState(false);
-    const [currentOrder, setCurrentOrder] = useState(0);
+    const [open, setOpen] = useLocalStorage("mobileIsOpen", false);
+    const [currentOrder, setCurrentOrder] = useLocalStorage("savedOrder", 0);
 
     function renderElements(link) {
         return <Styles.PagelinkBlock key={link.title}>
@@ -41,11 +42,14 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     return(
         <>
             <Styles.Container id="all-services" className={open && "open"}>
-                <Styles.ReorderControl>
-                    Order services by<br/>
-                    <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={currentOrder === 0 && "-1"}  className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
-                    <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={currentOrder === 1 && "-1"} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
-                </Styles.ReorderControl>
+                <Styles.HomeTitle>
+                    <Heading text="Council services" />
+                    <Styles.ReorderControl>
+                        Order services by<br/>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={currentOrder === 0 && "-1"}  className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={currentOrder === 1 && "-1"} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
+                    </Styles.ReorderControl>
+                </Styles.HomeTitle>
                 <Styles.LinksList>
                     {currentOrder === 0 ?
                         originalOrderedArray.map((link) =>
@@ -72,6 +76,44 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
         </>
     );
 }
+
+
+
+function useLocalStorage(key, initialValue) {
+    // State to store our value
+    // Pass initial state function to useState so logic is only executed once
+    const [storedValue, setStoredValue] = useState(() => {
+      try {
+        // Get from local storage by key
+        const item = window.localStorage.getItem(key);
+        // Parse stored json or if none return initialValue
+        return item ? JSON.parse(item) : initialValue;
+      } catch (error) {
+        // If error also return initialValue
+        console.log(error);
+        return initialValue;
+      }
+    });
+  
+    // Return a wrapped version of useState's setter function that ...
+    // ... persists the new value to localStorage.
+    const setValue = value => {
+      try {
+        // Allow value to be a function so we have same API as useState
+        const valueToStore =
+          value instanceof Function ? value(storedValue) : value;
+        // Save state
+        setStoredValue(valueToStore);
+        // Save to local storage
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      } catch (error) {
+        // A more advanced implementation would handle the error case
+        console.log(error);
+      }
+    };
+  
+    return [storedValue, setValue];
+  }
 
 export default ServicesLinksList;
 
