@@ -10,9 +10,10 @@ const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   children,
   classes,
   noBackground = false,
+  noPadding = false,
   ...props
 }) => (
-  <Styles.Container noBackground={noBackground}>
+  <Styles.Container noBackground={noBackground} noPadding={noPadding}>
     <Styles.MaxWidth 
       className={classes}
       {...props}

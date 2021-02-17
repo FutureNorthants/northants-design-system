@@ -14,3 +14,9 @@ SingleColTemplate.args = {type: 'singleCol'};
 
 export const TwoColTemplate = Template.bind({});    
 TwoColTemplate.args = {type: 'twoCol'};
+
+export const TwoColLeftTemplate = Template.bind({});    
+TwoColLeftTemplate.args = {type: 'twoColLeft'};
+
+export const TwoColLeftWithHeaderTemplate = Template.bind({});    
+TwoColLeftWithHeaderTemplate.args = {type: 'twoColLeftHeader'};

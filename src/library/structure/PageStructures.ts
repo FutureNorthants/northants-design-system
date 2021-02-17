@@ -10,6 +10,7 @@ import NewsArticleOldBanner from "./NewsArticleOldBanner/NewsArticleOldBanner";
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
 import PhaseBanner from './PhaseBanner/PhaseBanner';
 import PageMain from './PageMain/PageMain';
+import PageTitle from './PageTitle/PageTitle';
 import PageSidebar from './PageSidebar/PageSidebar';
 import PageWithSidebarContainer from './PageWithSidebarContainer/PageWithSidebarContainer';
 import PromoBanner from './PromoBanner/PromoBanner';
@@ -21,4 +22,4 @@ import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
 
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };

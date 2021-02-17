@@ -1,0 +1,111 @@
+
+import React from "react";
+import * as PageStructures from '../../structure/PageStructures';
+import Heading from '../../components/Heading/Heading';
+
+import BlockQuote from '../../slices/BlockQuote/BlockQuote';
+import Button from "../../components/Button/Button";
+import NewsArticleDate from "../../structure/NewsArticleDate/NewsArticleDate";
+import NewsArticleImage from "../../structure/NewsArticleImage/NewsArticleImage";
+import NewsArticleOldBanner from "../../structure/NewsArticleOldBanner/NewsArticleOldBanner";
+
+export interface NewsProps {
+
+}
+
+
+export const News: React.FC<NewsProps> = ({  }) => (
+    <>
+   <PageStructures.Header />
+
+
+   <PageStructures.MaxWidthContainer noPadding={true}>
+      <PageStructures.Breadcrumbs 
+        breadcrumbsArray={[
+          {
+              title: "Home",
+              url: "/"
+          }
+        ]}
+      />
+      <PageStructures.PageTitle>
+        <Heading level={1} text="News" />
+      </PageStructures.PageTitle>
+      </PageStructures.MaxWidthContainer>
+
+        <PageStructures.MaxWidthContainer>
+          <PageStructures.PageWithSidebarContainer sidebarLeft={true}>
+          <PageStructures.PageSidebar>
+              <PageStructures.SectionLinksSidebar
+                Title="Pages in this section" 
+                Sections={[
+                  {
+                      SectionTitle: "Your bins and rubbish",
+                      SectionLinks: [
+                          {
+                              title: "Find your bin collection day",
+                              url: "/",
+                              isCurrent: true
+                          },
+                          {
+                              title: "Arrange bulky item collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Report a missed collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Request a new or replacement bin",
+                              url: "/"
+                          },
+                          {
+                              title: "Find a household waste recycling centre",
+                              url: "/"
+                          },
+                          {
+                              title: "What to recycle and where?",
+                              url: "/"
+                          }
+                      ]
+                  }
+                ]} />
+                <PageStructures.SectionLinksSidebar
+                  Title="Also found in"
+                  Sections={[
+                      {
+                        SectionLinks: [
+                            {
+                                title: "Another service that includes this page",
+                                url: "/"
+                            },
+                            {
+                              title: "And yet another service that includes this page",
+                              url: "/"
+                            }
+                        ]
+                      }
+                  ]}
+                />
+              </PageStructures.PageSidebar>
+
+            <PageStructures.PageMain>
+              <Heading level={1} text="Two column page" />
+      
+              <p>A single column page - with sidebar</p>
+
+              <p>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+              <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </PageStructures.PageMain>
+            
+            </PageStructures.PageWithSidebarContainer>
+          </PageStructures.MaxWidthContainer>
+
+          <PageStructures.Footer />
+  </>
+);

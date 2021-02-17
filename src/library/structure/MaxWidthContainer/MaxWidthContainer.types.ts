@@ -7,4 +7,8 @@ export interface MaxWidthContainerProps {
    * Remove background colour
    */
   noBackground?: boolean;
+  /**
+   * Remove bottom padding
+   */
+  noPadding?: boolean;
 }
