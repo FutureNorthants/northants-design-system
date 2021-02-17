@@ -1,9 +1,21 @@
 import styled from "styled-components";
 
+
+
+const handleContainerPadding = (noBackground, noPadding) => {
+    if(noPadding || noBackground) {
+        return 0
+    } else {
+        return "50px";
+    }
+  };
+
+
 export const Container = styled.div`
     background: ${props => props.noBackground ? "transparent" : 
         props.theme.cardinal_name === "north" ?  (props.theme.theme_vars.colours.grey_light+"7a") : props.theme.theme_vars.colours.white};
-    padding-bottom: ${props => props.noBackground ? "0" : "50px"};
+    overflow: ${props => props.noPadding ? "hidden" : "visible"};
+    padding-bottom: ${({ noBackground, noPadding }) => handleContainerPadding(noBackground, noPadding)};
 `
 
 export const MaxWidth = styled.div`

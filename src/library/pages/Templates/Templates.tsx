@@ -123,6 +123,184 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
         </>
         )
     break;
+
+    case 'twoColLeft':
+      return (
+        <>
+        <PageStructures.Header isHomepage />
+        <PageStructures.MaxWidthContainer>
+          <PageStructures.PageWithSidebarContainer sidebarLeft={true}>
+            <PageStructures.PageSidebar>
+              <PageStructures.SectionLinksSidebar
+                Title="Pages in this section" 
+                Sections={[
+                  {
+                      SectionTitle: "Your bins and rubbish",
+                      SectionLinks: [
+                          {
+                              title: "Find your bin collection day",
+                              url: "/",
+                              isCurrent: true
+                          },
+                          {
+                              title: "Arrange bulky item collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Report a missed collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Request a new or replacement bin",
+                              url: "/"
+                          },
+                          {
+                              title: "Find a household waste recycling centre",
+                              url: "/"
+                          },
+                          {
+                              title: "What to recycle and where?",
+                              url: "/"
+                          }
+                      ]
+                  }
+                ]} />
+                <PageStructures.SectionLinksSidebar
+                  Title="Also found in"
+                  Sections={[
+                      {
+                        SectionLinks: [
+                            {
+                                title: "Another service that includes this page",
+                                url: "/"
+                            },
+                            {
+                              title: "And yet another service that includes this page",
+                              url: "/"
+                            }
+                        ]
+                      }
+                  ]}
+                />
+              </PageStructures.PageSidebar>
+              <PageStructures.PageMain>
+              <Heading level={1} text="Two column left page" />
+      
+              <p>A single column page - with sidebar on the left (used for filtering)</p>
+
+              <p>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+              <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </PageStructures.PageMain>
+            </PageStructures.PageWithSidebarContainer>
+          </PageStructures.MaxWidthContainer>
+
+          <PageStructures.Footer />
+        </>
+        )
+    break;
+
+
+
+    case 'twoColLeftHeader':
+      return (
+        <>
+        <PageStructures.Header isHomepage />
+
+        <PageStructures.MaxWidthContainer noPadding={true}>
+          <PageStructures.Breadcrumbs 
+            breadcrumbsArray={[
+              {
+                  title: "Home",
+                  url: "/"
+              }
+            ]}
+          />
+          <PageStructures.PageTitle>
+            <Heading level={1} text="Header" />
+          </PageStructures.PageTitle>
+          </PageStructures.MaxWidthContainer>
+
+
+        <PageStructures.MaxWidthContainer>
+          <PageStructures.PageWithSidebarContainer sidebarLeft={true}>
+            <PageStructures.PageSidebar>
+              <PageStructures.SectionLinksSidebar
+                Title="Pages in this section" 
+                Sections={[
+                  {
+                      SectionTitle: "Your bins and rubbish",
+                      SectionLinks: [
+                          {
+                              title: "Find your bin collection day",
+                              url: "/",
+                              isCurrent: true
+                          },
+                          {
+                              title: "Arrange bulky item collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Report a missed collection",
+                              url: "/"
+                          },
+                          {
+                              title: "Request a new or replacement bin",
+                              url: "/"
+                          },
+                          {
+                              title: "Find a household waste recycling centre",
+                              url: "/"
+                          },
+                          {
+                              title: "What to recycle and where?",
+                              url: "/"
+                          }
+                      ]
+                  }
+                ]} />
+                <PageStructures.SectionLinksSidebar
+                  Title="Also found in"
+                  Sections={[
+                      {
+                        SectionLinks: [
+                            {
+                                title: "Another service that includes this page",
+                                url: "/"
+                            },
+                            {
+                              title: "And yet another service that includes this page",
+                              url: "/"
+                            }
+                        ]
+                      }
+                  ]}
+                />
+              </PageStructures.PageSidebar>
+              <PageStructures.PageMain>
+              <Heading level={1} text="Two column left page" />
+      
+              <p>A single column page - with sidebar on the left (used for filtering)</p>
+
+              <p>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+              <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Sed posuere consectetur est at lobortis.</p>
+
+              <p>Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </PageStructures.PageMain>
+            </PageStructures.PageWithSidebarContainer>
+          </PageStructures.MaxWidthContainer>
+
+          <PageStructures.Footer />
+        </>
+        )
+    break;
   }
 
 

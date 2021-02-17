@@ -24,3 +24,13 @@ export const ExampleOfPageWithSidebar = () =>
             this is the sidebar
         </PageSidebar>
     </PageWithSidebarContainer>
+
+export const ExampleOfPageWithSidebarLeft = () =>
+    <PageWithSidebarContainer>
+        <PageSidebar>
+            this is the sidebar
+        </PageSidebar>
+        <PageMain>
+            this is the main contaniner
+        </PageMain>
+    </PageWithSidebarContainer>
