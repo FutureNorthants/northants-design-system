@@ -3,12 +3,18 @@ import styled from "styled-components";
 export const Container = styled.header`
     font-family: ${props => props.theme.theme_vars.fontstack};
     overflow: hidden;
-    background-image: url("${props => props.image}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding 60px 0;
+    background: ${props => props.theme.theme_vars.colours.action}5A;
+    padding 30px 0;
 
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        background-image: url("${props => props.image}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        padding 60px 0;
+    }
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
         margin-right: auto;
         margin-left: auto;
@@ -37,7 +43,7 @@ export const HiddenH1 = styled.h1`
 `
 
 export const MainBox = styled.div`
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     padding: 30px;
     background: ${props => props.theme.theme_vars.colours.white};
     background: ${props => props.theme.theme_vars.colours.white}F2;
@@ -49,6 +55,7 @@ export const MainBox = styled.div`
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         max-width: calc(50% - 60px);
+        margin-bottom: 60px;
     }
 `
 

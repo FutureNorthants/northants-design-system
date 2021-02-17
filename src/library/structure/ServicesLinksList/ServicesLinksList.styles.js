@@ -171,7 +171,11 @@ export const IconWrapper = styled.div`
 
 export const HomeTitle = styled.div`  
   margin-bottom: 15px;
-
+  
+  h2 {
+    margin-top: 0;
+  }
+  
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     display: flex;
     -webkit-flex-direction: row;

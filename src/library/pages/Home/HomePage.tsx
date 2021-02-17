@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
+import AlertBanner from '../../structure/Alerts/AlertBanner';
 
 export interface HomePageProps {
 
@@ -12,6 +13,7 @@ const submitInfo = [{
       type: "search"
   }
 }]
+const AlertMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
 
 
 export const HomePage: React.FC<HomePageProps> = ({  }) => (
@@ -55,6 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
 
     }}
   />
+  <AlertBanner title="Coronavirus (COVID-19)" uid="homealert" children={AlertMessage} />
   <PageStructures.HomeHero 
     promotedLinksArray={[
         {

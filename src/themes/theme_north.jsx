@@ -22,7 +22,7 @@ export const north_vars = {
         action: "#05873A",
         action_light: "#F3F9F5",
         action_dark: "#065325",
-        positive: "#1A9DD9",
+        positive: "#147DAD",
         negative: "#B73131",
 
         focus: "#E2CA76"
