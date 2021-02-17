@@ -1,3 +1,4 @@
+import AlertBanner from './AlertBanner/AlertBanner';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import CookieBanner from './CookieBanner/CookieBanner';
 import Footer from './Footer/Footer';
@@ -11,6 +12,7 @@ import PhaseBanner from './PhaseBanner/PhaseBanner';
 import PageMain from './PageMain/PageMain';
 import PageSidebar from './PageSidebar/PageSidebar';
 import PageWithSidebarContainer from './PageWithSidebarContainer/PageWithSidebarContainer';
+import PromoBanner from './PromoBanner/PromoBanner';
 import Searchbar from './Searchbar/Searchbar';
 import SearchResultsList from './SearchResultsList/SearchResultsList';
 import SectionLinks from './SectionLinks/SectionLinks';
@@ -19,4 +21,4 @@ import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
 
-export { Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageSidebar, PageWithSidebarContainer, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };

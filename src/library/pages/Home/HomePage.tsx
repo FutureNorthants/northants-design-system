@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
-import AlertBanner from '../../structure/Alerts/AlertBanner';
+import AlertBanner from '../../structure/AlertBanner/AlertBanner';
 
 export interface HomePageProps {
 
