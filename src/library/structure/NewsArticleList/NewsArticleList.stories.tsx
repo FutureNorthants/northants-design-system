@@ -7,7 +7,7 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import newsArticleData from './NewsArticleData';
 
 export default {
-    title: 'Library/Structure/News Article Losty',
+    title: 'Library/Components/News Article List',
     component: NewsArticleList
 };
 

@@ -12,11 +12,17 @@ const Template: Story<NewsProps> = (args) => <News {...args} />;
 
 export const ExampleNewsArticleList = Template.bind({});   
 ExampleNewsArticleList.args = {
-  results: true
+  hasResults: true, 
 };
 
 
 export const ExampleNoNewsArticleList = Template.bind({});   
 ExampleNoNewsArticleList.args = {
-  results: false
+  hasResults: false
+};
+
+export const ExampleFilteredNewsArticleList = Template.bind({});   
+ExampleFilteredNewsArticleList.args = {
+  hasResults: true,
+  isFiltered: true
 };

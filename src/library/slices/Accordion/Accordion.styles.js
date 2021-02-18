@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Accordion
 
@@ -71,8 +71,21 @@ export const SectionHeading = styled.div`
     margin-bottom: 5px;
 `
 
+
+const SectionButtonIsFilteredStyles = props => {
+    if(props.isFilter) {
+        return css`
+            ${props => props.theme.theme_vars.h4}
+        `
+    } else {
+        return css`
+            ${props => props.theme.theme_vars.h3}
+        `
+    }
+}
+
+
 export const SectionButton = styled.button`
-    ${props => props.theme.theme_vars.h3}
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
@@ -85,10 +98,11 @@ export const SectionButton = styled.button`
     cursor: pointer;
     -webkit-appearance: none;
 
+    ${SectionButtonIsFilteredStyles}
 
     &:focus {
         outline: 3px solid transparent;
-        color: ${props => props.theme.theme_vars.colours.blacl};
+        color: ${props => props.theme.theme_vars.colours.black};
         background-color: ${props => props.theme.theme_vars.colours.focus};
         -webkit-box-shadow: 0 -2px ${props => props.theme.theme_vars.colours.focus}, 0 4px ${props => props.theme.theme_vars.colours.black};
         box-shadow: 0 -2px ${props => props.theme.theme_vars.colours.focus}, 0 4px ${props => props.theme.theme_vars.colours.black};
@@ -117,6 +131,10 @@ export const SectionButton = styled.button`
         text-decoration: none;
     }
 `
+
+
+
+
 
 export const AccordionIcon = styled.span`
     position: absolute;
