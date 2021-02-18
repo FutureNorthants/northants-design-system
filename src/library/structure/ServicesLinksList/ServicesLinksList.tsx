@@ -15,6 +15,13 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
 
     function renderElements(link) {
         return <Styles.PagelinkBlock key={link.title}>
+                {link.iconURL && 
+                    <Styles.PagelinkIconContainer>
+                        <Styles.PagelinkIcon  className="service-icon" src={link.iconURL} alt={link.title} />
+                        <Styles.PagelinkIconHover className="service-icon-hover" src={link.iconHoverURL} alt={link.title} />
+                    </Styles.PagelinkIconContainer>
+                }
+                <Styles.PagelinkInner>
                     <Styles.ServiceTitleLink 
                         href={link.url} 
                         title={"Go to " + link.title}
@@ -36,7 +43,8 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                             )}
                         </Styles.QuicklinkList>
                     }
-                </Styles.PagelinkBlock>;
+                </Styles.PagelinkInner>
+            </Styles.PagelinkBlock>;
     }
 
     return(

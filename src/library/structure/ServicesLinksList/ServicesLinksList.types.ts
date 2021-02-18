@@ -14,10 +14,14 @@ export interface PageLinkProp {
     * URL of the page
     */
     url: string;
-    // /**
-    // * URL of the svg icon for the service landing page
-    // */
-    // iconURL: string;
+    /**
+    * URL of the svg icon for the service landing page
+    */
+    iconURL?: string;
+    /**
+    * URL of the svg icon in a hover style for the service landing page
+    */
+    iconHoverURL?: string;
     /**
     * Array of quick links for the service
     */

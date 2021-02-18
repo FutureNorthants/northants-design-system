@@ -35,9 +35,29 @@ export const PagelinkBlank = styled.div`
     margin-bottom: 31px;
   }
 `
+export const PagelinkIconContainer = styled.div`
+
+`
+export const PagelinkIcon = styled.img`
+  
+`
+export const PagelinkIconHover = styled.img`
+  display: none;
+  margin-top: -6px;
+`
+export const PagelinkInner = styled.div`
+
+`
 
 export const PagelinkBlock = styled.div`
   width: 100%;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     width: calc(50% - 16px);
@@ -46,7 +66,17 @@ export const PagelinkBlock = styled.div`
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     width: calc(33.333% - 21px);
   }
+
+  &:hover, &:focus-within {
+    .service-icon {
+      display: none;
+    }
+    .service-icon-hover {
+      display: block !important;
+    }
+  }
 `
+
 export const ServiceTitle = styled(Heading)`
   margin: 0;
 
