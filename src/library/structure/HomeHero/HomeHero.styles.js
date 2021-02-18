@@ -81,14 +81,14 @@ export const Strapline = styled.p`
 
 export const PromotedLinks = styled.div`
     
-    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        display: -ms-flex;
+        display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: row;
-        -moz-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-wrap: wrap;
+    }
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+
     }
 `
 
@@ -122,16 +122,28 @@ export const PromotedLink = styled.a`
         -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset, 0px 4px 15px rgba(0, 0, 0, 0.11);
         -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.black} inset, 0px 4px 15px rgba(0, 0, 0, 0.11);
     }
-
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        width: 100%;
+        margin-right: 15px;
+        flex: 0 0 calc(50% - 38px);
+        &:nth-of-type(2n) {
+            margin-right: 0;
+        }
+    }
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        width: 33%;
+        width: 100%;
         margin-right: 30px;
         margin-bottom: 0px;
         padding: 30px;
+        flex: 1;
 
+        &:nth-of-type(2n) {
+            margin-right: 30px;
+        }
         &:last-of-type {
             margin-right: 0;
         }
     }
+    
 `
