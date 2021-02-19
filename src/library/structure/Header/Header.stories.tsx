@@ -11,9 +11,10 @@ export default {
 
 const Template: Story<HeaderProps> = (args) => <Header {...args}>Children of the page container goes here</Header>;
 
-export const HeaderHomeExample = Template.bind({});
-HeaderHomeExample.args = {
-  isHomepage: true
-};
 
 export const HeaderPageExample = Template.bind({});
+
+export const HeaderHomeExample = Template.bind({});
+HeaderHomeExample.args = {
+  hideSearchBar: true
+};

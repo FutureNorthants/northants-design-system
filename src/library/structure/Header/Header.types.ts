@@ -1,8 +1,8 @@
 export interface HeaderProps {
   /**
-   * Is the page this component on the homepage? Defaults to false
+   * Hide the searchbar? Defaults to false
    */
-  isHomepage?: boolean;
+  hideSearchBar?: boolean;
   /**
    * Link to the root of the website that will be used on the logo
    */

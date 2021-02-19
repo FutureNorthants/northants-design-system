@@ -18,12 +18,13 @@ import Searchbar from "../Searchbar/Searchbar";
  */
 const Header: React.FC<HeaderProps> = ({
   children,
-  isHomepage = false,
+  hideSearchBar = false,
   homeLink = "/",
   allServicesLink = "/",
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
+  const isHomepage = false;
 
   return(
     <>
@@ -51,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({
               All services
             </Styles.AllServicesLink>
           }
-          {!isHomepage &&
+          {!hideSearchBar &&
             <Styles.SearchWrapper>
                 <Searchbar 
                   isLight={themeContext.cardinal_name === "north" ? true : false} 

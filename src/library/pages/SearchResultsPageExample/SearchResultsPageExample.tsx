@@ -111,7 +111,7 @@ pageNumber: 0
 
 export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hideSearchBar />
     <PageStructures.MaxWidthContainer>
     <PageStructures.Breadcrumbs 
       breadcrumbsArray={[
