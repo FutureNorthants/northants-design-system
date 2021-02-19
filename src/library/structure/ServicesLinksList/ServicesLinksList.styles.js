@@ -46,7 +46,7 @@ export const PagelinkIconHover = styled.img`
   margin-top: -6px;
 `
 export const PagelinkInner = styled.div`
-
+  width: 100%;
 `
 
 export const PagelinkBlock = styled.div`

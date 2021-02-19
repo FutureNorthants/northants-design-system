@@ -100,7 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             {
               title: "Council tax", 
               url: "/",
-              iconURL: "https://svgshare.com/i/UB5.svg",
+              iconURL: "https://svgshare.com/i/UBj.svg",
               iconHoverURL: "https://svgshare.com/i/UAa.svg",
               quickLinksArray: [
                 {
