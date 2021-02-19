@@ -66,9 +66,9 @@ export const SectionHeader = styled.div`
     }
 `
 
-export const SectionHeading = styled.h2`
-    margin-top: 0;
-    margin-bottom: 0;
+export const SectionHeading = styled.div`
+    margin-top: 10px;
+    margin-bottom: 5px;
 `
 
 export const SectionButton = styled.button`
