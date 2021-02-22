@@ -21,4 +21,4 @@ export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsA
 
 
 // Themes
-export { GDS_theme, north_theme, west_theme } from '../src/themes/theme_generator';
+export { GDS_theme, north_theme, west_theme, lb_theme_north } from '../src/themes/theme_generator';

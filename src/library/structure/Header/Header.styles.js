@@ -28,6 +28,14 @@ const LogoStyles = `
         height: auto;
         vertical-align: middle;
     }
+    &.black_logo {
+        svg {
+            fill: black !important;
+            path {
+                fill: black !important;
+            }
+        }
+    }
 `
 export const LogoColoured = styled.div`
     ${LogoStyles}
