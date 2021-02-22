@@ -17,8 +17,8 @@ import { linkTo } from "@storybook/addon-links";
  * The Hero that should appear at the top of the home page.
  */
 const HomeHero: React.FC<HomeHeroProps> = ({
-  topline = "Services and information for ",
-  strapline = "Lorem ipsum doler set decorum ist",
+  topline,
+  strapline,
   imagesArray,
   promotedLinksArray
 }) => {
@@ -41,12 +41,16 @@ const HomeHero: React.FC<HomeHeroProps> = ({
           <Styles.Container image={src}>
             <Styles.StyledMaxWidthContainer>
               <Styles.MainBox>
-                <Styles.Topline>{topline}</Styles.Topline>
+                {topline &&
+                  <Styles.Topline>{topline}</Styles.Topline>
+                }
                 <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
                 <Styles.LogoColoured>
                   {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
                 </Styles.LogoColoured>   
-                <Styles.Strapline>{strapline}</Styles.Strapline>
+                {strapline && 
+                  <Styles.Strapline>{strapline}</Styles.Strapline>
+                }
                 <Searchbar 
                   isLight
                   isLarge 

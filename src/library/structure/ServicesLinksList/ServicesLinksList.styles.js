@@ -39,11 +39,11 @@ export const PagelinkIconContainer = styled.div`
 
 `
 export const PagelinkIcon = styled.img`
-  
+  vertical-align: middle;
 `
 export const PagelinkIconHover = styled.img`
   display: none;
-  margin-top: -6px;
+  vertical-align: middle;
 `
 export const PagelinkInner = styled.div`
   width: 100%;
