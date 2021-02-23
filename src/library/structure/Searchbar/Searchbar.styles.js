@@ -47,11 +47,14 @@ export const InputWrapper = styled.div`
 
 export const Input = styled.input`
   margin: 0;
+  border: none;
   padding: 5px ${props => props.theme.theme_vars.spacingSizes.small};
   background: ${props => props.theme.theme_vars.colours.white};
   border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   border-bottom-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
+  border: 1px solid ${props => props.theme.theme_vars.colours.grey_darkest};
+  border-right: transparent;
 
   &:focus {
     outline: none;
