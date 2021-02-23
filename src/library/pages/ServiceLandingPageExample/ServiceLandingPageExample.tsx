@@ -14,7 +14,7 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
         breadcrumbsArray={[
           {
               title: "Home",
-              url: "/"
+              url: "/iframe.html?id=page-examples-home-page--example-home&viewMode=story"
           }
         ]}
       />
@@ -140,7 +140,7 @@ export const ServiceLandingPageExampleOneSection: React.FC<ServiceLandingPageExa
         breadcrumbsArray={[
           {
               title: "Home",
-              url: "/"
+              url: "/iframe.html?id=page-examples-home-page--example-home&viewMode=story"
           }
         ]}
       />

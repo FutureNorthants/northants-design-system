@@ -147,3 +147,28 @@ HeroHomeExample4Links.args = {
         }
     ]
 };
+
+
+export const HeroHomeExample0Links = Template.bind({});
+HeroHomeExample0Links.args = {
+    promotedLinksArray: [
+    ],
+    imagesArray: [
+        {
+            image1440x810: "http://placehold.it/1440x810",
+            image144x81: "http://placehold.it/144x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1340x810",
+            image144x81: "http://placehold.it/134x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1240x810",
+            image144x81: "http://placehold.it/124x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1140x810",
+            image144x81: "http://placehold.it/114x81"
+        }
+    ]
+};

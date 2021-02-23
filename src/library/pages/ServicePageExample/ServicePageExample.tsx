@@ -15,7 +15,7 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({  }) => (
         breadcrumbsArray={[
           {
               title: "Home",
-              url: "/"
+              url: "/iframe.html?id=page-examples-home-page--example-home&viewMode=story"
           },
           {
               title: "Bin collection, recycling and waste",

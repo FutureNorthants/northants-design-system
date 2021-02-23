@@ -6,7 +6,7 @@ import { SearchIconProps } from "./SearchIcon.types";
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icon Search',
+  title: 'Library/Components/Icons/Search',
   component: SearchIcon
 };
 

@@ -12,7 +12,7 @@ export interface HomeHeroProps {
    */
   imagesArray: Array<HeroImageProp>;
   /**
-   * The 3 main promoted links
+   * The main promoted links, an array that should be from 1-4, preferably 3
    */
   promotedLinksArray: Array<PromotedLinkProp>;
 }

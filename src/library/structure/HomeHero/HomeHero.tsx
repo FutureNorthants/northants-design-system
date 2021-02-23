@@ -63,14 +63,15 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                   }]}
                 />
               </Styles.MainBox>
-
-              <Styles.PromotedLinks>
-                {promotedLinksArray.map((link) =>
-                  <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
-                    <span>{link.title}</span>
-                  </Styles.PromotedLink>
-                )}
-              </Styles.PromotedLinks>
+              {promotedLinksArray.length > 0 && 
+                <Styles.PromotedLinks>
+                  {promotedLinksArray.map((link) =>
+                    <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
+                      <span>{link.title}</span>
+                    </Styles.PromotedLink>
+                  )}
+                </Styles.PromotedLinks>
+              }
             </Styles.StyledMaxWidthContainer>
           </Styles.Container>
         }

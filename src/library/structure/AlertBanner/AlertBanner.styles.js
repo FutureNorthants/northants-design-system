@@ -5,7 +5,7 @@ export const Container = styled.div`
     background: ${props => props.alertType === "alert" ? props.theme.theme_vars.colours.negative : 
                             props.alertType === "warning" ? props.theme.theme_vars.colours.focus :
                             props.alertType === "positive" ? props.theme.theme_vars.colours.positive :
-                            props.alertType === "black" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.negative
+                            props.alertType === "london_bridge" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.negative
                         };
     p, button {
         line-height: 1.3;
@@ -50,14 +50,13 @@ export const InnerContainer = styled.div`
 `
 
 export const BannerContentContainer = styled.div`
-    
+    max-width: calc(100% - 50px);
 `
 export const BannerTitle = styled.p`
     font-weight: bold;
     margin-bottom: 10px;
 `
 export const BannerContent = styled.div`
-    
 `
 
 export const HideLink = styled.button`

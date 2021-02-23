@@ -10,7 +10,7 @@ export interface AlertBannerProps {
     /**
    * The type of alert
    */
-   alertType?: "alert" | "warning" | "positive" | "black";
+   alertType?: "alert" | "warning" | "positive" | "london_bridge";
    /**
    * All children content for the banner
    */

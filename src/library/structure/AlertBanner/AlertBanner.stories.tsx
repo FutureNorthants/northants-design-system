@@ -40,6 +40,6 @@ export const AlertBannerExampleBlack = Template.bind({});
 AlertBannerExampleBlack.args = {
     title: "Something terrible has happened",
     uid: "4",
-    alertType: "black",
+    alertType: "london_bridge",
     children: childrenMessage
 };
