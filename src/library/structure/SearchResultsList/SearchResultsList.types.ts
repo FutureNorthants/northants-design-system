@@ -37,6 +37,10 @@ export interface SearchResultProps {
    */
   signpostLinksArray?: Array<SignpostLinkProp>;
   /**
+   * Optional override for the top line of text
+   */
+  TopLineText?: string;
+  /**
    * If there is a service area tied to the result
    */
   service: string;

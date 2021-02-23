@@ -30,7 +30,19 @@ const SearchResultsList: React.FC<SearchResultsListProps> = ({ searchTerm, resul
                         <Styles.Summary>{result.summary}</Styles.Summary>
                         {result.signpostLinksArray &&
                             <Styles.SignpostContainer>
-                                <p>Select your local area for information:</p>
+                                {result.signpostLinksArray.length > 1 ?
+                                    <>{result.TopLineText ?
+                                        <p>{result.TopLineText}</p>
+                                        :
+                                        <p>Select your local area for information:</p>
+                                    }</>
+                                :
+                                    <>{result.TopLineText ?
+                                        <p>{result.TopLineText}</p>
+                                        :
+                                        <p>Go straight to the information:</p>
+                                    }</>
+                                }
                                 <SignpostLinksList signpostLinksArray={result.signpostLinksArray} />
                             </Styles.SignpostContainer>
                         }

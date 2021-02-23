@@ -34,3 +34,15 @@ export const LastParagraph = styled.p`
     margin-bottom: 0;
 `
 
+export const SingleButtonContainer = styled.div`
+    svg {
+        fill: ${props => props.theme.theme_vars.colours.white};
+        margin-right: 5px;
+        vertical-align: bottom;
+    }
+    &:focus-within {
+        svg {
+            fill: ${props => props.theme.theme_vars.colours.black};
+        }
+    }
+`

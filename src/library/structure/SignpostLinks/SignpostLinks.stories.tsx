@@ -57,3 +57,32 @@ WestSignpostLinksExample.args = {
         }
     ]
 };
+
+
+
+export const SignpostLinksExample2 = Template.bind({});    
+SignpostLinksExample2.args = {
+    signpostLinksArray: [
+        {
+            sovereignCode: 2,
+            areaName: "Daventry",
+            url: "/"
+        },
+        {
+            sovereignCode: 5,
+            areaName: "Northampton",
+            url: "/"
+        }
+    ]
+};
+
+export const SignpostLinksExample1 = Template.bind({});    
+SignpostLinksExample1.args = {
+    signpostLinksArray: [
+        {
+            sovereignCode: 2,
+            areaName: "Daventry",
+            url: "/test"
+        }
+    ]
+};

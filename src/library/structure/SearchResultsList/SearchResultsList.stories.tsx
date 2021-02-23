@@ -56,14 +56,22 @@ ExampleSearchResultsList.args = {
       summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
     },
     {
-      title: "Council tax",
+      title: "Council tax single CTA",
       link: "/council-tax",
-      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
+      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.",
+      signpostLinksArray: [
+        {
+          sovereignCode: 2,
+          areaName: "Northamptonshire County Council",
+          url: "/"
+        }
+      ]
     },
     {
       title: "Paying council tax",
       link: "/",
       summary: "Pay your council tax online",
+      TopLineText: "Change to the topline text",
       signpostLinksArray: [
         {
           sovereignCode: 2,

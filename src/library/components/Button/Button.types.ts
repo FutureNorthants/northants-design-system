@@ -10,7 +10,11 @@ export interface ButtonProps {
   /**
    * Button label
    */
-  text: string;
+  text?: string;
+  /**
+   * Button title optional
+   */
+  title?: string;
   /**
    * The URL for where to load when a user clicks on the Button
    */

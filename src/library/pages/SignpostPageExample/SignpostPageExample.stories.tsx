@@ -56,3 +56,13 @@ FindYourBinCollectionDayWestExample.args = { signpostLinksArrayExample: [
     }
   ]
 }
+
+export const FindYourBinCollectionDaySingleExample = Template.bind({});
+FindYourBinCollectionDaySingleExample.args = { signpostLinksArrayExample: [
+    {
+        sovereignCode: 2,
+        areaName: "Northamptonshire County Council",
+        url: "https://www.northamptonshire.gov.uk/"
+    }
+  ]
+}
