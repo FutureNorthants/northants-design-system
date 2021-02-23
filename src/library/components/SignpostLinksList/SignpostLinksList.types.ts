@@ -16,6 +16,10 @@ export interface SignpostLinkProp {
   */
   areaName: string;
   /**
+  * An optional override for the call to action text
+  */
+  cta_text?: string;
+  /**
   * URL of this service on the local area's website
   */
   url: string;

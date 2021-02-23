@@ -14,7 +14,11 @@ const SignpostLinksList: React.FC<SignpostLinksListProps> = ({ signpostLinksArra
                 <Styles.IconWrapper>
                     <LinkIcon />
                 </Styles.IconWrapper>
-                {link.areaName}
+                {link.cta_text ? 
+                    link.cta_text
+                :
+                    link.areaName
+                }
             </Styles.SignpostLink>
         </Styles.SignpostListItem>
     )}   

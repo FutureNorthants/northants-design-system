@@ -62,6 +62,7 @@ FindYourBinCollectionDaySingleExample.args = { signpostLinksArrayExample: [
     {
         sovereignCode: 2,
         areaName: "Northamptonshire County Council",
+        cta_text: "Find your bin collection day",
         url: "https://www.northamptonshire.gov.uk/"
     }
   ]

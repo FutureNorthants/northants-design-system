@@ -69,9 +69,10 @@ SignpostLinksExample2.args = {
             url: "/"
         },
         {
-            sovereignCode: 5,
-            areaName: "Northampton",
-            url: "/"
+            sovereignCode: 6,
+            areaName: "South Northamptonshire",
+            cta_text: "Area with optional CTA text",
+            url: "https://www.southnorthants.gov.uk/"
         }
     ]
 };
@@ -82,6 +83,7 @@ SignpostLinksExample1.args = {
         {
             sovereignCode: 2,
             areaName: "Daventry",
+            cta_text: "Custom CTA text for Daventry",
             url: "/test"
         }
     ]

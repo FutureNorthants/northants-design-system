@@ -41,7 +41,11 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
             <Styles.SingleButtonContainer>
                 <Button url={signpostLinksArray[0].url} title={"View more at " + signpostLinksArray[0].areaName}>
                     <LinkIcon />
-                    {signpostLinksArray[0].areaName}
+                    {signpostLinksArray[0].cta_text ?
+                        signpostLinksArray[0].cta_text
+                    :
+                        signpostLinksArray[0].areaName
+                    }
                 </Button>
             </Styles.SingleButtonContainer>
         }
