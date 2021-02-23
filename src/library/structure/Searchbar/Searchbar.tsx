@@ -6,7 +6,7 @@ import * as Styles from "./Searchbar.styles";
 
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 
-const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, searchTerm, submitInfo}) => { 
+const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, searchTerm, submitInfo, id="search"}) => { 
 
     let classes = '';
     classes += (isLight) ? " is-light" : "";
@@ -51,9 +51,9 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
         <Styles.Container data-testid="Searchbar" className={classes}>
             <Styles.Form onSubmit={handleSubmit}>
                 <Styles.Search role="search">
-                    <Styles.Label htmlFor="search">{placeholder ? placeholder : 'Search'}</Styles.Label>
+                    <Styles.Label htmlFor={id}>{placeholder ? placeholder : 'Search'}</Styles.Label>
                     <Styles.InputWrapper>
-                        <Styles.Input id="search" type="text" name="searchTerm" placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} required />
+                        <Styles.Input id={id} type="text" name="searchTerm" placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} required />
                         <Styles.Button type="submit" value="Search">
                             <SearchIcon colourFill="#fff" />
                             <Styles.ButtonText>Search</Styles.ButtonText>

@@ -1,15 +1,21 @@
 
 export interface NewsArticleListProps {
-
+  /**
+   * Array of results
+   */
   results: Array<NewsArticleProps>,
   /**
-   * total number of returned articles
+   * The total number of results
    */
-  // totalResults: number,
-
-  sortBy?: number,
-
-  // pageNumber: number
+  totalResults?: number;
+  /**
+   * The current page number
+   */
+  pageNumber?: number;
+  /**
+   * What we're currently sorting by
+   */
+  sortBy?: string
 }
 
 
@@ -18,5 +24,5 @@ export interface NewsArticleProps {
   title: string,
   excerpt: string,
   date: string,
-  image: string
+  thumbnail: string
 }

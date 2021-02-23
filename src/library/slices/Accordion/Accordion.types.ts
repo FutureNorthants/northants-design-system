@@ -4,6 +4,11 @@ export interface AccordionProps {
    * accepts multiple sections
    */
   sections: Array<AccordionSectionProps>;
+
+  /**
+   * We reuse this on filter pages - but it looks slightly different
+   */
+  isFilter?: boolean;
 }
 
 export interface AccordionSectionProps {
@@ -26,9 +31,13 @@ export interface AccordionSectionProps {
   /**
    * Identify the section so sections can have the same title
    */
-  accordionSectionId: number,
+  accordionSectionId?: number,
   /**
    * Method used internally for opening closing eelment
    */
   onToggle?: ((title, value) => void)
+  /**
+   * We reuse this on filter pages - but it looks slightly different
+   */
+  isFilter?: boolean;
 } 

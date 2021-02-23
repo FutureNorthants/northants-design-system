@@ -47,6 +47,8 @@ const allNumbers = Array.from({ length: numberOfNumbers }, (v, i) => i + 1);
 const numbers = pagination(currentPage, numberOfNumbers);
 // const numbers = allNumbers;
 
+
+//TODO move this into helpers/url-helpers.js
 const buttonClick = (url, param, paramVal) => {
     var TheAnchor = null;
     var newAdditionalURL = "";

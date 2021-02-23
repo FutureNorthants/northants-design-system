@@ -4,10 +4,11 @@ import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import ${componentName} from "./${componentName}";
 import { ${componentName}Props } from "./${componentName}.types";
-import { SBPadding } from '../../.storybook/SBPadding';
+import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "${componentName}"
+    title: 'Library/CHANGENME/${componentName}',
+    component: ${componentName}
 };
 
 const Template: Story<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;

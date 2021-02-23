@@ -20,6 +20,9 @@ export interface SearchbarProps {
      * 
      */
     submitInfo: Array<SubmitInfoProps>;
+
+
+    id?: string;
 }
 
 export interface SubmitInfoProps {
