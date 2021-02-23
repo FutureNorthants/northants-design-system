@@ -31,8 +31,8 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
                 setShowCookieBanner(true);
             } else {
                 // we have cookie		
-                let cookiesAccepted = JSON.parse(myCookie).cookiesAccepted;
-                let bannerDismissed = JSON.parse(myCookie).bannerDismissed;
+                var cookiesAccepted = myCookie.includes('"cookiesAccepted":true');
+                var bannerDismissed = myCookie.includes('"bannerDismissed":true');
 
                 // banner already dismissed - hide the banner
                 if (!bannerDismissed) {
