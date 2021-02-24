@@ -1,4 +1,5 @@
 import Uri from 'jsuri';
+import { convertCompilerOptionsFromJson } from 'typescript';
 
 /**
  * We're currently working by sending a request to the server to display what we want on the page.
@@ -10,17 +11,17 @@ import Uri from 'jsuri';
 
  export const handleParams = (postTo, newParams) => {
 
-   console.log('handleParams', newParams)
+
 
    var uri = new Uri(window.location)
 
     // check where we're posting to (news / search etc)
    const path = (uri.path().substring(0,1) === '/') ? uri.path().substring(1) : uri.path();
    if(postTo !== path) {
+      postTo = (postTo.substring(0,1) === '/') ? postTo.substring(1) : postTo;
       console.log('updating path to /' + postTo)
       // uri.setPath(`/${postTo}`);
    }
-
 
    // first check for existance of any query params
    if(uri.query() === '') {
@@ -30,20 +31,19 @@ import Uri from 'jsuri';
       });
    } else {
       // we already have params
-      newParams.forEach(param => {
-         if(uri.hasQueryParam(param.key)) {
-            // param already exists
-
-            if(uri.getQueryParamValue(param.key) !== param.value) {
-               // param not the same - update it
-               console.info('Updating ' + param.key + ' value with ' + param.value)
-               uri.replaceQueryParam(param.key, param.value);
+      newParams.forEach(param => {    
+            if(uri.hasQueryParam(param.key)) {
+               // param already exists but value not null
+               if(uri.getQueryParamValue(param.key) !== param.value) {
+                     // param not the same - update it
+                     console.info('Updating ' + param.key + ' value with ' + param.value)
+                     uri.replaceQueryParam(param.key, param.value);
+               }
+            } else {
+               // param doesnt exist - add it
+               console.info('Adding new ' + param.key + ' value with ' + param.value)
+               uri.addQueryParam(param.key, param.value);
             }
-         } else {
-            // param doesnt exist - add it
-            console.info('Adding new ' + param.key + ' value with ' + param.value)
-            uri.addQueryParam(param.key, param.value);
-         }
       });
 
 

@@ -1,37 +1,75 @@
 
-import React from "react";
+import React, {useState} from "react";
 
 import { CheckboxListFilterProps } from "./CheckboxListFilter.types";
 import * as Styles from "./CheckboxListFilter.styles";
 
-const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options }) => (
-    <Styles.Container data-testid="CheckboxListFilter" className="govuk-form-group">
 
-<fieldset className="govuk-fieldset" aria-describedby="waste-hint">
-    <legend className="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 className="govuk-fieldset__heading">
-        Which types of waste do you transport?
-      </h1>
-    </legend>
-    <div id="waste-hint" className="govuk-hint">
-      Select all that apply.
-    </div>
-    <div className="govuk-checkboxes">
-    {options.map((option, i) => 
-            <div className="govuk-checkboxes__item" key={i}>
-                <input className="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value={option.value} />
-                <label className="govuk-label govuk-checkboxes__label" htmlFor="waste">
-                {option.title}
-                </label>
-            </div>
-        )}
-    </div>
+import {handleParams} from './../../helpers/url-helpers';
 
-  </fieldset>
+
+const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checked, label = null, hint = null }) => {
+
+
+    let labelHidden = (label === null) ? true : false;
+    let hintHidden = (hint === null) ? true : false;
+
+
+    const setupCheckboxes = () => {
+        return options.map(option => ({...option, checked: (checked.includes(option.value) ? true : false)}))
+    }
+
+    const [checkboxState, setCheckboxState] = useState(setupCheckboxes());
+    
+    const optionChecked = (e) => {
+
+        const checkedVal = e.target.value;
+        let newCheckboxState = [...checkboxState];
+
+        // update the state so it looks correct
+        newCheckboxState.find((val)=>{
+            if(val.value === checkedVal) {
+                val.checked = !val.checked;
+            }
+        })
+        setCheckboxState(newCheckboxState);
+
+        // take our new state and send a smooshed list to the handleParams method
+        let checked = [...checkboxState];
+        checked = newCheckboxState.filter(c => c.checked === true);
+        
+        let articleTypes = checked.map((c) => c.value).join(',');
+        handleParams('news', [{key: 'articleType', value: articleTypes}]);
+    }
+
+    
+    const backupLabel = Math.random().toString(36).substring(7);
+    return (
+    
+    <Styles.Container data-testid="CheckboxListFilter">
+
+    <Styles.Fieldset aria-describedby="waste-hint">
+        <Styles.Legend labelHidden={labelHidden}>
+            {label}
+        </Styles.Legend>
+        <Styles.Hint id="waste-hint" hintHidden={hintHidden}>
+            {hint}
+        </Styles.Hint>
+        <Styles.Checkboxes>
+        {checkboxState.map((option, i) => 
+                <Styles.Checkbox key={i}>
+                    <Styles.CheckboxInput id={option.value} name={labelHidden ? backupLabel : label } type="checkbox"  onChange={optionChecked} value={option.value} checked={option.checked} />
+                    <Styles.CheckboxLabel isChecked={option.checked} htmlFor={option.value}>
+                    {option.title}
+                    </Styles.CheckboxLabel>
+                </Styles.Checkbox>
+            )}
+        </Styles.Checkboxes>
+
+      </Styles.Fieldset>
     
     
     </Styles.Container>
-);
+)};
 
 export default CheckboxListFilter;
-

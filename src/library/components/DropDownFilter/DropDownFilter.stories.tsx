@@ -6,6 +6,7 @@ import { DropDownFilterProps } from "./DropDownFilter.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 import {serviceOptions} from './DropDownFilterData';
+import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData';
 
 export default {
     title: 'Library/Components/DropDownFilter',
@@ -17,5 +18,5 @@ const Template: Story<DropDownFilterProps> = (args) => <SBPadding><DropDownFilte
 export const ExampleDropDownFilter = Template.bind({});    
 ExampleDropDownFilter.args = {
   options: serviceOptions,
-  selected: 0
+  selected: newsArticleData.services
 };

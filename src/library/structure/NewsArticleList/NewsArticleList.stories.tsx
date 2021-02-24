@@ -4,7 +4,7 @@ import { Story } from '@storybook/react/types-6-0';
 import NewsArticleList from "./NewsArticleList";
 import { NewsArticleListProps } from "./NewsArticleList.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import newsArticleData from './NewsArticleData';
+import { newsArticleData } from './NewsArticleData';
 
 export default {
     title: 'Library/Components/News Article List',
@@ -16,7 +16,7 @@ const Template: Story<NewsArticleListProps> = (args) => <SBPadding><NewsArticleL
 
 export const ExampleNewsArticleList = Template.bind({});    
 ExampleNewsArticleList.args = {
-  results: newsArticleData,
+  results: newsArticleData.results,
   // totalResults: 0,
   sortBy: null,
   // pageNumber: 1

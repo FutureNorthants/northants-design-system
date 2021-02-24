@@ -16,7 +16,7 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
             <Styles.ArticleContent>
                 <Styles.Title>{article.title}</Styles.Title>
                 {(article.excerpt.length > extractLength) ? article.excerpt.substr(0, extractLength-1).trim() + String.fromCharCode(8230) : article.excerpt}
-                <NewsArticleDate text={article.date} format="YYYY-MM-DDThh:mm:ss Z" />
+                <NewsArticleDate text={article.date.toString()} format="X" />
             </Styles.ArticleContent>
             {article.thumbnail &&
             <Styles.ImageContainer background={article.thumbnail} ></Styles.ImageContainer>

@@ -1,91 +1,113 @@
-export default {
+import Uri from 'jsuri';
+
+
+var uri = new Uri(window.location);
+
+export const newsArticleData = {
   pageNumber: 1,
   totalResults: 23,
-  sortBy: 'recentAsc',
+  sortBy: (uri.hasQueryParam('sortBy')) ? uri.getQueryParamValue('sortBy') : 'recentAsc',
+  articleType: (uri.hasQueryParam('articleType')) ? uri.getQueryParamValue('articleType').split(',') : ['article', 'press-release'],
+  services: (uri.hasQueryParam('services')) ? uri.getQueryParamValue('services') : 'all-services',
+  searchTerm: (uri.hasQueryParam('searchTerm')) ? uri.getQueryParamValue('searchTerm') : undefined,
   results: [
-        {
-          id: "602d4dba9beda0a22ae9bde7",
-          title: "Do velit esse proident excepteur laborum.",
-          excerpt: "Aute nostrud laborum qui eiusmod. Eu culpa proident amet ex fugiat. Pariatur sit excepteur eu commodo sit pariatur est consequat.\r\n",
-          date: "2014-06-30T01:42:57 -01:00",
-          thumbnail: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
-        },
-        {
-          id: "602d4dba96825ff46d15ff8d",
-          title: "Culpa eu nulla et nisi.",
-          excerpt: "Occaecat ex sint incididunt veniam do in. Mollit est aliquip exercitation duis cillum deserunt amet aute aute ea. Dolore tempor occaecat est aliqua in fugiat ipsum dolore. Tempor aliqua qui commodo enim Lorem ullamco veniam fugiat consectetur esse. Ullamco est cupidatat mollit elit sint dolor cillum nulla. Reprehenderit do adipisicing excepteur enim qui irure minim est adipisicing consectetur ea culpa incididunt. Excepteur id exercitation ad aliqua commodo.\r\n",
-          date: "2015-05-08T03:58:14 -01:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba03c9de5b0a7bf967",
-          title: "Exercitation ea aliqua nostrud ullamco consequat anim.",
-          excerpt: "Nulla ullamco consectetur fugiat mollit. Nulla eu eu ullamco deserunt cupidatat ut sit tempor dolor ullamco. Ad cillum cillum ad cupidatat consequat cupidatat laboris enim dolor minim aliquip. In cupidatat labore proident consectetur Lorem excepteur est ut irure officia. Laborum qui aliquip laborum occaecat commodo do cillum veniam. Velit voluptate eu excepteur anim cillum. Adipisicing aute ullamco sint sunt aute veniam irure eiusmod incididunt eu sit.\r\n",
-          date: "2017-07-27T02:25:01 -01:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba7fe4245cfe1b9616",
-          title: "Irure consectetur est sint quis voluptate consequat aliqua culpa.",
-          excerpt: "Exercitation commodo esse consequat id ad proident fugiat adipisicing sint cupidatat adipisicing tempor magna. Sit adipisicing commodo est commodo dolore duis voluptate in dolor amet minim dolor. Aliqua amet nisi anim fugiat. Nostrud aute ut labore laboris enim esse deserunt ad enim excepteur veniam ullamco pariatur duis. Sit excepteur tempor consectetur sint sunt et excepteur sint enim sunt ex. Consectetur consequat officia culpa veniam eu deserunt dolor reprehenderit nostrud ad nisi commodo sunt.\r\n",
-          date: "2018-05-05T05:20:41 -01:00",
-          thumbnail: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
-        },
-        {
-          id: "602d4dba774c5139a44b9d15",
-          title: "Quis officia id et aute tempor officia ea quis veniam laborum.",
-          excerpt: "Incididunt laboris exercitation anim voluptate cupidatat deserunt sunt sunt aute. Ipsum dolor est laborum duis labore adipisicing commodo eiusmod do eiusmod esse exercitation excepteur. Nulla voluptate laboris excepteur dolore consequat laboris est pariatur qui quis enim.\r\n",
-          date: "2021-01-25T04:20:31 -00:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba462195f7b4a3bf80",
-          title: "Amet enim deserunt aliquip quis tempor id aute ex elit culpa in minim tempor.",
-          excerpt: "Occaecat enim fugiat excepteur minim Lorem consectetur veniam sunt. Cillum anim quis id laboris nostrud amet occaecat aliquip deserunt. Eu ad aliquip duis officia ipsum dolore eu nulla pariatur proident nulla adipisicing incididunt ea.\r\n",
-          date: "2020-12-23T07:46:41 -00:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba0cee7351af4b77ce",
-          title: "Officia nisi voluptate commodo est voluptate mollit aute do magna ex sunt consequat do.",
-          excerpt: "Tempor enim cillum proident velit amet sit veniam ad cillum esse elit ea consectetur sit. Aliqua aliquip cupidatat ipsum amet duis amet adipisicing proident occaecat excepteur cupidatat exercitation magna. Velit cupidatat tempor mollit irure deserunt sint. Irure nostrud nostrud voluptate dolor.\r\n",
-          date: "2019-03-31T09:49:03 -01:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dbad87ac89a14e99a09",
-          title: "Voluptate sit sunt magna sint velit.",
-          excerpt: "Aliquip anim elit ut dolore qui aute aliquip magna Lorem Lorem labore elit. Ullamco nostrud pariatur officia exercitation. Nulla labore veniam duis ea anim. Labore Lorem labore veniam sint eiusmod nostrud ut. Qui anim ea nulla consequat non aute adipisicing anim nisi eu mollit reprehenderit qui. Elit minim cillum amet ex excepteur in tempor consectetur minim aliquip. Dolor est voluptate do ipsum aliqua pariatur laborum commodo in do occaecat amet.\r\n",
-          date: "2018-08-26T02:45:38 -01:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dbabc5b74dd79a3f9c4",
-          title: "Dolore sint consectetur nostrud pariatur.",
-          excerpt: "Et aute voluptate exercitation et laboris minim ipsum elit laborum est elit. Id aliquip ipsum cillum voluptate incididunt occaecat amet laboris exercitation tempor consectetur. Id elit labore sunt proident magna ipsum sit minim. Duis proident sit eu incididunt aute eu laborum et enim sint adipisicing tempor proident. Cillum exercitation magna veniam pariatur occaecat irure amet.\r\n",
-          date: "2018-03-18T04:54:13 -00:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba8af7627d9dafc141",
-          title: "Consequat esse mollit reprehenderit non adipisicing sint eu aliqua irure amet.",
-          excerpt: "Adipisicing mollit velit dolore id. Nostrud labore ex aute eu qui eu deserunt. Velit cupidatat sit laboris dolore ea irure veniam incididunt sit nostrud commodo. Mollit sit ex aliqua commodo elit Lorem est magna officia proident id.\r\n",
-          date: "2014-02-26T09:20:42 -00:00",
-          thumbnail: ""
-        },
-        {
-          id: "602d4dba1cf67d409b0fcbaf",
-          title: "Ex ea sint velit quis excepteur reprehenderit sint.",
-          excerpt: "Ad ad nulla ad consectetur sit aute. Consequat reprehenderit irure voluptate voluptate esse exercitation nostrud esse irure sunt minim. Tempor amet ut amet laboris veniam amet aliquip nulla. Adipisicing deserunt ipsum nulla ea aute minim.\r\n",
-          date: "2017-11-18T08:31:28 -00:00",
-          thumbnail: "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
-        },
-        {
-          id: "602d4dba6d668257d7a77667",
-          title: "Voluptate ea aliquip ea Lorem.",
-          excerpt: "Et et duis cupidatat labore enim excepteur cillum commodo amet ea magna deserunt. Nulla cupidatat ex enim est laborum exercitation esse qui. Dolor laborum ex sunt esse mollit ullamco aliquip.\r\n",
-          date: "2020-04-19T11:24:14 -01:00",
-          thumbnail: ""
-        }
+    {
+      "id": "6036694e465dd0e61e7f784e",
+      "title": "Pariatur sint occaecat sit eiusmod proident id dolor eiusmod consectetur Lorem exercitation.",
+      "excerpt": "Sint Lorem consectetur in commodo esse culpa anim id. Consectetur occaecat sint sit consectetur aliquip irure eiusmod quis minim. Excepteur tempor aliquip dolor voluptate id exercitation dolore est est.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e9c7a21251cde2d6d",
+      "title": "Voluptate Lorem mollit mollit ex in mollit dolore cupidatat fugiat nulla dolore esse nostrud sit.",
+      "excerpt": "Eu mollit ea laboris et proident occaecat velit in incididunt aliqua velit duis. Enim elit incididunt aliqua id minim nostrud Lorem. Esse quis velit nostrud anim aliquip veniam cupidatat fugiat aliqua.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e077bf233656296e2",
+      "title": "Id magna in labore non aliquip Lorem ad est irure culpa reprehenderit incididunt ut eiusmod.",
+      "excerpt": "Cupidatat veniam minim nulla sint et quis quis esse laborum. Qui eu id nostrud dolore et ipsum nostrud nisi incididunt. Sint dolor ea proident adipisicing officia aliqua ea mollit duis sint ipsum aute ut. Irure non do veniam minim quis. Esse commodo sint occaecat occaecat. Ex ea nulla pariatur est.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e95f7c8c6729a46bf",
+      "title": "Veniam nostrud excepteur elit non cupidatat deserunt sunt amet ad ipsum sunt incididunt.",
+      "excerpt": "Et qui culpa cillum sunt eu laboris nisi adipisicing esse. Elit sunt commodo qui eu est sit id dolor tempor non nisi. Ea do incididunt ad ea ut aliqua laboris cupidatat incididunt exercitation sit quis consequat duis. Do voluptate sunt eu aliquip id irure ad eu quis occaecat. Occaecat duis eiusmod aliqua ad incididunt laboris duis.\r\n",
+      "date": 1614178638,
+      "thumbnail": "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
+    },
+    {
+      "id": "6036694eef56d541aa47dede",
+      "title": "Enim fugiat magna duis amet ex non consectetur occaecat sunt.",
+      "excerpt": "Occaecat proident enim et do excepteur ad commodo. Culpa occaecat cupidatat cupidatat adipisicing amet. Sit quis ipsum aute reprehenderit cupidatat tempor et non esse veniam deserunt anim eu.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e17e1a74fadef2ce1",
+      "title": "Officia ut ut et consectetur in mollit enim qui.",
+      "excerpt": "Enim do ex dolor et fugiat ea minim consequat occaecat non nostrud amet commodo. Consectetur duis ut consectetur nulla enim fugiat consequat fugiat. Magna consequat eiusmod exercitation quis irure. Nisi consectetur duis sit non. Ut sint aliqua magna labore nostrud commodo. Dolore adipisicing dolore cillum officia aliqua non.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e71b8eedb00cff39f",
+      "title": "Non minim ad ullamco exercitation pariatur eu dolor occaecat ullamco culpa excepteur cillum irure.",
+      "excerpt": "Nulla tempor qui reprehenderit qui. Est esse irure nulla ea veniam mollit consectetur velit. Sunt anim incididunt et dolore sunt ullamco. Eiusmod reprehenderit sunt adipisicing eu irure ullamco nulla cillum esse pariatur.\r\n",
+      "date": 1614178638,
+      "thumbnail": "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
+    },
+    {
+      "id": "6036694ebe79bca7b2299ec2",
+      "title": "Fugiat exercitation cillum velit culpa sunt labore excepteur nostrud Lorem adipisicing do ea.",
+      "excerpt": "Esse commodo eu occaecat exercitation ad officia ex adipisicing minim. Nulla voluptate mollit adipisicing aute excepteur commodo ut. Eiusmod adipisicing minim elit aute officia mollit nulla cupidatat. Pariatur sunt pariatur et adipisicing qui aute ad tempor dolor ex magna voluptate. Elit nulla in consectetur quis deserunt officia.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e8965f7c152ac258b",
+      "title": "Sit nostrud fugiat magna elit ex nisi veniam nulla elit.",
+      "excerpt": "Aute excepteur exercitation amet adipisicing ad ex cupidatat fugiat quis do. Magna laborum elit dolore do eiusmod aliqua nostrud officia tempor anim ex. Officia exercitation amet sunt ullamco dolore mollit nulla velit et et tempor adipisicing ea. Mollit sit laborum occaecat commodo laborum et nisi sit.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e41556f89cd360cb7",
+      "title": "Commodo nostrud laboris fugiat id occaecat proident culpa eu cillum labore sint.",
+      "excerpt": "Enim Lorem esse reprehenderit elit magna dolore aute ea fugiat in consectetur ea. Dolor laboris id veniam enim ullamco consectetur voluptate adipisicing aliquip fugiat proident duis proident. Magna laborum exercitation consectetur veniam excepteur eu deserunt commodo consequat consequat eiusmod aliquip laborum sunt. Anim ex excepteur anim sint minim sint incididunt tempor est fugiat cillum sint aliquip et. Reprehenderit laboris enim veniam est incididunt dolore laboris. Aliqua mollit enim esse quis ea non cillum non veniam.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694ecc9e7276dc159e04",
+      "title": "Ad incididunt id dolor eu duis dolor veniam consectetur veniam aute dolore irure minim.",
+      "excerpt": "Nostrud ullamco elit sint laborum veniam laboris adipisicing. Officia ex aute est proident nostrud proident. Id pariatur pariatur duis aliquip non laboris consectetur cillum ea. Laborum exercitation eu proident ut.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694e8654d2682a789f4f",
+      "title": "Officia dolore cillum amet adipisicing esse exercitation cillum.",
+      "excerpt": "Anim exercitation ut occaecat adipisicing proident enim eu mollit. Labore reprehenderit aliqua elit veniam. In officia elit labore pariatur cillum qui labore consequat Lorem amet voluptate excepteur laboris incididunt. Ut nulla sit magna amet est laborum laboris excepteur exercitation ut consectetur mollit eiusmod. Irure nulla nostrud aliqua eu irure eiusmod dolore incididunt. Reprehenderit veniam proident deserunt aute do nulla occaecat et laborum quis in ullamco tempor dolor.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    },
+    {
+      "id": "6036694ed3c1de9114024a02",
+      "title": "In sint incididunt dolor officia consectetur proident mollit exercitation magna.",
+      "excerpt": "Cillum occaecat eiusmod pariatur cillum Lorem sunt pariatur proident aliquip pariatur aute nostrud. Veniam aliqua qui id consectetur sit incididunt. Sint non voluptate adipisicing anim. Amet tempor id in adipisicing sunt. Aliquip dolore ipsum occaecat officia anim aliqua minim consequat Lorem ipsum.\r\n",
+      "date": 1614178638,
+      "thumbnail": "https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg"
+    },
+    {
+      "id": "6036694ee56092fb2d5a1d2e",
+      "title": "Nisi ut consequat elit nulla proident est eu ullamco velit cupidatat minim officia est.",
+      "excerpt": "Et ad nostrud nostrud quis enim laborum ea. Amet sit amet amet laboris Lorem exercitation. Magna laboris ex dolore do officia veniam. Excepteur enim occaecat tempor reprehenderit. Enim ex nostrud nisi veniam magna ad ipsum in do. Incididunt ullamco proident fugiat duis ea velit ullamco sint. Exercitation eu veniam officia occaecat ullamco cillum do fugiat in Lorem mollit cillum.\r\n",
+      "date": 1614178638,
+      "thumbnail": ""
+    }
   ]
 }

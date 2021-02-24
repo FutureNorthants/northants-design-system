@@ -12,4 +12,9 @@ export interface PaginationProps {
    * What is the total number of results
    */
   totalResults: number;
+
+  /**
+   * Which end point are we going to - defaults to search
+   */
+  postTo?: string;
 }

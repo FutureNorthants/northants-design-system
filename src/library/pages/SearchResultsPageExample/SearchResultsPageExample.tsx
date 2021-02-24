@@ -5,6 +5,7 @@ import SearchResultsList from '../../structure/SearchResultsList/SearchResultsLi
 import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
 import {SignpostLinkProp} from '../../components/SignpostLinksList/SignpostLinksList.types'
+import { noSearchResults, searchResultsWithServiceArea } from './../../structure/SearchResultsList/SearchResultsData';
 
 export interface SearchResultsPageExampleProps {
   results: Array<SearchResultProps>
@@ -33,82 +34,6 @@ interface SearchResultProps {
 }
 
 
-const SearchResultsListData = {
-  searchTerm: "Council tax",
-  results: [
-    {
-      service: "Council tax",
-      title: "Council tax",
-      link: "/council-tax",
-      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
-    },
-    {
-      service: "Council tax",
-      title: "Paying council tax",
-      link: "/",
-      summary: "Pay your council tax online",
-      signpostLinksArray: [
-        {
-          sovereignCode: 1,
-          areaName: "Corby",
-          url: "/"
-      },
-      {
-          sovereignCode: 3,
-          areaName: "East Northamptonshire",
-          url: "/"
-      },
-      {
-          sovereignCode: 4,
-          areaName: "Kettering",
-          url: "/"
-      },
-      {
-          sovereignCode: 7,
-          areaName: "Wellingborough",
-          url: "/"
-      }
-    ]
-    },
-    {
-      service: "Council tax",
-      title: "Council tax",
-      link: "/council-tax",
-      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
-    },
-    {
-      service: "Council tax",
-      title: "Council tax",
-      link: "/council-tax",
-      summary: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper."
-    },
-    {
-      service: "Council tax",
-      title: "Paying council tax",
-      link: "/",
-      summary: "Pay your council tax online",
-      signpostLinksArray: [
-        {
-          sovereignCode: 2,
-          areaName: "Daventry",
-          url: "/"
-      },
-      {
-          sovereignCode: 5,
-          areaName: "Northampton",
-          url: "/"
-      },
-      {
-          sovereignCode: 6,
-          areaName: "South Northamptonshire",
-          url: "/"
-      }
-    ]
-    },
-],
-pageNumber: 0
-}
-
 export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
   <>
     <PageStructures.Header hideSearchBar />
@@ -132,14 +57,14 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
         }]} />
 
         {results ?
-        <SearchResultsList results={SearchResultsListData.results} searchTerm={SearchResultsListData.searchTerm} pageNumber={SearchResultsListData.pageNumber} />
+        <SearchResultsList {...searchResultsWithServiceArea} />
         :
-        <SearchResultsList results={[]} searchTerm={SearchResultsListData.searchTerm} />
+        <SearchResultsList {...noSearchResults} />
         }
 
 
         {results &&
-          <Pagination currentPage={1} totalResults={5}  />
+          <Pagination currentPage={searchResultsWithServiceArea.pageNumber} totalResults={searchResultsWithServiceArea.totalResults}  />
         }
 
 

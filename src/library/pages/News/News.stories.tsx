@@ -21,8 +21,3 @@ ExampleNoNewsArticleList.args = {
   hasResults: false
 };
 
-export const ExampleFilteredNewsArticleList = Template.bind({});   
-ExampleFilteredNewsArticleList.args = {
-  hasResults: true,
-  isFiltered: true
-};

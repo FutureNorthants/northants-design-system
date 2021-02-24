@@ -4,7 +4,10 @@ import React from "react";
 import { PaginationProps } from "./Pagination.types";
 import * as Styles from "./Pagination.styles";
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalResults, resultsPerPage }) => {
+import {handleParams} from './../../helpers/url-helpers.js';
+
+
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalResults, resultsPerPage, postTo = "search" }) => {
 
     // support for ...
 const pagination = (c,m) => {
@@ -48,49 +51,8 @@ const numbers = pagination(currentPage, numberOfNumbers);
 // const numbers = allNumbers;
 
 
-//TODO move this into helpers/url-helpers.js
-const buttonClick = (url, param, paramVal) => {
-    var TheAnchor = null;
-    var newAdditionalURL = "";
-    var tempArray = url.split("?");
-    var baseURL = tempArray[0];
-    var additionalURL = tempArray[1];
-    var temp = "";
-
-    if (additionalURL) 
-    {
-        var tmpAnchor = additionalURL.split("#");
-        var TheParams = tmpAnchor[0];
-            TheAnchor = tmpAnchor[1];
-        if(TheAnchor)
-            additionalURL = TheParams;
-
-        tempArray = additionalURL.split("&");
-
-        for (var i=0; i<tempArray.length; i++)
-        {
-            if(tempArray[i].split('=')[0] != param)
-            {
-                newAdditionalURL += temp + tempArray[i];
-                temp = "&";
-            }
-        }        
-    }
-    else
-    {
-        var tmpAnchor = baseURL.split("#");
-        var TheParams = tmpAnchor[0];
-            TheAnchor  = tmpAnchor[1];
-
-        if(TheParams)
-            baseURL = TheParams;
-    }
-
-    if(TheAnchor)
-        paramVal += "#" + TheAnchor;
-
-    var rows_txt = temp + "" + param + "=" + paramVal;
-    window.location.href = (baseURL + "?" + newAdditionalURL + rows_txt);
+const buttonClick = (pageNo) => {
+    handleParams(postTo, [{key: 'page', value: pageNo}]);
 }
 
 
@@ -98,13 +60,13 @@ if(numbers.length > 1) {
 return (
     <Styles.Container data-testid="Pagination" role="navigation" aria-label="Pagination">
         {currentPage !== 1 &&
-            <Styles.Previous onClick={() => buttonClick(window.location.href, "page", currentPage - 1)} title="Go back a page">Previous</Styles.Previous>
+            <Styles.Previous onClick={() => buttonClick(currentPage - 1)} title="Go back a page">Previous</Styles.Previous>
         }
 
         <Styles.NumbersContainer>
             {numbers.map((v,i) => 
             <Styles.NumberContainer key={i}>
-                <Styles.Number onClick={() => buttonClick(window.location.href, "page", v)} isCurrent={currentPage === v}  title={currentPage === v ? "This is the current page" : v === "..." ? "See more pages" : ("Go to page " + v)}>
+                <Styles.Number onClick={() => buttonClick(v)} isCurrent={currentPage === v}  title={currentPage === v ? "This is the current page" : v === "..." ? "See more pages" : ("Go to page " + v)}>
                     <Styles.VisuallyHidden>Page </Styles.VisuallyHidden>
                     {v}
                 </Styles.Number>
@@ -113,7 +75,7 @@ return (
         </Styles.NumbersContainer>
 
         {currentPage < numberOfNumbers &&
-            <Styles.Next onClick={() => buttonClick(window.location.href, "page", currentPage + 1)} title="Go forward a page">Next</Styles.Next>
+            <Styles.Next onClick={() => buttonClick(currentPage + 1)} title="Go forward a page">Next</Styles.Next>
         }
 
     </Styles.Container>

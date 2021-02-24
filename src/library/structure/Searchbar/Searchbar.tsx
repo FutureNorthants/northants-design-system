@@ -4,6 +4,8 @@ import React, {useState} from "react";
 import { SearchbarProps } from "./Searchbar.types";
 import * as Styles from "./Searchbar.styles";
 
+import {handleParams} from './../../helpers/url-helpers.js';
+
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 
 const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, searchTerm, submitInfo, id="search"}) => { 
@@ -13,33 +15,21 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
     classes += (isLarge) ? " is-large" : "";
 
   const {postTo, params} = submitInfo[0];
-
-  const encodeParams = (params) => {
-    return Object.keys(params).map(function(key) {
-      return key + '=' + encodeURIComponent(params[key]);
-    }).join('&');
-  }
-
   const initialValues = {searchTerm: (searchTerm === undefined) ? "" : searchTerm}
 
 
   const [inputs, setInputs] = useState(initialValues);
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
-    let queryString = '';
     let submitParams = params;
 
     if(inputs.searchTerm !== searchTerm || !('searchTerm' in submitParams)) {
       submitParams = {...submitParams, searchTerm: inputs.searchTerm}
+      let keyValueFormat = Object.keys(submitParams).map(function(key) {
+          return {key, value: submitParams[key]};
+      })
+      handleParams(postTo, keyValueFormat);
     }
-
-    if(encodeParams(submitParams).length !== 0) {
-      queryString = `?${encodeParams(submitParams)}`;
-    }
-
-
-    // console.log(`${postTo}${queryString}`)
-    window.location.href = `${postTo}${queryString}`;
   }
 
   const handleInputChange = (event) => {
