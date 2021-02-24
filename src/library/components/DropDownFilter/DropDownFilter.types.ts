@@ -1,6 +1,13 @@
 
 export interface DropDownFilterProps {
-  selected: number,
+  /**
+   * What question are we asking?
+   */
+  label: string,
+  /**
+   * Which value is auto selected
+   */
+  selected: string,
  /**
   * What to show in the dropdown
   */

@@ -4,6 +4,20 @@ export interface CheckboxListFilterProps {
    * What to show in the checkboxes
    */
   options: Array<CheckboxValsProps>;
+
+  /**
+   * Which fields are checked
+   */
+  checked: Array<string>;
+
+    /**
+     * 
+   */
+  label: string;
+  /**
+   * 
+   */
+  hint: string;
 }
 
 

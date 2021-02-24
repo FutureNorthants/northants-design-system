@@ -1,13 +1,21 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {VisuallyHidden} from './../../helpers/style-helpers'
 
-export const Container = styled.div`
-  
+export const Container = styled.div`  
   ${props => props.theme.fontStyles};
 `
 
+const hideLabel = props => {
+  if(props.labelHidden === true) {
+    return VisuallyHidden;
+  }
+}
+
+
 export const Label = styled.label`
-    display: none;
+    display: block;
     margin-bottom: 5px;
+    ${hideLabel}
 `
 
 export const Select = styled.select`
@@ -35,3 +43,4 @@ export const Option = styled.option`
   }
 
 `
+

@@ -23,6 +23,6 @@ export interface NewsArticleProps {
   id: string,
   title: string,
   excerpt: string,
-  date: string,
+  date: number,
   thumbnail: string
 }

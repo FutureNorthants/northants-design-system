@@ -1,9 +1,7 @@
 export const articleOptions = [ {
     title: "Article",
-    value: 'article',
-    checked: true
+    value: 'article'
   }, {
     title: "Press Release",
-    value: 'press-release',
-    checked: true
+    value: 'press-release'
   } ];

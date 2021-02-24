@@ -43,6 +43,6 @@ export interface SearchResultProps {
   /**
    * If there is a service area tied to the result
    */
-  service: string;
+  service?: string;
 }
 

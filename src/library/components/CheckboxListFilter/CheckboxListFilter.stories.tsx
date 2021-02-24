@@ -6,6 +6,8 @@ import { CheckboxListFilterProps } from "./CheckboxListFilter.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { articleOptions } from "./CheckboxListFilterData"
 
+import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData';
+
 export default {
     title: 'Library/Components/CheckboxListFilter',
     component: CheckboxListFilter
@@ -15,6 +17,7 @@ const Template: Story<CheckboxListFilterProps> = (args) => <SBPadding><CheckboxL
 
 export const ExampleCheckboxListFilter = Template.bind({});    
 ExampleCheckboxListFilter.args = {
-  options: articleOptions
+  options: articleOptions,
+  checked: newsArticleData.articleType
 };
 

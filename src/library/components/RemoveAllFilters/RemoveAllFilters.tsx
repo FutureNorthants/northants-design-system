@@ -6,13 +6,13 @@ import * as Styles from "./RemoveAllFilters.styles";
 
 import {removeParams} from './../../helpers/url-helpers.js';
 
-
+// TODO the values are hard coded here :/
 
 const RemoveAllFilters: React.FC<RemoveAllFiltersProps> = ({  }) => {
     
     const removeAllFilters = (e) => {
         e.preventDefault();
-        removeParams(['searchTerm', 'services', 'articleType']);
+        removeParams(['searchTerm', 'services', 'articleType', 'sortBy', 'page']);
     }
 
     return (
