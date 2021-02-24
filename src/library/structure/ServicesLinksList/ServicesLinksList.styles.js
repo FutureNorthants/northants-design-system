@@ -256,7 +256,7 @@ export const ReorderButton = styled.button`
 
   &.chosen {
     cursor: default;
-    borer: none;
+    border: none;
     box-shadow: none;
     color: ${props => props.theme.theme_vars.colours.black};
     background: ${props => props.theme.theme_vars.colours.focus};
