@@ -1,5 +1,4 @@
 import Uri from 'jsuri';
-import { convertCompilerOptionsFromJson } from 'typescript';
 
 /**
  * We're currently working by sending a request to the server to display what we want on the page.
