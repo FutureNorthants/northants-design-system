@@ -2,7 +2,7 @@ import { gds_vars } from "./theme_gds";
 import { north_vars } from "./theme_north";
 import { west_vars } from "./theme_west";
 import { lb_vars_north } from "./theme_london_bridge_north";
-
+import {css} from 'styled-components';
 
 
 const generate_theme = (theme_vars) => {
@@ -52,7 +52,7 @@ const generate_theme = (theme_vars) => {
             text-decoration: underline;
             text-decoration-style: dotted;
         `,
-        linkStylesFocus: `
+        linkStylesFocus: css`
             color: ${theme_vars.colours.black};
             background: ${theme_vars.colours.focus};
             outline: none;
@@ -61,7 +61,7 @@ const generate_theme = (theme_vars) => {
             -webkit-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
             -moz-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
         `,
-        linkStylesActive: `
+        linkStylesActive: css`
             color: ${theme_vars.colours.black};
             background: ${theme_vars.colours.focus};
             outline: none;
