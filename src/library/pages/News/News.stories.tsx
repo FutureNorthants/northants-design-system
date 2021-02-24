@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { News, NewsProps }  from "./News";
 
 export default {
-  title: 'Page Examples/News example',
+  title: 'Page Examples/News landing page example',
   component: News,
 } as Meta;
 

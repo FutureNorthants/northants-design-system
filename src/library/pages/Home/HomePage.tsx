@@ -4,8 +4,24 @@ import Heading from '../../components/Heading/Heading';
 import AlertBanner from '../../structure/AlertBanner/AlertBanner';
 
 export interface HomePageProps {
-
+  heroArray: Array<HeroImageProp>;
+  servicesArray: Array<PageLinkProp>;
 }
+interface HeroImageProp {
+  /**
+   * The url of the image
+   */
+  image1440x810: string;
+  /**
+   * The url of the image in 10x smaller for lazy loading
+   */
+  image144x81: string;
+  /**
+   * Optional alt text for the image - this should only be included if the image contains content that is important to users and not purely decorative
+   */
+  imageAltText?: string;
+}
+
 
 const submitInfo = [{
   postTo: "/search",
@@ -16,7 +32,7 @@ const submitInfo = [{
 const AlertMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
 
 
-export const HomePage: React.FC<HomePageProps> = ({  }) => (
+export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) => (
   <>
     <PageStructures.CookieBanner 
       title="We use cookies on this site to enhance your user experience"
@@ -73,332 +89,13 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
             url: "/"
         }
     ]}
-    imagesArray={[
-        {
-            image1440x810: "https://imgur.com/nzLuqda.jpg",
-            image144x81: "https://imgur.com/LPqROgx.jpg"
-        },
-        {
-            image1440x810: "https://imgur.com/KhSo1Cn.jpg",
-            image144x81: "https://imgur.com/Dr4Vetq.jpg"
-        },
-        {
-            image1440x810: "https://imgur.com/tRB8Ts7.jpg",
-            image144x81: "https://imgur.com/k5F2jSA.jpg"
-        },
-        {
-            image1440x810: "https://imgur.com/CwHigdL.jpg",
-            image144x81: "https://imgur.com/WVnsE7R.jpg"
-        }
-    ]}
+    imagesArray={heroArray}
   />
 
   <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <PageStructures.ServicesLinksList 
-          serviceLinksArray={[
-            {
-              title: "Coronavirus (Covid-19)", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UBj.svg",
-              iconHoverURL: "https://svgshare.com/i/UAa.svg",
-              quickLinksArray: [
-                {
-                  title: "Coronavirus updates", 
-                  url: "/",
-                },
-                {
-                  title: "Business grants (Covid-19)", 
-                  url: "/",
-                },
-                {
-                  title: "Test and Trace payments", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Council tax", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UCd.svg",
-              iconHoverURL: "https://svgshare.com/i/UCo.svg",
-              quickLinksArray: [
-                {
-                  title: "Paying Council Tax", 
-                  url: "/",
-                },
-                {
-                  title: "Council Tax bands and charges", 
-                  url: "/",
-                },
-                {
-                  title: "Help with Council Tax payments", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Bin collection, recycling and waste", 
-              url: "/iframe.html?id=page-examples-service-landing-page-examples--bin-collection-example&viewMode=story",
-              iconURL: "https://svgshare.com/i/UBk.svg",
-              iconHoverURL: "https://svgshare.com/i/UBs.svg",
-              quickLinksArray: [
-                {
-                  title: "Find your collection day", 
-                  url: "/",
-                },
-                {
-                  title: "Find a waste recycling centre", 
-                  url: "/",
-                },
-                {
-                  title: "Request a bulk collection", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Housing and benefits", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UCq.svg",
-              iconHoverURL: "https://svgshare.com/i/UBu.svg",
-              quickLinksArray: [
-                {
-                  title: "Reporting a change of address", 
-                  url: "/",
-                },
-                {
-                  title: "Finding a home", 
-                  url: "/",
-                },
-                {
-                  title: "Financial housing support", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Adult social services", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UB2.svg",
-              iconHoverURL: "https://svgshare.com/i/UCv.svg",
-              quickLinksArray: [
-                {
-                  title: "Support and care for adults, their families and carers", 
-                  url: "/",
-                },
-                {
-                  title: "Reporting a concern about a vulnerable adult", 
-                  url: "/",
-                },
-                {
-                  title: "Apply for or renew a Blue Badge", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Children and families", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UBW.svg",
-              iconHoverURL: "https://svgshare.com/i/UCc.svg",
-              quickLinksArray: [
-                {
-                  title: "Report a concern about a child", 
-                  url: "/",
-                },
-                {
-                  title: "Adoption and fostering", 
-                  url: "/",
-                },
-                {
-                  title: "Find childcare", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Planning and building control", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UB3.svg",
-              iconHoverURL: "https://svgshare.com/i/UCy.svg",
-              quickLinksArray: [
-                {
-                  title: "Planning applications", 
-                  url: "/",
-                },
-                {
-                  title: "Local development plans", 
-                  url: "/",
-                },
-                {
-                  title: "Building control", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Schools and education", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UBm.svg",
-              iconHoverURL: "https://svgshare.com/i/UD6.svg",
-              quickLinksArray: [
-                {
-                  title: "Find a school", 
-                  url: "/",
-                },
-                {
-                  title: "Information for schools", 
-                  url: "/",
-                },
-                {
-                  title: "Free school meals", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Environment", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UAL.svg",
-              iconHoverURL: "https://svgshare.com/i/UCx.svg",
-              quickLinksArray: [
-                {
-                  title: "Country parks", 
-                  url: "/",
-                },
-                {
-                  title: "Animal welfare and dog warden service", 
-                  url: "/",
-                },
-                {
-                  title: "Noise and nuisance", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Business and Licensing", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UAJ.svg",
-              iconHoverURL: "https://svgshare.com/i/UCG.svg",
-              quickLinksArray: [
-                {
-                  title: "Business rates", 
-                  url: "/",
-                },
-                {
-                  title: "Support and advice", 
-                  url: "/",
-                },
-                {
-                  title: "Licenses and permits", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Parking, roads and transport", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UBv.svg",
-              iconHoverURL: "https://svgshare.com/i/UBB.svg",
-              quickLinksArray: [
-                {
-                  title: "Parking", 
-                  url: "/",
-                },
-                {
-                  title: "Report a highways problem", 
-                  url: "/",
-                },
-                {
-                  title: "Buses and trains", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Your council", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UAK.svg",
-              iconHoverURL: "https://svgshare.com/i/UBt.svg",
-              quickLinksArray: [
-                {
-                  title: "Council and democracy", 
-                  url: "/",
-                },
-                {
-                  title: "Electoral services", 
-                  url: "/",
-                },
-                {
-                  title: "Contact the council", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Births, deaths marriages and civil partnerships", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UCn.svg",
-              iconHoverURL: "https://svgshare.com/i/UCm.svg",
-              quickLinksArray: [
-                {
-                  title: "Register a birth", 
-                  url: "/",
-                },
-                {
-                  title: "Register a death", 
-                  url: "/",
-                },
-                {
-                  title: "Marriage and civil partnership", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Culture and tourism", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UCp.svg",
-              iconHoverURL: "https://svgshare.com/i/UCw.svg",
-              quickLinksArray: [
-                {
-                  title: "Leisure and community facilities", 
-                  url: "/",
-                },
-                {
-                  title: "Upcoming events", 
-                  url: "/",
-                },
-                {
-                  title: "Visit Northamptonshire", 
-                  url: "/",
-                }
-              ]
-            },
-            {
-              title: "Community and safety", 
-              url: "/",
-              iconURL: "https://svgshare.com/i/UCz.svg",
-              iconHoverURL: "https://svgshare.com/i/UD7.svg",
-              quickLinksArray: [
-                {
-                  title: "Community safety", 
-                  url: "/",
-                },
-                {
-                  title: "Planning for emergencies", 
-                  url: "/",
-                },
-                {
-                  title: "Flood and water management", 
-                  url: "/",
-                }
-              ]
-            }
-          ]
-        }
+          serviceLinksArray={servicesArray}
       />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
@@ -432,3 +129,36 @@ export const HomePage: React.FC<HomePageProps> = ({  }) => (
     />
   </>
 );
+
+interface PageLinkProp {
+  /**
+  * Title of the page
+  */
+  title: string;
+  /**
+  * URL of the page
+  */
+  url: string;
+  /**
+  * URL of the svg icon for the service landing page
+  */
+  iconURL?: string;
+  /**
+  * URL of the svg icon in a hover style for the service landing page
+  */
+  iconHoverURL?: string;
+  /**
+  * Array of quick links for the service
+  */
+ quickLinksArray: Array<QuickLinkProp>;
+}
+interface QuickLinkProp {
+/**
+* Title of the page
+*/
+title: string;
+/**
+* URL of the page
+*/
+url: string;
+}
