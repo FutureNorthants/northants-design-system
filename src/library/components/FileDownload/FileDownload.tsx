@@ -24,9 +24,8 @@ const FileDownload: React.FC<FileDownloadProps> = ({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-
           {/* // @TODO either remove the need for theme props here or bring props in here */}
-            <DownloadFileIcon colourFill={isHovered ? '#666' : '#ccc'} />
+            <DownloadFileIcon />
             {/* TODO: add in different icons for different types */}
 
             <Styles.FileDetails className="file-details">

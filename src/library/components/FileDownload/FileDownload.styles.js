@@ -22,7 +22,6 @@ export const Link = styled.a`
     margin-bottom: 15px;
     display: block;
     width: fit-content;
-    transition: box-shadow .3s;
     position: relative;
 
     svg {
@@ -30,6 +29,9 @@ export const Link = styled.a`
         vertical-align: top;
         margin-left: 5px;
         margin-top: 5px;
+        g {
+            fill: ${props => props.theme.theme_vars.colours.grey_dark};
+        }
     }
 
     &:hover {
@@ -37,18 +39,28 @@ export const Link = styled.a`
             color: ${props => props.theme.theme_vars.colours.action};
         }
         .file-details {
-            transform: translate(5px, 0px);   
+            transform: translate(3px, 0px);   
+        }
+        svg {
+            g {
+                fill: ${props => props.theme.theme_vars.colours.action};
+            }
         }
     }
 
     &:focus {
         outline: none;
-        box-shadow: 0px 0px 0px 3px ${props => props.theme.theme_vars.colours.focus};
+        background: ${props => props.theme.theme_vars.colours.focus};
+        box-shadow: 0px 0px 0px 3px ${props => props.theme.theme_vars.colours.focus}, 0px 3px 0px 3px ${props => props.theme.theme_vars.colours.black};
+        svg {
+            g {
+                fill: ${props => props.theme.theme_vars.colours.black};
+            }
+        }
     }
     &:active {
-        .file-title {
-            text-decoration: underline;
-        }
+        transform: translateY(2px);   
+        box-shadow: 0px 0px 0px 3px ${props => props.theme.theme_vars.colours.focus}, 0px 1px 0px 3px ${props => props.theme.theme_vars.colours.black};
     }
 `
 
