@@ -260,7 +260,8 @@ export const ReorderButton = styled.button`
     box-shadow: none;
     color: ${props => props.theme.theme_vars.colours.black};
     background: ${props => props.theme.theme_vars.colours.focus};
-    border-color: ${props => props.theme.theme_vars.colours.focus};
+    border: 2px solid ${props => props.theme.theme_vars.colours.focus};
+    border-bottom: none;
     &:focus {
       outline: none;
     }
