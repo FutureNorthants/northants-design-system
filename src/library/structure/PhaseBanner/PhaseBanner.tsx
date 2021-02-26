@@ -5,24 +5,20 @@ import * as Styles from "./PhaseBanner.styles";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const PhaseBanner: React.FC<PhaseBannerProps> = () => {
+const PhaseBanner: React.FC<PhaseBannerProps> = ({isHome = false}) => {
     const themeContext = useContext(ThemeContext);
     
     return(
-        <></>
-        // <Styles.StyledMaxWidthContainer>
-        //     <Styles.PhaseContainer>
-        //         <Styles.Phase>BETA</Styles.Phase> 
-        //     </Styles.PhaseContainer>
-        //     <Styles.PhaseText>
-        //         This website is in development, launching on 1 April 2021 - your&nbsp;
-        //         <a href={
-        //             themeContext.cardinal_name === "west" ? "https://northamptonshire-self.achieveservice.com/service/West_Northamptonshire_Beta_website_comment_form" : 
-        //             themeContext.cardinal_name === "north" ? "http://northamptonshire-self.achieveservice.com/service/North_Northamptonshire_Beta_website_feedback_form" : "#"
-        //          } target="_blank" rel="noopener" title="Give us feedback">feedback</a> 
-        //         &nbsp;will help us to improve it.
-        //     </Styles.PhaseText>
-        // </Styles.StyledMaxWidthContainer>
+        <Styles.Wrapper isHome={isHome}>
+            <Styles.StyledMaxWidthContainer noPadding noBackground isHome={isHome}>
+                <Styles.PhaseContainer>
+                    <Styles.Phase isHome={isHome}>BETA</Styles.Phase> 
+                </Styles.PhaseContainer>
+                <Styles.PhaseText>
+                    This website is currently in development, launching on 1 April 2021
+                </Styles.PhaseText>
+            </Styles.StyledMaxWidthContainer>
+        </Styles.Wrapper>
     );
 }
 

@@ -12,6 +12,7 @@ import { SkipToMainContent } from "../PageStructures";
 import LazyImage from "react-lazy-progressive-image";
 import Searchbar from "../Searchbar/Searchbar";
 import { linkTo } from "@storybook/addon-links";
+import PhaseBanner from "../PhaseBanner/PhaseBanner";
 
 /**
  * The Hero that should appear at the top of the home page.
@@ -29,7 +30,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   return(
     <>
       <SkipToMainContent />
-    
+      <PhaseBanner isHome />
       <LazyImage
           src={imagesArray[random].image1440x810}
           placeholder={imagesArray[random].image144x81}

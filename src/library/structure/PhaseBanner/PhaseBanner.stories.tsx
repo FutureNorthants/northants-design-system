@@ -14,3 +14,8 @@ const Template: Story<PhaseBannerProps> = (args) => <PhaseBanner {...args} />;
 
 export const PhaseBannerExample = Template.bind({});    
 
+
+export const PhaseBannerHomeExample = Template.bind({});    
+PhaseBannerHomeExample.args = {
+    isHome: true
+}
