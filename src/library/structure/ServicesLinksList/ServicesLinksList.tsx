@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { ServicesLinksListProps } from "./ServicesLinksList.types";
 import * as Styles from "./ServicesLinksList.styles";
@@ -8,10 +10,11 @@ import Heading from "../../components/Heading/Heading";
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
     serviceLinksArray
 }) => { 
+    const themeContext = useContext(ThemeContext);
     const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
-    const [open, setOpen] = useLocalStorage("mobileIsOpen", false);
-    const [currentOrder, setCurrentOrder] = useLocalStorage("savedOrder", 0);
+    const [open, setOpen] = useLocalStorage(themeContext.cardinal_name + ("-mobileIsOpen"), false);
+    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), 0);
 
     function renderElements(link) {
         return <Styles.PagelinkBlock key={link.title}>
