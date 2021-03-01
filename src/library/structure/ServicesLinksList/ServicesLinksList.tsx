@@ -7,6 +7,8 @@ import * as Styles from "./ServicesLinksList.styles";
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Heading from "../../components/Heading/Heading";
 
+import serviceIcons from '../../components/icons/services/ServicesIcons';
+
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
     serviceLinksArray
 }) => { 
@@ -16,12 +18,21 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     const [open, setOpen] = useLocalStorage(themeContext.cardinal_name + ("-mobileIsOpen"), false);
     const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), 0);
 
+
+    const DynamicComponent = ({name}) => {
+        const DynamicIcon = serviceIcons[name];
+        return <DynamicIcon colourFill={themeContext.theme_vars.colours.action} />;
+    }
     function renderElements(link) {
         return <Styles.PagelinkBlock key={link.title}>
-                {link.iconURL && 
+                {link.iconKey && 
                     <Styles.PagelinkIconContainer>
-                        <Styles.PagelinkIcon  className="service-icon" src={link.iconURL} alt={link.title} />
-                        <Styles.PagelinkIconHover className="service-icon-hover" src={link.iconHoverURL} alt={link.title} />
+                        <Styles.PagelinkIcon className="service-icon">
+                            <DynamicComponent name={link.iconKey} />
+                        </Styles.PagelinkIcon>
+                        <Styles.PagelinkIconHover className="service-icon-hover">
+                            <DynamicComponent name={(link.iconKey + "Hover")} />
+                        </Styles.PagelinkIconHover>
                     </Styles.PagelinkIconContainer>
                 }
                 <Styles.PagelinkInner>

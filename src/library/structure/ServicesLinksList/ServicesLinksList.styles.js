@@ -38,10 +38,10 @@ export const PagelinkBlank = styled.div`
 export const PagelinkIconContainer = styled.div`
 
 `
-export const PagelinkIcon = styled.img`
+export const PagelinkIcon = styled.div`
   vertical-align: middle;
 `
-export const PagelinkIconHover = styled.img`
+export const PagelinkIconHover = styled.div`
   display: none;
   vertical-align: middle;
 `
