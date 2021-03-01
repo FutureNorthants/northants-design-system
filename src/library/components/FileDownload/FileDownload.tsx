@@ -30,7 +30,7 @@ const FileDownload: React.FC<FileDownloadProps> = ({
 
             <Styles.FileDetails className="file-details">
                 <Styles.Title className="file-title">{title}</Styles.Title>
-                <Styles.Type>{type == "Microsoft Office - OOXML - Word Document" ? "Word Document" : type}</Styles.Type>
+                <Styles.Type>{type == "Microsoft Office - OOXML - Word Document" ? "Word Document" : type == "Adobe Portable Document Format" ? "PDF" : type}</Styles.Type>
                 <Styles.Size>{size}</Styles.Size>
             </Styles.FileDetails>
         </Styles.Link>
