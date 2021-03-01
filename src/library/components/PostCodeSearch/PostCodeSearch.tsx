@@ -22,7 +22,8 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     title = "Enter your postcode to find your area",
     formError = false,
     otherCouncilLink,
-    signPostLinks
+    signPostLinks,
+    isUnitary = false
   }) => {
     const themeContext = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
@@ -99,23 +100,36 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
               :
               <Styles.PostcodeResult>
                 <Styles.Line />
-                {themeContext.cardinal_name !== responseData.unitary.toLowerCase() ?
-                  <div className="result"> 
-                    <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign}</strong> area.</p>
-                    <p>In order to find the right information for you, please visit the {responseData.unitary} Northamptonshire website and find your local area - {responseData.sovereign} - for this service.</p>
+                {isUnitary ? 
+                  <div className="result">
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign}</strong> area.</p>
+                      
+                      {themeContext.cardinal_name !== responseData.unitary.toLowerCase() ?
+                        <p>In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary} Northamptonshire website.</a></p>
+                        :
+                        <p>You are on the <strong>correct website for this postcode</strong>.</p>
+                      }
 
-                    <Button size="large" text={"Go to " + responseData.unitary + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
-                    <br />
                     <Styles.StartAgain onClick={() => setResponseData({ unitary: "", unitaryCode: 0, sovereign: "", sovereignCode: 0 })}>Find another postcode</Styles.StartAgain>
                   </div>
                   :
-                  <div className="result">
-                    <p>The postcode <strong>{currentPostcode}</strong> is in the <strong>{responseData.sovereign}</strong> area.</p>
+                  themeContext.cardinal_name !== responseData.unitary.toLowerCase() ?
+                    <div className="result"> 
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign}</strong> area.</p>
+                      <p>In order to find the right information for you, please visit the {responseData.unitary} Northamptonshire website and find your local area - {responseData.sovereign} - for this service.</p>
 
-                    <Button size="large" text={"Go to " + responseData.sovereign} url={signPostLinks.find(link => link.sovereignCode == responseData.sovereignCode).url} />
-                    <br />
-                    <Styles.StartAgain onClick={() => setResponseData({ unitary: "", unitaryCode: 0, sovereign: "", sovereignCode: 0 })}>Find another postcode</Styles.StartAgain>
-                  </div>
+                      <Button size="large" text={"Go to " + responseData.unitary + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
+                      <br />
+                      <Styles.StartAgain onClick={() => setResponseData({ unitary: "", unitaryCode: 0, sovereign: "", sovereignCode: 0 })}>Find another postcode</Styles.StartAgain>
+                    </div>
+                    :
+                    <div className="result">
+                      <p>The postcode <strong>{currentPostcode}</strong> is in the <strong>{responseData.sovereign}</strong> area.</p>
+
+                      <Button size="large" text={"Go to " + responseData.sovereign} url={signPostLinks.find(link => link.sovereignCode == responseData.sovereignCode).url} />
+                      <br />
+                      <Styles.StartAgain onClick={() => setResponseData({ unitary: "", unitaryCode: 0, sovereign: "", sovereignCode: 0 })}>Find another postcode</Styles.StartAgain>
+                    </div>
                 }
               </Styles.PostcodeResult>
             }

@@ -17,4 +17,8 @@ export interface PostCodeSearchProps {
   * Optional, but recommended - a link to send the user to the other council's (West or North) specific service page, defaults to the homepage
   */
   otherCouncilLink?: string;
+  /**
+  * Optional - changes it to only give back the area you are from
+  */
+  isUnitary?: boolean;
 }
