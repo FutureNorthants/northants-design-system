@@ -6,7 +6,7 @@ import { IconProps } from "../Icon.types";
 import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Services/Schools Hover',
+  title: 'Library/Icons/Services/Schools Hover',
   component: Icon
 };
 

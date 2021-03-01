@@ -6,9 +6,11 @@ export const Container = styled.div`
     background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light};
     margin-left: -15px;    
     width: calc(100% + 30px);
+    border-bottom: 3px solid ${props => props.theme.theme_vars.colours.action};
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         margin: 60px auto;
+        margin-top: 40px;
         display: flex;
         -webkit-flex-direction: row;
         -moz-flex-direction: row;
@@ -19,6 +21,7 @@ export const Container = styled.div`
         flex-wrap: wrap;
         margin-left: -30px;    
         width: calc(100% + 60px);
+        border-bottom: none;
     }   
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
         margin-left: 0;

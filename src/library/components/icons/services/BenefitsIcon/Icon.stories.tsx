@@ -6,7 +6,7 @@ import { IconProps } from "../Icon.types";
 import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Services/Benefits',
+  title: 'Library/Icons/Services/Benefits',
   component: Icon
 };
 

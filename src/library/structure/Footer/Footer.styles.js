@@ -22,6 +22,37 @@ export const FooterListItem = styled.li`
   margin-right: 25px;
   margin-bottom: 15px;
 `
+export const SocialLinks = styled.div`
+  margin-bottom: 15px;
+  margin-top: 5px;
+`
+export const SocialLinkSingle = styled.a`
+  display: inline-block;
+  margin-right: 15px;
+  height: 36px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: none;
+
+    svg {
+      path {
+        fill: ${props => props.theme.theme_vars.colours.focus} !important;
+      }
+    }
+  }
+  &:active{
+    opacity: 1;
+
+    svg {
+      path {
+        fill: ${props => props.theme.theme_vars.colours.focus} !important;
+      }
+    }
+  }
+`
 export const FooterLink = styled.a`
   ${props => props.theme.linkStyles}
   color: ${props => props.theme.theme_vars.colours.white};

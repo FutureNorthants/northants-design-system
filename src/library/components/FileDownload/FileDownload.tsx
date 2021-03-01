@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FileDownloadProps } from "./FileDownload.types";
 import * as Styles from "./FileDownload.styles";
 
-import DownloadFileIcon from '../icons/DownloadFileIcon/DownloadFileIcon';
+import DownloadFileIcon from '../../components/icons/DownloadFileIcon/DownloadFileIcon';
 
 const FileDownload: React.FC<FileDownloadProps> = ({
     title,

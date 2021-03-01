@@ -6,7 +6,7 @@ import { DownloadFileIconProps } from "./DownloadFileIcon.types";
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Download File',
+  title: 'Library/Icons/Download File',
   component: DownloadFileIcon
 };
 

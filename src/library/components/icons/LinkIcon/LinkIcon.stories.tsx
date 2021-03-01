@@ -6,7 +6,7 @@ import { LinkIconProps } from "./LinkIcon.types";
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Link',
+  title: 'Library/Icons/Link',
   component: LinkIcon
 };
 

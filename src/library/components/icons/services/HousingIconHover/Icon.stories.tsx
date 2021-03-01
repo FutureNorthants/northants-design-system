@@ -6,7 +6,7 @@ import { IconProps } from "../Icon.types";
 import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Services/Housing Hover',
+  title: 'Library/Icons/Services/Housing Hover',
   component: Icon
 };
 

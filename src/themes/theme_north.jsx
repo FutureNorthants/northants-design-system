@@ -5,6 +5,10 @@ export const north_vars = {
     council_link: "https://beta.northnorthants.gov.uk",
     other_council_link: "https://beta.westnorthants.gov.uk",
     other_council_name: "West Northamptonshire",
+    other_council_action: "#386193",
+    twitter_link: "https://twitter.com/NNorthantsC",
+    linkedin_link: "https://www.linkedin.com/company/north-northamptonshire-council",
+    facebook_link: "https://www.facebook.com/NorthNorthants",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
@@ -19,7 +23,7 @@ export const north_vars = {
         grey_light: "#F5F5F5",
         white: "#FFFFFF",
 
-        action: "#05873A",
+        action: "#017F34",
         action_light: "#F3F9F5",
         action_dark: "#065325",
         positive: "#147DAD",

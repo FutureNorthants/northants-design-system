@@ -36,7 +36,7 @@ export const parameters = {
       },
       {
         name: 'north',
-        value: '#05873A',
+        value: '#017F34',
       },
       {
         name: 'west',

@@ -11,7 +11,7 @@ import FormWithLine from "../FormWithLine/FormWithLine";
 import Input from "../Input/Input";
 import FormButton from "../FormButton/FormButton";
 
-import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
+import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Button from "../Button/Button";
 import { SignpostLinks } from "../../structure/PageStructures";
 

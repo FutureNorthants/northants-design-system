@@ -6,7 +6,7 @@ import { ChevronIconProps } from "./ChevronIcon.types";
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Chevron',
+  title: 'Library/Icons/Chevron',
   component: ChevronIcon
 };
 

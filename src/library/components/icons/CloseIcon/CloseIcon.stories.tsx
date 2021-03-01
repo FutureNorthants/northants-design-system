@@ -6,7 +6,7 @@ import { CloseIconProps } from "./CloseIcon.types";
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Icons/Close',
+  title: 'Library/Icons/Close',
   component: CloseIcon
 };
 

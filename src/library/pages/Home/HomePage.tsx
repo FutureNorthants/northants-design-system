@@ -1,8 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
-import Heading from '../../components/Heading/Heading';
 import AlertBanner from '../../structure/AlertBanner/AlertBanner';
-import PostCodeSearch from '../../components/PostCodeSearch/PostCodeSearch';
+import HomeUnitarySection from '../../structure/HomeUnitarySection/HomeUnitarySection';
 
 export interface HomePageProps {
   heroArray: Array<HeroImageProp>;
@@ -108,7 +107,7 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
           <p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p>
         </PageStructures.PromoBanner>
 
-        <PostCodeSearch isUnitary title="Not sure which you live in? Enter your postcode to find out " />
+        <HomeUnitarySection />
 
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
