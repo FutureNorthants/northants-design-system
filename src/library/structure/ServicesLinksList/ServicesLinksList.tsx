@@ -13,51 +13,23 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     serviceLinksArray
 }) => { 
     const themeContext = useContext(ThemeContext);
-    const originalOrderedArray = serviceLinksArray;
+    const [arrayOrdering, setArrayOrdering] = useState([]);
+    // const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
     const [open, setOpen] = useLocalStorage(themeContext.cardinal_name + ("-mobileIsOpen"), false);
-    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), "normal");
+    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), 0);
+
+    useEffect(() => {
+        if(currentOrder === "0" || currentOrder === 0) {
+            setArrayOrdering(serviceLinksArray);
+        } else {
+            setArrayOrdering(orderedArray);
+        }
+    }, [currentOrder])
 
     const DynamicComponent = ({name}) => {
         const DynamicIcon = serviceIcons[name];
         return <DynamicIcon colourFill={themeContext.theme_vars.colours.action} />;
-    }
-    function renderElements(link) {
-        return <Styles.PagelinkBlock key={link.title}>
-                {link.iconKey && 
-                    <Styles.PagelinkIconContainer>
-                        <Styles.PagelinkIcon className="service-icon">
-                            <DynamicComponent name={link.iconKey} />
-                        </Styles.PagelinkIcon>
-                        <Styles.PagelinkIconHover className="service-icon-hover">
-                            <DynamicComponent name={(link.iconKey + "Hover")} />
-                        </Styles.PagelinkIconHover>
-                    </Styles.PagelinkIconContainer>
-                }
-                <Styles.PagelinkInner>
-                    <Styles.ServiceTitleLink 
-                        href={link.url} 
-                        title={"Go to " + link.title}
-                    >
-                        <Styles.ServiceTitle text={link.title} />
-                    </Styles.ServiceTitleLink>
-
-                    {link.quickLinksArray.length > 0 && 
-                        <Styles.QuicklinkList>
-                            {link.quickLinksArray.map((quicklink) =>
-                                <Styles.QuicklinkItem key={quicklink.title}>
-                                    <Styles.Quicklink 
-                                        href={quicklink.url} 
-                                        title={"Go to " + quicklink.title}
-                                    >
-                                        {quicklink.title}
-                                    </Styles.Quicklink>
-                                </Styles.QuicklinkItem>
-                            )}
-                        </Styles.QuicklinkList>
-                    }
-                </Styles.PagelinkInner>
-            </Styles.PagelinkBlock>;
     }
 
     return(
@@ -67,22 +39,50 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     <Heading text="Council services" />
                     <Styles.ReorderControl>
                         Order services by<br/>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder("normal")} tabIndex={currentOrder === "normal" && "-1"}  className={currentOrder === "normal" && "chosen"}>Most used</Styles.ReorderButton>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder("alph")} tabIndex={currentOrder === "alph" && "-1"} className={currentOrder === "alph" && "chosen"}>Alphabetical</Styles.ReorderButton>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={currentOrder === 0 && "-1"}  className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={currentOrder === 1 && "-1"} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
                     </Styles.ReorderControl>
                 </Styles.HomeTitle>
                 <Styles.LinksList>
-                    {currentOrder === "normal" ?
-                        originalOrderedArray.map((link) =>
-                            renderElements(link)
-                        )
-                        :
-                        currentOrder === "alph" &&
-                            orderedArray.map((link) =>
-                                renderElements(link)
-                            )
-                    }
-                    {originalOrderedArray.length > 1 && ((originalOrderedArray.length + 1) % 3 === 0) &&
+                    {arrayOrdering.map((link) => 
+                        <Styles.PagelinkBlock key={link.title}>
+                            {link.iconKey && 
+                                <Styles.PagelinkIconContainer>
+                                    <Styles.PagelinkIcon className="service-icon">
+                                        <DynamicComponent name={link.iconKey} />
+                                    </Styles.PagelinkIcon>
+                                    <Styles.PagelinkIconHover className="service-icon-hover">
+                                        <DynamicComponent name={(link.iconKey + "Hover")} />
+                                    </Styles.PagelinkIconHover>
+                                </Styles.PagelinkIconContainer>
+                            }
+                            <Styles.PagelinkInner>
+                                <Styles.ServiceTitleLink 
+                                    href={link.url} 
+                                    title={"Go to " + link.title}
+                                >
+                                    <Styles.ServiceTitle text={link.title} />
+                                </Styles.ServiceTitleLink>
+            
+                                {link.quickLinksArray.length > 0 && 
+                                    <Styles.QuicklinkList>
+                                        {link.quickLinksArray.map((quicklink) =>
+                                            <Styles.QuicklinkItem key={quicklink.title}>
+                                                <Styles.Quicklink 
+                                                    href={quicklink.url} 
+                                                    title={"Go to " + quicklink.title}
+                                                >
+                                                    {quicklink.title}
+                                                </Styles.Quicklink>
+                                            </Styles.QuicklinkItem>
+                                        )}
+                                    </Styles.QuicklinkList>
+                                }
+                            </Styles.PagelinkInner>
+                        </Styles.PagelinkBlock>
+                    )}
+                    {/* {originalOrderedArray.length > 1 && ((originalOrderedArray.length + 1) % 3 === 0) && */}
+                    {arrayOrdering.length > 1 && ((arrayOrdering.length + 1) % 3 === 0) &&
                         <Styles.PagelinkBlank />
                     }
                 </Styles.LinksList>
