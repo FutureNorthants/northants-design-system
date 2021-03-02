@@ -16,14 +16,17 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     const [arrayOrdering, setArrayOrdering] = useState([]);
     // const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
-    const [open, setOpen] = useLocalStorage(themeContext.cardinal_name + ("-mobileIsOpen"), false);
-    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), 0);
+    const [open, setOpen] = useLocalStorage((themeContext.cardinal_name + ("-mobileIsOpen")), false);
+    const [currentOrder, setCurrentOrder] = useLocalStorage((themeContext.cardinal_name + ("-savedOrder")), 0);
+    const [orderButtons, setOrderButtons] = useState(true)
 
     useEffect(() => {
         if(currentOrder === "0" || currentOrder === 0) {
             setArrayOrdering(serviceLinksArray);
+            setOrderButtons(true)
         } else {
             setArrayOrdering(orderedArray);
+            setOrderButtons(false)
         }
     }, [currentOrder])
 
@@ -40,7 +43,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     <Styles.ReorderControl>
                         Order services by<br/>
                         {
-                            currentOrder === "0" || currentOrder === 0 ?
+                            orderButtons ?
                                 <>
                                 <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex="-1"  className={"chosen"}>Most used</Styles.ReorderButton>
                                 <Styles.ReorderButton onClick={() => setCurrentOrder(1)}>Alphabetical</Styles.ReorderButton>
