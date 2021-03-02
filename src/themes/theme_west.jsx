@@ -29,7 +29,9 @@ export const west_vars = {
         positive: "#6C9A36",
         negative: "#9D0B1D",
 
-        focus: "#E2CA76"
+        focus: "#E2CA76",
+
+        secondary: "#6CC7E1"
     },
     fontstack: "Roboto, Helvetica, Arial, sans-serif",
     fontSizes: {

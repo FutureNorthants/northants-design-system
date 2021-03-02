@@ -29,7 +29,9 @@ export const north_vars = {
         positive: "#147DAD",
         negative: "#B73131",
 
-        focus: "#E2CA76"
+        focus: "#E2CA76",
+
+        secondary: "#1A9DD9"
     },
     fontstack: "Arial, Helvetica, sans-serif",
     fontSizes: {

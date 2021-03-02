@@ -36,7 +36,17 @@ export const PagelinkBlank = styled.div`
   }
 `
 export const PagelinkIconContainer = styled.div`
+  width: 65px;
+  height: auto;
 
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    width: 96px;
+    height: auto;
+  }
 `
 export const PagelinkIcon = styled.div`
   vertical-align: middle;
@@ -58,6 +68,7 @@ export const PagelinkBlock = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5px;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     width: calc(50% - 16px);

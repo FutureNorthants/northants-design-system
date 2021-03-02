@@ -16,7 +16,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     const [arrayOrdering, setArrayOrdering] = useState([]);
     // const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
-    const [open, setOpen] = useLocalStorage((themeContext.cardinal_name + ("-mobileIsOpen")), false);
+    const [open, setOpen] = useState(false);
     const [currentOrder, setCurrentOrder] = useLocalStorage((themeContext.cardinal_name + ("-savedOrder")), 0);
     const [orderButtons, setOrderButtons] = useState(true)
 
