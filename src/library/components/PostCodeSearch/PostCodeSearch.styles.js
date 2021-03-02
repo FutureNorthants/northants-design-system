@@ -79,6 +79,7 @@ export const StartAgain = styled.button`
     background: transparent;
     border: 0;    
     margin-top: 15px;
+    margin-left: -6px;
     ${props => props.theme.linkStyles}
     &:hover{
         ${props => props.theme.linkStylesHover}
