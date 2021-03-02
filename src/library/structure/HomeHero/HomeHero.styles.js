@@ -110,6 +110,10 @@ export const PromotedLink = styled.a`
         ${props => props.theme.linkStyles};
     }
 
+    &:hover {
+        background: ${props => props.theme.theme_vars.colours.white};
+    }
+
     &:focus {
         ${props => props.theme.linkStylesFocus};
         box-shadow: 0px -4px 0px 0px ${props => props.theme.theme_vars.colours.black} inset, 0px 4px 15px rgba(0, 0, 0, 0.11);

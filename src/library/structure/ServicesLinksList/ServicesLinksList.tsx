@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -16,8 +16,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
     const [open, setOpen] = useLocalStorage(themeContext.cardinal_name + ("-mobileIsOpen"), false);
-    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), 0);
-
+    const [currentOrder, setCurrentOrder] = useLocalStorage(themeContext.cardinal_name + ("-savedOrder"), "normal");
 
     const DynamicComponent = ({name}) => {
         const DynamicIcon = serviceIcons[name];
@@ -68,19 +67,20 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     <Heading text="Council services" />
                     <Styles.ReorderControl>
                         Order services by<br/>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={currentOrder === 0 && "-1"}  className={currentOrder === 0 && "chosen"}>Most used</Styles.ReorderButton>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={currentOrder === 1 && "-1"} className={currentOrder === 1 && "chosen"}>Alphabetical</Styles.ReorderButton>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder("normal")} tabIndex={currentOrder === "normal" && "-1"}  className={currentOrder === "normal" && "chosen"}>Most used</Styles.ReorderButton>
+                        <Styles.ReorderButton onClick={() => setCurrentOrder("alph")} tabIndex={currentOrder === "alph" && "-1"} className={currentOrder === "alph" && "chosen"}>Alphabetical</Styles.ReorderButton>
                     </Styles.ReorderControl>
                 </Styles.HomeTitle>
                 <Styles.LinksList>
-                    {currentOrder === 0 ?
+                    {currentOrder === "normal" ?
                         originalOrderedArray.map((link) =>
                             renderElements(link)
                         )
                         :
-                        orderedArray.map((link) =>
-                            renderElements(link)
-                        )
+                        currentOrder === "alph" &&
+                            orderedArray.map((link) =>
+                                renderElements(link)
+                            )
                     }
                     {originalOrderedArray.length > 1 && ((originalOrderedArray.length + 1) % 3 === 0) &&
                         <Styles.PagelinkBlank />
