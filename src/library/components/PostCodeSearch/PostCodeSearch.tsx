@@ -32,20 +32,20 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const [currentPostcode, setCurrentPostcode] = useState("");
 
     const defaultArray = { 
-      "numOfSovereign": 0,
-      "sovereign": [{
-        "sovereign": "",
-        "sovereignCode": 0 
+      numOfSovereign: 0,
+      sovereign: [{
+        sovereign: "",
+        sovereignCode: 0 
       }],
-      "numOfUnitary": 0,
-      "unitary": [{
-        "unitary": "",
-        "unitaryCode": 0
+      numOfUnitary: 0,
+      unitary: [{
+        unitary: "",
+        unitaryCode: 0
       }],
-      "addresses": []
+      addresses: []
     }
 
-    let [responseData, setResponseData] =  useState(defaultArray);
+    const [responseData, setResponseData] =  useState(defaultArray);
 
 
     const handleSubmit= (e) => {
@@ -66,7 +66,8 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
       })
       .then((response) => {
         if (response.data.unitary.unitary) {
-          setResponseData(response.data)
+          setResponseData(JSON.parse(response.data))
+          console.log(responseData)
         } else {
           handleError(true);
         }
@@ -100,9 +101,9 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         </Styles.DropDownButton>
         {open && 
           <Styles.DropDownContent>
-            {responseData.sovereign.sovereign === "" ?
+            {defaultArray.numOfSovereign === 0 ?
               <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
-                <Styles.Label for="postcode">
+                <Styles.Label htmlFor="postcode">
                   Enter your postcode
                   <HintText text={themeContext.cardinal_name === "north" ? "For example NN16 0AP" : "For example NN1 1DE"} />
                   
@@ -124,7 +125,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                         <p>You are on the <strong>correct website for this postcode</strong>.</p>
                       }
 
-                    <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                    <Styles.StartAgain onClick={() => setResponseData({})}>Find another postcode</Styles.StartAgain>
                   </div>
                   :
                   themeContext.cardinal_name !== responseData.unitary.unitary.toLowerCase() ?
@@ -134,7 +135,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
                       <Button size="large" text={"Go to " + responseData.unitary + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
                       <br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => setResponseData({})}>Find another postcode</Styles.StartAgain>
                     </div>
                     :
                     <div className="result">
@@ -142,7 +143,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
                       <Button size="large" text={"Go to " + responseData.sovereign.sovereign} url={signPostLinks.find(link => link.sovereignCode == responseData.sovereign.sovereignCode).url} />
                       <br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => setResponseData({})}>Find another postcode</Styles.StartAgain>
                     </div>
                 }
               </Styles.PostcodeResult>
