@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
+    h2 {
+        border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_dark};
+        max-width: none;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
 `
 
 export const MapSection = styled.div`
@@ -80,5 +85,9 @@ export const North = styled.div`
     }
 `
 export const CouncilLink = styled.a`
-    
+    color: ${props => props.colour} !important;
+
+    &:action, &:focus {
+        color: ${props => props.theme.theme_vars.colours.black} !important;
+    }
 `

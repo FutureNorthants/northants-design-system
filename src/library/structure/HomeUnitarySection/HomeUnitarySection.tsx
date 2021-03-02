@@ -6,7 +6,6 @@ import { HomeUnitarySectionProps } from "./HomeUnitarySection.types";
 import * as Styles from "./HomeUnitarySection.styles";
 import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
 import Heading from "../../components/Heading/Heading";
-import Divider from "../../slices/Divider/Divider";
 
 import NorthColoured from "./assets/north_coloured";
 import WestColoured from "./assets/west_coloured";
@@ -31,20 +30,19 @@ const HomeUnitarySection: React.FC<HomeUnitarySectionProps> = ({
 
             <Styles.MapSection>
                 <Styles.West>
-                    <NorthColoured />
+                    <WestColoured />
                     <p>{westText}</p>
-                    <Styles.CouncilLink href={westLink} title="Go to the West's website">westnorthants.gov.uk</Styles.CouncilLink>
+                    <Styles.CouncilLink colour={themeContext.cardinal_name === "north" ? themeContext.theme_vars.other_council_action : themeContext.theme_vars.colours.action} href={westLink} title="Go to the West's website">westnorthants.gov.uk</Styles.CouncilLink>
                 </Styles.West>
                 <Styles.Map>
                     <MapImage />
                 </Styles.Map>
                 <Styles.North>
-                    <WestColoured />
+                    <NorthColoured />
                     <p>{northText}</p>
-                    <Styles.CouncilLink href={northLink} title="Go to the North's website">northnorthants.gov.uk</Styles.CouncilLink>
+                    <Styles.CouncilLink colour={themeContext.cardinal_name === "west" ? themeContext.theme_vars.other_council_action : themeContext.theme_vars.colours.action} href={northLink} title="Go to the North's website">northnorthants.gov.uk</Styles.CouncilLink>
                 </Styles.North>
             </Styles.MapSection>
-            <Divider />
         </Styles.Container>
     )
 };
