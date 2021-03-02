@@ -101,7 +101,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         </Styles.DropDownButton>
         {open && 
           <Styles.DropDownContent>
-            {defaultArray.numOfSovereign === 0 ?
+            {responseData.numOfSovereign === 0 ?
               <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
                 <Styles.Label htmlFor="postcode">
                   Enter your postcode
