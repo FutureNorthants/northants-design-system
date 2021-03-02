@@ -39,8 +39,18 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     <Heading text="Council services" />
                     <Styles.ReorderControl>
                         Order services by<br/>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex={(currentOrder === "0" || currentOrder === 0) && "-1"}  className={(currentOrder === "0" || currentOrder === 0) && "chosen"}>Most used</Styles.ReorderButton>
-                        <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex={(currentOrder === "1" || currentOrder === 1) && "-1"} className={(currentOrder === "1" || currentOrder === 1) && "chosen"}>Alphabetical</Styles.ReorderButton>
+                        {
+                            currentOrder === "0" || currentOrder === 0 ?
+                                <>
+                                <Styles.ReorderButton onClick={() => setCurrentOrder(0)} tabIndex="-1"  className={"chosen"}>Most used</Styles.ReorderButton>
+                                <Styles.ReorderButton onClick={() => setCurrentOrder(1)}>Alphabetical</Styles.ReorderButton>
+                                </>
+                                :
+                                <>
+                                <Styles.ReorderButton onClick={() => setCurrentOrder(0)}>Most used</Styles.ReorderButton>
+                                <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex="-1"  className={"chosen"}>Alphabetical</Styles.ReorderButton>
+                                </>
+                            }
                     </Styles.ReorderControl>
                 </Styles.HomeTitle>
                 <Styles.LinksList>
