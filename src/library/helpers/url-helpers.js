@@ -65,3 +65,16 @@ import Uri from 'jsuri';
     console.log(uri.toString());
     window.location.href = uri.toString();
  }
+
+ /**
+  * From a list of params - returns how many of them are set in the url
+  * @param {*} params 
+  */
+ export const countParams = (params) => {
+   let count = 0;
+   var uri = new Uri(window.location);
+   [...params].map(param => {
+     if(uri.hasQueryParam(param)) count++
+   })
+   return count;
+ }

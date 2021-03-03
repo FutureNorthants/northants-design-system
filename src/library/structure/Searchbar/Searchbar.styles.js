@@ -55,6 +55,7 @@ export const Input = styled.input`
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
   border: 1px solid ${props => props.theme.theme_vars.colours.grey_darkest};
   border-right: transparent;
+  width: 100%;
 
   &:focus {
     outline: none;
