@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components';
 
 import FacebookIcon from '../../components/icons/FacebookIcon/Icon';
 import TwitterIcon from '../../components/icons/TwitterIcon/Icon';
-import LinkedInIcon from '../../components/icons/TwitterIcon/Icon';
+import LinkedInIcon from '../../components/icons/LinkedInIcon/Icon';
 import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
 
 const Footer: React.FC<FooterProps> = ({ 
