@@ -31,4 +31,8 @@ export interface ButtonProps {
    * onClick
    */
   onClick?: Function;
+  /**
+   * Optional override for the colour
+   */
+  colourOverride?: string; 
 }

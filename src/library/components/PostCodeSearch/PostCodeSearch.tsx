@@ -186,8 +186,8 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                     <div className="result"> 
                       <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
                       <p>In order to find the right information for you, please visit the {responseData.unitary[0].unitary} Northamptonshire website and find your local area ({responseData.sovereign[0].sovereignName}) for this service.</p>
-                      {/* TODO change colour to match unitary */}
-                      <Button size="large" text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
+
+                      <Button size="large" colourOverride={themeContext.theme_vars.other_council_action} text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
                       <br />
                       <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
                     </div>

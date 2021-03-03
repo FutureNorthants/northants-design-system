@@ -13,6 +13,7 @@ const Button: React.FC<ButtonProps> = ({
     text,
     title,
     url,
+    colourOverride,
     isExternal = false,
     isDisabled = false,
     children,
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
         className={[`button--${size}`, mode].join(' ')} 
         {...href}
         title={title ? title : ("Go to " + text)}
+        colourOverride={colourOverride && colourOverride}
         {...props}
       >
         {/* TODO: add aria roles etc */}

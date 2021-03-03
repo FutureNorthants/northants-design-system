@@ -39,3 +39,11 @@ Small.args = {
   text: 'Button label',
   url: "https://futurenorthantswest.org/"
 };
+
+export const ColourOverride = Template.bind({});
+ColourOverride.args = {
+  primary: true,
+  text: 'This might not be accessible if the overrided colour is too light!',
+  url: "https://futurenorthantswest.org/",
+  colourOverride: "pink"
+};
