@@ -13,6 +13,7 @@ const SortBy: React.FC<SortByProps> = ({ sortBy, options }) => {
 
 
     return (
+        // TODO: replace with dropdownselect component
     <Styles.Container data-testid="SortBy">
     <Styles.Label htmlFor="sort">
         Sort by 
