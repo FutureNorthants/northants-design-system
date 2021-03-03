@@ -14,7 +14,7 @@ const SortBy: React.FC<SortByProps> = ({ selected, options }) => {
 
     return (
         // TODO: replace with dropdownselect component
-        <DropDownSelect label="Sort by" options={options} optionPicked={optionPicked} selected={selected} />
+        <DropDownSelect label="Sort by" options={options} onChange={optionPicked} selected={selected} />
 )};
 
 export default SortBy;

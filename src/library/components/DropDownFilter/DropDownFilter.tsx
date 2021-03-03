@@ -18,7 +18,7 @@ const DropDownFilter: React.FC<DropDownFilterProps> = ({ label, options, selecte
 
     let labelHidden = (label === null) ? true : false;
     return (
-        <DropDownSelect label={label} options={options} optionPicked={optionPicked} selected={value} />
+        <DropDownSelect label={label} options={options} onChange={optionPicked} selected={value} />
 )};
 
 export default DropDownFilter;

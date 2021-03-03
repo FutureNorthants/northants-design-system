@@ -12,8 +12,10 @@ export interface DropDownSelectProps {
   * What to show in the dropdown
   */
  options: Array<DropDownSelectOptionsProps>;
-
- optionPicked?: React.ReactNode;
+  /**
+  * A function tfor what happnens if the select is changed (totally optional)
+  */
+ onChange?: React.ReactNode;
 }
 
 

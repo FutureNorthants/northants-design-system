@@ -98,18 +98,39 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         if(responseData.numOfUnitary > 1) {
           setIsMultiple(true);
           responseData.addresses.map(address => {
-            setAddressArray([...addressArray, {
+            setAddressArray(addressArray => [...addressArray, {
               title: address.DPA.ADDRESS.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
               value: address.DPA.UPRN,
+              info: [{
+                numOfSovereign: 1,
+                sovereign: [{
+                  sovereignName: address.DPA.SOVEREIGN_COUNCIL_NAME,
+                  sovereignCode: address.DPA.SOVEREIGN_COUNCIL_CODE, 
+                }],
+                numOfUnitary: 1,
+                unitary: [{
+                  unitary: address.DPA.UNITARY_COUNCIL_NAME,
+                  unitaryCode: address.DPA.UNITARY_COUNCIL_CODE
+                }],
+                addresses: []                
+              }] 
             }])
           })
         }
       }
     }, [responseData]);
 
-    useEffect(() => {
-      console.log(addressArray);
-    }, [addressArray]);
+
+    function handleAddressChange(e){
+      if(e.target.value !== "") {
+        const singleAddress = addressArray.find(address => address.value === e.target.value);
+        setIsMultiple(false);
+        setResponseData(singleAddress.info[0]);
+        setCurrentPostcode(currentPostcode + " ("+singleAddress.title+")")
+        console.log(singleAddress.info[0])
+      }
+    }
+
     return(
       <Styles.Container>
         <Styles.DropDownButton onClick={() => setOpen(open ? false : true)}>
@@ -123,6 +144,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
             {responseData.numOfUnitary === 0 ?
               <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
                 {isLoading ?
+                // TODO add loading animation
                   <p>Loading...</p>
                 :
                 <>
@@ -144,7 +166,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                 isMultiple ?
                 <div className="result"> 
                   <p>This postcode <strong>{currentPostcode}</strong> includes addresses that are in multiple areas, please select your address so that we can tell you which area you are in.</p>
-                  <DropDownSelect label="Select your address" options={addressArray} />
+                  <DropDownSelect onChange={handleAddressChange} label="Select your address" options={[...[{ title: "Select an address to continue", value: "" }], ...addressArray]}  />
                 </div>
                 :
                 isUnitary ? 
@@ -162,9 +184,9 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                   :
                   themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
                     <div className="result"> 
-                      <p>{themeContext.theme_vars.cardinal_name} | {responseData.unitary[0].unitary.toLowerCase()} This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
                       <p>In order to find the right information for you, please visit the {responseData.unitary[0].unitary} Northamptonshire website and find your local area ({responseData.sovereign[0].sovereignName}) for this service.</p>
-
+                      {/* TODO change colour to match unitary */}
                       <Button size="large" text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
                       <br />
                       <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
