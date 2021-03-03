@@ -12,12 +12,14 @@ import BlockQuote from "./library/slices/BlockQuote/BlockQuote";
 import CallToAction from "./library/slices/CallToAction/CallToAction";
 import DownloadableFiles from "./library/slices/DownloadableFiles/DownloadableFiles";
 import Divider from "./library/slices/Divider/Divider";
+import WarningText from "./library/slices/WarningText/WarningText";
+import WarningTextDisclaimer from "./library/slices/WarningTextDisclaimer/WarningTextDisclaimer";
 
-export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles };
+export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, WarningText, WarningTextDisclaimer };
 
 
 // Structure
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PageMain, PageSidebar, PageWithSidebarContainer, PhaseBanner, PromoBanner, Searchbar, SearchResultsList, SectionLinks, ServicesLinksList, SectionLinksSidebar, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
 
 
 // Themes

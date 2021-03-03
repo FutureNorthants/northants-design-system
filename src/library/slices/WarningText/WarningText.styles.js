@@ -7,6 +7,7 @@ export const WarningText = styled.div`
   padding: 25px;
   padding-top: 0;
   background: ${props => props.theme.theme_vars.colours.secondary}80;
+  border-radius: ${props => props.theme.theme_vars.border_radius};
 
   a {
     color: ${props => props.theme.theme_vars.colours.black} !important;
@@ -25,6 +26,7 @@ export const Title = styled.div`
   font-size: 24px;
   font-size: 1.3rem;
   line-height: 1.25;
+  border-radius: ${props => props.theme.theme_vars.border_radius};
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
       font-size: 36px;
