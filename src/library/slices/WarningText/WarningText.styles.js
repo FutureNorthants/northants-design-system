@@ -6,7 +6,7 @@ export const WarningText = styled.div`
   margin-top: 65px;
   padding: 25px;
   padding-top: 0;
-  background: ${props => props.theme.theme_vars.colours.secondary}80;
+  background: ${props => props.isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary}80;
   border-radius: ${props => props.theme.theme_vars.border_radius};
 
   a {
@@ -15,7 +15,7 @@ export const WarningText = styled.div`
 `
 
 export const Title = styled.div`
-  background: ${props => props.theme.theme_vars.colours.secondary};
+  background: ${props => props.isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary};
   position: relative;
   margin-left: -25px;
   margin-bottom: 0;

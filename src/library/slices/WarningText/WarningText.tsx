@@ -9,7 +9,7 @@ import * as Styles from "./WarningText.styles";
 
 const WarningText: React.FC<WarningTextProps> = ({ title, isWarning = false, children }) => (
     <Styles.WarningText isWarning={isWarning}>
-        <Styles.Title>{title}</Styles.Title>
+        <Styles.Title isWarning={isWarning}>{title}</Styles.Title>
         <Styles.Content>{children}</Styles.Content>
     </Styles.WarningText>
 );
