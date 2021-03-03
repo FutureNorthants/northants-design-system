@@ -1,14 +1,11 @@
 export const serviceOptions = [ 
   {
     title: "All services",
-    value: "all-services",
-    checked: true
+    value: "all-services"
   },{
     title: "Bins",
-    value: "bins",
-    checked: true
+    value: "bins"
   }, {
     title: "Council Tax",
-    value: "council-tax",
-    checked: true
+    value: "council-tax"
   } ];

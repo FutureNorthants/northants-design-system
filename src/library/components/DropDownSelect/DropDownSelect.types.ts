@@ -18,7 +18,6 @@ export interface DropDownSelectProps {
 
 
 export interface DropDownSelectOptionsProps {
-  id: number;
   /**
    * Text shown in dropdown
    */
@@ -27,6 +26,4 @@ export interface DropDownSelectOptionsProps {
    * Filter sent to the all seeing server
    */
   value: string;
-
-  checked: boolean;
 }

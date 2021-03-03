@@ -7,9 +7,6 @@ import * as Styles from "./DropDownFilter.styles";
 import {handleParams} from './../../helpers/url-helpers.js';
 import DropDownSelect from "../DropDownSelect/DropDownSelect";
 
-
-
-
 const DropDownFilter: React.FC<DropDownFilterProps> = ({ label, options, selected}) => {
 
     const [value, setValue] = useState(selected);

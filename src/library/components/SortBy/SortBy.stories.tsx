@@ -15,6 +15,6 @@ const Template: Story<SortByProps> = (args) => <SBPadding><SortBy {...args} /></
 
 export const ExampleSortBy = Template.bind({});    
 ExampleSortBy.args = {
-  sortBy: 'recentDesc',
+  selected: 'recentDesc',
   options: sortByOptions
 };
