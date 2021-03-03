@@ -15,6 +15,7 @@ import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Button from "../Button/Button";
 import { SignpostLinks } from "../../structure/PageStructures";
 import DropDownSelect from "../DropDownSelect/DropDownSelect";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 /**
  * The functionality for searching for a postcode
@@ -144,8 +145,11 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
             {responseData.numOfUnitary === 0 ?
               <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
                 {isLoading ?
-                // TODO add loading animation
-                  <p>Loading...</p>
+                  <Styles.LoadingContainer>
+                    <LoadingSpinner />
+                    <p>Loading...</p>
+                  </Styles.LoadingContainer>
+                  
                 :
                 <>
                 <Styles.Label htmlFor="postcode">

@@ -5,9 +5,7 @@ import { LoadingSpinnerProps } from "./LoadingSpinner.types";
 import * as Styles from "./LoadingSpinner.styles";
 
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = () =>
-    <Styles.Spinner>
-        <div></div><div></div><div></div><div></div>
-    </Styles.Spinner>
+    <Styles.Spinner />
 
 export default LoadingSpinner;
 

@@ -108,3 +108,7 @@ export const StartAgain = styled.button`
         line-height: 1.45;
     }
 `
+
+export const LoadingContainer = styled.div`
+    padding-left: 30px;
+`

@@ -2,33 +2,22 @@ import styled from "styled-components";
 
 export const Spinner = styled.div`  
   display: inline-block;
-  position: relative;
   width: 80px;
   height: 80px;
 
-  div {
-    box-sizing: border-box;
+  &:after {
+    content: " ";
     display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     margin: 8px;
-    border: 8px solid black;a
     border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: black transparent transparent transparent;
-  }
-  div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  div:nth-child(3) {
-    animation-delay: -0.15s;
+    border: 6px solid ${props => props.theme.theme_vars.colours.action};
+    border-color: ${props => props.theme.theme_vars.colours.action} transparent ${props => props.theme.theme_vars.colours.action} transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
   }
 
-  @keyframes lds-ring {
+  @keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
     }
