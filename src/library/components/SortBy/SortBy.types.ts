@@ -3,7 +3,7 @@ export interface SortByProps {
   /**
   * What we're currently sorting by
   */
-  sortBy?: string
+  selected?: string
   /**
    * What to show in the dropdown
    */

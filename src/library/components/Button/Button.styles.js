@@ -18,10 +18,10 @@ export const StyledButton = styled.a`
     }
     &.button--primary {
         color: white !important;
-        background-color: ${props => props.theme.theme_vars.colours.action};
+        background-color: ${props => props.colourOverride ? props.colourOverride : props.theme.theme_vars.colours.action};
 
         &:hover {
-            background-color: ${props => props.theme.theme_vars.colours.action_dark};
+            background-color: ${props => props.colourOverride ? (props.colourOverride) : props.theme.theme_vars.colours.action_dark};
         }
         &:focus {
             outline: none;
@@ -41,12 +41,12 @@ export const StyledButton = styled.a`
         }
     }
     &.button--secondary {
-        color: ${props => props.theme.theme_vars.colours.action} !important;
+        color: ${props => props.colourOverride ? props.colourOverride : props.theme.theme_vars.colours.action} !important;
         background-color: transparent;
-        border: 3px solid ${props => props.theme.theme_vars.colours.action};
+        border: 3px solid ${props => props.colourOverride ? props.colourOverride : props.theme.theme_vars.colours.action};
 
         &:hover {
-            background-color: ${props => props.theme.theme_vars.colours.action}1A;
+            background-color: ${props => props.colourOverride ? props.colourOverride : props.theme.theme_vars.colours.action}1A;
         }
         &:focus {
             outline: none;

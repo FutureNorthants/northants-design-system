@@ -9,7 +9,7 @@ export default {
     title: "library/Structure/Signpost Links"
 };
 
-const Template: Story<SignpostLinksProps> = (args) => <SBPadding><SignpostLinks {...args} /></SBPadding>;
+const Template: Story<SignpostLinksProps> = (args) => <SBPadding><p><i>Make sure you have the right theme chosen for the corresponding example, otherwise this might not work right.</i></p><SignpostLinks {...args} /></SBPadding>;
 
 export const NorthSignpostLinksExample = Template.bind({});    
 NorthSignpostLinksExample.args = {

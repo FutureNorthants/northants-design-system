@@ -4,25 +4,17 @@ import {handleParams} from './../../helpers/url-helpers.js';
 
 import { SortByProps } from "./SortBy.types";
 import * as Styles from "./SortBy.styles";
+import DropDownSelect from "../DropDownSelect/DropDownSelect";
 
-const SortBy: React.FC<SortByProps> = ({ sortBy, options }) => {
+const SortBy: React.FC<SortByProps> = ({ selected, options }) => {
     
     const optionPicked = (e) => {
         handleParams('news', [{key: 'sortBy', value: e.target.value}]);
     }
 
-
     return (
-    <Styles.Container data-testid="SortBy">
-    <Styles.Label htmlFor="sort">
-        Sort by 
-    </Styles.Label>
-    <Styles.Select id="sort" name="sort" onChange={optionPicked} defaultValue={sortBy}>
-        {options.map((option, i) => 
-            <Styles.Option key={i} value={option.value}>{option.title}</Styles.Option>
-        )}
-    </Styles.Select>
-    </Styles.Container>
+        // TODO: replace with dropdownselect component
+        <DropDownSelect label="Sort by" options={options} onChange={optionPicked} selected={selected} />
 )};
 
 export default SortBy;

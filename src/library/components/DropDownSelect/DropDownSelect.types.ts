@@ -1,5 +1,5 @@
 
-export interface DropDownFilterProps {
+export interface DropDownSelectProps {
   /**
    * What question are we asking?
    */
@@ -7,16 +7,20 @@ export interface DropDownFilterProps {
   /**
    * Which value is auto selected
    */
-  selected: string,
+  selected?: string,
  /**
   * What to show in the dropdown
   */
- options: Array<DropDownFilterOptionsProps>;
+ options: Array<DropDownSelectOptionsProps>;
+  /**
+  * A function tfor what happnens if the select is changed (totally optional)
+  */
+ onChange?: React.ReactNode;
 }
 
 
-export interface DropDownFilterOptionsProps {
-   /**
+export interface DropDownSelectOptionsProps {
+  /**
    * Text shown in dropdown
    */
   title: string;

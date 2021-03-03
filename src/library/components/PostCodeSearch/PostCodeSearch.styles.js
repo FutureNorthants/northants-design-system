@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
+    strong {
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
 `
 export const IconWrapper = styled.div`
     display: inline-block;
