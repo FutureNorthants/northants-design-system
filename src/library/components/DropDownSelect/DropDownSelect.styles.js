@@ -20,19 +20,19 @@ export const Label = styled.label`
 
 export const Select = styled.select`
 
-${props => props.theme.fontStyles};
+  ${props => props.theme.fontStyles};
+  border-radius: ${props => props.theme.theme_vars.border_radius};
   box-sizing: border-box;
   max-width: 100%;
   height: 40px;
   height: 2.5rem;
   padding: 5px;
-  border: 2px solid #0b0c0c;
+  border: 2px solid ${props => props.theme.theme_vars.colours.black};
 
   &:focus {
-    outline: 3px solid #fd0;
-    outline-offset: 0;
-    -webkit-box-shadow: inset 0 0 0 2px;
-    box-shadow: inset 0 0 0 2px;
+    outline: none;
+    box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+    transition: box-shadow 0.3s ease 0s;
   }
 `
 
