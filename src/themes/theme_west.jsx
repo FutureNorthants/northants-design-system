@@ -2,6 +2,7 @@ export const west_vars = {
     theme_name: "West Northants theme",
     full_name: "West Northamptonshire",
     cardinal_name: "west",
+    abbr: "WNC",
     council_link: "https://beta.westnorthants.gov.uk",
     other_council_link: "https://beta.northnorthants.gov.uk",
     other_council_name: "North Northamptonshire",
