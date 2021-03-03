@@ -4,15 +4,21 @@ import CookieBanner from './CookieBanner/CookieBanner';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import HomeHero from './HomeHero/HomeHero';
+import HomeUnitarySection from './HomeUnitarySection/HomeUnitarySection';
+import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
+
 import NewsArticleDate from "./NewsArticleDate/NewsArticleDate";
+import NewsArticleFilterAccordion from "./NewsArticleFilterAccordion/NewsArticleFilterAccordion";
 import NewsArticleImage from "./NewsArticleImage/NewsArticleImage";
+import NewsArticleList from "./NewsArticleList/NewsArticleList";
+import NewsArticleListHeader from "./NewsArticleListHeader/NewsArticleListHeader";
 import NewsArticleOldBanner from "./NewsArticleOldBanner/NewsArticleOldBanner";
-import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
-import PhaseBanner from './PhaseBanner/PhaseBanner';
+
 import PageMain from './PageMain/PageMain';
-import PageTitle from './PageTitle/PageTitle';
 import PageSidebar from './PageSidebar/PageSidebar';
+import PageTitle from './PageTitle/PageTitle';
 import PageWithSidebarContainer from './PageWithSidebarContainer/PageWithSidebarContainer';
+import PhaseBanner from './PhaseBanner/PhaseBanner';
 import PromoBanner from './PromoBanner/PromoBanner';
 import Searchbar from './Searchbar/Searchbar';
 import SearchResultsList from './SearchResultsList/SearchResultsList';
@@ -20,6 +26,6 @@ import SectionLinks from './SectionLinks/SectionLinks';
 import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
-import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
+import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
 
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, NewsArticleDate, NewsArticleImage, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };

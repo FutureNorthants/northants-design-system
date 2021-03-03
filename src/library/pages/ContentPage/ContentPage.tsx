@@ -8,6 +8,7 @@ import BlockQuote from '../../slices/BlockQuote/BlockQuote';
 import DownloadableFiles from "../../slices/DownloadableFiles/DownloadableFiles";
 import CallToAction from "../../slices/CallToAction/CallToAction";
 import Accordion from "../../slices/Accordion/Accordion";
+import WarningTextDisclaimer from "../../slices/WarningTextDisclaimer/WarningTextDisclaimer";
 
 
 export interface ContentPageProps {
@@ -3780,6 +3781,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({  }) => (
             content: <><Heading level={2} text="A slice within an accordion" /><p>Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p><Divider /><p><strong>Maecenas faucibus mollis interdum.</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p></>
           }
         ]} />
+        <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer 

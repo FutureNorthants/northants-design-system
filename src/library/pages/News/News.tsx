@@ -5,14 +5,12 @@ import Heading from '../../components/Heading/Heading';
 
 
 import Pagination from "../../components/Pagination/Pagination";
-import SortBy from "../../components/SortBy/SortBy";
 import NewsArticleList from "../../structure/NewsArticleList/NewsArticleList";
 
 
 import sortByOptions from './../../components/SortBy/SortByData';
 import NewsArticleListHeader from "../../structure/NewsArticleListHeader/NewsArticleListHeader";
 import NewsArticleFilterAccordion from "../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordion";
-import RemoveAllFilters from "../../components/RemoveAllFilters/RemoveAllFilters";
 import CheckboxListFilter from "../../components/CheckboxListFilter/CheckboxListFilter";
 import DropDownFilter from "../../components/DropDownFilter/DropDownFilter";
 import { newsArticleData } from './../../structure/NewsArticleList/NewsArticleData';
@@ -76,7 +74,6 @@ return (
           isExpanded: true
           }
           ]} />
-        <RemoveAllFilters />
       </PageStructures.PageSidebar>
       <PageStructures.PageMain>
         {hasResults ?
