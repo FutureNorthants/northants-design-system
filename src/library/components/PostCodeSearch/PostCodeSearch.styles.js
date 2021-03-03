@@ -73,6 +73,7 @@ export const PostcodeResult = styled.div`
         padding-left: 15px;
         padding-top: 10px;
         padding-bottom: 12px;
+        max-width: calc(100% - 30px);
     }
 `
 export const Line = styled.div`

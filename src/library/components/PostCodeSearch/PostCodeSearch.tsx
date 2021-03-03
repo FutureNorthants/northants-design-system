@@ -79,6 +79,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         }
       })
       .catch((error) => {
+        setIsLoading(false);
         handleError(true);
         console.log(error)
       })

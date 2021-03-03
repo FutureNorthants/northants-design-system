@@ -12,6 +12,7 @@ export const Form = styled.form`
     padding-top: 10px;
     padding-bottom: 12px;
     padding-left: ${props => props.hideLine ? "0" : "15px"};
+    max-width: calc(100% - 30px);
 `
 export const Line = styled.div`
     background: ${props => props.isError ? props.theme.theme_vars.colours.negative : props.lineColour};
