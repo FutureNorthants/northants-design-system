@@ -28,6 +28,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
   }) => {
     const themeContext = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [isError, setisError] = useState(formError);
     const [errorText, setErrorText] = useState("");
     const [currentPostcode, setCurrentPostcode] = useState("");
@@ -53,6 +54,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
     const handleSubmit= (e) => {
       e.preventDefault();
+      setIsLoading(true);
       setCurrentPostcode(e.target.postcode.value)
       if(e.target.postcode.value === "") {
         handleError(true, "You need to enter a postcode");
@@ -64,10 +66,11 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const checkPostcode = async (postcode) => {
       axios({
         method: "GET",
-        url: `https://api.westnorthants.digital/check-postcode/${postcode}`
+        url: `https://api.westnorthants.digital/check-postcode/${postcode.replace(/ /g,'')}`
         // headers: { 'x-api-key': 'kBexTqkLpj6ZOkGUNguti58JijxQcGvf9tLqBWWh' }
       })
       .then((response) => {
+        setIsLoading(false);
         if (response.data.numOfUnitary > 0) {
           setResponseData(response.data)
         } else {
@@ -119,6 +122,10 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
           <Styles.DropDownContent>
             {responseData.numOfUnitary === 0 ?
               <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
+                {isLoading ?
+                  <p>Loading...</p>
+                :
+                <>
                 <Styles.Label htmlFor="postcode">
                   Enter your postcode
                   <HintText text={themeContext.cardinal_name === "north" ? "For example NN16 0AP" : "For example NN1 1DE"} />
@@ -127,37 +134,40 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                 </Styles.Label>
 
                 <FormButton type="submit" aria-label="Submit" text="Find" />
+                </>
+                }
               </FormWithLine>
               :
               <Styles.PostcodeResult>
                 <Styles.Line />
-                {isUnitary ? 
+                {
+                isMultiple ?
+                <div className="result"> 
+                  <p>This postcode <strong>{currentPostcode}</strong> includes addresses that are in multiple areas, please select your address so that we can tell you which area you are in.</p>
+                  <DropDownSelect label="Select your address" options={addressArray} />
+                </div>
+                :
+                isUnitary ? 
                   <div className="result">
-                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary === "NNC" ? "North" : "West"} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
                       
-                      {themeContext.theme_vars.abbr !== responseData.unitary[0].unitary ?
-                        <p>In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].unitary === "NNC" ? "West" : "North"} Northamptonshire website.</a></p>
+                      {themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
+                        <p>{themeContext.theme_vars.cardinal_name} | {responseData.unitary[0].unitary} In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].unitary} Northamptonshire website.</a></p>
                         :
                         <p>You are on the <strong>correct website for this postcode</strong>.</p>
                       }
 
-                    <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                    <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
                   </div>
                   :
-                  isMultiple ?
+                  themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
                     <div className="result"> 
-                      <p>This postcode <strong>{currentPostcode}</strong> includes addresses that are in multiple areas, please select your address so that we can tell you which area you are in.</p>
-                      <DropDownSelect label="Select your address" options={addressArray} />
-                    </div>
-                  :
-                  themeContext.theme_vars.abbr !== responseData.unitary[0].unitary ?
-                    <div className="result"> 
-                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary === "NNC" ? "North" : "West"} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
-                      <p>In order to find the right information for you, please visit the {responseData.unitary[0].unitary === "NNC" ? "North" : "West"} Northamptonshire website and find your local area - {responseData.sovereign[0].sovereignName} - for this service.</p>
+                      <p>{themeContext.theme_vars.cardinal_name} | {responseData.unitary[0].unitary.toLowerCase()} This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
+                      <p>In order to find the right information for you, please visit the {responseData.unitary[0].unitary} Northamptonshire website and find your local area ({responseData.sovereign[0].sovereignName}) for this service.</p>
 
-                      <Button size="large" text={"Go to " + (responseData.unitary[0].unitary === "NNC" ? "North" : "West") + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
+                      <Button size="large" text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
                       <br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
                     </div>
                     :
                     <div className="result">
@@ -166,7 +176,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                       { signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode) && 
                         <Button size="large" text={"Go to " + responseData.sovereign[0].sovereignName} url={signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode).url} />
                       }<br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Find another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
                     </div>
                 }
               </Styles.PostcodeResult>
