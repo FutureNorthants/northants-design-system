@@ -2,6 +2,7 @@ import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import AlertBanner from '../../structure/AlertBanner/AlertBanner';
 import HomeUnitarySection from '../../structure/HomeUnitarySection/HomeUnitarySection';
+import { newsArticleData } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlockData';
 
 export interface HomePageProps {
   heroArray: Array<HeroImageProp>;
@@ -108,6 +109,8 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
         </PageStructures.PromoBanner>
 
         <HomeUnitarySection />
+
+        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles} />
 
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>

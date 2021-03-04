@@ -8,7 +8,7 @@ import NewsArticleDate from "../NewsArticleDate/NewsArticleDate";
 const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
     const extractLength = 140;
 
-    if(results.length > 0) {
+    if(results && results.length > 0) {
     return (
     <Styles.Container data-testid="NewsArticleList">
     {results.map((article) => 

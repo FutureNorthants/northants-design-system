@@ -13,6 +13,7 @@ import NewsArticleImage from "./NewsArticleImage/NewsArticleImage";
 import NewsArticleList from "./NewsArticleList/NewsArticleList";
 import NewsArticleListHeader from "./NewsArticleListHeader/NewsArticleListHeader";
 import NewsArticleOldBanner from "./NewsArticleOldBanner/NewsArticleOldBanner";
+import NewsArticleFeaturedBlock from "./NewsArticleFeaturedBlock/NewsArticleFeaturedBlock";
 
 import PageMain from './PageMain/PageMain';
 import PageSidebar from './PageSidebar/PageSidebar';
@@ -28,4 +29,4 @@ import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
 
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };

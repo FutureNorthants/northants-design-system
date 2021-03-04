@@ -67,7 +67,7 @@ export const PagelinkBlock = styled.div`
   -ms-flex-direction: row;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   margin-bottom: 5px;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
