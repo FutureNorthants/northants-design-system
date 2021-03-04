@@ -52,6 +52,11 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
     const [responseData, setResponseData] =  useState(defaultArray);
 
+    const clearData = () => {
+      setResponseData(defaultArray)
+      setCurrentPostcode("")
+      setAddressArray([])
+    }
 
     const handleSubmit= (e) => {
       e.preventDefault();
@@ -184,7 +189,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                         <p>You are on the <strong>correct website for this postcode</strong>.</p>
                       }
 
-                    <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
+                    <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                   </div>
                   :
                   themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
@@ -194,7 +199,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
                       <Button size="large" colourOverride={themeContext.theme_vars.other_council_action} text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
                       <br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                     </div>
                     :
                     <div className="result">
@@ -203,7 +208,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                       { signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode) && 
                         <Button size="large" text={"Go to " + responseData.sovereign[0].sovereignName} url={signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode).url} />
                       }<br />
-                      <Styles.StartAgain onClick={() => setResponseData(defaultArray)}>Check another postcode</Styles.StartAgain>
+                      <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                     </div>
                 }
               </Styles.PostcodeResult>
