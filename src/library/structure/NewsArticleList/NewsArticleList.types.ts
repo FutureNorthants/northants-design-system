@@ -24,5 +24,6 @@ export interface NewsArticleProps {
   title: string,
   excerpt: string,
   date: number,
-  thumbnail: string
+  thumbnail: string,
+  url: string
 }

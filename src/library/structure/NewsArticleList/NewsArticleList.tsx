@@ -14,7 +14,7 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
     {results.map((article) => 
         <Styles.ArticleContainer key={article.id}>
             <Styles.ArticleContent>
-                <Styles.Title>{article.title}</Styles.Title>
+                <Styles.Title href={article.url}>{article.title}</Styles.Title>
                 {(article.excerpt.length > extractLength) ? article.excerpt.substr(0, extractLength-1).trim() + String.fromCharCode(8230) : article.excerpt}
                 <NewsArticleDate text={article.date.toString()} format="X" />
             </Styles.ArticleContent>
