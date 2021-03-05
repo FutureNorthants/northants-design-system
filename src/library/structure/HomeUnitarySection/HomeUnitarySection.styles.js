@@ -37,7 +37,7 @@ export const Map = styled.div`
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         order: 2;
-        width: 33%;
+        width: calc(33.333% - 21px);
         max-width: none;
 
         svg {
@@ -61,7 +61,7 @@ export const West = styled.div`
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         order: 1;
-        width: 33%;
+        width: calc(33.333% - 21px);
         padding-right: 0px;
 
         svg {
@@ -82,7 +82,7 @@ export const North = styled.div`
         margin-bottom: 5px;
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        width: 33%;
+        width: calc(33.333% - 21px);
         padding-left: 0px;
 
         svg {

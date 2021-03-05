@@ -23,6 +23,7 @@ export const Link = styled.a`
     display: block;
     width: fit-content;
     position: relative;
+    min-width: 300px;
 
     svg {
         margin-right: 10px;
