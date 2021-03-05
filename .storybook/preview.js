@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from 'styled-components';
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
-import { GDS_theme, north_theme, west_theme, lb_theme_north } from '../src/themes/theme_generator';
+import { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../src/themes/theme_generator';
 import { createGlobalStyle } from 'styled-components';
 import { cssReset }  from '../src/themes/reset.css';
 
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-addDecorator(withThemes(ThemeProvider, [north_theme, west_theme, GDS_theme, lb_theme_north]));
+addDecorator(withThemes(ThemeProvider, [north_theme, west_theme, GDS_theme, lb_theme_north, lb_theme_west]));
 addDecorator(style => <><GlobalStyle />{style()}</>);
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';

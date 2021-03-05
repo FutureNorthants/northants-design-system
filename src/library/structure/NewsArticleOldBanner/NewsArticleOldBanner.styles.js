@@ -5,7 +5,7 @@ export const NewsArticleOldBanner = styled.div`
     background: ${props => props.theme.theme_vars.colours.focus};
     padding: 5px 10px;
     padding-left: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     width: calc(100% + 5px);
     margin-left: -15px;
     

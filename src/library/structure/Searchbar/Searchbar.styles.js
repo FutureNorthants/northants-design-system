@@ -74,7 +74,7 @@ export const Input = styled.input`
   }
 
   .is-large & { 
-    padding:  ${props => props.theme.theme_vars.spacingSizes.medium} 80px ${props => props.theme.theme_vars.spacingSizes.medium} 20px;
+    padding: 15px 80px 15px 15px;
   }
 `
 
@@ -106,7 +106,7 @@ export const Button = styled.button`
   }
 
   .is-large & { 
-    padding:  ${props => props.theme.theme_vars.spacingSizes.medium} 20px;
+    padding: 15px;
     /* padding: 10px 15px;
     padding-top: 12px; */
     width: 70px;

@@ -1,14 +1,14 @@
-export const lb_vars_north = {
-    theme_name: "Memorial theme North",
-    full_name: "North Northamptonshire",
-    cardinal_name: "north",
-    council_link: "https://beta.northnorthants.gov.uk",
-    other_council_link: "https://beta.westnorthants.gov.uk",
-    other_council_name: "West Northamptonshire",
-    other_council_action: "#386193",
-    twitter_link: "https://twitter.com/NNorthantsC",
-    linkedin_link: "https://www.linkedin.com/company/north-northamptonshire-council",
-    facebook_link: "https://www.facebook.com/NorthNorthants",
+export const lb_vars_west = {
+    theme_name: "Memorial theme West",
+    full_name: "West Northamptonshire",
+    cardinal_name: "west",
+    council_link: "https://beta.westnorthants.gov.uk",
+    other_council_link: "https://beta.northnorthants.gov.uk",
+    other_council_name: "North Northamptonshire",
+    other_council_action: "#017F34",
+    twitter_link: "https://twitter.com/WestNorthants",
+    linkedin_link: "https://www.linkedin.com/company/west-northamptonshire-council",
+    facebook_link: "https://www.facebook.com/WestNorthants",
     breakpoints: {
         s: "550px",
         m: "768px", // tablets and larger
@@ -16,24 +16,24 @@ export const lb_vars_north = {
         xl: "1440px", // large desktops only
     },
     colours: {
-        black: "#000000",
+        black: "#3C3C3B",
         grey_darkest: "#3C3C3B",
         grey_dark: "#757575",
         grey: "#C6C6C6",
         grey_light: "#F5F5F5",
         white: "#FFFFFF",
-    
-        action: "#000000",
+
+        action: "#3C3C3B",
         action_light: "#C6C6C6",
         action_dark: "#333333",
-        positive: "#147DAD",
-        negative: "#B73131",
-    
+        positive: "#6C9A36",
+        negative: "#9D0B1D",
+
         focus: "#E2CA76",
 
-        secondary: "#1A9DD9"
+        secondary: "#6CC7E1"
     },
-    fontstack: "Arial, Helvetica, sans-serif",
+    fontstack: "Roboto, Helvetica, Arial, sans-serif",
     fontSizes: {
         extra_small: ".9em",
         small: "1em",

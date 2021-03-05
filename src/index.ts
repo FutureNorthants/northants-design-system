@@ -23,4 +23,4 @@ export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeU
 
 
 // Themes
-export { GDS_theme, north_theme, west_theme, lb_theme_north } from '../src/themes/theme_generator';
+export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../src/themes/theme_generator';
