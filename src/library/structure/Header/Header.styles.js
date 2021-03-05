@@ -87,9 +87,13 @@ export const AllServicesLink = styled.a`
     }
 
     display: inline-block;
+    padding-bottom: 15px;
+    padding-top: 15px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         display: none;
+        padding-bottom: 0px;
+        padding-top: 0px;
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         display: inline-block;

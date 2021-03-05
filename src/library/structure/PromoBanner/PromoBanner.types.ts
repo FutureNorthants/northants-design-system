@@ -19,5 +19,9 @@ export interface PromoBannerProps {
    * The url of the image in 10x smaller for lazy loading
    */
   image144x81: string;
+  /**
+   * The children used for the text section of the promo banner
+   */
+  children: React.ReactNode;
 }
 
