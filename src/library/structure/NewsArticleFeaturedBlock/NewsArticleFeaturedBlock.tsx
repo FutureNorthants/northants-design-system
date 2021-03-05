@@ -5,8 +5,9 @@ import { NewsArticleFeaturedBlockProps } from "./NewsArticleFeaturedBlock.types"
 import * as Styles from "./NewsArticleFeaturedBlock.styles";
 import NewsArticleDate from "../NewsArticleDate/NewsArticleDate";
 import { Heading } from "../../..";
+import Button from "../../components/Button/Button";
 
-const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ articles, withoutTitle = false }) => {
+const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ articles, withoutTitle = false, viewAllLink }) => {
     if(articles && articles.length > 0) {
         return (
             <>
@@ -26,6 +27,11 @@ const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ art
                     </Styles.ArticleContainer>
                 )}
             </Styles.Container>
+            {viewAllLink &&
+                <Styles.ViewAllContainer>
+                    <Button text="View all news" primary={false} url={viewAllLink} size="large" />
+                </Styles.ViewAllContainer>
+            }
             </>
         )
     } else {

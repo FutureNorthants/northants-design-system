@@ -110,7 +110,7 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
 
         <HomeUnitarySection />
 
-        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles} />
+        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles} viewAllLink="/news/" />
 
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>

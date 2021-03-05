@@ -8,6 +8,10 @@ export interface NewsArticleFeaturedBlockProps {
    * Optionally dont display the title
    */
   withoutTitle?: boolean;
+  /**
+   * Optionally add a button to view all news
+   */
+  viewAllLink?: string;
 }
 
 

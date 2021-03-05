@@ -44,6 +44,7 @@ export const ArticleContainer = styled.a`
   overflow: hidden;
   display: block;
   text-decoration: none !important;
+  font-weight: normal !important;
   margin-bottom: 15px;
 
   &:hover {
@@ -141,4 +142,9 @@ export const DateContainer = styled.div`
     margin-bottom: 0 !important;
     margin-top: 0 !important;
   }
+`
+
+export const ViewAllContainer = styled.div`
+  text-align: center;
+  margin-top: 25px;
 `
