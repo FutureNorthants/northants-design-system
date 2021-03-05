@@ -29,8 +29,8 @@ export const Label = styled.label`
 
 
 export const InputWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr minmax(33px, auto);
+  /* display: grid;
+  grid-template-columns: 1fr minmax(33px, auto); */
   /* justify-content: flex-start; */
   position: relative;
   width: auto;
@@ -48,14 +48,15 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   margin: 0;
   border: none;
-  padding: 5px ${props => props.theme.theme_vars.spacingSizes.small};
+  padding:  ${props => props.theme.theme_vars.spacingSizes.small} 60px ${props => props.theme.theme_vars.spacingSizes.small} 12px;
   background: ${props => props.theme.theme_vars.colours.white};
-  border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
-  border-bottom-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
+  /* border-top-left-radius: calc(${props => props.theme.theme_vars.border_radius} * 2); */
+  border-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   font-size: ${props => props.theme.theme_vars.fontSizes.small};
   border: 1px solid ${props => props.theme.theme_vars.colours.grey_darkest};
   border-right: transparent;
   width: 100%;
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
@@ -73,11 +74,14 @@ export const Input = styled.input`
   }
 
   .is-large & { 
-    padding: 10px 15px;
+    padding:  ${props => props.theme.theme_vars.spacingSizes.medium} 80px ${props => props.theme.theme_vars.spacingSizes.medium} 20px;
   }
 `
 
 export const Button = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
   margin: 0;
   padding: ${props => props.theme.theme_vars.spacingSizes.small} 12px;
@@ -86,8 +90,9 @@ export const Button = styled.button`
   border: 1px solid transparent;
   border-top-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
-  width: 100%;
+  width: 50px;
   text-align: center;
+  height: 100%;
 
   &:hover {
     background: ${props => props.theme.theme_vars.colours.black};
@@ -101,8 +106,10 @@ export const Button = styled.button`
   }
 
   .is-large & { 
-    padding: 10px 15px;
-    padding-top: 12px;
+    padding:  ${props => props.theme.theme_vars.spacingSizes.medium} 20px;
+    /* padding: 10px 15px;
+    padding-top: 12px; */
+    width: 70px;
   }
 
   &:focus {
