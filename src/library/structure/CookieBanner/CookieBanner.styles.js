@@ -10,7 +10,27 @@ export const Container = styled.div`
   box-sizing: border-box;
 `
 
+export const CookieHide = styled.button`
+    border: 0;
+    background: transparent;
+
+  ${props => props.theme.fontStyles}
+    ${props => props.theme.linkStyles}
+      &:hover{
+          ${props => props.theme.linkStylesHover}
+      }
+      &:focus{
+          ${props => props.theme.linkStylesFocus}
+      }
+      &:active{
+          ${props => props.theme.linkStylesActive}
+      }
+`
+
 export const CookieMessage = styled.div`
+    display: ${props => props.isInline ? 'grid' : 'block'};
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
     margin-right: 15px;
     margin-left: 15px;
 

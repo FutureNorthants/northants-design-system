@@ -7,6 +7,11 @@ import FormButton from "./../../components/FormButton/FormButton"
 
 import {cookieName, getCookie} from './CookieHelpers';
 
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+
+
 const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptButtonText, rejectButtonText, acceptCallback }) => {
 
     // on page load - look for a cookie
@@ -17,6 +22,9 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
 
 
     const [showCookieBanner, setShowCookieBanner] = useState(false);
+    const [showCookiesRejectedBanner, setShowCookiesRejectedBanner] = useState(false);
+    const [showCookiesAcceptedBanner, setShowCookiesAcceptedBanner] = useState(false);
+    const [bannerManuallyHidden, setBannerManuallyHidden] = useState(false);
 
 
     
@@ -40,6 +48,17 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
                 }
 
                 if (cookiesAccepted) {
+                    // if you have only just accepted the cookie banner then show 
+                    // a message within first minute of it being set
+                    var cookieVals = JSON.parse(myCookie);
+                    console.log(cookieVals);
+                    var currentTime = dayjs();
+                    var timeAccepted = dayjs.unix(cookieVals.cookieCreated);
+                    var timeSinceAccepted = currentTime.diff(timeAccepted, 'minute');
+                    if(timeSinceAccepted <= 1 && bannerManuallyHidden !== true) {
+                        setShowCookiesAcceptedBanner(true);
+                    }
+
                     // we've accepted cookies so load all the things
                     acceptCallback();
                 }
@@ -55,17 +74,20 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
         if (accepted === true) {
             cookie = {
                 "bannerDismissed": true,
-                "cookiesAccepted": true
+                "cookiesAccepted": true,
+                "cookieCreated": Math.floor(Date.now() / 1000)
             };
             document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
             location.reload(); // reload to load the cookiesss
         } else {
             cookie = {
                 "bannerDismissed": true,
-                "cookiesAccepted": false
+                "cookiesAccepted": false,
+                "cookieCreated": Math.floor(Date.now() / 1000)
             };
             document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
             setShowCookieBanner(false);
+            setShowCookiesRejectedBanner(true);
         }
     }
 
@@ -81,23 +103,45 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
         toggleCookie(true);
     }
 
-    if(showCookieBanner) {
+    const hideCookiesConfirmationBanner = (e) => {
+        setShowCookiesRejectedBanner(false);
+        setShowCookiesAcceptedBanner(false);
+        setBannerManuallyHidden(true);
+    }
         return (
-            <Styles.Container data-testid="CookieBanner">
-                <Styles.CookieMessage>
-                    <Styles.CookieHeading>{title}</Styles.CookieHeading>
-                    <Styles.CookieParagraph>{paragraph}</Styles.CookieParagraph>
-                    <Styles.ButtonsContainer>
-                        <FormButton primary={true} text={acceptButtonText} isDisabled={true} onClick={acceptCookies} />
-                        <FormButton primary={true} text={rejectButtonText} isDisabled={true} onClick={rejectCookies} />
-                    </Styles.ButtonsContainer>
-                </Styles.CookieMessage>
-            </Styles.Container>
+            <>
+            {showCookieBanner && 
+                <Styles.Container data-testid="CookieBanner">
+                    <Styles.CookieMessage>
+                        <Styles.CookieHeading>{title}</Styles.CookieHeading>
+                        <Styles.CookieParagraph>{paragraph}</Styles.CookieParagraph>
+                        <Styles.ButtonsContainer>
+                            <FormButton primary={true} text={acceptButtonText} isDisabled={true} onClick={acceptCookies} />
+                            <FormButton primary={true} text={rejectButtonText} isDisabled={true} onClick={rejectCookies} />
+                        </Styles.ButtonsContainer>
+                    </Styles.CookieMessage>
+                </Styles.Container>
+            }
+            {showCookiesRejectedBanner && 
+                <Styles.Container data-testid="CookieBannerRejected" id="CookieBannerRejected">
+                    <Styles.CookieMessage isInline={true}>
+                        <Styles.CookieParagraph>You've rejected all cookies.</Styles.CookieParagraph>
+
+                        <Styles.CookieHide onClick={hideCookiesConfirmationBanner} aria-controls="CookieBannerRejected" aria-hidden="false">Hide</Styles.CookieHide>
+                    </Styles.CookieMessage>
+                </Styles.Container>            
+            }
+            {showCookiesAcceptedBanner && 
+                <Styles.Container data-testid="CookieBannerAccepted" id="CookieBannerAccepted">
+                    <Styles.CookieMessage isInline={true}>
+                        <Styles.CookieParagraph>You've accepted all cookies.</Styles.CookieParagraph>
+
+                        <Styles.CookieHide onClick={hideCookiesConfirmationBanner} aria-controls="CookieBannerAccepted" aria-hidden="false">Hide</Styles.CookieHide>
+                    </Styles.CookieMessage>
+                </Styles.Container>            
+            }
+            </>
         );
-    }
-    else {
-        return null;
-    }
 }
 export default CookieBanner;
 
