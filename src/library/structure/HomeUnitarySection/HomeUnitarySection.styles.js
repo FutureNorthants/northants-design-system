@@ -81,6 +81,9 @@ export const North = styled.div`
         height: auto;
         margin-bottom: 5px;
     }
+    @media screen and (max-width: ${props => props.theme.theme_vars.breakpoints.s}){
+        font-size: 0.8rem;
+    }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         width: calc(33.333% - 21px);
         padding-left: 0px;

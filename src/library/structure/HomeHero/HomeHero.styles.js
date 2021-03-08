@@ -19,7 +19,8 @@ export const Container = styled.header`
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
         margin-right: auto;
         margin-left: auto;
-        max-width: ${props => props.theme.theme_vars.breakpoints.xl};
+        padding 90px 0;
+        max-width: 1680px;
     }
 `
 
@@ -88,8 +89,8 @@ export const PromotedLinks = styled.div`
         flex-wrap: wrap;
         margin-top: 60px;
     }
-    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-
+    @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
+        margin-top: 90px;
     }
 `
 
