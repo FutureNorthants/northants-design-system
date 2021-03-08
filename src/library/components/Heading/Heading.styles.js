@@ -15,6 +15,7 @@ export const H1 = styled.h1`
         font-size: 44px;
         font-size: 2.6rem;
         max-width: 960px;
+        margin-bottom: 30px;
     }
 `
 export const H2 = styled.h2`

@@ -18,6 +18,7 @@ const generate_theme = (theme_vars) => {
             font-size: 16px;
             font-size: 1rem;
             line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
         
             @media screen and (min-width: ${theme_vars.breakpoints.m}){
                 font-size: 19px;

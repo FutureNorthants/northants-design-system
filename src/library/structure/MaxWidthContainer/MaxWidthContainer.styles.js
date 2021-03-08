@@ -23,6 +23,10 @@ export const MaxWidth = styled.div`
     margin-right: 15px;
     margin-left: 15px;
 
+    pre {
+        font-family: monospace;
+        white-space: pre;
+    }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         margin-right: 30px;
         margin-left: 30px;
