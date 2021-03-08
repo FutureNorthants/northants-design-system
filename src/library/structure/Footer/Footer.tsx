@@ -12,7 +12,7 @@ import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
 
 const Footer: React.FC<FooterProps> = ({ 
     footerLinksArray = null,
-    year = "2020"
+    year = "2021"
 }) => {
     const themeContext = useContext(ThemeContext);
 
@@ -57,10 +57,10 @@ const Footer: React.FC<FooterProps> = ({
                     }
                 </Styles.SocialLinks>
                 <Styles.FooterCopy>
-                    {/* TODO add this back in once legal is sorted */}
-                    {/* &copy;&nbsp; */}
+                    TODO add this back in once legal is sorted
+                    &copy;&nbsp;
                     {themeContext.full_name} Council
-                    {/* &nbsp;{year} */}
+                    &nbsp;{year}
                 </Styles.FooterCopy>
             </Styles.StyledMaxWidthContainer>
         </Styles.Container>
