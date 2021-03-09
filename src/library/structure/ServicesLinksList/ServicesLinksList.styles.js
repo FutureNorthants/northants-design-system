@@ -35,6 +35,9 @@ export const PagelinkBlank = styled.div`
     margin-bottom: 31px;
   }
 `
+export const ServiceIconLink = styled.a`
+  
+`
 export const PagelinkIconContainer = styled.div`
   width: 65px;
   height: auto;

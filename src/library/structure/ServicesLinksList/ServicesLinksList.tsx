@@ -67,12 +67,17 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                         <Styles.PagelinkBlock key={link.title}>
                             {link.iconKey && 
                                 <Styles.PagelinkIconContainer>
-                                    <Styles.PagelinkIcon className="service-icon">
-                                        <DynamicComponent name={link.iconKey} isHover={false} />
-                                    </Styles.PagelinkIcon>
-                                    <Styles.PagelinkIconHover className="service-icon-hover">
-                                        <DynamicComponent name={link.iconKey} isHover={true} />
-                                    </Styles.PagelinkIconHover>
+                                    <Styles.ServiceIconLink 
+                                        href={link.url} 
+                                        title={"Go to " + link.title}
+                                    >
+                                        <Styles.PagelinkIcon className="service-icon">
+                                            <DynamicComponent name={link.iconKey} isHover={false} />
+                                        </Styles.PagelinkIcon>
+                                        <Styles.PagelinkIconHover className="service-icon-hover">
+                                            <DynamicComponent name={link.iconKey} isHover={true} />
+                                        </Styles.PagelinkIconHover>
+                                    </Styles.ServiceIconLink>
                                 </Styles.PagelinkIconContainer>
                             }
                             <Styles.PagelinkInner>
