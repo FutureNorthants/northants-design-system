@@ -57,7 +57,6 @@ const Footer: React.FC<FooterProps> = ({
                     }
                 </Styles.SocialLinks>
                 <Styles.FooterCopy>
-                    TODO add this back in once legal is sorted
                     &copy;&nbsp;
                     {themeContext.full_name} Council
                     &nbsp;{year}
