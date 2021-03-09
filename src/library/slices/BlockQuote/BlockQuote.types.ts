@@ -3,7 +3,7 @@ export interface BlockQuoteProps {
   /**
    * 	The text of the quote
    */
-  quote: string;
+  quote: React.ReactNode;
   /**
    * Optionally, the attribution of the quote
    */
