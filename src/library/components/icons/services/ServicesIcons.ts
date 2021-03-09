@@ -8,6 +8,8 @@ import BirthsIcon from './BirthsIcon/Icon';
 import BirthsIconHover from './BirthsIconHover/Icon';
 import BusinessIcon from './BusinessIcon/Icon';
 import BusinessIconHover from './BusinessIconHover/Icon';
+import CareersIcon from './CareersIcon/Icon';
+import CareersIconHover from './CareersIconHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
 import ChildrenIconHover from './ChildrenIconHover/Icon';
 import CouncilIcon from './CouncilIcon/Icon';
@@ -52,6 +54,8 @@ let components = {
     birthsHover: BirthsIconHover,
     business: BusinessIcon,
     businessHover: BusinessIconHover,
+    careers: CareersIcon,
+    careersHover: CareersIconHover,
     children: ChildrenIcon,
     childrenHover: ChildrenIconHover,
     council: CouncilIcon,
