@@ -184,7 +184,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                       <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
                       
                       {themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
-                        <p>{themeContext.theme_vars.cardinal_name} | {responseData.unitary[0].unitary} In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].unitary} Northamptonshire website.</a></p>
+                        <p>In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].unitary} Northamptonshire website.</a></p>
                         :
                         <p>You are on the <strong>correct website for this postcode</strong>.</p>
                       }
