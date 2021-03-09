@@ -26,7 +26,6 @@ const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
 <path d="M30 16.9091C32.184 16.9091 33.9545 15.1386 33.9545 12.9545C33.9545 10.7705 32.184 9 30 9C27.8159 9 26.0454 10.7705 26.0454 12.9545C26.0454 15.1386 27.8159 16.9091 30 16.9091Z" stroke={colourFill} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-
     )
 } 
 

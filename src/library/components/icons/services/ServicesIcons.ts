@@ -16,8 +16,10 @@ import CouncilTaxIcon from './CouncilTaxIcon/Icon';
 import CouncilTaxIconHover from './CouncilTaxIconHover/Icon';
 import CovidIcon from './CovidIcon/Icon';
 import CovidIconHover from './CovidIconHover/Icon';
-import CultureIcon from './CultureIcon/Icon';
-import CultureIconHover from './CultureIconHover/Icon';
+import CultureNorthIcon from './CultureNorthIcon/Icon';
+import CultureNorthIconHover from './CultureNorthIconHover/Icon';
+import CultureWestIcon from './CultureWestIcon/Icon';
+import CultureWestIconHover from './CultureWestIconHover/Icon';
 import DemocracyIcon from './DemocracyIcon/Icon';
 import DemocracyIconHover from './DemocracyIconHover/Icon';
 import EnvironmentIcon from './EnvironmentIcon/Icon';
@@ -36,6 +38,8 @@ import SafetyIcon from './SafetyIcon/Icon';
 import SafetyIconHover from './SafetyIconHover/Icon';
 import SchoolsIcon from './SchoolsIcon/Icon';
 import SchoolsIconHover from './SchoolsIconHover/Icon';
+import SportsIcon from './SportsIcon/Icon';
+import SportsIconHover from './SportsIconHover/Icon';
 
 let components = {
     adults: AdultsIcon,
@@ -56,8 +60,10 @@ let components = {
     counciltaxHover: CouncilTaxIconHover,
     covid: CovidIcon,
     covidHover: CovidIconHover,
-    culture: CultureIcon,
-    cultureHover: CultureIconHover,
+    cultureNorth: CultureNorthIcon,
+    cultureNorthHover: CultureNorthIconHover,
+    cultureWest: CultureWestIcon,
+    cultureWestHover: CultureWestIconHover,
     democracy: DemocracyIcon,
     democracyHover: DemocracyIconHover,
     environment: EnvironmentIcon,
@@ -76,6 +82,8 @@ let components = {
     safetyHover: SafetyIconHover,
     schools: SchoolsIcon,
     schoolsHover: SchoolsIconHover,
+    sports: SportsIcon,
+    sportsHover: SportsIconHover,
 };
 
 export default components;
