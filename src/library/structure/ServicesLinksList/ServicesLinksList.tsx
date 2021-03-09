@@ -30,8 +30,14 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
         }
     }, [currentOrder])
 
-    const DynamicComponent = ({name}) => {
-        const DynamicIcon = serviceIcons[name];
+    const DynamicComponent = ({name, isHover = false}) => {
+        let DynamicIcon;
+        if(name === "culture") {
+            let newName = name + themeContext.cardinal_name;
+            DynamicIcon = serviceIcons[newName + (isHover ? "Hover" : "")];
+        } else {
+            DynamicIcon = serviceIcons[name + (isHover ? "Hover" : "")];
+        }
         return <DynamicIcon colourFill={themeContext.theme_vars.colours.action} />;
     }
 
@@ -62,10 +68,10 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                             {link.iconKey && 
                                 <Styles.PagelinkIconContainer>
                                     <Styles.PagelinkIcon className="service-icon">
-                                        <DynamicComponent name={link.iconKey} />
+                                        <DynamicComponent name={link.iconKey} isHover={false} />
                                     </Styles.PagelinkIcon>
                                     <Styles.PagelinkIconHover className="service-icon-hover">
-                                        <DynamicComponent name={(link.iconKey + "Hover")} />
+                                        <DynamicComponent name={link.iconKey} isHover={true} />
                                     </Styles.PagelinkIconHover>
                                 </Styles.PagelinkIconContainer>
                             }

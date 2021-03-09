@@ -281,7 +281,7 @@ ExampleHome.args = {
     {
       title: "Culture and tourism", 
       url: "/",
-      iconKey: "cultureWest",
+      iconKey: "culture",
       quickLinksArray: [
         {
           title: "Leisure and community facilities", 

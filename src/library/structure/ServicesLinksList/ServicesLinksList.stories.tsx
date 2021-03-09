@@ -263,7 +263,7 @@ const exampleData = [
   {
     title: "Culture and tourism", 
     url: "/",
-    iconKey: "cultureNorth",
+    iconKey: "culture",
     quickLinksArray: [
       {
         title: "Leisure and community facilities", 
