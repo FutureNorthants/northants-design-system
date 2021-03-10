@@ -39,10 +39,10 @@ export const Title = styled.p`
 
 
 export const ArticleContainer = styled.a`
-  background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light};
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light} !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   transition: box-shadow 0.3s ease;
   border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action};
   border-radius: ${props => props.theme.theme_vars.border_radius};
@@ -55,9 +55,9 @@ export const ArticleContainer = styled.a`
 
   &:hover {
     border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action_dark};
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
+    -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
+    -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     
     .article_title {
       ${props => props.theme.linkStylesHover};
@@ -67,9 +67,9 @@ export const ArticleContainer = styled.a`
   &:focus {
     outline: none;
     border-bottom: 5px solid ${props => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
+    -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
+    -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     
     .article_title {
       ${props => props.theme.linkStylesFocus};
@@ -80,14 +80,10 @@ export const ArticleContainer = styled.a`
     outline: none;
     transform: translateY(3px);
     border-bottom: 5px solid transparent;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-
-    box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
-    -webkit-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
-    -moz-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.black} inset;
-
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
+    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
+    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
+    
     .article_title {
       ${props => props.theme.linkStylesActive};
     }
