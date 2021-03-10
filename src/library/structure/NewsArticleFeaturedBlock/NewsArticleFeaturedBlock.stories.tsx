@@ -17,7 +17,7 @@ const Template: Story<NewsArticleFeaturedBlockProps> = (args) => <MaxWidthContai
 export const ExampleNewsArticleFeaturedBlock = Template.bind({});    
 ExampleNewsArticleFeaturedBlock.args = {
   articles: newsArticleData.articles,
-  viewAllLink: "View all news"
+  viewAllLink: "/"
 };
 
 export const ExampleNoNewsArticleFeaturedBlock = Template.bind({});    
@@ -25,9 +25,21 @@ ExampleNoNewsArticleFeaturedBlock.args = {
   articles: [],
 };
 
-export const ExampleNoTitleOrButtonk = Template.bind({});    
-ExampleNoTitleOrButtonk.args = {
+export const ExampleNoTitleOrButton = Template.bind({});    
+ExampleNoTitleOrButton.args = {
   articles: newsArticleData.articles,
-  withoutTitle: true
+  withoutTitle: true,
+  viewAllLink: ""
+};
+
+
+export const Example2Articles = Template.bind({});    
+Example2Articles.args = {
+  articles: newsArticleData.articles.slice(0, 2)
+};
+
+export const Example1Article = Template.bind({});    
+Example1Article.args = {
+  articles: newsArticleData.articles.slice(0, 1)
 };
 

@@ -7,7 +7,7 @@ import NewsArticleDate from "../NewsArticleDate/NewsArticleDate";
 import { Heading } from "../../..";
 import Button from "../../components/Button/Button";
 
-const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ articles, withoutTitle = false, viewAllLink }) => {
+const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ articles, withoutTitle = false, viewAllLink ="/" }) => {
     if(articles && articles.length > 0) {
         return (
             <>

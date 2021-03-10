@@ -28,6 +28,7 @@ export const Title = styled.p`
   height: fit-content;
   font-size: 1.2rem;
   line-height: 1.2;
+  min-width: 100%;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
       font-size: 1.35rem;
@@ -50,6 +51,7 @@ export const ArticleContainer = styled.a`
   text-decoration: none !important;
   font-weight: normal !important;
   margin-bottom: 15px;
+  max-width: 50%;
 
   &:hover {
     border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action_dark};
