@@ -229,7 +229,7 @@ export const HomeTitle = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_dark};
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     
     h2 {
       margin-top: 30px;

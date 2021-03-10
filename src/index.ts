@@ -19,7 +19,7 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, Warnin
 
 
 // Structure
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer } from "./library/structure/PageStructures";
 
 
 // Themes
