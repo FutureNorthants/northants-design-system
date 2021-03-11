@@ -29,6 +29,7 @@ export const Small = styled.small`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         font-size: 16px;
         font-size: 1rem;
+        max-width: 800px;
         line-height: 1.4;
     }
 `

@@ -51,7 +51,6 @@ export const ArticleContainer = styled.a`
   text-decoration: none !important;
   font-weight: normal !important;
   margin-bottom: 15px;
-  max-width: 50%;
 
   &:hover {
     border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action_dark};
@@ -101,6 +100,7 @@ export const ArticleContainer = styled.a`
     margin-bottom: 0px;
     display: block;
     flex: 1;
+    max-width: 50%;
 
     &:nth-of-type(2n) {
         margin-right: 30px;
