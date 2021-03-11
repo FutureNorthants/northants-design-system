@@ -96,8 +96,6 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     }
 
     useEffect(() => {
-      console.log(responseData)
-
       if(responseData.numOfUnitary > 0) {
         if(isError) {
           handleError(false, "");
@@ -134,7 +132,6 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         setIsMultiple(false);
         setResponseData(singleAddress.info[0]);
         setCurrentPostcode(currentPostcode + " ("+singleAddress.title+")")
-        console.log(singleAddress.info[0])
       }
     }
 
