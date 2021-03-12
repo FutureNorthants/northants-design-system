@@ -126,7 +126,7 @@ export const ArticleContent = styled.div`
 
 
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.span`
   display: block;
   width: 100%;
   height: ${imageHeightMobile}px;

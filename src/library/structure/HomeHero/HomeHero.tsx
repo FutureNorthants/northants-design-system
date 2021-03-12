@@ -11,7 +11,6 @@ import WestColoured from "./assets/west_coloured";
 import { SkipToMainContent } from "../PageStructures";
 import LazyImage from "react-lazy-progressive-image";
 import Searchbar from "../Searchbar/Searchbar";
-import { linkTo } from "@storybook/addon-links";
 import PhaseBanner from "../PhaseBanner/PhaseBanner";
 
 /**

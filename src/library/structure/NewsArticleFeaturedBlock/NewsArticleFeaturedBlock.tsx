@@ -1,5 +1,6 @@
 
 import React from "react";
+import LazyImage from "react-lazy-progressive-image";
 
 import { NewsArticleFeaturedBlockProps } from "./NewsArticleFeaturedBlock.types";
 import * as Styles from "./NewsArticleFeaturedBlock.styles";
@@ -16,9 +17,19 @@ const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ art
             }
             <Styles.Container>
                 {articles.map((article) => 
-                    <Styles.ArticleContainer key={article.id} href={article.url} title="Read the article">
+                    <Styles.ArticleContainer key={article.id} href={article.url}>
                         {article.thumbnail &&
-                            <Styles.ImageContainer background={article.thumbnail} ></Styles.ImageContainer>
+                            <LazyImage
+                                src={article.image}
+                                placeholder={article.thumbnail}
+                                visibilitySensorProps={{
+                                    partialVisibility: true
+                                }}
+                            >
+                            {src => 
+                                <Styles.ImageContainer background={src} role="img" aria-label={article.imageAlt ? article.imageAlt : ""}></Styles.ImageContainer>
+                            }
+                            </LazyImage>
                         }
                         <Styles.ArticleContent>
                             <Styles.Title className="article_title">{article.title}</Styles.Title>
