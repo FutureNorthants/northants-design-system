@@ -2,7 +2,6 @@ import React from "react";
 
 import { SectionLinksMobileContentsProps } from "./SectionLinksMobileContents.types";
 import * as Styles from "./SectionLinksMobileContents.styles";
-import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const SectionLinksMobileContents: React.FC<SectionLinksMobileContentsProps> = ({ sectionLinksArray }) => (
     <Styles.Container>
