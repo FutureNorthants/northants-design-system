@@ -20,7 +20,7 @@ export interface NewsArticleProps {
   url: string;
   title: string;
   date: number;
-  image: string;
-  thumbnail: string;
-  imageAlt?: string;
+  image720x405: string;
+  image72x41: string;
+  imageAltText?: string;
 }

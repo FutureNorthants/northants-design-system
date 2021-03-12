@@ -18,16 +18,16 @@ const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ art
             <Styles.Container>
                 {articles.map((article) => 
                     <Styles.ArticleContainer key={article.id} href={article.url}>
-                        {article.thumbnail &&
+                        {article.image720x405 &&
                             <LazyImage
-                                src={article.image}
-                                placeholder={article.thumbnail}
+                                src={article.image720x405}
+                                placeholder={article.image72x41}
                                 visibilitySensorProps={{
                                     partialVisibility: true
                                 }}
                             >
                             {src => 
-                                <Styles.ImageContainer background={src} role="img" aria-label={article.imageAlt ? article.imageAlt : ""}></Styles.ImageContainer>
+                                <Styles.ImageContainer background={src} role="img" aria-label={article.imageAltText ? article.imageAltText : ""}></Styles.ImageContainer>
                             }
                             </LazyImage>
                         }

@@ -18,8 +18,8 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
                 {(article.excerpt.length > extractLength) ? article.excerpt.substr(0, extractLength-1).trim() + String.fromCharCode(8230) : article.excerpt}
                 <NewsArticleDate text={article.date.toString()} format="X" />
             </Styles.ArticleContent>
-            {article.thumbnail &&
-            <Styles.ImageContainer background={article.thumbnail} ></Styles.ImageContainer>
+            {article.image720x405 &&
+                <Styles.ImageContainer background={article.image720x405} ></Styles.ImageContainer>
             }
     
         </Styles.ArticleContainer>
