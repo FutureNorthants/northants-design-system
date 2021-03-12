@@ -25,8 +25,9 @@ import Searchbar from './Searchbar/Searchbar';
 import SearchResultsList from './SearchResultsList/SearchResultsList';
 import SectionLinks from './SectionLinks/SectionLinks';
 import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
+import SectionLinksMobileContents from './SectionLinksMobileContents/SectionLinksMobileContents';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
 
-export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, ServicesLinksList, SignpostLinks, MaxWidthContainer };
+export { AlertBanner, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer };

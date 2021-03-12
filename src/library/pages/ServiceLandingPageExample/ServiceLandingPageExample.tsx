@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
+import SectionLinksMobileContents from '../../structure/SectionLinksMobileContents/SectionLinksMobileContents';
 
 export interface ServiceLandingPageExampleProps {
 
@@ -20,6 +21,21 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
       />
       <PageStructures.PageMain>
         <Heading level={1} text="Bin collection, recycling and waste" />
+
+        <SectionLinksMobileContents sectionLinksArray={[
+          {
+            title: "Your bins and rubbish",
+            id: "your-bins-and-rubbish"
+          },
+          {
+            title: "Street cleaning",
+            id: "street-cleaning"
+          },
+          {
+            title: "Business, commercial and clinical waste",
+            id: "business-commercial-and-clinical-waste"
+          }
+        ]} />
         <PageStructures.SectionLinks 
           sectionTitle="Your bins and rubbish"
           sectionSlug="your-bins-and-rubbish"
