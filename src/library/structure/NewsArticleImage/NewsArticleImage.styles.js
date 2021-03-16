@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const ImageContainer = styled.div`
     position: relative;
     margin-bottom: 25px;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+        max-width: 800px;
+    }
 `
 
 export const StyledImage = styled.img`
