@@ -16,12 +16,20 @@ const [isFullScreen, setFullScreen] = useState(false)
     
 const showFullscreenFilters = (e) => {
     setFullScreen(true)
+
+    document.body.style.overflow = 'hidden';
 }
 
 
 const hideFullscreenFilters = (e) => {
     setFullScreen(false)
+
+    document.body.style.overflow = 'visible';
 }
+
+// set accordions to closed by default NOR-134
+sections.map((section) => section.isExpanded = false );
+
     
 return (
     <Styles.Container data-testid="NewsArticleFilterAccordion">
@@ -33,7 +41,9 @@ return (
                 <Styles.ShowFiltersButton onClick={hideFullscreenFilters}>Close window</Styles.ShowFiltersButton> 
             </Styles.FilterHeader>
             <Accordion isFilter={true} sections={sections} />
-            <RemoveAllFilters />
+            {count > 0 && 
+                <RemoveAllFilters />
+            }
         </Styles.Filters>
 
     </Styles.Container>

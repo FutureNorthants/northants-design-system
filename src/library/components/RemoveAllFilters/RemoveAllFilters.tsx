@@ -10,12 +10,12 @@ import {countParams, removeParams} from './../../helpers/url-helpers.js';
 
 const RemoveAllFilters: React.FC<RemoveAllFiltersProps> = ({  }) => {
     
-    const count = countParams(['searchTerm', 'services', 'articleType', 'sortBy']);
+    const count = countParams(['services', 'articleType']);
 
 
     const removeAllFilters = (e) => {
         e.preventDefault();
-        removeParams(['searchTerm', 'services', 'articleType', 'sortBy', 'page']);
+        removeParams(['services', 'articleType', 'page']);
     }
 
     return (
