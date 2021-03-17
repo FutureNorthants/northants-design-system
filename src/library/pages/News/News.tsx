@@ -62,14 +62,14 @@ return (
           {
           title: "Services",
           content: <>
-            <DropDownFilter label={null} options={serviceOptions} selected={newsArticleData.services} />
+            <PageStructures.DropDownFilter label={null} options={serviceOptions} selected={newsArticleData.services} />
           </>,
           isExpanded: true
           },
           {
           title: "Type of article",
           content: <>
-            <CheckboxListFilter label={null} hint={null} options={articleOptions} checked={newsArticleData.articleType} />
+            <PageStructures.CheckboxListFilter label={null} hint={null} options={articleOptions} checked={newsArticleData.articleType} />
           </>,
           isExpanded: true
           }
