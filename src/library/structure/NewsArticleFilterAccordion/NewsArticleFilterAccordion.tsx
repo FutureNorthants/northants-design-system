@@ -16,11 +16,15 @@ const [isFullScreen, setFullScreen] = useState(false)
     
 const showFullscreenFilters = (e) => {
     setFullScreen(true)
+
+    document.body.style.overflow = 'hidden';
 }
 
 
 const hideFullscreenFilters = (e) => {
     setFullScreen(false)
+
+    document.body.style.overflow = 'visible';
 }
 
 // set accordions to closed by default NOR-134

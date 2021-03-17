@@ -54,6 +54,7 @@ const handleFullScreen = props => {
       z-index: 1;
       padding: 20px;
       box-sizing: border-box;
+      overflow: auto;
     `
   } 
 }
@@ -95,3 +96,8 @@ export const FilterHeading = styled.div`
     ${props => props.theme.theme_vars.h3}
   }
 `
+
+// margin: 0;
+// padding: 0;
+// display: block;
+// overflow: hidden;
