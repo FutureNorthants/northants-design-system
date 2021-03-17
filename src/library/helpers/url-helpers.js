@@ -9,9 +9,6 @@ import Uri from 'jsuri';
  // https://github.com/derek-watson/jsUri
 
  export const handleParams = (postTo, newParams) => {
-
-
-
    var uri = new Uri(window.location)
 
     // check where we're posting to (news / search etc)
@@ -19,7 +16,7 @@ import Uri from 'jsuri';
    if(postTo !== path) {
       postTo = (postTo.substring(0,1) === '/') ? postTo.substring(1) : postTo;
       // console.log('updating path to /' + postTo)
-      uri.setPath(`/${postTo}`);
+      // uri.setPath(`/${postTo}`);
    }
 
    // first check for existance of any query params
@@ -54,7 +51,7 @@ import Uri from 'jsuri';
  }
 
  /**
-  * Remove specific items from the url
+  * Remove specific key from the url
   * @param {array of values to remove} params 
   */
  export const removeParams = (params) => {
@@ -64,6 +61,34 @@ import Uri from 'jsuri';
     })
    //  console.log(uri.toString());
     window.location.href = uri.toString();
+ }
+
+ /**
+  * Removes a specific value from a given parameter
+  * @param {*} param 
+  * @param {*} value 
+  */
+ export const removeValueFromParam = (param, searchValue) => {
+   var uri = new Uri(window.location);
+   if(uri.hasQueryParam(param)) {
+      let vals = uri.getQueryParamValues(param);
+
+      if(vals.length === 1 && vals[0].includes(',')) {
+         vals = vals[0].split(',')
+      }
+
+      let removedVal = vals.filter(val => val !== searchValue)
+
+      if(removedVal.length === 0) {
+         uri.deleteQueryParam(param);
+         window.location.href = uri.toString();
+      }
+      else {
+         uri.replaceQueryParam(param, removedVal)
+         window.location.href = uri.toString();
+      }
+
+   }
  }
 
  /**
@@ -77,4 +102,45 @@ import Uri from 'jsuri';
      if(uri.hasQueryParam(param)) count++
    })
    return count;
+ }
+
+ /**
+  * 
+  * Get an array of all the values for a given dropdown parameter
+  * @param {*} param 
+  * @returns 
+  */
+ export const getDropDownValues = (param) => {
+   const uri = new Uri(window.location);
+   if(uri.hasQueryParam(param)) {
+      return uri.getQueryParamValues(param);
+   }
+   return []
+ }
+
+  /**
+  * 
+  * Get an array of all the values for a given checkbox parameter
+  * @param {*} param 
+  * @returns 
+  */
+   export const getCheckboxValues = (param) => {
+      const uri = new Uri(window.location);
+      if(uri.hasQueryParam(param)) {
+         return uri.getQueryParamValues(param)[0].split(',');
+      }
+      return []
+    }
+   
+
+
+ export const deSlug = (slug) => {
+   var words = slug.split('-');
+ 
+   for (var i = 0; i < words.length; i++) {
+     var word = words[i];
+     words[i] = word.charAt(0).toUpperCase() + word.slice(1);
+   }
+ 
+   return words.join(' ');
  }
