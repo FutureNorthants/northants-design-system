@@ -16,7 +16,7 @@ import Uri from 'jsuri';
    if(postTo !== path) {
       postTo = (postTo.substring(0,1) === '/') ? postTo.substring(1) : postTo;
       // console.log('updating path to /' + postTo)
-      // uri.setPath(`/${postTo}`);
+      uri.setPath(`/${postTo}`);
    }
 
    // first check for existance of any query params
