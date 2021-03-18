@@ -17,17 +17,24 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                         </Styles.SectionButton>
                     </Styles.SectionHeading>
 
-                    {summary && <Styles.SectionSummary id={`${accordionSectionId}-summary`}>
-                        {summary}
-                    </Styles.SectionSummary>
+                    {summary && 
+                        <Styles.SectionSummary id={`${accordionSectionId}-summary`}>
+                            {summary}
+                        </Styles.SectionSummary>
+                    }
+                    {!isExpanded && 
+                        <Styles.ReadMore>Read more</Styles.ReadMore>
                     }
                 </Styles.SectionHeader>
                 <Styles.SectionContent id={`${accordionSectionId}-content`} aria-labelledby={`${accordionSectionId}-heading`}>
                     {content}
+                    {isExpanded && 
+                        <Styles.ShowLessButton onClick={onSectionToggle}>Show less</Styles.ShowLessButton>
+                    }
                 </Styles.SectionContent>
+                
             </Styles.Section>
     );
 };
 
 export default AccordionSection;
-
