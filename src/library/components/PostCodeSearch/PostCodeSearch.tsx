@@ -60,9 +60,9 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
 
     const handleSubmit= (e) => {
       e.preventDefault();
-      setIsLoading(true);
       setCurrentPostcode(e.target.postcode.value)
       if(e.target.postcode.value === "") {
+        setIsLoading(true);
         handleError(true, "You need to enter a postcode");
       } else {
         checkPostcode(e.target.postcode.value);
@@ -80,6 +80,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         if (response.data.numOfUnitary > 0) {
           setResponseData(response.data)
         } else {
+          // console.log(response)
           handleError(true);
         }
       })
