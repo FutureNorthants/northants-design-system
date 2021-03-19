@@ -1,8 +1,11 @@
+
 import React from "react";
 
-function Icon() {
-  return (
-    <svg
+import { LogoProps } from "./logo.types";
+
+const WestColouredLogo: React.FC<LogoProps> = () => {
+    return (
+      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="974"
       height="327"
@@ -106,7 +109,9 @@ function Icon() {
         </linearGradient>
       </defs>
     </svg>
-  );
-}
+    )
+} 
 
-export default Icon;
+
+export default WestColouredLogo;
+

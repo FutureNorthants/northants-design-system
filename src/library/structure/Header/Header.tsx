@@ -5,11 +5,11 @@ import { ThemeContext } from 'styled-components';
 
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
-import GDSWhite from "./assets/gds_white";
-import WestWhite from "./assets/west_white";
-import GDSColoured from "./assets/gds_coloured";
-import NorthColoured from "./assets/north_coloured";
-import WestColoured from "./assets/west_coloured";
+import GDSWhite from "../../components/logos/GDSWhiteLogo/logo";
+import GDSColoured from "../../components/logos/GDSColouredLogo/logo";
+import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
+import WestColoured from "../../components/logos/WestColouredLogo/logo";
+import WestWhite from "../../components/logos/NorthWhiteLogo/logo";
 import { SkipToMainContent } from "../PageStructures";
 import Searchbar from "../Searchbar/Searchbar";
 

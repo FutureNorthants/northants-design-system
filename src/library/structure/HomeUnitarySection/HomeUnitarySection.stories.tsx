@@ -6,14 +6,11 @@ import { HomeUnitarySectionProps } from "./HomeUnitarySection.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "library/Structure/Promo Banner"
+    title: "library/Structure/Home unitary section"
 };
 
-const Template: Story<HomeUnitarySectionProps> = (args) => <SBPadding><HomeUnitarySection {...args}><p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p></HomeUnitarySection></SBPadding>;
+const Template: Story<HomeUnitarySectionProps> = (args) => <SBPadding><HomeUnitarySection></HomeUnitarySection></SBPadding>;
 
 
 export const HomeUnitarySectionExample = Template.bind({});    
-HomeUnitarySectionExample.args = {
-    title: "Volunteer at a local Covid-19 vaccine centre",
-};
 

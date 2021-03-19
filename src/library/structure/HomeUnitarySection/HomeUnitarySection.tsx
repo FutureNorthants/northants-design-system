@@ -7,8 +7,8 @@ import * as Styles from "./HomeUnitarySection.styles";
 import PostCodeSearch from "../../components/PostCodeSearch/PostCodeSearch";
 import Heading from "../../components/Heading/Heading";
 
-import NorthColoured from "./assets/north_coloured";
-import WestColoured from "./assets/west_coloured";
+import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
+import WestColoured from "../../components/logos/WestColouredLogo/logo";
 import MapImage from "./assets/map";
 
 const HomeUnitarySection: React.FC<HomeUnitarySectionProps> = ({ 
