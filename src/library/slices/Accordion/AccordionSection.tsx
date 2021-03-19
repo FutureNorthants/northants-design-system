@@ -4,7 +4,7 @@ import { AccordionSectionProps } from "./Accordion.types";
 import * as Styles from "./Accordion.styles";
 
 
-const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, summary, isExpanded, accordionSectionId, onToggle, isFilter = false }) => {
+const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, summary, isExpanded, accordionSectionId, onToggle, isFilter = false, withReadMore }) => {
     const onSectionToggle = () => (isExpanded === true) ? onToggle(accordionSectionId, false) : onToggle(accordionSectionId, true);
     return (
             <Styles.Section  className={isExpanded && "accordion__section--expanded"}>
@@ -22,7 +22,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                             {summary}
                         </Styles.SectionSummary>
                     }
-                    {!isExpanded && 
+                    {!isExpanded && withReadMore && 
                         <Styles.ReadMore>Read more</Styles.ReadMore>
                     }
                 </Styles.SectionHeader>

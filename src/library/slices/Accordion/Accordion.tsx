@@ -7,7 +7,7 @@ import * as Styles from "./Accordion.styles";
 import AccordionSection from "./AccordionSection";
 
 
-const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false }) => {
+const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false, withReadMore = true }) => {
 
     sections.map((section, i) => {
         section.accordionSectionId = i
@@ -59,7 +59,7 @@ const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false }) => 
                 </Styles.OpenAllButton>
             </Styles.AccordionControls> }
             {accordionStates.map((section, i) => 
-                <AccordionSection {...section} key={i} onToggle={updateAccordionState} isFilter={isFilter} />
+                <AccordionSection {...section} key={i} onToggle={updateAccordionState} isFilter={isFilter} withReadMore={withReadMore} />
             )} 
         </Styles.Container>
     );

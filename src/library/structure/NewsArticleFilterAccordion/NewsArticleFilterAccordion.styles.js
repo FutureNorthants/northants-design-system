@@ -48,7 +48,7 @@ const handleFullScreen = props => {
         props.theme.cardinal_name === "north" ?  (props.theme.theme_vars.colours.grey_light) : props.theme.theme_vars.colours.white};
       width: 100%;
       height: 100%;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 1;

@@ -9,6 +9,11 @@ export interface AccordionProps {
    * We reuse this on filter pages - but it looks slightly different
    */
   isFilter?: boolean;
+  /**
+   * Should there be a read more link at the bottom of each section?
+   */
+  withReadMore?: boolean;
+    
 }
 
 export interface AccordionSectionProps {
@@ -40,4 +45,8 @@ export interface AccordionSectionProps {
    * We reuse this on filter pages - but it looks slightly different
    */
   isFilter?: boolean;
+   /**
+   * Should there be a read more link at the bottom of each section?
+   */
+  withReadMore: boolean;
 } 

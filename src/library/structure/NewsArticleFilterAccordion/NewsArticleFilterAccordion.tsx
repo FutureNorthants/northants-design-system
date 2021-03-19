@@ -40,7 +40,7 @@ return (
                 <Styles.FilterHeading id="PageFiltersLabel">Search &amp; Filters</Styles.FilterHeading>
                 <Styles.ShowFiltersButton onClick={hideFullscreenFilters}>Close window</Styles.ShowFiltersButton> 
             </Styles.FilterHeader>
-            <Accordion isFilter={true} sections={sections} />
+            <Accordion isFilter={true} sections={sections} withReadMore={false} />
             {count > 0 && 
                 <RemoveAllFilters />
             }
