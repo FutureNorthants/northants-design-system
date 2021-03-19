@@ -3,7 +3,7 @@ import React from "react";
 
 import { LogoProps } from "./logo.types";
 
-const GDSWhiteLogo: React.FC<LogoProps> = () => {
+const GDSLogo: React.FC<LogoProps> = () => {
     return (
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,5 +27,5 @@ const GDSWhiteLogo: React.FC<LogoProps> = () => {
 } 
 
 
-export default GDSWhiteLogo;
+export default GDSLogo;
 

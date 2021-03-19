@@ -5,11 +5,10 @@ import { ThemeContext } from 'styled-components';
 
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
-import GDSWhite from "../../components/logos/GDSWhiteLogo/logo";
-import GDSColoured from "../../components/logos/GDSColouredLogo/logo";
+import GDSLogo from "../../components/logos/GDSLogo/logo";
 import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
 import WestColoured from "../../components/logos/WestColouredLogo/logo";
-import WestWhite from "../../components/logos/NorthWhiteLogo/logo";
+import WestWhite from "../../components/logos/WestWhiteLogo/logo";
 import { SkipToMainContent } from "../PageStructures";
 import Searchbar from "../Searchbar/Searchbar";
 
@@ -38,11 +37,11 @@ const Header: React.FC<HeaderProps> = ({
             <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
               {isHomepage ? 
                 <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "London Bridge theme North" || themeContext.theme_vars.theme_name === "London Bridge theme West" ? "black_logo" : ""}>
-                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSColoured />)}
+                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
                 </Styles.LogoColoured>   
                 :
                 <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "London Bridge theme North" || themeContext.theme_vars.theme_name === "London Bridge theme West" ? "black_logo" : ""}>
-                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSWhite />)}
+                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSLogo />)}
                 </Styles.LogoWhite>
               }
             </Styles.HomeLink>

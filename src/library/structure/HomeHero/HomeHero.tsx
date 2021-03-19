@@ -5,7 +5,7 @@ import { ThemeContext } from 'styled-components';
 
 import { HomeHeroProps } from "./HomeHero.types";
 import * as Styles from "./HomeHero.styles";
-import GDSWhite from "../../components/logos/GDSWhiteLogo/logo";
+import GDSLogo from "../../components/logos/GDSLogo/logo";
 import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
 import WestColoured from "../../components/logos/WestColouredLogo/logo";
 import { SkipToMainContent } from "../PageStructures";
@@ -46,7 +46,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                 }
                 <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
                 <Styles.LogoColoured>
-                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSWhite />)}
+                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
                 </Styles.LogoColoured>   
                 {strapline && 
                   <Styles.Strapline>{strapline}</Styles.Strapline>

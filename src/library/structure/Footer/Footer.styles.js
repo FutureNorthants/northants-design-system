@@ -79,3 +79,20 @@ export const FooterLink = styled.a`
 export const FooterCopy = styled.p`
   
 `
+export const FooterAlignment = styled.div`
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`
+export const LogoWhite = styled.div`
+  svg {
+    width: 240px;
+    height: auto;
+    vertical-align: middle;
+  }
+`
