@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NewsArticleFilterAccordionProps } from "./NewsArticleFilterAccordion.types";
 import * as Styles from "./NewsArticleFilterAccordion.styles";
 import Accordion from "../../slices/Accordion/Accordion";
@@ -10,7 +10,11 @@ import {countParams} from './../../helpers/url-helpers.js';
 
 const NewsArticleFilterAccordion: React.FC<NewsArticleFilterAccordionProps> = ({ sections }) => { 
 
-const count = countParams(['searchTerm', 'services', 'articleType', 'sortBy']);
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+    setCount(countParams(['searchTerm', 'services', 'articleType', 'sortBy']));
+}, []);   
 
 const [isFullScreen, setFullScreen] = useState(false)
     

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect }  from "react";
 
 import { NewsArticleListHeaderProps } from "./NewsArticleListHeader.types";
 import * as Styles from "./NewsArticleListHeader.styles";
@@ -11,7 +11,12 @@ import RemovableTag from "../../components/RemovableTag/RemovableTag";
 const NewsArticleListHeader: React.FC<NewsArticleListHeaderProps> = ({ totalResults, sortBy, sortByOptions }) => {
     
     
-    const count = countParams(['searchTerm', 'services', 'articleType', 'sortBy']);    
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        setCount(countParams(['searchTerm', 'services', 'articleType', 'sortBy']));
+    }, []);   
+ 
     // const searchTermVals = getParamValues('searchTerm');
     const servicesVals = getDropDownValues('services');
     const articleTypeVals = getCheckboxValues('articleType');
