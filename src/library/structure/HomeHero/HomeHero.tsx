@@ -30,52 +30,54 @@ const HomeHero: React.FC<HomeHeroProps> = ({
     <>
       <SkipToMainContent />
       <PhaseBanner isHome />
-      <LazyImage
-          src={imagesArray[random].image1440x810}
-          placeholder={imagesArray[random].image144x81}
-          visibilitySensorProps={{
-              partialVisibility: true
-          }}
-      >
-        {src => 
-          <Styles.Container image={src} aria-label={imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
-            <Styles.StyledMaxWidthContainer>
-              <Styles.MainBox>
-                {topline &&
-                  <Styles.Topline>{topline}</Styles.Topline>
+      <Styles.Wrapper>
+        <LazyImage
+            src={imagesArray[random].image1440x810}
+            placeholder={imagesArray[random].image144x81}
+            visibilitySensorProps={{
+                partialVisibility: true
+            }}
+        >
+          {src => 
+            <Styles.Container image={src} aria-label={imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
+              <Styles.StyledMaxWidthContainer>
+                <Styles.MainBox>
+                  {topline &&
+                    <Styles.Topline>{topline}</Styles.Topline>
+                  }
+                  <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
+                  <Styles.LogoColoured>
+                    {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
+                  </Styles.LogoColoured>   
+                  {strapline && 
+                    <Styles.Strapline>{strapline}</Styles.Strapline>
+                  }
+                  <Searchbar 
+                    isLight
+                    isLarge 
+                    placeholder="Search the site"
+                    submitInfo={[{
+                      postTo: "/search",
+                      params: {
+                          type: "search"
+                      }
+                    }]}
+                  />
+                </Styles.MainBox>
+                {promotedLinksArray.length > 0 && 
+                  <Styles.PromotedLinks>
+                    {promotedLinksArray.map((link) =>
+                      <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
+                        <span>{link.title}</span>
+                      </Styles.PromotedLink>
+                    )}
+                  </Styles.PromotedLinks>
                 }
-                <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
-                <Styles.LogoColoured>
-                  {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
-                </Styles.LogoColoured>   
-                {strapline && 
-                  <Styles.Strapline>{strapline}</Styles.Strapline>
-                }
-                <Searchbar 
-                  isLight
-                  isLarge 
-                  placeholder="Search the site"
-                  submitInfo={[{
-                    postTo: "/search",
-                    params: {
-                        type: "search"
-                    }
-                  }]}
-                />
-              </Styles.MainBox>
-              {promotedLinksArray.length > 0 && 
-                <Styles.PromotedLinks>
-                  {promotedLinksArray.map((link) =>
-                    <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
-                      <span>{link.title}</span>
-                    </Styles.PromotedLink>
-                  )}
-                </Styles.PromotedLinks>
-              }
-            </Styles.StyledMaxWidthContainer>
-          </Styles.Container>
-        }
-      </LazyImage>
+              </Styles.StyledMaxWidthContainer>
+            </Styles.Container>
+          }
+        </LazyImage>
+      </Styles.Wrapper>
     </>
 )};
 

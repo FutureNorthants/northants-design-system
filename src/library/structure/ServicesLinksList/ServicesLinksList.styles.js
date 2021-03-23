@@ -239,7 +239,7 @@ export const HomeTitle = styled.div`
 
 
 export const ReorderControl = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     text-align: right;
   }

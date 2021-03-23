@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const Wrapper = styled.header`
+    background: ${props => props.noBackground ? "transparent" : 
+        props.theme.cardinal_name === "north" ?  (props.theme.theme_vars.colours.grey_light+"7a") : props.theme.theme_vars.colours.white};
+`
+
+export const Container = styled.div`
     font-family: ${props => props.theme.theme_vars.fontstack};
     overflow: hidden;
     background: ${props => props.theme.theme_vars.colours.action}5A;
