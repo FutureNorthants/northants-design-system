@@ -48,5 +48,5 @@ export interface AccordionSectionProps {
    /**
    * Should there be a read more link at the bottom of each section?
    */
-  withReadMore: boolean;
+  withReadMore?: boolean;
 } 
