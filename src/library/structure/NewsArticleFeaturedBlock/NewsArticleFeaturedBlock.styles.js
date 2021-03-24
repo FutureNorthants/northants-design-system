@@ -92,6 +92,7 @@ export const ArticleContainer = styled.a`
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
+    width: 100%;
   }
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){

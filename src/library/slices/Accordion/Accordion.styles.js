@@ -139,6 +139,7 @@ export const ReadMore = styled.div`
     background: none;
     border: none;
     margin-top: 15px;
+    margin-bottom: 10px;
     padding: 0;
     font-size: ${props => props.theme.theme_vars.fontSizes.extra_small}; 
 `
