@@ -12,14 +12,18 @@ const NewsArticleListHeader: React.FC<NewsArticleListHeaderProps> = ({ totalResu
     
     
     const [count, setCount] = useState(0);
+    const [servicesVals, setServicesVals] = useState([]);
+    const [articleTypeVals, setArticleTypeVals] = useState([]);
 
     useEffect(() => {
         setCount(countParams(['searchTerm', 'services', 'articleType', 'sortBy']));
+        setServicesVals(getDropDownValues('services'));
+        setArticleTypeVals(getCheckboxValues('articleType'));
     }, []);   
  
     // const searchTermVals = getParamValues('searchTerm');
-    const servicesVals = getDropDownValues('services');
-    const articleTypeVals = getCheckboxValues('articleType');
+    // const servicesVals = getDropDownValues('services');
+    // const articleTypeVals = getCheckboxValues('articleType');
     // const sortByVal = getParamValues('sortBy');
            
     const removeFilterValue = (param, value) => {
