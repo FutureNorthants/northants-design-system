@@ -15,6 +15,9 @@ export const Container = styled.div`
         margin-top: 0;
         margin-bottom: 15px;
     }
+    p:last-of-type {
+        margin-bottom: 0 !important;
+    }
 
     width: 100%;
     margin-left: -15px;
