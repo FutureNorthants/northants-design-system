@@ -13,7 +13,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     serviceLinksArray
 }) => { 
     const themeContext = useContext(ThemeContext);
-    const [arrayOrdering, setArrayOrdering] = useState([]);
+    const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
     // const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
     const [open, setOpen] = useState(false);
