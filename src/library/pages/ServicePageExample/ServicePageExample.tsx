@@ -11,6 +11,7 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({  }) => (
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
+      <PageStructures.PhaseBanner />
       <PageStructures.Breadcrumbs 
         breadcrumbsArray={[
           {
