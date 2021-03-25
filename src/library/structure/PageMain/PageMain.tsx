@@ -15,7 +15,6 @@ const PageMain: React.FC<PageMainProps> = ({
   <Styles.Container
     role="main" 
     id="main" 
-    data-testid="main" 
     className={classes}
     {...props}
   >

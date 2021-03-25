@@ -36,8 +36,8 @@ AlertBannerExamplePositive.args = {
     children: childrenMessage
 };
 
-export const AlertBannerExampleBlack = Template.bind({});    
-AlertBannerExampleBlack.args = {
+export const AlertBannerExampleMemorial = Template.bind({});    
+AlertBannerExampleMemorial.args = {
     title: "Something terrible has happened",
     uid: "4",
     alertType: "london_bridge",
