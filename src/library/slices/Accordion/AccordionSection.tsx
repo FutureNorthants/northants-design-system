@@ -28,7 +28,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                 </Styles.SectionHeader>
                 <Styles.SectionContent id={`${accordionSectionId}-content`} aria-labelledby={`${accordionSectionId}-heading`}>
                     {content}
-                    {isExpanded && 
+                    {isExpanded && withReadMore && 
                         <Styles.ShowLessButton onClick={onSectionToggle}>Show less</Styles.ShowLessButton>
                     }
                 </Styles.SectionContent>

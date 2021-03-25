@@ -1,11 +1,12 @@
 // Components
 import Button from "./library/components/Button/Button";
 import Heading from "./library/components/Heading/Heading";
+import HeadingWithIcon from "./library/components/HeadingWithIcon/HeadingWithIcon";
 import Pagination from "./library/components/Pagination/Pagination";
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 
-export { Button, Heading, Pagination, CheckboxListFilter, DropDownFilter };
+export { Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter };
 
 
 // Slices
