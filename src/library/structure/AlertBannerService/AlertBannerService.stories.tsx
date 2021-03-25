@@ -3,7 +3,6 @@ import React from "react";
 import AlertBannerService from "./AlertBannerService";
 import { AlertBannerServiceProps } from "./AlertBannerService.types";
 import { Story } from '@storybook/react/types-6-0';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
 import PageMain from "../PageMain/PageMain";
 
@@ -17,10 +16,10 @@ const TemplateIE: Story<AlertBannerServiceProps> = (args) => <PageMain><MaxWidth
       <p>It looks like you are using an out of date version of Internet Explorer. Using this browser will mean that certain features of this website will not work. It also means you are vulnerable to security exploits. <strong>Microsoft will no longer support Internet Explorer from August 17th 2021.</strong></p>
       <p>We recommend that you use a modern up to date and secure browser to view this and all other websites. Download and install a new browser:</p>
       <ul>
-        <li><a href="#">Microsoft Edge</a></li>
-        <li><a href="#">Google Chrome</a></li>
-        <li><a href="#">Mozilla Firefox</a></li>
-        <li><a href="#">Apple Safari</a></li>
+        <li><a href="https://www.microsoft.com/en-us/edge" title="Download and install Edge">Microsoft Edge</a></li>
+        <li><a href="https://www.google.co.uk/chrome/" title="Download and install Chrome">Google Chrome</a></li>
+        <li><a href="https://www.mozilla.org/en-GB/firefox/new/" title="Download and install Firefox">Mozilla Firefox</a></li>
+        <li><a href="https://www.apple.com/uk/safari/" title="Download and install Safari">Apple Safari</a></li>
       </ul>
     </AlertBannerService></MaxWidthContainer></PageMain>;
 
