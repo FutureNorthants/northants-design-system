@@ -15,7 +15,6 @@ ExampleNewsArticleList.args = {
   hasResults: true, 
 };
 
-
 export const ExampleNoNewsArticleList = Template.bind({});   
 ExampleNoNewsArticleList.args = {
   hasResults: false

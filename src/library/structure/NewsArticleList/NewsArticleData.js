@@ -1,15 +1,17 @@
 import Uri from 'jsuri';
 
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
+
 
 var uri = new Uri(window.location);
 
 export const newsArticleData = {
   pageNumber: 1,
   totalResults: 23,
-  sortBy: (uri.hasQueryParam('sortBy')) ? uri.getQueryParamValue('sortBy') : 'recentAsc',
-  articleType: (uri.hasQueryParam('articleType')) ? uri.getQueryParamValue('articleType').split(',') : ['article', 'press-release'],
-  services: (uri.hasQueryParam('services')) ? uri.getQueryParamValue('services') : 'all-services',
-  searchTerm: (uri.hasQueryParam('searchTerm')) ? uri.getQueryParamValue('searchTerm') : undefined,
+  sortBy: (uri.hasQueryParam(NewsArticleFilterFields.sortBy.queryParamKey)) ? uri.getQueryParamValue(NewsArticleFilterFields.sortBy.queryParamKey) : 'recentAsc',
+  articleType: (uri.hasQueryParam(NewsArticleFilterFields.articleType.queryParamKey)) ? uri.getQueryParamValue(NewsArticleFilterFields.articleType.queryParamKey).split(',') : ['article', 'press-release'],
+  services: (uri.hasQueryParam(NewsArticleFilterFields.services.queryParamKey)) ? uri.getQueryParamValue(NewsArticleFilterFields.services.queryParamKey) : 'all-services',
+  searchTerm: (uri.hasQueryParam(NewsArticleFilterFields.search.queryParamKey)) ? uri.getQueryParamValue(NewsArticleFilterFields.search.queryParamKey) : undefined,
   results: [
     {
       "id": "6036694e465dd0e61e7f784e",
@@ -136,3 +138,4 @@ export const newsArticleData = {
     }
   ]
 }
+

@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import { CheckboxListFilterProps } from "./CheckboxListFilter.types";
 import * as Styles from "./CheckboxListFilter.styles";
 
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
 
 import {handleParams} from './../../helpers/url-helpers';
 
@@ -39,7 +40,7 @@ const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checke
         checked = newCheckboxState.filter(c => c.checked === true);
         
         let articleTypes = checked.map((c) => c.value).join(',');
-        handleParams('news', [{key: 'articleType', value: articleTypes}]);
+        handleParams('news', [{key: NewsArticleFilterFields.articleType.queryParamKey, value: articleTypes}]);
     }
 
     
