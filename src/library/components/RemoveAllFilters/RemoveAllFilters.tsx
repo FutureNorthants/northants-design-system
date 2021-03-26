@@ -6,20 +6,21 @@ import * as Styles from "./RemoveAllFilters.styles";
 
 import {countParams, removeParams} from './../../helpers/url-helpers.js';
 
-// TODO the values are hard coded here :/
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
+
 
 const RemoveAllFilters: React.FC<RemoveAllFiltersProps> = ({  }) => {
 
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        setCount(countParams(['services', 'articleType']));
+        setCount(countParams([NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey]));
     }, []);   
 
 
     const removeAllFilters = (e) => {
         e.preventDefault();
-        removeParams(['services', 'articleType', 'page']);
+        removeParams([NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey, 'page']);
     }
 
     return (

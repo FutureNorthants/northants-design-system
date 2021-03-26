@@ -4,6 +4,8 @@ import React, {useState} from "react";
 import { DropDownFilterProps } from "./DropDownFilter.types";
 import * as Styles from "./DropDownFilter.styles";
 
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
+
 import {handleParams} from './../../helpers/url-helpers.js';
 import DropDownSelect from "../DropDownSelect/DropDownSelect";
 
@@ -13,7 +15,7 @@ const DropDownFilter: React.FC<DropDownFilterProps> = ({ label, options, selecte
     
     const optionPicked = (e) => {
         setValue(e.target.value)
-        handleParams('news', [{key: 'services', value: e.target.value}]);
+        handleParams('news', [{key: NewsArticleFilterFields.services.queryParamKey, value: e.target.value}]);
     }
 
     let labelHidden = (label === null) ? true : false;

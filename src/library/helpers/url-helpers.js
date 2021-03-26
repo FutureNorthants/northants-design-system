@@ -45,6 +45,10 @@ import Uri from 'jsuri';
 
    }
 
+   // if anything has no value remove the url param for it
+   const removeEmpty = uri.queryPairs.filter(query => query[1] === "");
+   removeEmpty.map(emptyQuery => uri.deleteQueryParam(emptyQuery[0]))
+
    // console.log(uri.toString());
    window.location.href = uri.toString();
 
@@ -103,6 +107,20 @@ import Uri from 'jsuri';
    })
    return count;
  }
+
+  /**
+  * 
+  * Get plain values from url
+  * @param {*} param 
+  * @returns 
+  */
+   export const getParamValue = (param) => {
+      const uri = new Uri(window.location);
+      if(uri.hasQueryParam(param)) {
+         return uri.getQueryParamValues(param);
+      }
+      return []
+    }
 
  /**
   * 

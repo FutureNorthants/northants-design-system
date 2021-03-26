@@ -6,7 +6,7 @@ import * as Styles from "./NewsArticleListHeader.styles";
 import SortBy from "../../components/SortBy/SortBy";
 import {countParams, getCheckboxValues, getDropDownValues, deSlug, removeValueFromParam} from './../../helpers/url-helpers.js';
 import RemovableTag from "../../components/RemovableTag/RemovableTag";
-
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
 
 const NewsArticleListHeader: React.FC<NewsArticleListHeaderProps> = ({ totalResults, sortBy, sortByOptions }) => {
     
@@ -16,16 +16,12 @@ const NewsArticleListHeader: React.FC<NewsArticleListHeaderProps> = ({ totalResu
     const [articleTypeVals, setArticleTypeVals] = useState([]);
 
     useEffect(() => {
-        setCount(countParams(['searchTerm', 'services', 'articleType', 'sortBy']));
-        setServicesVals(getDropDownValues('services'));
-        setArticleTypeVals(getCheckboxValues('articleType'));
+        setCount(countParams([NewsArticleFilterFields.search.queryParamKey, NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey, NewsArticleFilterFields.sortBy.queryParamKey]));
+        setServicesVals(getDropDownValues(NewsArticleFilterFields.services.queryParamKey));
+        setArticleTypeVals(getCheckboxValues(NewsArticleFilterFields.articleType.queryParamKey));
     }, []);   
- 
-    // const searchTermVals = getParamValues('searchTerm');
-    // const servicesVals = getDropDownValues('services');
-    // const articleTypeVals = getCheckboxValues('articleType');
-    // const sortByVal = getParamValues('sortBy');
-           
+
+
     const removeFilterValue = (param, value) => {
         removeValueFromParam(param, value);
     }
@@ -38,15 +34,15 @@ return (
         <Styles.Filters>
             {servicesVals.length > 0 &&
                 <Styles.FilterRow>
-                <Styles.FilterTitle>Services shown:</Styles.FilterTitle>
-                {servicesVals.map((service, i) => <RemovableTag key={i}clickHandler={() => removeFilterValue('services', service)} index={i} label={deSlug(service)} value={service} /> )}
+                <Styles.FilterTitle>{NewsArticleFilterFields.services.title} shown:</Styles.FilterTitle>
+                {servicesVals.map((service, i) => <RemovableTag key={i}clickHandler={() => removeFilterValue(NewsArticleFilterFields.services.queryParamKey, service)} index={i} label={deSlug(service)} value={service} /> )}
                 </Styles.FilterRow>
             }
 
             {articleTypeVals.length > 0 &&
                 <Styles.FilterRow>
-                <Styles.FilterTitle>Article type{articleTypeVals.length > 1 && `(s)`} shown: </Styles.FilterTitle>
-                {articleTypeVals.map((article, i) => <RemovableTag key={i} clickHandler={() => removeFilterValue('articleType', article)}  index={i} preposition="and" label={deSlug(article)} value={article} /> )}
+                <Styles.FilterTitle>{NewsArticleFilterFields.articleType.title}{articleTypeVals.length > 1 && `(s)`} shown: </Styles.FilterTitle>
+                {articleTypeVals.map((article, i) => <RemovableTag key={i} clickHandler={() => removeFilterValue(NewsArticleFilterFields.articleType.queryParamKey, article)}  index={i} preposition="and" label={deSlug(article)} value={article} /> )}
                 </Styles.FilterRow>
             }
         </Styles.Filters>

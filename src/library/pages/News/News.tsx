@@ -13,9 +13,10 @@ import NewsArticleListHeader from "../../structure/NewsArticleListHeader/NewsArt
 import NewsArticleFilterAccordion from "../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordion";
 import CheckboxListFilter from "../../components/CheckboxListFilter/CheckboxListFilter";
 import DropDownFilter from "../../components/DropDownFilter/DropDownFilter";
-import { newsArticleData } from './../../structure/NewsArticleList/NewsArticleData';
+import { newsArticleData, newsArticleDataFiltered } from './../../structure/NewsArticleList/NewsArticleData';
 import { articleOptions } from "./../../components/CheckboxListFilter/CheckboxListFilterData";
 import { serviceOptions } from "./../../components/DropDownFilter/DropDownFilterData";
+import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
 
 export interface NewsProps {
   hasResults: boolean
@@ -23,6 +24,7 @@ export interface NewsProps {
 
 
 export const News: React.FC<NewsProps> = ({ hasResults }) =>  {
+
 return (
 <>
   <PageStructures.Header />
@@ -46,7 +48,7 @@ return (
       <PageStructures.PageSidebar>
         <NewsArticleFilterAccordion sections={[
           {
-          title: "Search articles",
+          title: NewsArticleFilterFields.search.title,
           content: 
           <>
             <PageStructures.Searchbar id="news-search" searchTerm={(newsArticleData.searchTerm) ? newsArticleData.searchTerm : undefined} isLight={true} submitInfo={[{
@@ -60,14 +62,14 @@ return (
           isExpanded: true
           },
           {
-          title: "Services",
+          title: NewsArticleFilterFields.services.title,
           content: <>
             <DropDownFilter label={null} options={serviceOptions} selected={newsArticleData.services} />
           </>,
           isExpanded: true
           },
           {
-          title: "Type of article",
+          title: NewsArticleFilterFields.articleType.title,
           content: <>
             <CheckboxListFilter label={null} hint={null} options={articleOptions} checked={newsArticleData.articleType} />
           </>,
@@ -90,4 +92,5 @@ return (
   </PageStructures.MaxWidthContainer>
   <PageStructures.Footer />
 </>
-)};
+)
+};
