@@ -25,7 +25,7 @@ const TemplateIE: Story<AlertBannerServiceProps> = (args) => <PageMain><MaxWidth
 
 export const ExampleAlert = Template.bind({});
 ExampleAlert.args = {
-  title: 'testclass',
+  title: 'Title of alert',
 };
 
 export const ExampleIEWarning = TemplateIE.bind({});
@@ -35,18 +35,18 @@ ExampleIEWarning.args = {
 
 export const ExampleWarning = Template.bind({});
 ExampleWarning.args = {
-  title: 'testclass',
+  title: 'Title of alert',
   alertType: "warning"
 };
 
 export const ExamplePositive = Template.bind({});
 ExamplePositive.args = {
-  title: 'testclass',
+  title: 'Title of alert',
   alertType: "positive"
 };
 
 export const ExampleMemorial = Template.bind({});
 ExampleMemorial.args = {
-  title: 'testclass',
+  title: 'Title of alert',
   alertType: "london_bridge"
 };
