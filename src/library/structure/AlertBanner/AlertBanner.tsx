@@ -25,7 +25,7 @@ const AlertBanner: React.FC<AlertBannerProps> = ({ uid, title, alertType = "aler
                             <Styles.BannerContent>{children}</Styles.BannerContent>
                         </Styles.BannerContentContainer>
 
-                        <Styles.HideLink onClick={hideClickHandler} alertType={alertType}>
+                        <Styles.HideLink title="Click to hide this alert banner" onClick={hideClickHandler} alertType={alertType}>
                             <CloseIcon colourFill={alertType === "warning" ? themeContext.theme_vars.colours.black : themeContext.theme_vars.colours.white} />
                             <br />
                             Hide
