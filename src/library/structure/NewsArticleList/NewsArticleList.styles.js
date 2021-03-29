@@ -128,9 +128,12 @@ export const DateContainer = styled.div`
   }
 
 
+`
 
 
-
+export const ResultInfo = styled.div`
+  font-weight: bold;
+  margin: ${props => props.theme.theme_vars.spacingSizes.large} 0;
 `
 
 // export const Container = styled.div`
@@ -148,10 +151,7 @@ export const DateContainer = styled.div`
 
 // `
 
-// export const ResultInfo = styled.div`
-//   font-weight: bold;
-//   margin: ${props => props.theme.theme_vars.spacingSizes.large} 0;
-// `
+
 
 
 // export const Title = styled.a`
