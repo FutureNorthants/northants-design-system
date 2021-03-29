@@ -31,7 +31,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
                 {(otherCouncilLink || themeContext.theme_vars.other_council_link) &&
                     <Styles.LastParagraph>
                         If your area isn't listed, you may be a resident of&nbsp;
-                        <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.theme_vars.other_council_name}>
+                        <Styles.SignpostLink href={councilLink} title={"Go to " + themeContext.theme_vars.other_council_name + " (this link will take you to an external website)"}>
                             {themeContext.theme_vars.other_council_name}
                         </Styles.SignpostLink>.
                     </Styles.LastParagraph>
@@ -39,7 +39,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
             </Styles.Container>
         :
             <Styles.SingleButtonContainer>
-                <Button url={signpostLinksArray[0].url} title={"View more at " + signpostLinksArray[0].areaName}>
+                <Button url={signpostLinksArray[0].url} title={"View more at " + signpostLinksArray[0].areaName + " (this link will take you to an external website)"}>
                     <LinkIcon />
                     {signpostLinksArray[0].cta_text ?
                         signpostLinksArray[0].cta_text
