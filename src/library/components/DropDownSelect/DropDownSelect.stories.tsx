@@ -8,7 +8,7 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData';
 
 export default {
-    title: 'Library/Components/DropDownSelect',
+    title: 'Library/Components/Drop Down Select',
     component: DropDownSelect
 };
 

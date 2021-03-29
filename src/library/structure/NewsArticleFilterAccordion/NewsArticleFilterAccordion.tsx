@@ -4,11 +4,9 @@ import { NewsArticleFilterAccordionProps } from "./NewsArticleFilterAccordion.ty
 import * as Styles from "./NewsArticleFilterAccordion.styles";
 import Accordion from "../../slices/Accordion/Accordion";
 import RemoveAllFilters from "../../components/RemoveAllFilters/RemoveAllFilters";
-import Heading from "../../components/Heading/Heading";
 import { NewsArticleFilterFields } from "./NewsArticleFilterAccordionText"
 
 import {countParams, getParamValue, getDropDownValues, getCheckboxValues} from './../../helpers/url-helpers.js';
-import Searchbar from "../Searchbar/Searchbar";
 
 const NewsArticleFilterAccordion: React.FC<NewsArticleFilterAccordionProps> = ({ sections }) => { 
 
@@ -74,7 +72,7 @@ return (
             </Styles.FilterHeader>
             <Accordion isFilter={true} sections={sections} withReadMore={false} />
             {count > 0 && 
-                <RemoveAllFilters />
+                <RemoveAllFilters count={count} />
             }
         </Styles.Filters>
 

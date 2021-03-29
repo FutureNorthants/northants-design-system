@@ -9,7 +9,7 @@ import { articleOptions } from "./CheckboxListFilterData"
 import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData';
 
 export default {
-    title: 'Library/Components/CheckboxListFilter',
+    title: 'Library/Components/Checkbox List Filter',
     component: CheckboxListFilter
 };
 

@@ -6,7 +6,7 @@ import { NewsArticleFilterAccordionProps } from "./NewsArticleFilterAccordion.ty
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Structure/NewsArticleFilterAccordion',
+    title: 'Library/Structure/News Article Filter Accordion',
     component: NewsArticleFilterAccordion
 };
 

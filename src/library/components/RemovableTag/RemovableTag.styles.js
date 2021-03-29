@@ -14,23 +14,21 @@ export const Wrapper = styled.div`
 
 `
 
-export const Preposition = styled.span`
-
-display: table-cell;
-    padding: 0 5px 0 2px;
+export const Preposition = styled.div`
+    display: inline-block;
     vertical-align: middle;
     text-transform: lowercase;
+    margin: 0 3px;
 `
 
 export const Container = styled.span`
     margin: 0 5px;
-    display: table-cell;
+    display: inline-block;
     position: relative;
-    padding: 5px;
     border: 1px solid ${props => props.theme.theme_vars.colours.grey_darkest};
     border-radius: 5px;
     background-color: ${props => props.theme.theme_vars.colours.grey_light};
-    padding: 8px 7px 7px 23px;
+    padding: 4px 7px 4px 23px;
 
   @media (max-width: 40.0525em) {
       /* background: none; */
@@ -60,7 +58,6 @@ export const Button = styled.button`
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
     font-size: 14px;
-    line-height: 1.1428571429;
     text-align: left;
     cursor: pointer;
     color: #000;
@@ -72,7 +69,6 @@ export const Button = styled.button`
 
     @media (min-width: 40.0625em) {
         font-size:16px;
-        line-height: 1.25
     }
 
   &:focus {

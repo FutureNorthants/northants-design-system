@@ -9,7 +9,7 @@ import {serviceOptions} from './DropDownFilterData';
 import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData';
 
 export default {
-    title: 'Library/Components/DropDownFilter',
+    title: 'Library/Components/Drop Down Filter',
     component: DropDownFilter
 };
 

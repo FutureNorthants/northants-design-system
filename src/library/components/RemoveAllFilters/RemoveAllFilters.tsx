@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect }  from "react";
+import React  from "react";
 
 import { RemoveAllFiltersProps } from "./RemoveAllFilters.types";
 import * as Styles from "./RemoveAllFilters.styles";
@@ -9,18 +9,12 @@ import {countParams, removeParams} from './../../helpers/url-helpers.js';
 import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
 
 
-const RemoveAllFilters: React.FC<RemoveAllFiltersProps> = ({  }) => {
-
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        setCount(countParams([NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey]));
-    }, []);   
+const RemoveAllFilters: React.FC<RemoveAllFiltersProps> = ({ count }) => { 
 
 
     const removeAllFilters = (e) => {
         e.preventDefault();
-        removeParams([NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey, 'page']);
+        removeParams([NewsArticleFilterFields.search.queryParamKey, NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey, 'page']);
     }
 
     return (

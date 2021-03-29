@@ -220,9 +220,7 @@ export const Templates: React.FC<TemplatesProps> = ({ type }) => {
               }
             ]}
           />
-          <PageStructures.PageTitle>
-            <Heading level={1} text="Header" />
-          </PageStructures.PageTitle>
+          <Heading level={1} text="Header" />
           </PageStructures.MaxWidthContainer>
 
 

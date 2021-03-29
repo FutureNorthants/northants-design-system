@@ -9,7 +9,7 @@ import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData
 import sortByOptions from './../../components/SortBy/SortByData';
 
 export default {
-    title: 'Library/Structure/NewsArticleListHeader',
+    title: 'Library/Structure/News Article List Header',
     component: NewsArticleListHeader
 };
 
@@ -22,3 +22,9 @@ ExampleNewsArticleListHeader.args = {
   sortByOptions: sortByOptions
 };
 
+export const ExampleNewsArticleListHeader1Result = Template.bind({});    
+ExampleNewsArticleListHeader1Result.args = {
+  totalResults: 1, 
+  sortBy: newsArticleData.sortBy, 
+  sortByOptions: sortByOptions
+};
