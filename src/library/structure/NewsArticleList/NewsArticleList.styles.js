@@ -69,8 +69,17 @@ export const ArticleContainer = styled.div`
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     display: flex;
-    align-items: stretch;
-    align-content: stretch;
+  }
+`
+
+export const ArticleContent = styled.div`
+  padding: 15px;
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    width: ${props => props.withImage ? "50%" : "100%"};
+  }
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+    width: ${props => props.withImage ? "66%" : "100%"};
   }
 
 `
@@ -91,14 +100,15 @@ export const ImageContainer = styled.span`
     height: auto;
     min-width: 180px;
   }
-
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    width: 50%;
+  }
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+    width: 33%;
+  }
 `
 
 
-export const ArticleContent = styled.div`
-  padding: 15px;
-
-`
 
 export const Excerpt = styled.div`
 `

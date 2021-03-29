@@ -26,7 +26,7 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
                                 }
                                 </LazyImage>
                             }
-                            <Styles.ArticleContent>
+                            <Styles.ArticleContent withImage={article.image720x405 ? true : false}>
                                 <Styles.Title href={article.url} className="news-article-list__title">{article.title}</Styles.Title>
                                 {(article.excerpt.length > extractLength) ? article.excerpt.substr(0, extractLength-1).trim() + String.fromCharCode(8230) : article.excerpt}
                                 <Styles.DateContainer><NewsArticleDate text={article.date.toString()} format="X" /></Styles.DateContainer>
