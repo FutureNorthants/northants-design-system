@@ -19,6 +19,7 @@ export const Preposition = styled.div`
     vertical-align: middle;
     text-transform: lowercase;
     margin: 0 3px;
+    font-size: 80%;
 `
 
 export const Container = styled.span`
@@ -28,7 +29,8 @@ export const Container = styled.span`
     border: 1px solid ${props => props.theme.theme_vars.colours.grey_darkest};
     border-radius: 5px;
     background-color: ${props => props.theme.theme_vars.colours.grey_light};
-    padding: 4px 7px 4px 23px;
+    padding: 3px 6px 3px 17px;
+    font-size: 80%;
 
   @media (max-width: 40.0525em) {
       /* background: none; */
@@ -66,10 +68,8 @@ export const Button = styled.button`
     border: 0;
     display: inline-block;
     border: 1px solid transparent;
-
-    @media (min-width: 40.0625em) {
-        font-size:16px;
-    }
+    font-size: 80%;
+    line-height: 0.85;
 
   &:focus {
     -webkit-box-shadow: inset 0 0 0 2px;

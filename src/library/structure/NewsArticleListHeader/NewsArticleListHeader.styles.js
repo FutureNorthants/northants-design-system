@@ -27,7 +27,7 @@ export const Filters = styled.div`
 
 export const FilterRow = styled.div`
   padding: 5px;
-  border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_light};
+  border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey}80;
 
   &:last-of-type {
     border-bottom: none;
@@ -39,4 +39,5 @@ export const FilterTitle = styled.div`
   vertical-align: middle;
   display: inline-block;
   margin-right: 5px;
+  font-size: 80%;
 `

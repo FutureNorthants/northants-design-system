@@ -85,7 +85,10 @@ return (
             <Pagination currentPage={1} totalResults={15} postTo="news" />
           </>
         :
+        <>
+          <NewsArticleListHeader sortByOptions={sortByOptions} sortBy={newsArticleData.sortBy} totalResults={0} />
           <NewsArticleList results={[]} />
+        </>
         }
       </PageStructures.PageMain>
     </PageStructures.PageWithSidebarContainer>
