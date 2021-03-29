@@ -174,7 +174,7 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                 isMultiple ?
                 <div className="result"> 
                   <p>This postcode <strong>{currentPostcode}</strong> includes addresses that are in multiple areas, please select your address so that we can tell you which area you are in.</p>
-                  <DropDownSelect onChange={handleAddressChange} label="Select your address" options={[...[{ title: "Select an address to continue", value: "" }], ...addressArray]}  />
+                  <DropDownSelect onChange={handleAddressChange} id="address" label="Select your address" options={[...[{ title: "Select an address to continue", value: "" }], ...addressArray]}  />
                 </div>
                 :
                 isUnitary ? 

@@ -1,6 +1,10 @@
 
 export interface DropDownFilterProps {
   /**
+   * ID of the select
+   */
+   id?: string,
+  /**
    * What question are we asking?
    */
   label: string,
@@ -12,6 +16,7 @@ export interface DropDownFilterProps {
   * What to show in the dropdown
   */
  options: Array<DropDownFilterOptionsProps>;
+ serviceDropdownRef?: React.ReactNode;
 }
 
 

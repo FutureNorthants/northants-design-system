@@ -45,7 +45,6 @@ export const VisuallyHidden = styled.span`
 // AccordionSection
 
 export const Section = styled.div`
-  padding-top: 15px;
   padding-top: 0;
 `
 
@@ -56,7 +55,6 @@ export const SectionHeader = styled.div`
     border-top: 1px solid ${props => props.theme.theme_vars.colours.grey};
     color: ${props => props.theme.theme_vars.colours.action};
     cursor: pointer;
-    padding-top: 15px;
     padding-bottom: 15px;
 
     &:hover {
@@ -218,10 +216,6 @@ export const SectionContent = styled.div`
         &:first-child {
             margin-top: 0;
         }
-    }
-
-    @media (min-width: 40.0625em) {
-        padding-top: 15px
     }
 
     @media (min-width: 40.0625em) {

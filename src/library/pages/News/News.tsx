@@ -24,7 +24,6 @@ export interface NewsProps {
 
 
 export const News: React.FC<NewsProps> = ({ hasResults }) =>  {
-
 return (
 <>
   <PageStructures.Header />
@@ -64,7 +63,7 @@ return (
           {
           title: NewsArticleFilterFields.services.title,
           content: <>
-            <DropDownFilter label={null} options={serviceOptions} selected={newsArticleData.services} />
+            <DropDownFilter label={null} id="services-options" options={serviceOptions} selected={newsArticleData.services} />
           </>,
           isExpanded: true
           },

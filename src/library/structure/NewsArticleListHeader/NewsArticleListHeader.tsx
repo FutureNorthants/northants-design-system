@@ -21,7 +21,7 @@ const NewsArticleListHeader: React.FC<NewsArticleListHeaderProps> = ({ totalResu
         setServicesVals(getDropDownValues(NewsArticleFilterFields.services.queryParamKey));
         setArticleTypeVals(getCheckboxValues(NewsArticleFilterFields.articleType.queryParamKey));
     }, []);   
-
+      
     const removeFilterValue = (param, value) => {
         removeValueFromParam(param, value);
     }
@@ -35,7 +35,7 @@ return (
             {servicesVals.length > 0 &&
                 <Styles.FilterRow>
                     <Styles.FilterTitle>Related to</Styles.FilterTitle>
-                    {servicesVals.map((service, i) => <RemovableTag key={i}clickHandler={() => removeFilterValue(NewsArticleFilterFields.services.queryParamKey, service)} index={i} label={deSlug(service)} value={service} /> )}
+                    {servicesVals.map((service, i) => <RemovableTag key={i} clickHandler={() => removeFilterValue(NewsArticleFilterFields.services.queryParamKey, service)} index={i} label={deSlug(service)} value={service} /> )}
                 </Styles.FilterRow>
             }
 

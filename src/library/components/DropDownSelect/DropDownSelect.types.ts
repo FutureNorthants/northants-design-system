@@ -1,6 +1,10 @@
 
 export interface DropDownSelectProps {
   /**
+   * ID for the dropdown
+   */
+   id?: string,
+  /**
    * What question are we asking?
    */
   label: string,

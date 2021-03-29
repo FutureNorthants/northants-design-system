@@ -9,15 +9,14 @@ import {handleParams} from '../../helpers/url-helpers.js';
 
 
 
-const DropDownSelect: React.FC<DropDownSelectProps> = ({ label, options, onChange, selected}) => {    
+const DropDownSelect: React.FC<DropDownSelectProps> = ({ id, label, options, onChange, selected }) => {    
     let labelHidden = (label === null) ? true : false;
     return (
         <Styles.Container>
-                
-            <Styles.Label htmlFor="sort" labelHidden={labelHidden}>
+            <Styles.Label htmlFor={id} labelHidden={labelHidden}>
                 {label}
             </Styles.Label>
-            <Styles.Select id="sort" name="sort" onChange={onChange && onChange} defaultValue={selected && selected}>
+            <Styles.Select id={id} name={id} onChange={onChange && onChange} defaultValue={selected && selected}>
                 {options.map((option, i) => 
                     <Styles.Option key={i} value={option.value}>{option.title}</Styles.Option>
                 )}
