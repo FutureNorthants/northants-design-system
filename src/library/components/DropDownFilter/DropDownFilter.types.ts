@@ -16,7 +16,6 @@ export interface DropDownFilterProps {
   * What to show in the dropdown
   */
  options: Array<DropDownFilterOptionsProps>;
- serviceDropdownRef?: React.ReactNode;
 }
 
 

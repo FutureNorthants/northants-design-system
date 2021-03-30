@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SkipToMainContent = styled.a `
+export const SkipToMainContent = styled.a`
   ${props => props.theme.fontStyles}
 
   position: absolute;

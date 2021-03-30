@@ -5,7 +5,26 @@ export const Container = styled.aside`
     display: block;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+
+        &:focus-within {
+            position: static;
+            width: auto;
+            height: auto;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            -webkit-clip-path: none;
+            clip-path: none;
+            white-space: inherit
+        }
     }
 `
 export const Contents = styled.nav`

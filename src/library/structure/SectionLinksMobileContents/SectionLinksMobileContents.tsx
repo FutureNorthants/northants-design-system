@@ -11,7 +11,7 @@ const SectionLinksMobileContents: React.FC<SectionLinksMobileContentsProps> = ({
             <Styles.ContentsList>
                 {sectionLinksArray.map((link) =>
                     <Styles.ContentsItem key={link.title}>
-                        <Styles.InlineLink href={"#" + link.id} title={"Go back to " + link.title}>
+                        <Styles.InlineLink href={"#" + link.id} title={"Skip to \"" + link.title + "\" section"}>
                             {link.title}
                         </Styles.InlineLink>
                     </Styles.ContentsItem>

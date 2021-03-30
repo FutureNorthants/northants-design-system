@@ -3,13 +3,14 @@ import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import SectionLinksMobileContents from "./SectionLinksMobileContents";
 import { SectionLinksMobileContentsProps } from "./SectionLinksMobileContents.types";
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import PageMain from "../PageMain/PageMain"
+import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer"
 
 export default {
     title: "library/Structure/Section Links Mobile Contents"
 };
 
-const Template: Story<SectionLinksMobileContentsProps> = (args) => <SBPadding><SectionLinksMobileContents {...args} /> Only viewable at mobile screen size</SBPadding>;
+const Template: Story<SectionLinksMobileContentsProps> = (args) => <PageMain><MaxWidthContainer><SectionLinksMobileContents {...args} /> Only viewable at mobile screen size or via the keyboard</MaxWidthContainer></PageMain>;
 
 
 export const SectionLinksMobileContentsExample = Template.bind({});    
