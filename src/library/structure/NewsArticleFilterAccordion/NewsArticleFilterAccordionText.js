@@ -14,5 +14,7 @@ export const NewsArticleFilterFields = {
     sortBy: {
         title: "Sort by",
         queryParamKey: "sortBy"
-    }
+    },
+    // what is included in the filter removal
+    removeFiltersList: ['searchTerm', 'services', 'articleType']
 }
