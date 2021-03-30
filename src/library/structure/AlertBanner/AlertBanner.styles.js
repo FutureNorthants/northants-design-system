@@ -50,7 +50,7 @@ export const InnerContainer = styled.div`
 `
 
 export const BannerContentContainer = styled.div`
-    max-width: calc(100% - 70px);
+    max-width: calc(100% - 85px);
 `
 export const BannerTitle = styled.p`
     font-weight: bold;
