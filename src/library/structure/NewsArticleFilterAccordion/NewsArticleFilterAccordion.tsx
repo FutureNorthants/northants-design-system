@@ -17,7 +17,7 @@ const [articleTypeValue, setArticleTypes] = useState([]);
 
 
 useEffect(() => {
-    setCount(countParams([NewsArticleFilterFields.search.queryParamKey, NewsArticleFilterFields.services.queryParamKey, NewsArticleFilterFields.articleType.queryParamKey, NewsArticleFilterFields.sortBy.queryParamKey]));
+    setCount(countParams(NewsArticleFilterFields.removeFiltersList));
     setSearchValue(getParamValue(NewsArticleFilterFields.search.queryParamKey));
     setServices(getDropDownValues(NewsArticleFilterFields.services.queryParamKey));
     setArticleTypes(getCheckboxValues(NewsArticleFilterFields.articleType.queryParamKey));
