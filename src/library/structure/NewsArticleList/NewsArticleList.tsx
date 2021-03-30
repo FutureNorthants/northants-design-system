@@ -12,7 +12,7 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
         return (
             <Styles.Container data-testid="NewsArticleList">
                     {results.map((article) => 
-                        <Styles.ArticleContainer key={article.id}>
+                        <Styles.ArticleContainer href={article.url} title={article.title}  key={article.id}>
                             {article.image720x405 &&
                                 <LazyImage
                                     src={article.image720x405}
