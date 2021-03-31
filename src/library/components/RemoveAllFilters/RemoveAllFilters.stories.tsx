@@ -6,7 +6,7 @@ import { RemoveAllFiltersProps } from "./RemoveAllFilters.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Components/RemoveAllFilters',
+    title: 'Library/Components/Remove All Filters',
     component: RemoveAllFilters
 };
 
