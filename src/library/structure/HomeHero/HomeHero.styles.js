@@ -18,7 +18,7 @@ export const Container = styled.div`
         background-repeat: no-repeat;
         background-position: center;
 
-        .loading {
+        &.loading {
             background-image: none;
         }
     }
