@@ -17,6 +17,10 @@ export const Container = styled.div`
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+
+        .loading {
+            background-image: none;
+        }
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         padding 60px 0;

@@ -39,7 +39,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
             }}
         >
           {src => 
-            <Styles.Container image={src} aria-label={imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
+            <Styles.Container className={random ? "loaded" : "loading"} image={src} aria-label={imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
               <Styles.StyledMaxWidthContainer>
                 <Styles.MainBox>
                   {topline &&
