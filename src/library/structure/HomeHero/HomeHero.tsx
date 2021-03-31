@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -23,8 +23,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   promotedLinksArray
 }) => {
   const themeContext = useContext(ThemeContext);
+  const [random, setRandom] = useState(999);
 
-  const random = (Math.floor(Math.random() * imagesArray.length));
+  useEffect(() => {
+    setRandom(Math.floor(Math.random() * imagesArray.length));
+  }, []);  
 
   return(
     <>
@@ -32,14 +35,14 @@ const HomeHero: React.FC<HomeHeroProps> = ({
       <PhaseBanner isHome />
       <Styles.Wrapper>
         <LazyImage
-            src={imagesArray[random].image1440x810}
-            placeholder={imagesArray[random].image144x81}
+            src={random !== 999 && imagesArray[random].image1440x810}
+            placeholder={random !== 999 && imagesArray[random].image144x81}
             visibilitySensorProps={{
                 partialVisibility: true
             }}
         >
           {src => 
-            <Styles.Container className={random ? "loaded" : "loading"} image={src} aria-label={imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
+            <Styles.Container className={random !== 999 ? "loaded" : "loading"} image={src} aria-label={random !== 999 && imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
               <Styles.StyledMaxWidthContainer>
                 <Styles.MainBox>
                   {topline &&
