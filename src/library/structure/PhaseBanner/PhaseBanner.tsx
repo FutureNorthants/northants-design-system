@@ -12,10 +12,10 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({isHome = false}) => {
         <Styles.Wrapper isHome={isHome}>
             <Styles.StyledMaxWidthContainer noPadding noBackground isHome={isHome}>
                 <Styles.PhaseContainer>
-                    <Styles.Phase isHome={isHome}>BETA</Styles.Phase> 
+                    <Styles.Phase isHome={isHome}>New website</Styles.Phase> 
                 </Styles.PhaseContainer>
                 <Styles.PhaseText>
-                    This website is currently in development, launching on 1 April 2021
+                    This site is new and we are improving it every day.
                 </Styles.PhaseText>
             </Styles.StyledMaxWidthContainer>
         </Styles.Wrapper>
