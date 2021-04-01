@@ -88,7 +88,7 @@ export const FilterHeader = styled.div`
 `
 
 
-export const FilterHeading = styled.div`
+export const FilterHeading = styled.h2`
   ${props => props.theme.theme_vars.h2}
 
 

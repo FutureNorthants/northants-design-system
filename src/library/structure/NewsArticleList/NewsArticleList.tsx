@@ -22,7 +22,7 @@ const NewsArticleList: React.FC<NewsArticleListProps> = ({ results }) => {
                                     }}
                                 >
                                 {src => 
-                                    <Styles.ImageContainer className="news-article-list__image" background={src} role="img" aria-label={article.imageAltText ? article.imageAltText : ""}></Styles.ImageContainer>
+                                    <Styles.ImageContainer className="news-article-list__image" background={src} role="img" aria-label={article.imageAltText ? article.imageAltText : "News article"}></Styles.ImageContainer>
                                 }
                                 </LazyImage>
                             }

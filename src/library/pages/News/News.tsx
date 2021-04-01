@@ -37,9 +37,7 @@ return (
     }
     ]}
     />
-  </PageStructures.MaxWidthContainer>
 
-  <PageStructures.MaxWidthContainer>
     <PageStructures.PageTitle>
       <Heading level={1} text="News" />
     </PageStructures.PageTitle>
