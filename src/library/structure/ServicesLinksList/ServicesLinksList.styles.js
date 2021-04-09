@@ -188,7 +188,7 @@ export const ViewMoreButtonContainer = styled.div`
 `
 
 export const ViewMoreButton = styled.button`
-  padding: 0;
+  padding: 10px 15px;
   border: none;
   background: none;
   ${props => props.theme.linkStyles}
