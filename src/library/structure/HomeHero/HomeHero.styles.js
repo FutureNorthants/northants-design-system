@@ -79,6 +79,14 @@ export const LogoColoured = styled.div`
         width: 95%;
         height: auto;
     }
+    &.black_logo {
+        svg {
+            fill: black !important;
+            path {
+                fill: black !important;
+            }
+        }
+    }
 `
 
 export const Strapline = styled.p`

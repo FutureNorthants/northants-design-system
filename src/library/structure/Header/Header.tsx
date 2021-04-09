@@ -36,11 +36,11 @@ const Header: React.FC<HeaderProps> = ({
           <Styles.LogoWrapper>
             <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
               {isHomepage ? 
-                <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "London Bridge theme North" || themeContext.theme_vars.theme_name === "London Bridge theme West" ? "black_logo" : ""}>
+                <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
                   {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
                 </Styles.LogoColoured>   
                 :
-                <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "London Bridge theme North" || themeContext.theme_vars.theme_name === "London Bridge theme West" ? "black_logo" : ""}>
+                <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "Memorial theme North" ? "black_logo" : ""}>
                   {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSLogo />)}
                 </Styles.LogoWhite>
               }

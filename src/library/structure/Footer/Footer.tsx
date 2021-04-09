@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({
                         </Styles.FooterCopy>
                     </div>
 
-                    <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "London Bridge theme North" || themeContext.theme_vars.theme_name === "London Bridge theme West" ? "black_logo" : ""}>
+                    <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
                     {themeContext.cardinal_name === "north" ? <NorthWhite /> : (themeContext.cardinal_name === "west" ? <WestWhite /> : <GDSLogo />)}
                     </Styles.LogoWhite>
                 </Styles.FooterAlignment>

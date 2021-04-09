@@ -49,7 +49,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                     <Styles.Topline>{topline}</Styles.Topline>
                   }
                   <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
-                  <Styles.LogoColoured>
+                  <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
                     {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}
                   </Styles.LogoColoured>   
                   {strapline && 
