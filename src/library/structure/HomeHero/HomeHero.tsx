@@ -32,7 +32,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   return(
     <>
       <SkipToMainContent />
-      <PhaseBanner isHome />
+      {/* <PhaseBanner isHome /> */}
       <Styles.Wrapper>
         <LazyImage
             src={random !== 999 && imagesArray[random].image1440x810}
