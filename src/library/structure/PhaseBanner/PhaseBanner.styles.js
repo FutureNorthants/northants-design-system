@@ -2,7 +2,7 @@ import styled from "styled-components";
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export const Wrapper = styled.div`
-    background: ${props => props.isHome ? props.theme.theme_vars.colours.action : "transparent"};
+    background: ${props => props.isHome ? (props.theme.theme_vars.theme_name === "Memorial theme North" || props.theme.theme_vars.theme_name === "Memorial theme West" ? props.theme.theme_vars.colours.grey_dark : props.theme.theme_vars.colours.action) : "transparent"};
 `
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
