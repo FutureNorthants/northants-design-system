@@ -45,13 +45,11 @@ export const Phase = styled.div`
     vertical-align: middle;
     color: ${props => props.theme.theme_vars.colours.black};
     border-radius: 4px;
-    margin-top: 7px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
         display: inline-block;
         float: none;
         margin-right: 10px;
-        margin-top: 0px;
         vertical-align: sub;
     }
 `
