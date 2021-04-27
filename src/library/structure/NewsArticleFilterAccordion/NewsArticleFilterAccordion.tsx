@@ -63,11 +63,11 @@ sections.map((section) => {
     
 return (
     <Styles.Container data-testid="NewsArticleFilterAccordion">
-        <Styles.ShowFiltersButton onClick={showFullscreenFilters} aria-expanded={!!isFullScreen} aria-controls={`PageFilters`} >Show Search and Filters{count > 0 && ` (${count})`}</Styles.ShowFiltersButton>
+        <Styles.ShowFiltersButton onClick={showFullscreenFilters} aria-expanded={!!isFullScreen} aria-controls={`PageFilters`} >Show Search and filters{count > 0 && ` (${count})`}</Styles.ShowFiltersButton>
 
         <Styles.Filters isFullScreen={isFullScreen} id="PageFilters" aria-labelledby="PageFiltersLabel">
             <Styles.FilterHeader>
-                <Styles.FilterHeading id="PageFiltersLabel">Search and Filters</Styles.FilterHeading>
+                <Styles.FilterHeading id="PageFiltersLabel">Search and filters</Styles.FilterHeading>
                 <Styles.ShowFiltersButton onClick={hideFullscreenFilters}>Close window</Styles.ShowFiltersButton> 
             </Styles.FilterHeader>
             <Accordion isFilter={true} sections={sections} withReadMore={false} />
