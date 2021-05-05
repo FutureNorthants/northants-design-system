@@ -52,5 +52,5 @@ export interface AccordionSectionProps {
   /**
    * unique ID for the section
    */
-   sectionId: string
+   sectionId?: string
 } 

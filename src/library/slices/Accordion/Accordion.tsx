@@ -6,6 +6,8 @@ import * as Styles from "./Accordion.styles";
 
 import AccordionSection from "./AccordionSection";
 
+import { uniqueID } from './../../helpers/helpers';
+
 
 const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false, withReadMore = true }) => {
 
@@ -47,12 +49,7 @@ const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false, withR
         setAccordionStates(newStatus);
     }
     
-    const uniqueID = () => {
-        // Math.random should be unique because of its seeding algorithm.
-        // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-        // after the decimal.
-        return '_' + Math.random().toString(36).substr(2, 9);
-    };
+
 
 
     const accordionId = `accordion${uniqueID()}`
@@ -66,7 +63,7 @@ const Accordion: React.FC<AccordionProps> = ({ sections, isFilter = false, withR
                 </Styles.OpenAllButton>
             </Styles.AccordionControls> }
             {accordionStates.map((section, i) => 
-                <AccordionSection {...section} key={i} sectionId={`accordion_section${uniqueID()}`} onToggle={updateAccordionState} isFilter={isFilter} withReadMore={withReadMore} />
+                <AccordionSection {...section} key={i} onToggle={updateAccordionState} isFilter={isFilter} withReadMore={withReadMore} />
             )} 
         </Styles.Container>
     );
