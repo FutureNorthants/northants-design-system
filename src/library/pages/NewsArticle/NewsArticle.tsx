@@ -8,6 +8,7 @@ import Button from "../../components/Button/Button";
 import NewsArticleDate from "../../structure/NewsArticleDate/NewsArticleDate";
 import NewsArticleImage from "../../structure/NewsArticleImage/NewsArticleImage";
 import NewsArticleOldBanner from "../../structure/NewsArticleOldBanner/NewsArticleOldBanner";
+import DisplayDate from "../../structure/DisplayDate/DisplayDate";
 
 export interface NewsArticleProps {
   withImage?: string;
@@ -26,7 +27,10 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
         }
         <Heading level={1} text="Northamptonshire pupils eligible for free school meals will get support in February half term" />
         <Button primary={false} text="Schools &amp; education" url="#" />
-        <NewsArticleDate text="15 January 2021" />
+        <NewsArticleDate text="15 January 2021" format="DD MMMM YYYY" />
+
+        {/* preferred date */}
+        {/* <NewsArticleDate text="1614178638" format="X"  /> */}
 
         {withImage && <NewsArticleImage image1440x810={withImage} image144x81={imagePlaceholder} />}
 
@@ -47,6 +51,10 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
         <p>The rest of the grant funding has been allocated to the Household Winter Support Scheme. This scheme builds on existing community resilience work to use a network of established partner organisations to distribute a one-time voucher of support to help those most in need. Individuals will not be able to for a voucher directly, instead partner organisations will be able to apply for vouchers on behalf of eligible households.</p>
 
         <p>The county council has also been allocated £464,280 to support the Clinically Extremely Vulnerable with any hardship they may be facing as a result of the need to take additional precautions, particularly during periods where the virus is more prevalent.</p>
+
+
+
+        <DisplayDate preText="Last updated " text="1614178638" format="X" />
 
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
