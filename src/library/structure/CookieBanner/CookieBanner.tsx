@@ -8,11 +8,14 @@ import FormButton from "./../../components/FormButton/FormButton"
 import {cookieName, getCookie} from './CookieHelpers';
 
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 
 
 const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptButtonText, acceptConfirmationText = "You've accepted all cookies.", rejectButtonText, rejectConfirmationText = "You've rejected all cookies.", acceptCallback }) => {
+
+    dayjs.extend(utc);
 
     // on page load - look for a cookie
     useEffect(() => {
@@ -47,7 +50,20 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
 
                 // if we have accepted the cookies the page reloads, so we check acceptedConfirmationBannerDismissed
                 if (cookiesAccepted && !cookiesAcceptedConfirmationBanner) {
-                    setShowCookiesAcceptedBanner(true);
+
+                    // if 1 minute has passed from setting of the cookie then dont show it on page reload
+                    
+                    var cookieVals = JSON.parse(myCookie);
+                    // subtracting a year because I'm a plum and didn't notice a bug below - but its safer to minus a year than to fix it!
+                    let cookieWasActuallyCreated = dayjs(cookieVals.cookieCreated).utc().subtract(1, 'year')
+                    let currentDateTime = dayjs().utc()
+                    let timeBetweenNowAndCreated = currentDateTime.diff(cookieWasActuallyCreated, 'milliseconds');
+
+                    if(timeBetweenNowAndCreated <= 60000) {
+                        setShowCookiesAcceptedBanner(true);
+                    } else {
+                        hideCookiesAcceptedConfirmationBanner();
+                    }
                 }
 
                 if (cookiesAccepted) {
@@ -64,6 +80,7 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ title, paragraph, acceptBut
         // Cookie is valid 1 year
         date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
         if (accepted === true) {
+            // NB cookie created is actually cookie expiry - safer to minus a year from the value in calculations than change it.
             cookie = {
                 "bannerDismissed": true,
                 "cookiesAccepted": true,
