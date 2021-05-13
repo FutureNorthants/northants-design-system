@@ -14,5 +14,13 @@ const Template: Story<NewsArticleDateProps> = (args) => <SBPadding><MaxWidthCont
 
 export const Example = Template.bind({});
 Example.args = {
-  text: "Example News Article Date"
+  text: "1614178638",
+  format: 'X'
+};
+
+
+export const OtherExample = Template.bind({});
+OtherExample.args = {
+  text: "15 January 2021",
+  format: 'DD MMMM YYYY'
 };
