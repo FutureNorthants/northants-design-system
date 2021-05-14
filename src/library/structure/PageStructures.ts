@@ -30,6 +30,7 @@ import SectionLinksMobileContents from './SectionLinksMobileContents/SectionLink
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
+import DisplayDate from './DisplayDate/DisplayDate';
 
 
-export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer};
+export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer};
