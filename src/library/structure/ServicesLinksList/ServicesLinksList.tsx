@@ -10,7 +10,8 @@ import Heading from "../../components/Heading/Heading";
 import serviceIcons from '../../components/icons/services/ServicesIcons';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
-    serviceLinksArray
+    serviceLinksArray,
+    hasBackground = false
 }) => { 
     const themeContext = useContext(ThemeContext);
     const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -64,7 +65,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                 </Styles.HomeTitle>
                 <Styles.LinksList>
                     {arrayOrdering.map((link) => 
-                        <Styles.PagelinkBlock key={link.title}>
+                        <Styles.PagelinkBlock key={link.title} hasBackground={hasBackground}>
                             {link.iconKey && 
                                 <Styles.PagelinkIconContainer>
                                     <Styles.ServiceIconLink 

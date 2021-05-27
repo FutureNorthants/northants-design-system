@@ -4,6 +4,10 @@ export interface ServicesLinksListProps {
    * An array of all the top level service landing pages
    */
   serviceLinksArray: Array<PageLinkProp>;
+  /**
+   * Display a white background on each block
+   */
+  hasBackground?: boolean;
 }
 export interface PageLinkProp {
     /**
