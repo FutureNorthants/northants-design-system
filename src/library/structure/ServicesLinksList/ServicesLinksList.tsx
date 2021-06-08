@@ -60,7 +60,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                                 </>
                                 :
                                 <>
-                                <Styles.ReorderButton onClick={() => setCurrentOrder(0)} title="Most used">Most used</Styles.ReorderButton>
+                                <Styles.ReorderButton onClick={() => setCurrentOrder(0)} title="Most used services">Most used</Styles.ReorderButton>
                                 <Styles.ReorderButton onClick={() => setCurrentOrder(1)} tabIndex="-1"  className={"chosen"} title="Alphabetical selected">Alphabetical</Styles.ReorderButton>
                                 </>
                             }
