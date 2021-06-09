@@ -43,7 +43,7 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
         <Styles.Container data-testid="Searchbar" className={classes}>
             <Styles.Form onSubmit={handleSubmit}>
                 <Styles.Search role="search">
-                    <Styles.Label htmlFor={id}>{placeholder ? placeholder : 'Search'}</Styles.Label>
+                    <Styles.Label htmlFor={id}>{placeholder ? placeholder : 'Header site search'}</Styles.Label>
                     <Styles.InputWrapper>
                         <Styles.Input id={id} type="text" name={NewsArticleFilterFields.search.queryParamKey} placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} />
                         <Styles.Button type="submit" value="Search">
