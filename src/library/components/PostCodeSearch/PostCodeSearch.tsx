@@ -17,6 +17,9 @@ import { SignpostLinks } from "../../structure/PageStructures";
 import DropDownSelect from "../DropDownSelect/DropDownSelect";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
+// PostCodeSearchApiKey
+import {PostCodeSearchApiUrl} from '../../helpers/api-helpers';
+
 /**
  * The functionality for searching for a postcode
  */
@@ -72,8 +75,8 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const checkPostcode = async (postcode) => {
       axios({
         method: "GET",
-        url: `https://api.westnorthants.digital/check-postcode/${postcode.replace(/ /g,'')}`
-        // headers: { 'x-api-key': 'kBexTqkLpj6ZOkGUNguti58JijxQcGvf9tLqBWWh' }
+        url: `${PostCodeSearchApiUrl}${postcode.replace(/ /g,'')}`
+        // headers: { 'x-api-key': `${PostCodeSearchApiKey}` }
       })
       .then((response) => {
         setIsLoading(false);
