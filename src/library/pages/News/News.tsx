@@ -68,7 +68,7 @@ return (
           {
           title: NewsArticleFilterFields.articleType.title,
           content: <>
-            <CheckboxListFilter label={null} hint={null} options={articleOptions} checked={newsArticleData.articleType} />
+            <CheckboxListFilter label="Type of article" hint={null} options={articleOptions} checked={newsArticleData.articleType} displayLegend={false}/>
           </>,
           isExpanded: true
           }
