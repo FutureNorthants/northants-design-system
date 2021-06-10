@@ -11,7 +11,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbsArray }) => (
                 <Styles.Crumb key={crumb.title}>
                     {  
                         <>
-                        <Styles.BreadcrumbLink href={crumb.url} title={"Go back to " + crumb.title}>
+                        <Styles.BreadcrumbLink href={crumb.url} title={crumb.title}>
                             {crumb.title}
                         </Styles.BreadcrumbLink>
                         <Styles.IconWrapper>
