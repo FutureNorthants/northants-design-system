@@ -568,5 +568,6 @@ ServicesLinksListWithoutIcons.args = {
 export const ExampleServicesLinksListWithCard = Template.bind({});    
 ExampleServicesLinksListWithCard.args = {
   serviceLinksArray: exampleData,
-  hasBackground: true
+  hasBackground: true,
+  hideHeader: true
 };

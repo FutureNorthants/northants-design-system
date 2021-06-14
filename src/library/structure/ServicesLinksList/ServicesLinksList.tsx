@@ -11,7 +11,8 @@ import serviceIcons from '../../components/icons/services/ServicesIcons';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
     serviceLinksArray,
-    hasBackground = false
+    hasBackground = false,
+    hideHeader = false
 }) => { 
     const themeContext = useContext(ThemeContext);
     const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -45,6 +46,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     return(
         <>
             <Styles.Container id="all-services" className={open && "open"}>
+                {!hideHeader && 
                 <Styles.HomeTitle>
                     <Heading text="Council services" />
                     <Styles.ReorderControl>
@@ -63,6 +65,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                             }
                     </Styles.ReorderControl>
                 </Styles.HomeTitle>
+                }
                 <Styles.LinksList>
                     {arrayOrdering.map((link) => 
                         <Styles.PagelinkBlock key={link.title} hasBackground={hasBackground}>

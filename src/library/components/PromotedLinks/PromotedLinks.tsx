@@ -10,7 +10,7 @@ const PromotedLinks: React.FC<PromotedLinksProps> = ({ promotedLinksArray }) => 
             <Styles.PromotedLinks data-testid="PromotedLinks">
             {promotedLinksArray.map((link) =>
                 <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
-                <span>{link.title}</span>
+                    <span>{link.title}</span>
                 </Styles.PromotedLink>
                 )}
                 </Styles.PromotedLinks>

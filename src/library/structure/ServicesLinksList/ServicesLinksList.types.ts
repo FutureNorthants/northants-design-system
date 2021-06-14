@@ -7,7 +7,11 @@ export interface ServicesLinksListProps {
   /**
    * Display a white background on each block
    */
-  hasBackground?: boolean;
+   hasBackground?: boolean; 
+   /**
+   * Hide the header
+   */
+   hideHeader?: boolean;
 }
 export interface PageLinkProp {
     /**
