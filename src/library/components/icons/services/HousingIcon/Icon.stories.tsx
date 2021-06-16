@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Services/Housing',
-  component: Icon
+  component: Icon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<IconProps> = (args) => <SBPadding><Icon {...args} /></SBPadding>;

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/Skip to main content',
-    component: SkipToMainContent
+    component: SkipToMainContent,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<SkipToMainContentProps> = (args) => <SBPadding><SkipToMainContent {...args} /></SBPadding>;

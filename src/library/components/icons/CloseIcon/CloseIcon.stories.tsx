@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Close',
-  component: CloseIcon
+  component: CloseIcon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<CloseIconProps> = (args) => <SBPadding><CloseIcon {...args} /></SBPadding>;

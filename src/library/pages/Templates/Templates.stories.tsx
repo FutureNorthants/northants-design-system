@@ -5,6 +5,11 @@ import { Templates, TemplatesProps }  from "./Templates";
 export default {
   title: 'Page Examples/Templates',
   component: Templates,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<TemplatesProps> = (args) => <Templates {...args} />;

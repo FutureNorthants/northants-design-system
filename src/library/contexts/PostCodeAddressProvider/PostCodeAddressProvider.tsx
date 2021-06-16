@@ -17,26 +17,6 @@ import { PostCodeAddressProviderProps, PostCodeAddressContextType } from "./Post
 // );
 
 const PostCodeAddressContext = createContext({});
-const UserContext = createContext({});
-
-export const useUser = () => {
-  return useContext(UserContext);
-}
-
-export const UserProvider = ({children}) => {
-    const [name, setName] = useState('World');
-    const value = {
-      state: {name},
-      actions: {setName},
-    };
-    return (
-      <UserContext.Provider value={value}>
-        {children}
-      </UserContext.Provider>
-    )
-  }
-
-
 
 export const PostCodeAddressProvider: React.FC<PostCodeAddressProviderProps> = ({ children }) => {    
     const [postcode, setPostCode] = useState('');

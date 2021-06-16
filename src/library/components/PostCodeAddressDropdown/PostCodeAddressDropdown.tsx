@@ -5,8 +5,8 @@ import { PostCodeAddressDropdownProps } from "./PostCodeAddressDropdown.types";
 import * as Styles from "./PostCodeAddressDropdown.styles";
 
 
-import {usePostcodeAddressContext} from './../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
-import DropDownSelect from "./../../components/DropDownSelect/DropDownSelect";
+import {usePostcodeAddressContext} from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import DropDownSelect from "../../components/DropDownSelect/DropDownSelect";
 
 const PostCodeAddressDropdown: React.FC<PostCodeAddressDropdownProps> = () => {
 
@@ -41,8 +41,6 @@ const PostCodeAddressDropdown: React.FC<PostCodeAddressDropdownProps> = () => {
         });
         addresses = [{ title: "Choose an address", value: 'choose-address'}, ...addresses]
     }
-
-    console.log(addresses);
 
 
     return (

@@ -6,7 +6,12 @@ import { HomeUnitarySectionProps } from "./HomeUnitarySection.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "library/Structure/Home unitary section"
+    title: "library/Structure/Home unitary section",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<HomeUnitarySectionProps> = (args) => <SBPadding><HomeUnitarySection></HomeUnitarySection></SBPadding>;

@@ -8,7 +8,12 @@ import CookieClear from './CookieClear';
 
 export default {
   title: 'Library/structure/Cookie Banner',
-  component: CookieBanner
+  component: CookieBanner,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<CookieBannerProps> = (args) => 

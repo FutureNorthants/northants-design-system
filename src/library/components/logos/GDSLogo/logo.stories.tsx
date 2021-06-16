@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Logos/GDS Logo',
-  component: GDSLogo
+  component: GDSLogo,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<LogoProps> = (args) => <SBPadding><GDSLogo {...args} /></SBPadding>;

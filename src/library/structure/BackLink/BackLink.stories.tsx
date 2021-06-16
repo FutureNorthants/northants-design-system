@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/Back Link',
-    component: BackLink
+    component: BackLink,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<BackLinkProps> = (args) => <SBPadding><BackLink {...args} /></SBPadding>;

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/components/Removable Tag',
-    component: RemovableTag
+    component: RemovableTag,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<RemovableTagProps> = (args) => <SBPadding><RemovableTag {...args} /></SBPadding>;

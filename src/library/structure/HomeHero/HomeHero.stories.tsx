@@ -6,7 +6,12 @@ import { Story } from '@storybook/react/types-6-0';
 
 export default {
     title: 'Library/structure/Home Hero',
-    component: HomeHero
+    component: HomeHero,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<HomeHeroProps> = (args) => <HomeHero {...args}></HomeHero>;

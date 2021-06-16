@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Slices/Blockquote',
-  component: BlockQuote
+  component: BlockQuote,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<BlockQuoteProps> = (args) => <SBPadding><BlockQuote {...args} /></SBPadding>;

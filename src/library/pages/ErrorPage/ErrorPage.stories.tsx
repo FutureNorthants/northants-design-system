@@ -5,6 +5,11 @@ import { ErrorPage, ErrorPageProps }  from "./ErrorPage";
 export default {
   title: 'Page Examples/Error Page',
   component: ErrorPage,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<ErrorPageProps> = (args) => <ErrorPage {...args} />;

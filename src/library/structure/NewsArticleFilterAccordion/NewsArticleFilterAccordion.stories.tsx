@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/News Article Filter Accordion',
-    component: NewsArticleFilterAccordion
+    component: NewsArticleFilterAccordion,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<NewsArticleFilterAccordionProps> = (args) => <SBPadding><NewsArticleFilterAccordion {...args} /></SBPadding>;

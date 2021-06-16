@@ -1,4 +1,4 @@
-import { SignpostLinkProp } from "../../structure/SignpostLinks/SignpostLinks.types"
+import { SignpostLinkProp } from "../../../structure/SignpostLinks/SignpostLinks.types"
 
 export interface PostCodeAddressSearchProps {
   /**

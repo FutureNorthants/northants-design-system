@@ -6,7 +6,12 @@ import { ServicesLinksListProps } from "./ServicesLinksList.types";
 import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
 
 export default {
-    title: "library/Structure/Service Links List"
+    title: "library/Structure/Service Links List",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<ServicesLinksListProps> = (args) => <MaxWidthContainer><ServicesLinksList {...args} /></MaxWidthContainer>;

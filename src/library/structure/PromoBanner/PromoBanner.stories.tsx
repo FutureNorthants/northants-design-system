@@ -6,7 +6,12 @@ import { PromoBannerProps } from "./PromoBanner.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "library/Structure/Promo Banner"
+    title: "library/Structure/Promo Banner",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PromoBannerProps> = (args) => <SBPadding><PromoBanner {...args}><p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p></PromoBanner></SBPadding>;

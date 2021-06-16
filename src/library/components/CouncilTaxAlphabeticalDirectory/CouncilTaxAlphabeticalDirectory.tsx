@@ -8,8 +8,6 @@ import Heading from "../../components/Heading/Heading";
 const CouncilTaxAlphabeticalDirectory: React.FC<CouncilTaxAlphabeticalDirectoryProps>  = ({ data }) => {
 
     const [parish, setCurrentParish] = useState(null);
-
-    console.log(data);
     
     const sortedData = data.sort(function(a, b){
         if(a.group.toLowerCase() < b.group.toLowerCase()) { return -1; }
@@ -50,7 +48,6 @@ const CouncilTaxAlphabeticalDirectory: React.FC<CouncilTaxAlphabeticalDirectoryP
             <Styles.BackButton onClick={() => setCurrentParish(null)}>Back</Styles.BackButton>
 
             {/* <Heading level={2} text={`Council tax charges for ${parish.title}`} /> */}
-            {console.log(parish)}
 
             {/* this assumes that the first year listed is the latest / that we're even going to get more than the latest years data */}
             {/* this data will need to be re-formed when we get the final data structures */}

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Heading With Icon',
-    component: HeadingWithIcon
+    component: HeadingWithIcon,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<HeadingWithIconProps> = (args) => <SBPadding><HeadingWithIcon {...args} /></SBPadding>;

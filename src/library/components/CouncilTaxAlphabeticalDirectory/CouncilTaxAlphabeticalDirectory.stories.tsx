@@ -6,13 +6,21 @@ import { CouncilTaxAlphabeticalDirectoryProps } from "./CouncilTaxAlphabeticalDi
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 
-import {westData} from '../CouncilTaxParishPageExample/AlphabeticalDirectoryData';
-import {correctedWestData} from './../CouncilTaxParishPageExample/parish-data-helper.js';
+import {westData} from './../../pages/CouncilTaxParishPageExample/AlphabeticalDirectoryData';
+import {correctedWestData} from './../../pages/CouncilTaxParishPageExample/parish-data-helper.js';
+import { addEmitHelpers } from "typescript";
 
 export default {
     title: 'Library/Prototypes/Council Tax Alphabetical Directory',
-    component: CouncilTaxAlphabeticalDirectory
+    component: CouncilTaxAlphabeticalDirectory,
+    parameters: {
+      status: {
+        type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
+
+
 
 const Template: Story<CouncilTaxAlphabeticalDirectoryProps> = (args) => <SBPadding><CouncilTaxAlphabeticalDirectory {...args} /></SBPadding>;
 
@@ -20,3 +28,4 @@ export const ExampleCouncilTaxAlphabeticalDirectory = Template.bind({});
 ExampleCouncilTaxAlphabeticalDirectory.args = {
   data: correctedWestData(westData)
 };
+

@@ -10,7 +10,12 @@ import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData
 
 export default {
     title: 'Library/Components/Drop Down Filter',
-    component: DropDownFilter
+    component: DropDownFilter,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<DropDownFilterProps> = (args) => <SBPadding><DropDownFilter {...args} /></SBPadding>;

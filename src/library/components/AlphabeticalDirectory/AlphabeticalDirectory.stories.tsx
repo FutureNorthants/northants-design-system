@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Alphabetical Directory',
-    component: AlphabeticalDirectory
+    component: AlphabeticalDirectory,
+    parameters: {
+      status: {
+        type: 'releaseCandidate', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      } 
+    },
 };
 
 const Template: Story<AlphabeticalDirectoryProps> = (args) => <SBPadding><AlphabeticalDirectory {...args} /></SBPadding>;

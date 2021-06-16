@@ -5,13 +5,13 @@ import { PostCodeAddressTableProps } from "./PostCodeAddressTable.types";
 import * as Styles from "./PostCodeAddressTable.styles";
 
 
-import {usePostcodeAddressContext} from './../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import {usePostcodeAddressContext} from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
 const PostCodeAddressTable: React.FC<PostCodeAddressTableProps> = () => {
     const {postcodeValue: {state: {postcode}, actions: {setPostCode}}, resultsValue: {state: {results}, actions: {setResults}}} = usePostcodeAddressContext();
 
     const hasResults = (Object.keys(results).length > 0) ? true : false;
-
+    
     return (
         <>
             {hasResults &&
@@ -29,11 +29,11 @@ const PostCodeAddressTable: React.FC<PostCodeAddressTableProps> = () => {
                             <tbody>
                             {results.addresses.map((addr, i) => 
 
-                                <tr>
+                                <tr key={i}>
                                 <th scope="row">{addr.DPA.ADDRESS}</th>
                                 <td>A</td>
                                 <td>£1500.00</td>
-                                </tr>
+                                </tr>                                                                  
                             )}
                            
                             </tbody>

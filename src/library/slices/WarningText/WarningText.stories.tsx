@@ -7,7 +7,12 @@ import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContain
 
 export default {
   title: 'Library/Slices/WarningText',
-  component: WarningText
+  component: WarningText,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<WarningTextProps> = (args) => <MaxWidthContainer noBackground><WarningText {...args}>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</WarningText></MaxWidthContainer>;

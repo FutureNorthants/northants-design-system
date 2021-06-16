@@ -8,7 +8,12 @@ import { newsArticleData } from './NewsArticleFeaturedBlockData';
 
 export default {
     title: 'Library/Structure/News Article Featured Block',
-    component: NewsArticleFeaturedBlock
+    component: NewsArticleFeaturedBlock,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 

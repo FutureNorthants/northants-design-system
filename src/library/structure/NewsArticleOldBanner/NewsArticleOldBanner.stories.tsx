@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/News Article Old Banner',
-    component: NewsArticleOldBanner
+    component: NewsArticleOldBanner,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<NewsArticleOldBannerProps> = (args) => <SBPadding><MaxWidthContainer><NewsArticleOldBanner {...args} /></MaxWidthContainer></SBPadding>;

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Forms - Hint text',
-    component: HintText
+    component: HintText,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<HintTextProps> = (args) => <SBPadding><MaxWidthContainer><HintText {...args} /></MaxWidthContainer></SBPadding>;

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Components/Pagination',
-  component: Pagination
+  component: Pagination,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<PaginationProps> = (args) => <SBPadding><Pagination {...args} /></SBPadding>;

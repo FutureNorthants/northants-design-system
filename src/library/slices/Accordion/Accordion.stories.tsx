@@ -8,7 +8,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Slices/Accordion',
-  component: Accordion
+  component: Accordion,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<AccordionProps> = (args) => <SBPadding><Accordion {...args} /></SBPadding>;

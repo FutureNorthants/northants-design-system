@@ -5,6 +5,11 @@ import { ContentPage, ContentPageProps }  from "./ContentPage";
 export default {
   title: 'Page Examples/Content Page',
   component: ContentPage,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<ContentPageProps> = (args) => <ContentPage {...args} />;

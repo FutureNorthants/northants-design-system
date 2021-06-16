@@ -8,7 +8,12 @@ import sortByOptions from './SortByData';
 
 export default {
   title: 'Library/Components/Sort by',
-  component: SortBy
+  component: SortBy,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<SortByProps> = (args) => <SBPadding><SortBy {...args} /></SBPadding>;

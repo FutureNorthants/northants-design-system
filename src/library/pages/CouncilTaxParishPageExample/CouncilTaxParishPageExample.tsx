@@ -2,59 +2,17 @@ import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 
-import PostCodeAddressSearch from './../PostCodeAddressSearch/PostCodeAddressSearch';
-import {PostCodeAddressProvider} from './../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
-import PostCodeAddressDropdown from './../PostCodeAddressDropdown/PostCodeAddressDropdown';
-import PostCodeAddressTable from '../PostCodeAddressTable/PostCodeAddressTable';
+import AlphabeticalDirectory from '../../components/AlphabeticalDirectory/AlphabeticalDirectory';
 
-export interface CouncilTaxPageExampleProps {
+import {westData} from './AlphabeticalDirectoryData';
+import {correctedWestData} from './parish-data-helper';
+import CouncilTaxAlphabeticalDirectory from '../../components/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
+export interface CouncilTaxParishPageExampleProps {
   version: string;
 }
 
 
-export const CouncilTaxPageExample: React.FC<CouncilTaxPageExampleProps> = ({version}) => {
-
-  const renderVersionSwitch = (prototypeVersion) => {
-    switch(prototypeVersion) {
-      case 'b':
-        return (
-          <>
-          {/* The context for where we are (postcode and results) lives in here so we can keep everything below separate */}
-          <PostCodeAddressProvider>
-  
-            {/* The form where you enter the postcode and gather the results (if any) */}
-            <PostCodeAddressSearch />
-            <br />
-             {/* When we have results - display it in a dropdown*/}
-            <PostCodeAddressDropdown />
-  
-  
-          </PostCodeAddressProvider>
-          </>
-        );
-      break;  
-      case 'c':
-        return (
-          <>
-          {/* The context for where we are (postcode and results) lives in here so we can keep everything below separate */}
-          <PostCodeAddressProvider>
-  
-            {/* The form where you enter the postcode and gather the results (if any) */}
-            <PostCodeAddressSearch />
-            <br />
-             {/* When we have results - display it in a table  */}
-              <PostCodeAddressTable />
-  
-  
-          </PostCodeAddressProvider>
-          </>);
-      break;  
-    }
-  }
-
-
-  console.log(renderVersionSwitch(version))
-
+export const CouncilTaxParishPageExample: React.FC<CouncilTaxParishPageExampleProps> = ({version}) => {
 
   return (
   <>
@@ -79,16 +37,15 @@ export const CouncilTaxPageExample: React.FC<CouncilTaxPageExampleProps> = ({ver
       />
       <PageStructures.PageWithSidebarContainer>
         <PageStructures.PageMain>
-          <Heading level={1} text="Check council tax charge of a property" />
-          <p>Council tax charges are based on your property's band and the area you live in.</p>
+          <Heading level={1} text="2020/21 council tax charges by Parish" />
 
-          <p>Your property is placed in one of 8 valuation bands by the Listing Officer at the Valuation Office Agency. New properties are allocated a band by determining the amount that the dwelling might reasonably expect to realise if it had been sold.</p>
+          <CouncilTaxAlphabeticalDirectory data={correctedWestData(westData)} />
 
-          <p>If you think your council tax band is wrong, you can contact the Valuation Office (VOA) by email to <a href="mailto:ctonline@voa.gov.uk">ctonline@voa.gov.uk</a> to explain why you think it is wrong. Alternatively, call 03000 501 501.</p>
-      
-          {renderVersionSwitch(version)}
 
-          <p>You can also <a href="#">download all council tax charges in West Northants</a> in CSV format</p>
+          <Heading level={2} text="Check a property's band" />
+
+          <p>Find out what <a href="https://www.gov.uk/council-tax-bands">council tax band</a> a property is at gov.uk.</p>
+          
 
         </PageStructures.PageMain>
         <PageStructures.PageSidebar>

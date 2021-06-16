@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Slices/Downloadable files',
-  component: DownloadableFiles
+  component: DownloadableFiles,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<DownloadableFilesProps> = (args) => <SBPadding><DownloadableFiles {...args} /></SBPadding>;

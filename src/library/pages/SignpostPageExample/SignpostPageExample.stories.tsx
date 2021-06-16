@@ -7,6 +7,11 @@ import { SignpostPageExample, SignpostPageExampleProps } from './SignpostPageExa
 export default {
   title: 'Page Examples/Signpost Page Examples',
   component: SignpostPageExample,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<SignpostPageExampleProps> = (args) => <SignpostPageExample {...args} />;
