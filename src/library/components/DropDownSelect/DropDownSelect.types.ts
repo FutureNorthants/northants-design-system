@@ -20,8 +20,12 @@ export interface DropDownSelectProps {
   * A function tfor what happnens if the select is changed (totally optional)
   */
  onChange?: React.ReactNode;
-}
-
+  /**
+  * Hide label, but visible for screen readers (totally optional)
+  */
+   hideLabel?: boolean;
+  }
+  
 
 export interface DropDownSelectOptionsProps {
   /**

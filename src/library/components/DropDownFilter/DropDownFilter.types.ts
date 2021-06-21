@@ -16,6 +16,10 @@ export interface DropDownFilterProps {
   * What to show in the dropdown
   */
  options: Array<DropDownFilterOptionsProps>;
+   /**
+  * Hide label, but visible for screen readers (totally optional)
+  */
+    hideLabel?: boolean;
 }
 
 

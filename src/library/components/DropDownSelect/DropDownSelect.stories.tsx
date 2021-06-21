@@ -63,3 +63,21 @@ ExampleDropDownFakeData.args = {
   ],
   selected: newsArticleData.services
 };
+
+export const ExampleDropDownSelectHiddenLabel = Template.bind({});    
+ExampleDropDownSelectHiddenLabel.args = {
+  hideLabel: true,
+  label: 'Services',
+  options: [ 
+    {
+      title: "All services",
+      value: "all-services"
+    },{
+      title: "Bins",
+      value: "bins"
+    }, {
+      title: "Council Tax",
+      value: "council-tax"
+    } ],
+  selected: newsArticleData.services
+};
