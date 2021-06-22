@@ -70,7 +70,7 @@ export const PagelinkBlock = styled.div`
   -ms-flex-direction: row;
   flex-direction: row;
   justify-content: space-between;
-  align-items: top;
+  align-items: flex-start;
   margin-bottom: 5px;
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
@@ -206,7 +206,7 @@ export const ViewMoreButton = styled.button`
   }
 `
 
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.span`
     display: inline-block;
     margin-right: 15px;
     padding-left: 3px;

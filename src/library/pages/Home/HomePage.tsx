@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
       acceptCallback={() => {
         console.log('loading trackers');
         var tag = document.createElement("script");
-        tag.src = "https://www.googletagmanager.com/gtag/js?id=<%= ENV[\"GTM_TRACKING_ID\"] %>";
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=GTM_TRACKING_ID";
         document.getElementsByTagName("head")[0].appendChild(tag);
 
 

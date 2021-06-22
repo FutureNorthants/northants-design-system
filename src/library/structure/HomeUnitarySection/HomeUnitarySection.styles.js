@@ -96,7 +96,7 @@ export const North = styled.div`
 export const CouncilLink = styled.a`
     color: ${props => props.colour} !important;
 
-    &:action, &:focus {
+    &:active, &:focus {
         color: ${props => props.theme.theme_vars.colours.black} !important;
     }
 `

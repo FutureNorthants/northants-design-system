@@ -9,7 +9,7 @@ export const Container = styled.div`
         margin-bottom: 15px;
     }
 `
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.span`
     display: inline-block;
     margin-right: 15px;
     padding-left: 3px;
