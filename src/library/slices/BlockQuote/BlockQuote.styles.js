@@ -13,7 +13,7 @@ export const Quote = styled.q `
     display: block;
     font-weight: bold;
     font-size: 1.2em; 
-    quotes: auto;
+    quotes: inherit;
 
     p {
       margin-bottom: 15px;
