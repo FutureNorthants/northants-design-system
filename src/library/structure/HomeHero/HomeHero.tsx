@@ -42,7 +42,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
             }}
         >
           {src => 
-            <Styles.Container className={random !== 999 ? "loaded" : "loading"} image={src} aria-label={random !== 999 && imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
+            <Styles.Container className={random !== 999 ? "loaded" : "loading"} image={src} title={random !== 999 && imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ""}>
               <Styles.StyledMaxWidthContainer>
                 <Styles.MainBox>
                   {topline &&

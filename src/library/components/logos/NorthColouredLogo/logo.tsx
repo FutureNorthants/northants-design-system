@@ -4,6 +4,8 @@ import React from "react";
 import { LogoProps } from "./logo.types";
 
 const NorthColouredLogo: React.FC<LogoProps> = () => {
+
+    const randomId = Date.now().toString(36) + Math.random().toString(36).substr(2);
     return (
         <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +14,8 @@ const NorthColouredLogo: React.FC<LogoProps> = () => {
       fill="none"
       viewBox="0 0 974 327"
     >
-      <g clipPath="url(#clip0)">
+      {/* "url(#clip0)" */}
+      <g clipPath={`url(#${randomId})`}>
         <path
           fill="#3C3C3B"
           d="M64.23 117.143c3.531 0 7.038.121 10.545.291v-10.351c2.176-6.142 6.311-10.906 11.366-12.986 5.054 2.104 9.165 6.868 11.366 12.986v12.696c20.338 3.217 39.515 9.311 57.024 17.799V66.77h-.121c-.266-1.112-.944-2.2-1.959-3.192v4.087l-2.539-1.887v-4.11c-4.571-2.758-12.116-4.596-20.701-4.668v5.683h-3.555v-5.61c-7.303.362-13.688 1.983-17.823 4.352v4.934l-1.886 1.886v-5.562c-1.621 1.233-2.661 2.636-3.023 4.111h-.121v3.773h-2.854v5.949h-4.933v-5.95h-17.34v5.95h-4.933v-5.95h-3.24v-3.772h-.121c-.363-1.475-1.403-2.853-3.023-4.111v5.562l-1.886-1.886v-4.933c-4.16-2.37-10.52-4.015-17.823-4.353v5.61h-3.555V57c-8.585.072-16.13 1.91-20.701 4.667v4.111l-2.54 1.887v-4.087c-1.015.991-1.692 2.08-1.958 3.192h-.121v55.524a211.858 211.858 0 0146.456-5.151z"
@@ -51,7 +54,7 @@ const NorthColouredLogo: React.FC<LogoProps> = () => {
         ></path>
       </g>
       <defs>
-        <clipPath id="clip0">
+        <clipPath id={randomId}>
           <path fill="#fff" d="M0 0H974V327H0z"></path>
         </clipPath>
       </defs>

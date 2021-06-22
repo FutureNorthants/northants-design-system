@@ -13,7 +13,6 @@ const PageMain: React.FC<PageMainProps> = ({
   ...props
 }) => (
   <Styles.Container
-    role="main" 
     id="main" 
     className={classes}
     {...props}
