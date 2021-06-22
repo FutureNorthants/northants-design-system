@@ -393,6 +393,8 @@ function Icon() {
         </pattern>
         <image
           id="image0"
+          width="" 
+          height="" 
           xlinkHref="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAOwA7AAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA"
         ></image>
       </defs>

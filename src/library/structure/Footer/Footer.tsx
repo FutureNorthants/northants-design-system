@@ -26,8 +26,8 @@ const Footer: React.FC<FooterProps> = ({
                     <div>
                         {footerLinksArray &&
                             <Styles.FooterList>
-                                {footerLinksArray.map((link) =>
-                                    <Styles.FooterListItem>
+                                {footerLinksArray.map((link, i) =>
+                                    <Styles.FooterListItem key={i}>
                                         <Styles.FooterLink 
                                             key={link.title} 
                                             href={link.url} 

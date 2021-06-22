@@ -93,7 +93,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           y2="173.99"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#6C9A36"></stop>
+          <stop offset="0" stopColor="#6C9A36"></stop>
           <stop offset="1" stopColor="#008C49"></stop>
         </linearGradient>
         <linearGradient
@@ -104,7 +104,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           y2="118.806"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#6C9A36"></stop>
+          <stop offset="0" stopColor="#6C9A36"></stop>
           <stop offset="1" stopColor="#008C49"></stop>
         </linearGradient>
       </defs>
