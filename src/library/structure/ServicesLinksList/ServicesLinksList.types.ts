@@ -4,6 +4,18 @@ export interface ServicesLinksListProps {
    * An array of all the top level service landing pages
    */
   serviceLinksArray: Array<PageLinkProp>;
+  /**
+   * Display a white background on each block
+   */
+   hasBackground?: boolean; 
+   /**
+   * Hide the header
+   */
+   hideHeader?: boolean;
+   /**
+    * Show everything in a single column
+    */
+   oneCol?: boolean;
 }
 export interface PageLinkProp {
     /**

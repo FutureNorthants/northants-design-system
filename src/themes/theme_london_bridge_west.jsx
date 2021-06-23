@@ -1,3 +1,11 @@
+
+const breakpointsVals = {
+    s: "550",
+    m: "768", // tablets and larger
+    l: "1160", // desktops and larger
+    xl: "1440", // large desktops only
+};
+
 export const lb_vars_west = {
     theme_name: "Memorial theme West",
     full_name: "West Northamptonshire",
@@ -8,12 +16,18 @@ export const lb_vars_west = {
     other_council_action: "#017F34",
     twitter_link: "https://twitter.com/WestNorthants",
     linkedin_link: "https://www.linkedin.com/company/west-northamptonshire-council",
-    facebook_link: "https://www.facebook.com/WestNorthants",
+    facebook_link: "https://www.facebook.com/WestNorthants",    
+    breakpointsVals: {
+        s: breakpointsVals.s,
+        m: breakpointsVals.m, // tablets and larger
+        l: breakpointsVals.l, // desktops and larger
+        xl: breakpointsVals.xl, // large desktops only
+    },    
     breakpoints: {
-        s: "550px",
-        m: "768px", // tablets and larger
-        l: "1160px", // desktops and larger
-        xl: "1440px", // large desktops only
+        s: `${breakpointsVals.s}px`,
+        m: `${breakpointsVals.m}px`, // tablets and larger
+        l: `${breakpointsVals.l}px`, // desktops and larger
+        xl:`${breakpointsVals.xl}px`, // large desktops only
     },
     colours: {
         black: "#3C3C3B",

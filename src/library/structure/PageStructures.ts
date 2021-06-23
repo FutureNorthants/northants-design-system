@@ -5,6 +5,7 @@ import CookieBanner from './CookieBanner/CookieBanner';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import HomeHero from './HomeHero/HomeHero';
+import MemorialHero from './MemorialHero/MemorialHero';
 import HomeUnitarySection from './HomeUnitarySection/HomeUnitarySection';
 import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
 
@@ -20,6 +21,7 @@ import PageMain from './PageMain/PageMain';
 import PageSidebar from './PageSidebar/PageSidebar';
 import PageTitle from './PageTitle/PageTitle';
 import PageWithSidebarContainer from './PageWithSidebarContainer/PageWithSidebarContainer';
+import PageWrapper from './PageWrapper/PageWrapper';
 import PhaseBanner from './PhaseBanner/PhaseBanner';
 import PromoBanner from './PromoBanner/PromoBanner';
 import Searchbar from './Searchbar/Searchbar';
@@ -33,4 +35,4 @@ import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
 import DisplayDate from './DisplayDate/DisplayDate';
 
 
-export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer};
+export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer};

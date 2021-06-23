@@ -12,6 +12,7 @@ import { SkipToMainContent } from "../PageStructures";
 import LazyImage from "react-lazy-progressive-image";
 import Searchbar from "../Searchbar/Searchbar";
 import PhaseBanner from "../PhaseBanner/PhaseBanner";
+import PromotedLinks from "../../components/PromotedLinks/PromotedLinks";
 
 /**
  * The Hero that should appear at the top of the home page.
@@ -68,14 +69,8 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                   />
                 </Styles.MainBox>
                 {promotedLinksArray.length > 0 && 
-                  <Styles.PromotedLinks>
-                    {promotedLinksArray.map((link) =>
-                      <Styles.PromotedLink href={link.url} title={"Go to " + link.title}>
-                        <span>{link.title}</span>
-                      </Styles.PromotedLink>
-                    )}
-                  </Styles.PromotedLinks>
-                }
+                  <PromotedLinks promotedLinksArray={promotedLinksArray}/>
+                 }
               </Styles.StyledMaxWidthContainer>
             </Styles.Container>
           }

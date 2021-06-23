@@ -5,8 +5,9 @@ import HeadingWithIcon from "./library/components/HeadingWithIcon/HeadingWithIco
 import Pagination from "./library/components/Pagination/Pagination";
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
+import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
 
-export { Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter };
+export { Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks };
 
 
 // Slices
@@ -22,7 +23,7 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, Warnin
 
 
 // Structure
-export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer} from "./library/structure/PageStructures";
+export { AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer} from "./library/structure/PageStructures";
 
 
 // Themes

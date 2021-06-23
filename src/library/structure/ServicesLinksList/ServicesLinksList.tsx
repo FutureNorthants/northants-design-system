@@ -10,7 +10,10 @@ import Heading from "../../components/Heading/Heading";
 import serviceIcons from '../../components/icons/services/ServicesIcons';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
-    serviceLinksArray
+    serviceLinksArray,
+    hasBackground = false,
+    hideHeader = false,
+    oneCol = false
 }) => { 
     const themeContext = useContext(ThemeContext);
     const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -44,6 +47,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     return(
         <>
             <Styles.Container id="all-services" className={open && "open"}>
+                {!hideHeader && 
                 <Styles.HomeTitle>
                     <Heading text="Council services" />
                     <Styles.ReorderControl>
@@ -62,9 +66,10 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                             }
                     </Styles.ReorderControl>
                 </Styles.HomeTitle>
+                }
                 <Styles.LinksList>
-                    {arrayOrdering.map((link) => 
-                        <Styles.PagelinkBlock key={link.title}>
+                    {arrayOrdering.map((link,i) => 
+                        <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
                             {link.iconKey && 
                                 <Styles.PagelinkIconContainer>
                                     <Styles.ServiceIconLink 
@@ -110,6 +115,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     }
                 </Styles.LinksList>
             </Styles.Container>
+            {!hideHeader && 
             <Styles.ViewMoreButtonContainer>
                 <Styles.ViewMoreButton onClick={() => open ? setOpen(false) : setOpen(true)}>
                     <Styles.IconWrapper>
@@ -118,6 +124,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                     View { open ? "less" : "more" } services
                 </Styles.ViewMoreButton>
             </Styles.ViewMoreButtonContainer>
+            }
         </>
     );
 }

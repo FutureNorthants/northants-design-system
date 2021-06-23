@@ -1,3 +1,10 @@
+const breakpointsVals = {
+    s: "550",
+    m: "768", // tablets and larger
+    l: "1160", // desktops and larger
+    xl: "1440", // large desktops only
+};
+
 export const north_vars = {
     theme_name: "North Northants theme",
     full_name: "North Northamptonshire",
@@ -8,12 +15,18 @@ export const north_vars = {
     other_council_action: "#386193",
     twitter_link: "https://twitter.com/NNorthantsC",
     linkedin_link: "https://www.linkedin.com/company/north-northamptonshire-council",
-    facebook_link: "https://www.facebook.com/NorthNorthants",
+    facebook_link: "https://www.facebook.com/NorthNorthants",   
+    breakpointsVals: {
+        s: breakpointsVals.s,
+        m: breakpointsVals.m, // tablets and larger
+        l: breakpointsVals.l, // desktops and larger
+        xl: breakpointsVals.xl, // large desktops only
+    },    
     breakpoints: {
-        s: "550px",
-        m: "768px", // tablets and larger
-        l: "1160px", // desktops and larger
-        xl: "1440px", // large desktops only
+        s: `${breakpointsVals.s}px`,
+        m: `${breakpointsVals.m}px`, // tablets and larger
+        l: `${breakpointsVals.l}px`, // desktops and larger
+        xl:`${breakpointsVals.xl}px`, // large desktops only
     },
     colours: {
         black: "#000000",
