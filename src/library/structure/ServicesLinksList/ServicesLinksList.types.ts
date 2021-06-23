@@ -12,6 +12,10 @@ export interface ServicesLinksListProps {
    * Hide the header
    */
    hideHeader?: boolean;
+   /**
+    * Show everything in a single column
+    */
+   oneCol?: boolean;
 }
 export interface PageLinkProp {
     /**

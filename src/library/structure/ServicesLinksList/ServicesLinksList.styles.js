@@ -24,6 +24,8 @@ export const LinksList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
+
 `
 
 export const PagelinkBlank = styled.div`
@@ -99,9 +101,38 @@ const PromotedLink = css`
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
       width: calc(33.333% - 45px);
+      
     }
 
+
   `
+
+
+const PagelinkBlockOneCol = (props, other) => {
+  if(props.oneCol) {
+      return css`
+      width: 100%;
+      @media screen and (min-width: ${props => `${props.theme.theme_vars.breakpointsVals.m}px`}) and (max-width: ${props => `${props.theme.theme_vars.breakpointsVals.l + 150}px`} ){
+        width: 100%;
+      }
+      @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+        width: 100%;
+      }
+      `
+  } else {
+      return css`
+      @media screen and (min-width: ${props => `${props.theme.theme_vars.breakpointsVals.m}px`}) and (max-width: ${props => `${props.theme.theme_vars.breakpointsVals.l + 150}px`} ){
+        width: calc(50% - 16px);
+      }
+      @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+        width: calc(33.333% - 45px);
+      }
+      `   
+  }
+}
+
+
+
 const backgroundStyles = props => {
   if (props.hasBackground){ 
     return PromotedLink
@@ -118,12 +149,13 @@ export const PagelinkBlock = styled.div`
   align-items: top;
   margin-bottom: 5px;
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-    width: calc(50% - 16px);
+
+  @media screen and (min-width: ${props => `${props.theme.theme_vars.breakpointsVals.m}px`}) and (max-width: ${props => `${props.theme.theme_vars.breakpointsVals.l + 150}px`} ){
     margin-bottom: 31px;
+
   }
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-    width: calc(33.333% - 21px);
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+    //
   }
 
   &:hover, &:focus-within {
@@ -135,6 +167,8 @@ export const PagelinkBlock = styled.div`
     }
   }
   ${backgroundStyles}
+
+  ${PagelinkBlockOneCol}
 `
 
 export const ServiceTitle = styled(Heading)`

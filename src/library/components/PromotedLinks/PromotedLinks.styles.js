@@ -14,10 +14,13 @@ export const PromotedLinks = styled.div`
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
         margin-top: 90px;
     }
+    flex-direction: ${prop => prop.oneCol ? 'column' : 'inherit'};
 `
 
 export const PromotedLink = styled.a`
     display: block;
+
+    box-sizing: border-box;
     background: ${props => props.theme.theme_vars.colours.white};
     background: ${props => props.theme.theme_vars.colours.white}F2;
     border-radius: 3px;
@@ -62,7 +65,8 @@ export const PromotedLink = styled.a`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         width: 100%;
         margin-right: 30px;
-        margin-bottom: 0px;
+
+        margin-bottom: ${prop => prop.oneCol ? '20px' : '0px'};
         padding: 30px;
         flex: 1;
 
@@ -72,5 +76,9 @@ export const PromotedLink = styled.a`
         &:last-of-type {
             margin-right: 0;
         }
+
+
     }
+
+
   `

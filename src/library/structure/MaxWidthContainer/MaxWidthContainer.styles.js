@@ -22,6 +22,7 @@ export const MaxWidth = styled.div`
     ${props => props.theme.fontStyles}
     margin-right: 15px;
     margin-left: 15px;
+    overflow: hidden;
 
     pre {
         font-family: monospace;

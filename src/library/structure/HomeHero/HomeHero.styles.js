@@ -9,7 +9,7 @@ export const Container = styled.div`
     font-family: ${props => props.theme.theme_vars.fontstack};
     overflow: hidden;
     background: ${props => props.theme.theme_vars.colours.action}5A;
-    padding 30px 0;
+    padding: 30px 0;
     padding-bottom: 15px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
@@ -23,12 +23,12 @@ export const Container = styled.div`
         }
     }
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-        padding 60px 0;
+        padding: 60px 0;
     }
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
         margin-right: auto;
         margin-left: auto;
-        padding 90px 0;
+        padding: 90px 0;
         max-width: 1680px;
     }
 `
