@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/structure/Search header',
-    component: SearchHeader
+    component: SearchHeader,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<SearchHeaderProps> = (args) => <SBPadding><SearchHeader {...args} /></SBPadding>;

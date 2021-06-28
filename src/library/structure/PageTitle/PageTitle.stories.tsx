@@ -7,7 +7,12 @@ import Heading from '../../components/Heading/Heading';
 
 export default {
     title: 'Library/structure/Page Title Container',
-    component: PageTitle
+    component: PageTitle,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PageTitleProps> = (args) => <PageTitle {...args}> <Heading level={1} text="News" /></PageTitle>;

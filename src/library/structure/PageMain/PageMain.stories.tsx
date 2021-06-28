@@ -6,7 +6,12 @@ import { Story } from '@storybook/react/types-6-0';
 
 export default {
     title: 'Library/structure/Page Main Container',
-    component: PageMain
+    component: PageMain,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PageMainProps> = (args) => <PageMain {...args}>Children of the page container goes here</PageMain>;

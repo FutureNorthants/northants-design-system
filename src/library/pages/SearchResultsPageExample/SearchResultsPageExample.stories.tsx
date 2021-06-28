@@ -8,6 +8,11 @@ import { isExpressionWithTypeArguments } from 'typescript';
 export default {
   title: 'Page Examples/Search Results Page Examples',
   component: SearchResultsPageExample,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<SearchResultsPageExampleProps> = (args) => <SearchResultsPageExample {...args} />;

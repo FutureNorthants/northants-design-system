@@ -10,6 +10,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",              // https://github.com/storybookjs/storybook/tree/master/addons/a11y
+    "@etchteam/storybook-addon-status"    // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({

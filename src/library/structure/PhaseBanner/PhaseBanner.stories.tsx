@@ -6,7 +6,12 @@ import { PhaseBannerProps } from "./PhaseBanner.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "library/Structure/Phase Banner"
+    title: "library/Structure/Phase Banner",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PhaseBannerProps> = (args) => <PhaseBanner {...args} />;

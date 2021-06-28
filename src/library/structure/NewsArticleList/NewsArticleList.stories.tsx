@@ -8,7 +8,12 @@ import { newsArticleData } from './NewsArticleData';
 
 export default {
     title: 'Library/Components/News Article List',
-    component: NewsArticleList
+    component: NewsArticleList,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 

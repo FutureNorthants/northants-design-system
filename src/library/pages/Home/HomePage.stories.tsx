@@ -6,6 +6,11 @@ import { HomePage, HomePageProps } from './HomePage';
 export default {
   title: 'Page Examples/Home Page',
   component: HomePage,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<HomePageProps> = (args) => <HomePage {...args} />;

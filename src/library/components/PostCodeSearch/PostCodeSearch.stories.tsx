@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Post Code Search',
-    component: PostCodeSearch
+    component: PostCodeSearch,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PostCodeSearchProps> = (args) => <SBPadding><MaxWidthContainer><PostCodeSearch {...args} /></MaxWidthContainer></SBPadding>;

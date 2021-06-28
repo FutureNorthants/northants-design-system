@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/News Article Date',
-    component: NewsArticleDate
+    component: NewsArticleDate,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<NewsArticleDateProps> = (args) => <SBPadding><MaxWidthContainer><NewsArticleDate {...args} /></MaxWidthContainer></SBPadding>;

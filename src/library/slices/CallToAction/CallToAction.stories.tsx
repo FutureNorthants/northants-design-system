@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Slices/Call to action',
-    component: CallToAction
+    component: CallToAction,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<ButtonProps> = (args) => <SBPadding><CallToAction {...args} /></SBPadding>;

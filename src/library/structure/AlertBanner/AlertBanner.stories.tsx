@@ -5,7 +5,12 @@ import AlertBanner from "./AlertBanner";
 import { AlertBannerProps } from "./AlertBanner.types";
 
 export default {
-    title: "library/Structure/Alert Banner"
+    title: "library/Structure/Alert Banner",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const childrenMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>

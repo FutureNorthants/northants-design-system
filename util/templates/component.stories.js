@@ -9,6 +9,11 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 export default {
     title: 'Library/CHANGENME/${componentName}',
     component: ${componentName}
+    parameters: {
+      status: {
+        type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;

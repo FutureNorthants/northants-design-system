@@ -5,6 +5,11 @@ import { News, NewsProps }  from "./News";
 export default {
   title: 'Page Examples/News landing page example',
   component: News,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<NewsProps> = (args) => <News {...args} />;

@@ -6,7 +6,12 @@ import { SignpostLinksListProps } from "./SignpostLinksList.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-  title: "library/Components/Signpost Links List"
+  title: "library/Components/Signpost Links List",
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<SignpostLinksListProps> = (args) => <SBPadding><SignpostLinksList {...args} /></SBPadding>;

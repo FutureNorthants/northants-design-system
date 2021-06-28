@@ -7,6 +7,11 @@ import { ServiceLandingPageExample, ServiceLandingPageExampleOneSection, Service
 export default {
   title: 'Page Examples/Service Landing Page Examples',
   component: ServiceLandingPageExample,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<ServiceLandingPageExampleProps> = (args) => <ServiceLandingPageExample {...args} />;

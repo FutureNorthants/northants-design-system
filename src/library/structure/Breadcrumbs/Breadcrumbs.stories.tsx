@@ -6,7 +6,12 @@ import { BreadcrumbsProps } from "./Breadcrumbs.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: "library/Structure/Breadcrumbs"
+    title: "library/Structure/Breadcrumbs",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<BreadcrumbsProps> = (args) => <SBPadding><Breadcrumbs {...args} /></SBPadding>;

@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/FormButton',
-    component: FormButton
+    component: FormButton,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<FormButtonProps> = (args) => <SBPadding><FormButton {...args} /></SBPadding>;

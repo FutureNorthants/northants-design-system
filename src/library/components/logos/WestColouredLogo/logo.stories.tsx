@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Logos/West Coloured',
-  component: WestColouredLogo
+  component: WestColouredLogo,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<LogoProps> = (args) => <SBPadding><WestColouredLogo {...args} /></SBPadding>;

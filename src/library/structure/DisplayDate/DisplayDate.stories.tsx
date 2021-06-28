@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/Display Date',
-    component: DisplayDate
+    component: DisplayDate,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<DisplayDateProps> = (args) => <SBPadding><MaxWidthContainer><DisplayDate {...args} /></MaxWidthContainer></SBPadding>;

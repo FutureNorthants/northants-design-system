@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Link',
-  component: LinkIcon
+  component: LinkIcon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<LinkIconProps> = (args) => <SBPadding><LinkIcon {...args} /></SBPadding>;

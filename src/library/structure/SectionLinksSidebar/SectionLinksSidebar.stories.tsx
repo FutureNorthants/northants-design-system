@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Structure/Section Links - sidebar',
-  component: SectionLinksSidebar
+  component: SectionLinksSidebar,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 

@@ -8,7 +8,12 @@ import { searchResults, noSearchResults, searchResultsWithServiceArea } from './
 
 export default {
   title: 'Library/Structure/Search Results List',
-  component: SearchResultsList
+  component: SearchResultsList,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<SearchResultsListProps> = (args) => <SBPadding><SearchResultsList {...args} /></SBPadding>;

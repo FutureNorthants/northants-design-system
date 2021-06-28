@@ -6,7 +6,12 @@ import { Story } from '@storybook/react/types-6-0';
 
 export default {
     title: 'Library/structure/Page Sidebar Container',
-    component: PageSidebar
+    component: PageSidebar,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PageSidebarProps> = (args) => <PageSidebar {...args}>Children of the page container goes here</PageSidebar>;

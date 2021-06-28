@@ -6,7 +6,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Components/File download',
-  component: FileDownload
+  component: FileDownload,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<FileDownloadProps> = (args) => <SBPadding><FileDownload {...args} /></SBPadding>;

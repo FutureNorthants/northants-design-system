@@ -5,6 +5,11 @@ import { NewsArticle, NewsArticleProps }  from "./NewsArticle";
 export default {
   title: 'Page Examples/News Article example',
   component: NewsArticle,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 } as Meta;
 
 const Template: Story<NewsArticleProps> = (args) => <NewsArticle {...args} />;

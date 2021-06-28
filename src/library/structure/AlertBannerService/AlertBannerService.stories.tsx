@@ -8,7 +8,12 @@ import PageMain from "../PageMain/PageMain";
 
 export default {
     title: 'Library/structure/Alert banner service level (secondary)',
-    component: AlertBannerService
+    component: AlertBannerService,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<AlertBannerServiceProps> = (args) => <MaxWidthContainer><AlertBannerService {...args}><p>Children of the page container goes here</p><p>There should probably be some sort of <a href="#">Call to action</a></p></AlertBannerService></MaxWidthContainer>;

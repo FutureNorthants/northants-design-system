@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Chevron',
-  component: ChevronIcon
+  component: ChevronIcon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<ChevronIconProps> = (args) => <SBPadding><ChevronIcon {...args} /></SBPadding>;

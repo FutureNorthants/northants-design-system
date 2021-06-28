@@ -17,8 +17,6 @@ export interface TemplatesProps {
 
 
 export const Templates: React.FC<TemplatesProps> = ({ type }) => {
-
-  console.log(type)
   switch(type) {
     case 'singleCol':
       return (

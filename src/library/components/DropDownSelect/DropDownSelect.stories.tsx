@@ -9,7 +9,12 @@ import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData
 
 export default {
     title: 'Library/Components/Drop Down Select',
-    component: DropDownSelect
+    component: DropDownSelect,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<DropDownSelectProps> = (args) => <SBPadding><DropDownSelect {...args} /></SBPadding>;

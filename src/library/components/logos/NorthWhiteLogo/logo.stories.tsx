@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Logos/North White',
-  component: NorthWhiteLogo
+  component: NorthWhiteLogo,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<LogoProps> = (args) => <div style={ { backgroundColor: "black" }}><SBPadding><NorthWhiteLogo {...args} /></SBPadding></div>;

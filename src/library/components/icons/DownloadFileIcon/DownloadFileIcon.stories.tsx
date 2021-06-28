@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Download File',
-  component: DownloadFileIcon
+  component: DownloadFileIcon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<DownloadFileIconProps> = (args) => <SBPadding><DownloadFileIcon {...args} /></SBPadding>;

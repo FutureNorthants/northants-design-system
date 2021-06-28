@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Logos/North Coloured',
-  component: NorthColouredLogo
+  component: NorthColouredLogo,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<LogoProps> = (args) => <SBPadding><NorthColouredLogo {...args} /></SBPadding>;

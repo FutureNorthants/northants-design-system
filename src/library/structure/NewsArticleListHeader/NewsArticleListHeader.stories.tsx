@@ -10,7 +10,12 @@ import sortByOptions from './../../components/SortBy/SortByData';
 
 export default {
     title: 'Library/Structure/News Article List Header',
-    component: NewsArticleListHeader
+    component: NewsArticleListHeader,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<NewsArticleListHeaderProps> = (args) => <SBPadding><NewsArticleListHeader {...args} /></SBPadding>;

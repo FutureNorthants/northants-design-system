@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Structure/News Article Image',
-    component: NewsArticleImage
+    component: NewsArticleImage,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<NewsArticleImageProps> = (args) => <SBPadding><MaxWidthContainer><NewsArticleImage {...args} /></MaxWidthContainer></SBPadding>;

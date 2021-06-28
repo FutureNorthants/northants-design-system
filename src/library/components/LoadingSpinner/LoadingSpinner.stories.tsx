@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Loading Spinner',
-    component: LoadingSpinner
+    component: LoadingSpinner,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<LoadingSpinnerProps> = (args) => <SBPadding><LoadingSpinner {...args} /></SBPadding>;

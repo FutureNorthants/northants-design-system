@@ -10,7 +10,12 @@ import { newsArticleData } from '../../structure/NewsArticleList/NewsArticleData
 
 export default {
     title: 'Library/Components/Checkbox List Filter',
-    component: CheckboxListFilter
+    component: CheckboxListFilter,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<CheckboxListFilterProps> = (args) => <SBPadding><CheckboxListFilter {...args} /></SBPadding>;

@@ -7,7 +7,12 @@ import PageMain from "../PageMain/PageMain"
 import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer"
 
 export default {
-    title: "library/Structure/Section Links Mobile Contents"
+    title: "library/Structure/Section Links Mobile Contents",
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<SectionLinksMobileContentsProps> = (args) => <PageMain><MaxWidthContainer><SectionLinksMobileContents {...args} /> Only viewable at mobile screen size or via the keyboard</MaxWidthContainer></PageMain>;

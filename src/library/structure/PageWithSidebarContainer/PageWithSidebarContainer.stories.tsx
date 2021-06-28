@@ -9,7 +9,12 @@ import PageSidebar from "../PageSidebar/PageSidebar";
 
 export default {
     title: 'Library/structure/Page With Sidebar Container',
-    component: PageWithSidebarContainer
+    component: PageWithSidebarContainer,
+    parameters: {
+      status: {
+        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<PageWithSidebarContainerProps> = (args) => <PageWithSidebarContainer {...args}>Children of the page container goes here</PageWithSidebarContainer>;

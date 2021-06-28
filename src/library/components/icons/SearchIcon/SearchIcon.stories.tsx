@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
   title: 'Library/Icons/Search',
-  component: SearchIcon
+  component: SearchIcon,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    }
+  },
 };
 
 const Template: Story<SearchIconProps> = (args) => <SBPadding><SearchIcon {...args} /></SBPadding>;

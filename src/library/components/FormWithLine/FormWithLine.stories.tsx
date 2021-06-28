@@ -7,7 +7,12 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
     title: 'Library/Components/Forms - Form container with line',
-    component: FormWithLine
+    component: FormWithLine,
+    parameters: {
+      status: {
+        type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      }
+    },
 };
 
 const Template: Story<FormWithLineProps> = (args) => <SBPadding><MaxWidthContainer><FormWithLine {...args}>Test content</FormWithLine></MaxWidthContainer></SBPadding>;
