@@ -2,10 +2,10 @@ version: '3.7'
 
 services:
 
-  sample:
+  futurenorthantsdesignsystem:
     container_name: futurenorthantsdesignsystem
     stdin_open: true
-    tty: true
+    # tty: true
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,6 +13,7 @@ services:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - 3001:3000
+      - 6006:6006
     environment:
       - CHOKIDAR_USEPOLLING=true
+    command: npm run dev

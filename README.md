@@ -78,37 +78,18 @@ If you want, you can also include this repo in another app as if it were an `npm
 
 ## 💻 Developing the design system (using docker - helpful if you're running windows)
 
-`docker build -t futurenorthantsdesignsystem:dev .`
-``` sh 
-docker run \
-    -it \
-    --rm \
-    -v ${PWD}:/app \
-    -v /app/node_modules \
-    -p 3001:3000 \
-    -e CHOKIDAR_USEPOLLING=true \
-    futurenorthantsdesignsystem:dev
-  ```
-
-1.  The [docker run](https://docs.docker.com/engine/reference/commandline/run/) command creates and runs a new container instance from the image we just created.
-2.  `-it` starts the container in [interactive mode](https://stackoverflow.com/questions/48368411/what-is-docker-run-it-flag). Why is this necessary? As of [version 3.4.1](https://github.com/facebook/create-react-app/issues/8688), `react-scripts` exits after start-up (unless CI mode is specified) which will cause the container to exit. Thus the need for interactive mode.
-    
-3.  `--rm` [removes](https://docs.docker.com/engine/reference/run/#clean-up---rm) the container and volumes after the container exits.
-4.  `-v ${PWD}:/app` mounts the code into the container at “/app”.
-    
-    > `{PWD}` may not work on Windows. See [this](https://stackoverflow.com/questions/41485217/mount-current-directory-as-a-volume-in-docker-on-windows-10) Stack Overflow question for more info.
-    
-5.  Since we want to use the container version of the “node\_modules” folder, we configured another volume: `-v /app/node_modules`. You should now be able to remove the local “node\_modules” flavor.
-6.  `-p 3001:3000` exposes port 3000 to other Docker containers on the same network (for inter-container communication) and port 3001 to the host.
-    
-    > For more, review [this](https://stackoverflow.com/questions/22111060/what-is-the-difference-between-expose-and-publish-in-docker) Stack Overflow question.
-    
-7.  Finally, `-e CHOKIDAR_USEPOLLING=true` [enables](https://create-react-app.dev/docs/troubleshooting/#npm-start-doesn-t-detect-changes) a polling mechanism via [chokidar](https://github.com/paulmillr/chokidar) (which wraps `fs.watch`, `fs.watchFile`, and `fsevents`) so that hot-reloading will work.
-
-
-docker-compose up -d --build
-
+```
+// build with no cache
+docker-compose build --no-cache
+// start the services
+docker-compose up
+// list the services
+docker-compose ps
+// list the containers
+docker ps
+// stop services
 docker-compose stop
+```
 
 ### Creating and generating new components
 
