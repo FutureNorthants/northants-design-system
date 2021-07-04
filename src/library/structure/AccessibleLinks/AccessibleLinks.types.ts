@@ -1,5 +1,11 @@
 
-export interface AccessibleLinksProps {
+export interface AccessibleLinkProps {
+    /**
+     * An array of links for the accessible links section at the top of the page, for things like accessibility message and feedback form 
+     */
+    AccessibleLinksArray?: Array<AccessibleLinkProp>;
+  }
+export interface AccessibleLinkProp {
     /**
     * Title of the link
     */

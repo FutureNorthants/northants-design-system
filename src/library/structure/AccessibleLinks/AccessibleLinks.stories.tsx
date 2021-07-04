@@ -2,7 +2,7 @@
 import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import AccessibleLinks from "./AccessibleLinks";
-import { AccessibleLinksProps } from "./AccessibleLinks.types";
+import { AccessibleLinkProps } from "./AccessibleLinks.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
@@ -15,12 +15,20 @@ export default {
     },
 };
 
-const Template: Story<AccessibleLinksProps> = (args) => <SBPadding><AccessibleLinks {...args} /></SBPadding>;
+const Template: Story<AccessibleLinkProps> = (args) => <SBPadding><AccessibleLinks {...args} /></SBPadding>;
 
 export const ExampleAccessibleLinks = Template.bind({});
 ExampleAccessibleLinks.args = {
-      title: "Skip to Accessibility Statement",
-      url: "/accessibility-statement",
-      isExternal: true
-
+    AccessibleLinksArray:[
+      {
+        title: "Skip to Accessibility Statement",
+        url: "/accessibility-statement",
+        isExternal: false
+      },
+      {
+        title: "Skip to website feedback form",
+        url: "/web-feedback",
+        isExternal: true
+      }
+    ]
 }

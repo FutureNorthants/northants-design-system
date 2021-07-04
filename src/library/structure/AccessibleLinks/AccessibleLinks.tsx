@@ -1,17 +1,26 @@
-
 import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-
-import { AccessibleLinksProps } from "./AccessibleLinks.types";
+import { AccessibleLinkProps } from "./AccessibleLinks.types";
 import * as Styles from "./AccessibleLinks.styles";
 
-const AccessibleLinks: React.FC<AccessibleLinksProps> = ({
-    title, url
-}) => (
-    <Styles.AccessibleLinks data-testid="AccessibleLinks" href={url}>{title}</Styles.AccessibleLinks>
-);
-
-
-
-export default AccessibleLinks;
-
+const AccessibleLink: React.FC<AccessibleLinkProps> = ({
+    AccessibleLinksArray = null,
+}) => 
+{
+    return (
+      <div>
+        {AccessibleLinksArray && AccessibleLinksArray.map((link, i) =>
+            <Styles.AccessibleLinks 
+                key={'accessible-link-'+i} 
+                href={link.url}
+            >
+                {link.title}
+            </Styles.AccessibleLinks>
+            )
+        }
+        </div>
+    );
+}
+        
+export default AccessibleLink;
+        
+        
