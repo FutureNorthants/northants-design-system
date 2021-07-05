@@ -7,7 +7,7 @@ const AccessibleLink: React.FC<AccessibleLinkProps> = ({
 }) => 
 {
     return (
-      <div>
+      <>
         {AccessibleLinksArray && AccessibleLinksArray.map((link, i) =>
             <Styles.AccessibleLinks 
                 key={'accessible-link-'+i} 
@@ -17,7 +17,7 @@ const AccessibleLink: React.FC<AccessibleLinkProps> = ({
             </Styles.AccessibleLinks>
             )
         }
-        </div>
+        </>
     );
 }
         
