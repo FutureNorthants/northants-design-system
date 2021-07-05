@@ -27,7 +27,6 @@ const Header: React.FC<HeaderProps> = ({
 
   return(
     <>
-      <SkipToMainContent />
       <Styles.Container
         isHomepage={isHomepage ? "true" : "false"}
         {...props}
