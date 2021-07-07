@@ -1,4 +1,3 @@
-import {PromotedLinkProp} from './../../components/PromotedLinks/PromotedLinks.types'
 export interface HomeHeroProps {
    /**
    * The line of text before the logo
@@ -18,7 +17,6 @@ export interface HomeHeroProps {
   promotedLinksArray: Array<PromotedLinkProp>;
 }
 
-
 export interface HeroImageProp {
     /**
      * The url of the image
@@ -34,3 +32,13 @@ export interface HeroImageProp {
     imageAltText?: string;
 }
 
+export interface PromotedLinkProp {
+  /**
+   * The title of the link
+   */
+  title: string;
+  /**
+   * The url of the link
+   */
+  url: string;
+}
