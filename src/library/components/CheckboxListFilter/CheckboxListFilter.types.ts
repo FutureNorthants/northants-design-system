@@ -18,6 +18,10 @@ export interface CheckboxListFilterProps {
    * 
    */
   hint: string;
+    /**
+   * 
+   */
+  displayLegend: boolean
 }
 
 

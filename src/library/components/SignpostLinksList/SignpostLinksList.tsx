@@ -10,7 +10,7 @@ const SignpostLinksList: React.FC<SignpostLinksListProps> = ({ signpostLinksArra
     <Styles.SignpostList>
     {signpostLinksArray.map((link, i) =>
         <Styles.SignpostListItem key={i}>
-            <Styles.SignpostLink href={link.url} title={"View more at " + link.areaName + " area"}>
+            <Styles.SignpostLink href={link.url} title={link.areaName + " (this link will take you to an external website)"}>
                 <Styles.IconWrapper>
                     <LinkIcon />
                 </Styles.IconWrapper>

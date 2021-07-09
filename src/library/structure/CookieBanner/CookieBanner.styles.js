@@ -46,7 +46,7 @@ export const CookieMessage = styled.div`
     }
 `
 
-export const CookieHeading = styled.h2`
+export const CookieHeading = styled.p`
   ${props => props.theme.theme_vars.h3}
 
 `

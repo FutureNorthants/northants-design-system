@@ -8,14 +8,18 @@ export interface DropDownFilterProps {
    * What question are we asking?
    */
   label: string,
+   /**
+  * What to show in the dropdown
+  */
+  options: Array<DropDownFilterOptionsProps>;
   /**
    * Which value is auto selected
    */
   selected: string,
- /**
-  * What to show in the dropdown
+   /**
+  * Hide label, but visible for screen readers (totally optional)
   */
- options: Array<DropDownFilterOptionsProps>;
+  hideLabel?: boolean;
 }
 
 

@@ -6,7 +6,7 @@ export const Container = styled.div`
 `
 
 const hideLabel = props => {
-  if(props.labelHidden === true) {
+  if(props.hideLabel === true) {
     return VisuallyHidden;
   }
 }

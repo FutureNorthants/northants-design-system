@@ -9,12 +9,10 @@ import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAcco
 import {handleParams} from './../../helpers/url-helpers';
 
 
-const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checked, label = null, hint = null }) => {
+const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checked, label, hint = null, displayLegend}) => {
 
-
-    let labelHidden = (label === null) ? true : false;
+    let labelHidden = (label === null || !displayLegend) ? true : false;
     let hintHidden = (hint === null) ? true : false;
-
 
     const setupCheckboxes = () => {
         return options.map(option => ({...option, checked: (checked.includes(option.value) ? true : false)}))

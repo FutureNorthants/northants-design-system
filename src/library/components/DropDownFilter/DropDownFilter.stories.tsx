@@ -25,3 +25,12 @@ ExampleDropDownFilter.args = {
   options: serviceOptions,
   selected: newsArticleData.services
 };
+
+
+export const ExampleDropDownFilterHideLabel = Template.bind({});    
+ExampleDropDownFilterHideLabel.args = {
+  hideLabel: true,
+  label: 'News Articles',
+  options: serviceOptions,
+  selected: newsArticleData.services
+};

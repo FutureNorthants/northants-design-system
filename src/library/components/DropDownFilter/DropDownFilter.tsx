@@ -9,7 +9,7 @@ import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAcco
 import {handleParams} from './../../helpers/url-helpers.js';
 import DropDownSelect from "../DropDownSelect/DropDownSelect";
 
-const DropDownFilter: React.FC<DropDownFilterProps> = ({ id, label, options, selected}) => {
+const DropDownFilter: React.FC<DropDownFilterProps> = ({ id, label, options, selected, hideLabel=false}) => {
 
     const [value, setValue] = useState(selected);
     
@@ -18,9 +18,8 @@ const DropDownFilter: React.FC<DropDownFilterProps> = ({ id, label, options, sel
         handleParams('news', [{key: NewsArticleFilterFields.services.queryParamKey, value: e.target.value}]);
     }
 
-    let labelHidden = (label === null) ? true : false;
     return (
-        <DropDownSelect id={id} label={label} options={options} onChange={optionPicked} selected={value} />
+        <DropDownSelect id={id} label={label} options={options} onChange={optionPicked} selected={value} hideLabel={hideLabel} />
 )};
 
 export default DropDownFilter;

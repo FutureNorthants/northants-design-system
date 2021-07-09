@@ -132,7 +132,7 @@ export const SectionButton = styled.button`
     }
 `
 
-export const ReadMore = styled.div`
+export const ReadMore = styled.button`
     ${props => props.theme.linkStyles}
     background: none;
     border: none;

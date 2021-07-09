@@ -24,7 +24,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                         </Styles.SectionSummary>
                     }
                     {!isExpanded && withReadMore && 
-                        <Styles.ReadMore>Read more</Styles.ReadMore>
+                        <Styles.ReadMore title={"Read more about " + title}>Read more</Styles.ReadMore>
                     }
                 </Styles.SectionHeader>
                 <Styles.SectionContent id={`${thisSectionId}_${accordionSectionId}-content`} aria-labelledby={`${thisSectionId}_${accordionSectionId}-heading`}>
