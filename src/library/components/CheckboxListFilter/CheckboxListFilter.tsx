@@ -11,11 +11,8 @@ import {handleParams} from './../../helpers/url-helpers';
 
 const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checked, label, hint = null, displayLegend}) => {
 
-
-    console.log(label)
     let labelHidden = (label === null || !displayLegend) ? true : false;
     let hintHidden = (hint === null) ? true : false;
-
 
     const setupCheckboxes = () => {
         return options.map(option => ({...option, checked: (checked.includes(option.value) ? true : false)}))
