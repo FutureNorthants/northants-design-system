@@ -9,7 +9,6 @@ import GDSLogo from "../../components/logos/GDSLogo/logo";
 import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
 import WestColoured from "../../components/logos/WestColouredLogo/logo";
 import WestWhite from "../../components/logos/WestWhiteLogo/logo";
-import { SkipToMainContent } from "../PageStructures";
 import Searchbar from "../Searchbar/Searchbar";
 
 /**

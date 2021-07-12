@@ -8,7 +8,6 @@ import * as Styles from "./HomeHero.styles";
 import GDSLogo from "../../components/logos/GDSLogo/logo";
 import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
 import WestColoured from "../../components/logos/WestColouredLogo/logo";
-import { SkipToMainContent } from "../PageStructures";
 import LazyImage from "react-lazy-progressive-image";
 import Searchbar from "../Searchbar/Searchbar";
 import PhaseBanner from "../PhaseBanner/PhaseBanner";
@@ -32,7 +31,6 @@ const HomeHero: React.FC<HomeHeroProps> = ({
 
   return(
     <>
-      <SkipToMainContent />
       {/* <PhaseBanner isHome /> */}
       <Styles.Wrapper>
         <LazyImage
