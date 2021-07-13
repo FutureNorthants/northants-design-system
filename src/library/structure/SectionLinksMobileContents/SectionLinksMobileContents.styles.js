@@ -60,7 +60,7 @@ export const ContentsItem = styled.li`
         background: transparent !important;
         height: auto !important;
         width: auto !important;
-        border-radius: none !important;
+        border-radius: 0 !important;
         top: 0 !important;
     }
 `

@@ -14,7 +14,7 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    align-items: left;
+    align-items: flex-start;
     margin: ${props => props.isHome ? "" : "0 auto !important"};
     color: ${props => props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black};
 `

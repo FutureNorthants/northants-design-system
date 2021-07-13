@@ -12,7 +12,7 @@ export const HeadingWrapper = styled.div`
 
     h1, h2, h3, h4 {
         margin: 0;
-        vertical align: middle;
+        vertical-align: middle;
         display: inline-block;
         width: calc(100% - 65px);
         @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){

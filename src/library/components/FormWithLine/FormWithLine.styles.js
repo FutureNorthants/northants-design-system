@@ -6,7 +6,7 @@ export const Container = styled.div`
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    align-items: left;
+    align-items: flex-start;
 `
 export const Form = styled.form`
     padding-top: 10px;
