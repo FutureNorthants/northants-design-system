@@ -73,7 +73,7 @@ export const ButtonsContainer = styled.div`
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  align-items: left;
+  align-items: flex-start;
 
   .button--primary {
     margin-right: 10px;

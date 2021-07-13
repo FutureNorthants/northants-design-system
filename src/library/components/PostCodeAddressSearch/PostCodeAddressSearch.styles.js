@@ -67,7 +67,7 @@ export const PostcodeResult = styled.div`
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    align-items: left;
+    align-items: flex-start;
 
     .result {
         padding-left: 15px;
