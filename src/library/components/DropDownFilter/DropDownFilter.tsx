@@ -15,7 +15,7 @@ const DropDownFilter: React.FC<DropDownFilterProps> = ({ id, label, options, sel
     
     const optionPicked = (e) => {
         setValue(e.target.value)
-        handleParams('news', [{key: NewsArticleFilterFields.services.queryParamKey, value: e.target.value}]);
+        handleParams('news', [{key: NewsArticleFilterFields.services.queryParamKey, value: e.target.value}],["page"]);
     }
 
     return (

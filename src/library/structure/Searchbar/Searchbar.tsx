@@ -30,7 +30,7 @@ const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, sea
       let keyValueFormat = Object.keys(submitParams).map(function(key) {
           return {key, value: submitParams[key]};
       })
-      handleParams(postTo, keyValueFormat);
+      handleParams(postTo, keyValueFormat,["page"]);
     }
   }
 
