@@ -11,7 +11,7 @@ import { NewsArticleFilterFields } from "./../../structure/NewsArticleFilterAcco
 const SortBy: React.FC<SortByProps> = ({ selected, options }) => {
     
     const optionPicked = (e) => {
-        handleParams('news', [{key: NewsArticleFilterFields.sortBy.queryParamKey, value: e.target.value}]);
+        handleParams('news', [{key: NewsArticleFilterFields.sortBy.queryParamKey, value: e.target.value}],["page"]);
     }
 
     return (

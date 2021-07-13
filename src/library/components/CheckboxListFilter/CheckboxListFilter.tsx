@@ -38,7 +38,7 @@ const CheckboxListFilter: React.FC<CheckboxListFilterProps> = ({ options, checke
         checked = newCheckboxState.filter(c => c.checked === true);
         
         let articleTypes = checked.map((c) => c.value).join(',');
-        handleParams('news', [{key: NewsArticleFilterFields.articleType.queryParamKey, value: articleTypes}]);
+        handleParams('news', [{key: NewsArticleFilterFields.articleType.queryParamKey, value: articleTypes}],["page"]);
     }
 
     

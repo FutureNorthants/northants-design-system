@@ -8,9 +8,9 @@ import Uri from 'jsuri';
 
  // https://github.com/derek-watson/jsUri
 
- export const handleParams = (postTo, newParams) => {
+ export const handleParams = (postTo, newParams, clearParams=[]) => {
    var uri = new Uri(window.location)
-
+   
     // check where we're posting to (news / search etc)
    const path = (uri.path().substring(0,1) === '/') ? uri.path().substring(1) : uri.path();
    if(postTo !== path) {
@@ -23,12 +23,12 @@ import Uri from 'jsuri';
    if(uri.query() === '') {
       newParams.forEach(param => {
          // console.info('No existing params adding new ' + param.key + ' value with ' + param.value)
-         uri.addQueryParam(param.key, param.value) 
+         uri.addQueryParam(param.key, param.value)  
       });
    } else {
       // we already have params
       newParams.forEach(param => {    
-            if(uri.hasQueryParam(param.key)) {
+            if(uri.hasQueryParam(param.key)) {   
                // param already exists but value not null
                if(uri.getQueryParamValue(param.key) !== param.value) {
                      // param not the same - update it
@@ -44,9 +44,13 @@ import Uri from 'jsuri';
 
 
    }
+   clearParams.map(param => {
+      // console.info('Deleting the following from the query ' + param.key + ' value with ' + param.value)
+      uri.deleteQueryParam(param) 
+   });
 
    // if anything has no value remove the url param for it
-   const removeEmpty = uri.queryPairs.filter(query => query[1] === "");
+   const removeEmpty = uri.queryPairs.filter(query => query[1] === ""); 
    removeEmpty.map(emptyQuery => uri.deleteQueryParam(emptyQuery[0]))
 
    // console.log(uri.toString());
