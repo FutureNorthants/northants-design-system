@@ -3,7 +3,9 @@ import React from "react";
 
 import { LogoProps } from "./logo.types";
 
-const WestColouredLogo: React.FC<LogoProps> = () => {
+const WestColouredLogo: React.FC<LogoProps> = () =>  {
+  const randomId = Date.now().toString(36) + Math.random().toString(36).substr(2);
+
     return (
       <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,27 +15,27 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
       viewBox="0 0 974 327"
     >
       <path
-        fill="url(#paint0_linear)"
+        fill={`url(#paint0_linear_${randomId})`}
         d="M104.506 216.165c.4.799.823 1.591 1.254 2.376 11.203-.577 21.323-6.329 27.497-15.541-.177-.33-.353-.669-.523-1.007-6.274-12.495-5.544-26.713.7-38.147a35.024 35.024 0 00-13.356-11.98c-4.422-2.269-9.136-3.553-14.034-3.83a73.7 73.7 0 00-5.575 12.673c-6.097 18.423-4.667 38.116 4.037 55.456z"
       ></path>
       <path
-        fill="url(#paint1_linear)"
+        fill={`url(#paint1_linear_${randomId})`}
         d="M234.358 150.981c-8.705-17.339-23.645-30.257-42.062-36.363-16.055-5.321-33.087-4.913-48.674 1.046 11.335 6.628 20.67 15.84 27.359 26.89 14.464.569 28.213 8.773 35.156 22.599 10.158 20.239 1.961 44.96-18.277 55.118a40.82 40.82 0 01-17.271 4.344c-6.882 11.135-16.309 20.231-27.528 26.652 1.153.446 2.322.869 3.514 1.261 18.416 6.106 38.117 4.675 55.456-4.029 17.34-8.705 30.258-23.645 36.364-42.061 6.105-18.424 4.675-38.117-4.037-55.457z"
       ></path>
       <path
-        fill="url(#paint2_linear)"
+        fill={`url(#paint2_linear_${randomId})`}
         d="M166.383 146.068c-6.897-11.627-16.94-21.1-29.258-27.421-9.981-5.121-20.769-7.812-31.665-8.027-4.876 9.65-5.245 21.369-.154 31.634a40.898 40.898 0 0117.401 4.498 40.798 40.798 0 0116.248 15.072 35.162 35.162 0 0015.471-4.568 34.839 34.839 0 0011.957-11.188z"
       ></path>
       <path
-        fill="url(#paint3_linear)"
+        fill={`url(#paint3_linear_${randomId})`}
         d="M138.832 204.977c-11.15 17.954-34.48 24.66-53.61 14.848-20.147-10.335-28.129-35.133-17.794-55.279.146-.293.3-.577.453-.862-6.228-11.572-9.388-24.275-9.365-37.116-7.897 6.32-14.441 14.294-19.193 23.568-8.858 17.27-10.458 36.947-4.514 55.417s18.732 33.526 35.994 42.377c17.27 8.858 36.948 10.457 55.418 4.514 18.47-5.944 33.518-18.732 42.377-35.995a72.811 72.811 0 007.143-21.745c-11.319 6.443-24.037 9.973-36.909 10.273z"
       ></path>
       <path
-        fill="url(#paint4_linear)"
+        fill={`url(#paint4_linear_${randomId})`}
         d="M157.278 162.254a40.759 40.759 0 01-19.323 5.359c-4.852 9.605-5.283 21.285-.162 31.635 12.203-.123 24.23-3.345 35.126-9.55 10.896-6.214 19.8-14.926 26.128-25.36-6.044-9.335-16.094-15.248-27.297-15.987a40.85 40.85 0 01-14.472 13.903z"
       ></path>
       <path
-        fill="url(#paint5_linear)"
+        fill={`url(#paint5_linear_${randomId})`}
         d="M95.017 158.901a79.411 79.411 0 015.675-13.056c-10.38-19.508-3.391-43.938 15.925-54.949 19.316-11.004 43.883-4.567 55.379 14.287a78.728 78.728 0 0122.107 3.968 79.054 79.054 0 0114.71 6.605c-1.315-8.735-4.245-17.247-8.751-25.152-9.604-16.863-25.205-28.966-43.922-34.095-18.716-5.129-38.308-2.66-55.164 6.944-16.862 9.611-28.966 25.206-34.094 43.922-5.13 18.716-2.661 38.308 6.943 55.171a72.678 72.678 0 0017.178 20.346 78.529 78.529 0 014.014-23.991z"
       ></path>
       <path
@@ -42,7 +44,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
       ></path>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={`paint0_linear_${randomId}`}
           x1="96.75"
           x2="133.352"
           y1="183.253"
@@ -53,7 +55,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           <stop offset="1" stopColor="#386092"></stop>
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={`paint1_linear_${randomId}`}
           x1="143.325"
           x2="242.122"
           y1="183.462"
@@ -64,7 +66,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           <stop offset="1" stopColor="#386092"></stop>
         </linearGradient>
         <linearGradient
-          id="paint2_linear"
+          id={`paint2_linear_${randomId}`}
           x1="101.602"
           x2="166.426"
           y1="136.133"
@@ -75,7 +77,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           <stop offset="1" stopColor="#7F1724"></stop>
         </linearGradient>
         <linearGradient
-          id="paint3_linear"
+          id={`paint3_linear_${randomId}`}
           x1="31.244"
           x2="175.761"
           y1="191.054"
@@ -86,7 +88,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           <stop offset="1" stopColor="#7F1724"></stop>
         </linearGradient>
         <linearGradient
-          id="paint4_linear"
+          id={`paint4_linear_${randomId}`}
           x1="134.171"
           x2="199.004"
           y1="173.709"
@@ -97,7 +99,7 @@ const WestColouredLogo: React.FC<LogoProps> = () => {
           <stop offset="1" stopColor="#008C49"></stop>
         </linearGradient>
         <linearGradient
-          id="paint5_linear"
+          id={`paint5_linear_${randomId}`}
           x1="64.302"
           x2="208.804"
           y1="118.177"
