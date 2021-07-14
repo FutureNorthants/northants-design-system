@@ -31,7 +31,7 @@ const Footer: React.FC<FooterProps> = ({
                                         <Styles.FooterLink 
                                             key={link.title} 
                                             href={link.url} 
-                                            title={"Go to " + link.title}
+                                            title={link.title}
                                         >
                                             {link.title}
                                         </Styles.FooterLink>
