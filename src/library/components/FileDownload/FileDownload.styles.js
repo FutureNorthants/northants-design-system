@@ -83,7 +83,7 @@ export const Type = styled.span`
     font-size: ${props => props.theme.theme_vars.fontSizes.extra_small};
 `
 export const Size = styled.span`
-    color: ${props => props.theme.theme_vars.colours.black}80;
+    color: ${props => props.theme.theme_vars.colours.black};
     font-size: ${props => props.theme.theme_vars.fontSizes.extra_small};
     font-weight: 400 !important;
 `
