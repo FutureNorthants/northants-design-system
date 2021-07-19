@@ -20,7 +20,7 @@ const SectionLinks: React.FC<SectionLinksProps> = ({
                 <Styles.Pagelink 
                     key={i} 
                     href={link.url} 
-                    title={"Go to " + link.title}
+                    title={link.title}
                 >
                     <Styles.Title>{link.title}</Styles.Title>
                     <Styles.Summary>{link.summary}</Styles.Summary>

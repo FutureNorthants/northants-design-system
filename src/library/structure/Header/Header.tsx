@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
       >
         <Styles.StyledMaxWidthContainer noBackground>
           <Styles.LogoWrapper>
-            <Styles.HomeLink href={homeLink} title="Go to the homepage" id="logo">
+            <Styles.HomeLink href={homeLink} title="Home" id="logo">
               {isHomepage ? 
                 <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
                   {themeContext.cardinal_name === "north" ? <NorthColoured /> : (themeContext.cardinal_name === "west" ? <WestColoured /> : <GDSLogo />)}

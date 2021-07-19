@@ -74,7 +74,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                                 <Styles.PagelinkIconContainer>
                                     <Styles.ServiceIconLink 
                                         href={link.url} 
-                                        title={"Go to " + link.title}
+                                        title={link.title}
                                     >
                                         <Styles.PagelinkIcon className="service-icon">
                                             <DynamicComponent name={link.iconKey} isHover={false} />
@@ -88,7 +88,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                             <Styles.PagelinkInner>
                                 <Styles.ServiceTitleLink 
                                     href={link.url} 
-                                    title={"Go to " + link.title}
+                                    title={link.title}
                                 >
                                     <Styles.ServiceTitle text={link.title} />
                                 </Styles.ServiceTitleLink>
@@ -99,7 +99,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                                             <Styles.QuicklinkItem key={quicklink.title}>
                                                 <Styles.Quicklink 
                                                     href={quicklink.url} 
-                                                    title={"Go to " + quicklink.title}
+                                                    title={quicklink.title}
                                                 >
                                                     {quicklink.title}
                                                 </Styles.Quicklink>
