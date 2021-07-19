@@ -1,8 +1,46 @@
-# 🎨 Nothants Design Sytem
+# 🎨 Northants Design Sytem
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/19c44b04-97ec-4066-84f8-fd7106d00996/deploy-status)](https://app.netlify.com/sites/elated-pasteur-e85c66/deploys)
 
+👉 **[You can view the design system here](https://northants-design-system.netlify.app)**
+
 The design system for North Northamptonshire & West Northamptonshire, two brand new unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.
+
+
+## Installation
+
+### Installation and development of the Design System 
+
+You need `node` and `npm` installed.
+
+1. Clone the repo and `npm i`
+2. `npm run dev` will start up the Storybook playground and start `rollup` watching for changes.
+
+
+### Installation using docker
+
+This option is recommended if your using a windows machine
+
+```sh
+// build with no cache
+docker-compose build --no-cache
+
+// start the services
+docker-compose up
+
+// list the services
+docker-compose ps
+
+// list the containers
+docker ps
+
+// stop services
+docker-compose stop
+```
+
+
+## Documentation
+
 
 This design system is made up from a combination of these libraries:
 
@@ -11,13 +49,21 @@ This design system is made up from a combination of these libraries:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
 
-## Demo and docs
+
+
+
+## Examples
+
 
 👉 **[You can view the design system here](https://northants-design-system.netlify.app)**
 
 This is a living documentation powered by [Storybook](https://storybook.js.org/), where you can see all the available components, their variations and documentation.
 
-## Using the design system to build applications
+
+
+### Using the design system in your project
+
+
 
 You can find the design system [here on NPM](https://www.npmjs.com/package/northants-design-system).
 
@@ -66,30 +112,9 @@ const MyComponent = () =>
   </ThemeProvider>
 ```
 
-## 💻 Developing the design system
 
-You need `node` and `npm` installed.
+## Documentation
 
-1. Clone the repo and `npm i`
-2. `npm run dev` will start up the Storybook playground and start `rollup` watching for changes.
-
-If you want, you can also include this repo in another app as if it were an `npm` package using [`npm link`](https://docs.npmjs.com/cli/link). This is great for developing both side-by-side.
-
-
-## 💻 Developing the design system (using docker - helpful if you're running windows)
-
-```
-// build with no cache
-docker-compose build --no-cache
-// start the services
-docker-compose up
-// list the services
-docker-compose ps
-// list the containers
-docker ps
-// stop services
-docker-compose stop
-```
 
 ### Creating and generating new components
 
@@ -115,21 +140,7 @@ The default templates for each file can be modified under `util/templates`.
 
 Don't forget to add the component to your `index.ts` exports if you want the library to export the component.
 
-### 🧪 Testing
 
-```
-npm run test
-```
-
-### 🧱 Building
-
-```
-npm run build
-```
-
-### 🧼 Linting
-
-We use `eslint` and [`jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) to detect potential accessibility issues. Some code editors will automatically pick up problems, and it runs automatically with the `jest` tests, but you can also lint manually with `npm run lint`.
 
 
 ### How to publish a new version to NPM
@@ -143,6 +154,60 @@ First, make sure you have an NPM account and are [logged into NPM using the `npm
     - Bundle and transpile the code
     - Create and publish a tarball to NPM
 4. If you are wanting to utilise the updated design system you will then need to update the version number of the design system in the `package.json` file within that repo.
+
+
+
+
+### Installing component library locally for IE11 (or other uses) but this is easier and less buggy
+
+https://www.viget.com/articles/how-to-use-local-unpublished-node-packages-as-project-dependencies/
+
+
+Good article on this can be found [here](https://www.viget.com/articles/how-to-use-local-unpublished-node-packages-as-project-dependencies/)
+
+Install yalc **globally**    
+Using NPM: `npm i yalc -g`  
+Using Yarn: `yarn global add yalc`  
+
+In the **northants-design-system**  
+You will need node v14.17.3 > to build on windows
+
+run `yalc publish`
+
+In **your other repository**  
+run `yalc add northants-design-system` then run `npm install` or `yarn`
+
+Then run `npm run start` to run the application.
+
+
+
+You will need node v14.17.3 > to build on windows
+
+Install yalc 
+Using NPM:
+
+`npm i yalc -g`
+
+Using Yarn:
+
+`yarn global add yalc`
+
+
+run `yalc publish` in the design system folder
+
+run `yalc add northants-design-system` in ie11-test-folder
+
+
+`npm install`
+
+to make changes and update them 
+
+in design system `yalc push` (this automatically updates all dependencies on all yalc files)
+
+or `yalc publish` in design system and `yalc update` in your projects repo
+
+
+
 
 ### Installing Component Library Locally
 
@@ -165,23 +230,3 @@ which will install the local component library as a dependency in `test-app`. It
 ```
 
 Your components can then be imported and used in that project.
-
-### Usage
-
-Let's say you created a public NPM package called `example-component-library` with the `TestComponent` component created in this repository.
-
-Usage of the component (after the library installed as a dependency into another project) will be:
-
-```TSX
-import React from "react";
-import { TestComponent } from "example-component-library";
-
-const App = () => (
-  <div className="app-container">
-    <h1>Hello I'm consuming the component library</h1>
-    <TestComponent theme="primary" />
-  </div>
-);
-
-export default App;
-```

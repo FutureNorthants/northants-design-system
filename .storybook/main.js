@@ -10,7 +10,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",              // https://github.com/storybookjs/storybook/tree/master/addons/a11y
-    "@etchteam/storybook-addon-status"    // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
+    "@etchteam/storybook-addon-status",    // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
+    "@storybook/addon-ie11"
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
@@ -23,7 +24,20 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       loader: require.resolve("babel-loader"),
       options: {
-        presets: [["react-app", { flow: false, typescript: true }]]
+        presets: [
+          ["react-app", { flow: false, typescript: true }],
+          ["@babel/preset-typescript"], 
+          ["@babel/preset-env", 
+            {
+              "useBuiltIns": "usage",
+              "loose": true,
+              "shippedProposals": true,
+              "corejs": { "version":3 },
+              "targets": {
+                "ie": "11"
+              }
+            },
+          ]]
       }
     });
     config.resolve.extensions.push(".ts", ".tsx");
