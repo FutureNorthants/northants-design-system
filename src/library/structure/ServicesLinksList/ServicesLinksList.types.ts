@@ -45,3 +45,12 @@ export interface QuickLinkProp {
   */
   url: string;
 }
+
+export interface MemorialQuickLinkProp{
+  /**
+    * The key of the icon
+    */
+   iconKey?: string;
+   link: Array<QuickLinkProp>;
+   summary: string;
+}
