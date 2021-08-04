@@ -27,7 +27,7 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
         }
         <Heading level={1} text="Northamptonshire pupils eligible for free school meals will get support in February half term" />
         <Button primary={false} text="Schools &amp; education" url="#" />
-        <NewsArticleDate text="15 January 2021" format="DD MMMM YYYY" />
+        <NewsArticleDate text="21 January 2021" format="D MMMM YYYY" />
 
         {/* preferred date */}
         {/* <NewsArticleDate text="1614178638" format="X"  /> */}
