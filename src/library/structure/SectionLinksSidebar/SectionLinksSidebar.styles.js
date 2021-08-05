@@ -41,14 +41,14 @@ export const MobileTitleButton = styled.button`
     display: none;
   }
 `
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.span`
     display: inline-block;
     margin-left: 10px;
     margin-right: 5px;
     float: right;
 `
 
-export const Title = styled.div`
+export const Title = styled.span`
   display: none;
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){  
     display: block;
