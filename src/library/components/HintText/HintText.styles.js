@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HintText = styled.p`
-    color: ${props => props.theme.theme_vars.colours.grey_dark};
+    color: ${props => props.theme.theme_vars.colours.grey_darkest};
     font-size: 14px;
     font-size: 0.8rem;
     line-height: 1.1;
