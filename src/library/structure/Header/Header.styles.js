@@ -110,6 +110,6 @@ export const SearchWrapper = styled.div`
         flex: auto;
         max-width: 320px;
         margin-left: 15px;
-        padding: ${props => props.theme.theme_vars.spacingSizes.small} 0;
+        padding: ${props => props.theme.theme_vars.spacingSizes.small} 2px;
     }
 `

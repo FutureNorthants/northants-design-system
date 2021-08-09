@@ -13,7 +13,8 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     serviceLinksArray,
     hasBackground = false,
     hideHeader = false,
-    oneCol = false
+    oneCol = false,
+    serviceId = "all-services"
 }) => { 
     const themeContext = useContext(ThemeContext);
     const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -46,7 +47,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
 
     return(
         <>
-            <Styles.Container id="all-services" className={open && "open"}>
+            <Styles.Container id={serviceId} className={open && "open"}>
                 {!hideHeader && 
                 <Styles.HomeTitle>
                     <Heading text="Council services" />

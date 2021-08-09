@@ -16,6 +16,10 @@ export interface ServicesLinksListProps {
     * Show everything in a single column
     */
    oneCol?: boolean;
+      /**
+    * Id of container
+    */
+   serviceId?: string;
 }
 export interface PageLinkProp {
     /**
