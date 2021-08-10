@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       <Styles.StyledButton
         className={[`button--${size}`, mode].join(' ')} 
         {...href}
-        title={title ? title : ("Go to " + text)}
+        title={title ? title : (text)}
         colourOverride={colourOverride && colourOverride}
         {...props}
       >
