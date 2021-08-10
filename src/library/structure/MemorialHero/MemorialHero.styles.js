@@ -23,14 +23,15 @@ export const Container = styled.div `
 `
 
 export const Left = styled.div `
-
-  padding: 10px 30px;
+  padding: 30px 0px;
+  
   width: 100%;
 
   box-sizing: border-box;
   
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
      width: 60%;
+     padding: 10px 30px;
     }
 `
 
