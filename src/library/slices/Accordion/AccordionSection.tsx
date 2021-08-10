@@ -12,7 +12,7 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, content, sum
                 <Styles.SectionHeader onClick={onSectionToggle}>
                     
                     <Styles.SectionHeading as={isFilter ? "h3" : "h2"}>
-                        <Styles.SectionButton title={isExpanded ? "Collapse section" : "Expand section"} isFilter={isFilter} type="button" id={`${thisSectionId}_${accordionSectionId}-heading`} aria-controls={`${thisSectionId}_${accordionSectionId}-content`} aria-expanded={isExpanded ? "true" : "false"}>
+                        <Styles.SectionButton title={isExpanded ? "Minimise "+ title : title} isFilter={isFilter} type="button" id={`${thisSectionId}_${accordionSectionId}-heading`} aria-controls={`${thisSectionId}_${accordionSectionId}-content`} aria-expanded={isExpanded ? "true" : "false"}>
                           {title}
                           <Styles.AccordionIcon aria-hidden="true"></Styles.AccordionIcon>
                         </Styles.SectionButton>
