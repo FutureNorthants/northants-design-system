@@ -23,21 +23,21 @@ export const Container = styled.div `
 `
 
 export const Left = styled.div `
-
-  padding: 10px 30px;
+  padding: 30px 0px;
+  
   width: 100%;
 
   box-sizing: border-box;
   
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
      width: 60%;
+     padding: 10px 30px;
     }
 `
 
 export const Image = styled.div `
 
   transition: all 0.25s ease;
-  opacity: ${props => (props.loading ? 0.2 : 1)};
 
   background-image: url("${props => props.image}");
   background-size: cover;
@@ -69,8 +69,5 @@ export const StyledMaxWidthContainer = styled.div`
     }
 
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
-        margin-right: auto;
-        margin-left: auto;
-        max-width: ${props => props.theme.theme_vars.breakpoints.l};
     }
 `

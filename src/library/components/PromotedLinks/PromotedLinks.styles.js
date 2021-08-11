@@ -19,8 +19,9 @@ export const PromotedLinks = styled.div`
 
 export const PromotedLink = styled.a`
     display: block;
-
-    box-sizing: border-box;
+    @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
+        box-sizing: border-box;
+    }
     background: ${props => props.theme.theme_vars.colours.white};
     background: ${props => props.theme.theme_vars.colours.white}F2;
     border-radius: 3px;
