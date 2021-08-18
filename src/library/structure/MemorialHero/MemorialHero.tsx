@@ -1,17 +1,18 @@
 
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import LazyImage from "react-lazy-progressive-image";
 import { MemorialHeroProps } from "./MemorialHero.types";
 import * as Styles from "./MemorialHero.styles";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeContext, ThemeProvider } from "styled-components";
 
 
 const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, theme, children, councilServices }) => {
-
+    const themeContext = useContext(ThemeContext);
     return (
     <>
         <Styles.Wrapper data-testid="MemorialHero">
         <Styles.StyledMaxWidthContainer>
+        <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
         <Styles.Container>
             <Styles.Left>
                 {children}

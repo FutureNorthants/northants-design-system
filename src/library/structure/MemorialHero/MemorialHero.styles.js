@@ -71,3 +71,7 @@ export const StyledMaxWidthContainer = styled.div`
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
     }
 `
+
+export const HiddenH1 = styled.h1`
+    visibility: hidden;
+`
