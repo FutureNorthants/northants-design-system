@@ -30,6 +30,8 @@ import EnvironmentIcon from './EnvironmentIcon/Icon';
 import EnvironmentIconHover from './EnvironmentIconHover/Icon';
 import FinanceIcon from './FinanceIcon/Icon';
 import FinanceIconHover from './FinanceIconHover/Icon';
+import GovUKIcon from './GovUKIcon/Icon';
+import GovUKIconHover from './GovUKIconHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
@@ -78,6 +80,8 @@ let components = {
     environmentHover: EnvironmentIconHover,
     finance: FinanceIcon,
     financeHover: FinanceIconHover,
+    govUK: GovUKIcon,
+    govUKHover: GovUKIconHover,
     housing: HousingIcon,
     housingHover: HousingIconHover,
     libraries: LibrariesIcon,
