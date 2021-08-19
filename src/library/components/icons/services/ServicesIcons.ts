@@ -12,6 +12,8 @@ import CareersIcon from './CareersIcon/Icon';
 import CareersIconHover from './CareersIconHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
 import ChildrenIconHover from './ChildrenIconHover/Icon';
+import CondolanceBookIcon from './CondolanceBookIcon/Icon'
+import CondolanceBookIconHover from './CondolanceBookIconHover/Icon'
 import CouncilIcon from './CouncilIcon/Icon';
 import CouncilIconHover from './CouncilIconHover/Icon';
 import CouncilTaxIcon from './CouncilTaxIcon/Icon';
@@ -58,6 +60,8 @@ let components = {
     careersHover: CareersIconHover,
     children: ChildrenIcon,
     childrenHover: ChildrenIconHover,
+    condolanceBook: CondolanceBookIcon,
+    condolanceBookHover: CondolanceBookIconHover,
     council: CouncilIcon,
     councilHover: CouncilIconHover,
     counciltax: CouncilTaxIcon,
