@@ -12,6 +12,8 @@ import CareersIcon from './CareersIcon/Icon';
 import CareersIconHover from './CareersIconHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
 import ChildrenIconHover from './ChildrenIconHover/Icon';
+import CondolenceBookIcon from './CondolenceBookIcon/Icon'
+import CondolenceBookIconHover from './CondolenceBookIconHover/Icon'
 import CouncilIcon from './CouncilIcon/Icon';
 import CouncilIconHover from './CouncilIconHover/Icon';
 import CouncilTaxIcon from './CouncilTaxIcon/Icon';
@@ -28,6 +30,8 @@ import EnvironmentIcon from './EnvironmentIcon/Icon';
 import EnvironmentIconHover from './EnvironmentIconHover/Icon';
 import FinanceIcon from './FinanceIcon/Icon';
 import FinanceIconHover from './FinanceIconHover/Icon';
+import GovUKIcon from './GovUKIcon/Icon';
+import GovUKIconHover from './GovUKIconHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
@@ -36,6 +40,8 @@ import PlanningIcon from './PlanningIcon/Icon';
 import PlanningIconHover from './PlanningIconHover/Icon';
 import RoadsIcon from './RoadsIcon/Icon';
 import RoadsIconHover from './RoadsIconHover/Icon';
+import RoyalWebsiteIcon from './RoyalWebsiteIcon/Icon';
+import RoyalWebsiteIconHover from './RoyalWebsiteIconHover/Icon';
 import SafetyIcon from './SafetyIcon/Icon';
 import SafetyIconHover from './SafetyIconHover/Icon';
 import SchoolsIcon from './SchoolsIcon/Icon';
@@ -58,6 +64,8 @@ let components = {
     careersHover: CareersIconHover,
     children: ChildrenIcon,
     childrenHover: ChildrenIconHover,
+    condolenceBook: CondolenceBookIcon,
+    condolenceBookHover: CondolenceBookIconHover,
     council: CouncilIcon,
     councilHover: CouncilIconHover,
     counciltax: CouncilTaxIcon,
@@ -74,6 +82,8 @@ let components = {
     environmentHover: EnvironmentIconHover,
     finance: FinanceIcon,
     financeHover: FinanceIconHover,
+    govUK: GovUKIcon,
+    govUKHover: GovUKIconHover,
     housing: HousingIcon,
     housingHover: HousingIconHover,
     libraries: LibrariesIcon,
@@ -82,6 +92,8 @@ let components = {
     planningHover: PlanningIconHover,
     roads: RoadsIcon,
     roadsHover: RoadsIconHover,
+    royalWebsite: RoyalWebsiteIcon,
+    royalWebsiteHover: RoyalWebsiteIconHover,
     safety: SafetyIcon,
     safetyHover: SafetyIconHover,
     schools: SchoolsIcon,
