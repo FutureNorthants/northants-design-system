@@ -29,7 +29,7 @@ export const west_vars = {
         xl:`${breakpointsVals.xl}px`, // large desktops only
     },
     colours: {
-        black: "#3C3C3B",
+        black: "#000000",
         grey_darkest: "#3C3C3B",
         grey_dark: "#757575",
         grey: "#C6C6C6",
