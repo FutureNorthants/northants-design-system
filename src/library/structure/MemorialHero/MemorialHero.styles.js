@@ -64,8 +64,8 @@ export const StyledMaxWidthContainer = styled.div`
     margin-left: 15px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        margin-right: 30px;
-        margin-left: 30px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
