@@ -15,7 +15,6 @@ export const Container = styled.div `
     align-content: stretch;
     flex-wrap: nowrap;
     flex-direction: column-reverse;
-
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
       flex-direction: row;
     }

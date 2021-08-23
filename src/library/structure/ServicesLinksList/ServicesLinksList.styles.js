@@ -231,9 +231,19 @@ export const QuicklinkList = styled.ul`
 export const QuicklinkItem = styled.li`
   margin-bottom: 10px;
   padding: 0 !important;
+  padding-left: 25px;
+  position: relative;
+
   &:before {
     background: ${props => props.theme.theme_vars.colours.grey} !important;  
     margin-left: -15px;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 10px;
   }
 
   &:last-of-type {
