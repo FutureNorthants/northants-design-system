@@ -50,7 +50,7 @@ export const Image = styled.div `
     height: 500px;
   }
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
-    height: 700px;
+    height: 760px;
   }
 
 `
@@ -78,4 +78,7 @@ export const StyledMaxWidthContainer = styled.div`
 
 export const HiddenH1 = styled.h1`
     visibility: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 0px;
 `
