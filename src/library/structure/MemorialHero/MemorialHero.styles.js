@@ -15,7 +15,6 @@ export const Container = styled.div `
     align-content: stretch;
     flex-wrap: nowrap;
     flex-direction: column-reverse;
-
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
       flex-direction: row;
     }
@@ -51,7 +50,7 @@ export const Image = styled.div `
     height: 500px;
   }
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
-    height: 700px;
+    height: 760px;
   }
 
 `
@@ -64,9 +63,14 @@ export const StyledMaxWidthContainer = styled.div`
     margin-left: 15px;
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        margin-right: 30px;
-        margin-left: 30px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+      margin-right: 0px;
+      margin-left: 0px;
+  }
 
     @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
     }
@@ -74,4 +78,7 @@ export const StyledMaxWidthContainer = styled.div`
 
 export const HiddenH1 = styled.h1`
     visibility: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 0px;
 `

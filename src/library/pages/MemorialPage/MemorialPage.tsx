@@ -42,7 +42,7 @@ const serviceLinksArray = [
   {
     title: "Condolence book", 
     url: "/",
-    iconKey: "covid",
+    iconKey: "condolenceBook",
     quickLinksArray: [
       {
         title: "Sign the condolence book and leave a tribute", 
@@ -56,7 +56,7 @@ const memorialServiceLinksArray = [
   {
     title: "The Royal Website", 
     url: "/",
-    iconKey: "covid",
+    iconKey: "royalWebsite",
     quickLinksArray: [
       {
         title: "Details and announcements of the funeral of ...", 
@@ -66,7 +66,7 @@ const memorialServiceLinksArray = [
   },{
     title: "Guidance for the Period of National Mourning", 
     url: "/",
-    iconKey: "covid",
+    iconKey: "govUK",
     quickLinksArray: [
       {
         title: "Information and key links regarding national mourning", 
@@ -76,7 +76,7 @@ const memorialServiceLinksArray = [
   },{
     title: "The Royal Website", 
     url: "/",
-    iconKey: "covid",
+    iconKey: "royalWebsite",
     quickLinksArray: [
       {
         title: "Details and announcements of the funeral of ...", 
