@@ -97,4 +97,16 @@ export const ButtonsContainer = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    display: block;
+
+    .button--primary {
+      width: auto;
+      &:last-of-type {
+        line-height: inherit;
+
+      }
+    }
+  }
 `
