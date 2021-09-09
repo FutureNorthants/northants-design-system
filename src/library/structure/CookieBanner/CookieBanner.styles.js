@@ -82,7 +82,7 @@ export const ButtonsContainer = styled.div`
 
     &:last-of-type {
       margin-right: 0;
-      line-height: 36px;
+      line-height: 1.3;
     }
   }
 
@@ -104,7 +104,7 @@ export const ButtonsContainer = styled.div`
     .button--primary {
       width: auto;
       &:last-of-type {
-        line-height: inherit;
+        line-height: 1.3;
 
       }
     }
