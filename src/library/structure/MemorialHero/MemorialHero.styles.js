@@ -1,13 +1,56 @@
 import styled from "styled-components";
 
 
-export const Wrapper = styled.div`
-background-color: ${props => props.theme.theme_vars.colours.grey};
+export const Wrapper = styled.header`
+    background: ${props => props.theme.theme_vars.colours.action}5A;
+    background: ${props => props.noBackground ? "transparent" : 
+        props.theme.cardinal_name === "north" ?  (props.theme.theme_vars.colours.grey_light+"7a") : props.theme.theme_vars.colours.white};
+    overflow: ${props => props.noPadding ? "hidden" : "visible"};
+    padding-bottom: 50px;
+`
+
+export const Container = styled.div`
+    font-family: ${props => props.theme.theme_vars.fontstack};
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+   
+    margin-right: 15px;
+    margin-left: 15px;
+    overflow: hidden;
+
+    pre {
+        font-family: monospace;
+        white-space: pre;
+    }
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    @media screen and (min-width: calc(${props => props.theme.theme_vars.breakpoints.l} + 60px)){
+        margin-right: auto;
+        margin-left: auto;
+        max-width: ${props => props.theme.theme_vars.breakpoints.l};
+    }
+`
+
+export const Left = styled.div`
+   
+`
+
+export const Right = styled.div`
+    
 `
 
 
+export const Wrapperold = styled.div`
+background-color: ${props => props.theme.theme_vars.colours.grey};
+`
 
-export const Container = styled.div `
+export const ContainerOld = styled.div `
    background-color: ${props => props.theme.theme_vars.colours.grey};
     display: flex;
     justify-content: space-between;
@@ -21,7 +64,7 @@ export const Container = styled.div `
 
 `
 
-export const Left = styled.div `
+export const LeftOld = styled.div `
   padding: 30px 0px;
   
   width: 100%;
