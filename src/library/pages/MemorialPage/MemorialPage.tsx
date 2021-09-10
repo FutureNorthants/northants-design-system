@@ -8,7 +8,6 @@ import ServicesLinksList from "../../structure/ServicesLinksList/ServicesLinksLi
 import PromotedLinks from "../../components/PromotedLinks/PromotedLinks";
 import { ThemeProvider } from 'styled-components';
 import { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../../../themes/theme_generator';
-
 export interface MemorialPageProps {
   heroArray: Array<HeroImageProp>;
   servicesArray: Array<PageLinkProp>;
@@ -52,6 +51,14 @@ const serviceLinksArray = [
   },
 ];
 
+
+const councilServicesLinksArray = [
+  {
+    title: "Proceed to council services", 
+    url: "#all-services",
+  }
+];
+
 const memorialServiceLinksArray = [
   {
     title: "The Royal Website", 
@@ -88,16 +95,11 @@ const memorialServiceLinksArray = [
 
 
 const ExampleMemorialHeroArgs = {
-  src: "http://placehold.it/1000x700",
-  placeholder: "http://placehold.it/250x175",
+  src: "/hero-image.png",
+  placeholder: "/hero-image-small.png",
   alt: "Image showing ...",
   children: <ServicesLinksList hasBackground={true} hideHeader={true} serviceLinksArray={serviceLinksArray} oneCol={true} />,
-  councilServices: <PromotedLinks oneCol={true}  promotedLinksArray={[
-      {
-          title: "Proceed to Council services",
-          url: "/"
-      },
-     ]} />,
+  councilServices: <ServicesLinksList oneCol={true} hasBackground={true} hideHeader={true} serviceLinksArray={councilServicesLinksArray} />,
   theme:  north_theme,
 };
 

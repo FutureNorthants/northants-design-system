@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+
+const oneColStyles = props => {
+    if(props.oneCol) {
+        return css`width: 100%; display: block;`
+    }
+}
 
 export const PromotedLinks = styled.div`
   ${props => props.theme.fontStyles}
@@ -80,6 +86,6 @@ export const PromotedLink = styled.a`
 
 
     }
-
+    ${oneColStyles}
 
   `

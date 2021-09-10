@@ -10,16 +10,15 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
     const themeContext = useContext(ThemeContext);
     return (
     <>
-        <Styles.Wrapper data-testid="MemorialHero">
-        <Styles.StyledMaxWidthContainer>
-        <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
-        <Styles.Container>
-            <Styles.Left>
-                {children}
+        <Styles.Wrapper>
+            <Styles.Container>
+                <Styles.Left>
+            {children}
                 <ThemeProvider theme={theme}>
                     {councilServices}
                 </ThemeProvider>
-            </Styles.Left>
+                </Styles.Left>
+                <Styles.Right>
             <LazyImage
                 src={src}
                 placeholder={placeholder}
@@ -27,12 +26,14 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
                     partialVisibility: true
                 }}
             >
-                {(src, loading, isVisible) => <Styles.Image image={src} src={src} title={alt} loading={loading.toString()} />}
+                {(src) => <Styles.Image image={src} title={alt} />} 
             </LazyImage>
+            </Styles.Right>
             </Styles.Container>
-        </Styles.StyledMaxWidthContainer>
         </Styles.Wrapper>
-        
+
+
+            
     </>
     )};
 

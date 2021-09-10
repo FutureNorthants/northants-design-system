@@ -37,7 +37,7 @@ export interface PageLinkProp {
     /**
     * Array of quick links for the service
     */
-   quickLinksArray: Array<QuickLinkProp>;
+   quickLinksArray?: Array<QuickLinkProp>;
 }
 export interface QuickLinkProp {
   /**

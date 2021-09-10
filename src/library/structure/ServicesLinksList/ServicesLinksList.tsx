@@ -94,7 +94,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                                     <Styles.ServiceTitle text={link.title} />
                                 </Styles.ServiceTitleLink>
             
-                                {link.quickLinksArray.length > 0 && 
+                                {(link.hasOwnProperty('quickLinksArray') && link.quickLinksArray.length > 0) && 
                                     <Styles.QuicklinkList>
                                         {link.quickLinksArray.map((quicklink) =>
                                             <Styles.QuicklinkItem key={quicklink.title}>

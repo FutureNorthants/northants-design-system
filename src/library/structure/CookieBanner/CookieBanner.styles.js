@@ -82,11 +82,23 @@ export const ButtonsContainer = styled.div`
 
     &:last-of-type {
       margin-right: 0;
-      line-height: 36px;
+      line-height: 1.3;
     }
   }
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    display: block;
+
+    .button--primary {
+      width: auto;
+      &:last-of-type {
+        line-height: 1.3;
+
+      }
+    }
+  }
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     display: block;
 
     .button--primary {
