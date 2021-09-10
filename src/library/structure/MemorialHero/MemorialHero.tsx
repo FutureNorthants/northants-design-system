@@ -11,6 +11,7 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
     return (
     <>
         <Styles.Wrapper>
+            <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
             <Styles.Container>
                 <Styles.Left>
             {children}
