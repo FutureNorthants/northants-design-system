@@ -33,17 +33,19 @@ const serviceLinksArray = [
     },
 ];
 
+const councilServicesLinksArray = [
+  {
+    title: "Proceed to council services", 
+    url: "#all-services",
+  }
+];
+
 export const ExampleMemorialHero = Template.bind({});    
 ExampleMemorialHero.args = {
-    src: "http://placehold.it/1000x700",
-    placeholder: "http://placehold.it/250x175",
+    src: "/hero-image.png",
+    placeholder: "/hero-image.png",
     alt: "Image showing ...",
     children: <ServicesLinksList hasBackground={true} hideHeader={true} serviceLinksArray={serviceLinksArray} oneCol={true} />,
-    councilServices: <PromotedLinks oneCol={true}  promotedLinksArray={[
-        {
-            title: "Proceed to Council services",
-            url: "/"
-        },
-       ]} />,
+    councilServices: <ServicesLinksList oneCol={true} hasBackground={true} hideHeader={true} serviceLinksArray={councilServicesLinksArray} />,
     theme:  north_theme,
 };

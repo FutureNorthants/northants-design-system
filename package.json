@@ -23,7 +23,7 @@
     "build": "rollup -c",
     "test": "jest",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build",

@@ -26,7 +26,7 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
                     partialVisibility: true
                 }}
             >
-                {(src) => <Styles.Image image={src} title={alt} />}
+                {(src) => <Styles.Image image={src} title={alt} />} 
             </LazyImage>
             </Styles.Right>
             </Styles.Container>
