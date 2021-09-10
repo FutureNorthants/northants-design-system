@@ -43,7 +43,7 @@ const councilServicesLinksArray = [
 export const ExampleMemorialHero = Template.bind({});    
 ExampleMemorialHero.args = {
     src: "/hero-image.png",
-    placeholder: "/hero-image.png",
+    placeholder: "/hero-image-small.png",
     alt: "Image showing ...",
     children: <ServicesLinksList hasBackground={true} hideHeader={true} serviceLinksArray={serviceLinksArray} oneCol={true} />,
     councilServices: <ServicesLinksList oneCol={true} hasBackground={true} hideHeader={true} serviceLinksArray={councilServicesLinksArray} />,
