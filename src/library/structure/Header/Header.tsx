@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({
   const whiteLogos = (cardinal_name) => {
     switch(cardinal_name){
       case "north":
-        return <NorthWhite />
+        return <NorthColoured />
         break
       case "west":
         return <WestWhite />
