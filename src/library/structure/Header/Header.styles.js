@@ -1,14 +1,41 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+
+/**
+ * See header.tsx for colour rules
+ * @param {*} props 
+ * @returns 
+ */
+const headerThemeStyles = props => {
+    if(props.theme.is_memorial === true){
+        return css`
+                background-color: ${props.theme.theme_vars.colours.grey_darkest};
+                border-bottom: none;
+                color: ${props.theme.theme_vars.colours.white};
+                `
+    }
+    switch (props.theme.cardinal_name){
+        case "north":
+            return css`
+                background-color: ${props.theme.theme_vars.colours.white};
+                border-bottom: ${props.theme.theme_vars.colours.action};
+                color: ${props.theme.theme_vars.colours.black};
+                `
+            break;
+        case "west":
+            return css`
+                background-color: ${props.theme.theme_vars.colours.action};
+                border-bottom: none;
+                color: ${props.theme.theme_vars.colours.white};
+                `
+            break;
+    }
+}
 
 export const Container = styled.header`
     font-family: ${props => props.theme.theme_vars.fontstack};
-    color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
-    background-color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.white
-                        : props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.action};
-    border-bottom: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? "5px solid "+(props.theme.name === "GDS theme" ? props.theme.theme_vars.colours.black 
-                        : props.theme.theme_vars.colours.action) : "none"};
     padding: 3px 0;
+    ${headerThemeStyles}
 `
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
@@ -68,17 +95,47 @@ export const HomeLink = styled.a`
     }
 `
 
+
+
+const headerServicesLinkStyles = props => {
+    if(props.theme.is_memorial === true){
+        return css`
+                color: ${props.theme.theme_vars.colours.white};
+                &:hover {
+                    color: ${props.theme.theme_vars.colours.white};
+                    opacity: 0.8;
+                }
+                `
+    }
+    switch (props.theme.cardinal_name){
+        case "north":
+            return css`
+                color: ${props.theme.theme_vars.colours.action};
+                &:hover {
+                    color: ${props.theme.theme_vars.colours.action_dark};
+                    opacity: 1;
+                }
+                `
+            break;
+        case "west":
+            return css`
+                color: ${props.theme.theme_vars.colours.white};
+                &:hover {
+                    color: ${props.theme.theme_vars.colours.white};
+                    opacity: 0.8;
+                }
+                `
+            break;
+    }
+}
 export const AllServicesLink = styled.a`
     ${props => props.theme.linkStyles};
-    color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
     padding: 0 ${props => props.theme.theme_vars.spacingSizes.small};
     vertical-align: middle;
     margin-top: -10px;
 
     &:hover {
         ${props => props.theme.linkStylesHover};
-        color: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.white};
-        opacity: ${props => (props.isHomepage === "true" || props.theme.cardinal_name === "north") ? "1" : "0.8"};
     }
     &:focus {
         ${props => props.theme.linkStylesFocus};
@@ -100,6 +157,9 @@ export const AllServicesLink = styled.a`
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         display: inline-block;
     }
+
+    
+    ${headerServicesLinkStyles}
 `
 
 export const SearchWrapper = styled.div`

@@ -11,4 +11,8 @@ export interface HeaderProps {
    * Link to the list of all services that will be used on the logo
    */
   allServicesLink?: string;
+  /**
+   * this flag is used for the all-services anchor link
+   */
+  isHomepage?: string;
 }
