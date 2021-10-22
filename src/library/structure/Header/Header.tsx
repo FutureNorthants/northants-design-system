@@ -23,56 +23,58 @@ const Header: React.FC<HeaderProps> = ({
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
-  const isHomepage = false;
 
-  const colouredLogos = (cardinal_name) => {
-    switch(cardinal_name){
-      case "north":
-        return <NorthColoured />
-        break
-      case "west":
-        return <WestColoured />
-        break
-      default:
-        return <GDSLogo />
+  /*
+      north homepage - no header
+      north subpage - white header / colour logo / has search
+
+      west homepage - no header
+      west subpage - blue header (action) / white logo / has search
+
+      memorial north homepage - dark grey header / white logo / has search
+      memorial west homepage  - dark grey header / white logo / has search
+  */
+  const themeLogos = (cardinal_name, is_memorial) => {
+
+    if(is_memorial === true ) {
+      switch(cardinal_name) {
+        case "north":
+          return <Styles.LogoWhite><NorthWhite /></Styles.LogoWhite> 
+        break;
+        case "west":
+          return  <Styles.LogoWhite><WestWhite /></Styles.LogoWhite> 
+        break;
+        default:
+          return <Styles.LogoWhite><GDSLogo /></Styles.LogoWhite>
+      }
+    } else {
+      switch(cardinal_name) {
+        case "north":
+          return <Styles.LogoColoured><NorthColoured /></Styles.LogoColoured> 
+        break;
+        case "west":
+          return <Styles.LogoWhite><WestWhite /></Styles.LogoWhite> 
+        break;
+        default:
+          return <Styles.LogoColoured className="black_logo"><GDSLogo /></Styles.LogoColoured>
+      }
     }
   }
 
-  const whiteLogos = (cardinal_name) => {
-    switch(cardinal_name){
-      case "north":
-        return <NorthColoured />
-        break
-      case "west":
-        return <WestWhite />
-        break
-      default:
-        return <GDSLogo />
-    }
-  }
+
   return(
     <>
       <Styles.Container
-        isHomepage={isHomepage ? "true" : "false"}
         {...props}
       >
         <Styles.StyledMaxWidthContainer noBackground>
           <Styles.LogoWrapper>
             <Styles.HomeLink href={homeLink} title="Home" id="logo">
-              {isHomepage ? 
-                <Styles.LogoColoured className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
-                  {colouredLogos(themeContext.cardinal_name)}
-                </Styles.LogoColoured>   
-                :
-                <Styles.LogoWhite className={themeContext.theme_vars.theme_name === "Memorial theme North" || themeContext.theme_vars.theme_name === "Memorial theme West" ? "black_logo" : ""}>
-                  {whiteLogos(themeContext.cardinal_name)}
-                </Styles.LogoWhite>
-                
-              }
+              {themeLogos(themeContext.cardinal_name, themeContext.is_memorial)}
             </Styles.HomeLink>
           </Styles.LogoWrapper>
           {allServicesLink &&
-            <Styles.AllServicesLink href={isHomepage ? "#all-services" : allServicesLink + "#all-services"} title="See all services" isHomepage={isHomepage ? "true" : "false"}>
+            <Styles.AllServicesLink href={allServicesLink + "#all-services"} title="See all services">
               All services
             </Styles.AllServicesLink>
           }
