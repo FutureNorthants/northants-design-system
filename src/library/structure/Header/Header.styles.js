@@ -18,7 +18,7 @@ const headerThemeStyles = props => {
         case "north":
             return css`
                 background-color: ${props.theme.theme_vars.colours.white};
-                border-bottom: ${props.theme.theme_vars.colours.action};
+                border-bottom: 5px solid ${props.theme.theme_vars.colours.action};
                 color: ${props.theme.theme_vars.colours.black};
                 `
             break;
