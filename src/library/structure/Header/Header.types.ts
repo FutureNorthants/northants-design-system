@@ -14,5 +14,5 @@ export interface HeaderProps {
   /**
    * this flag is used for the all-services anchor link
    */
-  isHomepage?: string;
+  isHomepage?: boolean;
 }
