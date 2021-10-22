@@ -20,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({
   hideSearchBar = false,
   homeLink = "/",
   allServicesLink = "/",
+  isHomepage = false,
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
@@ -74,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({
             </Styles.HomeLink>
           </Styles.LogoWrapper>
           {allServicesLink &&
-            <Styles.AllServicesLink href={allServicesLink + "#all-services"} title="See all services">
+            <Styles.AllServicesLink href={isHomepage ? "#all-services" : allServicesLink + "#all-services"} title="See all services">
               All services
             </Styles.AllServicesLink>
           }
