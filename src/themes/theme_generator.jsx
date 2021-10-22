@@ -11,6 +11,7 @@ const generate_theme = (theme_vars) => {
         name: theme_vars.theme_name, 
         full_name: theme_vars.full_name, 
         cardinal_name: theme_vars.cardinal_name, 
+        is_memorial: theme_vars.is_memorial,
         theme_vars, 
         fontStyles: `
             font-family: ${theme_vars.fontstack};

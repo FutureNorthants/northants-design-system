@@ -8,6 +8,7 @@ const breakpointsVals = {
 export const gds_vars = {
     theme_name: "GDS theme",
     cardinal_name: "gds",
+    is_memorial: false,
     full_name: "FutureGov Template",       
     breakpointsVals: {
         s: breakpointsVals.s,

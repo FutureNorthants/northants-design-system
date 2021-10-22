@@ -10,6 +10,7 @@ export const lb_vars_west = {
     theme_name: "Memorial theme West",
     full_name: "West Northamptonshire",
     cardinal_name: "west",
+    is_memorial: true,
     council_link: "https://www.westnorthants.gov.uk",
     other_council_link: "https://www.northnorthants.gov.uk",
     other_council_name: "North Northamptonshire",
