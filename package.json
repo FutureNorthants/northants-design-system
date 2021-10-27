@@ -1,6 +1,6 @@
 {
   "name": "northants-design-system",
-  "version": "0.1.125", 
+  "version": "0.1.125",
   "private": false,
   "description": "A new design system for Future Northants - North Northamptonshire & West Northamptonshire, two brand new unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.",
   "main": "build/index.js",
@@ -95,6 +95,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.15.2",
+    "downshift": "^6.1.7",
     "html-react-parser": "^1.2.1",
     "react-lazy-progressive-image": "^1.5.5"
   }
