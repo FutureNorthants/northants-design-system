@@ -6,8 +6,9 @@ import { action } from '@storybook/addon-actions';
 import "./Autocomplete.css";
 
 /**
- * Autocomplete input; based on the Input component but with the capability to accept a list of 
- * suggestions which are presented to the user as they type and which they can click on to select.
+ * Autocomplete input; Downshift wrapped around our Input component but with the capability to
+ * accept a list of suggestions which are presented to the user as they type and which they can
+ * click on to select. If viewing in Storybook, try typing the name of a fruit in the story examples.
  */
 const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   name,
@@ -78,7 +79,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           getRootProps
         }) => (
           <div>
-            {labelText ? <label {...getLabelProps()}>{labelText}</label> : ''}
+            <label {...getLabelProps()}>{labelText}</label>
             {isErrored && errorText ? <ErrorText>{errorText}</ErrorText> : ""}
             <div
               {...getRootProps(undefined, { suppressRefError: true })}
@@ -87,15 +88,16 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                 name: name,
                 placeholder: placeholder, 
                 isErrored: isErrored,
-                className: "autocomplete-input",
-                'aria-labelledby' : null 
+                className: "autocomplete-input"
               })} />
             </div>
             {
             // can't rely just on isOpen or we can end up displaying an empty suggestions list
             isOpen && filteredsuggestions.length > 0 ?
-            <ul {...getMenuProps()}
+            <ul {...getMenuProps({'aria-labelledby' : null})}
               className = "autocomplete-dropdown"
+              arial-label = "Suggestion"
+              title = "Suggestion"
             >
               {
                 // Here we are turning our filtered suggestions into list items

@@ -1,16 +1,15 @@
-export interface AutocompleteSuggestionItem {
-    name: string;
-}
-
+/**
+ * See the stories file for explanation of each property or view the control in Storybook
+ */
 export interface AutocompleteProps {
-    name: string;                 // name of the control
-    labelText?: string;           // text of label for control, if any
-    value?: string;               // content of the input
-    placeholder?: string;         // placeholder text in the input field
-    isErrored?: boolean;          // true if in error state
-    errorText?: string;           // optional explanatory error text
-    suggestions: string[];        // suggestions to compare input value with
-    showSuggestions?: boolean;    // true to show matching suggestions list
-    minimumMatchLength: number;   // defaults to 2
-    onSelect?: Function;          // fires when suggestion clicked on
+    name: string;
+    labelText?: string;
+    value?: string;
+    placeholder?: string;
+    isErrored?: boolean;
+    errorText?: string;
+    suggestions: string[];
+    showSuggestions?: boolean;
+    minimumMatchLength: number;
+    onSelect?: Function;
 }

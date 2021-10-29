@@ -14,10 +14,49 @@ export default {
       actions: { argTypesRegex: '^on.*' }
     },
     argTypes: {
+      name: {
+        description: "Name attribute of the input control",
+        table: { category: "Input control" }
+      },
+      labelText: {
+        description: "Text content of the label for the control",
+        table: { category: "Input control" }
+      },
+      value: {
+        description: "Default value of the input control",
+        table: { category: "Input control" }
+      },
+      placeholder: {
+        description: "Placeholder within the input control",
+        table: { category: "Input control" }
+      },
+      isErrored: {
+        description: "Controls the input control's error state",
+        table: { category: "Input control" }
+      },
+      errorText: {
+        description: "Text to display if input control is in error state",
+        table: { category: "Input control" }
+      },
       minimumMatchLength: { 
+        description: "The minimum number of characters that need to be typed before matches in the suggestions list are looked for",
         control: { 
           type: 'number', min: 1, max: 16, step: 1
-        }
+        },
+        table: { category: "Suggestions" }
+      },
+      suggestions: {
+        description: "Array of suggestion strings",
+        table: { category: "Suggestions" }
+      },
+      showSuggestions: {
+        description: "Controls whether suggestions are shown immediately (if value set also)",
+        table: { category: "Suggestions" }
+      },
+      onSelect: {
+        description: "Callback function for when a suggestion is selected",
+        control: null,
+        table: { category: "Events" }
       }
     }
 };
