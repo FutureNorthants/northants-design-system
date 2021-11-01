@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { AutocompleteProps } from "./Autocomplete.types";
-import { StyledInput, ErrorText} from "../Input/Input.styles";
+import { ErrorText} from "../Input/Input.styles";
+import * as Styles from "./Autocomplete.styles";
 import Downshift from "downshift";
 import { action } from '@storybook/addon-actions';
-import "./Autocomplete.css";
 
 /**
  * Autocomplete input; Downshift wrapped around our Input component but with the capability to
@@ -34,7 +34,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    * value into our saved state, and fire the onSelect handler if the change
    * is that a suggestion was chosen.
    */
-  function handleStateChange(changes: any, stateAndHelpers: object) {
+  function handleStateChange(changes: any, stateAndHelpers: object): void {
     if (changes.hasOwnProperty('selectedItem')) {
       action('onSelect');
       if (onSelect) {
@@ -44,6 +44,27 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
     } else if (changes.hasOwnProperty('inputValue')) {
       setInputValue(changes.inputValue);
     }
+  }
+
+  /**
+   * Breaks the suggestion text up into bits that match the input and bits that
+   * don't, so we can apply different styling to highlight the match(es).
+   */
+  function getItemTextChunks(item: string, input: string): JSX.Element[] {
+    let regex = new RegExp("(" + input + ")", "ig");
+    let chunks = item.split(regex);
+    let results = [];
+    let key = 1;
+    chunks.forEach(chunk => {
+      if (chunk !== "") {
+        if (chunk.toLowerCase() === input.toLowerCase()) {
+          results.push(<Styles.AutocompleteSuggestionTextMatch key={key++}>{chunk}</Styles.AutocompleteSuggestionTextMatch>);
+        } else {
+          results.push(<Styles.AutocompleteSuggestionText key={key++}>{chunk}</Styles.AutocompleteSuggestionText>);
+        }
+      }
+    });
+    return results;
   }
 
   /**
@@ -67,7 +88,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    */
   return (
     <>
-      <Downshift onStateChange={handleStateChange} selectedItem={inputvalue} initialIsOpen={showSuggestions}> 
+      <Downshift onStateChange={handleStateChange} selectedItem={inputvalue ? inputvalue : ""} initialIsOpen={showSuggestions}> 
         {({
           getInputProps,
           getItemProps,
@@ -75,7 +96,6 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           getMenuProps,
           isOpen,
           inputValue,
-          highlightedIndex,
           getRootProps
         }) => (
           <div>
@@ -84,41 +104,34 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
             <div
               {...getRootProps(undefined, { suppressRefError: true })}
             >
-              <StyledInput {...getInputProps({ 
+              <Styles.AutocompleteInput {...getInputProps({ 
                 name: name,
                 placeholder: placeholder, 
-                isErrored: isErrored,
-                className: "autocomplete-input"
+                isErrored: isErrored
               })} />
             </div>
             {
             // can't rely just on isOpen or we can end up displaying an empty suggestions list
             isOpen && filteredsuggestions.length > 0 ?
-            <ul {...getMenuProps({'aria-labelledby' : null})}
-              className = "autocomplete-dropdown"
-              arial-label = "Suggestion"
-              title = "Suggestion"
-            >
-              {
-                // Here we are turning our filtered suggestions into list items
-                filteredsuggestions.map((item, index) => {
-                  let class_name = "autocomplete-item" + 
-                    (highlightedIndex === index ? " autocomplete-item-highlighted" : "");
-                  return (
-                    <li
-                      className = {class_name}
-                      {...getItemProps({ key: item, index, item })}
-                      // not so dangerous as our suggestions are not going to be unsanitized user input
-                      dangerouslySetInnerHTML = {
-                        {__html: item.replace(new RegExp(inputValue, "ig"), (match: string) =>
-                          '<span class="autocomplete-match">' + match + '</span>')}
-                      }
-                    /> 
-                  )
-                })
-              }
-            </ul>
-            : ''}
+              <Styles.AutocompleteSuggestionList {...getMenuProps({'aria-labelledby' : null})}
+                arial-label = "Suggestion"
+                title = "Suggestion"
+              >
+                {
+                  // Here we are turning our filtered suggestions into list items
+                  filteredsuggestions.map((item, index) => {
+                    return (
+                      <Styles.AutocompleteSuggestionItem
+                        {...getItemProps({ key: item, index, item })}
+                      > 
+                        { getItemTextChunks(item, inputValue) }
+                      </Styles.AutocompleteSuggestionItem>
+                    )
+                  })
+                }
+              </Styles.AutocompleteSuggestionList>
+            : ''
+            }
           </div>
         )}
       </Downshift>

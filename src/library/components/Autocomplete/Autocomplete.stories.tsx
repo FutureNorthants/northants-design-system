@@ -65,7 +65,7 @@ const Template: Story<AutocompleteProps> = (args) => <SBPadding><Autocomplete {.
 
 const CommonArgs = {
   placeholder: 'Enter search text',
-  suggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwi'],
+  suggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwi is a hairy little fruit from New Zealand where they filmed Lord of the Rings and this expands nicely to fit on other lines', 'Killer tomato'],
   minimumMatchLength: 2
 }
 
