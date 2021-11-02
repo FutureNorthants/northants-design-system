@@ -3,7 +3,6 @@ import { AutocompleteProps } from "./Autocomplete.types";
 import { ErrorText} from "../Input/Input.styles";
 import * as Styles from "./Autocomplete.styles";
 import Downshift from "downshift";
-import { action } from '@storybook/addon-actions';
 
 /**
  * Autocomplete input; Downshift wrapped around our Input component but with the capability to
@@ -36,7 +35,6 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    */
   function handleStateChange(changes: any, stateAndHelpers: object): void {
     if (changes.hasOwnProperty('selectedItem')) {
-      action('onSelect');
       if (onSelect) {
         onSelect(changes.selectedItem);
       }

@@ -3,6 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import Autocomplete from "./Autocomplete";
 import { AutocompleteProps } from "./Autocomplete.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
+import { action } from '@storybook/addon-actions';
 
 export default {
     title: 'Library/Components/Autocomplete',
@@ -63,10 +64,15 @@ export default {
 
 const Template: Story<AutocompleteProps> = (args) => <SBPadding><Autocomplete {...args} /></SBPadding>;
 
+function onSelectStub(item: string): void {
+  action('selected')(item);
+}
+
 const CommonArgs = {
   placeholder: 'Enter search text',
   suggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwi is a hairy little fruit from New Zealand where they filmed Lord of the Rings and this expands nicely to fit on other lines', 'Killer tomato'],
-  minimumMatchLength: 2
+  minimumMatchLength: 2,
+  onSelect: onSelectStub
 }
 
 /**
