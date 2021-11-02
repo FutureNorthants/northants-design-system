@@ -12,10 +12,12 @@ export const AutocompleteInput = styled(StyledInput)`
  * The list of suggestion items that displays when the user input turns up in any suggestions
  */
 export const AutocompleteSuggestionList = styled.ul`
-    width: 21rem;
+    width: 20.7rem;
     margin-left: 0rem;
-    margin-top: -1.3rem;
+    margin-top: -1.6rem;
     font-family: ${props => props.theme.theme_vars.fontstack};
+    border-radius: ${props => props.theme.theme_vars.border_radius};
+    border: 2px solid ${props => props.theme.theme_vars.colours.black};
 `;
 
 /**
@@ -24,13 +26,14 @@ export const AutocompleteSuggestionList = styled.ul`
 export const AutocompleteSuggestionItem = styled.li`
     padding: 0.5rem;
     cursor: pointer;
-    border: 1px solid darkgray;
-    font-size: 1rem;
+    border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_dark};
+    font-size: ${props => props.theme.theme_vars.fontSizes.small};
     text-align: left;
-    border-radius: 5px; !important
-    margin-bottom: 3px;
-    background: ${props => props["aria-selected"] ? "black" : "lightgoldenrodyellow"};
-    color: ${props => props["aria-selected"] ? "white" : "black"};
+    background: ${props => props["aria-selected"] ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white };
+    :nth-child(2) {
+        background: ${props => props["aria-selected"] ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_light };    
+    }
+    color: ${props => props["aria-selected"] ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black };
 `;
 
 /**
