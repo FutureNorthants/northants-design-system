@@ -1,4 +1,5 @@
 // Components
+import Autocomplete from "./library/components/Autocomplete/Autocomplete";
 import Button from "./library/components/Button/Button";
 import Heading from "./library/components/Heading/Heading";
 import HeadingWithIcon from "./library/components/HeadingWithIcon/HeadingWithIcon";
@@ -7,7 +8,7 @@ import CheckboxListFilter from './library/components/CheckboxListFilter/Checkbox
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
 
-export { Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks };
+export { Autocomplete, Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks };
 
 
 // Slices

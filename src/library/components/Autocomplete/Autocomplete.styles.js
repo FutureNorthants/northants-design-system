@@ -12,7 +12,7 @@ export const AutocompleteInput = styled(StyledInput)`
  * The list of suggestion items that displays when the user input turns up in any suggestions
  */
 export const AutocompleteSuggestionList = styled.ul`
-    width: 20.7rem;
+    width: 20.63rem;
     margin-left: 0rem;
     margin-top: -1.6rem;
     font-family: ${props => props.theme.theme_vars.fontstack};
