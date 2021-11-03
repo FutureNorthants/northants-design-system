@@ -105,7 +105,8 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
               <Styles.AutocompleteInput {...getInputProps({ 
                 name: name,
                 placeholder: placeholder, 
-                isErrored: isErrored
+                isErrored: isErrored,
+                isOpen: isOpen
               })} />
             </div>
             {
