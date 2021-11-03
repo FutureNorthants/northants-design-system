@@ -14,11 +14,11 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   labelText,
   value,
   placeholder,
-  isErrored,
+  isErrored = false,
   errorText,
-  suggestions,
-  showSuggestions,
-  minimumMatchLength,
+  suggestions = [],
+  showSuggestions = false,
+  minimumMatchLength = 2,
   onSelect
 }) => {
 

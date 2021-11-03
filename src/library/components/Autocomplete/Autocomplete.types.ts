@@ -33,7 +33,7 @@ export interface AutocompleteProps {
     /**
      * Array of suggestion strings
      */
-     suggestions: string[];
+     suggestions?: string[];
 
     /**
      * Controls whether suggestions are shown immediately (if value set also)
@@ -43,7 +43,7 @@ export interface AutocompleteProps {
     /**
      * The minimum number of characters that need to be typed before matches in the suggestions list are looked for
      */
-     minimumMatchLength: number;
+     minimumMatchLength?: number;
 
     /**
      * Callback function for when a suggestion is selected

@@ -32,7 +32,12 @@ export default {
     resolve({
       extensions: extensions
     }),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/downshift/node_modules/react-is/index.js': ['isForwardRef']
+      }
+    }),
     svg(),
     typescript({ useTsconfigDeclarationDir: true }),
     json({

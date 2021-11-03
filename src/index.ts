@@ -24,8 +24,14 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, Warnin
 
 
 // Structure
-export { AccessibleLinks, AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer} from "./library/structure/PageStructures";
+export { 
+    AccessibleLinks, AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, 
+    HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, 
+    NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, 
+    PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, 
+    SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer 
+} from "./library/structure/PageStructures";
 
 
 // Themes
-export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../src/themes/theme_generator';
+export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from "./themes/theme_generator";
