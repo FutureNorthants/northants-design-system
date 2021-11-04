@@ -9,7 +9,6 @@ export const AutocompleteInput = styled(StyledInput)`
     margin-bottom: 0px;
     border-bottom-left-radius: ${props => props.isOpen ? "0px" : "2px"};
     border-bottom-right-radius: ${props => props.isOpen ? "0px" : "2px"};
-    /* background: ${props => props.isOpen ? "red" : "2px"} */
 `;
 
 /**
