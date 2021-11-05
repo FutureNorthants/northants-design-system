@@ -6,6 +6,9 @@ import { StyledInput } from "../Input/Input.styles";
  */
 export const AutocompleteInput = styled(StyledInput)`
     width: 20rem;
+    margin-bottom: 0px;
+    border-bottom-left-radius: ${props => props.isOpen ? "0px" : "2px"};
+    border-bottom-right-radius: ${props => props.isOpen ? "0px" : "2px"};
 `;
 
 /**
@@ -14,7 +17,7 @@ export const AutocompleteInput = styled(StyledInput)`
 export const AutocompleteSuggestionList = styled.ul`
     width: 20.63rem;
     margin-left: 0rem;
-    margin-top: -1.6rem;
+    margin-top: -2px;
     font-family: ${props => props.theme.theme_vars.fontstack};
     border-radius: ${props => props.theme.theme_vars.border_radius};
     border: 2px solid ${props => props.theme.theme_vars.colours.black};
@@ -34,6 +37,10 @@ export const AutocompleteSuggestionItem = styled.li`
         background: ${props => props["aria-selected"] ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_light };    
     }
     color: ${props => props["aria-selected"] ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black };
+
+    &:last-of-type {
+        border-bottom: 0px;
+    }
 `;
 
 /**
