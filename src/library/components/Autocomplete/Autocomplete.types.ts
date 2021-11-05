@@ -1,9 +1,14 @@
 
 export interface AutocompleteProps {
     /**
+     * ID attribute of the Downshift control (subsidiary label/input/menu list get IDs based upon this)
+     */
+    id?: string;
+
+    /**
      * Name attribute of the input control
      */
-    name: string;
+    name?: string;
 
     /**
      * Text content of the label for the control

@@ -15,6 +15,9 @@ export default {
       actions: { argTypesRegex: '^on.*' }
     },
     argTypes: {
+      id: {
+        table: { category: "Component" }
+      },
       name: {
         table: { category: "Input control" }
       },
@@ -71,6 +74,7 @@ const CommonArgs = {
 export const Empty = Template.bind({});    
 Empty.args = {
   ...CommonArgs,
+  id: 'empty',
   name: 'Empty'
 }
 
@@ -80,6 +84,7 @@ Empty.args = {
 export const NoMatchingSuggestion = Template.bind({});    
 NoMatchingSuggestion.args = {
   ...CommonArgs,
+  id: 'changed',
   name: 'Changed',
   value: 'Banana',
 };
@@ -91,6 +96,7 @@ NoMatchingSuggestion.args = {
 export const DisplayingSuggestions = Template.bind({});    
 DisplayingSuggestions.args = {
   ...CommonArgs,
+  id: 'suggesting',
   name: 'Suggesting',
   value: 'Pe',
   showSuggestions: true
@@ -103,6 +109,7 @@ DisplayingSuggestions.args = {
 export const SuggestionChosen = Template.bind({});    
 SuggestionChosen.args = {
   ...CommonArgs,
+  id: 'suggested',
   name: 'Suggested',
   value: 'Peach',
 };

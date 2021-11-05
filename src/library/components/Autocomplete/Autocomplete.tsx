@@ -10,7 +10,8 @@ import Downshift from "downshift";
  * click on to select. If viewing in Storybook, try typing the name of a fruit in the story examples.
  */
 const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
-  name,
+  id = "autocomplete",
+  name = "autocomplete",
   labelText,
   value,
   placeholder,
@@ -27,7 +28,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    * without selecting a matching suggestion.
    */
   const [inputvalue, setInputValue] = useState(value);
-  
+
   /**
    * For component state changes that affect the input value, we copy the
    * value into our saved state, and fire the onSelect handler if the change
@@ -84,9 +85,10 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    * select box rather than an autocomplete and disallow inputs that don't match
    * a suggestion.
    */
+  
   return (
     <>
-      <Downshift onStateChange={handleStateChange} selectedItem={inputvalue ? inputvalue : ""} initialIsOpen={showSuggestions}> 
+      <Downshift id={id} labelId={id + "-label"} inputId={id + "-input"} menuId={id + "-menu"} onStateChange={handleStateChange} selectedItem={inputvalue ? inputvalue : ""} initialIsOpen={showSuggestions} > 
         {({
           getInputProps,
           getItemProps,
@@ -113,7 +115,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
             // can't rely just on isOpen or we can end up displaying an empty suggestions list
             isOpen && filteredsuggestions.length > 0 ?
               <Styles.AutocompleteSuggestionList {...getMenuProps({'aria-labelledby' : null})}
-                arial-label = "Suggestion"
+                aria-label = "Suggestion"
                 title = "Suggestion"
               >
                 {
