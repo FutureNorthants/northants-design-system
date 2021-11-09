@@ -58,6 +58,7 @@ export const Input = styled.input`
   width: 100%;
   box-sizing: border-box;
 
+
   &:focus {
     outline: none;
     border: 1px solid ${props => props.theme.theme_vars.colours.focus} !important;
@@ -75,6 +76,17 @@ export const Input = styled.input`
 
   .is-large & { 
     padding: 15px 80px 15px 15px;
+  }
+
+  &::placeholder {
+    color: #585656;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: #585656;
+  }
+  &::-ms-input-placeholder {
+    color: #585656;
   }
 `
 
