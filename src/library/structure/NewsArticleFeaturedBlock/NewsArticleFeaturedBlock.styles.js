@@ -98,13 +98,17 @@ export const ArticleContainer = styled.a`
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
     width: 100%;
     margin-right: 30px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     display: block;
     flex: 1;
     max-width: 50%;
+    min-width: 30%;
 
     &:nth-of-type(2n) {
         margin-right: 30px;
+    }
+    &:nth-of-type(3n) {
+        margin-right: 0;
     }
     &:last-of-type {
         margin-right: 0;
