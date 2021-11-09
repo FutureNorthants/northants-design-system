@@ -76,6 +76,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
                                     <Styles.ServiceIconLink 
                                         href={link.url} 
                                         title={link.title}
+                                        tabIndex="-1"
                                     >
                                         <Styles.PagelinkIcon className="service-icon">
                                             <DynamicComponent name={link.iconKey} isHover={false} />
