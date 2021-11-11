@@ -44,7 +44,7 @@ export const lb_vars_north = {
         negative: "#B73131",
     
         focus: "#E2CA76",
-
+        placeholder: "#585656",
         secondary: "#1A9DD9"
     },
     fontstack: "Arial, Helvetica, sans-serif",

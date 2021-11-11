@@ -45,7 +45,8 @@ export const lb_vars_west = {
         negative: "#9D0B1D",
 
         focus: "#E2CA76",
-
+        placeholder: "#585656",
+        
         secondary: "#6CC7E1"
     },
     fontstack: "Roboto, Helvetica, Arial, sans-serif",

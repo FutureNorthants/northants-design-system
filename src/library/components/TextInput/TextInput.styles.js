@@ -22,4 +22,16 @@ export const StyledTextInput = styled.input`
         box-shadow: ${props => props.theme.theme_vars.colours.focus} 0 0 0 3px;
         transition: box-shadow 0.3s ease 0s;
     }
+
+    &::placeholder {
+        color: ${props => props.theme.theme_vars.colours.placeholder};
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: ${props => props.theme.theme_vars.colours.placeholder};
+    }
+    &::-ms-input-placeholder {
+        color: ${props => props.theme.theme_vars.colours.placeholder};
+    }
+
 `

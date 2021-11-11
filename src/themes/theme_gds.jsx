@@ -37,7 +37,8 @@ export const gds_vars = {
         negative: "#d4351c",
     
         visited: "#4c2c92",
-        focus: "#fd0"
+        focus: "#fd0",
+        placeholder: "#585656"
     },
     fontstack: "GDS Transport, Helvetica, Arial, sans-serif",
     fontSizes: {

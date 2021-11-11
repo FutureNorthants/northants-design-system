@@ -44,6 +44,7 @@ export const north_vars = {
         negative: "#B73131",
 
         focus: "#E2CA76",
+        placeholder: "#585656",
 
         secondary: "#1A9DD9"
     },
