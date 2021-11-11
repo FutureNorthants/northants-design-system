@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import Searchbar from "./Searchbar";
@@ -13,53 +12,90 @@ export default {
         type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
       }
     },
+    argTypes: {
+        id: {
+          table: { category: "Input control" }
+        },
+        searchTerm: {
+          table: { category: "Input control" }
+        },
+        size: {
+          control: { 
+            type: 'number', min: 10, max: 200, step: 1
+          },
+          table: { category: "Input control" }
+        },
+        placeholder: {
+          table: { category: "Input control" }
+        },
+        isLight: {
+            table: { category: "Input control" }
+          },
+          isLarge: {
+            table: { category: "Input control" }
+        },
+        suggestions: {
+          table: { category: "Suggestions" }
+        },
+        minimumMatchLength: { 
+          control: { 
+            type: 'number', min: 1, max: 16, step: 1
+          },
+          table: { category: "Suggestions" }
+        },
+        submitInfo: {
+            table: { category: "Form submission" }
+        }
+    }
 };
 
-const submitInfo = [{
-    postTo: "/search",
-    params: {
-        type: "search"
+const CommonArgs = {
+    size: 43,
+    minimumMatchLength: 2,
+    suggestions : ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+    submitInfo: {
+        postTo: "/search",
+        params: {
+            type: "search"
+        }
     }
-}]
-
+}
 
 const Template: Story<SearchbarProps> = (args) => <SBPadding><Searchbar {...args} /></SBPadding>;
 
-export const ExampleSearchbarDefaultNorth = Template.bind({});    
+export const ExampleSearchbarDefaultNorth = Template.bind({});
 ExampleSearchbarDefaultNorth.parameters = {
     backgrounds: { default: 'north' }
 };
 ExampleSearchbarDefaultNorth.args = {
-    submitInfo
+    ...CommonArgs
 }
 
-export const ExampleSearchbarDefaultWest = Template.bind({});    
+export const ExampleSearchbarDefaultWest = Template.bind({});
 ExampleSearchbarDefaultWest.parameters = {
     backgrounds: { default: 'west' }
 };
 ExampleSearchbarDefaultWest.args = {
-    submitInfo
+    ...CommonArgs
 }
 
-
-export const ExampleSearchbarWhiteBackground = Template.bind({});    
+export const ExampleSearchbarWhiteBackground = Template.bind({});
 ExampleSearchbarWhiteBackground.args = {
-    isLight: true,
-    submitInfo
-};
+    ...CommonArgs, 
+    isLight: true    
+}
 
-
-export const ExampleSearchPage = Template.bind({});    
+export const ExampleSearchPage = Template.bind({});
 ExampleSearchPage.args = {
+    ...CommonArgs,
     isLight: true,
-    isLarge: true,
-    submitInfo
-};
+    isLarge: true
+}
 
-export const ExampleSearchPageWithTerm = Template.bind({});    
+export const ExampleSearchPageWithTerm = Template.bind({});
 ExampleSearchPageWithTerm.args = {
+    ...CommonArgs,
     isLight: true,
     isLarge: true,
-    searchTerm: "council tax",
-    submitInfo
-};
+    searchTerm: "council tax"
+}

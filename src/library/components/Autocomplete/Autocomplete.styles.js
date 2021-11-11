@@ -1,33 +1,41 @@
 import styled from "styled-components";
-import { StyledInput } from "../Input/Input.styles";
+import { StyledTextInput } from "../TextInput/TextInput.styles";
 
 /**
- * We reuse the normal Input control but just make it wider by default
+ * Just like TextInput bar a tweak
  */
-export const AutocompleteInput = styled(StyledInput)`
-    width: 20rem;
-    margin-bottom: 0px;
-    border-bottom-left-radius: ${props => props.isOpen ? "0px" : "2px"};
-    border-bottom-right-radius: ${props => props.isOpen ? "0px" : "2px"};
+export const AutocompleteTextInput = styled(StyledTextInput)`
+    /* square off lower corners if suggestions visible */
+    border-bottom-left-radius: ${props => props.isOpen ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
+    border-bottom-right-radius: ${props => props.isOpen ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
+`;
+
+export const AutocompleteLabel = styled.label`
+    font-family: ${props => props.theme.theme_vars.fontstack};
 `;
 
 /**
  * The list of suggestion items that displays when the user input turns up in any suggestions
  */
 export const AutocompleteSuggestionList = styled.ul`
-    width: 20.63rem;
-    margin-left: 0rem;
-    margin-top: -2px;
+    display: block;
+    width: auto;
     font-family: ${props => props.theme.theme_vars.fontstack};
-    border-radius: ${props => props.theme.theme_vars.border_radius};
+    border-radius: ${props => props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
     border: 2px solid ${props => props.theme.theme_vars.colours.black};
+    margin: -2px 0 0 0 !important; /* override higher level website css */
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 `;
 
 /**
  * Suggestion items that display within the suggestion list
  */
 export const AutocompleteSuggestionItem = styled.li`
-    padding: 0.5rem;
+    display: block;
+    width: auto;
+    padding: calc(${props => props.isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small} + 0.18rem) !important;
+    margin-bottom: 0 !important;
     cursor: pointer;
     border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey_dark};
     font-size: ${props => props.theme.theme_vars.fontSizes.small};
@@ -40,6 +48,13 @@ export const AutocompleteSuggestionItem = styled.li`
 
     &:last-of-type {
         border-bottom: 0px;
+    }
+
+    /* override bullet point styling in website */
+    &:before {
+        content: "" !important;
+        width: 0px !important;
+        height: 0px !important;
     }
 `;
 

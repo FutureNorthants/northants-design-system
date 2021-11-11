@@ -1,60 +1,93 @@
-
-import React, {useState} from "react";
-
+import React, {useState, useEffect} from "react";
 import { SearchbarProps } from "./Searchbar.types";
 import * as Styles from "./Searchbar.styles";
-
 import {handleParams} from './../../helpers/url-helpers.js';
-
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
-
 import { NewsArticleFilterFields } from "./../NewsArticleFilterAccordion/NewsArticleFilterAccordionText"
+import Autocomplete from "../../components/Autocomplete/Autocomplete";
 
-const Searchbar: React.FC<SearchbarProps> = ({placeholder, isLight, isLarge, searchTerm, submitInfo, id="search"}) => { 
+const Searchbar: React.FunctionComponent<SearchbarProps> = ({
+  placeholder = "Search",
+  isLight,
+  isLarge,
+  searchTerm = "",
+  submitInfo,
+  id = "search",
+  suggestions = [],
+  minimumMatchLength = 2
+}) => { 
+  let initialSearchTerm = searchTerm;
+  let [inputSearchTerm, setInputSearchTerm] = useState(initialSearchTerm);
+  let [submit, setSubmit] = useState(false);
 
-    let classes = '';
-    classes += (isLight) ? " is-light" : "";
-    classes += (isLarge) ? " is-large" : "";
+  /**
+   * An autocomplete suggestion item was selected, so kick off submission
+   * @param selectedValue string - suggestion text chosen
+   */
+  function handleSelect(selectedValue: string): void {
+    setInputSearchTerm(selectedValue);
+    setSubmit(true);
+  }
 
-  const {postTo, params} = submitInfo[0];
-  const initialValues = {searchTerm: (searchTerm === undefined) ? "" : searchTerm}
+  /**
+   * Contents of search input changed
+   * @param inputValue string - text input
+   */
+  function handleChange(inputValue: string): void {
+    setInputSearchTerm(inputValue);
+  }
 
+  /**
+   * Run after every render if the dependencies in the array change; we use this to check if submit 
+   * has been set to true and if so, we submit the search.
+   */
+  useEffect(
+    () => {
+      if (!submit) return;
+      setSubmit(false);
 
-  const [inputs, setInputs] = useState(initialValues);
+      let submitParams = submitInfo.params;
+      if (initialSearchTerm !== inputSearchTerm || !(NewsArticleFilterFields.search.queryParamKey in submitParams)) {
+        submitParams = {...submitParams, searchTerm: inputSearchTerm}
+        let keyValueFormat = Object.keys(submitParams).map(function(key) {
+            return {key, value: submitParams[key]};
+        });
+        handleParams(submitInfo.postTo, keyValueFormat, ["page"]);
+      }
+    }, 
+    [submit, submitInfo, initialSearchTerm, inputSearchTerm, handleParams] // dependencies that this function relies upon
+  );
+
+  /**
+   * Form submission event, kick off submission via the above post-render useEffect() hook by setting submit state to true
+   * @param event Event
+   */
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
-    let submitParams = params;
-
-    if(inputs.searchTerm !== searchTerm || !(NewsArticleFilterFields.search.queryParamKey in submitParams)) {
-      submitParams = {...submitParams, searchTerm: inputs.searchTerm}
-      let keyValueFormat = Object.keys(submitParams).map(function(key) {
-          return {key, value: submitParams[key]};
-      })
-      handleParams(postTo, keyValueFormat,["page"]);
-    }
+    setSubmit(true);
   }
 
-  const handleInputChange = (event) => {
-    event.persist();
-    setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
-  }
-
-    return (
-        <Styles.Container data-testid="Searchbar" className={classes}>
-            <Styles.Form onSubmit={handleSubmit}>
-                <Styles.Search role="search">
-                    <Styles.Label htmlFor={id}>{placeholder ? placeholder : 'Header site search'}</Styles.Label>
-                    <Styles.InputWrapper>
-                        <Styles.Input id={id} type="text" name={NewsArticleFilterFields.search.queryParamKey} placeholder={placeholder ? placeholder : 'Search'} onChange={handleInputChange}  value={inputs.searchTerm} />
-                        <Styles.Button type="submit" value="Search">
-                            <SearchIcon colourFill="#fff" />
-                            <Styles.ButtonText>Search</Styles.ButtonText>
-                        </Styles.Button>
-                    </Styles.InputWrapper>
-                </Styles.Search>
-            </Styles.Form>
-        </Styles.Container>
-    );
+  /**
+   * Render the component
+   */
+  return (
+    <Styles.Container data-testid="Searchbar" isLarge={isLarge}>
+        <form onSubmit={handleSubmit}>
+            <div role="search">
+                <Styles.Label htmlFor={id}>{placeholder}</Styles.Label>
+                <Styles.InputWrapper>
+                    <Autocomplete id={id} name={NewsArticleFilterFields.search.queryParamKey} placeholder={placeholder} 
+                                  onSelect={handleSelect} onChange={handleChange} value={inputSearchTerm} suggestions={suggestions} 
+                                  minimumMatchLength={minimumMatchLength} isLarge={isLarge} />
+                    <Styles.Button type="submit" value="Search" isLarge={isLarge} isLight={isLight}>
+                        <SearchIcon colourFill="#fff" />
+                        <Styles.ButtonText>Search</Styles.ButtonText>
+                    </Styles.Button>
+                </Styles.InputWrapper>
+            </div>
+        </form>
+    </Styles.Container>
+  );
 }
 
 export default Searchbar;

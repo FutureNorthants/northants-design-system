@@ -14,13 +14,16 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   name = "autocomplete",
   labelText,
   value,
+  size,
   placeholder,
   isErrored = false,
   errorText,
   suggestions = [],
   showSuggestions = false,
   minimumMatchLength = 2,
-  onSelect
+  isLarge = false,
+  onSelect,
+  onChange
 }) => {
 
   /**
@@ -36,12 +39,15 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    */
   function handleStateChange(changes: any, stateAndHelpers: object): void {
     if (changes.hasOwnProperty('selectedItem')) {
+      setInputValue(changes.selectedItem);
       if (onSelect) {
         onSelect(changes.selectedItem);
       }
-      setInputValue(changes.selectedItem);
     } else if (changes.hasOwnProperty('inputValue')) {
       setInputValue(changes.inputValue);
+      if (onChange) {
+        onChange(changes.inputValue);
+      }
     }
   }
 
@@ -85,7 +91,6 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    * select box rather than an autocomplete and disallow inputs that don't match
    * a suggestion.
    */
-  
   return (
     <>
       <Downshift id={id} labelId={id + "-label"} inputId={id + "-input"} menuId={id + "-menu"} onStateChange={handleStateChange} selectedItem={inputvalue ? inputvalue : ""} initialIsOpen={showSuggestions} > 
@@ -99,31 +104,42 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           getRootProps
         }) => (
           <div>
-            <label {...getLabelProps()}>{labelText}</label>
+            <Styles.AutocompleteLabel {...getLabelProps()}>{labelText}</Styles.AutocompleteLabel>
             {isErrored && errorText ? <ErrorText>{errorText}</ErrorText> : ""}
             <div
               {...getRootProps(undefined, { suppressRefError: true })}
             >
-              <Styles.AutocompleteInput {...getInputProps({ 
+              <Styles.AutocompleteTextInput {...getInputProps({ 
                 name: name,
+                value: inputValue,
                 placeholder: placeholder, 
                 isErrored: isErrored,
-                isOpen: isOpen
+                isOpen: isOpen && filteredsuggestions.length > 0,
+                isLarge: isLarge,
+                size: size
               })} />
             </div>
             {
             // can't rely just on isOpen or we can end up displaying an empty suggestions list
             isOpen && filteredsuggestions.length > 0 ?
-              <Styles.AutocompleteSuggestionList {...getMenuProps({'aria-labelledby' : null})}
-                aria-label = "Suggestion"
-                title = "Suggestion"
+              <Styles.AutocompleteSuggestionList {...getMenuProps({
+                'aria-labelledby' : null,
+                'aria-label' : "Suggestion",
+                title : "Suggestion"
+              })} isLarge={isLarge}
+
               >
                 {
                   // Here we are turning our filtered suggestions into list items
                   filteredsuggestions.map((item, index) => {
                     return (
                       <Styles.AutocompleteSuggestionItem
-                        {...getItemProps({ key: item, index, item })}
+                        {...getItemProps({ 
+                          key: item, 
+                          index: index,
+                          item: item
+                        })}
+                        isLarge={isLarge}
                       > 
                         { getItemTextChunks(item, inputValue) }
                       </Styles.AutocompleteSuggestionItem>

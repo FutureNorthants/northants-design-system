@@ -5,7 +5,7 @@ export const StyledInput = styled.input`
     margin-top: 0 !important;
     margin-bottom: 25px;
     padding: 5px;
-    border: 2px solid ${props => props.isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black};
+    border: solid ${props => props.isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black};
     border-width: ${props => props.isErrored ? "3px" : "2px"};
     border-radius: ${props => props.theme.theme_vars.border_radius};
     display: block;
@@ -17,6 +17,7 @@ export const StyledInput = styled.input`
     }
 `
 export const ErrorText = styled.p`
+    ${props => props.theme.fontStyles}
     color: ${props => props.theme.theme_vars.colours.negative};
     font-weight: bold;
     margin-bottom: 5px;

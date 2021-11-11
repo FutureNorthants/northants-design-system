@@ -46,7 +46,10 @@ export const gds_vars = {
         medium: "2em",
         large: "3em"
     },
+    border_width: "2px",
+    border_width_error: "3px",
     border_radius: "0px",
+    border_radius_large: "0px",
     spacingSizes: {
         extra_small: "5px",
         small: "10px",
