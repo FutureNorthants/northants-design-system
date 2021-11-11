@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ErrorText } from "./../Input/Input.styles";
 import { TextInputProps } from "./TextInput.types";
 import { StyledTextInput } from "./TextInput.styles";

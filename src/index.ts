@@ -7,8 +7,12 @@ import Pagination from "./library/components/Pagination/Pagination";
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import TextInput from './library/components/TextInput/TextInput';
 
-export { Autocomplete, Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks };
+export { 
+    Autocomplete, Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks,
+    TextInput 
+};
 
 
 // Slices

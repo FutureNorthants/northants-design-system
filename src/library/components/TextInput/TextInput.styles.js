@@ -34,4 +34,4 @@ export const StyledTextInput = styled.input`
         color: ${props => props.theme.theme_vars.colours.placeholder};
     }
 
-`
+`;
