@@ -48,7 +48,10 @@ export const AutocompleteSuggestionItem = styled.li`
 
     &:last-of-type {
         border-bottom: 0px;
-    }
+        /* round off the bottom corners to match the list itself, works ok for non-rounded theme too */
+        border-bottom-left-radius: calc(${props => props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius} - 2px);
+        border-bottom-right-radius: calc(${props => props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius} - 2px);
+        }
 
     /* override bullet point styling in website */
     &:before {
