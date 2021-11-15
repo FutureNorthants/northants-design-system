@@ -35,6 +35,11 @@ export interface SearchbarProps {
      minimumMatchLength?: number;
 
     /**
+     * The maximum number of matched suggestions shown in the dropdown list
+     */
+     maximumMatchesShown?: number;
+
+     /**
      * Where to post the form submission to and what params to use
      */
     submitInfo?: SubmitInfoProps;

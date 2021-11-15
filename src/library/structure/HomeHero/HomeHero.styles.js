@@ -62,7 +62,6 @@ export const MainBox = styled.div`
     -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.11);
     border-radius: 5px;
 
-
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
         max-width: calc(50% - 60px);
     }

@@ -60,6 +60,11 @@ export interface AutocompleteProps {
     minimumMatchLength?: number;
 
     /**
+     * The maximum number of matched suggestions shown in the dropdown list
+     */
+    maximumMatchesShown?: number;
+
+     /**
      * Callback function for when a suggestion is selected
      */
     onSelect?: (selectedValue: string) => void;

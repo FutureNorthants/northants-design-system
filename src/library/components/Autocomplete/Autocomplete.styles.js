@@ -18,7 +18,10 @@ export const AutocompleteLabel = styled.label`
  * The list of suggestion items that displays when the user input turns up in any suggestions
  */
 export const AutocompleteSuggestionList = styled.ul`
+    position: absolute;
+    max-width: 50%;
     display: block;
+    z-index: 1;
     width: auto;
     font-family: ${props => props.theme.theme_vars.fontstack};
     border-radius: ${props => props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};

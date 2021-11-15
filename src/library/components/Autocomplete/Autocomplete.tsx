@@ -21,6 +21,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   suggestions = [],
   showSuggestions = false,
   minimumMatchLength = 2,
+  maximumMatchesShown = 5,
   isLarge = false,
   onSelect,
   onChange
@@ -80,7 +81,13 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    */
   let filteredsuggestions = [];
   if (inputvalue && inputvalue.length >= minimumMatchLength) {
-    filteredsuggestions = suggestions.filter(item => item.toLowerCase().includes(inputvalue.toLowerCase()));
+    const input = inputvalue.toLowerCase();
+    for (const item of suggestions) {
+      if (item.toLowerCase().includes(input)) {
+        filteredsuggestions.push(item);
+      }
+      if (filteredsuggestions.length === maximumMatchesShown) break;
+    }
   } else {
     filteredsuggestions = [];
   }

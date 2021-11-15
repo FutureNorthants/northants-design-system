@@ -51,6 +51,12 @@ export default {
         },
         table: { category: "Suggestions" }
       },
+      maximumMatchesShown: { 
+        control: { 
+          type: 'number', min: 1, max: 200, step: 1
+        },
+        table: { category: "Suggestions" }
+      },
       isErrored: {
         table: { category: "Input control" }
       },
@@ -78,8 +84,8 @@ function onChangeStub(inputValue: string): void {
 
 const CommonArgs = {
   placeholder: 'Enter search text',
-  suggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwi is a hairy little fruit from New Zealand where they filmed Lord of the Rings and this expands nicely to fit on other lines', 
-    'Killer tomato', 'Kinetic energy weapon', 'Kid gloves', 'Kiora'],
+  suggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwifruit is a hairy little fruit from China and this expands nicely to fit on other lines', 
+    'Killer tomato', 'Kinetic energy weapon', 'Kid gloves', 'Kiora', 'Kidderminster'],
   minimumMatchLength: 2,
   onSelect: onSelectStub,
   onChange: onChangeStub

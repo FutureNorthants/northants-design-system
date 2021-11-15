@@ -43,6 +43,12 @@ export default {
           },
           table: { category: "Suggestions" }
         },
+        maximumMatchesShown: { 
+          control: { 
+            type: 'number', min: 1, max: 200, step: 1
+          },
+          table: { category: "Suggestions" }
+        },
         submitInfo: {
             table: { category: "Form submission" }
         }
