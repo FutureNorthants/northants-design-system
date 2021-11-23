@@ -1,50 +1,58 @@
-
 export interface SearchbarProps {
     /**
-     * Placeholder text
+     * ID passed to the Autocomplete component
      */
-    placeholder?: string;
-    /**
-     * Whether or not this is the light version of the search
-     */
-    isLight?: boolean
-    /**
-     * If its used on its own (eg search results page) then its slightly larger
-     */
-    isLarge?: boolean;
+    id?: string;
+
     /**
      * The searched for term
      */
     searchTerm?: string;
+
     /**
-     * 
+     * Placeholder text
      */
-    submitInfo: Array<SubmitInfoProps>;
+    placeholder?: string;
 
+    /**
+     * Whether or not this is the light version of the search
+     */
+    isLight?: boolean
 
-    id?: string;
+    /**
+     * If used on it's own (eg search results page) then will be slightly larger
+     */
+    isLarge?: boolean;
+
+    /**
+     * Array of suggestion strings for autocomplete input
+     */
+    suggestions?: string[];
+
+    /**
+     * The minimum number of characters that need to be typed before matches in the suggestions list are looked for
+     */
+     minimumMatchLength?: number;
+
+    /**
+     * The maximum number of matched suggestions shown in the dropdown list
+     */
+     maximumMatchesShown?: number;
+
+     /**
+     * Where to post the form submission to and what params to use
+     */
+    submitInfo?: SubmitInfoProps;
 }
 
 export interface SubmitInfoProps {
   /**
-   * where we're posting the form to eg /search or /news
+   * Where we're posting the form to eg /search or /news
    */
   postTo: string;
+
   /**
-   * combined
+   * Any additional parameters to send
    */
   params: object;
 }
-
-
-export interface ParamsProps {
-    /**
-     * where we're posting the form to eg /search or /news
-     */
-    key: string;
-    /**
-     * Link to page
-     */
-    value: string;
-  }
-  

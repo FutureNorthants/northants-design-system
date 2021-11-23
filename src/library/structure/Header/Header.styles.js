@@ -47,6 +47,7 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    overflow: visible;
 `
 
 const LogoStyles = `

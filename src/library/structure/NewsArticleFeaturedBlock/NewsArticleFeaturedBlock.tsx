@@ -5,7 +5,7 @@ import LazyImage from "react-lazy-progressive-image";
 import { NewsArticleFeaturedBlockProps } from "./NewsArticleFeaturedBlock.types";
 import * as Styles from "./NewsArticleFeaturedBlock.styles";
 import NewsArticleDate from "../NewsArticleDate/NewsArticleDate";
-import { Heading } from "../../..";
+import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 
 const NewsArticleFeaturedBlock: React.FC<NewsArticleFeaturedBlockProps> = ({ articles, withoutTitle = false, viewAllLink ="/" }) => {

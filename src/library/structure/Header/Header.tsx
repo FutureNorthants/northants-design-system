@@ -1,13 +1,10 @@
-
 import React from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { HeaderProps } from "./Header.types";
 import * as Styles from "./Header.styles";
 import GDSLogo from "../../components/logos/GDSLogo/logo";
 import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
-import WestColoured from "../../components/logos/WestColouredLogo/logo";
 import NorthWhite from "../../components/logos/NorthWhiteLogo/logo";
 import WestWhite from "../../components/logos/WestWhiteLogo/logo";
 import Searchbar from "../Searchbar/Searchbar";
@@ -15,12 +12,13 @@ import Searchbar from "../Searchbar/Searchbar";
 /**
  * The header that should appear at the top of every page.
  */
-const Header: React.FC<HeaderProps> = ({
+const Header: React.FunctionComponent<HeaderProps> = ({
   children,
   hideSearchBar = false,
   homeLink = "/",
   allServicesLink = "/",
   isHomepage = false,
+  searchSuggestions = [],
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
@@ -40,28 +38,23 @@ const Header: React.FC<HeaderProps> = ({
     if(is_memorial === true ) {
       switch(cardinal_name) {
         case "north":
-          return <Styles.LogoWhite><NorthWhite /></Styles.LogoWhite> 
-        break;
+          return <Styles.LogoWhite><NorthWhite /></Styles.LogoWhite>;
         case "west":
-          return  <Styles.LogoWhite><WestWhite /></Styles.LogoWhite> 
-        break;
+          return  <Styles.LogoWhite><WestWhite /></Styles.LogoWhite>;
         default:
-          return <Styles.LogoWhite><GDSLogo /></Styles.LogoWhite>
+          return <Styles.LogoWhite><GDSLogo /></Styles.LogoWhite>;
       }
     } else {
       switch(cardinal_name) {
         case "north":
-          return <Styles.LogoColoured><NorthColoured /></Styles.LogoColoured> 
-        break;
+          return <Styles.LogoColoured><NorthColoured /></Styles.LogoColoured>; 
         case "west":
-          return <Styles.LogoWhite><WestWhite /></Styles.LogoWhite> 
-        break;
+          return <Styles.LogoWhite><WestWhite /></Styles.LogoWhite>;
         default:
-          return <Styles.LogoColoured className="black_logo"><GDSLogo /></Styles.LogoColoured>
+          return <Styles.LogoColoured className="black_logo"><GDSLogo /></Styles.LogoColoured>;
       }
     }
   }
-
 
   return(
     <>
@@ -83,12 +76,13 @@ const Header: React.FC<HeaderProps> = ({
             <Styles.SearchWrapper>
                 <Searchbar 
                   isLight={themeContext.cardinal_name === "north" ? true : false} 
-                  submitInfo={[{
+                  submitInfo={{
                     postTo: "/search",
                     params: {
                         type: "search"
                     }
-                  }]}
+                  }}
+                  suggestions={searchSuggestions}
                 />
             </Styles.SearchWrapper>
           }
@@ -99,4 +93,3 @@ const Header: React.FC<HeaderProps> = ({
 )};
 
 export default Header;
-

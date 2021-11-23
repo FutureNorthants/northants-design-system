@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { ServicesLinksListProps } from "./ServicesLinksList.types";
 import * as Styles from "./ServicesLinksList.styles";
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Heading from "../../components/Heading/Heading";
-
 import serviceIcons from '../../components/icons/services/ServicesIcons';
 
 const ServicesLinksList: React.FC<ServicesLinksListProps> = ({ 
@@ -18,7 +16,6 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
 }) => { 
     const themeContext = useContext(ThemeContext);
     const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
-    // const originalOrderedArray = serviceLinksArray;
     const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
     const [open, setOpen] = useState(false);
     const [currentOrder, setCurrentOrder] = useLocalStorage((themeContext.cardinal_name + ("-savedOrder")), 0);
@@ -131,12 +128,11 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     );
 }
 
-
-
 function useLocalStorage(key, initialValue) {
     // State to store our value
     // Pass initial state function to useState so logic is only executed once
     const [storedValue, setStoredValue] = useState(() => {
+      if (typeof window === 'undefined') return initialValue; // e.g. at server-side build time
       try {
         // Get from local storage by key
         const item = window.localStorage.getItem(key);
@@ -152,6 +148,7 @@ function useLocalStorage(key, initialValue) {
     // Return a wrapped version of useState's setter function that ...
     // ... persists the new value to localStorage.
     const setValue = value => {
+      if (typeof window === 'undefined') return; // e.g. at server-side build time
       try {
         // Allow value to be a function so we have same API as useState
         const valueToStore =
@@ -170,4 +167,3 @@ function useLocalStorage(key, initialValue) {
   }
 
 export default ServicesLinksList;
-

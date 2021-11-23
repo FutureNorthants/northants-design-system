@@ -44,7 +44,7 @@ export const lb_vars_north = {
         negative: "#B73131",
     
         focus: "#E2CA76",
-
+        placeholder: "#585656",
         secondary: "#1A9DD9"
     },
     fontstack: "Arial, Helvetica, sans-serif",
@@ -54,7 +54,10 @@ export const lb_vars_north = {
         medium: "2em",
         large: "3em"
     },
+    border_width: "2px",
+    border_width_error: "3px",
     border_radius: "3px",
+    border_radius_large: "6px",
     spacingSizes: {
         extra_small: "5px",
         small: "10px",

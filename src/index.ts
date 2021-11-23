@@ -1,4 +1,5 @@
 // Components
+import Autocomplete from "./library/components/Autocomplete/Autocomplete";
 import Button from "./library/components/Button/Button";
 import Heading from "./library/components/Heading/Heading";
 import HeadingWithIcon from "./library/components/HeadingWithIcon/HeadingWithIcon";
@@ -6,8 +7,12 @@ import Pagination from "./library/components/Pagination/Pagination";
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import TextInput from './library/components/TextInput/TextInput';
 
-export { Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks };
+export { 
+    Autocomplete, Button, Heading, HeadingWithIcon, Pagination, CheckboxListFilter, DropDownFilter, PromotedLinks,
+    TextInput 
+};
 
 
 // Slices
@@ -23,8 +28,14 @@ export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, Warnin
 
 
 // Structure
-export { AccessibleLinks, AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer} from "./library/structure/PageStructures";
+export { 
+    AccessibleLinks, AlertBanner, AlertBannerService, Breadcrumbs, CookieBanner, Footer, Header, HomeHero, MemorialHero, 
+    HomeUnitarySection, DisplayDate, NewsArticleDate, NewsArticleImage, NewsArticleFilterAccordion, NewsArticleList, 
+    NewsArticleListHeader, NewsArticleOldBanner, NewsArticleFeaturedBlock, SkipToMainContent, PhaseBanner, PageMain, 
+    PageTitle, PageSidebar, PageWithSidebarContainer, PageWrapper, PromoBanner, Searchbar, SearchResultsList, SectionLinks, 
+    SectionLinksSidebar, SectionLinksMobileContents, ServicesLinksList, SignpostLinks, MaxWidthContainer 
+} from "./library/structure/PageStructures";
 
 
 // Themes
-export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../src/themes/theme_generator';
+export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from "./themes/theme_generator";
