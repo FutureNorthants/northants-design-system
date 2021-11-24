@@ -29,8 +29,8 @@
         "!Split sequence"
     ],
     "workbench.colorCustomizations": {
-        "activityBar.background": "#610314",
-        "titleBar.activeBackground": "#88041C",
+        "activityBar.background": "#036132",
+        "titleBar.activeBackground": "#048837",
         "titleBar.activeForeground": "#FFFBFC"
     }
 }
