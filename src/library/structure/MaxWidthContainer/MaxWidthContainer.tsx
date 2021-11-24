@@ -1,5 +1,4 @@
 import React from "react";
-
 import { MaxWidthContainerProps } from "./MaxWidthContainer.types";
 import * as Styles from "./MaxWidthContainer.styles";
 
@@ -11,11 +10,13 @@ const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   classes,
   noBackground = false,
   noPadding = false,
+  overflowVisible = false,
   ...props
 }) => (
   <Styles.Container noBackground={noBackground} noPadding={noPadding}>
     <Styles.MaxWidth 
       className={classes}
+      overflowVisible={overflowVisible}
       {...props}
     >
       {children}
@@ -24,4 +25,3 @@ const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
 );
 
 export default MaxWidthContainer;
-

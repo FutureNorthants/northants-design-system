@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
-
-
 const handleContainerPadding = (noBackground, noPadding) => {
-    if(noPadding || noBackground) {
+    if (noPadding || noBackground) {
         return 0
     } else {
         return "50px";
     }
-  };
-
+};
 
 export const Container = styled.div`
     background: ${props => props.noBackground ? "transparent" : 
@@ -22,7 +19,7 @@ export const MaxWidth = styled.div`
     ${props => props.theme.fontStyles}
     margin-right: 15px;
     margin-left: 15px;
-    overflow: hidden;
+    overflow: ${props => props.overflowVisible ? "visible" : "hidden"};
 
     pre {
         font-family: monospace;
