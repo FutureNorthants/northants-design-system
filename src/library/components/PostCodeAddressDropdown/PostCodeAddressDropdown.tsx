@@ -33,10 +33,10 @@ const PostCodeAddressDropdown: React.FC<PostCodeAddressDropdownProps> = () => {
     if(hasResults) {
         addresses = results.addresses.map((addr) => {
             return {
-                title: addr.DPA.ADDRESS,
+                title: addr.address,
                 // .split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + addr.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
-                value: addr.DPA.UPRN,
-                extra: addr.DPA
+                value: addr.uprn,
+                extra: addr
             }
         });
         addresses = [{ title: "Choose an address", value: 'choose-address'}, ...addresses]
@@ -55,31 +55,31 @@ const PostCodeAddressDropdown: React.FC<PostCodeAddressDropdownProps> = () => {
 
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Council tax band:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>D</Styles.AddressListValue>
+                                <Styles.AddressListValue>{currentAddress.extra.ctaxband}</Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Charge per year:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>£1,342</Styles.AddressListValue>
+                                <Styles.AddressListValue>{currentAddress.extra.ctaxamount}</Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Town/Parish:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>Hunsbury</Styles.AddressListValue>
+                                <Styles.AddressListValue>{currentAddress.extra.parish}</Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Address:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>{currentAddress.extra.ADDRESS}</Styles.AddressListValue>
+                                <Styles.AddressListValue>{currentAddress.extra.address}</Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Postcode:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>{currentAddress.extra.POSTCODE}</Styles.AddressListValue>
+                                <Styles.AddressListValue>{currentAddress.extra.postcode}</Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Area:</Styles.AddressListKey> 
-                                <Styles.AddressListValue><p>This address is in <strong>{currentAddress.extra.UNITARY_COUNCIL_NAME} Northamptonshire</strong>, in the <strong>{currentAddress.extra.SOVEREIGN_COUNCIL_NAME}</strong> area.</p></Styles.AddressListValue>
+                                <Styles.AddressListValue><p>This address is in <strong>{currentAddress.extra.unitary}</strong>, in the <strong>{currentAddress.extra.sovereign}</strong> area.</p></Styles.AddressListValue>
                             </Styles.AddressListRow>
                             <Styles.AddressListRow>
                                 <Styles.AddressListKey>Map:</Styles.AddressListKey> 
-                                <Styles.AddressListValue><a href={`https://www.google.com/maps/search/?api=1&query=${currentAddress.extra.LAT},${currentAddress.extra.LNG}`} target="_blank">View on google maps</a> (link opens in a new window)</Styles.AddressListValue>
+                                <Styles.AddressListValue><a href={`https://www.google.com/maps/search/?api=1&query=${currentAddress.extra.lat},${currentAddress.extra.lng}`} target="_blank">View on google maps</a> (link opens in a new window)</Styles.AddressListValue>
                             </Styles.AddressListRow>
 
                         </Styles.AddressList>

@@ -30,9 +30,9 @@ const PostCodeAddressTable: React.FC<PostCodeAddressTableProps> = () => {
                             {results.addresses.map((addr, i) => 
 
                                 <tr key={i}>
-                                <th scope="row">{addr.DPA.ADDRESS}</th>
-                                <td>A</td>
-                                <td>£1500.00</td>
+                                <th scope="row">{addr.address}</th>
+                                <td>{addr.ctaxband}</td>
+                                <td>{addr.ctaxamount}</td>
                                 </tr>                                                                  
                             )}
                            

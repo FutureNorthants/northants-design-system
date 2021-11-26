@@ -17,7 +17,7 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 
 // PostCodeAddressSearchApiKey
-import {PostCodeAddressSearchApiUrl} from '../../helpers/api-helpers';
+import {PostcodeSearchApiUrl} from '../../helpers/api-helpers';
 
 import {usePostcodeAddressContext} from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
@@ -91,13 +91,13 @@ const PostCodeAddressSearch: React.FC<PostCodeAddressSearchProps> = ({
     const checkPostcode = async (postcode) => {
       axios({
         method: "GET",
-        url: `${PostCodeAddressSearchApiUrl}${postcode.replace(/ /g,'')}`
+        url: `${PostcodeSearchApiUrl}${postcode.replace(/ /g,'')}`
         // headers: { 'x-api-key': `${PostCodeAddressSearchApiKey}` }
       })
       .then((response) => {
         setIsLoading(false);
         // num of unitary is whether its in north or west
-        if (response.data.numOfUnitary > 0) {
+        if (response.data.hasOwnProperty('unitaries') && response.data.unitaries.length > 0) {
           setResponseData(response.data)
           setResults(response.data)
         } else {
@@ -132,18 +132,18 @@ const PostCodeAddressSearch: React.FC<PostCodeAddressSearchProps> = ({
           setIsMultiple(true);
           responseData.addresses.map(address => {
             setAddressArray(addressArray => [...addressArray, {
-              title: address.DPA.ADDRESS.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
-              value: address.DPA.UPRN,
+              title: address.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
+              value: address.uprn,
               info: [{
                 numOfSovereign: 1,
                 sovereign: [{
-                  sovereignName: address.DPA.SOVEREIGN_COUNCIL_NAME,
-                  sovereignCode: address.DPA.SOVEREIGN_COUNCIL_CODE, 
+                  sovereignName: address.sovereign,
+                  // sovereignCode: address.SOVEREIGN_COUNCIL_CODE, 
                 }],
                 numOfUnitary: 1,
                 unitary: [{
-                  unitary: address.DPA.UNITARY_COUNCIL_NAME,
-                  unitaryCode: address.DPA.UNITARY_COUNCIL_CODE
+                  unitary: address.unitary,
+                  // unitaryCode: address.UNITARY_COUNCIL_CODE
                 }],
                 addresses: []                
               }] 

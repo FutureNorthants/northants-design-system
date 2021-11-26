@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { CouncilTaxParishPageExample, CouncilTaxParishPageExampleProps } from './CouncilTaxParishPageExample';
 
 export default {
-  title: 'Page Examples/Council Tax Prototypes/By Parish',
+  title: 'Page Examples/Council Tax By Parish',
   component: CouncilTaxParishPageExample,
   parameters: {
     status: {
@@ -16,6 +16,7 @@ export default {
 
 const Template: Story<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
 
-export const VersionD = Template.bind({});
-VersionD.args = {
+//version d
+export const AlphabeticalList = Template.bind({});
+AlphabeticalList.args = {
 }
