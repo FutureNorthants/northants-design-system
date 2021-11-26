@@ -79,7 +79,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
                 <Styles.InputWrapper>
                     <Autocomplete id={id} name={NewsArticleFilterFields.search.queryParamKey} placeholder={placeholder} 
                                   onSelect={handleSelect} onChange={handleChange} value={inputSearchTerm} suggestions={suggestions} 
-                                  minimumMatchLength={minimumMatchLength} maximumMatchesShown={maximumMatchesShown} isLarge={isLarge} />
+                                  minimumMatchLength={minimumMatchLength} maximumMatchesShown={maximumMatchesShown} isLarge={isLarge} hasAdjacentButton />
                     <Styles.Button type="submit" value="Search" isLarge={isLarge} isLight={isLight}>
                         <SearchIcon colourFill="#fff" />
                         <Styles.ButtonText>Search</Styles.ButtonText>
