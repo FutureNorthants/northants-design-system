@@ -18,7 +18,7 @@ import DropDownSelect from "../DropDownSelect/DropDownSelect";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 // PostCodeSearchApiKey
-import {PostCodeSearchApiUrl} from '../../helpers/api-helpers';
+import {PostcodeSearchApiUrl} from '../../helpers/api-helpers';
 
 /**
  * The functionality for searching for a postcode
@@ -43,12 +43,10 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
       numOfSovereign: 0,
       sovereign: [{
         sovereignName: "",
-        sovereignCode: 0 
       }],
       numOfUnitary: 0,
       unitary: [{
         unitary: "",
-        unitaryCode: 0
       }],
       addresses: []
     }
@@ -75,13 +73,30 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const checkPostcode = async (postcode) => {
       axios({
         method: "GET",
-        url: `${PostCodeSearchApiUrl}${postcode.replace(/ /g,'')}`
+        url: `${PostcodeSearchApiUrl}${postcode.replace(/ /g,'')}`
         // headers: { 'x-api-key': `${PostCodeSearchApiKey}` }
       })
       .then((response) => {
         setIsLoading(false);
-        if (response.data.numOfUnitary > 0) {
-          setResponseData(response.data)
+        // converting from the old api to the new one but easier to keep the old format
+
+        const numOfSovereign = response.data.hasOwnProperty('sovereigns') ? response.data.sovereigns.length : 0;
+        const sovereign = response.data.hasOwnProperty('sovereigns') ? response.data.sovereigns : [];
+        const numOfUnitary = response.data.hasOwnProperty('unitaries') ? response.data.unitaries.length : 0;
+        const unitary = response.data.hasOwnProperty('unitaries') ? response.data.unitaries : [];
+        const addresses = response.data.hasOwnProperty('addresses') ? response.data.addresses : [];
+
+        const responseData = {
+          numOfSovereign: numOfSovereign,
+          sovereign: sovereign,
+          numOfUnitary: numOfUnitary,
+          unitary: unitary,
+          addresses: addresses
+        };
+
+        if (responseData.numOfUnitary > 0) {
+          console.log(responseData);
+          setResponseData(responseData)
         } else {
           // console.log(response)
           handleError(true);
@@ -107,19 +122,20 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         if(responseData.numOfUnitary > 1) {
           setIsMultiple(true);
           responseData.addresses.map(address => {
+            // nn15ph
             setAddressArray(addressArray => [...addressArray, {
-              title: address.DPA.ADDRESS.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
-              value: address.DPA.UPRN,
+              title: address.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
+              value: address.uprn,
               info: [{
                 numOfSovereign: 1,
                 sovereign: [{
-                  sovereignName: address.DPA.SOVEREIGN_COUNCIL_NAME,
-                  sovereignCode: address.DPA.SOVEREIGN_COUNCIL_CODE, 
+                  sovereignName: address.sovereign,
+                  // sovereignCode: address.SOVEREIGN_COUNCIL_CODE, 
                 }],
                 numOfUnitary: 1,
                 unitary: [{
-                  unitary: address.DPA.UNITARY_COUNCIL_NAME,
-                  unitaryCode: address.DPA.UNITARY_COUNCIL_CODE
+                  unitary: address.unitary,
+                  // unitaryCode: address.UNITARY_COUNCIL_CODE
                 }],
                 addresses: []                
               }] 
@@ -182,10 +198,10 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                 :
                 isUnitary ? 
                   <div className="result">
-                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].name}</strong>, in the <strong>{responseData.sovereign[0].name}</strong> area.</p>
                       
-                      {themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
-                        <p>In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].unitary} Northamptonshire website.</a></p>
+                      {themeContext.theme_vars.cardinal_name !== responseData.unitary[0].name.toLowerCase() ?
+                        <p>In order to find the right information for you, please visit the <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">{responseData.unitary[0].name} website.</a></p>
                         :
                         <p>You are on the <strong>correct website for this postcode</strong>.</p>
                       }
@@ -193,12 +209,12 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                     <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                   </div>
                   :
-                  themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ?
+                  themeContext.theme_vars.cardinal_name !== responseData.unitary[0].name.toLowerCase() ?
                     <div className="result"> 
-                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].unitary} Northamptonshire</strong>, in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
-                      <p>In order to find the right information for you, please visit the {responseData.unitary[0].unitary} Northamptonshire website and find your local area ({responseData.sovereign[0].sovereignName}) for this service.</p>
+                      <p>This postcode <strong>{currentPostcode}</strong> is in <strong>{responseData.unitary[0].name}</strong>, in the <strong>{responseData.sovereign[0].name}</strong> area.</p>
+                      <p>In order to find the right information for you, please visit the {responseData.unitary[0].name} website and find your local area ({responseData.sovereign[0].name}) for this service.</p>
 
-                      <Button size="large" colourOverride={themeContext.theme_vars.other_council_action} text={"Go to " + (responseData.unitary[0].unitary) + " Northamptonshire's website"} url={otherCouncilLink} isExternal={true} />
+                      <Button size="large" colourOverride={themeContext.theme_vars.other_council_action} text={"Go to " + (responseData.unitary[0].name) + "'s website"} url={otherCouncilLink} isExternal={true} />
                       <br />
                       <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                     </div>
@@ -206,9 +222,9 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
                     <div className="result">
                       <p>The postcode <strong>{currentPostcode}</strong> is in the <strong>{responseData.sovereign[0].sovereignName}</strong> area.</p>
                       
-                      { signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode) && 
+                      {/* { signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode) && 
                         <Button size="large" text={"Go to " + responseData.sovereign[0].sovereignName} url={signPostLinks.find(link => link.sovereignCode === responseData.sovereign[0].sovereignCode).url} />
-                      }<br />
+                      }<br /> */}
                       <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                     </div>
                 }
