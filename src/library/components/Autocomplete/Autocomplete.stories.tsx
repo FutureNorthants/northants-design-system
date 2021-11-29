@@ -39,6 +39,9 @@ export default {
       isLarge: {
         table: { category: "Input control" }
       },
+      hasAdjacentButton: {
+        table: { category: "Input control" }
+      },
       suggestions: {
         table: { category: "Suggestions" }
       },

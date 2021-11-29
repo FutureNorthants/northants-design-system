@@ -5,9 +5,10 @@ import { StyledTextInput } from "../TextInput/TextInput.styles";
  * Just like TextInput bar a tweak
  */
 export const AutocompleteTextInput = styled(StyledTextInput)`
-    /* square off lower corners if suggestions visible */
+    /* right edge squared off if has a button adjacent, and lower corners squared if suggestions visible */
+    border-top-right-radius: ${props => props.hasAdjacentButton ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
     border-bottom-left-radius: ${props => props.isOpen ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
-    border-bottom-right-radius: ${props => props.isOpen ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
+    border-bottom-right-radius: ${props => props.hasAdjacentButton || props.isOpen ? "0px" : props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
 `;
 
 export const AutocompleteLabel = styled.label`
@@ -19,7 +20,6 @@ export const AutocompleteLabel = styled.label`
  */
 export const AutocompleteSuggestionList = styled.ul`
     position: absolute;
-    max-width: 50%;
     display: block;
     z-index: 1;
     width: auto;

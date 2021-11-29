@@ -35,6 +35,11 @@ export interface AutocompleteProps {
     isLarge?: boolean;
 
     /**
+     * Set to true if there will be a button adjacent on the right (affects right-hand border radii)
+     */
+    hasAdjacentButton?: boolean;
+
+    /**
      * Controls the input control's error state
      */
     isErrored?: boolean;

@@ -23,6 +23,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   minimumMatchLength = 2,
   maximumMatchesShown = 5,
   isLarge = false,
+  hasAdjacentButton = false,
   onSelect,
   onChange
 }) => {
@@ -123,6 +124,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                 isErrored: isErrored,
                 isOpen: isOpen && filteredsuggestions.length > 0,
                 isLarge: isLarge,
+                hasAdjacentButton: hasAdjacentButton,
                 size: size
               })} />
             </div>

@@ -34,11 +34,13 @@ export const Button = styled.button`
   background: ${props => props.isLight ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_darkest};
   color: ${props => props.theme.theme_vars.colours.white};
   border: 1px solid transparent;
+  border-top-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
+  border-bottom-right-radius: calc(${props => props.theme.theme_vars.border_radius} * 2);
   width: ${props => props.isLarge ? "5rem" : "3rem"};
   text-align: center;
   height: ${ props => props.isLarge ? "2.9rem" : "2.28rem"};
   @media screen and (min-width: ${ props => props.theme.theme_vars.breakpoints.m}) {
-    height: ${ props => props.isLarge ? "3.2rem" : "2.6rem"};
+    height: ${ props => props.isLarge ? "3.22rem" : "2.6rem"};
   }
 
   &:hover {

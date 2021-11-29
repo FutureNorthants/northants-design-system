@@ -46,8 +46,8 @@ export interface PromotedLinkProp {
   /**
    * The title of the link
    */
- 
   title: string;
+
   /**
    * The url of the link
    */

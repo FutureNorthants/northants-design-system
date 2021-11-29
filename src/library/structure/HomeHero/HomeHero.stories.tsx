@@ -1,4 +1,3 @@
-
 import React from "react";
 import HomeHero from "./HomeHero";
 import { HomeHeroProps } from "./HomeHero.types";
@@ -16,8 +15,33 @@ export default {
 
 const Template: Story<HomeHeroProps> = (args) => <HomeHero {...args}></HomeHero>;
 
-export const HeroHomeExample = Template.bind({});
-HeroHomeExample.args = {
+export const HomeHeroExample = Template.bind({});
+
+const CommonArgs = {
+    searchSuggestions: ['Apple', 'Orange', 'Lemon', 'Pear', 'Peach', 'Kiwifruit is a hairy little fruit from China and this expands nicely to fit on other lines', 
+    'Killer tomato', 'Kinetic energy weapon', 'Kid gloves', 'Kiora', 'Kidderminster'],
+    imagesArray: [
+        {
+            image1440x810: "http://placehold.it/1440x810",
+            image144x81: "http://placehold.it/144x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1340x810",
+            image144x81: "http://placehold.it/134x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1240x810",
+            image144x81: "http://placehold.it/124x81"
+        },
+        {
+            image1440x810: "http://placehold.it/1140x810",
+            image144x81: "http://placehold.it/114x81"
+        }
+    ]
+}
+
+
+HomeHeroExample.args = {
     promotedLinksArray: [
         {
             title: "Make a payment",
@@ -32,57 +56,23 @@ HeroHomeExample.args = {
             url: "/"
         }
     ],
-    imagesArray: [
-        {
-            image1440x810: "http://placehold.it/1440x810",
-            image144x81: "http://placehold.it/144x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1340x810",
-            image144x81: "http://placehold.it/134x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1240x810",
-            image144x81: "http://placehold.it/124x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1140x810",
-            image144x81: "http://placehold.it/114x81"
-        }
-    ]
+    ...CommonArgs
 };
 
 
-export const HeroHomeExample1Link = Template.bind({});
-HeroHomeExample1Link.args = {
+export const HomeHeroExample1Link = Template.bind({});
+HomeHeroExample1Link.args = {
     promotedLinksArray: [
         {
             title: "Make a payment",
             url: "/"
         }
     ],
-    imagesArray: [
-        {
-            image1440x810: "http://placehold.it/1440x810",
-            image144x81: "http://placehold.it/144x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1340x810",
-            image144x81: "http://placehold.it/134x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1240x810",
-            image144x81: "http://placehold.it/124x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1140x810",
-            image144x81: "http://placehold.it/114x81"
-        }
-    ]
+    ...CommonArgs
 };
 
-export const HeroHomeExample2Links = Template.bind({});
-HeroHomeExample2Links.args = {
+export const HomeHeroExample2Links = Template.bind({});
+HomeHeroExample2Links.args = {
     promotedLinksArray: [
         {
             title: "Coronavirus (COVID-19)",
@@ -93,28 +83,11 @@ HeroHomeExample2Links.args = {
             url: "/"
         }
     ],
-    imagesArray: [
-        {
-            image1440x810: "http://placehold.it/1440x810",
-            image144x81: "http://placehold.it/144x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1340x810",
-            image144x81: "http://placehold.it/134x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1240x810",
-            image144x81: "http://placehold.it/124x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1140x810",
-            image144x81: "http://placehold.it/114x81"
-        }
-    ]
+    ...CommonArgs
 };
 
-export const HeroHomeExample4Links = Template.bind({});
-HeroHomeExample4Links.args = {
+export const HomeHeroExample4Links = Template.bind({});
+HomeHeroExample4Links.args = {
     promotedLinksArray: [
         {
             title: "Coronavirus (COVID-19)",
@@ -133,47 +106,13 @@ HeroHomeExample4Links.args = {
             url: "/"
         }
     ],
-    imagesArray: [
-        {
-            image1440x810: "http://placehold.it/1440x810",
-            image144x81: "http://placehold.it/144x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1340x810",
-            image144x81: "http://placehold.it/134x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1240x810",
-            image144x81: "http://placehold.it/124x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1140x810",
-            image144x81: "http://placehold.it/114x81"
-        }
-    ]
+    ...CommonArgs
 };
 
 
-export const HeroHomeExample0Links = Template.bind({});
-HeroHomeExample0Links.args = {
+export const HomeHeroExample0Links = Template.bind({});
+HomeHeroExample0Links.args = {
     promotedLinksArray: [
     ],
-    imagesArray: [
-        {
-            image1440x810: "http://placehold.it/1440x810",
-            image144x81: "http://placehold.it/144x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1340x810",
-            image144x81: "http://placehold.it/134x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1240x810",
-            image144x81: "http://placehold.it/124x81"
-        },
-        {
-            image1440x810: "http://placehold.it/1140x810",
-            image144x81: "http://placehold.it/114x81"
-        }
-    ]
+    ...CommonArgs
 };
