@@ -62,6 +62,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
                       }
                     }}
                     suggestions={searchSuggestions}
+                    maximumMatchesShown={4}
                   />
                 </Styles.MainBox>
                 {promotedLinksArray.length > 0 && 
