@@ -27,10 +27,32 @@ export const PromoContainer = styled.a`
   text-decoration: none !important;
   font-weight: normal !important;
   margin-bottom: 15px;
-  ${props => props.theme.fontStyles}
+  ${props => props.theme.fontStyles};
 
   h2 {
     margin-top: 5px;
+  }
+  
+  /* style bold and italic elements within the content */
+  strong, b {
+    font-weight: bold;
+  }
+  em, i {
+    font-style: italic;
+  }
+  
+  /* style links within the content correctly */
+  a {
+    ${props => props.theme.linkStyles};
+  }
+  a:hover {
+    ${props => props.theme.linkStylesHover};
+  }
+  a:focus {
+    ${props => props.theme.linkStylesFocus};
+  }
+  a:active {
+    ${props => props.theme.linkStylesActive};
   }
 
   &:hover {
@@ -88,6 +110,7 @@ export const PromoContainer = styled.a`
 export const PromoContent = styled.div`
   padding: 15px;
   height: calc(100% - ${imageHeightMobile + 30}px);
+  ${props => props.theme.fontStyles};
 
   @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
     display: flex;
@@ -127,6 +150,7 @@ export const CallToAction = styled.a`
     display: inline-block;
     padding: 3px 7px;
     margin-left: -7px;
+    ${props => props.theme.linkStyles};
     ${PromoContainer}:hover & {
       ${props => props.theme.linkStylesHover};
     }
@@ -136,5 +160,4 @@ export const CallToAction = styled.a`
     ${PromoContainer}:active & {
       ${props => props.theme.linkStylesActive};
     }
-    ${props => props.theme.linkStyles};
 `
