@@ -95,9 +95,9 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.15.2",
-    "dompurify": "^2.3.3",
     "downshift": "^6.1.7",
     "html-react-parser": "^1.2.1",
-    "react-lazy-progressive-image": "^1.5.5"
+    "react-lazy-progressive-image": "^1.5.5",
+    "sanitize-html": "^2.6.0"
   }
 }
