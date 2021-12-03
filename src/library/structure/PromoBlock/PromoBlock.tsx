@@ -1,6 +1,5 @@
 import React from "react";
 import LazyImage from "react-lazy-progressive-image";
-import Heading from "../../components/Heading/Heading";
 import { PromoBlockProps } from "./PromoBlock.types";
 import * as Styles from "./PromoBlock.styles";
 
@@ -12,9 +11,9 @@ const PromoBlock: React.FunctionComponent<PromoBlockProps> = ({ promos }) => {
     if (promos && promos.length > 0) {
         return (
             <>
-                <Styles.Container>
+                <Styles.PromoTilesContainer>
                     {promos.map((promo, index) => 
-                    <Styles.PromoContainer key={promo.callToActionURL} href={promo.callToActionURL} >
+                    <Styles.PromoTile key={promo.callToActionURL} href={promo.callToActionURL} >
                         <LazyImage
                             src={promo.imageMedium}
                             placeholder={promo.imageSmall}
@@ -23,17 +22,17 @@ const PromoBlock: React.FunctionComponent<PromoBlockProps> = ({ promos }) => {
                             }}
                         >
                             {src => 
-                                <Styles.ImageContainer background={src} role="img" aria-label={promo.imageAltText ? promo.imageAltText : ""} />
+                                <Styles.PromoImage background={src} role="img" aria-label={promo.imageAltText ? promo.imageAltText : ""} />
                             }
                         </LazyImage>
-                        <Styles.PromoContent>
-                            <Heading text={promo.title} />
-                            <div dangerouslySetInnerHTML={{__html: promo.content}} />
-                            <Styles.CallToAction href={promo.callToActionURL}>{promo.callToActionText}</Styles.CallToAction>
-                        </Styles.PromoContent>
-                    </Styles.PromoContainer>
+                        <Styles.PromoText>
+                            <Styles.PromoHeadline level={3} text={promo.title} />
+                            <Styles.PromoContent dangerouslySetInnerHTML={{__html: promo.content}} />
+                            <Styles.PromoCallToAction>{promo.callToActionText}</Styles.PromoCallToAction>
+                        </Styles.PromoText>
+                    </Styles.PromoTile>
                     )}
-                </Styles.Container>
+                </Styles.PromoTilesContainer>
             </>
         )
     } else {
