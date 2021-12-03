@@ -6,7 +6,7 @@ export const promoData = {
   promos: [
     {
       title: "Go Northamptonshire!",
-      content: "Avoid the crowds and follow <strong>Go Northamptonshire</strong> for <em>staycation</em> inspiration this summer.",
+      content: "Avoid the <span onclick=\"alert('xss stopped by dompurify');\">crowds</span> and follow <strong>Go Northamptonshire</strong> for <em>staycation</em> inspiration this summer.",
       callToActionURL: "https://www.northamptonshiresurprise.com/go-northamptonshire",
       callToActionText: "Go Northamptonshire!",
       imageMedium: "https://via.placeholder.com/720x405.jpg/DDFFFF/000000/?text=Promo+1",
@@ -15,7 +15,7 @@ export const promoData = {
     },
     {
       title: "Flu vaccination",
-      content: "The flu vaccination is available every year on the <a href=\"https://www.nhs.uk\">NHS</a> to help protect people at risk of Flu and its complications.",
+      content: "<script>console.log('xss stopped by react')</script>The flu vaccination is available every year on the <a href=\"https://www.nhs.uk\">NHS</a> to help protect people at risk of Flu and its complications.",
       callToActionURL: "https://www.nhs.uk/conditions/vaccinations/flu-influenza-vaccine",
       callToActionText: "Jab me man, jab me",
       imageMedium: "https://via.placeholder.com/720x405/FFDDFF/000000/?text=Promo+2",

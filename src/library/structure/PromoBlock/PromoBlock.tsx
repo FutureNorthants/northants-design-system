@@ -2,6 +2,7 @@ import React from "react";
 import LazyImage from "react-lazy-progressive-image";
 import { PromoBlockProps } from "./PromoBlock.types";
 import * as Styles from "./PromoBlock.styles";
+import DOMPurify from "dompurify";
 
 /**
  * Promotional campaign block, showing a tile for each campaign, similar to news article featured block.
@@ -27,7 +28,7 @@ const PromoBlock: React.FunctionComponent<PromoBlockProps> = ({ promos }) => {
                         </LazyImage>
                         <Styles.PromoText>
                             <Styles.PromoHeadline level={3} text={promo.title} />
-                            <Styles.PromoContent dangerouslySetInnerHTML={{__html: promo.content}} />
+                            <Styles.PromoContent dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(promo.content)}} />
                             <Styles.PromoCallToAction>{promo.callToActionText}</Styles.PromoCallToAction>
                         </Styles.PromoText>
                     </Styles.PromoTile>
