@@ -72,7 +72,7 @@ export const Container = styled.main`
     // TABLE STYLES
     .table-container {
         max-width: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         table { 
             max-width: none;
@@ -83,7 +83,7 @@ export const Container = styled.main`
         border-collapse: collapse; 
         margin-bottom: 25px;
         max-width: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         caption {
             text-align: left;
