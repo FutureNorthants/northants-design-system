@@ -75,7 +75,6 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
     <Styles.Container data-testid="Searchbar" isLarge={isLarge}>
         <form onSubmit={handleSubmit}>
             <div role="search">
-                <Styles.Label htmlFor={id}>{placeholder}</Styles.Label>
                 <Styles.InputWrapper>
                     <Autocomplete id={id} name={NewsArticleFilterFields.search.queryParamKey} placeholder={placeholder} 
                                   onSelect={handleSelect} onChange={handleChange} value={inputSearchTerm} suggestions={suggestions} 
