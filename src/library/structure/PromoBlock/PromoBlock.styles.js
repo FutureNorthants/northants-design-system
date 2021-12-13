@@ -8,10 +8,11 @@ const imageHeightDesktop = 200;
  * Container for the 1-3 promo tiles
  */
 export const PromoTilesContainer = styled.div`
-  ${props => props.theme.fontStyles};
+  ${(props) => props.theme.fontStyles};
   padding: 15px 0;
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) =>
+      props.theme.theme_vars.breakpoints.s}) {
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
@@ -23,13 +24,16 @@ export const PromoTilesContainer = styled.div`
  * A promo tile, containing image and text area
  */
 export const PromoTile = styled.a`
-  background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light} !important;
+  background: ${(props) =>
+    props.theme.cardinal_name === "north"
+      ? props.theme.theme_vars.colours.white
+      : props.theme.theme_vars.colours.grey_light} !important;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   transition: box-shadow 0.3s ease;
-  border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action};
-  border-radius: ${props => props.theme.theme_vars.border_radius};
+  border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
   margin-bottom: 15px;
   overflow: hidden;
   display: block;
@@ -37,11 +41,11 @@ export const PromoTile = styled.a`
   /* we don't want all the text within the tile to look like a link */
   text-decoration: none !important;
   font-weight: normal !important;
-  ${props => props.theme.fontStyles};
-
+  ${(props) => props.theme.fontStyles};
 
   &:hover {
-    border-bottom: 5px solid ${props => props.theme.theme_vars.colours.action_dark};
+    border-bottom: 5px solid
+      ${(props) => props.theme.theme_vars.colours.action_dark};
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
@@ -49,7 +53,7 @@ export const PromoTile = styled.a`
 
   &:focus {
     outline: none;
-    border-bottom: 5px solid ${props => props.theme.theme_vars.colours.focus};
+    border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.focus};
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
@@ -59,19 +63,24 @@ export const PromoTile = styled.a`
     outline: none;
     transform: translateY(3px);
     border-bottom: 5px solid transparent;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
-    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
-    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${props => props.theme.theme_vars.colours.black}  !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
+      0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
+    -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
+      0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
+    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
+      0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
   }
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) =>
+      props.theme.theme_vars.breakpoints.s}) {
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
     width: 100%;
   }
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+  @media screen and (min-width: ${(props) =>
+      props.theme.theme_vars.breakpoints.m}) {
     width: 100%;
     margin-right: 30px;
     margin-bottom: 20px;
@@ -81,13 +90,13 @@ export const PromoTile = styled.a`
     min-width: 30%;
 
     &:nth-of-type(2n) {
-        margin-right: 30px;
+      margin-right: 30px;
     }
     &:nth-of-type(3n) {
-        margin-right: 0;
+      margin-right: 0;
     }
     &:last-of-type {
-        margin-right: 0;
+      margin-right: 0;
     }
   }
 `;
@@ -100,17 +109,19 @@ export const PromoImage = styled.span`
   width: 100%;
   height: ${imageHeightMobile}px;
   overflow: hidden;
-  background-image: url("${props => props.background}");
+  background-image: url("${(props) => props.background}");
   background-size: cover;
   background-position: center;
   justify-self: center;
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) =>
+    props.theme.theme_vars.breakpoints.s}){
     flex: 0 0 40%;  
     height: 100%;
     min-height: ${imageHeightMobile}px;
   }
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+  @media screen and (min-width: ${(props) =>
+    props.theme.theme_vars.breakpoints.m}){
     flex: none;
     height: ${imageHeightDesktop}px;
   }
@@ -122,9 +133,10 @@ export const PromoImage = styled.span`
 export const PromoText = styled.div`
   padding: 15px;
   height: calc(100% - ${imageHeightMobile + 30}px);
-  ${props => props.theme.fontStyles};
+  ${(props) => props.theme.fontStyles};
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) =>
+      props.theme.theme_vars.breakpoints.s}) {
     height: calc(100% - ${imageHeightDesktop + 30}px);
   }
 `;
@@ -141,45 +153,47 @@ export const PromoHeadline = styled(Heading)`
  */
 export const PromoContent = styled.div`
   /* re-style bold and italic elements within the content */
-  strong, b {
+  strong,
+  b {
     font-weight: bold;
   }
-  em, i {
+  em,
+  i {
     font-style: italic;
   }
 
   /* style links within the content correctly though ideally there won't be any */
   a {
-    ${props => props.theme.linkStyles};
+    ${(props) => props.theme.linkStyles};
   }
   a:hover {
-    ${props => props.theme.linkStylesHover};
+    ${(props) => props.theme.linkStylesHover};
   }
   a:focus {
-    ${props => props.theme.linkStylesFocus};
+    ${(props) => props.theme.linkStylesFocus};
   }
   a:active {
-    ${props => props.theme.linkStylesActive};
+    ${(props) => props.theme.linkStylesActive};
   }
 `;
 
 /**
- * The call to action text below the content; uses appropriate link styles from 
+ * The call to action text below the content; uses appropriate link styles from
  * the theme, but also varies appearance depending on parent PromoContainer's state.
  * Not using an actual <a> element as the whole promo tile is within one.
  */
 export const PromoCallToAction = styled.p`
-    margin-top: 10px;
-    padding: 3px 7px;
-    margin-left: -7px;
-    ${props => props.theme.linkStyles};
-    ${PromoTile}:hover & {
-      ${props => props.theme.linkStylesHover};
-    }
-    ${PromoTile}:focus & {
-      ${props => props.theme.linkStylesFocus};
-    }
-    ${PromoTile}:active & {
-      ${props => props.theme.linkStylesActive};
-    }
+  margin-top: 10px;
+  padding: 3px 7px;
+  margin-left: -7px;
+  ${(props) => props.theme.linkStyles};
+  ${PromoTile}:hover & {
+    ${(props) => props.theme.linkStylesHover};
+  }
+  ${PromoTile}:focus & {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  ${PromoTile}:active & {
+    ${(props) => props.theme.linkStylesActive};
+  }
 `;

@@ -1,26 +1,26 @@
 import React from "react";
-import { Story } from '@storybook/react/types-6-0';
+import { Story } from "@storybook/react/types-6-0";
 import PromoBlock from "./PromoBlock";
 import { PromoBlockProps } from "./PromoBlock.types";
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { promoData } from './PromoBlock.storydata';
+import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
+import { promoData } from "./PromoBlock.storydata";
 
 export default {
-    title: 'Library/Structure/Promo Block',
-    component: PromoBlock,
-    parameters: {
-      status: {
-        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-      }
+  title: "Library/Structure/Promo Block",
+  component: PromoBlock,
+  parameters: {
+    status: {
+      type: "stable", // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
-    argTypes: {
-      promos: {
-        table: { category: "Tiles" },
-        control: {
-          type: "object"
-        }
-      }
-    }
+  },
+  argTypes: {
+    promos: {
+      table: { category: "Tiles" },
+      control: {
+        type: "object",
+      },
+    },
+  },
 };
 
 /**
@@ -29,21 +29,25 @@ export default {
  * 1 should degrade to max 50% width. All full width on mobile.
  */
 
-const Template: Story<PromoBlockProps> = (args) => <MaxWidthContainer><PromoBlock {...args} /></MaxWidthContainer>;
+const Template: Story<PromoBlockProps> = (args) => (
+  <MaxWidthContainer>
+    <PromoBlock {...args} />
+  </MaxWidthContainer>
+);
 
 export const Example3Promos = Template.bind({});
 Example3Promos.args = {
-  promos: promoData.promos.slice(0, 3)
+  promos: promoData.promos.slice(0, 3),
 };
 
 export const Example2Promos = Template.bind({});
 Example2Promos.args = {
-  promos: promoData.promos.slice(0, 2)
+  promos: promoData.promos.slice(0, 2),
 };
 
 export const Example1Promo = Template.bind({});
 Example1Promo.args = {
-  promos: promoData.promos.slice(0, 1)
+  promos: promoData.promos.slice(0, 1),
 };
 
 export const ExampleNoPromos = Template.bind({});
