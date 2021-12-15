@@ -17,6 +17,8 @@ export const north_vars = {
     twitter_link: "https://twitter.com/NNorthantsC",
     linkedin_link: "https://www.linkedin.com/company/north-northamptonshire-council",
     facebook_link: "https://www.facebook.com/NorthNorthants",   
+    instagram_link: "https://www.instagram.com/northnorthantscouncil",
+
     breakpointsVals: {
         s: breakpointsVals.s,
         m: breakpointsVals.m, // tablets and larger

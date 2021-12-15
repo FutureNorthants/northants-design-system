@@ -18,6 +18,8 @@ export const lb_vars_west = {
     twitter_link: "https://twitter.com/WestNorthants",
     linkedin_link: "https://www.linkedin.com/company/west-northamptonshire-council",
     facebook_link: "https://www.facebook.com/WestNorthants",    
+    instagram_link: "https://www.instagram.com/westnorthants",
+
     breakpointsVals: {
         s: breakpointsVals.s,
         m: breakpointsVals.m, // tablets and larger

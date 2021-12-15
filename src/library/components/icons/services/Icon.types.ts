@@ -1,7 +1,6 @@
-
 export interface IconProps {
   /**
-   * What is this?
+   * Colour to fill the logo with
    */
   colourFill: string;
 }
