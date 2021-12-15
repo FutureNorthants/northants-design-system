@@ -16,7 +16,9 @@ export const lb_vars_north = {
     other_council_action: "#386193",
     twitter_link: "https://twitter.com/NNorthantsC",
     linkedin_link: "https://www.linkedin.com/company/north-northamptonshire-council",
-    facebook_link: "https://www.facebook.com/NorthNorthants",    
+    facebook_link: "https://www.facebook.com/NorthNorthants",
+    instagram_link: "https://www.instagram.com/northnorthantscouncil",
+
     breakpointsVals: {
         s: breakpointsVals.s,
         m: breakpointsVals.m, // tablets and larger
