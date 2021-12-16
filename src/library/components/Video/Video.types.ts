@@ -1,4 +1,3 @@
-
 export interface VideoProps {
   /**
    * The YouTube video id

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const VideoContainer = styled.figure`
   display: block;
@@ -14,5 +14,4 @@ export const VideoContainer = styled.figure`
     width: 100%;
     height: 100%;
   }
-`
-
+`;
