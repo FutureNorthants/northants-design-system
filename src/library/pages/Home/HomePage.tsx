@@ -3,26 +3,31 @@ import * as PageStructures from '../../structure/PageStructures';
 import AlertBanner from '../../structure/AlertBanner/AlertBanner';
 import HomeUnitarySection from '../../structure/HomeUnitarySection/HomeUnitarySection';
 import { newsArticleData } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlockData';
+import { promoData } from '../../structure/PromoBlock/PromoBlock.storydata';
+import { HeroImageProp } from '../../structure/HomeHero/HomeHero.types';
+import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
 export interface HomePageProps {
+  /**
+   * The number of promotional tiles (0 to 4 supported)
+   */
+  numberOfPromos: number;
+  
+  /**
+   * The number of news stories (0 to 9 supported)
+   */
+  numberOfNewsStories: number;
+
+  /**
+   * Hero images
+   */
   heroArray: Array<HeroImageProp>;
+
+  /**
+   * Service links
+   */
   servicesArray: Array<PageLinkProp>;
 }
-interface HeroImageProp {
-  /**
-   * The url of the image
-   */
-  image1440x810: string;
-  /**
-   * The url of the image in 10x smaller for lazy loading
-   */
-  image144x81: string;
-  /**
-   * Optional alt text for the image - this should only be included if the image contains content that is important to users and not purely decorative
-   */
-  imageAltText?: string;
-}
-
 
 const submitInfo = [{
   postTo: "/search",
@@ -32,8 +37,12 @@ const submitInfo = [{
 }]
 const AlertMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
 
-
-export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) => (
+/**
+ * An example home page layout constructed from the structures and components defined in the
+ * design system. The actual page layout is defined within the front end app and may be
+ * out of step with this example.
+ */
+export const HomePage: React.FunctionComponent<HomePageProps> = ({ numberOfPromos = 4, numberOfNewsStories = 3, heroArray, servicesArray }) => (
   <>
     <PageStructures.CookieBanner 
       title="We use cookies on this site to enhance your user experience"
@@ -45,9 +54,6 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
         var tag = document.createElement("script");
         tag.src = "https://www.googletagmanager.com/gtag/js?id=GTM_TRACKING_ID";
         document.getElementsByTagName("head")[0].appendChild(tag);
-
-
-
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -55,7 +61,6 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
         }
         gtag('js', new Date());
         gtag('config', '<%= ENV["GA_TRACKING_ID"] %>');
-
 
         (function (h, o, t, j, a, r) {
             h.hj = h.hj || function () {
@@ -71,11 +76,12 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-
     }}
   />
+  
   <AlertBanner title="Coronavirus (COVID-19)" uid="homealert" children={AlertMessage} />
-  <PageStructures.HomeHero 
+  
+  <PageStructures.HomeHero
     promotedLinksArray={[
         {
             title: "Make a payment",
@@ -98,23 +104,29 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
         <PageStructures.ServicesLinksList 
           serviceLinksArray={servicesArray}
         />
-        <PageStructures.PromoBanner 
-          title="Volunteer at a local Covid-19 vaccine centre"
-          ctaUrl="/"
-          ctaText="How to become a volunteer"
-          image1440x810="https://images.unsplash.com/photo-1612277795315-26dd8dcdc8a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-          image144x81="https://imgur.com/lIHCSwV.jpg"
-        >
-          <p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p>
-        </PageStructures.PromoBanner>
+        { numberOfPromos > 0 &&
+          <>
+            <PageStructures.PromoBanner
+              title="Volunteer at a local Covid-19 vaccine centre"
+              ctaUrl="/"
+              ctaText="How to become a volunteer"
+              image1440x810="https://images.unsplash.com/photo-1612277795315-26dd8dcdc8a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+              image144x81="https://imgur.com/lIHCSwV.jpg"
+            >
+              <p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p>
+            </PageStructures.PromoBanner>
+            <PageStructures.PromoBlock promos={promoData.promos.slice(0, numberOfPromos - 1)} />
+          </>
+        }
+
+        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles.slice(0, numberOfNewsStories)} viewAllLink="/news/" />
 
         <HomeUnitarySection />
 
-        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles} viewAllLink="/news/" />
-
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
-    <PageStructures.Footer 
+    
+    <PageStructures.Footer
       footerLinksArray={[
         {
           title: "About",
@@ -144,32 +156,3 @@ export const HomePage: React.FC<HomePageProps> = ({ heroArray, servicesArray }) 
     />
   </>
 );
-
-interface PageLinkProp {
-  /**
-  * Title of the page
-  */
-  title: string;
-  /**
-  * URL of the page
-  */
-  url: string;
-  /**
-  * URL of the svg icon for the service landing page
-  */
-  iconKey?: string;
-  /**
-  * Array of quick links for the service
-  */
- quickLinksArray: Array<QuickLinkProp>;
-}
-interface QuickLinkProp {
-/**
-* Title of the page
-*/
-title: string;
-/**
-* URL of the page
-*/
-url: string;
-}
