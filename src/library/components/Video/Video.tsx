@@ -1,17 +1,27 @@
 import React from 'react';
-
-import { VideoProps } from './Video.types';
+import { VideoProps, VideoProvider } from './Video.types';
 import * as Styles from './Video.styles';
 
-const Video: React.FC<VideoProps> = ({ youtube_id }) => (
+/**
+ * A responsive video embed for YouTube or Vimeo
+ * @param param0
+ * @returns
+ */
+const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider }) => (
   <Styles.VideoContainer data-testid="Video">
-    <iframe
-      src={`https://www.youtube.com/embed/${youtube_id}?rel=0`}
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    {provider == VideoProvider.YouTube && (
+      <iframe
+        src={`https://www.youtube.com/embed/${video_id}?rel=0`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
+      ></iframe>
+    )}
+    {provider == VideoProvider.Vimeo && (
+      <iframe
+        src={`https://player.vimeo.com/video/${video_id}`}
+        allow="autoplay; fullscreen; picture-in-picture; fullscreen"
+      ></iframe>
+    )}
   </Styles.VideoContainer>
 );
 

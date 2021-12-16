@@ -22,5 +22,12 @@ const Template: Story<VideoProps> = (args) => (
 
 export const YoutubeVideo = Template.bind({});
 YoutubeVideo.args = {
-  youtube_id: 'Hwmbn7nGMLw',
+  video_id: 'Hwmbn7nGMLw',
+  provider: 'YouTube',
+};
+
+export const VimeoVideo = Template.bind({});
+VimeoVideo.args = {
+  video_id: '94177065',
+  provider: 'Vimeo',
 };

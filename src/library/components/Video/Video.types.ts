@@ -1,6 +1,16 @@
 export interface VideoProps {
   /**
-   * The YouTube video id
+   * The unique video id
    */
-  youtube_id: string;
+  video_id: string;
+
+  /**
+   * The video streaming provider
+   */
+  provider: VideoProvider;
+}
+
+export enum VideoProvider {
+  YouTube = 'YouTube',
+  Vimeo = 'Vimeo',
 }
