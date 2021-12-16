@@ -6,6 +6,7 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
     "^.+\\.(js|jsx)$": "babel-jest",
+    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx",
   },
   testMatch: ["**/*.test.(ts|tsx)"],
   moduleNameMapper: {
