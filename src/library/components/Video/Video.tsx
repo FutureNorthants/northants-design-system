@@ -4,8 +4,6 @@ import * as Styles from './Video.styles';
 
 /**
  * A responsive video embed for YouTube or Vimeo
- * @param param0
- * @returns
  */
 const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider }) => (
   <Styles.VideoContainer data-testid="Video">
