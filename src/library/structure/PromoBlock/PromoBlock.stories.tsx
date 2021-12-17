@@ -3,7 +3,7 @@ import { Story } from "@storybook/react/types-6-0";
 import PromoBlock from "./PromoBlock";
 import { PromoBlockProps } from "./PromoBlock.types";
 import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
-import { promoData } from "./PromoBlock.storydata";
+import { PromoBlocksData } from "./PromoBlock.storydata";
 
 export default {
   title: "Library/Structure/Promo Block",
@@ -37,17 +37,17 @@ const Template: Story<PromoBlockProps> = (args) => (
 
 export const Example3Promos = Template.bind({});
 Example3Promos.args = {
-  promos: promoData.promos.slice(0, 3),
+  promos: PromoBlocksData.slice(0, 3),
 };
 
 export const Example2Promos = Template.bind({});
 Example2Promos.args = {
-  promos: promoData.promos.slice(0, 2),
+  promos: PromoBlocksData.slice(0, 2),
 };
 
 export const Example1Promo = Template.bind({});
 Example1Promo.args = {
-  promos: promoData.promos.slice(0, 1),
+  promos: PromoBlocksData.slice(0, 1),
 };
 
 export const ExampleNoPromos = Template.bind({});

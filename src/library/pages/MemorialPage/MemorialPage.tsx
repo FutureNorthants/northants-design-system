@@ -1,52 +1,10 @@
-import React from 'react';
-import * as PageStructures from '../../structure/PageStructures';
-import AlertBanner from '../../structure/AlertBanner/AlertBanner';
-import { newsArticleData } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlockData';
-import ServicesLinksList from "../../structure/ServicesLinksList/ServicesLinksList";
+import React from "react";
+import * as PageStructures from "../../structure/PageStructures";
+import { MemorialPageProps } from "./MemorialPage.types";
 import { ThemeProvider } from 'styled-components';
 import { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../../../themes/theme_generator';
-import { promoData } from '../../structure/PromoBlock/PromoBlock.storydata';
-import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
-export interface MemorialPageProps {
-  /**
-   * The number of promotional tiles (0 to 4 supported)
-   */
-   numberOfPromos: number;
-  
-   /**
-    * The number of news stories (0 to 9 supported)
-    */
-   numberOfNewsStories: number;
-
-   /**
-    * Service links
-    */
-   servicesArray: Array<PageLinkProp>;
-}
-
-const submitInfo = [{
-  postTo: "/search",
-  params: {
-      type: "search"
-  }
-}]
-const AlertMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
-
-const serviceLinksArray = [
-  {
-    title: "Condolence book", 
-    url: "/",
-    iconKey: "condolenceBook",
-    quickLinksArray: [
-      {
-        title: "Sign the condolence book and leave a tribute", 
-        url: "/",
-      }
-    ]
-  },
-];
-
+// hard-coded in the frontend page layout
 const councilServicesLinksArray = [
   {
     title: "Proceed to council services", 
@@ -54,46 +12,11 @@ const councilServicesLinksArray = [
   }
 ];
 
-const memorialServiceLinksArray = [
-  {
-    title: "The Royal Website", 
-    url: "/",
-    iconKey: "royalWebsite",
-    quickLinksArray: [
-      {
-        title: "Details and announcements of the funeral of ...", 
-        url: "/",
-      }
-    ]
-  },{
-    title: "Guidance for the Period of National Mourning", 
-    url: "/",
-    iconKey: "govUK",
-    quickLinksArray: [
-      {
-        title: "Information and key links regarding national mourning", 
-        url: "/",
-      }
-    ]
-  },{
-    title: "The Royal Website", 
-    url: "/",
-    iconKey: "royalWebsite",
-    quickLinksArray: [
-      {
-        title: "Details and announcements of the funeral of ...", 
-        url: "/",
-      }
-    ]
-  }
-];
-
 const ExampleMemorialHeroArgs = {
   src: "/hero-image.png",
   placeholder: "/hero-image-small.png",
   alt: "Image showing ...",
-  children: <ServicesLinksList hasBackground={true} hideHeader={true} serviceLinksArray={serviceLinksArray} oneCol={true} />,
-  councilServices: <ServicesLinksList oneCol={true} hasBackground={true} hideHeader={true} serviceLinksArray={councilServicesLinksArray} />,
+  councilServices: <PageStructures.ServicesLinksList oneCol={true} hasBackground={true} hideHeader={true} serviceLinksArray={councilServicesLinksArray} />,
   theme:  north_theme,
 };
 
@@ -102,7 +25,20 @@ const ExampleMemorialHeroArgs = {
  * in the design system. The actual page layout is defined within the front end app and may be
  * out of step with this example.
  */
- export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({ numberOfPromos = 4, numberOfNewsStories = 3, servicesArray }) => {
+ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
+  numberOfPromos = 4,
+  numberOfNewsStories = 3,
+  alertBannerTitle,
+  alertBannerContent,
+  condolenceLinksArray,
+  memorialServiceLinksArray,
+  servicesArray,
+  promoBannerData,
+  promoBannerContent,
+  promoBlocksArray,
+  newsArticlesArray,
+  footerLinksArray,
+}) => {
   return (
   <>
     <PageStructures.CookieBanner 
@@ -111,7 +47,6 @@ const ExampleMemorialHeroArgs = {
       acceptButtonText="Accept cookies policy"
       rejectButtonText= "No, thanks"
       acceptCallback={() => {
-        console.log('loading trackers');
         var tag = document.createElement("script");
         tag.src = "https://www.googletagmanager.com/gtag/js?id=<%= ENV[\"GTM_TRACKING_ID\"] %>";
         document.getElementsByTagName("head")[0].appendChild(tag);
@@ -140,17 +75,21 @@ const ExampleMemorialHeroArgs = {
 
     }}
   />
-  <AlertBanner title="Coronavirus (COVID-19)" uid="homealert" children={AlertMessage} />
+  <PageStructures.AlertBanner title={alertBannerTitle} uid="homealert">
+    {alertBannerContent}
+  </PageStructures.AlertBanner>
 
   <ThemeProvider theme={lb_theme_north}>
     <PageStructures.Header />
 
-    <PageStructures.MemorialHero {...ExampleMemorialHeroArgs} />
+      <PageStructures.MemorialHero {...ExampleMemorialHeroArgs } >
+        <PageStructures.ServicesLinksList hasBackground={true} hideHeader={true} serviceLinksArray={condolenceLinksArray} oneCol={true} />
+      </PageStructures.MemorialHero>
     
     <PageStructures.PageWrapper colour="grey_light">
       <PageStructures.MaxWidthContainer noBackground={true}>
-        <ServicesLinksList  hideHeader={true} serviceLinksArray={memorialServiceLinksArray}  /> 
-        <PageStructures.NewsArticleFeaturedBlock articles={newsArticleData.articles.slice(0, numberOfNewsStories)} viewAllLink="/news/" />
+        <PageStructures.ServicesLinksList hideHeader={true} serviceLinksArray={memorialServiceLinksArray}  /> 
+        <PageStructures.NewsArticleFeaturedBlock articles={newsArticlesArray.slice(0, numberOfNewsStories)} viewAllLink="/news/" />
       </PageStructures.MaxWidthContainer>
     </PageStructures.PageWrapper>
 
@@ -163,50 +102,22 @@ const ExampleMemorialHeroArgs = {
           { numberOfPromos > 0 &&
             <>
               <PageStructures.PromoBanner
-                title="Volunteer at a local Covid-19 vaccine centre"
-                ctaUrl="/"
-                ctaText="How to become a volunteer"
-                image1440x810="https://images.unsplash.com/photo-1612277795315-26dd8dcdc8a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                image144x81="https://imgur.com/lIHCSwV.jpg"
+                title={promoBannerData.title}
+                ctaUrl={promoBannerData.ctaUrl}
+                ctaText={promoBannerData.ctaText}
+                image1440x810={promoBannerData.image1440x810}
+                image144x81={promoBannerData.image144x81}
               >
-                <p>We’re looking for people to come forward and help deliver the Covid-19 vaccination programme in North Northamptonshire.</p>
+                {promoBannerContent}
               </PageStructures.PromoBanner>
-              <PageStructures.PromoBlock promos={promoData.promos.slice(0, numberOfPromos - 1)} />
+              <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
             </>
           }
 
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
       
-      <PageStructures.Footer
-        footerLinksArray={[
-          {
-            title: "About",
-            url: "/"
-          },
-          {
-            title: "Accessibility",
-            url: "/"
-          },
-          {
-            title: "Cookies",
-            url: "/"
-          },
-          {
-            title: "Contact us",
-            url: "/"
-          },
-          {
-            title: "Jobs",
-            url: "/"
-          },
-          {
-            title: "Newsletter",
-            url: "/"
-          }
-        ]}
-        />
+      <PageStructures.Footer footerLinksArray={footerLinksArray} />
     </ThemeProvider>
-  </>
-)
+  </>)
 };

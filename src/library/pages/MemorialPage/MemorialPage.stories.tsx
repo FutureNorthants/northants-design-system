@@ -1,7 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-
-import { MemorialPage, MemorialPageProps } from './MemorialPage';
+import { MemorialPage } from './MemorialPage';
+import { MemorialPageProps } from './MemorialPage.types';
+import { NewsArticleData } from "../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.storydata";
+import { PromoBlocksData } from "../../structure/PromoBlock/PromoBlock.storydata";
+import { PromoBannerData, PromoBannerContent } from '../../structure/PromoBanner/PromoBanner.storydata';
 
 export default {
   title: 'Page Examples/Memorial Page',
@@ -12,24 +15,61 @@ const Template: Story<MemorialPageProps> = (args) => <MemorialPage {...args} />;
 
 export const ExampleHome = Template.bind({});
 ExampleHome.args = {
-  heroArray: [
+  alertBannerTitle: "Coronavirus (COVID-19)",
+  alertBannerContent:
+    <p>
+      Coronavirus | National lockdown: stay at home.{" "}
+      <a href="/">Learn what this means for residents and workers here</a>
+    </p>,
+  
+  condolenceLinksArray: [
     {
-        image1440x810: "https://imgur.com/nzLuqda.jpg",
-        image144x81: "https://imgur.com/LPqROgx.jpg"
+      title: "Condolence book", 
+      url: "/",
+      iconKey: "condolenceBook",
+      quickLinksArray: [
+        {
+          title: "Sign the condolence book and leave a tribute", 
+          url: "/",
+        }
+      ]
     },
+  ],
+
+  memorialServiceLinksArray: [
     {
-        image1440x810: "https://imgur.com/KhSo1Cn.jpg",
-        image144x81: "https://imgur.com/Dr4Vetq.jpg"
-    },
-    {
-        image1440x810: "https://imgur.com/tRB8Ts7.jpg",
-        image144x81: "https://imgur.com/k5F2jSA.jpg"
-    },
-    {
-        image1440x810: "https://imgur.com/CwHigdL.jpg",
-        image144x81: "https://imgur.com/WVnsE7R.jpg"
+      title: "The Royal Website", 
+      url: "/",
+      iconKey: "royalWebsite",
+      quickLinksArray: [
+        {
+          title: "Details and announcements of the funeral of ...", 
+          url: "/",
+        }
+      ]
+    },{
+      title: "Guidance for the Period of National Mourning", 
+      url: "/",
+      iconKey: "govUK",
+      quickLinksArray: [
+        {
+          title: "Information and key links regarding national mourning", 
+          url: "/",
+        }
+      ]
+    },{
+      title: "The Royal Website", 
+      url: "/",
+      iconKey: "royalWebsite",
+      quickLinksArray: [
+        {
+          title: "Details and announcements of the funeral of ...", 
+          url: "/",
+        }
+      ]
     }
   ],
+
   servicesArray: [
     {
       title: "Coronavirus (Covid-19)", 
@@ -315,6 +355,39 @@ ExampleHome.args = {
           url: "/",
         }
       ]
+    }
+  ],
+  
+  newsArticlesArray: NewsArticleData,
+
+  promoBannerData: PromoBannerData,
+  promoBannerContent: PromoBannerContent,
+  promoBlocksArray: PromoBlocksData,
+
+  footerLinksArray: [
+    {
+      title: "About",
+      url: "/"
+    },
+    {
+      title: "Accessibility",
+      url: "/"
+    },
+    {
+      title: "Cookies",
+      url: "/"
+    },
+    {
+      title: "Contact us",
+      url: "/"
+    },
+    {
+      title: "Jobs",
+      url: "/"
+    },
+    {
+      title: "Newsletter",
+      url: "/"
     }
   ]
 }
