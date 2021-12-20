@@ -4,6 +4,7 @@ export const VideoContainer = styled.figure`
   display: block;
   padding-top: 56.25%;
   position: relative;
+  margin-bottom: 15px;
 
   iframe {
     position: absolute;
