@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import AlertBanner from "./AlertBanner";
@@ -15,8 +14,7 @@ export default {
 
 const childrenMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
 
-const Template: Story<AlertBannerProps> = (args) => <><AlertBanner {...args} /><br/><br/><p>Once this unique alert has been hidden it will not be showed again on this device.</p></>;
-
+const Template: Story<AlertBannerProps> = (args) => <><AlertBanner {...args} /><br/><br/><p>Once this unique alert has been hidden it will not be shown again on this device.</p></>;
 
 export const AlertBannerExampleAlert = Template.bind({});    
 AlertBannerExampleAlert.args = {
