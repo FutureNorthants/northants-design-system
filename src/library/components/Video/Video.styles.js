@@ -17,3 +17,21 @@ export const VideoContainer = styled.figure`
     border-style: none;
   }
 `;
+
+export const VideoLink = styled.a`
+  ${(props) => props.theme.fontStyles};
+  ${(props) => props.theme.linkStyles};
+  margin-bottom: 15px;
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
+`;
