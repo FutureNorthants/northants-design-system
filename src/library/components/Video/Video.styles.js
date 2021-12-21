@@ -22,6 +22,7 @@ export const VideoLink = styled.a`
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
   margin-bottom: 15px;
+  display: block;
 
   &:hover {
     ${(props) => props.theme.linkStylesHover};
