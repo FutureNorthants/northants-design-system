@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     overflow: hidden;
-    margin: 40px auto;
+    margin: 40px auto 5px auto;
     background: ${props => props.theme.cardinal_name === "north" ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light};
     margin-left: -15px;    
     width: calc(100% + 30px);
     border-bottom: 3px solid ${props => props.theme.theme_vars.colours.action};
 
     @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        margin: 60px auto;
-        margin-top: 40px;
         display: flex;
         -webkit-flex-direction: row;
         -moz-flex-direction: row;

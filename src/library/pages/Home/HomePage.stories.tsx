@@ -1,7 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-
-import { HomePage, HomePageProps } from './HomePage';
+import { HomePage } from './HomePage';
+import { HomePageProps } from './HomePage.types';
+import { NewsArticleData } from "../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.storydata";
+import { PromoBlocksData } from "../../structure/PromoBlock/PromoBlock.storydata";
+import { PromoBannerData, PromoBannerContent } from '../../structure/PromoBanner/PromoBanner.storydata';
 
 export default {
   title: 'Page Examples/Home Page',
@@ -17,6 +20,13 @@ const Template: Story<HomePageProps> = (args) => <HomePage {...args} />;
 
 export const ExampleHome = Template.bind({});
 ExampleHome.args = {
+  alertBannerTitle: "Coronavirus (COVID-19)",
+  alertBannerContent:
+    <p>
+      Coronavirus | National lockdown: stay at home.{" "}
+      <a href="/">Learn what this means for residents and workers here</a>
+    </p>,
+  
   heroArray: [
     {
         image1440x810: "https://imgur.com/nzLuqda.jpg",
@@ -35,6 +45,22 @@ ExampleHome.args = {
         image144x81: "https://imgur.com/WVnsE7R.jpg"
     }
   ],
+
+  promotedLinksArray: [
+    {
+        title: "Make a payment",
+        url: "/"
+    },
+    {
+        title: "Contact the council",
+        url: "/"
+    },
+    {
+        title: "About our new website",
+        url: "/"
+    }
+  ],
+
   servicesArray: [
     {
       title: "Coronavirus (Covid-19)", 
@@ -320,6 +346,39 @@ ExampleHome.args = {
           url: "/",
         }
       ]
+    }
+  ],
+  
+  newsArticlesArray: NewsArticleData,
+
+  promoBannerData: PromoBannerData,
+  promoBannerContent: PromoBannerContent,
+  promoBlocksArray: PromoBlocksData,
+
+  footerLinksArray: [
+    {
+      title: "About",
+      url: "/"
+    },
+    {
+      title: "Accessibility",
+      url: "/"
+    },
+    {
+      title: "Cookies",
+      url: "/"
+    },
+    {
+      title: "Contact us",
+      url: "/"
+    },
+    {
+      title: "Jobs",
+      url: "/"
+    },
+    {
+      title: "Newsletter",
+      url: "/"
     }
   ]
 }

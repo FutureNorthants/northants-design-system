@@ -1,10 +1,9 @@
-
 import React from "react";
 import { Story } from '@storybook/react/types-6-0';
 import NewsArticleFeaturedBlock from "./NewsArticleFeaturedBlock";
 import { NewsArticleFeaturedBlockProps } from "./NewsArticleFeaturedBlock.types";
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { newsArticleData } from './NewsArticleFeaturedBlockData';
+import { NewsArticleData } from './NewsArticleFeaturedBlock.storydata';
 
 export default {
     title: 'Library/Structure/News Article Featured Block',
@@ -16,12 +15,11 @@ export default {
     },
 };
 
-
 const Template: Story<NewsArticleFeaturedBlockProps> = (args) => <MaxWidthContainer><NewsArticleFeaturedBlock {...args} /></MaxWidthContainer>;
 
 export const ExampleNewsArticleFeaturedBlock = Template.bind({});    
 ExampleNewsArticleFeaturedBlock.args = {
-  articles: newsArticleData.articles,
+  articles: NewsArticleData,
   viewAllLink: "/"
 };
 
@@ -32,19 +30,17 @@ ExampleNoNewsArticleFeaturedBlock.args = {
 
 export const ExampleNoTitleOrButton = Template.bind({});    
 ExampleNoTitleOrButton.args = {
-  articles: newsArticleData.articles,
+  articles: NewsArticleData,
   withoutTitle: true,
   viewAllLink: ""
 };
 
-
 export const Example2Articles = Template.bind({});    
 Example2Articles.args = {
-  articles: newsArticleData.articles.slice(0, 2)
+  articles: NewsArticleData.slice(0, 2)
 };
 
 export const Example1Article = Template.bind({});    
 Example1Article.args = {
-  articles: newsArticleData.articles.slice(0, 1)
+  articles: NewsArticleData.slice(0, 1)
 };
-
