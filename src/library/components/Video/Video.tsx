@@ -48,6 +48,7 @@ const Video: React.FunctionComponent<VideoProps> = ({
             src={`https://www.youtube.com/embed/${video_id}?rel=0`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
+            data-testid="VideoIframe"
           ></iframe>
         </Styles.VideoContainer>
       )}
@@ -56,11 +57,12 @@ const Video: React.FunctionComponent<VideoProps> = ({
           <iframe
             src={`https://player.vimeo.com/video/${video_id}`}
             allow="autoplay; fullscreen; picture-in-picture; fullscreen"
+            data-testid="VideoIframe"
           ></iframe>
         </Styles.VideoContainer>
       )}
       {!cookiesAccepted && (
-        <Styles.VideoLink href={watchLink} title={description}>
+        <Styles.VideoLink href={watchLink} title={description} data-testid="VideoLink">
           {description}
         </Styles.VideoLink>
       )}
