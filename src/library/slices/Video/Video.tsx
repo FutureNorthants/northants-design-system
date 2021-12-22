@@ -6,56 +6,42 @@ import { cookieName, getCookie } from '../../structure/CookieBanner/CookieHelper
 /**
  * A responsive video embed for YouTube or Vimeo
  */
-const Video: React.FunctionComponent<VideoProps> = ({
-  video_id,
-  provider,
-  description,
-  allowCookies = false,
-  ...props
-}) => {
-  const [cookiesAccepted, setCookiesAccepted] = useState<boolean>(allowCookies);
-  const [watchLink, setWatchLink] = useState<string>('');
-
-  const defineWatchLink = () => {
-    if (provider == VideoProvider.YouTube) {
-      setWatchLink(`https://www.youtube.com/watch?v=${video_id}`);
-    }
-
-    if (provider == VideoProvider.Vimeo) {
-      setWatchLink(`https://vimeo.com/${video_id}`);
-    }
-  };
+const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, description, allowCookies, ...props }) => {
+  let cookiesAccepted: boolean = allowCookies;
+  let watchLink: string;
+  let embedLink: string;
 
   const checkCookie = () => {
     const myCookie = getCookie(cookieName);
 
-    if (myCookie !== null) {
-      setCookiesAccepted(myCookie.includes('"cookiesAccepted":true'));
+    if (myCookie !== null && allowCookies == null) {
+      cookiesAccepted = myCookie.includes('"cookiesAccepted":true');
     }
   };
 
-  useEffect(() => {
-    defineWatchLink();
-    checkCookie();
-  });
+  const defineLinks = () => {
+    if (provider == VideoProvider.YouTube) {
+      watchLink = `https://www.youtube.com/watch?v=${video_id}`;
+      embedLink = `https://www.youtube.com/embed/${video_id}?rel=0`;
+    }
+
+    if (provider == VideoProvider.Vimeo) {
+      watchLink = `https://vimeo.com/${video_id}`;
+      embedLink = `https://player.vimeo.com/video/${video_id}`;
+    }
+  };
+
+  checkCookie();
+  defineLinks();
 
   return (
     <>
-      {provider == VideoProvider.YouTube && cookiesAccepted && (
+      {cookiesAccepted && (
         <Styles.VideoContainer data-testid="Video">
           <iframe
-            src={`https://www.youtube.com/embed/${video_id}?rel=0`}
-            title="YouTube video player"
+            src={embedLink}
+            title={description}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
-            data-testid="VideoIframe"
-          ></iframe>
-        </Styles.VideoContainer>
-      )}
-      {provider == VideoProvider.Vimeo && cookiesAccepted && (
-        <Styles.VideoContainer data-testid="Video">
-          <iframe
-            src={`https://player.vimeo.com/video/${video_id}`}
-            allow="autoplay; fullscreen; picture-in-picture; fullscreen"
             data-testid="VideoIframe"
           ></iframe>
         </Styles.VideoContainer>

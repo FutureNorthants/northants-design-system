@@ -17,7 +17,7 @@ export interface VideoProps {
   /**
    * Allow overriding if cookies are allowed
    */
-  allowCookies: boolean;
+  allowCookies?: boolean;
 }
 
 export enum VideoProvider {
