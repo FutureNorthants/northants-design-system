@@ -5,7 +5,7 @@ import { VideoProps } from './Video.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Components/Video',
+  title: 'Library/Slices/Video',
   component: Video,
   parameters: {
     status: {

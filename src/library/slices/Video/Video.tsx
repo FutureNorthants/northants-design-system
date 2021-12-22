@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { VideoProps, VideoProvider } from './Video.types';
 import * as Styles from './Video.styles';
 import { cookieName, getCookie } from '../../structure/CookieBanner/CookieHelpers';
-import Button from '../Button/Button';
 
 /**
  * A responsive video embed for YouTube or Vimeo

@@ -8,7 +8,6 @@ import CheckboxListFilter from './library/components/CheckboxListFilter/Checkbox
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
 import TextInput from './library/components/TextInput/TextInput';
-import Video from './library/components/Video/Video';
 
 export {
   Autocomplete,
@@ -20,7 +19,6 @@ export {
   DropDownFilter,
   PromotedLinks,
   TextInput,
-  Video,
 };
 
 // Slices
@@ -29,10 +27,11 @@ import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
+import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
 
-export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, WarningText, WarningTextDisclaimer };
+export { Accordion, BlockQuote, CallToAction, Divider, DownloadableFiles, Video, WarningText, WarningTextDisclaimer };
 
 // Structure
 export {
