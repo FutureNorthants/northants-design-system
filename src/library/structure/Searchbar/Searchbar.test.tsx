@@ -60,15 +60,17 @@ describe("Searchbar", () => {
   it("should display the error state when no search term provided", () => {
     fireEvent.click(searchButton);
 
-    // #9D0B1D is west_theme colours.negative
-    expect(searchInput).toHaveStyle("border: solid #9D0B1D");
+    expect(searchInput).toHaveStyle(
+      `border: solid ${west_theme.theme_vars.colours.negative}`
+    );
   });
 
   it("should clear the error state when the user enters a search term", async () => {
     fireEvent.click(searchButton);
 
-    // #9D0B1D is west_theme colours.negative
-    expect(searchInput).toHaveStyle("border: solid #9D0B1D");
+    expect(searchInput).toHaveStyle(
+      `border: solid ${west_theme.theme_vars.colours.negative}`
+    );
 
     fireEvent.change(searchInput, { target: { value: "b" } });
 

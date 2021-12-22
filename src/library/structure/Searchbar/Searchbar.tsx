@@ -45,7 +45,10 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
    */
   useEffect(
     () => {
-      setIsErrored(false);
+      if (isErrored) {
+        setIsErrored(false);
+      }
+
       if (!submit) return;
       setSubmit(false);
 
@@ -72,7 +75,10 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
     if (event) event.preventDefault();
 
     if (inputSearchTerm == "") {
-      setIsErrored(true);
+      if (!isErrored) {
+        setIsErrored(true);
+      }
+
       return;
     }
 
