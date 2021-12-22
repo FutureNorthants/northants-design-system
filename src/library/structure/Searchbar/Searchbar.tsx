@@ -20,7 +20,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
   let initialSearchTerm = searchTerm;
   let [inputSearchTerm, setInputSearchTerm] = useState(initialSearchTerm);
   let [submit, setSubmit] = useState(false);
-  let [showMessage, setShowMessage] = useState(false);
+  let [isErrored, setIsErrored] = useState(false);
 
   /**
    * An autocomplete suggestion item was selected, so kick off submission
@@ -45,7 +45,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
    */
   useEffect(
     () => {
-      setShowMessage(false);
+      setIsErrored(false);
       if (!submit) return;
       setSubmit(false);
 
@@ -72,7 +72,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
     if (event) event.preventDefault();
 
     if (inputSearchTerm == "") {
-      setShowMessage(true);
+      setIsErrored(true);
       return;
     }
 
@@ -86,11 +86,6 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
     <Styles.Container data-testid="Searchbar" isLarge={isLarge}>
       <form onSubmit={handleSubmit}>
         <div role="search">
-          {showMessage && (
-            <Styles.SearchError data-testid="SearchError">
-              Enter a search term
-            </Styles.SearchError>
-          )}
           <Styles.InputWrapper>
             <Autocomplete
               id={id}
@@ -104,6 +99,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
               maximumMatchesShown={maximumMatchesShown}
               isLarge={isLarge}
               hasAdjacentButton
+              isErrored={isErrored}
             />
             <Styles.Button
               type="submit"

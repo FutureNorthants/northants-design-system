@@ -2,6 +2,7 @@ import React from "react";
 import {
   render,
   fireEvent,
+  getByPlaceholderText,
   getByRole,
   getByTestId,
   waitFor,
@@ -56,25 +57,21 @@ describe("Searchbar", () => {
     expect(listbox.children.length).toBe(1);
   });
 
-  it("should display the error message when no search term is provided", () => {
+  it("should display the error state when no search term provided", () => {
     fireEvent.click(searchButton);
-    const searchError: HTMLElement = getByTestId(component, "SearchError");
 
-    expect(searchError).toBeVisible();
-    expect(searchError.innerHTML).toBe("Enter a search term");
+    // #9D0B1D is west_theme colours.negative
+    expect(searchInput).toHaveStyle("border: solid #9D0B1D");
   });
 
-  it("should clear the error when the user enters a search term", async () => {
+  it("should clear the error state when the user enters a search term", async () => {
     fireEvent.click(searchButton);
 
-    expect(queryByText(component, "Enter a search term")).toBeInTheDocument();
+    // #9D0B1D is west_theme colours.negative
+    expect(searchInput).toHaveStyle("border: solid #9D0B1D");
 
     fireEvent.change(searchInput, { target: { value: "b" } });
 
-    await waitFor(() => {
-      expect(
-        queryByText(component, "Enter a search term")
-      ).not.toBeInTheDocument();
-    });
+    expect(searchInput).toHaveStyle("border: solid #000000");
   });
 });
