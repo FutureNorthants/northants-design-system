@@ -3,24 +3,24 @@ export interface HeroImageProps {
    * Headline text, optional
    */
   headline?: string;
-  
+
   /**
    * Any text after the headline and before the call to action, optional
    */
   content?: string;
-  
+
   /**
-   * URL of the hero image (1440x810)
+   * URL of the hero image (min 400pix high)
    */
   imageLarge: string;
 
   /**
-  * URL of the a smaller version of the image for lazy loading
-  */
+   * URL of the a smaller version of the image for lazy loading
+   */
   imageSmall: string;
 
   /**
-   * Optional alt text for the image - this should only be included if the image contains content that is important to users and not purely decorative
+   * Optional alt text for the image - ideally the image should be decorative only and not require a long description
    */
   imageAltText?: string;
 
@@ -35,7 +35,7 @@ export interface HeroImageProps {
   callToActionURL?: string;
 
   /**
-   * Set to true to sit the text and call to action on a white box
+   * Set to true to put the text and call to action on a white box, false to overlay on a darkened image
    */
   backgroundBox: boolean;
 }
