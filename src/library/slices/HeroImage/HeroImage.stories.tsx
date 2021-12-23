@@ -8,7 +8,33 @@ export default {
   component: HeroImage,
   parameters: {
     status: {
-      type: "beta", // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      type: "stable", // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
+  },
+  argTypes: {
+    headline: {
+      table: { category: "Text" },
+    },
+    content: {
+      table: { category: "Text" },
+    },
+    callToActionText: {
+      table: { category: "Link" },
+    },
+    callToActionURL: {
+      table: { category: "Link" },
+    },
+    backgroundBox: {
+      table: { category: "Presentation" },
+    },
+    imageLarge: {
+      table: { category: "Image" },
+    },
+    imageSmall: {
+      table: { category: "Image" },
+    },
+    imageAltText: {
+      table: { category: "Image" },
     },
   },
 };

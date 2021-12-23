@@ -32,8 +32,12 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
             image={src}
             loading={loading.toString()}
             backgroundBox={backgroundBox}
+            data-testid="HeroImage"
           >
-            <Styles.Overlay backgroundBox={backgroundBox}>
+            <Styles.Overlay
+              backgroundBox={backgroundBox}
+              data-testid="HeroImageOverlay"
+            >
               {headline && (
                 <Styles.Headline
                   level={1}
