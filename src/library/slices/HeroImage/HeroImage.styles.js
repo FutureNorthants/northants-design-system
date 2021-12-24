@@ -35,8 +35,25 @@ export const Overlay = styled.div`
     props.backgroundBox
       ? props.theme.theme_vars.colours.grey_light + "F2"
       : `transparent`};
+  box-shadow: ${(props) =>
+    props.backgroundBox
+      ? `0px -4px 0px 0px ` + props.theme.theme_vars.colours.action + ` inset, 0px 4px 15px rgba(0, 0, 0, 0.11)`
+      : `none`};
+
   border-radius: 5px;
+
+  /* default - phones */
   max-width: 70%;
+
+  /* tablets */
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    max-width: 50%;
+  }
+
+  /* desktop */
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+    max-width: 35%;
+  }
 `;
 
 export const Headline = styled(Heading)`
@@ -70,14 +87,6 @@ export const CallToActionLink = styled.a`
   &:hover,
   &:focus {
     text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5),
-      -2px 2px 4px rgba(100, 100, 100, 0.5),
-      2px -2px 4px rgba(100, 100, 100, 0.5),
-      -2px -2px 4px rgba(100, 100, 100, 0.5);
-    -moz-text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5),
-      -2px 2px 4px rgba(100, 100, 100, 0.5),
-      2px -2px 4px rgba(100, 100, 100, 0.5),
-      -2px -2px 4px rgba(100, 100, 100, 0.5);
-    -webkit-text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5),
       -2px 2px 4px rgba(100, 100, 100, 0.5),
       2px -2px 4px rgba(100, 100, 100, 0.5),
       -2px -2px 4px rgba(100, 100, 100, 0.5);
