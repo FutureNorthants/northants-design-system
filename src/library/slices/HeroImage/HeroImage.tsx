@@ -53,6 +53,9 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
               {callToActionURL && backgroundBox && (
                 <CallToAction url={callToActionURL} text={callToActionText} />
               )}
+              {!callToActionURL && backgroundBox && (
+                <br/>
+              )}
               {callToActionURL && !backgroundBox && (
                 <Styles.CallToActionLink href={callToActionURL}>
                   {callToActionText}
