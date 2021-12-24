@@ -7,7 +7,7 @@ import Heading from "../../components/Heading/Heading";
 export const Container = styled.div`
   background-image: ${(props) =>
     !props.backgroundBox
-      ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),`
+      ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),`
       : ``} url("${(props) => props.image}");
   height: 36.25%;
   min-height: 400px;
