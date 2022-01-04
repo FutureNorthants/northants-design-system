@@ -58,7 +58,7 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
               )}
               {callToActionURL && !backgroundBox && (
                 <Styles.CallToActionLink href={callToActionURL}>
-                  {callToActionText}
+                  {callToActionText ? callToActionText : 'Find out more'}
                 </Styles.CallToActionLink>
               )}
             </Styles.Overlay>

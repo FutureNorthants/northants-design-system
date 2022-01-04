@@ -86,6 +86,7 @@ export const CallToActionLink = styled.a`
 
   &:hover,
   &:focus {
+    text-decoration-style: dotted;
     text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5),
       -2px 2px 4px rgba(100, 100, 100, 0.5),
       2px -2px 4px rgba(100, 100, 100, 0.5),
