@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import { AccordionProps } from "./Accordion.types";
 import * as Styles from "./Accordion.styles";
-
 import AccordionSection from "./AccordionSection";
-
 import { uniqueID } from "./../../helpers/helpers";
 
-const Accordion: React.FC<AccordionProps> = ({
+const Accordion: React.FunctionComponent<AccordionProps> = ({
   sections,
   isFilter = false,
   withReadMore = true,
