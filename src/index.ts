@@ -1,13 +1,13 @@
 // Components
-import Autocomplete from "./library/components/Autocomplete/Autocomplete";
-import Button from "./library/components/Button/Button";
-import Heading from "./library/components/Heading/Heading";
-import HeadingWithIcon from "./library/components/HeadingWithIcon/HeadingWithIcon";
-import Pagination from "./library/components/Pagination/Pagination";
-import CheckboxListFilter from "./library/components/CheckboxListFilter/CheckboxListFilter";
-import DropDownFilter from "./library/components/DropDownFilter/DropDownFilter";
-import PromotedLinks from "./library/components/PromotedLinks/PromotedLinks";
-import TextInput from "./library/components/TextInput/TextInput";
+import Autocomplete from './library/components/Autocomplete/Autocomplete';
+import Button from './library/components/Button/Button';
+import Heading from './library/components/Heading/Heading';
+import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
+import Pagination from './library/components/Pagination/Pagination';
+import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
+import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
+import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import TextInput from './library/components/TextInput/TextInput';
 
 export {
   Autocomplete,
@@ -22,14 +22,15 @@ export {
 };
 
 // Slices
-import Accordion from "./library/slices/Accordion/Accordion";
-import BlockQuote from "./library/slices/BlockQuote/BlockQuote";
-import CallToAction from "./library/slices/CallToAction/CallToAction";
-import DownloadableFiles from "./library/slices/DownloadableFiles/DownloadableFiles";
-import Divider from "./library/slices/Divider/Divider";
-import HeroImage from "./library/slices/HeroImage/HeroImage";
-import WarningText from "./library/slices/WarningText/WarningText";
-import WarningTextDisclaimer from "./library/slices/WarningTextDisclaimer/WarningTextDisclaimer";
+import Accordion from './library/slices/Accordion/Accordion';
+import BlockQuote from './library/slices/BlockQuote/BlockQuote';
+import CallToAction from './library/slices/CallToAction/CallToAction';
+import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
+import Divider from './library/slices/Divider/Divider';
+import HeroImage from './library/slices/HeroImage/HeroImage';
+import Video from './library/slices/Video/Video';
+import WarningText from './library/slices/WarningText/WarningText';
+import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
 
 export {
   Accordion,
@@ -38,6 +39,7 @@ export {
   Divider,
   DownloadableFiles,
   HeroImage,
+  Video,
   WarningText,
   WarningTextDisclaimer,
 };
