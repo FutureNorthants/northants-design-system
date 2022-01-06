@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Documentation/Page Structure" />
 
@@ -9,6 +9,7 @@ In order to build a page there are several required components that need to be i
 The `SkipToMainContent` button is included within the `Header`
 
 At a minimum pages require the `Header` and `Footer` which surround all the page content, the page content then lives within a `MaxWidthContainer` and a `PageMain`.
+
 ```
 <Header />
 <MaxWidthContainer>
@@ -20,6 +21,7 @@ At a minimum pages require the `Header` and `Footer` which surround all the page
 ```
 
 The majority of pages other than the home page will also require a dedicated H1 title which is added using the component `Heading`, and also a breadcrumb trail `<PageStructures.Breadcrumbs />` which should be included within the page template like this:
+
 ```
 <Header />
 <MaxWidthContainer>
@@ -34,6 +36,7 @@ The majority of pages other than the home page will also require a dedicated H1 
 ```
 
 If you want to include a sidebar the page needs an additional wrapper called `PageWithSidebarContainer` which will include the `PageMain` and the `PageSidebar` components within it.
+
 ```
 <Header />
 <MaxWidthContainer>
@@ -41,7 +44,7 @@ If you want to include a sidebar the page needs an additional wrapper called `Pa
   <PageWithSidebarContainer>
     <PageMain>
       <Heading level={1} text="Page heading goes here" />
-      
+
       <!-- All page content goes here -->
     </PageMain>
 
@@ -52,4 +55,3 @@ If you want to include a sidebar the page needs an additional wrapper called `Pa
 </MaxWidthContainer>
 <Footer />
 ```
-
