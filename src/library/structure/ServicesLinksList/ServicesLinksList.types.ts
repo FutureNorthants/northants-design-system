@@ -1,4 +1,3 @@
-
 export interface ServicesLinksListProps {
   /**
    * An array of all the top level service landing pages
@@ -7,54 +6,58 @@ export interface ServicesLinksListProps {
   /**
    * Display a white background on each block
    */
-   hasBackground?: boolean; 
-   /**
+  hasBackground?: boolean;
+  /**
    * Hide the header
    */
-   hideHeader?: boolean;
-   /**
-    * Show everything in a single column
-    */
-   oneCol?: boolean;
-      /**
-    * Id of container
-    */
-   serviceId?: string;
+  hideHeader?: boolean;
+  /**
+   * Show everything in a single column
+   */
+  oneCol?: boolean;
+  /**
+   * Id of container
+   */
+  serviceId?: string;
+  /**
+   * Top and bottom padding
+   */
+  hasPadding?: boolean;
 }
 export interface PageLinkProp {
-    /**
-    * Title of the page
-    */
-    title: string;
-    /**
-    * URL of the page
-    */
-    url: string;
-    /**
-    * The key of the icon
-    */
-    iconKey?: string;
-    /**
-    * Array of quick links for the service
-    */
-   quickLinksArray?: Array<QuickLinkProp>;
+  /**
+   * Title of the page
+   */
+  title: string;
+  /**
+   * URL of the page
+   */
+  url: string;
+  /**
+   * The key of the icon
+   */
+  iconKey?: string;
+  /**
+   * Array of quick links for the service
+   */
+  quickLinksArray?: Array<QuickLinkProp>;
 }
 export interface QuickLinkProp {
   /**
-  * Title of the page
-  */
+   * Title of the page
+   */
   title: string;
   /**
-  * URL of the page
-  */
+   * URL of the page
+   */
   url: string;
 }
 
-export interface MemorialQuickLinkProp{
+export interface MemorialQuickLinkProp {
   /**
-    * The key of the icon
-    */
-   iconKey?: string;
-   link: Array<QuickLinkProp>;
-   summary: string;
+   * The key of the icon
+   */
+  iconKey?: string;
+  link: Array<QuickLinkProp>;
+  summary: string;
 }
