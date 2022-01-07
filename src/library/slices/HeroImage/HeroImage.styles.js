@@ -3,14 +3,15 @@ import Heading from "../../components/Heading/Heading";
 
 /**
  * Hero image container with optional dark gradient for non-box mode
+ * Optimised for an image in 16:5 ratio
  */
 export const Container = styled.div`
   background-image: ${(props) =>
     !props.backgroundBox
       ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),`
       : ``} url("${(props) => props.image}");
-  height: 36.25%;
-  min-height: 400px;
+  padding-top: 31.25%;
+  padding-bottom: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,7 +78,7 @@ export const Content = styled.div`
 export const CallToActionLink = styled.a`
   ${(props) => props.theme.fontStyles}
   text-decoration: underline;
-  color: ${(props) => props.theme.theme_vars.colours.white};
+  color: ${(props) => props.theme.theme_vars.colours.white} !important;
   width: 100%;
   padding: 0;
   margin-top: 10px;
@@ -87,10 +88,10 @@ export const CallToActionLink = styled.a`
   &:hover,
   &:focus {
     text-decoration-style: dotted;
-    text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.5),
-      -2px 2px 4px rgba(100, 100, 100, 0.5),
-      2px -2px 4px rgba(100, 100, 100, 0.5),
-      -2px -2px 4px rgba(100, 100, 100, 0.5);
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5),
+      -2px 2px 4px rgba(150, 150, 150, 0.5),
+      2px -2px 4px rgba(150, 150, 150, 0.5),
+      -2px -2px 4px rgba(150, 150, 150, 0.5);
   }
   &:active {
     transform: translate(3px);
