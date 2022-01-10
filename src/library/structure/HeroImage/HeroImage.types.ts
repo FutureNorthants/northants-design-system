@@ -1,6 +1,6 @@
 export interface HeroImageProps {
   /**
-   * Headline text, optional
+   * Headline text, optional. Intention to use page title if missing.
    */
   headline?: string;
 

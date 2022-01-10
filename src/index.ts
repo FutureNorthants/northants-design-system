@@ -27,7 +27,6 @@ import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
-import HeroImage from './library/slices/HeroImage/HeroImage';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
@@ -38,50 +37,13 @@ export {
   CallToAction,
   Divider,
   DownloadableFiles,
-  HeroImage,
   Video,
   WarningText,
   WarningTextDisclaimer,
 };
 
 // Structure
-export {
-  AccessibleLinks,
-  AlertBanner,
-  AlertBannerService,
-  Breadcrumbs,
-  CookieBanner,
-  Footer,
-  Header,
-  HomeHero,
-  MemorialHero,
-  HomeUnitarySection,
-  DisplayDate,
-  NewsArticleDate,
-  NewsArticleImage,
-  NewsArticleFilterAccordion,
-  NewsArticleList,
-  NewsArticleListHeader,
-  NewsArticleOldBanner,
-  NewsArticleFeaturedBlock,
-  SkipToMainContent,
-  PhaseBanner,
-  PageMain,
-  PageTitle,
-  PageSidebar,
-  PageWithSidebarContainer,
-  PageWrapper,
-  PromoBanner,
-  PromoBlock,
-  Searchbar,
-  SearchResultsList,
-  SectionLinks,
-  SectionLinksSidebar,
-  SectionLinksMobileContents,
-  ServicesLinksList,
-  SignpostLinks,
-  MaxWidthContainer,
-} from "./library/structure/PageStructures";
+export * from "./library/structure/PageStructures";
 
 // Themes
 export {
