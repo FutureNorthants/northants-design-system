@@ -141,7 +141,6 @@ const topServices: ServicesLinksListProps = {
   hideHeader: true,
   hasBackground: false,
   serviceId: 'bin-collection',
-  hasPadding: true,
   serviceLinksArray: [
     {
       title: 'Your bins and rubbish',
@@ -168,7 +167,6 @@ const sixTopServices: ServicesLinksListProps = {
   hideHeader: true,
   hasBackground: false,
   serviceId: 'bin-collection',
-  hasPadding: true,
   serviceLinksArray: [
     {
       title: 'Your bins and rubbish',

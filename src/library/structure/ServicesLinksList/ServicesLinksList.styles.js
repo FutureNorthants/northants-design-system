@@ -24,13 +24,6 @@ export const LinksList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  ${(props) =>
-    props.hasPadding &&
-    css`
-      padding: 60px 20px 31px;
-      background: ${(props) => props.theme.theme_vars.colours.grey_light};
-    `}
 `;
 
 export const PagelinkBlank = styled.div`

@@ -19,10 +19,6 @@ export interface ServicesLinksListProps {
    * Id of container
    */
   serviceId?: string;
-  /**
-   * Top and bottom padding
-   */
-  hasPadding?: boolean;
 }
 export interface PageLinkProp {
   /**

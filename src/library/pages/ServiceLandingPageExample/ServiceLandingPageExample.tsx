@@ -4,6 +4,7 @@ import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import SectionLinksMobileContents from '../../structure/SectionLinksMobileContents/SectionLinksMobileContents';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
 import ServicesLinksList from '../../structure/ServicesLinksList/ServicesLinksList';
+import FullWidthContainer from '../../structure/FullWidthContainer/FullWidthContainer';
 
 export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps> = ({
   title,
@@ -14,12 +15,17 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
 }) => (
   <>
     <PageStructures.Header />
+    {topServices && (
+      <FullWidthContainer noBackground={false} noPadding={false}>
+        <PageStructures.MaxWidthContainer noBackground={true} noPadding={true}>
+          <ServicesLinksList {...topServices} />
+        </PageStructures.MaxWidthContainer>
+      </FullWidthContainer>
+    )}
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
       <PageStructures.PageMain>
         <HeadingWithIcon level={1} text={title} icon="bins" />
-
-        {topServices && <ServicesLinksList {...topServices} />}
 
         {sections.length > 1 ? (
           <SectionLinksMobileContents

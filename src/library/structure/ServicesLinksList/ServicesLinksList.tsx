@@ -7,13 +7,12 @@ import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Heading from '../../components/Heading/Heading';
 import serviceIcons from '../../components/icons/services/ServicesIcons';
 
-const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
+const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   serviceLinksArray,
   hasBackground = false,
   hideHeader = false,
   oneCol = false,
   serviceId = 'all-services',
-  hasPadding = false,
 }) => {
   const themeContext = useContext(ThemeContext);
   const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -47,7 +46,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
     <>
       <Styles.Container id={serviceId} className={open && 'open'}>
         {!hideHeader && (
-          <Styles.HomeTitle>
+          <Styles.HomeTitle data-testid="servicesLinksListHeader">
             <Heading text="Council services" />
             <Styles.ReorderControl>
               Order services by
@@ -88,7 +87,7 @@ const ServicesLinksList: React.FC<ServicesLinksListProps> = ({
             </Styles.ReorderControl>
           </Styles.HomeTitle>
         )}
-        <Styles.LinksList hasPadding={hasPadding}>
+        <Styles.LinksList>
           {arrayOrdering.map((link, i) => (
             <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
               {link.iconKey && (
