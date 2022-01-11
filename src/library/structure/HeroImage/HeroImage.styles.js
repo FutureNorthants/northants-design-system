@@ -63,6 +63,19 @@ export const Headline = styled(Heading)`
     props.backgroundBox
       ? props.theme.theme_vars.colours.black
       : props.theme.theme_vars.colours.white};
+  
+  /* default - phones */
+  font-size: 22px;
+
+  /* tablets */
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+    font-size: 32px;
+  }
+
+  /* desktop */
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+    font-size: 44px;
+  }
 `;
 
 export const Content = styled.div`
