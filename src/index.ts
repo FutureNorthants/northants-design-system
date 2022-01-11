@@ -70,6 +70,7 @@ export {
   ServicesLinksList,
   SignpostLinks,
   MaxWidthContainer,
+  FullWidthContainer,
 } from './library/structure/PageStructures';
 
 // Themes
