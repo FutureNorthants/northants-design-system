@@ -26,10 +26,7 @@ export const Container = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-    width: 100%;
-    max-width: ${(props) => props.theme.theme_vars.breakpoints.m};
-  }
+  width: 100%;
 
   p {
     margin-bottom: 15px;

@@ -34,7 +34,10 @@ export const SignpostPageExample: React.FunctionComponent<SignpostPageExamplePro
         <PageStructures.PageMain>
           {showServiceAlert && (
             <AlertBannerService title="Example Service Alert" alertType="alert">
-              <p>This is an example alert</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit libero ligula iaculis, ad tempor penatibus varius
+                faucibus vulputate pharetra est ornare.
+              </p>
             </AlertBannerService>
           )}
 
