@@ -10,9 +10,14 @@ export interface AutocompleteProps {
     name?: string;
 
     /**
-     * Text content of the label for the control
+     * Text content of the label for the control, if empty will use placeholder
      */
     labelText?: string;
+
+    /**
+     * Whether label is hidden or not
+     */
+    labelHidden: boolean;
 
     /**
      * Default value of the input control

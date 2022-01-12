@@ -24,6 +24,9 @@ export default {
       labelText: {
         table: { category: "Input control" }
       },
+      labelHidden: {
+        table: { category: "Input control" }
+      },
       value: {
         table: { category: "Input control" }
       },
@@ -99,22 +102,25 @@ const Template: Story<AutocompleteProps> = (args) => <SBPadding><div style={{wid
 /**
  * Empty, i.e. default state of the Autocomplete component
  */
-export const Empty = Template.bind({});    
-Empty.args = {
+export const EmptyWithHiddenLabel = Template.bind({});    
+EmptyWithHiddenLabel.args = {
   ...CommonArgs,
   id: 'empty',
-  name: 'Empty'
+  name: 'Empty',
+  labelHidden: true,
 }
 
 /**
  * Autocomplete component with some text entered that doesn't match any suggestion
  */
-export const NoMatchingSuggestionEnlarged = Template.bind({});    
-NoMatchingSuggestionEnlarged.args = {
+export const NoMatchingSuggestionEnlargedWithHiddenLabel = Template.bind({});    
+NoMatchingSuggestionEnlargedWithHiddenLabel.args = {
   ...CommonArgs,
   id: 'changed',
   name: 'Changed',
-  value: 'Banana'
+  value: 'Banana',
+  isLarge: true,
+  labelHidden : true,
 };
 
 /**

@@ -13,6 +13,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   id = "autocomplete",
   name = "autocomplete",
   labelText,
+  labelHidden = false,
   value,
   size,
   placeholder,
@@ -112,7 +113,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
           getRootProps
         }) => (
           <div>
-            <Styles.AutocompleteLabel {...getLabelProps()}>{labelText}</Styles.AutocompleteLabel>
+            <Styles.AutocompleteLabel {...getLabelProps()} labelHidden={labelHidden}>{labelText ? labelText : placeholder }</Styles.AutocompleteLabel>
             {isErrored && errorText ? <ErrorText>{errorText}</ErrorText> : ""}
             <div
               {...getRootProps(undefined, { suppressRefError: true })}
