@@ -3,14 +3,20 @@ import Heading from "../../components/Heading/Heading";
 
 /**
  * Hero image container with optional dark gradient for non-box mode
- * Optimised for an image in 16:5 ratio
+ * Optimised for an image in 16:5 ratio on all but small width screens
  */
 export const Container = styled.div`
   background-image: ${(props) =>
     !props.backgroundBox
       ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),`
       : ``} url("${(props) => props.image}");
-  padding-top: 31.25%;
+  
+  /* phones */
+  padding-top: 90%;
+  /* everything else */
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    padding-top: 31.25%;
+  }
   padding-bottom: 10px;
   background-position: center;
   background-repeat: no-repeat;

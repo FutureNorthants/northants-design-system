@@ -44,3 +44,20 @@ MicroSiteExample.args = {
   sections: sections.slice(0, 1),
   footerLinks,
 };
+
+export const MicroSiteBoxedExample = Template.bind({});
+MicroSiteBoxedExample.args = {
+  title: 'Northamptonshire Country Parks',
+  heroImage: { 
+    ...HeroImageExampleMicroSiteData,
+    callToActionText: '...google It!',
+    callToActionURL: 'https://www.google.com',
+    content: "<p>They're wicked innit, don't just believe us...</p>",
+    backgroundBox: true, 
+  }, // empty headline in this overriden by title above
+  breadcrumbsArray: breadcrumbs,
+  bodyText:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  sections: sections.slice(0, 1),
+  footerLinks,
+};
