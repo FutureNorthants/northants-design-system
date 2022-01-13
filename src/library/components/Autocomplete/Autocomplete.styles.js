@@ -27,15 +27,9 @@ export const AutocompleteTextInput = styled(StyledTextInput)`
       : props.theme.theme_vars.border_radius};
 `;
 
-const hideLabel = props => {
-  if (props.labelHidden === true) {
-    return VisuallyHidden;
-  }
-}
-
 export const AutocompleteLabel = styled.label`
-  font-family: ${props => props.theme.theme_vars.fontstack};
-  ${props => hideLabel}
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  ${(props) => (props.hasHiddenLabel ? VisuallyHidden : 'display: inline-block; padding-bottom: 10px')}
 `;
 
 /**

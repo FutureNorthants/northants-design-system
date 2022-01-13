@@ -106,7 +106,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
               isLarge={isLarge}
               hasAdjacentButton
               isErrored={isErrored}
-              labelHidden={true}
+              hasHiddenLabel={true}
             />
             <Styles.Button
               type="submit"
