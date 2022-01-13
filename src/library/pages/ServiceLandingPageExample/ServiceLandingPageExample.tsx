@@ -16,6 +16,13 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
   <>
     <PageStructures.Header />
 
+    <PageStructures.MaxWidthContainer>
+      <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
+      <PageStructures.PageMain>
+        <HeadingWithIcon level={1} text={title} icon="bins" />
+      </PageStructures.PageMain>
+    </PageStructures.MaxWidthContainer>
+
     {topServices && (
       <FullWidthContainer hasBackground={true} hasPadding={true}>
         <PageStructures.MaxWidthContainer noBackground={true} noPadding={true}>
@@ -25,10 +32,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
     )}
 
     <PageStructures.MaxWidthContainer>
-      <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
       <PageStructures.PageMain>
-        <HeadingWithIcon level={1} text={title} icon="bins" />
-
         {sections.length > 1 ? (
           <SectionLinksMobileContents
             sectionLinksArray={sections.map((section) => ({ id: section.sectionSlug, title: section.sectionTitle }))}
