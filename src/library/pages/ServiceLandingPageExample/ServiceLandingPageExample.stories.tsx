@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { ServiceLandingPageExample } from './ServiceLandingPageExample';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
 import { HeroImageExampleMicroSiteData } from '../../structure/HeroImage/HeroImage.storydata';
-import { sections, breadcrumbs, footerLinks } from './ServiceLandingPageExample.storydata';
+import { threeTopServicesData, sixTopServicesData, sections, breadcrumbs, footerLinks } from './ServiceLandingPageExample.storydata';
 
 export default {
   title: 'Page Examples/Service Landing Page Examples',
@@ -34,7 +34,7 @@ OneSectionExample.args = {
   footerLinks,
 };
 
-export const TopServicesExample = Template.bind({}); xxxx
+export const TopServicesExample = Template.bind({});
 TopServicesExample.args = {
   title: 'Bin collection, recycling and waste',
   breadcrumbsArray: breadcrumbs,
@@ -43,7 +43,7 @@ TopServicesExample.args = {
   topServices : threeTopServicesData,
 };
 
-export const SixTopServicesExample = Template.bind({}); xxxx
+export const SixTopServicesExample = Template.bind({});
 SixTopServicesExample.args = {
   title: 'Bin collection, recycling and waste',
   breadcrumbsArray: breadcrumbs,
@@ -61,6 +61,18 @@ MicroSiteExample.args = {
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   sections: sections.slice(0, 1),
   footerLinks,
+};
+
+export const MicroSiteWithTopServicesExample = Template.bind({});
+MicroSiteWithTopServicesExample.args = {
+  title: 'Northamptonshire Country Parks',
+  heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
+  breadcrumbsArray: breadcrumbs,
+  bodyText:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  sections: sections.slice(0, 1),
+  footerLinks,
+  topServices : threeTopServicesData,
 };
 
 export const MicroSiteBoxedExample = Template.bind({});
