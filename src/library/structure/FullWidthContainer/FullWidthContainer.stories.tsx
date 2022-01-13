@@ -14,23 +14,23 @@ export default {
 };
 
 const Template: Story<FullWidthContainerProps> = (args) => (
-  <FullWidthContainer {...args}>Children of the page container goes here</FullWidthContainer>
+  <FullWidthContainer {...args}>Children of the page container go here</FullWidthContainer>
 );
 
 export const FullWidthContainerExample = Template.bind({});
 FullWidthContainerExample.args = {
-  noBackground: false,
-  noPadding: false,
+  hasBackground: true,
+  hasPadding: true,
 };
 
 export const FullWidthContainerWithoutPadding = Template.bind({});
 FullWidthContainerWithoutPadding.args = {
-  noBackground: false,
-  noPadding: true,
+  hasBackground: true,
+  hasPadding: false,
 };
 
 export const FullWidthContainerWithoutBackground = Template.bind({});
 FullWidthContainerWithoutBackground.args = {
-  noBackground: true,
-  noPadding: false,
+  hasBackground: false,
+  hasPadding: true,
 };

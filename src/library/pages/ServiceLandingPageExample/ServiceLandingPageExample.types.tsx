@@ -9,18 +9,22 @@ export interface ServiceLandingPageExampleProps {
    * The Service landing page title
    */
   title: string;
+
   /**
    * Array of breadcrumbs
    */
   breadcrumbsArray: Array<BreadcrumbProp>;
+
   /**
    * Array of Sections
    */
   sections: SectionLinksProps[];
+
   /**
    * Array of Footer links
    */
   footerLinksArray: FooterLinkProp[];
+
   /**
    * Top services to highlight at the top of the page
    */

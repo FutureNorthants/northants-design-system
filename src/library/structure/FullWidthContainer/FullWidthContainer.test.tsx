@@ -8,8 +8,8 @@ import { west_theme } from '../../../themes/theme_generator';
 describe('Full Width Container', () => {
   it('should add background and padding', () => {
     const props: FullWidthContainerProps = {
-      noBackground: false,
-      noPadding: false,
+      hasBackground: true,
+      hasPadding: true,
     };
 
     const renderComponent = () =>
@@ -27,8 +27,8 @@ describe('Full Width Container', () => {
 
   it('should not have background and padding', () => {
     const props: FullWidthContainerProps = {
-      noBackground: true,
-      noPadding: true,
+      hasBackground: false,
+      hasPadding: false,
     };
 
     const renderComponent = () =>

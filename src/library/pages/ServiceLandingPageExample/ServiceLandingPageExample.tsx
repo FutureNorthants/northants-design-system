@@ -6,7 +6,7 @@ import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.type
 import ServicesLinksList from '../../structure/ServicesLinksList/ServicesLinksList';
 import FullWidthContainer from '../../structure/FullWidthContainer/FullWidthContainer';
 
-export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps> = ({
+export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPageExampleProps> = ({
   title,
   breadcrumbsArray,
   sections,
@@ -15,13 +15,15 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
 }) => (
   <>
     <PageStructures.Header />
+
     {topServices && (
-      <FullWidthContainer noBackground={false} noPadding={false}>
+      <FullWidthContainer hasBackground={true} hasPadding={true}>
         <PageStructures.MaxWidthContainer noBackground={true} noPadding={true}>
           <ServicesLinksList {...topServices} />
         </PageStructures.MaxWidthContainer>
       </FullWidthContainer>
     )}
+
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
       <PageStructures.PageMain>
@@ -35,7 +37,7 @@ export const ServiceLandingPageExample: React.FC<ServiceLandingPageExampleProps>
           ''
         )}
         {sections.map((section) => (
-          <PageStructures.SectionLinks {...section} key={section.sectionSlug} />
+          <PageStructures.SectionLinks {...section} key={section.sectionSlug} displayTitle={sections.length > 1} />
         ))}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
