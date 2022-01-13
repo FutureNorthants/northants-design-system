@@ -3,36 +3,55 @@ import * as PageStructures from '../../structure/PageStructures';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import SectionLinksMobileContents from '../../structure/SectionLinksMobileContents/SectionLinksMobileContents';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
-import ServicesLinksList from '../../structure/ServicesLinksList/ServicesLinksList';
-import FullWidthContainer from '../../structure/FullWidthContainer/FullWidthContainer';
 
 export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPageExampleProps> = ({
   title,
+  heroImage,
   breadcrumbsArray,
   sections,
+  bodyText,
   footerLinksArray,
   topServices,
 }) => (
   <>
     <PageStructures.Header />
-
-    <PageStructures.MaxWidthContainer>
-      <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
-      <PageStructures.PageMain>
-        <HeadingWithIcon level={1} text={title} icon="bins" />
-      </PageStructures.PageMain>
-    </PageStructures.MaxWidthContainer>
+    {heroImage ? (
+      <PageStructures.HeroImage
+        headline={heroImage.headline ? heroImage.headline : title}
+        content={heroImage.content}
+        callToActionText={heroImage.callToActionText}
+        callToActionURL={heroImage.callToActionURL}
+        imageLarge={heroImage.imageLarge}
+        imageSmall={heroImage.imageSmall}
+        imageAltText={heroImage.imageAltText}
+        backgroundBox={heroImage.backgroundBox}
+      />
+    ) : (
+      ''
+    )}
 
     {topServices && (
-      <FullWidthContainer hasBackground={true} hasPadding={true}>
+      <PageStructures.FullWidthContainer hasBackground={true} hasPadding={true}>
         <PageStructures.MaxWidthContainer noBackground={true} noPadding={true}>
-          <ServicesLinksList {...topServices} />
+          <PageStructures.ServicesLinksList {...topServices} />
         </PageStructures.MaxWidthContainer>
-      </FullWidthContainer>
+      </PageStructures.FullWidthContainer>
     )}
 
     <PageStructures.MaxWidthContainer>
+      {heroImage ? (
+        ''
+      ) : (
+        <>
+          <PageStructures.PhaseBanner />
+          <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
+        </>
+      )}
       <PageStructures.PageMain>
+        {heroImage ? '' : <HeadingWithIcon level={1} text={title} icon="bins" />}
+
+        <p>{bodyText ? bodyText : 'Any introductory text and slices for the landing page goes here.'}</p>
+
         {sections.length > 1 ? (
           <SectionLinksMobileContents
             sectionLinksArray={sections.map((section) => ({ id: section.sectionSlug, title: section.sectionTitle }))}
@@ -41,7 +60,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
           ''
         )}
         {sections.map((section) => (
-          <PageStructures.SectionLinks {...section} key={section.sectionSlug} displayTitle={sections.length > 1} />
+          <PageStructures.SectionLinks displayTitle={sections.length > 1} {...section} key={section.sectionSlug} />
         ))}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
