@@ -2,6 +2,7 @@ import { BreadcrumbProp } from '../../structure/Breadcrumbs/Breadcrumbs.types';
 import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { HeroImageProps } from '../../structure/HeroImage/HeroImage.types';
 import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.types';
+import { ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
 export interface ServiceLandingPageExampleProps {
   /**
@@ -33,4 +34,9 @@ export interface ServiceLandingPageExampleProps {
    * Array of Footer links
    */
   footerLinksArray: FooterLinkProp[];
+
+  /**
+   * Top services to highlight below the heading or hero image
+   */
+  topServices?: ServicesLinksListProps;
 }

@@ -1,11 +1,11 @@
 export interface FullWidthContainerProps {
   /**
-   * Remove background colour
+   * Show background colour when true
    */
   hasBackground?: boolean;
 
   /**
-   * Remove top and bottom padding
+   * Show top and bottom padding when true
    */
   hasPadding?: boolean;
 }

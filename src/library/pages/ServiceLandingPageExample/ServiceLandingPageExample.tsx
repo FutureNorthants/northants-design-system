@@ -30,6 +30,19 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
       ''
     )}
 
+    {heroImage ? (
+      ''
+    ) : (
+      <PageStructures.MaxWidthContainer>
+        <PageStructures.PhaseBanner />
+        <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
+
+        <PageStructures.PageMain>
+          {heroImage ? '' : <HeadingWithIcon level={1} text={title} icon="bins" />}
+        </PageStructures.PageMain>
+      </PageStructures.MaxWidthContainer>
+    )}
+
     {topServices && (
       <PageStructures.FullWidthContainer hasBackground={true} hasPadding={true}>
         <PageStructures.MaxWidthContainer noBackground={true} noPadding={true}>
@@ -39,17 +52,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
     )}
 
     <PageStructures.MaxWidthContainer>
-      {heroImage ? (
-        ''
-      ) : (
-        <>
-          <PageStructures.PhaseBanner />
-          <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
-        </>
-      )}
       <PageStructures.PageMain>
-        {heroImage ? '' : <HeadingWithIcon level={1} text={title} icon="bins" />}
-
         <p>{bodyText ? bodyText : 'Any introductory text and slices for the landing page goes here.'}</p>
 
         {sections.length > 1 ? (
