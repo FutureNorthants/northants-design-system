@@ -12,3 +12,8 @@ export default {
 const Template: Story<ServicePageExampleProps> = (args) => <ServicePageExample {...args} />;
 
 export const ExamplePageWithContent = Template.bind({});
+
+export const ExamplePageWithServiceAlert = Template.bind({});
+ExamplePageWithServiceAlert.args = {
+  showServiceAlert: true,
+};
