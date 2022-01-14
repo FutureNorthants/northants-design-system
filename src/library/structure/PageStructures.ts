@@ -5,6 +5,7 @@ import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import CookieBanner from './CookieBanner/CookieBanner';
 import DisplayDate from './DisplayDate/DisplayDate';
 import Footer from './Footer/Footer';
+import FullWidthContainer from './FullWidthContainer/FullWidthContainer';
 import Header from './Header/Header';
 import HeroImage from './HeroImage/HeroImage';
 import HomeHero from './HomeHero/HomeHero';
@@ -43,6 +44,7 @@ export {
   CookieBanner,
   DisplayDate,
   Footer,
+  FullWidthContainer,
   Header,
   HeroImage,
   HomeHero,

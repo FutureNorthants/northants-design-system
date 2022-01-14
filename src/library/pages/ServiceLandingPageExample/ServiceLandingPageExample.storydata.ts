@@ -1,6 +1,63 @@
 import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.types';
 import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { BreadcrumbProp } from '../../structure/Breadcrumbs/Breadcrumbs.types';
+import { PageLinkProp, ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
+
+const topServicesData: Array<PageLinkProp> = [
+    {
+      title: 'Your bins and rubbish',
+      url: 'your-bins-and-rubbish',
+      iconKey: 'bins',
+      quickLinksArray: [],
+    },
+    {
+      title: 'Street cleaning',
+      url: 'street-cleaning',
+      iconKey: 'roads',
+      quickLinksArray: [],
+    },
+    {
+      title: 'Business, commercial and clinical waste',
+      url: 'business-commercial-and-clinical-waste',
+      iconKey: 'planning',
+      quickLinksArray: [],
+    },
+    {
+      title: 'Find your bin collection day',
+      url: 'find-your-bin-collection-day',
+      iconKey: 'roads',
+      quickLinksArray: [],
+    },
+    {
+      title: 'Arrange bulky item collection',
+      url: 'arrange-bulky-item-collection',
+      iconKey: 'planning',
+      quickLinksArray: [],
+    },
+    {
+      title: 'What to recycle and where?',
+      url: 'what-to-recycle-and-where',
+      iconKey: 'bins',
+      quickLinksArray: [],
+    },
+];
+
+const topServicesCommon = {
+  hideHeader: true,
+  hasBackground: false,
+  serviceId: 'bin-collection',
+};
+
+export const threeTopServicesData: ServicesLinksListProps = {
+  ...topServicesCommon,
+  serviceLinksArray: topServicesData.slice(0, 3),
+};
+
+export const sixTopServicesData: ServicesLinksListProps = {
+  ...topServicesCommon,
+  serviceLinksArray: topServicesData.slice(0, 6),
+};
+
 
 export const sections: SectionLinksProps[] = [
   {
