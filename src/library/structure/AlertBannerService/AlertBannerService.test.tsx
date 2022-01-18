@@ -66,4 +66,19 @@ describe('Alert Service Banner', () => {
 
     expect(getByTestId('AlertBannerService')).toHaveStyle(`border-color: ${west_theme.theme_vars.colours.black}`);
   });
+
+  it('should not add a heading if title is empty', () => {
+    const renderComponent = () =>
+      render(
+        <ThemeProvider theme={west_theme}>
+          <AlertBannerService title="">
+            <p>This is some content.</p>
+          </AlertBannerService>
+        </ThemeProvider>
+      );
+
+    const { queryByRole } = renderComponent();
+
+    expect(queryByRole('heading')).toBeNull();
+  });
 });
