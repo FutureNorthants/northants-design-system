@@ -1,4 +1,3 @@
-
 export interface AccordionProps {
   /**
    * accepts multiple sections
@@ -13,44 +12,51 @@ export interface AccordionProps {
    * Should there be a read more link at the bottom of each section?
    */
   withReadMore?: boolean;
-    
 }
 
 export interface AccordionSectionProps {
   /**
    * Section title
    */
-  title: string,
+  title: string;
+
   /**
    * Section content
    */
-  content: React.ReactNode
+  content: React.ReactNode;
+
   /**
    * Section summary
    */
-  summary?: string,
+  summary?: string;
+
   /**
    * Section summary
    */
-  isExpanded?: boolean,
+  isExpanded?: boolean;
+
   /**
    * Identify the section so sections can have the same title
    */
-  accordionSectionId?: number,
+  accordionSectionId?: number;
+
   /**
    * Method used internally for opening closing eelment
    */
-  onToggle?: ((title, value) => void)
+  onToggle?: (title, value) => void;
+
   /**
    * We reuse this on filter pages - but it looks slightly different
    */
   isFilter?: boolean;
-   /**
+
+  /**
    * Should there be a read more link at the bottom of each section?
    */
   withReadMore?: boolean;
+
   /**
    * unique ID for the section
    */
-   sectionId?: string
-} 
+  sectionId?: string;
+}
