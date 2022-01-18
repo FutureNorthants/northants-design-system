@@ -1,10 +1,23 @@
 import styled, { css } from 'styled-components';
 import Heading from '../../components/Heading/Heading';
 
+const containerMaxHeight = (props) => {
+  if (props.hideHeader) {
+    return css`
+      max-height: none;
+      overflow: visible;
+    `;
+  } else {
+    return css`
+      max-height: 385px;
+      overflow: hidden;
+    `;
+  }
+};
+
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles}
-  max-height: 385px;
-  overflow: hidden;
+  ${containerMaxHeight}
 
   &.open {
     max-height: none;

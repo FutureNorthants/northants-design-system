@@ -44,7 +44,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
 
   return (
     <>
-      <Styles.Container id={serviceId} className={open && 'open'}>
+      <Styles.Container id={serviceId} className={open && 'open'} hideHeader={hideHeader}>
         {!hideHeader && (
           <Styles.HomeTitle data-testid="servicesLinksListHeader">
             <Heading text="Council services" />
