@@ -170,14 +170,14 @@ export const AccordionIcon = styled.span`
 
   &:before {
     border-style: solid;
-    border-width: 6px 6px 0 0;
+    border-width: 4px 4px 0 0;
     content: '';
     display: inline-block;
-    height: 16px;
+    height: 12px;
     position: relative;
     vertical-align: top;
-    width: 16px;
-    border-color: ${(props) => props.theme.theme_vars.colours.action};
+    width: 12px;
+    border-color: ${(props) => props.theme.theme_vars.colours.black};
     top: 0;
     left: 6px;
     transform: rotate(135deg);
