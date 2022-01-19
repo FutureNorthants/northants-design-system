@@ -100,4 +100,17 @@ describe('Services Links List', () => {
     expect(queryByText('Most used')).toBeNull();
     expect(queryByText('Alphabetical')).toBeNull();
   });
+
+  it('should hide the view more/less services button', () => {
+    const customProps = { ...props, ...{ hideHeader: true } };
+    const renderComponent = () =>
+      render(
+        <ThemeProvider theme={west_theme}>
+          <ServicesLinksList {...customProps} />
+        </ThemeProvider>
+      );
+    const { queryByText } = renderComponent();
+    expect(queryByText('View more services')).toBeNull();
+    expect(queryByText('View less services')).toBeNull();
+  });
 });
