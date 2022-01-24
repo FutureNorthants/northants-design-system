@@ -1,42 +1,38 @@
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "rollup-plugin-typescript2";import svg from 'rollup-plugin-svg'
-import json from 'rollup-plugin-json';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
+import svg from 'rollup-plugin-svg';
+import json from '@rollup/plugin-json';
 
-const packageJson = require("./package.json");
+const packageJson = require('./package.json');
 
-const extensions = [
-  ".js", 
-  ".jsx",
-  ".ts",
-  ".tsx"
-]
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 export default {
-  input: "src/index.ts",
+  input: 'src/index.ts',
   output: [
     {
       file: packageJson.main,
-      format: "cjs",
-      sourcemap: true
+      format: 'cjs',
+      sourcemap: true,
     },
     {
       file: packageJson.module,
-      format: "esm",
-      sourcemap: true
-    }
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
   plugins: [
     peerDepsExternal(),
     resolve({
-      extensions: extensions
+      extensions: extensions,
     }),
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/downshift/node_modules/react-is/index.js': ['isForwardRef']
-      }
+        'react-is': ['isForwardRef'],
+      },
     }),
     svg(),
     typescript({ useTsconfigDeclarationDir: true }),
@@ -44,7 +40,7 @@ export default {
       // All JSON files will be parsed by default,
       // but you can also specifically include/exclude files
       include: 'node_modules/**',
-      exclude: [ 'node_modules/foo/**', 'node_modules/bar/**' ],
+      exclude: ['node_modules/foo/**', 'node_modules/bar/**'],
 
       // for tree-shaking, properties will be declared as
       // variables, using either `var` or `const`
@@ -58,7 +54,7 @@ export default {
       compact: true, // Default: false
 
       // generate a named export for every property of the JSON object
-      namedExports: true // Default: true
-    })
-  ]
+      namedExports: true, // Default: true
+    }),
+  ],
 };
