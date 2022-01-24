@@ -1,27 +1,14 @@
-import React from "react";
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { addDecorator } from '@storybook/react';
-import { withThemes } from '@react-theming/storybook-addon';
-import { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from '../src/themes/theme_generator';
+import { themes } from '../src/themes/theme_generator';
 import { createGlobalStyle } from 'styled-components';
-import { cssReset }  from '../src/themes/reset.css';
+import { cssReset } from '../src/themes/reset.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
-
-
-const GlobalStyle = createGlobalStyle`
-  ${cssReset}
-`;
-
-
-addDecorator(withThemes(ThemeProvider, [north_theme, west_theme, GDS_theme, lb_theme_north, lb_theme_west]));
-addDecorator(style => <><GlobalStyle />{style()}</>);
-
-
 
 export const parameters = {
   layout: 'fullscreen',
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
@@ -48,6 +35,47 @@ export const parameters = {
         name: 'london_bridge',
         value: '#000000',
       },
-    ]
-  }
-}
+    ],
+  },
+};
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'north_theme',
+    toolbar: {
+      icon: 'circlehollow',
+      items: ['north_theme', 'west_theme', 'lb_theme_north', 'lb_theme_west'],
+      showName: true,
+    },
+  },
+};
+
+// Function to obtain the intended theme
+const getTheme = (themeName) => {
+  return themes[themeName];
+};
+
+const withThemeProvider = (Story, context) => {
+  const theme = getTheme(context.globals.theme);
+  return (
+    <ThemeProvider theme={theme}>
+      <Story {...context} />
+    </ThemeProvider>
+  );
+};
+
+const GlobalStyle = createGlobalStyle`
+  ${cssReset}
+`;
+
+export const decorators = [
+  withThemeProvider,
+  (style) => (
+    <>
+      <GlobalStyle />
+      {style()}
+    </>
+  ),
+];

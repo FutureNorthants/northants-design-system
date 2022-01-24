@@ -11,7 +11,6 @@ module.exports = {
   framework: '@storybook/react',
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@react-theming/storybook-addon', // https://github.com/react-theming/storybook-addon
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y', // https://github.com/storybookjs/storybook/tree/master/addons/a11y
