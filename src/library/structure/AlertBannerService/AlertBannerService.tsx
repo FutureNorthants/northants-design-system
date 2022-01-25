@@ -13,7 +13,7 @@ const AlertBannerService: React.FunctionComponent<AlertBannerServiceProps> = ({
 }) => (
   <Styles.Container alertType={alertType} data-testid="AlertBannerService">
     <Styles.InnerContainer data-testid="AlertBannerServiceInner">
-      <Heading text={title} />
+      {title?.trim() && <Heading text={title} />}
       {children}
     </Styles.InnerContainer>
   </Styles.Container>

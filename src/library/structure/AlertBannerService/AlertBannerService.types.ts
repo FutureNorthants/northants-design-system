@@ -1,14 +1,16 @@
 export interface AlertBannerServiceProps {
   /**
-   * The title of this alert
+   * The optional title of this alert
    */
-  title: string;
-      /**
+  title?: string;
+
+  /**
    * The type of alert
    */
-  alertType?: "alert" | "warning" | "positive" | "london_bridge";  
+  alertType?: 'alert' | 'warning' | 'positive' | 'london_bridge';
+
   /**
-  * All children content for the banner
-  */
-   children: React.ReactNode
+   * All children content for the banner
+   */
+  children: React.ReactNode;
 }
