@@ -7,7 +7,7 @@ import DownloadableFiles from '../../slices/DownloadableFiles/DownloadableFiles'
 import CallToAction from '../../slices/CallToAction/CallToAction';
 import Accordion from '../../slices/Accordion/Accordion';
 import WarningTextDisclaimer from '../../slices/WarningTextDisclaimer/WarningTextDisclaimer';
-import Summary from '../../slices/Summary/Summary';
+import Summary from '../../structure/Summary/Summary';
 
 export interface ContentPageProps {}
 

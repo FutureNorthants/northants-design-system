@@ -6,7 +6,7 @@ import PageMain from '../../structure/PageMain/PageMain';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
 export default {
-  title: 'Library/Slices/Summary',
+  title: 'Library/Structure/Summary',
   component: Summary,
   parameters: {
     status: {
