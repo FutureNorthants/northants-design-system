@@ -4,7 +4,13 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { ServiceLandingPageExample } from './ServiceLandingPageExample';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
 import { HeroImageExampleMicroSiteData } from '../../structure/HeroImage/HeroImage.storydata';
-import { threeTopServicesData, sixTopServicesData, sections, breadcrumbs, footerLinks } from './ServiceLandingPageExample.storydata';
+import {
+  threeTopServicesData,
+  sixTopServicesData,
+  sections,
+  breadcrumbs,
+  footerLinks,
+} from './ServiceLandingPageExample.storydata';
 
 export default {
   title: 'Page Examples/Service Landing Page Examples',
@@ -40,7 +46,7 @@ TopServicesExample.args = {
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
   footerLinks,
-  topServices : threeTopServicesData,
+  topServices: threeTopServicesData,
 };
 
 export const SixTopServicesExample = Template.bind({});
@@ -57,10 +63,12 @@ MicroSiteExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
   breadcrumbsArray: breadcrumbs,
-  bodyText:
-    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
+  summary:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  showSummary: true,
 };
 
 export const MicroSiteWithTopServicesExample = Template.bind({});
@@ -68,26 +76,30 @@ MicroSiteWithTopServicesExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
   breadcrumbsArray: breadcrumbs,
-  bodyText:
-    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
-  topServices : threeTopServicesData,
+  topServices: threeTopServicesData,
+  summary:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  showSummary: true,
 };
 
 export const MicroSiteBoxedExample = Template.bind({});
 MicroSiteBoxedExample.args = {
   title: 'Northamptonshire Country Parks',
-  heroImage: { 
+  heroImage: {
     ...HeroImageExampleMicroSiteData,
     callToActionText: '...google It!',
     callToActionURL: 'https://www.google.com',
     content: "<p>They're wicked innit, don't just believe us...</p>",
-    backgroundBox: true, 
+    backgroundBox: true,
   }, // empty headline in this overriden by title above
   breadcrumbsArray: breadcrumbs,
-  bodyText:
-    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
+  summary:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  showSummary: true,
 };
