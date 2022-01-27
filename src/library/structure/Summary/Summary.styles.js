@@ -24,7 +24,7 @@ const summaryStyles = (props) => {
 };
 
 export const Container = styled.div`
-  padding: ${(props) => (props.hasPadding ? '30px 15px' : '0')};
+  padding: ${(props) => (props.hasPadding ? '30px 20px' : '0')};
   font-size: 1.2em;
   margin-bottom: 15px;
   ${summaryStyles}

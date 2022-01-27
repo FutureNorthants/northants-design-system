@@ -28,7 +28,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('This is some summary text');
     expect(component).toHaveStyle(`color: ${west_theme.theme_vars.colours.action}`);
     expect(component).toHaveStyle(`background-color: ${west_theme.theme_vars.colours.grey_light}`);
-    expect(component).toHaveStyle('padding: 30px 15px');
+    expect(component).toHaveStyle('padding: 30px 20px');
   });
 
   it('should render without background colour', () => {
