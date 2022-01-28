@@ -24,7 +24,6 @@ describe('HomeHero common usage', () => {
   });
 
   it('should render 3 promoted links', () => {
-      console.log(typeof rendered);
     const links = rendered.queryAllByRole('link');
     expect(links).toHaveLength(3);
 
@@ -58,6 +57,7 @@ describe('HomeHero common usage', () => {
 describe('HomeHero unusual usage', () => {
   const props: HomeHeroProps = {
     imageOverrideLogo: 'http://placehold.it/520x150',
+    imageOverrideLogoAltText: 'My alt text',
     topline: 'To be on top',
     strapline: 'Strap in',
     promotedLinksArray: [],
@@ -91,5 +91,6 @@ describe('HomeHero unusual usage', () => {
     const img = rendered.getByRole('img');
     expect(img).toBeVisible();
     expect(img).toHaveProperty('src', 'http://placehold.it/520x150');
+    expect(img).toHaveProperty('alt', 'My alt text');
   });
 });

@@ -96,6 +96,7 @@ export const LogoOverride = styled.div`
   img {
     margin-top: -45px;
     max-width: 520px;
+    width: 100%;
     height: auto;
   }
 `;

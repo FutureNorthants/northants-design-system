@@ -20,6 +20,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
   promotedLinksArray,
   searchSuggestions = [],
   imageOverrideLogo,
+  imageOverrideLogoAltText,
 }) => {
   const themeContext = useContext(ThemeContext);
   const [random, setRandom] = useState(999);
@@ -53,7 +54,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
                   <Styles.HiddenH1>{themeContext.full_name} Council</Styles.HiddenH1>
                   {imageOverrideLogo && !usingMemorialTheme && (
                     <Styles.LogoOverride>
-                      <img src={imageOverrideLogo} width="520" height="150" alt="Logo" />
+                      <img src={imageOverrideLogo} width="520" height="150" alt={imageOverrideLogoAltText?.trim() ? imageOverrideLogoAltText : "Logo"} />
                     </Styles.LogoOverride>
                   )}
                   {(!imageOverrideLogo || usingMemorialTheme) && (

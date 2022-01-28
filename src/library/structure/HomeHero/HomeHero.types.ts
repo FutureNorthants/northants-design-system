@@ -10,6 +10,11 @@ export interface HomeHeroProps {
   imageOverrideLogo?: string;
 
   /**
+   * Alt text for overridden logo
+   */
+  imageOverrideLogoAltText?: string;
+
+   /**
    * The line of text after the logo
    */
   strapline?: string;

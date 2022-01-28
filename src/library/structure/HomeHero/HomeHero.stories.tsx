@@ -19,6 +19,9 @@ export default {
     imageOverrideLogo: {
       table: { category: 'Banner area' },
     },
+    imageOverrideLogoAltText: {
+      table: { category: 'Banner area' },
+    },
     strapline: {
       table: { category: 'Banner area' },
     },
@@ -71,4 +74,5 @@ HomeHeroExampleOverriddenLogo.args = {
   promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
   ...HomeHeroCommon,
   imageOverrideLogo: 'http://placehold.it/520x150',
+  imageOverrideLogoAltText: 'My logo',
 };
