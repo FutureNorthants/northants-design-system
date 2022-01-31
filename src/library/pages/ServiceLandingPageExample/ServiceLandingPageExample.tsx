@@ -3,6 +3,7 @@ import * as PageStructures from '../../structure/PageStructures';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import SectionLinksMobileContents from '../../structure/SectionLinksMobileContents/SectionLinksMobileContents';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
+import Summary from '../../structure/Summary/Summary';
 
 export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPageExampleProps> = ({
   title,
@@ -12,6 +13,8 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
   bodyText,
   footerLinksArray,
   topServices,
+  summary,
+  showSummary = false,
 }) => (
   <>
     <PageStructures.Header />
@@ -53,6 +56,12 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
 
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
+        {showSummary && summary?.trim() && (
+          <Summary>
+            <p>{summary}</p>
+          </Summary>
+        )}
+
         <p>{bodyText ? bodyText : 'Any introductory text and slices for the landing page goes here.'}</p>
 
         {sections.length > 1 ? (

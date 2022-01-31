@@ -39,4 +39,14 @@ export interface ServiceLandingPageExampleProps {
    * Top services to highlight below the heading or hero image
    */
   topServices?: ServicesLinksListProps;
+
+  /**
+   * Summary text describing the page
+   */
+  summary?: String;
+
+  /**
+   * Should the summary be displayed
+   */
+  showSummary?: Boolean;
 }

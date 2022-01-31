@@ -35,6 +35,7 @@ import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
+import Summary from './Summary/Summary';
 
 export {
   AccessibleLinks,
@@ -74,4 +75,5 @@ export {
   ServicesLinksList,
   SignpostLinks,
   SkipToMainContent,
+  Summary,
 };
