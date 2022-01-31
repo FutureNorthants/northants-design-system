@@ -22,6 +22,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin-bottom: 30px;
 `;
 
 /**
