@@ -57,7 +57,6 @@ export const CouncilTaxPageExample: React.FC<CouncilTaxPageExampleProps> = ({ver
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
-      <PageStructures.PhaseBanner />
       <PageStructures.Breadcrumbs 
         breadcrumbsArray={[
           {

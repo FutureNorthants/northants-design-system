@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
-import { hrefTo } from '@storybook/addon-links';
 import { SignpostLinkProp } from '../../structure/SignpostLinks/SignpostLinks.types';
 import AlertBannerService from '../../structure/AlertBannerService/AlertBannerService';
 
@@ -17,7 +16,6 @@ export const SignpostPageExample: React.FunctionComponent<SignpostPageExamplePro
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
-      <PageStructures.PhaseBanner />
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[
           {

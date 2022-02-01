@@ -18,7 +18,7 @@ const summaryStyles = (props) => {
       return css`
         background-color: ${(props) =>
           props.hasBackground ? props.theme.theme_vars.colours.grey_light : 'transparent'};
-        color: ${(props) => props.theme.theme_vars.colours.action};
+        color: ${(props) => props.theme.theme_vars.colours.action_dark};
       `;
   }
 };
