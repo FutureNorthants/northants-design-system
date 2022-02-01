@@ -3,6 +3,7 @@ import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 import CallToAction from '../../slices/CallToAction/CallToAction';
 import AlertBannerService from '../../structure/AlertBannerService/AlertBannerService';
+import Image from '../../slices/Image/Image';
 
 export interface ServicePageExampleProps {
   showServiceAlert: boolean;
@@ -52,6 +53,13 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServ
           curabitur non, orci odio class scelerisque metus in sapien hac pharetra torquent ornare massa, laoreet et
           penatibus dictum euismod morbi felis nostra senectus inceptos cum.
         </p>
+        <Image
+          imageLarge="https://via.placeholder.com/800x450?text=16+by+9+image"
+          imageSmall="https://via.placeholder.com/400x225"
+          imageAltText="An example image"
+          ratio="16by9"
+          caption="The caption describes the image"
+        />
         <p>
           Varius suscipit tortor diam sociosqu pellentesque fames dignissim aenean, fermentum ridiculus sodales
           phasellus urna blandit quis pulvinar vivamus, et convallis augue dapibus id sem morbi.
