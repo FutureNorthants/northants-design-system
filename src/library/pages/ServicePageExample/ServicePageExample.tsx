@@ -12,7 +12,6 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServ
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
-      <PageStructures.PhaseBanner />
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[
           {
