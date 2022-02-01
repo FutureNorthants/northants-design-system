@@ -21,7 +21,7 @@ describe('Full Width Container', () => {
     const { getByTestId } = renderComponent();
 
     const fullWidthContainer = getByTestId('FullWidthContainer');
-    expect(fullWidthContainer).toHaveStyle('padding: 50px 0');
+    expect(fullWidthContainer).toHaveStyle('padding: 50px 0 20px');
     expect(fullWidthContainer).toHaveStyle(`background: ${west_theme.theme_vars.colours.grey_light}`);
   });
 

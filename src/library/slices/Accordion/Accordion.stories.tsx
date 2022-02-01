@@ -45,9 +45,9 @@ ExampleAccordion.args = {
   ],
 };
 
-export const AccordionWithoutReadMore = Template.bind({});
-AccordionWithoutReadMore.args = {
-  withReadMore: false,
+export const AccordionWithReadMore = Template.bind({});
+AccordionWithReadMore.args = {
+  withReadMore: true,
   sections: [
     {
       title: 'Tortor Magna',
