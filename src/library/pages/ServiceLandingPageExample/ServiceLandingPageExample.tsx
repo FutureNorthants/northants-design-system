@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
+import Heading from '../../components/Heading/Heading';
 import SectionLinksMobileContents from '../../structure/SectionLinksMobileContents/SectionLinksMobileContents';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
 import Summary from '../../structure/Summary/Summary';
@@ -15,30 +16,42 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
   topServices,
   summary,
   showSummary = false,
+  serviceAlert,
+  icon,
 }) => (
   <>
     <PageStructures.Header />
     {heroImage ? (
-      <PageStructures.HeroImage
-        headline={heroImage.headline ? heroImage.headline : title}
-        content={heroImage.content}
-        callToActionText={heroImage.callToActionText}
-        callToActionURL={heroImage.callToActionURL}
-        imageLarge={heroImage.imageLarge}
-        imageSmall={heroImage.imageSmall}
-        imageAltText={heroImage.imageAltText}
-        backgroundBox={heroImage.backgroundBox}
-      />
-    ) : (
-      ''
-    )}
+      <>
+        <PageStructures.HeroImage
+          headline={heroImage.headline ? heroImage.headline : title}
+          content={heroImage.content}
+          callToActionText={heroImage.callToActionText}
+          callToActionURL={heroImage.callToActionURL}
+          imageLarge={heroImage.imageLarge}
+          imageSmall={heroImage.imageSmall}
+          imageAltText={heroImage.imageAltText}
+          backgroundBox={heroImage.backgroundBox}
+        />
 
-    {heroImage ? (
-      ''
+        {serviceAlert?.alertType && (
+          <PageStructures.MaxWidthContainer noPadding>
+            <PageStructures.AlertBannerService {...serviceAlert} hasTopSpacing>
+              {serviceAlert.children}
+            </PageStructures.AlertBannerService>
+          </PageStructures.MaxWidthContainer>
+        )}
+      </>
     ) : (
-      <PageStructures.MaxWidthContainer>
-        <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
-        {heroImage ? '' : <HeadingWithIcon level={1} text={title} icon="bins" />}
+      <PageStructures.MaxWidthContainer noPadding>
+        <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} hasMargin />
+        {serviceAlert?.alertType && (
+          <PageStructures.AlertBannerService {...serviceAlert}>
+            {serviceAlert.children}
+          </PageStructures.AlertBannerService>
+        )}
+
+        {icon ? <HeadingWithIcon icon={icon} level={1} text={title} /> : <Heading text={title} />}
       </PageStructures.MaxWidthContainer>
     )}
 

@@ -3,6 +3,7 @@ import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { HeroImageProps } from '../../structure/HeroImage/HeroImage.types';
 import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.types';
 import { ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
+import { AlertBannerServiceProps } from '../../structure/AlertBannerService/AlertBannerService.types';
 
 export interface ServiceLandingPageExampleProps {
   /**
@@ -43,10 +44,20 @@ export interface ServiceLandingPageExampleProps {
   /**
    * Summary text describing the page
    */
-  summary?: String;
+  summary?: string;
 
   /**
    * Should the summary be displayed
    */
   showSummary?: Boolean;
+
+  /**
+   * Optional service alert banner
+   */
+  serviceAlert?: AlertBannerServiceProps;
+
+  /**
+   * Optional heading icon
+   */
+  icon?: string;
 }

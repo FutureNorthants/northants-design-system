@@ -2,44 +2,45 @@ import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.typ
 import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { BreadcrumbProp } from '../../structure/Breadcrumbs/Breadcrumbs.types';
 import { PageLinkProp, ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
+import { AlertBannerServiceProps } from '../../structure/AlertBannerService/AlertBannerService.types';
 
 const topServicesData: Array<PageLinkProp> = [
-    {
-      title: 'Your bins and rubbish',
-      url: 'your-bins-and-rubbish',
-      iconKey: 'bins',
-      quickLinksArray: [],
-    },
-    {
-      title: 'Street cleaning',
-      url: 'street-cleaning',
-      iconKey: 'roads',
-      quickLinksArray: [],
-    },
-    {
-      title: 'Business, commercial and clinical waste',
-      url: 'business-commercial-and-clinical-waste',
-      iconKey: 'planning',
-      quickLinksArray: [],
-    },
-    {
-      title: 'Find your bin collection day',
-      url: 'find-your-bin-collection-day',
-      iconKey: 'roads',
-      quickLinksArray: [],
-    },
-    {
-      title: 'Arrange bulky item collection',
-      url: 'arrange-bulky-item-collection',
-      iconKey: 'planning',
-      quickLinksArray: [],
-    },
-    {
-      title: 'What to recycle and where?',
-      url: 'what-to-recycle-and-where',
-      iconKey: 'bins',
-      quickLinksArray: [],
-    },
+  {
+    title: 'Your bins and rubbish',
+    url: 'your-bins-and-rubbish',
+    iconKey: 'bins',
+    quickLinksArray: [],
+  },
+  {
+    title: 'Street cleaning',
+    url: 'street-cleaning',
+    iconKey: 'roads',
+    quickLinksArray: [],
+  },
+  {
+    title: 'Business, commercial and clinical waste',
+    url: 'business-commercial-and-clinical-waste',
+    iconKey: 'planning',
+    quickLinksArray: [],
+  },
+  {
+    title: 'Find your bin collection day',
+    url: 'find-your-bin-collection-day',
+    iconKey: 'roads',
+    quickLinksArray: [],
+  },
+  {
+    title: 'Arrange bulky item collection',
+    url: 'arrange-bulky-item-collection',
+    iconKey: 'planning',
+    quickLinksArray: [],
+  },
+  {
+    title: 'What to recycle and where?',
+    url: 'what-to-recycle-and-where',
+    iconKey: 'bins',
+    quickLinksArray: [],
+  },
 ];
 
 const topServicesCommon = {
@@ -57,7 +58,6 @@ export const sixTopServicesData: ServicesLinksListProps = {
   ...topServicesCommon,
   serviceLinksArray: topServicesData.slice(0, 6),
 };
-
 
 export const sections: SectionLinksProps[] = [
   {
@@ -174,3 +174,9 @@ export const breadcrumbs: BreadcrumbProp[] = [
     url: '/iframe.html?id=page-examples-home-page--example-home&viewMode=story',
   },
 ];
+
+export const serviceAlert: AlertBannerServiceProps = {
+  children: 'This is the alert text.',
+  title: 'An example service alert',
+  alertType: 'alert',
+};
