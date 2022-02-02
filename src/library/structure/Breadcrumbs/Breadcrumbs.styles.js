@@ -1,66 +1,67 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-    padding-top: 20px;
-    border-bottom: 1px solid ${props => props.theme.theme_vars.colours.grey}80;
-`
+  padding-top: 20px;
+  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey}80;
+  margin-bottom: ${(props) => (props.hasMargin ? '30px' : 0)};
+`;
 
 export const List = styled.ol`
-    list-style: none;
-    padding-left: 0px;
-    margin-top: 0;
-    display: none;
-    margin-bottom: 20px;
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 0;
+  display: none;
+  margin-bottom: 20px;
 
-    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        display: block;
-    }
-`
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: block;
+  }
+`;
 
 export const Crumb = styled.li`
-    display: inline;
-    margin-right: 10px;
-    &:last-of-type svg {
-        display: none;
-    }
-`
+  display: inline;
+  margin-right: 10px;
+  &:last-of-type svg {
+    display: none;
+  }
+`;
 export const IconWrapper = styled.div`
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-`
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+`;
 export const MobileCrumb = styled.div`
-    display: block;
-    padding: 15px 0;
-    margin-top: -15px;
+  display: block;
+  padding: 15px 0;
+  margin-top: -15px;
 
-    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-        display: none;
-    }
-`
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: none;
+  }
+`;
 export const BackIconWrapper = styled.div`
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle;
-`
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+`;
 export const BreadcrumbLink = styled.a`
-    ${props => props.theme.linkStyles}
-    font-weight: 400;
+  ${(props) => props.theme.linkStyles}
+  font-weight: 400;
 
+  svg {
+    fill: ${(props) => props.theme.theme_vars.colours.action};
+  }
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
     svg {
-        fill: ${props => props.theme.theme_vars.colours.action};
+      fill: ${(props) => props.theme.theme_vars.colours.black};
     }
-
-    &:hover{
-        ${props => props.theme.linkStylesHover}
-    }
-    &:focus{
-        ${props => props.theme.linkStylesFocus}
-        svg {
-            fill: ${props => props.theme.theme_vars.colours.black};
-        }
-    }
-    &:active{
-        ${props => props.theme.linkStylesActive}
-    }
-`
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;

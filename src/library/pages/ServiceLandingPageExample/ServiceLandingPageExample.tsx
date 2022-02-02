@@ -30,14 +30,8 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
         backgroundBox={heroImage.backgroundBox}
       />
     ) : (
-      ''
-    )}
-
-    {heroImage ? (
-      ''
-    ) : (
-      <PageStructures.MaxWidthContainer>
-        <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} />
+      <PageStructures.MaxWidthContainer noPadding>
+        <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} hasMargin />
         {heroImage ? '' : <HeadingWithIcon level={1} text={title} icon="bins" />}
       </PageStructures.MaxWidthContainer>
     )}
