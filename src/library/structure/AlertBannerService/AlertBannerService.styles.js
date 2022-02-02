@@ -18,6 +18,7 @@ export const Container = styled.div`
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
+  margin-top: ${(props) => (props.hasTopSpacing ? `25px` : `0`)};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     padding: 20px;

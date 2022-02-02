@@ -10,6 +10,7 @@ import {
   sections,
   breadcrumbs,
   footerLinks,
+  serviceAlert,
 } from './ServiceLandingPageExample.storydata';
 
 export default {
@@ -27,6 +28,7 @@ const Template: Story<ServiceLandingPageExampleProps> = (args) => <ServiceLandin
 export const BinCollectionExample = Template.bind({});
 BinCollectionExample.args = {
   title: 'Bin collection, recycling and waste',
+  icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections,
   footerLinks,
@@ -35,6 +37,7 @@ BinCollectionExample.args = {
 export const OneSectionExample = Template.bind({});
 OneSectionExample.args = {
   title: 'Bin collection, recycling and waste',
+  icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
   footerLinks,
@@ -43,6 +46,7 @@ OneSectionExample.args = {
 export const TopServicesExample = Template.bind({});
 TopServicesExample.args = {
   title: 'Bin collection, recycling and waste',
+  icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
   footerLinks,
@@ -52,6 +56,7 @@ TopServicesExample.args = {
 export const SixTopServicesExample = Template.bind({});
 SixTopServicesExample.args = {
   title: 'Bin collection, recycling and waste',
+  icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
   footerLinks,
@@ -102,4 +107,28 @@ MicroSiteBoxedExample.args = {
   summary:
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   showSummary: true,
+};
+
+export const ExampleWithServiceAlert = Template.bind({});
+ExampleWithServiceAlert.args = {
+  title: 'Bin collection, recycling and waste',
+  icon: 'bins',
+  breadcrumbsArray: breadcrumbs,
+  sections,
+  footerLinks,
+  serviceAlert,
+};
+
+export const MicroSiteWithAlertExample = Template.bind({});
+MicroSiteWithAlertExample.args = {
+  title: 'Northamptonshire Country Parks',
+  heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
+  breadcrumbsArray: breadcrumbs,
+  bodyText: ' ',
+  sections: sections.slice(0, 1),
+  footerLinks,
+  summary:
+    'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
+  showSummary: true,
+  serviceAlert,
 };

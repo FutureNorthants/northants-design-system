@@ -1,16 +1,21 @@
 export interface AlertBannerServiceProps {
   /**
-   * The optional title of this alert
+   * The optional title of this alert banner
    */
   title?: string;
 
   /**
-   * The type of alert
+   * Set to true for additional margin above the alert banner
+   */
+  hasTopSpacing?: boolean;
+
+  /**
+   * The type of alert banner
    */
   alertType?: 'alert' | 'warning' | 'positive' | 'london_bridge';
 
   /**
-   * All children content for the banner
+   * All child content for the alert banner
    */
   children: React.ReactNode;
 }
