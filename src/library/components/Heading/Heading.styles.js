@@ -23,7 +23,7 @@ export const H2 = styled.h2`
     font-weight: 700;
     line-height: 1;
     font-family: ${props => props.theme.theme_vars.fontstack};
-    margin-top: 50px;
+    margin-top: 25px;
     margin-bottom: 15px;
 
     font-size: 24px;
