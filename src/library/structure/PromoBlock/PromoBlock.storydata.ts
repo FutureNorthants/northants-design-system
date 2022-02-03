@@ -1,7 +1,9 @@
+import { PromoProps } from './PromoBlock.types';
+
 /**
  * Example data for the PromoBlock stories
  */
-export const PromoBlocksData = [
+export const PromoBlocksData: Array<PromoProps> = [
   {
     title: "Go Northamptonshire!",
     content:
@@ -39,6 +41,19 @@ export const PromoBlocksData = [
       "https://via.placeholder.com/720x405/FFFFDD/000000/?text=Promo+3",
     imageSmall:
       "https://via.placeholder.com/144x81/FFFFDD/000000/?text=Promo+3",
+    imageAltText: "Something or other",
+  },
+  {
+    title: "A fourth one",
+    content:
+      "This one is used by the Promotions slice.",
+    callToActionURL:
+      "https://xkcd.com/125/",
+    callToActionText: "I heard you're good",
+    imageMedium:
+      "https://via.placeholder.com/720x405/FFFFDD/000000/?text=Promo+4",
+    imageSmall:
+      "https://via.placeholder.com/144x81/FFFFDD/000000/?text=Promo+4",
     imageAltText: "Something or other",
   },
 ];

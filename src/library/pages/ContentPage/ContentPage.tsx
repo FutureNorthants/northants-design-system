@@ -9,6 +9,8 @@ import Accordion from '../../slices/Accordion/Accordion';
 import WarningTextDisclaimer from '../../slices/WarningTextDisclaimer/WarningTextDisclaimer';
 import Summary from '../../structure/Summary/Summary';
 import { smallTable, largeTable } from './ContentPage.storydata';
+import Promotions from '../../slices/Promotions/Promotions';
+import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
 
 export interface ContentPageProps {}
 
@@ -193,6 +195,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             },
           ]}
         />
+        <Promotions promos={PromoBlocksData} />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>

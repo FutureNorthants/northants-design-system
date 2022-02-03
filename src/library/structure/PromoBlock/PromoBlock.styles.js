@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Heading from "../../components/Heading/Heading";
+import styled from 'styled-components';
+import Heading from '../../components/Heading/Heading';
 
 const imageHeightMobile = 150;
 const imageHeightDesktop = 200;
@@ -11,8 +11,7 @@ export const PromoTilesContainer = styled.div`
   ${(props) => props.theme.fontStyles};
   padding: 15px 0;
 
-  @media screen and (min-width: ${(props) =>
-      props.theme.theme_vars.breakpoints.s}) {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
@@ -25,7 +24,7 @@ export const PromoTilesContainer = styled.div`
  */
 export const PromoTile = styled.a`
   background: ${(props) =>
-    props.theme.cardinal_name === "north"
+    props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.white
       : props.theme.theme_vars.colours.grey_light} !important;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
@@ -44,8 +43,7 @@ export const PromoTile = styled.a`
   ${(props) => props.theme.fontStyles};
 
   &:hover {
-    border-bottom: 5px solid
-      ${(props) => props.theme.theme_vars.colours.action_dark};
+    border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action_dark};
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
     -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
@@ -63,24 +61,21 @@ export const PromoTile = styled.a`
     outline: none;
     transform: translateY(3px);
     border-bottom: 5px solid transparent;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
-      0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
     -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
       0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
     -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
       0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
   }
 
-  @media screen and (min-width: ${(props) =>
-      props.theme.theme_vars.breakpoints.s}) {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
     width: 100%;
   }
 
-  @media screen and (min-width: ${(props) =>
-      props.theme.theme_vars.breakpoints.m}) {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     width: 100%;
     margin-right: 30px;
     margin-bottom: 20px;
@@ -114,14 +109,12 @@ export const PromoImage = styled.span`
   background-position: center;
   justify-self: center;
 
-  @media screen and (min-width: ${(props) =>
-    props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}){
     flex: 0 0 40%;  
     height: 100%;
     min-height: ${imageHeightMobile}px;
   }
-  @media screen and (min-width: ${(props) =>
-    props.theme.theme_vars.breakpoints.m}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}){
     flex: none;
     height: ${imageHeightDesktop}px;
   }
@@ -135,8 +128,7 @@ export const PromoText = styled.div`
   height: calc(100% - ${imageHeightMobile + 30}px);
   ${(props) => props.theme.fontStyles};
 
-  @media screen and (min-width: ${(props) =>
-      props.theme.theme_vars.breakpoints.s}) {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     height: calc(100% - ${imageHeightDesktop + 30}px);
   }
 `;
@@ -152,6 +144,8 @@ export const PromoHeadline = styled(Heading)`
  * Text body between header and call to action link
  */
 export const PromoContent = styled.div`
+  ${(props) => props.theme.fontStyles};
+
   /* re-style bold and italic elements within the content */
   strong,
   b {
