@@ -16,7 +16,13 @@ const Image: React.FunctionComponent<ImageProps> = ({
 }) => (
   <Styles.Container data-testid="Image">
     <Styles.ImageContainer data-testid="ImageContainer" ratio={ratio}>
-      <LazyImage placeholder={imageSmall} src={imageLarge}>
+      <LazyImage
+        placeholder={imageSmall}
+        src={imageLarge}
+        visibilitySensorProps={{
+          partialVisibility: true,
+        }}
+      >
         {(src) => <Styles.Image src={src} alt={imageAltText} />}
       </LazyImage>
     </Styles.ImageContainer>
