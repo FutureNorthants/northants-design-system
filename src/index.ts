@@ -27,6 +27,7 @@ import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
+import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
@@ -37,6 +38,7 @@ export {
   CallToAction,
   Divider,
   DownloadableFiles,
+  Promotions,
   Video,
   WarningText,
   WarningTextDisclaimer,
