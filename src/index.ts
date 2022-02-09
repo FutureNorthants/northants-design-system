@@ -28,6 +28,7 @@ import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
 import Image from './library/slices/Image/Image';
+import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
@@ -39,6 +40,7 @@ export {
   Divider,
   DownloadableFiles,
   Image,
+  Promotions,
   Video,
   WarningText,
   WarningTextDisclaimer,
