@@ -39,17 +39,17 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
     const [isMultiple, setIsMultiple] = useState(false);
     const [addressArray, setAddressArray] = useState([]);
 
-    const defaultArray = { 
-      numOfSovereign: 0,
-      sovereign: [{
-        sovereignName: "",
-      }],
-      numOfUnitary: 0,
-      unitary: [{
-        unitary: "",
-      }],
-      addresses: []
-    }
+    let defaultArray: any = {}
+    defaultArray.numOfSovereign = 0;
+    defaultArray.sovereign = [{
+      sovereignName: "",
+    }];
+    defaultArray.numOfUnitary = 0;
+    defaultArray.unitary = [{
+      unitary: "",
+    }];
+    defaultArray.addresses = [];
+
 
     const [responseData, setResponseData] =  useState(defaultArray);
 
@@ -86,13 +86,13 @@ const PostCodeSearch: React.FC<PostCodeSearchProps> = ({
         const unitary = response.data.hasOwnProperty('unitaries') ? response.data.unitaries : [];
         const addresses = response.data.hasOwnProperty('addresses') ? response.data.addresses : [];
 
-        const responseData = {
-          numOfSovereign: numOfSovereign,
-          sovereign: sovereign,
-          numOfUnitary: numOfUnitary,
-          unitary: unitary,
-          addresses: addresses
-        };
+        var responseData: any = {};
+        responseData.numOfSovereign = numOfSovereign;
+        responseData.sovereign = sovereign;
+        responseData.numOfUnitary = numOfUnitary;
+        responseData.unitary = unitary;
+        responseData.addresses = addresses;
+
 
         if (responseData.numOfUnitary > 0) {
           console.log(responseData);
