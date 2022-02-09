@@ -4,8 +4,6 @@ import Heading from '../../components/Heading/Heading';
 
 import AlphabeticalDirectory from '../../components/AlphabeticalDirectory/AlphabeticalDirectory';
 
-import {westData} from './AlphabeticalDirectoryData';
-import {correctedWestData} from './parish-data-helper';
 import CouncilTaxAlphabeticalDirectory from '../../components/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
 export interface CouncilTaxParishPageExampleProps {
   version: string;
@@ -38,7 +36,7 @@ export const CouncilTaxParishPageExample: React.FC<CouncilTaxParishPageExamplePr
         <PageStructures.PageMain>
           <Heading level={1} text="2020/21 council tax charges by Parish" />
 
-          <CouncilTaxAlphabeticalDirectory data={correctedWestData(westData)} />
+          <CouncilTaxAlphabeticalDirectory />
 
 
           <Heading level={2} text="Check a property's band" />

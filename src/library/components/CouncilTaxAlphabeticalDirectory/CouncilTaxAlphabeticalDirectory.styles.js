@@ -100,3 +100,24 @@ export const BackButton = styled.a`
     left: 0;
   }
 `
+
+export const LoadingContainer = styled.div`
+    text-align: center;
+`;
+
+
+export const ErrorText = styled.p`
+    ${props => props.theme.fontStyles}
+    color: ${props => props.theme.theme_vars.colours.negative};
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-size: 0.8rem;
+    line-height: 1.1;
+
+    @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+        font-size: 18px;
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+`;
