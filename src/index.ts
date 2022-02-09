@@ -27,6 +27,7 @@ import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
+import Image from './library/slices/Image/Image';
 import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
@@ -38,6 +39,7 @@ export {
   CallToAction,
   Divider,
   DownloadableFiles,
+  Image,
   Promotions,
   Video,
   WarningText,
@@ -45,13 +47,7 @@ export {
 };
 
 // Structure
-export * from "./library/structure/PageStructures";
+export * from './library/structure/PageStructures';
 
 // Themes
-export {
-  GDS_theme,
-  north_theme,
-  west_theme,
-  lb_theme_north,
-  lb_theme_west,
-} from "./themes/theme_generator";
+export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from './themes/theme_generator';
