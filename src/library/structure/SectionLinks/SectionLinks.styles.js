@@ -101,7 +101,7 @@ export const Summary = styled.p`
   font-weight: 400;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.figure`
   position: relative;
   padding-top: 56.25%;
   width: 100%;
