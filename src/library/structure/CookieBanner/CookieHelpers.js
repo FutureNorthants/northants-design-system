@@ -13,3 +13,22 @@ export const getCookie = (name) => {
 
   return decodeURI(dc.substring(begin + prefix.length, end));
 };
+
+/**
+ * Were cookies accepted by the user, or overridden by the passed param?
+ * 
+ * @param cookiesAcceptedOverride boolean
+ * @returns boolean
+ */
+export const wereCookiesAccepted = (cookiesAcceptedOverride) => {
+  if (cookiesAcceptedOverride === true || cookiesAcceptedOverride === false) {
+    return cookiesAcceptedOverride;
+  }
+
+  const myCookie = getCookie(cookieName);
+  if (myCookie !== null) {
+    return myCookie.includes('"cookiesAccepted":true');
+  }
+
+  return false;
+};

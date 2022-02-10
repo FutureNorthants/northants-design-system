@@ -27,6 +27,7 @@ import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
+import GoogleMap from './library/slices/GoogleMap/GoogleMap';
 import Image from './library/slices/Image/Image';
 import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
@@ -39,6 +40,7 @@ export {
   CallToAction,
   Divider,
   DownloadableFiles,
+  GoogleMap,
   Image,
   Promotions,
   Video,
