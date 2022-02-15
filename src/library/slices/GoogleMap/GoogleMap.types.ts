@@ -1,6 +1,6 @@
 export interface GoogleMapProps {
   /**
-   * Title text. Optional.
+   * Title text. Optional. Rev 1
    */
   title?: string;
 

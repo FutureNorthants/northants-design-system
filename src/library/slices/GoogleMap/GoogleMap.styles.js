@@ -32,22 +32,26 @@ export const MapDescription = styled.div`
   }
 `;
 
-export const MapEmbed = styled.figure`
+export const MapEmbed = styled.div`
   display: block;
-  padding-top: 56.25%;
   position: relative;
-  margin-bottom: 15px;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  @media screen and (orientation:portrait) {
+    padding-top: 133%; /* 3:4 aspect ratio for phones */
   }
+  margin-bottom: 15px;
+`;
+
+export const MapEmbedIFrame = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export const MapLink = styled.a`

@@ -52,7 +52,7 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
       )}
       {cookiesAccepted && embed_url && (
         <Styles.MapEmbed data-testid="GoogleMapContainer">
-          <iframe src={embed_url} allow="fullscreen" data-testid="GoogleMapIframe"></iframe>
+          <Styles.MapEmbedIFrame src={embed_url} allow="fullscreen" data-testid="GoogleMapIframe" />
         </Styles.MapEmbed>
       )}
       {!cookiesAccepted && link_url && (
