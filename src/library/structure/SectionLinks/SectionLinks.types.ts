@@ -49,15 +49,15 @@ export interface PageLinkProp {
   /**
    * The small image url
    */
-  imageSmall?: string;
+  imageSmall?: string | null;
 
   /**
    * The large image url
    */
-  imageLarge?: string;
+  imageLarge?: string | null;
 
   /**
    * The image alt text
    */
-  imageAltText?: string;
+  imageAltText?: string | null;
 }
