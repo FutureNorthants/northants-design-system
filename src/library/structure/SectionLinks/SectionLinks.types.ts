@@ -5,7 +5,7 @@ export interface SectionLinksProps {
   sectionTitle: string;
 
   /**
-   * If there is only one section then do not dieplay the title
+   * If there is only one section then do not display the title
    */
   displayTitle?: boolean;
 

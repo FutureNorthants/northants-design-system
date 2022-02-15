@@ -3,6 +3,9 @@ import { SectionLinksProps } from './SectionLinks.types';
 import * as Styles from './SectionLinks.styles';
 import LazyImage from 'react-lazy-progressive-image';
 
+/**
+ * Display a list of links for a section with optional images
+ */
 const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
   sectionTitle,
   displayTitle = true,
