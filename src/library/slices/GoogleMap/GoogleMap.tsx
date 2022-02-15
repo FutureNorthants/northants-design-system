@@ -56,7 +56,7 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
         </Styles.MapEmbed>
       )}
       {!cookiesAccepted && link_url && (
-        <Styles.MapLink href={link_url} data-testid="GoogleMapLink">
+        <Styles.MapLink href={link_url}>
           {link_title ? link_title : 'Google Maps link'}
         </Styles.MapLink>
       )}
