@@ -36,3 +36,12 @@ export const GoogleMapWithTitleAndDescriptionDataWithoutCookies = {
 export const GoogleMapWithTitleAndDescriptionDataAutodetectCookies = {
   ...Common,
 };
+
+export const GoogleMapWithInvalidLinks = {
+    title: 'Invalid embedded map',
+    description: 'This is an attempt to embed a source that is not Google Maps',
+    link_title: 'Click to show a lovely map, it is safe honest',
+    link_url: 'https://en.wikipedia.org/wiki/Honeypot_(computing)',
+    iframe_html: '<iframe src="https://en.wikipedia.org/wiki/Honeypot_(computing)" />',
+    allowCookies: true,
+};

@@ -36,3 +36,6 @@ GoogleMapWithTitleAndDescriptionDataWithoutCookies.args = storydata.GoogleMapWit
 export const GoogleMapWithTitleAndDescriptionDataAutodetectCookies = Template.bind({});
 GoogleMapWithTitleAndDescriptionDataAutodetectCookies.args =
   storydata.GoogleMapWithTitleAndDescriptionDataAutodetectCookies;
+
+export const GoogleMapWithInvalidLinks = Template.bind({});
+GoogleMapWithInvalidLinks.args = storydata.GoogleMapWithInvalidLinks;

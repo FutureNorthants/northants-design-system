@@ -58,4 +58,26 @@ describe('GoogleMap slice', () => {
     expect(link).toBeVisible();
     expect(link).toHaveTextContent(storydata.GoogleMapNoTitleOrDescription.link_title);
   });
+
+  it('should object to links that are not to google maps', () => {
+    const renderComponent = () =>
+      render(
+        <ThemeProvider theme={west_theme}>
+          <GoogleMap {...storydata.GoogleMapWithInvalidLinks} />
+        </ThemeProvider>
+      );
+
+    const { getByTestId, queryByTestId, queryByRole } = renderComponent();
+
+    const alert = getByTestId('AlertBannerService');
+    expect(alert).toBeVisible();
+    expect(alert).toHaveTextContent('Embedded map contains invalid');
+
+    const iframe = queryByTestId('GoogleMapIframe');
+    expect(iframe).toBeNull();
+
+    const link = queryByRole('link');
+    expect(link).toBeNull();
+
+  });
 });
