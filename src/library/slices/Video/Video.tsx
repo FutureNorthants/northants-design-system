@@ -1,7 +1,7 @@
 import React from 'react';
 import { VideoProps, VideoProvider } from './Video.types';
 import * as Styles from './Video.styles';
-import { wereCookiesAccepted } from '../../structure/CookieBanner/CookieHelpers';
+import { wereCookiesAccepted } from './../../helpers/cookies';
 
 /**
  * A responsive video embed for YouTube or Vimeo

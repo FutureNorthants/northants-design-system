@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleMapProps } from './GoogleMap.types';
 import * as Styles from './GoogleMap.styles';
-import { wereCookiesAccepted } from '../../structure/CookieBanner/CookieHelpers';
+import { wereCookiesAccepted } from '../../helpers/cookies';
 import Heading from '../../components/Heading/Heading';
 import AlertBannerService from '../../structure/AlertBannerService/AlertBannerService';
 import sanitizeHtml from 'sanitize-html';

@@ -17,11 +17,11 @@ export const getCookie = (name) => {
 /**
  * Were cookies accepted by the user, or overridden by the passed param?
  * 
- * @param cookiesAcceptedOverride boolean
+ * @param cookiesAcceptedOverride boolean | null | undefined
  * @returns boolean
  */
 export const wereCookiesAccepted = (cookiesAcceptedOverride) => {
-  if (cookiesAcceptedOverride === true || cookiesAcceptedOverride === false) {
+  if (typeof cookiesAcceptedOverride === 'boolean') {
     return cookiesAcceptedOverride;
   }
 
