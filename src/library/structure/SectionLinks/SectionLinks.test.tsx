@@ -109,10 +109,10 @@ describe('Section Links', () => {
     // Third link doesn't have an image
     expect(images).toHaveLength(2);
 
-    expect(images[0]).toHaveAttribute('src', '/small-image-1.jpg');
+    expect(images[0]).toHaveStyle('background: url("/small-image-1.jpg") center center / cover no-repeat;');
     expect(images[0]).toHaveAttribute('alt', 'The first image alt text');
 
-    expect(images[1]).toHaveAttribute('src', '/small-image-2.jpg');
+    expect(images[1]).toHaveStyle('background: url("/small-image-2.jpg") center center / cover no-repeat;');
     expect(images[1]).toHaveAttribute('alt', 'The second image alt text');
   });
 });

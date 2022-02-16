@@ -19,8 +19,8 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
       {pageLinksArray.map((link, i) => (
         <Styles.Pagelink key={i} href={link.url} title={link.title}>
           {hasImages && (
-            <Styles.ImageContainer>
-              {link.imageLarge?.trim() && (
+            <>
+              {link.imageLarge?.trim() ? (
                 <LazyImage
                   placeholder={link.imageSmall}
                   src={link.imageLarge}
@@ -28,10 +28,19 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
                     partialVisibility: true,
                   }}
                 >
-                  {(src) => <Styles.Image src={src} alt={link.imageAltText} />}
+                  {(src) => (
+                    <Styles.ImageContainer
+                      image={src}
+                      alt={link.imageAltText}
+                      role="img"
+                      aria-label={link.imageAltText}
+                    ></Styles.ImageContainer>
+                  )}
                 </LazyImage>
+              ) : (
+                <Styles.ImageContainer />
               )}
-            </Styles.ImageContainer>
+            </>
           )}
           <Styles.Title>{link.title}</Styles.Title>
           <Styles.Summary>{link.summary}</Styles.Summary>

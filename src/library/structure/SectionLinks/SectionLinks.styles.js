@@ -107,6 +107,7 @@ export const ImageContainer = styled.figure`
   width: 100%;
   display: block;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  background: ${(props) => (props.image ? `url("` + props.image + `") center center / cover no-repeat` : ``)};
 `;
 
 export const Image = styled.img`
