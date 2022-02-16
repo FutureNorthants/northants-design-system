@@ -4,7 +4,7 @@ import Video from './Video';
 import { VideoProps, VideoProvider } from './Video.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
-import { cookieName } from './../../structure/CookieBanner/CookieHelpers';
+import { cookieName } from './../../helpers/cookies';
 
 describe('Video Component', () => {
   it('should render a link when cookies are not accepted', () => {
