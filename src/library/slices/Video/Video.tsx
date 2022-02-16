@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { VideoProps, VideoProvider } from './Video.types';
 import * as Styles from './Video.styles';
-import { cookieName, getCookie } from '../../structure/CookieBanner/CookieHelpers';
+import { wereCookiesAccepted } from './../../helpers/cookies';
 
 /**
  * A responsive video embed for YouTube or Vimeo
  */
 const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, description, allowCookies, ...props }) => {
-  let cookiesAccepted: boolean = allowCookies;
+  const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
   let watchLink: string;
   let embedLink: string;
-
-  const checkCookie = () => {
-    const myCookie = getCookie(cookieName);
-
-    if (myCookie !== null && allowCookies == null) {
-      cookiesAccepted = myCookie.includes('"cookiesAccepted":true');
-    }
-  };
 
   const defineLinks = () => {
     if (provider == VideoProvider.YouTube) {
@@ -31,7 +23,6 @@ const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, descri
     }
   };
 
-  checkCookie();
   defineLinks();
 
   return (
