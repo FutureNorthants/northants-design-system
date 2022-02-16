@@ -56,8 +56,8 @@ describe('Services Links List', () => {
     expect(header).toHaveTextContent('Order services by');
 
     const links = queryAllByRole('link');
-    // Quick links display: none on mobile and each service has icon and text link
-    expect(links.length).toBe(4);
+    // Quick links display: none on mobile so they won't be included
+    expect(links.length).toBe(2);
 
     expect(links[0]).toHaveAttribute('href', 'first-service');
     expect(links[0]).toHaveAttribute('title', 'First Service');
@@ -78,12 +78,12 @@ describe('Services Links List', () => {
 
     const links = queryAllByRole('link');
     expect(links[0]).toHaveAttribute('title', 'First Service');
-    expect(links[2]).toHaveAttribute('title', 'A Second Service');
+    expect(links[1]).toHaveAttribute('title', 'A Second Service');
 
     fireEvent.click(getByText('Alphabetical'));
 
     expect(links[0]).toHaveAttribute('title', 'A Second Service');
-    expect(links[2]).toHaveAttribute('title', 'First Service');
+    expect(links[1]).toHaveAttribute('title', 'First Service');
   });
 
   it('should hide the header and sort buttons', () => {

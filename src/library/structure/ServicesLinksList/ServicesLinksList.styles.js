@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import Heading from '../../components/Heading/Heading';
 
 const containerMaxHeight = (props) => {
   if (props.hideHeader) {
@@ -48,29 +47,9 @@ export const PagelinkBlank = styled.div`
     margin-bottom: 31px;
   }
 `;
-export const ServiceIconLink = styled.a``;
-export const PagelinkIconContainer = styled.div`
-  width: 65px;
-  height: auto;
 
-  svg {
-    width: 100%;
-    height: auto;
-  }
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    width: 96px;
-    height: auto;
-  }
-`;
-export const PagelinkIcon = styled.div`
-  vertical-align: middle;
-`;
-export const PagelinkIconHover = styled.div`
-  display: none;
-  vertical-align: middle;
-`;
 export const PagelinkInner = styled.div`
-  width: 100%;
+  padding-left: 76px;
 `;
 const PromotedLink = css`
   // display: block;
@@ -156,11 +135,11 @@ const backgroundStyles = (props) => {
 export const PagelinkBlock = styled.div`
   width: 100%;
   display: flex;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 5px;
 
@@ -185,52 +164,6 @@ export const PagelinkBlock = styled.div`
   ${backgroundStyles}
 
   ${PagelinkBlockOneCol}
-`;
-
-export const ServiceTitle = styled(Heading)`
-  margin: 0;
-
-  font-size: 24px;
-  font-size: 1.3rem;
-  line-height: 1.4;
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    font-size: 36px;
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-`;
-export const ServiceTitleLink = styled.a`
-  display: block;
-  padding: 15px 0;
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: inline-block;
-    padding: 0;
-    margin-bottom: 15px;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-  h2 {
-    ${(props) => props.theme.linkStyles}
-  }
-  &:hover {
-    h2 {
-      ${(props) => props.theme.linkStylesHover}
-    }
-  }
-  &:focus {
-    outline: none;
-    text-decoration: none;
-    ${(props) => props.theme.linkStylesFocus}
-    h2 {
-      text-decoration: none;
-    }
-  }
-  &:active {
-    ${(props) => props.theme.linkStylesActive}
-  }
 `;
 
 export const QuicklinkList = styled.ul`

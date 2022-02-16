@@ -5,7 +5,7 @@ import { ServicesLinksListProps } from './ServicesLinksList.types';
 import * as Styles from './ServicesLinksList.styles';
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Heading from '../../components/Heading/Heading';
-import serviceIcons from '../../components/icons/services/ServicesIcons';
+import HeadingWithIconLink from '../../components/HeadingWithIconLink/HeadingWithIconLink';
 
 const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   serviceLinksArray,
@@ -30,17 +30,6 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
       setOrderButtons(false);
     }
   }, [currentOrder]);
-
-  const DynamicComponent = ({ name, isHover = false }) => {
-    let DynamicIcon;
-    if (name === 'culture') {
-      let newName = name + themeContext.cardinal_name;
-      DynamicIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
-    } else {
-      DynamicIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
-    }
-    return <DynamicIcon colourFill={themeContext.theme_vars.colours.action} />;
-  };
 
   return (
     <>
@@ -90,23 +79,8 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
         <Styles.LinksList>
           {arrayOrdering.map((link, i) => (
             <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
-              {link.iconKey && (
-                <Styles.PagelinkIconContainer>
-                  <Styles.ServiceIconLink href={link.url} title={link.title} tabIndex="-1">
-                    <Styles.PagelinkIcon className="service-icon">
-                      <DynamicComponent name={link.iconKey} isHover={false} />
-                    </Styles.PagelinkIcon>
-                    <Styles.PagelinkIconHover className="service-icon-hover">
-                      <DynamicComponent name={link.iconKey} isHover={true} />
-                    </Styles.PagelinkIconHover>
-                  </Styles.ServiceIconLink>
-                </Styles.PagelinkIconContainer>
-              )}
+              <HeadingWithIconLink title={link.title} iconKey={link.iconKey} link={link.url} />
               <Styles.PagelinkInner>
-                <Styles.ServiceTitleLink href={link.url} title={link.title}>
-                  <Styles.ServiceTitle text={link.title} />
-                </Styles.ServiceTitleLink>
-
                 {link.quickLinksArray?.length > 0 && (
                   <Styles.QuicklinkList>
                     {link.quickLinksArray.map((quicklink) => (
