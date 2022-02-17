@@ -10,10 +10,12 @@ import BusinessIcon from './BusinessIcon/Icon';
 import BusinessIconHover from './BusinessIconHover/Icon';
 import CareersIcon from './CareersIcon/Icon';
 import CareersIconHover from './CareersIconHover/Icon';
+import CharityIcon from './Charity/Icon';
+import CharityIconHover from './CharityHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
 import ChildrenIconHover from './ChildrenIconHover/Icon';
-import CondolenceBookIcon from './CondolenceBookIcon/Icon'
-import CondolenceBookIconHover from './CondolenceBookIconHover/Icon'
+import CondolenceBookIcon from './CondolenceBookIcon/Icon';
+import CondolenceBookIconHover from './CondolenceBookIconHover/Icon';
 import CouncilIcon from './CouncilIcon/Icon';
 import CouncilIconHover from './CouncilIconHover/Icon';
 import CouncilTaxIcon from './CouncilTaxIcon/Icon';
@@ -30,12 +32,18 @@ import EnvironmentIcon from './EnvironmentIcon/Icon';
 import EnvironmentIconHover from './EnvironmentIconHover/Icon';
 import FinanceIcon from './FinanceIcon/Icon';
 import FinanceIconHover from './FinanceIconHover/Icon';
+import FlowerIcon from './Flower/Icon';
+import FlowerIconHover from './FlowerHover/Icon';
 import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
 import LibrariesIconHover from './LibrariesIconHover/Icon';
+import ParkEventIcon from './ParkEvent/Icon';
+import ParkEventIconHover from './ParkEventHover/Icon';
+import ParkingIcon from './Parking/Icon';
+import ParkingIconHover from './ParkingHover/Icon';
 import PlanningIcon from './PlanningIcon/Icon';
 import PlanningIconHover from './PlanningIconHover/Icon';
 import RoadsIcon from './RoadsIcon/Icon';
@@ -50,56 +58,64 @@ import SportsIcon from './SportsIcon/Icon';
 import SportsIconHover from './SportsIconHover/Icon';
 
 let components = {
-    adults: AdultsIcon,
-    adultsHover: AdultsIconHover,
-    benefits: BenefitsIcon,
-    benefitsHover: BenefitsIconHover,
-    bins: BinsIcon,
-    binsHover: BinsIconHover,
-    births: BirthsIcon,
-    birthsHover: BirthsIconHover,
-    business: BusinessIcon,
-    businessHover: BusinessIconHover,
-    careers: CareersIcon,
-    careersHover: CareersIconHover,
-    children: ChildrenIcon,
-    childrenHover: ChildrenIconHover,
-    condolenceBook: CondolenceBookIcon,
-    condolenceBookHover: CondolenceBookIconHover,
-    council: CouncilIcon,
-    councilHover: CouncilIconHover,
-    counciltax: CouncilTaxIcon,
-    counciltaxHover: CouncilTaxIconHover,
-    covid: CovidIcon,
-    covidHover: CovidIconHover,
-    culturenorth: CultureNorthIcon,
-    culturenorthHover: CultureNorthIconHover,
-    culturewest: CultureWestIcon,
-    culturewestHover: CultureWestIconHover,
-    democracy: DemocracyIcon,
-    democracyHover: DemocracyIconHover,
-    environment: EnvironmentIcon,
-    environmentHover: EnvironmentIconHover,
-    finance: FinanceIcon,
-    financeHover: FinanceIconHover,
-    govUK: GovUKIcon,
-    govUKHover: GovUKIconHover,
-    housing: HousingIcon,
-    housingHover: HousingIconHover,
-    libraries: LibrariesIcon,
-    librariesHover: LibrariesIconHover,
-    planning: PlanningIcon,
-    planningHover: PlanningIconHover,
-    roads: RoadsIcon,
-    roadsHover: RoadsIconHover,
-    royalWebsite: RoyalWebsiteIcon,
-    royalWebsiteHover: RoyalWebsiteIconHover,
-    safety: SafetyIcon,
-    safetyHover: SafetyIconHover,
-    schools: SchoolsIcon,
-    schoolsHover: SchoolsIconHover,
-    sports: SportsIcon,
-    sportsHover: SportsIconHover,
+  adults: AdultsIcon,
+  adultsHover: AdultsIconHover,
+  benefits: BenefitsIcon,
+  benefitsHover: BenefitsIconHover,
+  bins: BinsIcon,
+  binsHover: BinsIconHover,
+  births: BirthsIcon,
+  birthsHover: BirthsIconHover,
+  business: BusinessIcon,
+  businessHover: BusinessIconHover,
+  careers: CareersIcon,
+  careersHover: CareersIconHover,
+  charity: CharityIcon,
+  charityHover: CharityIconHover,
+  children: ChildrenIcon,
+  childrenHover: ChildrenIconHover,
+  condolenceBook: CondolenceBookIcon,
+  condolenceBookHover: CondolenceBookIconHover,
+  council: CouncilIcon,
+  councilHover: CouncilIconHover,
+  counciltax: CouncilTaxIcon,
+  counciltaxHover: CouncilTaxIconHover,
+  covid: CovidIcon,
+  covidHover: CovidIconHover,
+  culturenorth: CultureNorthIcon,
+  culturenorthHover: CultureNorthIconHover,
+  culturewest: CultureWestIcon,
+  culturewestHover: CultureWestIconHover,
+  democracy: DemocracyIcon,
+  democracyHover: DemocracyIconHover,
+  environment: EnvironmentIcon,
+  environmentHover: EnvironmentIconHover,
+  finance: FinanceIcon,
+  financeHover: FinanceIconHover,
+  flower: FlowerIcon,
+  flowerHover: FlowerIconHover,
+  govUK: GovUKIcon,
+  govUKHover: GovUKIconHover,
+  housing: HousingIcon,
+  housingHover: HousingIconHover,
+  libraries: LibrariesIcon,
+  librariesHover: LibrariesIconHover,
+  parkevent: ParkEventIcon,
+  parkeventHover: ParkEventIconHover,
+  parking: ParkingIcon,
+  parkingHover: ParkingIconHover,
+  planning: PlanningIcon,
+  planningHover: PlanningIconHover,
+  roads: RoadsIcon,
+  roadsHover: RoadsIconHover,
+  royalWebsite: RoyalWebsiteIcon,
+  royalWebsiteHover: RoyalWebsiteIconHover,
+  safety: SafetyIcon,
+  safetyHover: SafetyIconHover,
+  schools: SchoolsIcon,
+  schoolsHover: SchoolsIconHover,
+  sports: SportsIcon,
+  sportsHover: SportsIconHover,
 };
 
 export default components;
