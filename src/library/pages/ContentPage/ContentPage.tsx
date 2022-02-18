@@ -11,6 +11,8 @@ import Summary from '../../structure/Summary/Summary';
 import { smallTable, largeTable } from './ContentPage.storydata';
 import Promotions from '../../slices/Promotions/Promotions';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
+import { googleMapData } from './ContentPage.storydata';
+import GoogleMap from '../../slices/GoogleMap/GoogleMap';
 
 export interface ContentPageProps {}
 
@@ -196,6 +198,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           ]}
         />
         <Promotions promos={PromoBlocksData} />
+        <GoogleMap {...googleMapData} />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
