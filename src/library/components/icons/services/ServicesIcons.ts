@@ -1,3 +1,5 @@
+import AccessibleParkingIcon from './AccessibleParking/Icon';
+import AccessibleParkingIconHover from './AccessibleParkingHover/Icon';
 import AdultsIcon from './AdultsIcon/Icon';
 import AdultsIconHover from './AdultsIconHover/Icon';
 import BenefitsIcon from './BenefitsIcon/Icon';
@@ -34,8 +36,6 @@ import CultureWestIcon from './CultureWestIcon/Icon';
 import CultureWestIconHover from './CultureWestIconHover/Icon';
 import DemocracyIcon from './DemocracyIcon/Icon';
 import DemocracyIconHover from './DemocracyIconHover/Icon';
-import DisabledParkingIcon from './DisabledParking/Icon';
-import DisabledParkingIconHover from './DisabledParkingHover/Icon';
 import EnvironmentIcon from './EnvironmentIcon/Icon';
 import EnvironmentIconHover from './EnvironmentIconHover/Icon';
 import FinanceIcon from './FinanceIcon/Icon';
@@ -44,6 +44,8 @@ import FlowerIcon from './Flower/Icon';
 import FlowerIconHover from './FlowerHover/Icon';
 import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
+import HighwayIcon from './Highway/Icon';
+import HighwayIconHover from './HighwayHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
@@ -58,8 +60,12 @@ import PlanningIcon from './PlanningIcon/Icon';
 import PlanningIconHover from './PlanningIconHover/Icon';
 import PotholeIcon from './Pothole/Icon';
 import PotholeIconHover from './PotholeHover/Icon';
+import ReportIcon from './Report/Icon';
+import ReportIconHover from './ReportHover/Icon';
 import RoadsIcon from './RoadsIcon/Icon';
 import RoadsIconHover from './RoadsIconHover/Icon';
+import RoadWorksIcon from './RoadWorks/Icon';
+import RoadWorksIconHover from './RoadWorksHover/Icon';
 import RoyalWebsiteIcon from './RoyalWebsiteIcon/Icon';
 import RoyalWebsiteIconHover from './RoyalWebsiteIconHover/Icon';
 import SafetyIcon from './SafetyIcon/Icon';
@@ -106,8 +112,8 @@ let components = {
   culturewestHover: CultureWestIconHover,
   democracy: DemocracyIcon,
   democracyHover: DemocracyIconHover,
-  disabledparking: DisabledParkingIcon,
-  disabledparkingHover: DisabledParkingIconHover,
+  accessibleparking: AccessibleParkingIcon,
+  accessibleparkingHover: AccessibleParkingIconHover,
   environment: EnvironmentIcon,
   environmentHover: EnvironmentIconHover,
   finance: FinanceIcon,
@@ -116,6 +122,8 @@ let components = {
   flowerHover: FlowerIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
+  highway: HighwayIcon,
+  highwayHover: HighwayIconHover,
   housing: HousingIcon,
   housingHover: HousingIconHover,
   libraries: LibrariesIcon,
@@ -130,8 +138,12 @@ let components = {
   planningHover: PlanningIconHover,
   pothole: PotholeIcon,
   potholeHover: PotholeIconHover,
+  report: ReportIcon,
+  reportHover: ReportIconHover,
   roads: RoadsIcon,
   roadsHover: RoadsIconHover,
+  roadworks: RoadWorksIcon,
+  roadworksHover: RoadWorksIconHover,
   royalWebsite: RoyalWebsiteIcon,
   royalWebsiteHover: RoyalWebsiteIconHover,
   safety: SafetyIcon,

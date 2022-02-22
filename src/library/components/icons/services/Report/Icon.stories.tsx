@@ -5,7 +5,7 @@ import { IconProps } from '../Icon.types';
 import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Icons/Services/Disabled Parking',
+  title: 'Library/Icons/Services/Report',
   component: Icon,
   parameters: {
     status: {
