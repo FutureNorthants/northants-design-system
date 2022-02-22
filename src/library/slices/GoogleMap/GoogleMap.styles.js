@@ -32,13 +32,13 @@ export const MapDescription = styled.div`
   }
 `;
 
-export const MapEmbed = styled.div`
+export const MapEmbed = styled.figure`
   display: block;
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-top: 75%; /* 4:3 aspect ratio */
-  @media screen and (orientation:portrait) {
+  @media screen and (orientation: portrait) {
     padding-top: 133%; /* 3:4 aspect ratio for phones */
   }
   margin-bottom: 15px;

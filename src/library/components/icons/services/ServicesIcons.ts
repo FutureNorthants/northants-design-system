@@ -16,6 +16,8 @@ import BusinessIcon from './BusinessIcon/Icon';
 import BusinessIconHover from './BusinessIconHover/Icon';
 import CareersIcon from './CareersIcon/Icon';
 import CareersIconHover from './CareersIconHover/Icon';
+import CharityIcon from './Charity/Icon';
+import CharityIconHover from './CharityHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
 import ChildrenIconHover from './ChildrenIconHover/Icon';
 import CondolenceBookIcon from './CondolenceBookIcon/Icon';
@@ -38,12 +40,18 @@ import EnvironmentIcon from './EnvironmentIcon/Icon';
 import EnvironmentIconHover from './EnvironmentIconHover/Icon';
 import FinanceIcon from './FinanceIcon/Icon';
 import FinanceIconHover from './FinanceIconHover/Icon';
+import FlowerIcon from './Flower/Icon';
+import FlowerIconHover from './FlowerHover/Icon';
 import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
 import LibrariesIconHover from './LibrariesIconHover/Icon';
+import ParkEventIcon from './ParkEvent/Icon';
+import ParkEventIconHover from './ParkEventHover/Icon';
+import ParkingIcon from './Parking/Icon';
+import ParkingIconHover from './ParkingHover/Icon';
 import ParkingTicketIcon from './ParkingTicket/Icon';
 import ParkingTicketIconHover from './ParkingTicketHover/Icon';
 import PlanningIcon from './PlanningIcon/Icon';
@@ -80,6 +88,8 @@ let components = {
   businessHover: BusinessIconHover,
   careers: CareersIcon,
   careersHover: CareersIconHover,
+  charity: CharityIcon,
+  charityHover: CharityIconHover,
   children: ChildrenIcon,
   childrenHover: ChildrenIconHover,
   condolenceBook: CondolenceBookIcon,
@@ -102,12 +112,18 @@ let components = {
   environmentHover: EnvironmentIconHover,
   finance: FinanceIcon,
   financeHover: FinanceIconHover,
+  flower: FlowerIcon,
+  flowerHover: FlowerIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
   housing: HousingIcon,
   housingHover: HousingIconHover,
   libraries: LibrariesIcon,
   librariesHover: LibrariesIconHover,
+  parkevent: ParkEventIcon,
+  parkeventHover: ParkEventIconHover,
+  parking: ParkingIcon,
+  parkingHover: ParkingIconHover,
   parkingticket: ParkingTicketIcon,
   parkingticketHover: ParkingTicketIconHover,
   planning: PlanningIcon,
