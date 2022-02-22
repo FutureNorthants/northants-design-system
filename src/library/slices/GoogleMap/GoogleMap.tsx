@@ -20,8 +20,8 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
   const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
 
   /* We extract the iframe source URL and check it actually goes to www.google.com/maps */
-  const src_matches = iframe_html.match(/(?<=src=").*?(?=["])/gi);
-  let embed_url = src_matches?.length == 1 ? src_matches[0] : '';
+  const src_matches = iframe_html.match(/src="([^"]+)"/gi);
+  let embed_url = src_matches?.length == 1 ? src_matches[0].replace("src=\"", "") : '';
   if (embed_url) {
     const map_matches = embed_url.match(/^https:\/\/www.google.com\/maps/gi);
     embed_url = map_matches?.length == 1 ? embed_url : '';
