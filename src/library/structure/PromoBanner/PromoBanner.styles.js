@@ -32,17 +32,16 @@ export const Container = styled.div`
   }
 `;
 
-export const Image = styled.div`
-    background-image: url("${(props) => props.img}");
-    background-size: cover;
-    background-position: center;
-    min-height: 200px;
+export const Image = styled.a`
+  background-image: url('${(props) => props.img}');
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
 
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}){
-        width: 50%;
-        min-height: 300px;
-    }
-
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    width: 50%;
+    min-height: 300px;
+  }
 `;
 
 export const Wrapper = styled.div`
