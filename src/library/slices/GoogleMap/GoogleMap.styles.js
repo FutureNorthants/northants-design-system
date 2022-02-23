@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 /**
+ * A div to workaround a bug in styled components that results in no or wrong class and
+ * therefore styling being applied in some circumstances. Wrapped around anything affected.
+ */
+export const ProtectiveContainer = styled.div``;
+
+/**
  * Description text above map embed/link
  */
 export const MapDescription = styled.div`
@@ -71,4 +77,8 @@ export const MapLink = styled.a`
   &:active {
     ${(props) => props.theme.linkStylesActive};
   }
+`;
+
+export const AccessibleMapLink = styled(MapLink)`
+  ${(props) => props.theme.visuallyHidden};
 `;
