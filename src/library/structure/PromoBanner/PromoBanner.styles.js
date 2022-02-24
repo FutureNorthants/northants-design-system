@@ -32,7 +32,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Image = styled.a`
+export const ImageLink = styled.a`
   background-image: url('${(props) => props.img}');
   background-size: cover;
   background-position: center;

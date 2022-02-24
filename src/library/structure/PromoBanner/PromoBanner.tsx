@@ -24,7 +24,7 @@ const PromoBanner: React.FunctionComponent<PromoBannerProps> = ({
         partialVisibility: true,
       }}
     >
-      {(src) => <Styles.Image img={src} href={ctaUrl} title={ctaText} />}
+      {(src) => <Styles.ImageLink img={src} href={ctaUrl} title={ctaText} />}
     </LazyImage>
     <Styles.Wrapper>
       <Heading text={title} />
