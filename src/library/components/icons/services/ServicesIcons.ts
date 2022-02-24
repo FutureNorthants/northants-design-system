@@ -1,3 +1,5 @@
+import AccessibleParkingIcon from './AccessibleParking/Icon';
+import AccessibleParkingIconHover from './AccessibleParkingHover/Icon';
 import AdultsIcon from './AdultsIcon/Icon';
 import AdultsIconHover from './AdultsIconHover/Icon';
 import BenefitsIcon from './BenefitsIcon/Icon';
@@ -6,6 +8,12 @@ import BinsIcon from './BinsIcon/Icon';
 import BinsIconHover from './BinsIconHover/Icon';
 import BirthsIcon from './BirthsIcon/Icon';
 import BirthsIconHover from './BirthsIconHover/Icon';
+import BollardIcon from './Bollard/Icon';
+import BollardIconHover from './BollardHover/Icon';
+import BusIcon from './BusIcon/Icon';
+import BusIconHover from './BusIconHover/Icon';
+import BusPassIcon from './BusPass/Icon';
+import BusPassIconHover from './BusPassHover/Icon';
 import BusinessIcon from './BusinessIcon/Icon';
 import BusinessIconHover from './BusinessIconHover/Icon';
 import CareersIcon from './CareersIcon/Icon';
@@ -36,6 +44,8 @@ import FlowerIcon from './Flower/Icon';
 import FlowerIconHover from './FlowerHover/Icon';
 import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
+import HighwayIcon from './Highway/Icon';
+import HighwayIconHover from './HighwayHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
@@ -44,10 +54,18 @@ import ParkEventIcon from './ParkEvent/Icon';
 import ParkEventIconHover from './ParkEventHover/Icon';
 import ParkingIcon from './Parking/Icon';
 import ParkingIconHover from './ParkingHover/Icon';
+import ParkingTicketIcon from './ParkingTicket/Icon';
+import ParkingTicketIconHover from './ParkingTicketHover/Icon';
 import PlanningIcon from './PlanningIcon/Icon';
 import PlanningIconHover from './PlanningIconHover/Icon';
+import PotholeIcon from './Pothole/Icon';
+import PotholeIconHover from './PotholeHover/Icon';
+import ReportIcon from './Report/Icon';
+import ReportIconHover from './ReportHover/Icon';
 import RoadsIcon from './RoadsIcon/Icon';
 import RoadsIconHover from './RoadsIconHover/Icon';
+import RoadWorksIcon from './RoadWorks/Icon';
+import RoadWorksIconHover from './RoadWorksHover/Icon';
 import RoyalWebsiteIcon from './RoyalWebsiteIcon/Icon';
 import RoyalWebsiteIconHover from './RoyalWebsiteIconHover/Icon';
 import SafetyIcon from './SafetyIcon/Icon';
@@ -66,6 +84,12 @@ let components = {
   binsHover: BinsIconHover,
   births: BirthsIcon,
   birthsHover: BirthsIconHover,
+  bollard: BollardIcon,
+  bollardHover: BollardIconHover,
+  bus: BusIcon,
+  busHover: BusIconHover,
+  buspass: BusPassIcon,
+  buspassHover: BusPassIconHover,
   business: BusinessIcon,
   businessHover: BusinessIconHover,
   careers: CareersIcon,
@@ -88,6 +112,8 @@ let components = {
   culturewestHover: CultureWestIconHover,
   democracy: DemocracyIcon,
   democracyHover: DemocracyIconHover,
+  accessibleparking: AccessibleParkingIcon,
+  accessibleparkingHover: AccessibleParkingIconHover,
   environment: EnvironmentIcon,
   environmentHover: EnvironmentIconHover,
   finance: FinanceIcon,
@@ -96,6 +122,8 @@ let components = {
   flowerHover: FlowerIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
+  highway: HighwayIcon,
+  highwayHover: HighwayIconHover,
   housing: HousingIcon,
   housingHover: HousingIconHover,
   libraries: LibrariesIcon,
@@ -104,10 +132,18 @@ let components = {
   parkeventHover: ParkEventIconHover,
   parking: ParkingIcon,
   parkingHover: ParkingIconHover,
+  parkingticket: ParkingTicketIcon,
+  parkingticketHover: ParkingTicketIconHover,
   planning: PlanningIcon,
   planningHover: PlanningIconHover,
+  pothole: PotholeIcon,
+  potholeHover: PotholeIconHover,
+  report: ReportIcon,
+  reportHover: ReportIconHover,
   roads: RoadsIcon,
   roadsHover: RoadsIconHover,
+  roadworks: RoadWorksIcon,
+  roadworksHover: RoadWorksIconHover,
   royalWebsite: RoyalWebsiteIcon,
   royalWebsiteHover: RoyalWebsiteIconHover,
   safety: SafetyIcon,
