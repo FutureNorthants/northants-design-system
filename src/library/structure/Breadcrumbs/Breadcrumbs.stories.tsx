@@ -3,6 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import Breadcrumbs from './Breadcrumbs';
 import { BreadcrumbsProps } from './Breadcrumbs.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export default {
   title: 'library/Structure/Breadcrumbs',
@@ -15,7 +16,9 @@ export default {
 
 const Template: Story<BreadcrumbsProps> = (args) => (
   <SBPadding>
-    <Breadcrumbs {...args} />
+    <MaxWidthContainer>
+      <Breadcrumbs {...args} />
+    </MaxWidthContainer>
   </SBPadding>
 );
 

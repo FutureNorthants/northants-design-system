@@ -21,17 +21,6 @@ const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ breadcrumbsArr
         </Styles.Crumb>
       ))}
     </Styles.List>
-    <Styles.MobileCrumb>
-      <Styles.BreadcrumbLink
-        href={breadcrumbsArray[breadcrumbsArray.length - 1].url}
-        title={'Go back to previous page'}
-      >
-        <Styles.BackIconWrapper>
-          <ChevronIcon direction={'left'} />
-        </Styles.BackIconWrapper>
-        Back
-      </Styles.BreadcrumbLink>
-    </Styles.MobileCrumb>
   </Styles.Container>
 );
 

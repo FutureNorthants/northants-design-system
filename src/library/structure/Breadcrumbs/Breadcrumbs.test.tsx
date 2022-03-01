@@ -33,7 +33,7 @@ describe('Breadcrumbs', () => {
     // Include hidden as jest renders mobile first
     const links = queryAllByRole('link', { hidden: true });
 
-    expect(links.length).toBe(3);
+    expect(links.length).toBe(2);
 
     expect(links[0]).toHaveAttribute('href', '/');
     expect(links[0]).toHaveTextContent('Home');
@@ -41,10 +41,6 @@ describe('Breadcrumbs', () => {
     expect(links[1]).toHaveAttribute('href', '/service-landing-page');
     expect(links[1]).toHaveTextContent('Service landing page');
 
-    // Lastly, a mobile only 'Back' link
-    expect(links[2]).toHaveAttribute('href', '/service-landing-page');
-    expect(links[2]).toHaveTextContent('Back');
-
-    expect(getByTestId('Breadcrumbs')).toHaveStyle('margin-bottom: 30px');
+    expect(getByTestId('Breadcrumbs')).toHaveStyle(`margin-bottom: ${west_theme.theme_vars.spacingSizes.large}`);
   });
 });
