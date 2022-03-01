@@ -8,7 +8,7 @@ import * as Styles from './WarningText.styles';
 /**
  * Display text as a highlight or warning with a title
  */
-const WarningText: React.FC<WarningTextProps> = ({ title, isWarning = false, children }) => (
+const WarningText: React.FunctionComponent<WarningTextProps> = ({ title, isWarning = false, children }) => (
   <Styles.WarningText isWarning={isWarning} data-testid="WarningText">
     <Styles.Title isWarning={isWarning}>{title}</Styles.Title>
     <Styles.Content>{children}</Styles.Content>
