@@ -39,7 +39,7 @@ describe('Header', () => {
     expect(links[0]).toHaveAttribute('title', 'Home');
 
     expect(links[1]).toHaveAttribute('href', `${props.allServicesLink}#all-services`);
-    expect(links[1]).toHaveAttribute('title', 'All services');
+    expect(links[1]).not.toHaveAttribute('title');
 
     expect(search).toBeVisible();
   });

@@ -89,10 +89,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             </Styles.HomeLink>
           </Styles.LogoWrapper>
           {allServicesLink && (
-            <Styles.AllServicesLink
-              href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}
-              title="All services"
-            >
+            <Styles.AllServicesLink href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
               All services
             </Styles.AllServicesLink>
           )}
