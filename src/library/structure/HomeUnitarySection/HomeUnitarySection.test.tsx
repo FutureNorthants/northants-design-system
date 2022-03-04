@@ -37,12 +37,12 @@ describe('Home Unitary Section', () => {
 
     expect(links[0]).toHaveStyle(`color: ${west_theme.theme_vars.colours.action}`);
     expect(links[0]).toHaveTextContent('westnorthants.gov.uk');
-    expect(links[0]).toHaveAttribute('title', 'westnorthants.gov.uk');
+    expect(links[0]).not.toHaveAttribute('title');
     expect(links[0]).toHaveAttribute('href', west_theme.theme_vars.council_link);
 
     expect(links[1]).toHaveStyle(`color: ${west_theme.theme_vars.other_council_action}`);
     expect(links[1]).toHaveTextContent('northnorthants.gov.uk');
-    expect(links[1]).toHaveAttribute('title', 'northnorthants.gov.uk');
+    expect(links[1]).not.toHaveAttribute('title');
     expect(links[1]).toHaveAttribute('href', west_theme.theme_vars.other_council_link);
   });
 });

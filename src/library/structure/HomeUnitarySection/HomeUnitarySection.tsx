@@ -43,7 +43,6 @@ const HomeUnitarySection: React.FunctionComponent<HomeUnitarySectionProps> = ({
                 : themeContext.theme_vars.colours.action
             }
             href={westLink}
-            title="westnorthants.gov.uk"
           >
             westnorthants.gov.uk
           </Styles.CouncilLink>
@@ -61,7 +60,6 @@ const HomeUnitarySection: React.FunctionComponent<HomeUnitarySectionProps> = ({
                 : themeContext.theme_vars.colours.action
             }
             href={northLink}
-            title="northnorthants.gov.uk"
           >
             northnorthants.gov.uk
           </Styles.CouncilLink>
