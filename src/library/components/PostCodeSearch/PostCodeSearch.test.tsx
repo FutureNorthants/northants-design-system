@@ -40,7 +40,7 @@ describe('PostCodeSearch', () => {
 
     fireEvent.click(expandButton);
 
-    expect(queryByPlaceholderText('Search postcode')).toBeVisible();
+    expect(queryByPlaceholderText('Enter a postcode')).toBeVisible();
   });
 
   it('should error with empty postcode', () => {
@@ -49,7 +49,7 @@ describe('PostCodeSearch', () => {
     const expandButton = getByText(props.title);
 
     fireEvent.click(expandButton);
-    const searchInput = getByPlaceholderText('Search postcode');
+    const searchInput = getByPlaceholderText('Enter a postcode');
 
     fireEvent.change(searchInput, { target: { value: '' } });
 
@@ -72,7 +72,7 @@ describe('PostCodeSearch', () => {
     const expandButton = getByText(props.title);
 
     fireEvent.click(expandButton);
-    const searchInput = getByPlaceholderText('Search postcode');
+    const searchInput = getByPlaceholderText('Enter a postcode');
 
     fireEvent.change(searchInput, { target: { value: 'FAKE POSTCODE' } });
 
@@ -80,7 +80,7 @@ describe('PostCodeSearch', () => {
 
     await waitFor(() => {
       expect(component).toHaveTextContent(
-        'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new post codes.'
+        'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new postcodes.'
       );
     });
   });
@@ -125,7 +125,7 @@ describe('PostCodeSearch', () => {
     const expandButton = getByText(props.title);
 
     fireEvent.click(expandButton);
-    const searchInput = getByPlaceholderText('Search postcode');
+    const searchInput = getByPlaceholderText('Enter a postcode');
 
     fireEvent.change(searchInput, { target: { value: 'NORTH POSTCODE' } });
 

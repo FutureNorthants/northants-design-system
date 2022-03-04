@@ -63,8 +63,8 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
   };
 
   const handleSubmit = (e) => {
-    const enteredPostcode = e.target.elements.postcode.value;
     e.preventDefault();
+    const enteredPostcode = e.target.elements.postcode.value;
     setCurrentPostcode(enteredPostcode);
     if (enteredPostcode === '') {
       handleError(true, 'You need to enter a postcode');
@@ -98,7 +98,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
 
   const handleError = (
     error,
-    errorMsg = 'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new post codes.'
+    errorMsg = 'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new postcodes.'
   ) => {
     setErrorText(errorMsg);
     setisError(error);
@@ -177,30 +177,30 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
               isError={isError}
               lineColour={themeContext.theme_vars.colours.grey_dark}
             >
-              {isLoading ? (
+              {isLoading && (
                 <Styles.LoadingContainer>
                   <LoadingSpinner />
                   <p>Loading...</p>
                 </Styles.LoadingContainer>
-              ) : (
-                <>
-                  <Styles.Label htmlFor="postcode">
-                    Enter your postcode
-                    <HintText
-                      text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'}
-                    />
-                    <Input
-                      type="text"
-                      placeholder="Search postcode"
-                      name="postcode"
-                      errorText={errorText}
-                      isErrored={isError}
-                    />
-                  </Styles.Label>
-
-                  <FormButton type="submit" aria-label="Submit" text="Find" />
-                </>
               )}
+
+              <Styles.FormContainer isLoading={isLoading}>
+                <Styles.Label htmlFor="postcode">
+                  Enter your postcode
+                  <HintText
+                    text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Enter a postcode"
+                    name="postcode"
+                    errorText={errorText}
+                    isErrored={isError}
+                  />
+                </Styles.Label>
+
+                <FormButton type="submit" aria-label="Submit" text="Find" />
+              </Styles.FormContainer>
             </FormWithLine>
           ) : (
             <Styles.PostcodeResult>
@@ -229,7 +229,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                   {themeContext.theme_vars.cardinal_name !== responseData.unitary[0].unitary.toLowerCase() ? (
                     <p>
                       In order to find the right information for you, please visit the{' '}
-                      <a href={themeContext.theme_vars.other_council_link} title="Go to the other council">
+                      <a href={themeContext.theme_vars.other_council_link}>
                         {responseData.unitary[0].unitary} Northamptonshire website.
                       </a>
                     </p>
