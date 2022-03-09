@@ -1,48 +1,78 @@
-import React from "react";
+import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
-import AlertBanner from "./AlertBanner";
-import { AlertBannerProps } from "./AlertBanner.types";
+import AlertBanner from './AlertBanner';
+import { AlertBannerProps } from './AlertBanner.types';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export default {
-    title: "library/Structure/Alert Banner",
-    parameters: {
-      status: {
-        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-      }
+  title: 'library/Structure/Alert Banner',
+  component: AlertBanner,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
+  },
 };
 
-const childrenMessage = <p>Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a></p>
+const childrenMessage = (
+  <p>
+    Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a>
+  </p>
+);
 
-const Template: Story<AlertBannerProps> = (args) => <><AlertBanner {...args} /><br/><br/><p>Once this unique alert has been hidden it will not be shown again on this device.</p></>;
+const Template: Story<AlertBannerProps> = (args) => (
+  <>
+    <AlertBanner {...args} />
 
-export const AlertBannerExampleAlert = Template.bind({});    
+    <MaxWidthContainer>
+      <br />
+      <br />
+      <p>Once this unique alert has been hidden it will not be shown again on this device.</p>
+    </MaxWidthContainer>
+  </>
+);
+
+export const AlertBannerExampleAlert = Template.bind({});
 AlertBannerExampleAlert.args = {
-    title: "Coronavirus (COVID-19)",
-    uid: "5",
-    children: childrenMessage
+  title: 'Coronavirus (COVID-19)',
+  uid: '5',
+  children: childrenMessage,
 };
 
-export const AlertBannerExampleWarning = Template.bind({});    
+export const AlertBannerExampleWarning = Template.bind({});
 AlertBannerExampleWarning.args = {
-    title: "Warning message",
-    uid: "6",
-    alertType: "warning",
-    children: childrenMessage
+  title: 'Warning message',
+  uid: '6',
+  alertType: 'warning',
+  children: childrenMessage,
 };
 
-export const AlertBannerExamplePositive = Template.bind({});    
+export const AlertBannerExamplePositive = Template.bind({});
 AlertBannerExamplePositive.args = {
-    title: "Positive message",
-    uid: "7",
-    alertType: "positive",
-    children: childrenMessage
+  title: 'Positive message',
+  uid: '7',
+  alertType: 'positive',
+  children: childrenMessage,
 };
 
-export const AlertBannerExampleMemorial = Template.bind({});    
+export const AlertBannerExampleMemorial = Template.bind({});
 AlertBannerExampleMemorial.args = {
-    title: "Something terrible has happened",
-    uid: "4",
-    alertType: "london_bridge",
-    children: childrenMessage
+  title: 'Something terrible has happened',
+  uid: '4',
+  alertType: 'london_bridge',
+  children: childrenMessage,
+};
+
+export const AlertBannerWithLongText = Template.bind({});
+AlertBannerWithLongText.args = {
+  title: 'An alert with long text',
+  uid: '8',
+  alertType: 'positive',
+  children: (
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum pretium mauris a imperdiet.
+      Vestibulum nulla felis, aliquet ut massa non, vulputate molestie lectus. Etiam risus lectus, porta non metus eget,
+      efficitur elementum dolor. Donec odio turpis, ullamcorper sit amet convallis in, feugiat sit amet mi.{' '}
+    </p>
+  ),
 };
