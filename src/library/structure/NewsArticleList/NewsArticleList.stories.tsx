@@ -6,7 +6,7 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import { newsArticleData } from './NewsArticleData';
 
 export default {
-  title: 'Library/Components/News Article List',
+  title: 'Library/Structure/News Article List',
   component: NewsArticleList,
   parameters: {
     status: {
