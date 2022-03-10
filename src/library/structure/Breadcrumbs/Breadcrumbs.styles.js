@@ -15,9 +15,19 @@ export const List = styled.ol`
 `;
 
 export const Crumb = styled.li`
-  display: inline-block;
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  display: none;
+
+  &:first-of-type,
+  &:last-of-type {
+    display: inline-block;
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: inline-block;
+  }
+
   &:last-of-type svg {
     display: none;
   }
