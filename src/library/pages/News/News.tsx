@@ -8,7 +8,7 @@ import NewsArticleListHeader from '../../structure/NewsArticleListHeader/NewsArt
 import NewsArticleFilterAccordion from '../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordion';
 import CheckboxListFilter from '../../components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from '../../components/DropDownFilter/DropDownFilter';
-import { newsArticleData, newsArticleDataFiltered } from '../../structure/NewsArticleList/NewsArticleList.storydata';
+import { newsArticleData, newsArticleDataFiltered } from '../../structure/NewsArticleList/NewsArticleData';
 import { articleOptions } from './../../components/CheckboxListFilter/CheckboxListFilterData';
 import { serviceOptions } from './../../components/DropDownFilter/DropDownFilterData';
 import { NewsArticleFilterFields } from './../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText';
