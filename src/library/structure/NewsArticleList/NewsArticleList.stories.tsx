@@ -3,7 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import NewsArticleList from './NewsArticleList';
 import { NewsArticleListProps } from './NewsArticleList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { newsArticleData } from './NewsArticleList.storydata';
+import { newsArticleData } from './NewsArticleData';
 
 export default {
   title: 'Library/Components/News Article List',
