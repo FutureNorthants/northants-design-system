@@ -18,7 +18,11 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
   imageLarge,
   imageSmall,
   imageAltText,
+  showBreadcrumb = false,
+  breadcrumbsArray,
 }) => {
+  const breadcrumb = breadcrumbsArray?.[breadcrumbsArray.length - 1];
+
   return (
     <>
       <LazyImage
@@ -35,17 +39,22 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
             backgroundBox={backgroundBox}
             data-testid="HeroImage"
           >
-            <Styles.Overlay backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
-              {headline && <Styles.Headline level={1} text={headline} backgroundBox={backgroundBox} />}
-              {content && <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />}
-              {callToActionURL && backgroundBox && <CallToAction url={callToActionURL} text={callToActionText} />}
-              {!callToActionURL && backgroundBox && <br />}
-              {callToActionURL && !backgroundBox && (
-                <Styles.CallToActionLink href={callToActionURL}>
-                  {callToActionText ? callToActionText : 'Find out more'}
-                </Styles.CallToActionLink>
-              )}
-            </Styles.Overlay>
+            <Styles.InnerContainer>
+              <Styles.Overlay backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
+                {showBreadcrumb && breadcrumb && (
+                  <Styles.BreadcrumbLink href={breadcrumb.url}>{breadcrumb.title}</Styles.BreadcrumbLink>
+                )}
+                {headline && <Styles.Headline level={1} text={headline} backgroundBox={backgroundBox} />}
+                {content && <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />}
+                {callToActionURL && backgroundBox && <CallToAction url={callToActionURL} text={callToActionText} />}
+                {!callToActionURL && backgroundBox && <br />}
+                {callToActionURL && !backgroundBox && (
+                  <Styles.CallToActionLink href={callToActionURL}>
+                    {callToActionText ? callToActionText : 'Find out more'}
+                  </Styles.CallToActionLink>
+                )}
+              </Styles.Overlay>
+            </Styles.InnerContainer>
           </Styles.Container>
         )}
       </LazyImage>

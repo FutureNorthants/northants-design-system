@@ -6,6 +6,7 @@ import {
   HeroImageExampleGradientData,
   HeroImageExampleBoxedData,
   HeroImageExampleMicroSiteData,
+  HeroImageExampleBoxedWithBreadcrumbData,
 } from './HeroImage.storydata';
 
 export default {
@@ -57,3 +58,6 @@ HeroImageExampleGradientTitleOnly.args = {
   headline: 'Example Microsite Title',
   ...HeroImageExampleMicroSiteData,
 };
+
+export const HeroImageWithBreadcrumb = Template.bind({});
+HeroImageWithBreadcrumb.args = HeroImageExampleBoxedWithBreadcrumbData;

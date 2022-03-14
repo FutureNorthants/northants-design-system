@@ -1,3 +1,5 @@
+import { BreadcrumbProp } from '../Breadcrumbs/Breadcrumbs.types';
+
 export interface HeroImageProps {
   /**
    * Headline text, optional. Intention to use page title if missing.
@@ -38,4 +40,14 @@ export interface HeroImageProps {
    * Set to true to put the text and call to action on a white box, false to overlay on a darkened image
    */
   backgroundBox: boolean;
+
+  /**
+   * Should the breadcrumb be shown
+   */
+  showBreadcrumb?: boolean;
+
+  /**
+   * An optional array of breadcrumbs
+   */
+  breadcrumbsArray?: BreadcrumbProp[];
 }

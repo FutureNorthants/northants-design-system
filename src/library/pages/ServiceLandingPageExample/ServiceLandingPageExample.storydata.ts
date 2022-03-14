@@ -175,6 +175,17 @@ export const breadcrumbs: BreadcrumbProp[] = [
   },
 ];
 
+export const micrositeBreadcrumbs: BreadcrumbProp[] = [
+  {
+    title: 'Home',
+    url: '/',
+  },
+  {
+    title: 'Country Parks',
+    url: '/country-parks',
+  },
+];
+
 export const serviceAlert: AlertBannerServiceProps = {
   children: 'This is the alert text.',
   title: 'An example service alert',

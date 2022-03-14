@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Heading from "../../components/Heading/Heading";
+import styled from 'styled-components';
+import Heading from '../../components/Heading/Heading';
 
 /**
  * Hero image container with optional dark gradient for non-box mode
@@ -7,21 +7,38 @@ import Heading from "../../components/Heading/Heading";
  */
 export const Container = styled.div`
   background-image: ${(props) =>
-    !props.backgroundBox
-      ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),`
-      : ``} url("${(props) => props.image}");
-  
-  /* phones */
-  padding-top: 90%;
-  /* everything else */
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
-    padding-top: 31.25%;
-  }
+      !props.backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),` : ``}
+    url('${(props) => props.image}');
+
   padding-bottom: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+
+  &::before {
+    content: '';
+    /* phones */
+    padding-top: 90%;
+    /* everything else */
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      padding-top: 31.25%;
+    }
+  }
+`;
+
+export const InnerContainer = styled.div`
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  flex-grow: 1;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    max-width: ${(props) => props.theme.theme_vars.breakpoints.l};
+  }
 `;
 
 /**
@@ -30,18 +47,13 @@ export const Container = styled.div`
 export const Overlay = styled.div`
   ${(props) => props.theme.fontStyles}
   text-align: left;
-  position: absolute;
-  bottom: 14%;
-  left: 8%;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.x_large};
+  margin-left: 15px;
   padding: 25px 25px 0 25px;
   color: ${(props) =>
-    props.backgroundBox
-      ? props.theme.theme_vars.colours.black
-      : props.theme.theme_vars.colours.white};
+    props.backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
   background-color: ${(props) =>
-    props.backgroundBox
-      ? props.theme.theme_vars.colours.grey_light + "F2"
-      : `transparent`};
+    props.backgroundBox ? props.theme.theme_vars.colours.grey_light + 'F2' : `transparent`};
   box-shadow: ${(props) =>
     props.backgroundBox
       ? `0px -4px 0px 0px ` + props.theme.theme_vars.colours.action + ` inset, 0px 4px 15px rgba(0, 0, 0, 0.11)`
@@ -50,43 +62,44 @@ export const Overlay = styled.div`
   border-radius: 5px;
 
   /* default - phones */
-  max-width: 70%;
+  max-width: 80%;
 
   /* tablets */
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-    max-width: 50%;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    max-width: 60%;
+    margin-left: ${(props) => props.theme.theme_vars.spacingSizes.large};
   }
 
   /* desktop */
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
-    max-width: 35%;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    max-width: 50%;
+    margin-left: 0;
   }
 `;
 
 export const Headline = styled(Heading)`
   margin: 0;
   color: ${(props) =>
-    props.backgroundBox
-      ? props.theme.theme_vars.colours.black
-      : props.theme.theme_vars.colours.white};
-  
+    props.backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
+
   /* default - phones */
   font-size: 22px;
 
   /* tablets */
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     font-size: 32px;
   }
 
   /* desktop */
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.l}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     font-size: 44px;
   }
 `;
 
 export const Content = styled.div`
   margin-top: 10px;
-  p, div {
+  p,
+  div {
     margin-bottom: 10px;
   }
 `;
@@ -107,12 +120,21 @@ export const CallToActionLink = styled.a`
   &:hover,
   &:focus {
     text-decoration-style: dotted;
-    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5),
-      -2px 2px 4px rgba(150, 150, 150, 0.5),
-      2px -2px 4px rgba(150, 150, 150, 0.5),
-      -2px -2px 4px rgba(150, 150, 150, 0.5);
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
+      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5);
   }
   &:active {
     transform: translate(3px);
+  }
+`;
+
+export const BreadcrumbLink = styled.a`
+  ${(props) => props.theme.fontStyles}
+  ${(props) => props.theme.linkStyles}
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  display: block;
+
+  &:hover {
+    text-decoration-style: dashed;
   }
 `;
