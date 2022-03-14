@@ -23,8 +23,12 @@ export const Container = styled.div`
     content: '';
     /* phones */
     padding-top: 90%;
-    /* everything else */
+    /* tablet */
     @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      padding-top: 40%;
+    }
+    /* everything else */
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
       padding-top: 31.25%;
     }
   }
@@ -47,8 +51,9 @@ export const InnerContainer = styled.div`
 export const Overlay = styled.div`
   ${(props) => props.theme.fontStyles}
   text-align: left;
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.x_large};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   margin-left: 15px;
+  margin-right: 15px;
   padding: 25px 25px 0 25px;
   color: ${(props) =>
     props.backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
@@ -60,20 +65,24 @@ export const Overlay = styled.div`
       : `none`};
 
   border-radius: 5px;
+  overflow: hidden;
 
   /* default - phones */
-  max-width: 80%;
+  max-width: calc(100% - 30px);
 
   /* tablets */
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    max-width: 60%;
+    max-width: 65%;
     margin-left: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    margin-right: 0;
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   }
 
   /* desktop */
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     max-width: 50%;
     margin-left: 0;
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.x_large};
   }
 `;
 
