@@ -42,12 +42,7 @@ export interface HeroImageProps {
   backgroundBox: boolean;
 
   /**
-   * Should the breadcrumb be shown
+   * An optional breadcrumb. If not set then the breadcrumb is not shown
    */
-  showBreadcrumb?: boolean;
-
-  /**
-   * An optional array of breadcrumbs
-   */
-  breadcrumbsArray?: BreadcrumbProp[];
+  breadcrumb?: BreadcrumbProp;
 }

@@ -38,16 +38,9 @@ export const HeroImageExampleMicroSiteData: HeroImageProps = {
 };
 
 export const HeroImageExampleBoxedWithBreadcrumbData: HeroImageProps = {
-  showBreadcrumb: true,
-  breadcrumbsArray: [
-    {
-      title: 'Home',
-      url: '/',
-    },
-    {
-      title: 'Country Parks',
-      url: '/country-parks',
-    },
-  ],
+  breadcrumb: {
+    title: 'Home',
+    url: '/',
+  },
   ...HeroImageExampleBoxedData,
 };

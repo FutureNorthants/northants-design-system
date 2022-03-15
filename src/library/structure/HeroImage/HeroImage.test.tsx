@@ -136,17 +136,10 @@ describe('HeroImage slice', () => {
       backgroundBox: true,
       headline: 'Headline',
       content: '<p>Hello world</p>',
-      showBreadcrumb: true,
-      breadcrumbsArray: [
-        {
-          title: 'Home',
-          url: '/',
-        },
-        {
-          title: 'Country Parks',
-          url: '/country-parks',
-        },
-      ],
+      breadcrumb: {
+        title: 'Country Parks',
+        url: '/country-parks',
+      },
     };
 
     const renderComponent = () =>

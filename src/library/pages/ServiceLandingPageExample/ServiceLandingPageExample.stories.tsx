@@ -71,7 +71,7 @@ export const MicroSiteExample = Template.bind({});
 MicroSiteExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: micrositeBreadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
@@ -84,7 +84,7 @@ export const MicroSiteWithTopServicesExample = Template.bind({});
 MicroSiteWithTopServicesExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: micrositeBreadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
@@ -121,7 +121,7 @@ export const MicroSiteWithAlertExample = Template.bind({});
 MicroSiteWithAlertExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: breadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
