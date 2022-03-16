@@ -140,10 +140,18 @@ export const CallToActionLink = styled.a`
 export const BreadcrumbLink = styled.a`
   ${(props) => props.theme.fontStyles}
   ${(props) => props.theme.linkStyles}
+  color: ${(props) =>
+    props.backgroundBox ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: block;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration-style: dashed;
+    text-shadow: ${(props) =>
+      props.backgroundBox
+        ? 'none'
+        : `2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
+      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5)`};
   }
 `;

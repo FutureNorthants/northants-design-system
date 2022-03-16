@@ -38,7 +38,11 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
           >
             <Styles.InnerContainer>
               <Styles.Overlay backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
-                {breadcrumb && <Styles.BreadcrumbLink href={breadcrumb.url}>{breadcrumb.title}</Styles.BreadcrumbLink>}
+                {breadcrumb && (
+                  <Styles.BreadcrumbLink href={breadcrumb.url} backgroundBox={backgroundBox}>
+                    {breadcrumb.title}
+                  </Styles.BreadcrumbLink>
+                )}
                 {headline && <Styles.Headline level={1} text={headline} backgroundBox={backgroundBox} />}
                 {content && <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />}
                 {callToActionURL && backgroundBox && <CallToAction url={callToActionURL} text={callToActionText} />}
