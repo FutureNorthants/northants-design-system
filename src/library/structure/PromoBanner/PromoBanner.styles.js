@@ -37,6 +37,8 @@ export const ImageLink = styled.a`
   background-size: cover;
   background-position: center;
   min-height: 200px;
+  width: 100%;
+  display: block;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     width: 50%;
