@@ -78,7 +78,7 @@ export const BannerTitle = styled.p`
 
 export const BannerContent = styled.div`
   p {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 `;
 
