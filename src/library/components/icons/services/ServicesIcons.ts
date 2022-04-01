@@ -1,5 +1,9 @@
 import AccessibleParkingIcon from './AccessibleParking/Icon';
 import AccessibleParkingIconHover from './AccessibleParkingHover/Icon';
+import AddressChangeIcon from './AddressChangeIcon/Icon';
+import AddressChangeIconHover from './AddressChangeIconHover/Icon';
+import AddressIcon from './AddressIcon/Icon';
+import AddressIconHover from './AddressIconHover/Icon';
 import AdultsIcon from './AdultsIcon/Icon';
 import AdultsIconHover from './AdultsIconHover/Icon';
 import BenefitsIcon from './BenefitsIcon/Icon';
@@ -18,6 +22,8 @@ import BusinessIcon from './BusinessIcon/Icon';
 import BusinessIconHover from './BusinessIconHover/Icon';
 import CareersIcon from './CareersIcon/Icon';
 import CareersIconHover from './CareersIconHover/Icon';
+import CashIcon from './CashIcon/Icon';
+import CashIconHover from './CashIconHover/Icon';
 import CharityIcon from './Charity/Icon';
 import CharityIconHover from './CharityHover/Icon';
 import ChildrenIcon from './ChildrenIcon/Icon';
@@ -46,6 +52,8 @@ import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
 import HighwayIcon from './Highway/Icon';
 import HighwayIconHover from './HighwayHover/Icon';
+import HouseMoneyIcon from './HouseMoneyIcon/Icon';
+import HouseMoneyIconHover from './HouseMoneyIconHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
@@ -56,10 +64,16 @@ import ParkingIcon from './Parking/Icon';
 import ParkingIconHover from './ParkingHover/Icon';
 import ParkingTicketIcon from './ParkingTicket/Icon';
 import ParkingTicketIconHover from './ParkingTicketHover/Icon';
+import PayIcon from './PayIcon/Icon';
+import PayIconHover from './PayIconHover/Icon';
+import PhonePayIcon from './PhonePayIcon/Icon';
+import PhonePayIconHover from './PhonePayIconHover/Icon';
 import PlanningIcon from './PlanningIcon/Icon';
 import PlanningIconHover from './PlanningIconHover/Icon';
 import PotholeIcon from './Pothole/Icon';
 import PotholeIconHover from './PotholeHover/Icon';
+import RatePayIcon from './RatePayIcon/Icon';
+import RatePayIconHover from './RatePayIconHover/Icon';
 import ReportIcon from './Report/Icon';
 import ReportIconHover from './ReportHover/Icon';
 import RoadsIcon from './RoadsIcon/Icon';
@@ -72,12 +86,20 @@ import SafetyIcon from './SafetyIcon/Icon';
 import SafetyIconHover from './SafetyIconHover/Icon';
 import SchoolsIcon from './SchoolsIcon/Icon';
 import SchoolsIconHover from './SchoolsIconHover/Icon';
+import SinglePersonIcon from './SinglePersonIcon/Icon';
+import SinglePersonIconHover from './SinglePersonIconHover/Icon';
 import SportsIcon from './SportsIcon/Icon';
 import SportsIconHover from './SportsIconHover/Icon';
+import ValuationIcon from './ValuationIcon/Icon';
+import ValuationIconHover from './ValuationIconHover/Icon';
 
 let components = {
   adults: AdultsIcon,
   adultsHover: AdultsIconHover,
+  addresschange: AddressChangeIcon,
+  addresschangeHover: AddressChangeIconHover,
+  address: AddressIcon,
+  addressHover: AddressIconHover,
   benefits: BenefitsIcon,
   benefitsHover: BenefitsIconHover,
   bins: BinsIcon,
@@ -94,6 +116,8 @@ let components = {
   businessHover: BusinessIconHover,
   careers: CareersIcon,
   careersHover: CareersIconHover,
+  cash: CashIcon,
+  cashHover: CashIconHover,
   charity: CharityIcon,
   charityHover: CharityIconHover,
   children: ChildrenIcon,
@@ -124,6 +148,8 @@ let components = {
   govUKHover: GovUKIconHover,
   highway: HighwayIcon,
   highwayHover: HighwayIconHover,
+  housemoney: HouseMoneyIcon,
+  housemoneyHover: HouseMoneyIconHover,
   housing: HousingIcon,
   housingHover: HousingIconHover,
   libraries: LibrariesIcon,
@@ -134,10 +160,16 @@ let components = {
   parkingHover: ParkingIconHover,
   parkingticket: ParkingTicketIcon,
   parkingticketHover: ParkingTicketIconHover,
+  pay: PayIcon,
+  payHover: PayIconHover,
+  phonepay: PhonePayIcon,
+  phonepayHover: PhonePayIconHover,
   planning: PlanningIcon,
   planningHover: PlanningIconHover,
   pothole: PotholeIcon,
   potholeHover: PotholeIconHover,
+  ratepay: RatePayIcon,
+  ratepayHover: RatePayIconHover,
   report: ReportIcon,
   reportHover: ReportIconHover,
   roads: RoadsIcon,
@@ -150,8 +182,12 @@ let components = {
   safetyHover: SafetyIconHover,
   schools: SchoolsIcon,
   schoolsHover: SchoolsIconHover,
+  singleperson: SinglePersonIcon,
+  singlepersonHover: SinglePersonIconHover,
   sports: SportsIcon,
   sportsHover: SportsIconHover,
+  valuation: ValuationIcon,
+  valuationHover: ValuationIconHover,
 };
 
 export default components;
