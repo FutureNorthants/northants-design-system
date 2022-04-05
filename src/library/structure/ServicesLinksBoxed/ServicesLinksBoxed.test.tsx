@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import ServiceLinksBoxed from './ServiceLinksBoxed';
-import { ServiceLinksBoxedProps } from './ServiceLinksBoxed.types';
-import { serviceLinksArray } from './ServiceLinksBoxed.storydata';
+import ServiceLinksBoxed from './ServicesLinksBoxed';
+import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
+import { serviceLinksArray } from './ServicesLinksBoxed.storydata';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 

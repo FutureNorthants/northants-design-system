@@ -11,15 +11,18 @@ export const ServiceLink = styled.button`
     ${(props) => props.theme.theme_vars.spacingSizes.medium};
   width: 100%;
   position: relative;
-  border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  border: 1px solid
+    ${(props) => (props.show ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey)};
   border-radius: 3px;
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
   text-decoration-style: ${(props) => (props.show ? `dashed` : `underline`)};
 
   &:hover {
-    background: ${(props) => props.theme.theme_vars.colours.action}50;
+    background: ${(props) => props.theme.theme_vars.colours.grey_light};
     border: 1px solid ${(props) => props.theme.theme_vars.colours.action};
+    text-decoration-style: dashed;
+    cursor: pointer;
   }
 
   .serviceLinkChevron {
@@ -55,12 +58,18 @@ export const QuickLinksContainer = styled.div`
   z-index: 9;
   left: 0;
   right: 0;
-
   background: ${(props) => props.theme.theme_vars.colours.white};
+  box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+    0px 4px 15px rgba(0, 0, 0, 0.11);
+  -webkit-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+    0px 4px 15px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+    0px 4px 15px rgba(0, 0, 0, 0.11);
 `;
 
 export const QuickLinksInnerContainer = styled.div`
   background: ${(props) => props.theme.theme_vars.colours.action}50;
+  border-top: 1px solid ${(props) => props.theme.theme_vars.colours.action};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium}
     ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 `;

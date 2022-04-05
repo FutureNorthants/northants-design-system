@@ -1,13 +1,12 @@
 import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
-import ServiceLinksBoxed from './ServiceLinksBoxed';
-import { ServiceLinksBoxedProps } from './ServiceLinksBoxed.types';
+import ServiceLinksBoxed from './ServicesLinksBoxed';
+import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { serviceLinksArray } from './ServiceLinksBoxed.storydata';
+import { serviceLinksArray } from './ServicesLinksBoxed.storydata';
 
 export default {
-  title: 'Library/Structure/Service Links Boxed',
+  title: 'Library/Structure/Services Links Boxed',
   component: ServiceLinksBoxed,
   parameters: {
     status: {

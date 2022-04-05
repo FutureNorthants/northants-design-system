@@ -31,6 +31,18 @@ export const serviceLinksArray = [
         title: 'Report a change',
         url: '/second-service/second-sub-service',
       },
+      {
+        title: 'Calculating benefits',
+        url: '/second-service/third-sub-service',
+      },
+      {
+        title: 'Overpayments',
+        url: '/second-service/fourth-sub-service',
+      },
+      {
+        title: 'Local housing allowance',
+        url: '/second-service/fifth-sub-service',
+      },
     ],
   },
   {

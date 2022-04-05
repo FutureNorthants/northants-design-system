@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ServiceLinksBoxedProps } from './ServiceLinksBoxed.types';
-import * as Styles from './ServiceLinksBoxed.styles';
+import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
+import * as Styles from './ServicesLinksBoxed.styles';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
@@ -21,7 +21,11 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
       <Row>
         {serviceLinksArray.map((serviceLink, index) => (
           <Column small="full" medium="one-half" large="one-third" key={index}>
-            <Styles.ServiceLink onClick={() => toggleActive(index)} show={index === activeServiceLink}>
+            <Styles.ServiceLink
+              onClick={() => toggleActive(index)}
+              show={index === activeServiceLink}
+              aria-label={index === activeServiceLink ? 'Close ' + serviceLink.title : 'View ' + serviceLink.title}
+            >
               <HeadingWithIcon text={serviceLink.title} icon={serviceLink.iconKey} level={3} />
               <span className="serviceLinkChevron"></span>
             </Styles.ServiceLink>
