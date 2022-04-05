@@ -42,3 +42,11 @@ const Template: Story<PromoBannerProps> = (args) => (
 );
 export const PromoBannerExample = Template.bind({});
 PromoBannerExample.args = PromoBannerData;
+
+export const PromoBannerMobileExample = Template.bind({});
+PromoBannerMobileExample.args = PromoBannerData;
+PromoBannerMobileExample.parameters = {
+  viewport: {
+    defaultViewport: 'iphonex',
+  },
+};

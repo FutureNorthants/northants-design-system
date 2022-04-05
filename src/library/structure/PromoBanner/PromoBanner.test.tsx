@@ -37,6 +37,9 @@ describe('PromoBanner structure', () => {
     expect(links[0]).toHaveProperty('href', storydata.PromoBannerData.ctaUrl);
     expect(links[0]).toHaveTextContent('');
     expect(links[0]).toHaveProperty('title', storydata.PromoBannerData.ctaText);
+    expect(links[0]).toHaveStyle(`background-image: url(${storydata.PromoBannerData.image144x81});`);
+    expect(links[0]).toHaveStyle('display: block;');
+    expect(links[0]).toHaveStyle('width: 100%');
 
     expect(links[1]).toHaveProperty('href', storydata.PromoBannerData.ctaUrl);
     expect(links[1]).toHaveTextContent(storydata.PromoBannerData.ctaText);
