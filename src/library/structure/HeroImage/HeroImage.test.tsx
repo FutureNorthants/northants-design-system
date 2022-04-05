@@ -4,6 +4,7 @@ import HeroImage from './HeroImage';
 import { HeroImageProps } from './HeroImage.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
+import { breadcrumbs } from '../../pages/ServiceLandingPageExample/ServiceLandingPageExample.storydata';
 
 describe('HeroImage slice', () => {
   it('should render text in a box when backgroundBox is true', () => {
@@ -123,5 +124,39 @@ describe('HeroImage slice', () => {
 
     const imgaltspan = queryByRole('img');
     expect(imgaltspan).toBeNull();
+  });
+
+  it('should display the parent breadcrumb in the hero image', () => {
+    let props: HeroImageProps = {
+      imageLarge:
+        'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1440/810/0/2021-12/Abington_Park_1.jpg',
+      imageSmall:
+        'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/144/81/0/2021-12/Abington_Park_1.jpg',
+      imageAltText: 'alt text',
+      backgroundBox: true,
+      headline: 'Headline',
+      content: '<p>Hello world</p>',
+      breadcrumb: {
+        title: 'Country Parks',
+        url: '/country-parks',
+      },
+    };
+
+    const renderComponent = () =>
+      render(
+        <ThemeProvider theme={west_theme}>
+          <HeroImage {...props} />
+        </ThemeProvider>
+      );
+
+    const { getByText, queryByText } = renderComponent();
+
+    const breadcrumb = getByText('Country Parks');
+
+    expect(breadcrumb).toBeVisible();
+    expect(breadcrumb).toHaveAttribute('href', '/country-parks');
+    expect(breadcrumb).toHaveStyle(`color: ${west_theme.theme_vars.colours.action}`);
+
+    expect(queryByText('Home')).toBeNull();
   });
 });

@@ -3,12 +3,16 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { ServiceLandingPageExample } from './ServiceLandingPageExample';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
-import { HeroImageExampleMicroSiteData } from '../../structure/HeroImage/HeroImage.storydata';
+import {
+  HeroImageExampleMicroSiteData,
+  HeroImageExampleBoxedWithBreadcrumbData,
+} from '../../structure/HeroImage/HeroImage.storydata';
 import {
   threeTopServicesData,
   sixTopServicesData,
   sections,
   breadcrumbs,
+  micrositeBreadcrumbs,
   footerLinks,
   serviceAlert,
 } from './ServiceLandingPageExample.storydata';
@@ -67,7 +71,7 @@ export const MicroSiteExample = Template.bind({});
 MicroSiteExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: breadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
@@ -80,7 +84,7 @@ export const MicroSiteWithTopServicesExample = Template.bind({});
 MicroSiteWithTopServicesExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: breadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
@@ -93,14 +97,8 @@ MicroSiteWithTopServicesExample.args = {
 export const MicroSiteBoxedExample = Template.bind({});
 MicroSiteBoxedExample.args = {
   title: 'Northamptonshire Country Parks',
-  heroImage: {
-    ...HeroImageExampleMicroSiteData,
-    callToActionText: '...google It!',
-    callToActionURL: 'https://www.google.com',
-    content: "<p>They're wicked innit, don't just believe us...</p>",
-    backgroundBox: true,
-  }, // empty headline in this overriden by title above
-  breadcrumbsArray: breadcrumbs,
+  heroImage: HeroImageExampleBoxedWithBreadcrumbData, // empty headline in this overriden by title above
+  breadcrumbsArray: micrositeBreadcrumbs,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
@@ -123,7 +121,7 @@ export const MicroSiteWithAlertExample = Template.bind({});
 MicroSiteWithAlertExample.args = {
   title: 'Northamptonshire Country Parks',
   heroImage: HeroImageExampleMicroSiteData, // empty headline in this overriden by title above
-  breadcrumbsArray: breadcrumbs,
+  breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
   footerLinks,
