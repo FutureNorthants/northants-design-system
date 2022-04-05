@@ -54,7 +54,7 @@ export const QuickLinksContainer = styled.div`
   position: absolute;
   overflow: hidden;
   top: auto;
-  margin-top: 20px;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   z-index: 9;
   left: 0;
   right: 0;
@@ -70,13 +70,11 @@ export const QuickLinksContainer = styled.div`
 export const QuickLinksInnerContainer = styled.div`
   background: ${(props) => props.theme.theme_vars.colours.action}50;
   border-top: 1px solid ${(props) => props.theme.theme_vars.colours.action};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium}
-    ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 `;
 
 export const QuickLink = styled.a`
   display: block;
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   background: ${(props) => props.theme.theme_vars.colours.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
