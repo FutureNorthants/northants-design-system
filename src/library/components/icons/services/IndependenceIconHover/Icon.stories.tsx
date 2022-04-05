@@ -5,7 +5,7 @@ import { IconProps } from '../Icon.types';
 import { SBPadding } from '../../../../../../.storybook/SBPadding';
 
 export default {
-  title: 'Library/Icons/Services/Independance',
+  title: 'Library/Icons/Services/Independence Hover',
   component: Icon,
   parameters: {
     status: {

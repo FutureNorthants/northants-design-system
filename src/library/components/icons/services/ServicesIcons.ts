@@ -54,8 +54,8 @@ import HighwayIcon from './Highway/Icon';
 import HighwayIconHover from './HighwayHover/Icon';
 import HousingIcon from './HousingIcon/Icon';
 import HousingIconHover from './HousingIconHover/Icon';
-import IndependanceIcon from './IndependanceIcon/Icon';
-import IndependanceIconHover from './IndependanceIconHover/Icon';
+import IndependenceIcon from './IndependenceIcon/Icon';
+import IndependenceIconHover from './IndependenceIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
 import LibrariesIconHover from './LibrariesIconHover/Icon';
 import NewIcon from './NewIcon/Icon';
@@ -148,8 +148,8 @@ let components = {
   highwayHover: HighwayIconHover,
   housing: HousingIcon,
   housingHover: HousingIconHover,
-  independance: IndependanceIcon,
-  independanceHover: IndependanceIconHover,
+  independence: IndependenceIcon,
+  independenceHover: IndependenceIconHover,
   libraries: LibrariesIcon,
   librariesHover: LibrariesIconHover,
   new: NewIcon,
