@@ -34,7 +34,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Births, deaths and marriages');
   });
 
-  it('should hide and show the quicklinks', () => {
+  it('should show and hide the quicklinks', () => {
     const { queryByText, getAllByRole } = renderComponent();
 
     const serviceButtons = getAllByRole('button');
@@ -42,12 +42,47 @@ describe('Test Component', () => {
     expect(serviceButtons).toHaveLength(4);
     expect(serviceButtons[0]).toHaveTextContent('Adult social services');
 
-    expect(queryByText('Report a concern about an adult')).not.toBeVisible();
-    expect(queryByText('Professionals working with adults')).not.toBeVisible();
+    const firstSubLink = queryByText('Report a concern about an adult');
+    const secondSubLink = queryByText('Professionals working with adults');
+    const viewAllSubLink = queryByText('All adult social services services');
+
+    expect(firstSubLink).not.toBeVisible();
+    expect(secondSubLink).not.toBeVisible();
+    expect(viewAllSubLink).not.toBeVisible();
 
     fireEvent.click(serviceButtons[0]);
 
-    expect(queryByText('Report a concern about an adult')).toBeVisible();
-    expect(queryByText('Professionals working with adults')).toBeVisible();
+    expect(firstSubLink).toBeVisible();
+    expect(firstSubLink).toHaveAttribute('href', '/first-service/first-sub-service');
+
+    expect(secondSubLink).toBeVisible();
+    expect(secondSubLink).toHaveAttribute('href', '/first-service/second-sub-service');
+
+    expect(viewAllSubLink).toBeVisible();
+    expect(viewAllSubLink).toHaveAttribute('href', '/first-service');
+
+    fireEvent.click(serviceButtons[0]);
+
+    expect(firstSubLink).not.toBeVisible();
+    expect(secondSubLink).not.toBeVisible();
+    expect(viewAllSubLink).not.toBeVisible();
+  });
+
+  it('should show another services quicklinks when service is clicked', () => {
+    const { queryByText, getAllByRole } = renderComponent();
+
+    const serviceButtons = getAllByRole('button');
+    const firstServiceSubLink = queryByText('Report a concern about an adult');
+    const secondServiceSubLink = queryByText('Apply for council tax reduction');
+
+    fireEvent.click(serviceButtons[0]);
+
+    expect(firstServiceSubLink).toBeVisible();
+    expect(secondServiceSubLink).not.toBeVisible();
+
+    fireEvent.click(serviceButtons[1]);
+
+    expect(firstServiceSubLink).not.toBeVisible();
+    expect(secondServiceSubLink).toBeVisible();
   });
 });

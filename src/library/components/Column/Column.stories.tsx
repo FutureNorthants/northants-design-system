@@ -19,7 +19,7 @@ const divStyle = {
   backgroundColor: '#386193',
   color: 'white',
   width: '100%',
-  textAlign: 'center',
+  textAlign: 'center' as const,
   padding: '20px 0',
 };
 

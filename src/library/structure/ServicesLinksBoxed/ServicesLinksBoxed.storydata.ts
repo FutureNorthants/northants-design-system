@@ -47,39 +47,39 @@ export const serviceLinksArray = [
   },
   {
     title: 'Bins, recycling and street cleaning',
-    url: '/second-service',
+    url: '/third-service',
     iconKey: 'bins',
     quickLinksArray: [
       {
         title: 'Bin collection day',
-        url: '/second-service/first-sub-service',
+        url: '/third-service/first-sub-service',
       },
       {
         title: 'Household waste recycling centres',
-        url: '/second-service/second-sub-service',
+        url: '/third-service/second-sub-service',
       },
       {
         title: 'Bulky item collection',
-        url: '/second-service/second-sub-service',
+        url: '/third-service/second-sub-service',
       },
     ],
   },
   {
     title: 'Births, deaths and marriages',
-    url: '/second-service',
+    url: '/fourth-service',
     iconKey: 'births',
     quickLinksArray: [
       {
         title: 'Register a birth',
-        url: '/second-service/first-sub-service',
+        url: '/fourth-service/first-sub-service',
       },
       {
         title: 'Register a death',
-        url: '/second-service/second-sub-service',
+        url: '/fourth-service/second-sub-service',
       },
       {
         title: 'Weddings, civil parternships and ceremonies',
-        url: '/second-service/second-sub-service',
+        url: '/fourth-service/second-sub-service',
       },
     ],
   },
