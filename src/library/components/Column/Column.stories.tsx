@@ -19,6 +19,8 @@ const divStyle = {
   backgroundColor: '#386193',
   color: 'white',
   width: '100%',
+  textAlign: 'center',
+  padding: '20px 0',
 };
 
 const Template: Story<ColumnProps> = (args) => (
