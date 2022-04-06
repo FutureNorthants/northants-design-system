@@ -1,6 +1,6 @@
-import React from "react";
-import * as PageStructures from "../../structure/PageStructures";
-import { HomePageProps } from "./HomePage.types";
+import React from 'react';
+import * as PageStructures from '../../structure/PageStructures';
+import { HomePageProps } from './HomePage.types';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -15,6 +15,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
   heroArray,
   promotedLinksArray,
   servicesArray,
+  isBoxed = false,
   promoBannerData,
   promoBannerContent,
   promoBlocksArray,
@@ -26,23 +27,22 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
       title="We use cookies on this site to enhance your user experience"
       paragraph={
         <p>
-          By clicking the Accept button, you agree to us doing so.{" "}
-          <a href="#">More info on our cookie policy</a>
+          By clicking the Accept button, you agree to us doing so. <a href="#">More info on our cookie policy</a>
         </p>
       }
       acceptButtonText="Accept cookies policy"
       rejectButtonText="No, thanks"
       acceptCallback={() => {
-        var tag = document.createElement("script");
-        tag.src = "https://www.googletagmanager.com/gtag/js?id=GTM_TRACKING_ID";
-        document.getElementsByTagName("head")[0].appendChild(tag);
+        var tag = document.createElement('script');
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=GTM_TRACKING_ID';
+        document.getElementsByTagName('head')[0].appendChild(tag);
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
           dataLayer.push(arguments);
         }
-        gtag("js", new Date());
-        gtag("config", '<%= ENV["GA_TRACKING_ID"] %>');
+        gtag('js', new Date());
+        gtag('config', '<%= ENV["GA_TRACKING_ID"] %>');
 
         (function (h, o, t, j, a, r) {
           h.hj =
@@ -54,12 +54,12 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             hjid: 12345,
             hjsv: 6,
           };
-          a = o.getElementsByTagName("head")[0];
-          r = o.createElement("script");
+          a = o.getElementsByTagName('head')[0];
+          r = o.createElement('script');
           r.async = 1;
           r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
           a.appendChild(r);
-        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
       }}
     />
 
@@ -67,14 +67,11 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
       {alertBannerContent}
     </PageStructures.AlertBanner>
 
-    <PageStructures.HomeHero
-      promotedLinksArray={promotedLinksArray}
-      imagesArray={heroArray}
-    />
+    <PageStructures.HomeHero promotedLinksArray={promotedLinksArray} imagesArray={heroArray} />
 
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
-        <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} />
+        <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
         {numberOfPromos > 0 && (
           <>
             <PageStructures.PromoBanner
@@ -86,9 +83,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             >
               {promoBannerContent}
             </PageStructures.PromoBanner>
-            <PageStructures.PromoBlock
-              promos={promoBlocksArray.slice(0, numberOfPromos - 1)}
-            />
+            <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
           </>
         )}
 

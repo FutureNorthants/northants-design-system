@@ -44,7 +44,7 @@ describe('Test Component', () => {
 
     const firstSubLink = queryByText('Report a concern about an adult');
     const secondSubLink = queryByText('Professionals working with adults');
-    const viewAllSubLink = queryByText('All adult social services services');
+    const viewAllSubLink = queryByText('All adult social services');
 
     expect(firstSubLink).not.toBeVisible();
     expect(secondSubLink).not.toBeVisible();

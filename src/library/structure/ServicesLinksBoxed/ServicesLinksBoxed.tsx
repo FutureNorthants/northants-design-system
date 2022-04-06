@@ -40,7 +40,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
                   ))}
                   <Column small="full" medium="one-half" large="one-third">
                     <Styles.QuickLink href={serviceLink.url}>
-                      All {serviceLink.title.toLowerCase()} services
+                      All {serviceLink.title.toLowerCase()} {serviceLink.title.endsWith('services') ? '' : 'services'}
                     </Styles.QuickLink>
                   </Column>
                 </Row>

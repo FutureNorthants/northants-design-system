@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const containerMaxHeight = (props) => {
-  if (props.hideHeader) {
+  if (props.hideHeader || props.isBoxed) {
     return css`
       max-height: none;
       overflow: visible;

@@ -23,6 +23,11 @@ export interface ServicesLinksListProps {
    * Id of container
    */
   serviceId?: string;
+
+  /**
+   * Should the view be boxed
+   */
+  isBoxed?: boolean;
 }
 
 export interface PageLinkProp {
