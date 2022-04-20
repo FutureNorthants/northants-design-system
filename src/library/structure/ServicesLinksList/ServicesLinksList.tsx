@@ -47,6 +47,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     tabIndex="-1"
                     className={'chosen'}
                     title="Most used services selected"
+                    aria-label="Order services by most used"
                   >
                     Most used
                   </Styles.ReorderButton>
@@ -54,13 +55,18 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     onClick={() => setCurrentOrder(1)}
                     title="Alphabetical services"
                     name="alphabatical services"
+                    aria-label="Order services by alpabetical order"
                   >
                     Alphabetical
                   </Styles.ReorderButton>
                 </>
               ) : (
                 <>
-                  <Styles.ReorderButton onClick={() => setCurrentOrder(0)} title="Most used services">
+                  <Styles.ReorderButton
+                    onClick={() => setCurrentOrder(0)}
+                    title="Most used services"
+                    aria-label="Order services by most used"
+                  >
                     Most used
                   </Styles.ReorderButton>
                   <Styles.ReorderButton
@@ -68,6 +74,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     tabIndex="-1"
                     className={'chosen'}
                     title="Alphabetical services selected"
+                    aria-label="Order services by alphabetical order"
                   >
                     Alphabetical
                   </Styles.ReorderButton>
