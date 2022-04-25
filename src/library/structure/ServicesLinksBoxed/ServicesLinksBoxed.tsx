@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
 import * as Styles from './ServicesLinksBoxed.styles';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
@@ -7,6 +7,7 @@ import Column from '../../components/Column/Column';
 
 const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ serviceLinksArray, serviceId }) => {
   const [activeServiceLink, setActiveServiceLink] = useState(null);
+  const [bottomMargin, setBottomMargin] = useState(0);
 
   const toggleActive = (serviceLinkIndex) => {
     if (activeServiceLink === serviceLinkIndex) {
@@ -15,6 +16,15 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
       setActiveServiceLink(serviceLinkIndex);
     }
   };
+
+  useEffect(() => {
+    setBottomMargin(refs.current[activeServiceLink]?.current?.clientHeight);
+  });
+
+  let refs = React.useRef([]);
+  refs.current = serviceLinksArray.map((_, index) => {
+    return refs.current[index] ?? React.createRef();
+  });
 
   return (
     <Styles.Container data-testid="ServiceLinksBoxed">
@@ -30,7 +40,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
               <span className="serviceLinkChevron"></span>
             </Styles.ServiceLink>
 
-            <Styles.QuickLinksContainer show={index === activeServiceLink}>
+            <Styles.QuickLinksContainer show={index === activeServiceLink} ref={refs.current[index]}>
               <Styles.QuickLinksInnerContainer>
                 <Row>
                   {serviceLink.quickLinksArray.map((quickLink, quickLinkIndex) => (
@@ -46,6 +56,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
                 </Row>
               </Styles.QuickLinksInnerContainer>
             </Styles.QuickLinksContainer>
+            <Styles.Separator margin={index === activeServiceLink ? bottomMargin : 0} />
           </Column>
         ))}
       </Row>

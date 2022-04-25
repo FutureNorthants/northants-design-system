@@ -103,3 +103,8 @@ export const QuickLink = styled.a`
     background: ${(props) => props.theme.theme_vars.colours.grey_light};
   }
 `;
+
+export const Separator = styled.div`
+  margin-bottom: ${(props) => props.margin ?? 0}px;
+  padding-bottom: ${(props) => (props.margin ? props.theme.theme_vars.spacingSizes.medium : 0)};
+`;
