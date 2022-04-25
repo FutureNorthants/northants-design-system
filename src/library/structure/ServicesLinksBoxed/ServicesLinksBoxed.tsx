@@ -19,7 +19,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
 
   useEffect(() => {
     setBottomMargin(refs.current[activeServiceLink]?.current?.clientHeight);
-  });
+  }, [activeServiceLink]);
 
   let refs = React.useRef([]);
   refs.current = serviceLinksArray.map((_, index) => {
