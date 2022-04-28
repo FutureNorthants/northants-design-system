@@ -7,10 +7,10 @@ const ContentsNavigation: React.FunctionComponent<ContentsProps> = ({ contents, 
     return contents.findIndex((item) => item.url === currentPath);
   };
 
-  const nextPage: ContentLink | undefined = currentPage() !== -1 ? contents[currentPage() + 1] : undefined;
+  const nextPage: ContentLink | undefined =
+    currentPage() < contents.length - 1 ? contents[currentPage() + 1] : undefined;
 
-  const previousPage: ContentLink | undefined =
-    currentPage() !== contents.length ? contents[currentPage() - 1] : undefined;
+  const previousPage: ContentLink | undefined = currentPage() !== 0 ? contents[currentPage() - 1] : undefined;
 
   return (
     <Styles.Container data-testid="ContentsNavigation">
