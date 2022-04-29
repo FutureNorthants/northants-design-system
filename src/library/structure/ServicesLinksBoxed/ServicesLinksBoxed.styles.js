@@ -12,7 +12,7 @@ export const ServiceLink = styled.button`
     ${(props) => props.theme.theme_vars.spacingSizes.medium};
   width: 100%;
   position: relative;
-  border: ${(props) => props.theme.theme_vars.border_width} solid
+  border: ${(props) => props.theme.theme_vars.border_width_thin} solid
     ${(props) => (props.show ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey)};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   ${(props) => props.theme.fontStyles};
@@ -21,13 +21,16 @@ export const ServiceLink = styled.button`
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_light};
-    border: ${(props) => props.theme.theme_vars.border_width} solid ${(props) => props.theme.theme_vars.colours.action};
+    border: ${(props) => props.theme.theme_vars.border_width_thin} solid
+      ${(props) => props.theme.theme_vars.colours.action};
     text-decoration-style: dashed;
     cursor: pointer;
   }
 
   h3 {
     color: ${(props) => props.theme.theme_vars.colours.action};
+    text-align: left;
+    padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 
   .serviceLinkChevron {
@@ -71,7 +74,7 @@ export const QuickLinksContainer = styled.div`
 
 export const QuickLinksInnerContainer = styled.div`
   background: ${(props) => props.theme.theme_vars.colours.action_light};
-  border-top: ${(props) => props.theme.theme_vars.border_width} solid
+  border-top: ${(props) => props.theme.theme_vars.border_width_thin} solid
     ${(props) => props.theme.theme_vars.colours.action};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset;
@@ -83,7 +86,7 @@ export const QuickLink = styled.a`
   display: block;
   background: ${(props) => props.theme.theme_vars.colours.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  border: ${(props) => props.theme.theme_vars.border_width} solid ${(props) => props.theme.theme_vars.colours.grey};
+  border: ${(props) => props.theme.theme_vars.border_width_thin} solid ${(props) => props.theme.theme_vars.colours.grey};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};

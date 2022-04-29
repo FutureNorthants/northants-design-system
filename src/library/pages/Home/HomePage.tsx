@@ -71,6 +71,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
 
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
+        <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
         <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
         {numberOfPromos > 0 && (
           <>
@@ -83,7 +84,6 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             >
               {promoBannerContent}
             </PageStructures.PromoBanner>
-            <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
           </>
         )}
 
@@ -91,8 +91,6 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
           articles={newsArticlesArray.slice(0, numberOfNewsStories)}
           viewAllLink="/news/"
         />
-
-        <PageStructures.HomeUnitarySection />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
 
