@@ -35,6 +35,18 @@ export const ServiceLinksArray = [
         title: 'Help with Council Tax payments',
         url: '/',
       },
+      {
+        title: 'Change of address',
+        url: '/',
+      },
+      {
+        title: 'Council tax liability',
+        url: '/',
+      },
+      {
+        title: 'Council tax direct debit',
+        url: '/',
+      },
     ],
   },
   {
@@ -52,6 +64,22 @@ export const ServiceLinksArray = [
       },
       {
         title: 'Request a bulk collection',
+        url: '/',
+      },
+      {
+        title: 'Apply for waste e-permit',
+        url: '/',
+      },
+      {
+        title: 'Food waste',
+        url: '/',
+      },
+      {
+        title: 'Garden waste',
+        url: '/',
+      },
+      {
+        title: 'Missed bin colelctions',
         url: '/',
       },
     ],

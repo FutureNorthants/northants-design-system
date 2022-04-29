@@ -88,7 +88,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                 <Styles.PagelinkInner>
                   {link.quickLinksArray?.length > 0 && (
                     <Styles.QuicklinkList>
-                      {link.quickLinksArray.map((quicklink) => (
+                      {link.quickLinksArray.slice(0, 3).map((quicklink) => (
                         <Styles.QuicklinkItem key={quicklink.title}>
                           <Styles.Quicklink href={quicklink.url} title={quicklink.title}>
                             {quicklink.title}
