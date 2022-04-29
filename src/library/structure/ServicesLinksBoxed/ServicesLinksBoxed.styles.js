@@ -27,6 +27,15 @@ export const ServiceLink = styled.button`
     cursor: pointer;
   }
 
+  &:hover {
+    .service-icon {
+      display: none;
+    }
+    .service-icon-hover {
+      display: block !important;
+    }
+  }
+
   h3 {
     color: ${(props) => props.theme.theme_vars.colours.action};
     text-align: left;
@@ -50,9 +59,9 @@ export const ServiceLink = styled.button`
       vertical-align: top;
       width: 12px;
       border-color: ${(props) => props.theme.theme_vars.colours.black};
-      top: ${(props) => (props.show ? `0` : `10px`)};
+      top: ${(props) => (props.show ? `10px` : `0`)};
       left: 6px;
-      transform: ${(props) => (props.show ? `rotate(135deg)` : `rotate(-45deg)`)};
+      transform: ${(props) => (props.show ? `rotate(-45deg)` : `rotate(135deg)`)};
     }
   }
 `;

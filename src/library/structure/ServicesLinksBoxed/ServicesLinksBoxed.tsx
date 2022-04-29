@@ -36,7 +36,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
               show={index === activeServiceLink}
               aria-label={index === activeServiceLink ? 'Close ' + serviceLink.title : 'View ' + serviceLink.title}
             >
-              <HeadingWithIcon text={serviceLink.title} icon={serviceLink.iconKey} level={3} />
+              <HeadingWithIcon text={serviceLink.title} icon={serviceLink.iconKey} level={3} hasHover={true} />
               <span className="serviceLinkChevron"></span>
             </Styles.ServiceLink>
 
