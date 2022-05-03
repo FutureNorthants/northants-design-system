@@ -24,7 +24,7 @@ describe('Column', () => {
       </ThemeProvider>
     );
 
-  it('should the content', () => {
+  it('should display the Column child content', () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('Column');
