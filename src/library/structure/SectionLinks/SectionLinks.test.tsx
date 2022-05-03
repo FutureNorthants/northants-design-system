@@ -110,9 +110,9 @@ describe('Section Links', () => {
     expect(images).toHaveLength(2);
 
     expect(images[0]).toHaveStyle('background: url("/small-image-1.jpg") center center / cover no-repeat;');
-    expect(images[0]).toHaveAttribute('alt', 'The first image alt text');
+    expect(images[0]).toHaveAttribute('aria-label', 'The first image alt text');
 
     expect(images[1]).toHaveStyle('background: url("/small-image-2.jpg") center center / cover no-repeat;');
-    expect(images[1]).toHaveAttribute('alt', 'The second image alt text');
+    expect(images[1]).toHaveAttribute('aria-label', 'The second image alt text');
   });
 });
