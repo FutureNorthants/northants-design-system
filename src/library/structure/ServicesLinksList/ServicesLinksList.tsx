@@ -55,7 +55,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     onClick={() => setCurrentOrder(1)}
                     title="Alphabetical services"
                     name="alphabetical services"
-                    aria-label="Order services alpabetically"
+                    aria-label="Order services alphabetically"
                   >
                     Alphabetical
                   </Styles.ReorderButton>
