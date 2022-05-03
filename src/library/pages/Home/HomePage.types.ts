@@ -1,9 +1,9 @@
-import React from "react";
-import { HeroImageProp } from "../../structure/HomeHero/HomeHero.types";
-import { NewsArticleProps } from "../../structure/NewsArticleList/NewsArticleList.types";
-import { PromoBannerProps } from "../../structure/PromoBanner/PromoBanner.types";
-import { PromoProps } from "../../structure/PromoBlock/PromoBlock.types";
-import { PageLinkProp } from "../../structure/ServicesLinksList/ServicesLinksList.types";
+import React from 'react';
+import { HeroImageProp } from '../../structure/HomeHero/HomeHero.types';
+import { NewsArticleProps } from '../../structure/NewsArticleList/NewsArticleList.types';
+import { PromoBannerProps } from '../../structure/PromoBanner/PromoBanner.types';
+import { PromoProps } from '../../structure/PromoBlock/PromoBlock.types';
+import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
 export interface HomePageProps {
   /**
@@ -40,6 +40,11 @@ export interface HomePageProps {
    * Service links
    */
   servicesArray: Array<PageLinkProp>;
+
+  /**
+   * Should the services list be boxed
+   */
+  isBoxed?: boolean;
 
   /**
    * News articles

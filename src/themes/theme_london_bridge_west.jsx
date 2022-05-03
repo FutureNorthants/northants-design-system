@@ -60,6 +60,7 @@ export const lb_vars_west = {
   },
   border_width: '2px',
   border_width_error: '3px',
+  border_width_thin: '1px',
   border_radius: '3px',
   border_radius_large: '6px',
   spacingSizes: {
