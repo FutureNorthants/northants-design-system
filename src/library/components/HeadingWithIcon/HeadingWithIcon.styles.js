@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeadingWrapper = styled.div`
+export const HeadingWrapper = styled.span`
   display: flex;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
@@ -37,10 +37,10 @@ export const HeadingWrapper = styled.div`
   }
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.span`
   vertical-align: middle;
 `;
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.span`
   width: ${(props) =>
     props.iconSize === 1 ? '65px' : props.iconSize === 2 ? '45px' : props.iconSize === 3 ? '30px' : '20px'};
   height: auto;
