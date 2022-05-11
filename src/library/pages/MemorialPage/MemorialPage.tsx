@@ -22,6 +22,7 @@ const ExampleMemorialHeroArgs = {
       hasBackground={true}
       hideHeader={true}
       serviceLinksArray={councilServicesLinksArray}
+      serviceId="heroAllServices"
     />
   ),
   theme: north_theme,
@@ -101,6 +102,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
             hideHeader={true}
             serviceLinksArray={condolenceLinksArray}
             oneCol={true}
+            serviceId="condolenceLink"
           />
         </PageStructures.MemorialHero>
 
@@ -110,6 +112,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
               hideHeader={true}
               serviceLinksArray={memorialServiceLinksArray}
               isBoxed={false}
+              serviceId="memorialLinks"
             />
             <PageStructures.NewsArticleFeaturedBlock
               articles={newsArticlesArray.slice(0, numberOfNewsStories)}

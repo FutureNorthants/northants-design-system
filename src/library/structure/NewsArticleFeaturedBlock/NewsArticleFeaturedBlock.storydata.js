@@ -24,6 +24,7 @@ export const NewsArticleData = [
       'https://cms-staging.westnorthants.gov.uk/sites/default/files/styles/responsive/public/720/405/0/2022-03/ukraine.jpg',
     image72x41:
       'https://cms-staging.westnorthants.gov.uk/sites/default/files/styles/responsive/public/72/41/0/2022-03/ukraine.jpg',
+    imageAltText: 'The alt text',
   },
   {
     id: '6036694ed3c1de9114024a02',
