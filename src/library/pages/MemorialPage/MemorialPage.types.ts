@@ -1,8 +1,8 @@
-import React from "react";
-import { NewsArticleProps } from "../../structure/NewsArticleList/NewsArticleList.types";
-import { PromoBannerProps } from "../../structure/PromoBanner/PromoBanner.types";
-import { PromoProps } from "../../structure/PromoBlock/PromoBlock.types";
-import { PageLinkProp } from "../../structure/ServicesLinksList/ServicesLinksList.types";
+import React from 'react';
+import { NewsArticleProps } from '../../structure/NewsArticleList/NewsArticleList.types';
+import { PromoBannerProps } from '../../structure/PromoBanner/PromoBanner.types';
+import { PromoProps } from '../../structure/PromoBlock/PromoBlock.types';
+import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
 export interface MemorialPageProps {
   /**
@@ -29,7 +29,7 @@ export interface MemorialPageProps {
    * Condolence links on memorial hero
    */
   condolenceLinksArray: Array<PageLinkProp>;
-    
+
   /**
    * Links below memorial hero
    */
@@ -39,6 +39,11 @@ export interface MemorialPageProps {
    * Service links
    */
   servicesArray: Array<PageLinkProp>;
+
+  /**
+   * Should the services list be boxed
+   */
+  isBoxed?: boolean;
 
   /**
    * News articles
