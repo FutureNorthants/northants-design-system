@@ -19,7 +19,7 @@ export const ServiceLink = styled.button`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
-  text-decoration-style: ${(props) => (props.show ? `dashed` : `underline`)};
+  text-decoration-style: ${(props) => (props.show ? `dashed` : `solid`)};
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_light};
