@@ -43,19 +43,6 @@ export const Link = styled.a`
   }
 `;
 
-export const IconContainer = styled.div`
-  width: 76px;
-  height: 76px;
-  flex-shrink: 0;
-
-  svg {
-    width: auto;
-    height: auto;
-  }
-`;
-
-export const IconInner = styled.div``;
-
 export const Title = styled(Heading)`
   ${(props) => props.theme.linkStyles}
 

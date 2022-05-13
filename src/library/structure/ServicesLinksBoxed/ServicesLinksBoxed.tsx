@@ -4,6 +4,7 @@ import * as Styles from './ServicesLinksBoxed.styles';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import DynamicIcon from '../../components/DynamicIcon/DynamicIcon';
 
 const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ serviceLinksArray, serviceId }) => {
   const [activeServiceLink, setActiveServiceLink] = useState(null);
@@ -36,7 +37,8 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
               show={index === activeServiceLink}
               aria-label={index === activeServiceLink ? 'Close ' + serviceLink.title : 'View ' + serviceLink.title}
             >
-              <HeadingWithIcon text={serviceLink.title} icon={serviceLink.iconKey} level={3} hasHover={true} />
+              <DynamicIcon icon={serviceLink.iconKey} level={3} />
+              <Styles.ServiceHeading>{serviceLink.title}</Styles.ServiceHeading>
               <span className="serviceLinkChevron"></span>
             </Styles.ServiceLink>
 

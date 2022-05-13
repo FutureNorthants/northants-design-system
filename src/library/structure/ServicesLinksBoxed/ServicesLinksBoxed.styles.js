@@ -5,6 +5,8 @@ export const Container = styled.div`
 `;
 
 export const ServiceLink = styled.button`
+  display: flex;
+  align-items: center;
   color: ${(props) => props.theme.theme_vars.colours.action};
   background: ${(props) =>
     props.show ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.grey_light};
@@ -27,6 +29,10 @@ export const ServiceLink = styled.button`
     cursor: pointer;
   }
 
+  .service-icon-hover {
+    display: none;
+  }
+
   &:hover {
     .service-icon {
       display: none;
@@ -34,12 +40,6 @@ export const ServiceLink = styled.button`
     .service-icon-hover {
       display: block !important;
     }
-  }
-
-  h3 {
-    color: ${(props) => props.theme.theme_vars.colours.action};
-    text-align: left;
-    padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 
   .serviceLinkChevron {
@@ -64,6 +64,14 @@ export const ServiceLink = styled.button`
       transform: ${(props) => (props.show ? `rotate(-45deg)` : `rotate(135deg)`)};
     }
   }
+`;
+
+export const ServiceHeading = styled.span`
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  text-align: left;
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  ${(props) => props.theme.theme_vars.h3}
 `;
 
 export const QuickLinksContainer = styled.div`
