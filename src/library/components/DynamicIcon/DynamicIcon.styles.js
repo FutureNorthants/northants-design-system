@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const Icon = styled.span`
   vertical-align: middle;
+  width: 100%;
 `;
+
 export const IconWrapper = styled.span`
   display: flex;
   flex-shrink: 0;
