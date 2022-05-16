@@ -14,7 +14,7 @@ export const IconWrapper = styled.span`
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     width: ${(props) =>
-      props.iconSize === 1 ? '85px' : props.iconSize === 2 ? '70px' : props.iconSize === 3 ? '55px' : '40px'};
+      props.iconSize === 1 ? '85px' : props.iconSize === 2 ? '76px' : props.iconSize === 3 ? '55px' : '40px'};
     height: auto;
   }
 

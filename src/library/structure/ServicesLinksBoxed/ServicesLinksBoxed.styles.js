@@ -71,6 +71,7 @@ export const ServiceHeading = styled.span`
   text-align: left;
   padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
   padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  line-height: 1.25;
   ${(props) => props.theme.theme_vars.h3}
 `;
 
