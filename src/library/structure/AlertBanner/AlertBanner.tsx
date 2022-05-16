@@ -11,14 +11,16 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
  */
 const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, alertType = 'alert', children }) => {
   const themeContext = useContext(ThemeContext);
-  const [hideAlert, setHideAlert] = useLocalStorage('alert_' + uid, true);
+  const [showAlert, setShowAlert] = useLocalStorage('alert_' + uid, true);
 
   const hideClickHandler = () => {
-    setHideAlert(false);
+    setShowAlert(false);
   };
 
+  const notServer = typeof(window) !== 'undefined';
+
   return (
-    hideAlert && (
+    showAlert && notServer && (
       <Styles.Container alertType={alertType} data-testid="AlertBanner">
         <MaxWidthContainer noBackground>
           <Styles.InnerContainer>

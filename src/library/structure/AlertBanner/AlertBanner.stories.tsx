@@ -2,6 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 import AlertBanner from './AlertBanner';
 import { AlertBannerProps } from './AlertBanner.types';
+import Button from '../../components/Button/Button';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export default {
@@ -20,6 +21,11 @@ const childrenMessage = (
   </p>
 );
 
+const resetAlert = (event) => {
+    window.localStorage.clear();
+    window.location.reload();
+};
+
 const Template: Story<AlertBannerProps> = (args) => (
   <>
     <AlertBanner {...args} />
@@ -28,6 +34,8 @@ const Template: Story<AlertBannerProps> = (args) => (
       <br />
       <br />
       <p>Once this unique alert has been hidden it will not be shown again on this device.</p>
+      <br />
+      <Button url={null} onClick={resetAlert}>Click to reset</Button>
     </MaxWidthContainer>
   </>
 );
