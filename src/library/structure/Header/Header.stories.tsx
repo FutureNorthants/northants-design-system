@@ -48,7 +48,7 @@ HeaderExample.args = {
 };
 
 export const HeaderNoNewsExample = Template.bind({});
-HeaderExample.args = {
+HeaderNoNewsExample.args = {
   hasNewsLink: false,
   allServicesLink: "/",
   hideSearchBar: false,

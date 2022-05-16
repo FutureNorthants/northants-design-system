@@ -42,12 +42,12 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
   display: grid;
   align-items: center;
   grid-template-areas: 'headerlogo headerlinks headersearch';
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     grid-template-areas:
       'headerlogo   headerlinks'
       'headersearch headersearch';
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     grid-template-areas:
       'headerlogo'
       'headerlinks'
@@ -136,10 +136,10 @@ export const LinksWrapper = styled.div`
   grid-area: headerlinks;
   text-align: right;
   padding-right: 1em;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     padding-right: 0;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     padding-right: 0;
     text-align: center;
   }
