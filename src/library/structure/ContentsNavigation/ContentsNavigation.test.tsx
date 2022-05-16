@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import ContentsNavigation from './ContentsNavigation';
 import { ContentsProps } from '../Contents/Contents.types';
-import { ContentsArray } from '../Contents/Contents.storydata';
+import { ContentsExampleData } from '../Contents/Contents.storydata';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 
@@ -15,7 +15,7 @@ describe('Contents Navigation', () => {
 
   beforeEach(() => {
     props = {
-      contents: ContentsArray,
+      contents: ContentsExampleData,
       currentPath: '/second-page',
     };
   });

@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Contents from './Contents';
 import { ContentsProps } from './Contents.types';
-import { ContentsArray } from './Contents.storydata';
+import { ContentsExampleData } from './Contents.storydata';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 
@@ -11,7 +11,7 @@ describe('Test Component', () => {
 
   beforeEach(() => {
     props = {
-      contents: ContentsArray,
+      contents: ContentsExampleData,
     };
   });
 

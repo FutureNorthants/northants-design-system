@@ -1,6 +1,6 @@
 import { ContentLink } from './Contents.types';
 
-export const ContentsArray: ContentLink[] = [
+export const ContentsExampleData: ContentLink[] = [
   {
     title: 'First page',
     url: '/first-page',

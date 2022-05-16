@@ -2,7 +2,7 @@ import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { ServicePageExample, ServicePageExampleProps } from './ServicePageExample';
-import { ContentsArray } from '../../structure/Contents/Contents.storydata';
+import { ContentsExampleData } from '../../structure/Contents/Contents.storydata';
 
 export default {
   title: 'Page Examples/Service Page Example',
@@ -22,6 +22,6 @@ export const ServicePageWithContents = Template.bind({});
 ServicePageWithContents.args = {
   contents: {
     currentPath: '/second-page',
-    contents: ContentsArray,
+    contents: ContentsExampleData,
   },
 };

@@ -13,7 +13,10 @@ export interface ServicePageExampleProps {
   contents?: ContentsProps;
 }
 
-export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServiceAlert = false, contents }) => (
+export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps> = ({
+  showServiceAlert = false,
+  contents,
+}) => (
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>

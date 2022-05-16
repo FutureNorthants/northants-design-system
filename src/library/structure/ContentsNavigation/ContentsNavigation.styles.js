@@ -5,6 +5,7 @@ export const Container = styled.div`
   border-top: 1px solid ${(props) => props.theme.theme_vars.colours.grey}80;
   margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 `;
+
 export const NavigationLink = styled.a`
   display: flex;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;

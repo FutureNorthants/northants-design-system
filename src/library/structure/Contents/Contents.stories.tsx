@@ -3,7 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import Contents from './Contents';
 import { ContentsProps } from './Contents.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ContentsArray } from './Contents.storydata';
+import { ContentsExampleData } from './Contents.storydata';
 
 export default {
   title: 'Library/Structure/Contents',
@@ -24,18 +24,18 @@ const Template: Story<ContentsProps> = (args) => (
 export const ExampleContents = Template.bind({});
 ExampleContents.args = {
   currentPath: '/first-page',
-  contents: ContentsArray,
+  contents: ContentsExampleData,
 };
 
 export const ExampleContentsWithSecondPageCurrent = Template.bind({});
 ExampleContentsWithSecondPageCurrent.args = {
   currentPath: '/second-page',
-  contents: ContentsArray,
+  contents: ContentsExampleData,
 };
 
 export const ExampleContentsWithCustomTitle = Template.bind({});
 ExampleContentsWithCustomTitle.args = {
   currentPath: '/first-page',
-  contents: ContentsArray,
+  contents: ContentsExampleData,
   title: 'Contents on this page',
 };

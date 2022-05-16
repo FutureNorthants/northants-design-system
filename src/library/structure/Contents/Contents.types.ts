@@ -19,6 +19,7 @@ export interface ContentLink {
   /**
    * Title of the page
    */
+
   title: string;
   /**
    * URL of the page
