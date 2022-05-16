@@ -1,33 +1,13 @@
-export interface ServicesLinksListProps {
+export interface ServiceLinksBoxedProps {
   /**
    * An array of all the top level service landing pages
    */
   serviceLinksArray: Array<PageLinkProp>;
 
   /**
-   * Display a white background on each block
-   */
-  hasBackground?: boolean;
-
-  /**
-   * Hide the header
-   */
-  hideHeader?: boolean;
-
-  /**
-   * Show everything in a single column
-   */
-  oneCol?: boolean;
-
-  /**
    * Id of container
    */
   serviceId?: string;
-
-  /**
-   * Should the view be boxed
-   */
-  isBoxed?: boolean;
 }
 
 export interface PageLinkProp {
@@ -50,6 +30,8 @@ export interface PageLinkProp {
    * Array of quick links for the service
    */
   quickLinksArray?: Array<QuickLinkProp>;
+
+  quickLinksShow?: boolean;
 }
 
 export interface QuickLinkProp {

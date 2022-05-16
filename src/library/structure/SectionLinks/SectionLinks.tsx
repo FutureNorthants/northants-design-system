@@ -31,7 +31,6 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
                   {(src) => (
                     <Styles.ImageContainer
                       image={src}
-                      alt={link.imageAltText}
                       role="img"
                       aria-label={link.imageAltText}
                     ></Styles.ImageContainer>

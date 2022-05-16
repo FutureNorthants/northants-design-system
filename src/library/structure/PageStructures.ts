@@ -34,6 +34,7 @@ import SearchResultsList from './SearchResultsList/SearchResultsList';
 import SectionLinks from './SectionLinks/SectionLinks';
 import SectionLinksMobileContents from './SectionLinksMobileContents/SectionLinksMobileContents';
 import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
+import ServiceLinksBoxed from './ServicesLinksBoxed/ServicesLinksBoxed';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
@@ -76,6 +77,7 @@ export {
   SectionLinks,
   SectionLinksMobileContents,
   SectionLinksSidebar,
+  ServiceLinksBoxed,
   ServicesLinksList,
   SignpostLinks,
   SkipToMainContent,
