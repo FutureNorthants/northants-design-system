@@ -13,6 +13,7 @@ describe('Header', () => {
       homeLink: '/',
       allServicesLink: '/all-services',
       isHomepage: false,
+      hasNewsLink: true,
       hideSearchBar: false,
     };
   });
@@ -33,13 +34,16 @@ describe('Header', () => {
     expect(component).toBeVisible();
 
     // Home & All Services links
-    expect(links).toHaveLength(2);
+    expect(links).toHaveLength(3);
 
     expect(links[0]).toHaveAttribute('href', props.homeLink);
     expect(links[0]).toHaveAttribute('title', 'Home');
 
-    expect(links[1]).toHaveAttribute('href', `${props.allServicesLink}#all-services`);
+    expect(links[1]).toHaveAttribute('href', '/news');
     expect(links[1]).not.toHaveAttribute('title');
+
+    expect(links[2]).toHaveAttribute('href', `${props.allServicesLink}#all-services`);
+    expect(links[2]).not.toHaveAttribute('title');
 
     expect(search).toBeVisible();
   });
@@ -50,7 +54,16 @@ describe('Header', () => {
     const { getAllByRole, getByTestId } = renderComponent();
 
     expect(getByTestId('Header')).not.toHaveTextContent('All services');
-    expect(getAllByRole('link')).toHaveLength(1);
+    expect(getAllByRole('link')).toHaveLength(2);
+  });
+
+  it('should not have news link', () => {
+    props.hasNewsLink = false;
+
+    const { getAllByRole, getByTestId } = renderComponent();
+
+    expect(getByTestId('Header')).not.toHaveTextContent('News');
+    expect(getAllByRole('link')).toHaveLength(2);
   });
 
   it('should hide the search bar', () => {

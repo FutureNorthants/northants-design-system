@@ -18,10 +18,13 @@ export default {
       isHomepage: {
         table: { category: "Links" }
       },
-      homeLink : {
+      homeLink: {
         table: { category: "Links" }
       },
-      allServicesLink : {
+      hasNewsLink: {
+        table: { category: "Links" }
+      },
+      allServicesLink: {
         table: { category: "Links" }
       },
       hideSearchBar: {
@@ -38,6 +41,15 @@ const Template: Story<HeaderProps> = (args) => <Header {...args}>Children of the
 
 export const HeaderExample = Template.bind({});
 HeaderExample.args = {
+  hasNewsLink: true,
+  allServicesLink: "/",
+  hideSearchBar: false,
+  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments']
+};
+
+export const HeaderNoNewsExample = Template.bind({});
+HeaderExample.args = {
+  hasNewsLink: false,
   allServicesLink: "/",
   hideSearchBar: false,
   searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments']
@@ -45,6 +57,7 @@ HeaderExample.args = {
 
 export const HeaderNoSearchExample = Template.bind({});
 HeaderNoSearchExample.args = {
+  hasNewsLink: false,
   allServicesLink: false,
   hideSearchBar: true
 };
