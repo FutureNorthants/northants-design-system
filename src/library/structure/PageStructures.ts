@@ -2,6 +2,8 @@ import AccessibleLinks from './AccessibleLinks/AccessibleLinks';
 import AlertBanner from './AlertBanner/AlertBanner';
 import AlertBannerService from './AlertBannerService/AlertBannerService';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import Contents from './Contents/Contents';
+import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
 import CookieBanner from './CookieBanner/CookieBanner';
 import DisplayDate from './DisplayDate/DisplayDate';
 import Footer from './Footer/Footer';
@@ -42,6 +44,8 @@ export {
   AlertBanner,
   AlertBannerService,
   Breadcrumbs,
+  Contents,
+  ContentsNavigation,
   CookieBanner,
   DisplayDate,
   Footer,
