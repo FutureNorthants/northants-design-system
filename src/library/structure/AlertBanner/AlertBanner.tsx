@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { AlertBannerProps } from './AlertBanner.types';
@@ -11,22 +11,34 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
  */
 const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, alertType = 'alert', children }) => {
   const themeContext = useContext(ThemeContext);
+  const elementRef = useRef(null);
   const [showAlert, setShowAlert] = useLocalStorage('alert_' + uid, true);
+  useEffect(() => {
+    elementRef?.current?.addEventListener('click', embeddedLinkCLickHandler);
+  }, [elementRef]);
 
+  /* A click on any link within the alert text dismisses the banner too */
+  const embeddedLinkCLickHandler = (event) => {
+    if (event?.target?.tagName === 'A') {
+      hideClickHandler();
+    }
+  };
   const hideClickHandler = () => {
     setShowAlert(false);
   };
 
-  const notServer = typeof(window) !== 'undefined';
+  /* Stop flash of banner on page load when previously dismissed */
+  const notServer = typeof window !== 'undefined';
 
   return (
-    showAlert && notServer && (
+    showAlert &&
+    notServer && (
       <Styles.Container alertType={alertType} data-testid="AlertBanner">
         <MaxWidthContainer noBackground>
           <Styles.InnerContainer>
             <Styles.BannerContentContainer>
               <Styles.BannerTitle>{title}</Styles.BannerTitle>
-              <Styles.BannerContent>{children}</Styles.BannerContent>
+              <Styles.BannerContent ref={elementRef}>{children}</Styles.BannerContent>
             </Styles.BannerContentContainer>
 
             <Styles.HideLink
