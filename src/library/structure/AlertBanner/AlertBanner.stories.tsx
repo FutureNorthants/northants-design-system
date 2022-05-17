@@ -17,13 +17,13 @@ export default {
 
 const childrenMessage = (
   <p>
-    Coronavirus | National lockdown: stay at home. <a href="/">Learn what this means for residents and workers here</a>
+    Coronavirus | National lockdown: stay at home. <a href="javascript:;">Learn what this means for residents and workers here</a>
   </p>
 );
 
 const resetAlert = (event) => {
     window.localStorage.clear();
-    window.location.reload();
+    window.location.replace(window.location.href.split('&')[0]);
 };
 
 const Template: Story<AlertBannerProps> = (args) => (
