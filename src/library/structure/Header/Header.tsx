@@ -16,6 +16,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   children,
   hideSearchBar = false,
   homeLink = '/',
+  hasNewsLink = false,
   allServicesLink = '/',
   isHomepage = false,
   searchSuggestions = [],
@@ -88,10 +89,19 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               {themeLogos(themeContext.cardinal_name, themeContext.is_memorial)}
             </Styles.HomeLink>
           </Styles.LogoWrapper>
-          {allServicesLink && (
-            <Styles.AllServicesLink href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
-              All services
-            </Styles.AllServicesLink>
+          {(hasNewsLink || allServicesLink) && (
+            <Styles.LinksWrapper>
+              {hasNewsLink && (                
+                <Styles.Link href="/news">
+                News
+                </Styles.Link>
+              )}
+              {allServicesLink && (
+                <Styles.Link href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
+                  All services
+                </Styles.Link>
+              )}
+            </Styles.LinksWrapper>
           )}
           {!hideSearchBar && (
             <Styles.SearchWrapper>
