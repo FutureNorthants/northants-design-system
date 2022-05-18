@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeadingWrapper = styled.span`
+export const HeadingWrapper = styled.div`
   display: flex;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
