@@ -39,6 +39,7 @@ export const Container = styled.header`
 `;
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
+  overflow: visible; // Fix for search suggestions
   display: grid;
   align-items: center;
   grid-template-areas: 'headerlogo headerlinks headersearch';
