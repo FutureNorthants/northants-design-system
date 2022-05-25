@@ -8,6 +8,16 @@ export const Container = styled.figure`
       : props.theme.theme_vars.colours.grey_light};
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   margin-bottom: 15px;
+  float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
+  width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
+  margin-top: 1rem;
+  margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
+
+  @media screen and (max-width: ${props => props.theme.theme_vars.breakpoints.s}){
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -23,7 +33,7 @@ export const Image = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
-'`;
+`;
 
 export const Caption = styled.figcaption`
   ${(props) => props.theme.fontStyles};

@@ -4,6 +4,7 @@ import Image from './Image';
 import { ImageProps } from './Image.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
+import Heading from '../../components/Heading/Heading';
 
 export default {
   title: 'Library/Slices/Image',
@@ -18,7 +19,10 @@ export default {
 const Template: Story<ImageProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
+      <p>This is some <em>text</em> that is <strong>located before</strong> the image to show how wide the paragraph can be, stretching to fit whatever container this is in.</p>
       <Image {...args} />
+      <Heading level={2} text="Followup text" />
+      <p>This is some <em>text</em> that is <strong>located after</strong> the image to show how wide the paragraph can be, stretching to fit whatever container this is in.</p>
     </MaxWidthContainer>
   </SBPadding>
 );
@@ -30,6 +34,16 @@ StandardImage.args = {
   imageAltText: 'Parkland',
   ratio: '4by3',
   caption: 'The caption helps describe the image',
+};
+
+export const StandardImageWrapped = Template.bind({});
+StandardImageWrapped.args = {
+  imageLarge: 'https://via.placeholder.com/800x600?text=4+by+3+image',
+  imageSmall: 'https://via.placeholder.com/400x300',
+  imageAltText: 'Parkland',
+  ratio: '4by3',
+  caption: 'The caption helps describe the image',
+  wrapText: true,
 };
 
 export const WideImage = Template.bind({});

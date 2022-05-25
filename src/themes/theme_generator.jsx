@@ -26,7 +26,7 @@ const generate_theme = (theme_vars) => {
                 line-height: 1.45;
 
                 p, h2, h3, h4, ul, ol {
-                    max-width: 750px;
+                    max-width: 55rem;
                 }
             }
         `,
