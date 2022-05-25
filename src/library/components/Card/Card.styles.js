@@ -2,13 +2,21 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  height: 100%;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   background-color: ${(props) =>
     props.theme.cardinal_name === 'west'
       ? props.theme.theme_vars.colours.grey_light + '7a'
       : props.theme.theme_vars.colours.white};
+`;
+
+export const Content = styled.div`
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const Image = styled.img`
+  width: 100%;
 `;
 
 export const Header = styled.div`

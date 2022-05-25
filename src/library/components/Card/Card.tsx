@@ -6,19 +6,37 @@ import Heading from '../Heading/Heading';
 /**
  * A card component with header, footer and content
  */
-const Card: React.FunctionComponent<CardProps> = ({ header, content, footer }) => (
+const Card: React.FunctionComponent<CardProps> = ({
+  header,
+  content,
+  footerLink,
+  imageLarge,
+  imageSmall,
+  imageAltText,
+}) => (
   <Styles.Container data-testid="Card">
-    {header && (
-      <Styles.Header>
-        <Heading text={header} level={3} />
-      </Styles.Header>
+    {imageLarge && imageSmall && (
+      <Styles.Image
+        src={imageLarge}
+        alt={imageAltText}
+        srcSet={`${imageSmall} 400w, ${imageLarge} 800w`}
+        sizes="(max-width: 550px) 400px, 800px"
+        loading="lazy"
+      />
     )}
-    {content}
-    {footer && (
-      <Styles.Footer>
-        <Styles.FooterLink href={footer.url}>{footer.text}</Styles.FooterLink>
-      </Styles.Footer>
-    )}
+    <Styles.Content>
+      {header && (
+        <Styles.Header>
+          <Heading text={header} level={3} />
+        </Styles.Header>
+      )}
+      {content}
+      {footerLink && (
+        <Styles.Footer>
+          <Styles.FooterLink href={footerLink.url}>{footerLink.text}</Styles.FooterLink>
+        </Styles.Footer>
+      )}
+    </Styles.Content>
   </Styles.Container>
 );
 

@@ -13,7 +13,7 @@ const Cards: React.FunctionComponent<CardsProps> = ({ cards }) => (
     <Row>
       {cards.map((card, index) => (
         <Column small="full" medium="one-half" large="one-third" key={index}>
-          <Card header={card.header} content={card.content} footer={card.footer} />
+          <Card {...card} />
         </Column>
       ))}
     </Row>

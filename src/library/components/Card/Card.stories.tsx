@@ -34,12 +34,21 @@ CardWithoutHeading.args = {
   content: <p>Some example content</p>,
 };
 
-export const CardWithFooter = Template.bind({});
-CardWithFooter.args = {
+export const CardWithFooterLink = Template.bind({});
+CardWithFooterLink.args = {
   header: 'Example Heading',
   content: <p>Some example content</p>,
-  footer: {
+  footerLink: {
     url: '/test',
     text: 'Example link text',
   },
+};
+
+export const CardWithImage = Template.bind({});
+CardWithImage.args = {
+  header: 'Example Heading',
+  content: <p>Some example content</p>,
+  imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+  imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+  imageAltText: 'Parkland',
 };

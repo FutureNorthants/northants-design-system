@@ -11,13 +11,26 @@ export interface CardProps {
    */
   content: React.ReactNode;
 
+  /** Optional large image */
+  imageLarge?: string;
+
+  /**
+   * Optional small image
+   */
+  imageSmall?: string;
+
+  /**
+   * Optional image alt text
+   */
+  imageAltText?: string;
+
   /**
    * The optional footer link
    */
-  footer?: CardFooterProps;
+  footerLink?: CardFooterLinkProps;
 }
 
-export interface CardFooterProps {
+export interface CardFooterLinkProps {
   /**
    * The url for the link
    */

@@ -39,7 +39,7 @@ describe('Test Component', () => {
   });
 
   it('should render the footer link', () => {
-    props.footer = {
+    props.footerLink = {
       url: '/test',
       text: 'Example link',
     };
