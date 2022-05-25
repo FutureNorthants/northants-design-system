@@ -105,12 +105,14 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               type: 'PDF',
               url: 'https://www.google.com/test4.pdf',
               size: '1.2 MB',
+              archived: false,
             },
             {
               title: 'Cras justo odio, dapibus ac facilisis in, egestas eget quam.',
               type: 'PDF',
               url: 'https://www.google.com/test5.pdf',
               size: '279.06 KB',
+              archived: false,
             },
           ]}
         />
@@ -124,15 +126,17 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             <thead>
               <tr>
                 {smallTable.headings.map((heading) => (
-                  <th scope="col">{heading}</th>
+                  <th scope="col" key={heading}>
+                    {heading}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {smallTable.data.map((row) => (
-                <tr>
+                <tr key={row}>
                   {row.map((item) => (
-                    <td>{item}</td>
+                    <td key={item}>{item}</td>
                   ))}
                 </tr>
               ))}
@@ -147,16 +151,18 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             <thead>
               <tr>
                 {largeTable.headings.map((heading) => (
-                  <th scope="col">{heading}</th>
+                  <th scope="col" key={heading}>
+                    {heading}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {[...Array(100)].map((row, rowIndex) => (
-                <tr>
+                <tr key={rowIndex}>
                   <th>Town {rowIndex + 1}</th>
                   {[...Array(8)].map((item, itemIndex) => (
-                    <td>{rowIndex + 1 + itemIndex}</td>
+                    <td key={itemIndex}>{rowIndex + 1 + itemIndex}</td>
                   ))}
                 </tr>
               ))}
