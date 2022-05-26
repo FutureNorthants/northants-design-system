@@ -3,7 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import ContentsNavigation from './ContentsNavigation';
 import { ContentsProps } from '../Contents/Contents.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ContentsArray } from '../Contents/Contents.storydata';
+import { ContentsExampleData } from '../Contents/Contents.storydata';
 
 export default {
   title: 'Library/Structure/Contents Navigation',
@@ -23,18 +23,18 @@ const Template: Story<ContentsProps> = (args) => (
 
 export const ExampleContentsNavigation = Template.bind({});
 ExampleContentsNavigation.args = {
-  contents: ContentsArray,
+  contents: ContentsExampleData,
   currentPath: '/second-page',
 };
 
 export const ExampleContentsNavigationFirstPage = Template.bind({});
 ExampleContentsNavigationFirstPage.args = {
-  contents: ContentsArray,
+  contents: ContentsExampleData,
   currentPath: '/first-page',
 };
 
 export const ExampleContentsNavigationLastPage = Template.bind({});
 ExampleContentsNavigationLastPage.args = {
-  contents: ContentsArray,
+  contents: ContentsExampleData,
   currentPath: '/fourth-page',
 };

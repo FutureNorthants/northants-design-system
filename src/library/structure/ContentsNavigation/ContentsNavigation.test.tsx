@@ -7,7 +7,7 @@ import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 
 /**
- * This test uses ContentsArray story data which has 4 contents links
+ * This test uses ContentsExampleData story data which has 4 contents links
  */
 
 describe('Contents Navigation', () => {
