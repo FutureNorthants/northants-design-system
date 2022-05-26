@@ -122,11 +122,11 @@ export const GlobalStyleReset = createGlobalStyle`
   }
   ol {
     list-style: decimal inside;
-    margin: 1rem 0rem 1rem 2rem;
+    margin: 1rem 0rem 1rem 1.25rem;
   }
   ul {
     list-style: disc inside;
-    margin: 1rem 0rem 1rem 2rem;
+    margin: 1rem 0rem 1rem 1.25rem;
   }
   blockquote,
   q {
