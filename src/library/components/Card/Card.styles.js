@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   background-color: ${(props) =>
     props.theme.cardinal_name === 'west'
