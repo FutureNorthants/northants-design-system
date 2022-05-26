@@ -40,7 +40,7 @@ CardWithFooterLink.args = {
   content: <p>Some example content</p>,
   footerLink: {
     url: '/test',
-    text: 'Example link text',
+    title: 'Example link text',
   },
 };
 

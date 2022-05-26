@@ -41,7 +41,7 @@ describe('Test Component', () => {
   it('should render the footer link', () => {
     props.footerLink = {
       url: '/test',
-      text: 'Example link',
+      title: 'Example link',
     };
 
     const { getByRole } = renderComponent();

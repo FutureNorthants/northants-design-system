@@ -22,12 +22,12 @@ export interface CardProps {
   /**
    * Optional image alt text
    */
-  imageAltText?: string;
+  imageAltText?: string | null;
 
   /**
    * The optional footer link
    */
-  footerLink?: CardFooterLinkProps;
+  footerLink?: CardFooterLinkProps | null;
 }
 
 export interface CardFooterLinkProps {
@@ -39,5 +39,5 @@ export interface CardFooterLinkProps {
   /**
    * The text for the link
    */
-  text: string;
+  title: string;
 }

@@ -78,7 +78,7 @@ ExampleCardsWithFooterLinks.args = {
       content: <p>Some example content</p>,
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
     {
@@ -86,7 +86,7 @@ ExampleCardsWithFooterLinks.args = {
       content: <p>Some example content</p>,
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
     {
@@ -94,7 +94,7 @@ ExampleCardsWithFooterLinks.args = {
       content: <p>Some example content</p>,
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
   ],
@@ -111,7 +111,7 @@ ExampleCardsWithImages.args = {
       imageAltText: 'Parkland',
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
     {
@@ -122,7 +122,7 @@ ExampleCardsWithImages.args = {
       imageAltText: 'Parkland',
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
     {
@@ -133,7 +133,7 @@ ExampleCardsWithImages.args = {
       imageAltText: 'Parkland',
       footerLink: {
         url: '/test',
-        text: 'Example link text',
+        title: 'Example link text',
       },
     },
   ],

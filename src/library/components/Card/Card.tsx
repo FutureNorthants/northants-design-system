@@ -2,6 +2,7 @@ import React from 'react';
 import { CardProps } from './Card.types';
 import * as Styles from './Card.styles';
 import Heading from '../Heading/Heading';
+import sanitizeHtml from 'sanitize-html';
 
 /**
  * A card component with header, footer and content
@@ -30,10 +31,10 @@ const Card: React.FunctionComponent<CardProps> = ({
           <Heading text={header} level={3} />
         </Styles.Header>
       )}
-      {content}
+      <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />
       {footerLink && (
         <Styles.Footer>
-          <Styles.FooterLink href={footerLink.url}>{footerLink.text}</Styles.FooterLink>
+          <Styles.FooterLink href={footerLink.url}>{footerLink.title}</Styles.FooterLink>
         </Styles.Footer>
       )}
     </Styles.Content>
