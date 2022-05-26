@@ -11,7 +11,7 @@ describe('Test Component', () => {
   beforeEach(() => {
     props = {
       header: 'Example heading',
-      content: <p>Some example content</p>,
+      content: '<p>Some example content</p>',
     };
   });
 

@@ -7,9 +7,9 @@ export interface CardProps {
   header?: string;
 
   /**
-   * The card content
+   * The card content as a string of html
    */
-  content: React.ReactNode;
+  content: string;
 
   /** Optional large image */
   imageLarge?: string;

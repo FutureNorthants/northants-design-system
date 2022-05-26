@@ -13,11 +13,11 @@ describe('Test Component', () => {
       cards: [
         {
           header: 'First heading',
-          content: <p>First example content</p>,
+          content: '<p>First example content</p>',
         },
         {
           header: 'Second heading',
-          content: <p>Second example content</p>,
+          content: '<p>Second example content</p>',
         },
       ],
     };
