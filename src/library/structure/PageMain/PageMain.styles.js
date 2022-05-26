@@ -27,35 +27,6 @@ export const Container = styled.main`
         font-style: italic;
     }
 
-    ul, ol {
-        margin: 20px 0 20px 20px;
-
-        li {
-            margin-bottom: 5px;
-        }
-    }
-    ul li {
-        padding-left: 25px;
-        position: relative;
-        &:before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            background: ${props => props.theme.theme_vars.colours.black};
-            border-radius: 100%;
-            position: absolute;
-            left: 0;
-            top: 10px;
-        }
-    }
-    ol {
-        list-style-type: decimal;
-        padding-left: 10px;
-        li {
-            padding-left: 10px;
-        }
-    }
-
     sub, sup {
         font-size: 75%;
         line-height: 0;
