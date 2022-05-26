@@ -54,14 +54,26 @@ ExampleCardsWithLongContent.args = {
     {
       header: 'Example heading',
       content: longContent,
+      footerLink: {
+        url: '/test',
+        title: 'Example link text',
+      },
     },
     {
       header: 'Example heading',
       content: longContent,
+      footerLink: {
+        url: '/test',
+        title: 'Example link text',
+      },
     },
     {
       header: 'Example heading',
       content: '<p>Some example content</p>',
+      footerLink: {
+        url: '/test',
+        title: 'Example link text',
+      },
     },
   ],
 };

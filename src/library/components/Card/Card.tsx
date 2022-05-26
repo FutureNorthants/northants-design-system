@@ -32,12 +32,12 @@ const Card: React.FunctionComponent<CardProps> = ({
         </Styles.Header>
       )}
       <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />
-      {footerLink && (
-        <Styles.Footer>
-          <Styles.FooterLink href={footerLink.url}>{footerLink.title}</Styles.FooterLink>
-        </Styles.Footer>
-      )}
     </Styles.Content>
+    {footerLink && (
+      <Styles.Footer>
+        <Styles.FooterLink href={footerLink.url}>{footerLink.title}</Styles.FooterLink>
+      </Styles.Footer>
+    )}
   </Styles.Container>
 );
 

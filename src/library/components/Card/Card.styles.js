@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 100%;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
@@ -13,6 +15,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  flex-grow: 1;
 `;
 
 export const Image = styled.img`
@@ -27,7 +30,9 @@ export const Header = styled.div`
 
 export const Footer = styled.div`
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small}
+    ${(props) => props.theme.theme_vars.spacingSizes.medium} ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
   border-top: 1px solid
     ${(props) =>
       props.theme.cardinal_name === 'north'
@@ -38,6 +43,7 @@ export const Footer = styled.div`
 export const FooterLink = styled.a`
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
+  display: flex;
 
   &:hover {
     ${(props) => props.theme.linkStylesHover};
