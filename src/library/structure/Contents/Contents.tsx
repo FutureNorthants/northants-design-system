@@ -9,7 +9,7 @@ const Contents: React.FunctionComponent<ContentsProps> = ({
   title = 'Contents',
 }) => (
   <Styles.Container data-testid="Contents">
-    <Heading text={title} level={4} />
+    <Heading text={title} level={2} />
     <Styles.List>
       {contents.map((content, index) => (
         <Styles.ListItem key={index}>
