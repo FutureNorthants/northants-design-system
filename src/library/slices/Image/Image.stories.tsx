@@ -24,8 +24,7 @@ const Template: Story<ImageProps> = (args) => (
       <Heading level={2} text="Followup text" />
       <p>This is some <em>text</em> that is <strong>located after</strong> the image to show how wide the paragraph can be, stretching to fit whatever container this is in.</p>
       <ul>
-        <li>A list item</li>
-        <li>A list item</li>
+        <li>A list item that is long enough to wrap onto the next line to see if that works ok too</li>
         <li>A list item</li>
         <li>A list item</li>
         <li>A list item</li>
