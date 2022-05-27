@@ -1,23 +1,23 @@
-import React from 'react';
-
 export interface CardProps {
   /**
    * Optional card header
    */
-  header?: string;
+  header?: string | null;
 
   /**
    * The card content as a string of html
    */
-  content: string;
+  content?: string | null;
 
-  /** Optional large image */
-  imageLarge?: string;
+  /** 
+   * Optional large image 
+   * */
+  imageLarge?: string | null;
 
   /**
    * Optional small image
    */
-  imageSmall?: string;
+  imageSmall?: string | null;
 
   /**
    * Optional image alt text

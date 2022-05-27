@@ -146,3 +146,24 @@ ExampleCardsWithImages.args = {
     },
   ],
 };
+
+export const ExampleCardsWithOnlyImages = Template.bind({});
+ExampleCardsWithOnlyImages.args = {
+  cards: [
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+  ],
+};

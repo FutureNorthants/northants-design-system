@@ -14,7 +14,9 @@ const Card: React.FunctionComponent<CardProps> = ({
   imageLarge,
   imageSmall,
   imageAltText,
-}) => (
+}) => {
+  const showContent = content || header;
+  return (
   <Styles.Container data-testid="Card">
     {imageLarge && imageSmall && (
       <Styles.Image
@@ -25,6 +27,7 @@ const Card: React.FunctionComponent<CardProps> = ({
         loading="lazy"
       />
     )}
+    {showContent && (
     <Styles.Content>
       {header && (
         <Styles.Header>
@@ -33,12 +36,13 @@ const Card: React.FunctionComponent<CardProps> = ({
       )}
       <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />
     </Styles.Content>
+    )}
     {footerLink && (
       <Styles.Footer>
         <Styles.FooterLink href={footerLink.url}>{footerLink.title}</Styles.FooterLink>
       </Styles.Footer>
     )}
-  </Styles.Container>
-);
+  </Styles.Container>);
+};
 
 export default Card;
