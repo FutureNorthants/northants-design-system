@@ -51,6 +51,7 @@ export const PagelinkBlank = styled.div`
 export const PagelinkInner = styled.div`
   padding-left: 76px;
 `;
+
 const PromotedLink = css`
   // display: block;
   background: ${(props) => props.theme.theme_vars.colours.white};
@@ -170,6 +171,7 @@ export const QuicklinkList = styled.ul`
   display: none;
   margin: 0 !important;
   padding: 0 !important;
+  list-style-type: none;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: block;
@@ -217,6 +219,7 @@ export const Quicklink = styled.a`
     ${(props) => props.theme.linkStylesActive}
   }
 `;
+
 export const ViewMoreButtonContainer = styled.div`
   text-align: center;
   margin-top: 30px;
@@ -282,6 +285,7 @@ export const ReorderControl = styled.div`
     text-align: right;
   }
 `;
+
 export const ReorderButton = styled.button`
   background: transparent;
   border: 2px solid ${(props) => props.theme.theme_vars.colours.action};

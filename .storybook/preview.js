@@ -1,10 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { addDecorator } from '@storybook/react';
 import { themes } from '../src/themes/theme_generator';
-import { createGlobalStyle } from 'styled-components';
-import { cssReset } from '../src/themes/reset.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { GlobalStyleReset } from '../src/themes/GlobalStyleReset';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -66,15 +64,11 @@ const withThemeProvider = (Story, context) => {
   );
 };
 
-const GlobalStyle = createGlobalStyle`
-  ${cssReset}
-`;
-
 export const decorators = [
   withThemeProvider,
   (style) => (
     <>
-      <GlobalStyle />
+      <GlobalStyleReset />
       {style()}
     </>
   ),

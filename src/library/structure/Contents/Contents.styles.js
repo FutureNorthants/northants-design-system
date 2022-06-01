@@ -9,11 +9,9 @@ export const Container = styled.div`
 
 export const List = styled.ul`
   list-style-type: '-';
-  margin: 0 0 0 ${(props) => props.theme.theme_vars.spacingSizes.small} !important;
 `;
 
 export const ListItem = styled.li`
-  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small} !important;
   margin-bottom: 0px !important;
 
   &::marker {
@@ -28,6 +26,7 @@ export const ListItem = styled.li`
 export const Link = styled.a`
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
   &:hover {
     ${(props) => props.theme.linkStylesHover};
@@ -44,4 +43,5 @@ export const Link = styled.a`
 
 export const CurrentPage = styled.span`
   ${(props) => props.theme.fontStyles};
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
