@@ -1,4 +1,1 @@
-
-export interface CouncilTaxAlphabeticalDirectoryProps {
-  
-}
+export interface CouncilTaxAlphabeticalDirectoryProps {}
