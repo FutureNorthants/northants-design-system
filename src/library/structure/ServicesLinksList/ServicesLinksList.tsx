@@ -5,7 +5,8 @@ import { ServicesLinksListProps } from './ServicesLinksList.types';
 import * as Styles from './ServicesLinksList.styles';
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import Heading from '../../components/Heading/Heading';
-import serviceIcons from '../../components/icons/services/ServicesIcons';
+import HeadingWithIconLink from '../../components/HeadingWithIconLink/HeadingWithIconLink';
+import ServicesLinksBoxed from '../ServicesLinksBoxed/ServicesLinksBoxed';
 
 const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   serviceLinksArray,
@@ -13,6 +14,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   hideHeader = false,
   oneCol = false,
   serviceId = 'all-services',
+  isBoxed = false,
 }) => {
   const themeContext = useContext(ThemeContext);
   const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
@@ -31,20 +33,9 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
     }
   }, [currentOrder]);
 
-  const DynamicComponent = ({ name, isHover = false }) => {
-    let DynamicIcon;
-    if (name === 'culture') {
-      let newName = name + themeContext.cardinal_name;
-      DynamicIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
-    } else {
-      DynamicIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
-    }
-    return <DynamicIcon colourFill={themeContext.theme_vars.colours.action} />;
-  };
-
   return (
     <>
-      <Styles.Container id={serviceId} className={open && 'open'} hideHeader={hideHeader}>
+      <Styles.Container id={serviceId} className={open && 'open'} hideHeader={hideHeader} isBoxed={isBoxed}>
         {!hideHeader && (
           <Styles.HomeTitle data-testid="servicesLinksListHeader">
             <Heading text="Council services" />
@@ -58,20 +49,26 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     tabIndex="-1"
                     className={'chosen'}
                     title="Most used services selected"
+                    aria-label="Order services by most used"
                   >
                     Most used
                   </Styles.ReorderButton>
                   <Styles.ReorderButton
                     onClick={() => setCurrentOrder(1)}
                     title="Alphabetical services"
-                    name="alphabatical services"
+                    name="alphabetical services"
+                    aria-label="Order services alphabetically"
                   >
                     Alphabetical
                   </Styles.ReorderButton>
                 </>
               ) : (
                 <>
-                  <Styles.ReorderButton onClick={() => setCurrentOrder(0)} title="Most used services">
+                  <Styles.ReorderButton
+                    onClick={() => setCurrentOrder(0)}
+                    title="Most used services"
+                    aria-label="Order services by most used"
+                  >
                     Most used
                   </Styles.ReorderButton>
                   <Styles.ReorderButton
@@ -79,6 +76,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
                     tabIndex="-1"
                     className={'chosen'}
                     title="Alphabetical services selected"
+                    aria-label="Order services alphabetically"
                   >
                     Alphabetical
                   </Styles.ReorderButton>
@@ -87,44 +85,33 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
             </Styles.ReorderControl>
           </Styles.HomeTitle>
         )}
-        <Styles.LinksList>
-          {arrayOrdering.map((link, i) => (
-            <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
-              {link.iconKey && (
-                <Styles.PagelinkIconContainer>
-                  <Styles.ServiceIconLink href={link.url} title={link.title} tabIndex="-1">
-                    <Styles.PagelinkIcon className="service-icon">
-                      <DynamicComponent name={link.iconKey} isHover={false} />
-                    </Styles.PagelinkIcon>
-                    <Styles.PagelinkIconHover className="service-icon-hover">
-                      <DynamicComponent name={link.iconKey} isHover={true} />
-                    </Styles.PagelinkIconHover>
-                  </Styles.ServiceIconLink>
-                </Styles.PagelinkIconContainer>
-              )}
-              <Styles.PagelinkInner>
-                <Styles.ServiceTitleLink href={link.url} title={link.title}>
-                  <Styles.ServiceTitle text={link.title} />
-                </Styles.ServiceTitleLink>
-
-                {link.quickLinksArray?.length > 0 && (
-                  <Styles.QuicklinkList>
-                    {link.quickLinksArray.map((quicklink) => (
-                      <Styles.QuicklinkItem key={quicklink.title}>
-                        <Styles.Quicklink href={quicklink.url} title={quicklink.title}>
-                          {quicklink.title}
-                        </Styles.Quicklink>
-                      </Styles.QuicklinkItem>
-                    ))}
-                  </Styles.QuicklinkList>
-                )}
-              </Styles.PagelinkInner>
-            </Styles.PagelinkBlock>
-          ))}
-          {arrayOrdering.length > 1 && (arrayOrdering.length + 1) % 3 === 0 && <Styles.PagelinkBlank />}
-        </Styles.LinksList>
+        {isBoxed ? (
+          <ServicesLinksBoxed serviceLinksArray={arrayOrdering} />
+        ) : (
+          <Styles.LinksList>
+            {arrayOrdering.map((link, i) => (
+              <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
+                <HeadingWithIconLink title={link.title} iconKey={link.iconKey} link={link.url} />
+                <Styles.PagelinkInner>
+                  {link.quickLinksArray?.length > 0 && (
+                    <Styles.QuicklinkList>
+                      {link.quickLinksArray.slice(0, 3).map((quicklink) => (
+                        <Styles.QuicklinkItem key={quicklink.title}>
+                          <Styles.Quicklink href={quicklink.url} title={quicklink.title}>
+                            {quicklink.title}
+                          </Styles.Quicklink>
+                        </Styles.QuicklinkItem>
+                      ))}
+                    </Styles.QuicklinkList>
+                  )}
+                </Styles.PagelinkInner>
+              </Styles.PagelinkBlock>
+            ))}
+            {arrayOrdering.length > 1 && (arrayOrdering.length + 1) % 3 === 0 && <Styles.PagelinkBlank />}
+          </Styles.LinksList>
+        )}
       </Styles.Container>
-      {!hideHeader && (
+      {!isBoxed && !hideHeader && (
         <Styles.ViewMoreButtonContainer>
           <Styles.ViewMoreButton onClick={() => (open ? setOpen(false) : setOpen(true))}>
             <Styles.IconWrapper>

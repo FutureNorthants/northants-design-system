@@ -32,6 +32,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
           imageSmall={heroImage.imageSmall}
           imageAltText={heroImage.imageAltText}
           backgroundBox={heroImage.backgroundBox}
+          breadcrumb={breadcrumbsArray?.[breadcrumbsArray.length - 1]}
         />
 
         {serviceAlert?.alertType && (

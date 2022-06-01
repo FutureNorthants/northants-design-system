@@ -11,6 +11,8 @@ import Summary from '../../structure/Summary/Summary';
 import { smallTable, largeTable } from './ContentPage.storydata';
 import Promotions from '../../slices/Promotions/Promotions';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
+import { GoogleMapWithTitleAndDescription } from '../../slices/GoogleMap/GoogleMap.storydata';
+import GoogleMap from '../../slices/GoogleMap/GoogleMap';
 
 export interface ContentPageProps {}
 
@@ -54,7 +56,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.
         </p>
         <ul>
-          <li>list 1</li>
+          <li>list 1 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
           <li>list 2</li>
           <li>list 3</li>
         </ul>
@@ -103,12 +105,14 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               type: 'PDF',
               url: 'https://www.google.com/test4.pdf',
               size: '1.2 MB',
+              archived: false,
             },
             {
               title: 'Cras justo odio, dapibus ac facilisis in, egestas eget quam.',
               type: 'PDF',
               url: 'https://www.google.com/test5.pdf',
               size: '279.06 KB',
+              archived: false,
             },
           ]}
         />
@@ -122,15 +126,17 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             <thead>
               <tr>
                 {smallTable.headings.map((heading) => (
-                  <th scope="col">{heading}</th>
+                  <th scope="col" key={heading}>
+                    {heading}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {smallTable.data.map((row) => (
-                <tr>
+                <tr key={row}>
                   {row.map((item) => (
-                    <td>{item}</td>
+                    <td key={item}>{item}</td>
                   ))}
                 </tr>
               ))}
@@ -145,16 +151,18 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             <thead>
               <tr>
                 {largeTable.headings.map((heading) => (
-                  <th scope="col">{heading}</th>
+                  <th scope="col" key={heading}>
+                    {heading}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {[...Array(100)].map((row, rowIndex) => (
-                <tr>
+                <tr key={rowIndex}>
                   <th>Town {rowIndex + 1}</th>
                   {[...Array(8)].map((item, itemIndex) => (
-                    <td>{rowIndex + 1 + itemIndex}</td>
+                    <td key={itemIndex}>{rowIndex + 1 + itemIndex}</td>
                   ))}
                 </tr>
               ))}
@@ -196,6 +204,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           ]}
         />
         <Promotions promos={PromoBlocksData} />
+        <GoogleMap {...GoogleMapWithTitleAndDescription} />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>

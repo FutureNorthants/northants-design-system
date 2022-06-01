@@ -10,6 +10,11 @@ export interface HeaderProps {
   homeLink?: string;
 
   /**
+   * Set to true to include a link to /news in the header
+   */
+  hasNewsLink?: boolean;
+
+  /**
    * Link to the list of all services displayed at top right (#all-services anchor added to this)
    */
   allServicesLink?: string;

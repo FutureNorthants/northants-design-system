@@ -36,3 +36,11 @@ export const HeroImageExampleMicroSiteData: HeroImageProps = {
   imageAltText: 'Lush green parkland',
   backgroundBox: false,
 };
+
+export const HeroImageExampleBoxedWithBreadcrumbData: HeroImageProps = {
+  breadcrumb: {
+    title: 'Home',
+    url: '/',
+  },
+  ...HeroImageExampleBoxedData,
+};

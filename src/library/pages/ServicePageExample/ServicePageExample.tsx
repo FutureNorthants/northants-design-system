@@ -4,12 +4,19 @@ import Heading from '../../components/Heading/Heading';
 import CallToAction from '../../slices/CallToAction/CallToAction';
 import AlertBannerService from '../../structure/AlertBannerService/AlertBannerService';
 import Image from '../../slices/Image/Image';
+import { ContentsProps } from '../../structure/Contents/Contents.types';
+import Contents from '../../structure/Contents/Contents';
+import ContentsNavigation from '../../structure/ContentsNavigation/ContentsNavigation';
 
 export interface ServicePageExampleProps {
   showServiceAlert: boolean;
+  contents?: ContentsProps;
 }
 
-export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServiceAlert = false }) => (
+export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps> = ({
+  showServiceAlert = false,
+  contents,
+}) => (
   <>
     <PageStructures.Header />
     <PageStructures.MaxWidthContainer>
@@ -40,6 +47,9 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServ
         )}
 
         <Heading level={1} text="A fourth level basic page" />
+
+        {contents && <Contents {...contents} />}
+
         <p>
           Lorem ipsum dolor sit amet consectetur adipiscing elit libero ligula iaculis, ad tempor penatibus varius
           faucibus vulputate pharetra est ornare
@@ -134,6 +144,8 @@ export const ServicePageExample: React.FC<ServicePageExampleProps> = ({ showServ
           Porttitor tempus cursus convallis sed curae ridiculus suspendisse lectus, dapibus platea himenaeos nisl
           eleifend pellentesque risus luctus purus, cras condimentum mus pulvinar scelerisque senectus sapien.
         </p>
+
+        {contents && <ContentsNavigation {...contents} />}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer

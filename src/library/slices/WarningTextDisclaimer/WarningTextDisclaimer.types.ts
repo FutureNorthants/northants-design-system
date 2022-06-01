@@ -1,4 +1,1 @@
-
-export interface WarningTextDisclaimerProps {
-
-}
+export interface WarningTextDisclaimerProps {}

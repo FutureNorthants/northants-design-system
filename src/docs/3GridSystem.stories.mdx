@@ -1,0 +1,74 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentation/Grid System" />
+
+# Grid System
+
+A new Grid System has been created to help standardise the layout and the spacing across components and make it easier to build responsive layouts.
+
+The grid system uses two structural components, Row and Column. This is inspired by the GOV.UK Design System Grid System.
+
+https://design-system.service.gov.uk/styles/layout/#grid-system
+
+## Row
+
+The Row is the outer container and is the full width of it's parent container. It should only contain Column components as it's direct descendents.
+
+### hasBorder
+
+You may also pass in `hasBorder` into the Row props to display the border. This should only be used for demonstration purposes in development and not in the production code.
+
+## Column
+
+Columns belong within a Row component. The Column allows you to pass in the column width for `small`, `medium` and `large` breakpoints as props.
+
+The available options for the Column widths are:
+
+- full
+- one-half
+- one-third
+- two-thirds
+- one-quarter
+- three-quarters
+
+The default values will be:
+
+- full for small
+- one-half for medium
+- one-third for large
+
+### hasPadding
+
+You may also pass in `hasPadding={false}` into the Column props to disable the default padding.
+
+### hasBorder
+
+You may also pass in `hasBorder` into the Column props to display the border. This should only be used for demonstration purposes in development and not in the production code.
+
+## Example
+
+```jsx
+<Row>
+  <Column small="full" medium="full" large="full">
+    <div>Full width</div>
+  </Column>
+  <Column small="one-half" medium="one-half" large="one-half">
+    <div>One half</div>
+  </Column>
+  <Column small="one-half" medium="one-half" large="one-half">
+    <div>One half</div>
+  </Column>
+  <Column small="three-quarters" medium="three-quarters" large="three-quarters">
+    <div>Three quarters</div>
+  </Column>
+  <Column small="one-quarter" medium="one-quarter" large="one-quarter">
+    <div>One quarter</div>
+  </Column>
+  <Column small="one-third" medium="one-third" large="one-third">
+    <div>One third</div>
+  </Column>
+  <Column small="two-thirds" medium="two-thirds" large="two-thirds">
+    <div>Two thirds</div>
+  </Column>
+</Row>
+```

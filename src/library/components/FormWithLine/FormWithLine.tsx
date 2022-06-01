@@ -1,39 +1,44 @@
+import React from 'react';
 
-import React from "react";
-
-import { FormWithLineProps } from "./FormWithLine.types";
-import * as Styles from "./FormWithLine.styles";
+import { FormWithLineProps } from './FormWithLine.types';
+import * as Styles from './FormWithLine.styles';
 
 /**
  * Form element - a container with a line on the left
  */
 const FormWithLine: React.FC<FormWithLineProps> = ({
-  lineColour = "#C6C6C6",
-  hideLine = false, 
+  lineColour = '#C6C6C6',
+  hideLine = false,
   formRole,
   formMethod,
   formURL,
   isError = false,
   errorSummary,
   onSubmit,
-  children
-  }) => {
-    return (
-      <Styles.Container>
-        <Styles.Line lineColour={lineColour} hideLine={hideLine} isError={isError} />
-        <Styles.Form onSubmit={onSubmit} hideLine={hideLine} role={formRole} method={formMethod} url={formURL}>
-          {errorSummary && <Styles.ErrorSummary>{errorSummary}</Styles.ErrorSummary>}
-          {children}
-        </Styles.Form>
-      </Styles.Container>
-    );
-  };
-  
+  children,
+}) => {
+  return (
+    <Styles.Container>
+      <Styles.Line lineColour={lineColour} hideLine={hideLine} isError={isError} />
+      <Styles.Form
+        onSubmit={onSubmit}
+        hideLine={hideLine}
+        role={formRole}
+        method={formMethod}
+        url={formURL}
+        data-testid="FormWithLine"
+      >
+        {errorSummary && <Styles.ErrorSummary>{errorSummary}</Styles.ErrorSummary>}
+        {children}
+      </Styles.Form>
+    </Styles.Container>
+  );
+};
 
 export default FormWithLine;
 
-
-{/* <form  class="form form--area-search"  data-area-search="">
+{
+  /* <form  class="form form--area-search"  data-area-search="">
                         <div data-form-title class="area-search__title">Enter your postcode</div>
                         <div data-form-info class="area-search__info">For example HP20 1UY</div>
                         <div data-response-text class="area-search__response-text"></div>
@@ -47,4 +52,5 @@ export default FormWithLine;
                         <button data-find-another-button type="button" class="button button--link hide">
                             Find another postcode
                         </button>
-                    </form> */}
+                    </form> */
+}

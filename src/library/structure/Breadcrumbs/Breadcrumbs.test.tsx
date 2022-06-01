@@ -27,13 +27,13 @@ describe('Breadcrumbs', () => {
       </ThemeProvider>
     );
 
-  const { queryAllByRole, getByTestId } = renderComponent();
-
   it('should render the breadcrumb links', () => {
+    const { queryAllByRole, getByTestId } = renderComponent();
+
     // Include hidden as jest renders mobile first
     const links = queryAllByRole('link', { hidden: true });
 
-    expect(links.length).toBe(3);
+    expect(links.length).toBe(2);
 
     expect(links[0]).toHaveAttribute('href', '/');
     expect(links[0]).toHaveTextContent('Home');
@@ -41,10 +41,39 @@ describe('Breadcrumbs', () => {
     expect(links[1]).toHaveAttribute('href', '/service-landing-page');
     expect(links[1]).toHaveTextContent('Service landing page');
 
-    // Lastly, a mobile only 'Back' link
-    expect(links[2]).toHaveAttribute('href', '/service-landing-page');
-    expect(links[2]).toHaveTextContent('Back');
+    expect(getByTestId('Breadcrumbs')).toHaveStyle(`margin-bottom: ${west_theme.theme_vars.spacingSizes.large}`);
+  });
 
-    expect(getByTestId('Breadcrumbs')).toHaveStyle('margin-bottom: 30px');
+  it('should only show the first and last breadcrumb on mobile', () => {
+    props.breadcrumbsArray = [
+      {
+        title: 'Home',
+        url: '/',
+      },
+      {
+        title: 'Service landing page',
+        url: '/service-landing-page',
+      },
+      {
+        title: 'Service page',
+        url: '/service-landing-page/service-page',
+      },
+    ];
+
+    const { queryAllByRole } = renderComponent();
+
+    const links = queryAllByRole('link', { hidden: true });
+
+    expect(links.length).toBe(3);
+
+    expect(links[0]).toBeVisible();
+    expect(links[0]).toHaveAttribute('href', '/');
+    expect(links[0]).toHaveTextContent('Home');
+
+    expect(links[1]).not.toBeVisible();
+
+    expect(links[2]).toBeVisible();
+    expect(links[2]).toHaveAttribute('href', '/service-landing-page/service-page');
+    expect(links[2]).toHaveTextContent('Service page');
   });
 });

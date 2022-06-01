@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { HeaderProps } from "./Header.types";
-import * as Styles from "./Header.styles";
-import GDSLogo from "../../components/logos/GDSLogo/logo";
-import NorthColoured from "../../components/logos/NorthColouredLogo/logo";
-import NorthWhite from "../../components/logos/NorthWhiteLogo/logo";
-import WestWhite from "../../components/logos/WestWhiteLogo/logo";
-import Searchbar from "../Searchbar/Searchbar";
+import { HeaderProps } from './Header.types';
+import * as Styles from './Header.styles';
+import GDSLogo from '../../components/logos/GDSLogo/logo';
+import NorthColoured from '../../components/logos/NorthColouredLogo/logo';
+import NorthWhite from '../../components/logos/NorthWhiteLogo/logo';
+import WestWhite from '../../components/logos/WestWhiteLogo/logo';
+import Searchbar from '../Searchbar/Searchbar';
 
 /**
  * The header that should appear at the top of every page.
@@ -15,8 +15,9 @@ import Searchbar from "../Searchbar/Searchbar";
 const Header: React.FunctionComponent<HeaderProps> = ({
   children,
   hideSearchBar = false,
-  homeLink = "/",
-  allServicesLink = "/",
+  homeLink = '/',
+  hasNewsLink = false,
+  allServicesLink = '/',
   isHomepage = false,
   searchSuggestions = [],
   ...props
@@ -34,62 +35,92 @@ const Header: React.FunctionComponent<HeaderProps> = ({
       memorial west homepage  - dark grey header / white logo / has search
   */
   const themeLogos = (cardinal_name, is_memorial) => {
-
-    if(is_memorial === true ) {
-      switch(cardinal_name) {
-        case "north":
-          return <Styles.LogoWhite><NorthWhite /></Styles.LogoWhite>;
-        case "west":
-          return  <Styles.LogoWhite><WestWhite /></Styles.LogoWhite>;
+    if (is_memorial === true) {
+      switch (cardinal_name) {
+        case 'north':
+          return (
+            <Styles.LogoWhite>
+              <NorthWhite />
+            </Styles.LogoWhite>
+          );
+        case 'west':
+          return (
+            <Styles.LogoWhite>
+              <WestWhite />
+            </Styles.LogoWhite>
+          );
         default:
-          return <Styles.LogoWhite><GDSLogo /></Styles.LogoWhite>;
+          return (
+            <Styles.LogoWhite>
+              <GDSLogo />
+            </Styles.LogoWhite>
+          );
       }
     } else {
-      switch(cardinal_name) {
-        case "north":
-          return <Styles.LogoColoured><NorthColoured /></Styles.LogoColoured>; 
-        case "west":
-          return <Styles.LogoWhite><WestWhite /></Styles.LogoWhite>;
+      switch (cardinal_name) {
+        case 'north':
+          return (
+            <Styles.LogoColoured>
+              <NorthColoured />
+            </Styles.LogoColoured>
+          );
+        case 'west':
+          return (
+            <Styles.LogoWhite>
+              <WestWhite />
+            </Styles.LogoWhite>
+          );
         default:
-          return <Styles.LogoColoured className="black_logo"><GDSLogo /></Styles.LogoColoured>;
+          return (
+            <Styles.LogoColoured className="black_logo">
+              <GDSLogo />
+            </Styles.LogoColoured>
+          );
       }
     }
-  }
+  };
 
-  return(
+  return (
     <>
-      <Styles.Container
-        {...props}
-      >
+      <Styles.Container {...props} data-testid="Header">
         <Styles.StyledMaxWidthContainer noBackground>
           <Styles.LogoWrapper>
             <Styles.HomeLink href={homeLink} title="Home" id="logo">
               {themeLogos(themeContext.cardinal_name, themeContext.is_memorial)}
             </Styles.HomeLink>
           </Styles.LogoWrapper>
-          {allServicesLink &&
-            <Styles.AllServicesLink href={isHomepage ? "#all-services" : allServicesLink + "#all-services"} title="See all services">
-              All services
-            </Styles.AllServicesLink>
-          }
-          {!hideSearchBar &&
+          {(hasNewsLink || allServicesLink) && (
+            <Styles.LinksWrapper>
+              {hasNewsLink && (                
+                <Styles.Link href="/news">
+                News
+                </Styles.Link>
+              )}
+              {allServicesLink && (
+                <Styles.Link href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
+                  All services
+                </Styles.Link>
+              )}
+            </Styles.LinksWrapper>
+          )}
+          {!hideSearchBar && (
             <Styles.SearchWrapper>
-                <Searchbar 
-                  isLight={themeContext.cardinal_name === "north" ? true : false} 
-                  submitInfo={{
-                    postTo: "/search",
-                    params: {
-                        type: "search"
-                    }
-                  }}
-                  suggestions={searchSuggestions}
-                />
+              <Searchbar
+                isLight={themeContext.cardinal_name === 'north' ? true : false}
+                submitInfo={{
+                  postTo: '/search',
+                  params: {
+                    type: 'search',
+                  },
+                }}
+                suggestions={searchSuggestions}
+              />
             </Styles.SearchWrapper>
-          }
-
+          )}
         </Styles.StyledMaxWidthContainer>
       </Styles.Container>
     </>
-)};
+  );
+};
 
 export default Header;

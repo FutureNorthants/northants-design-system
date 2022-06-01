@@ -2,6 +2,8 @@ import AccessibleLinks from './AccessibleLinks/AccessibleLinks';
 import AlertBanner from './AlertBanner/AlertBanner';
 import AlertBannerService from './AlertBannerService/AlertBannerService';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import Contents from './Contents/Contents';
+import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
 import CookieBanner from './CookieBanner/CookieBanner';
 import DisplayDate from './DisplayDate/DisplayDate';
 import Footer from './Footer/Footer';
@@ -32,6 +34,7 @@ import SearchResultsList from './SearchResultsList/SearchResultsList';
 import SectionLinks from './SectionLinks/SectionLinks';
 import SectionLinksMobileContents from './SectionLinksMobileContents/SectionLinksMobileContents';
 import SectionLinksSidebar from './SectionLinksSidebar/SectionLinksSidebar';
+import ServiceLinksBoxed from './ServicesLinksBoxed/ServicesLinksBoxed';
 import ServicesLinksList from './ServicesLinksList/ServicesLinksList';
 import SignpostLinks from './SignpostLinks/SignpostLinks';
 import SkipToMainContent from './SkipToMainContent/SkipToMainContent';
@@ -42,6 +45,8 @@ export {
   AlertBanner,
   AlertBannerService,
   Breadcrumbs,
+  Contents,
+  ContentsNavigation,
   CookieBanner,
   DisplayDate,
   Footer,
@@ -72,6 +77,7 @@ export {
   SectionLinks,
   SectionLinksMobileContents,
   SectionLinksSidebar,
+  ServiceLinksBoxed,
   ServicesLinksList,
   SignpostLinks,
   SkipToMainContent,
