@@ -32,6 +32,7 @@ export const Link = styled.a`
   padding: 0.5em 0px;
   width: 100%;
   display: inline-block;
+  cursor: pointer;
 
   ${(props) => props.theme.linkStyles}
   &:hover {
@@ -51,6 +52,7 @@ export const BackButton = styled.a`
   margin-top: 15px;
   margin-bottom: 15px;
   padding-left: 14px;
+  cursor: pointer;
 
   ${(props) => props.theme.fontStyles}
 

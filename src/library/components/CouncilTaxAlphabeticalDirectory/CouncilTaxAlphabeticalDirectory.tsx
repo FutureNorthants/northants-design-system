@@ -119,7 +119,7 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
                   <Styles.Letter>{letter.group}</Styles.Letter>
                   <Styles.Data>
                     {letter.children.map((letterData, i) => (
-                      <Styles.Link href="#" onClick={() => setCurrentParish(letterData)} key={i}>
+                      <Styles.Link onClick={() => setCurrentParish(letterData)} key={i}>
                         {letterData.title}
                       </Styles.Link>
                     ))}
