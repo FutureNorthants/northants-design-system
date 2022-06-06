@@ -9,6 +9,7 @@ export const Container = styled.div`
 export const List = styled.ol`
   list-style: none;
   padding-left: 0px;
+  margin-left: 0;
   margin-top: 0;
   display: block;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
@@ -18,6 +19,8 @@ export const Crumb = styled.li`
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: none;
+  left: 0;
+  padding-right: 0;
 
   &:first-of-type,
   &:last-of-type {
