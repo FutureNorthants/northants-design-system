@@ -121,12 +121,17 @@ export const GlobalStyleReset = createGlobalStyle`
     line-height: 1;
   }
   ol {
-    list-style: decimal inside;
-    margin: 1rem 0rem 1rem 2rem;
+    list-style: decimal outside;
+    margin: 1rem 0rem 1rem 1.25rem;
   }
   ul {
-    list-style: disc inside;
-    margin: 1rem 0rem 1rem 2rem;
+    list-style: disc outside;
+    margin: 1rem 0rem 1rem 1.25rem;
+  }
+  li {
+    position: relative;
+    left: 1.25rem;
+    padding-right: 1.25rem;
   }
   blockquote,
   q {

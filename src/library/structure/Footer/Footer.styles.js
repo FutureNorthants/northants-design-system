@@ -1,35 +1,41 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export const Container = styled.footer`
-  background-color: ${props => props.theme.theme_vars.colours.black};
+  background-color: ${(props) => props.theme.theme_vars.colours.black};
   padding: 25px 0;
-`
+`;
+
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
-  color: ${props => props.theme.theme_vars.colours.white};
-`
+  color: ${(props) => props.theme.theme_vars.colours.white};
+`;
+
 export const FooterList = styled.ul`
   padding: 0px;
+  margin-left: 0;
   margin-bottom: 25px;
   list-style-type: none;
 
   li:last-of-type {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     margin-bottom: 0px;
   }
-`
+`;
+
 export const FooterListItem = styled.li`
   display: inline-block;
   margin-right: 25px;
   margin-bottom: 15px;
-`
+`;
+
 export const SocialLinks = styled.div`
   margin-bottom: 15px;
   margin-top: 5px;
-`
+`;
+
 export const SocialLinkSingle = styled.a`
   display: inline-block;
   margin-right: 15px;
@@ -43,46 +49,47 @@ export const SocialLinkSingle = styled.a`
 
     svg {
       path {
-        fill: ${props => props.theme.theme_vars.colours.focus} !important;
+        fill: ${(props) => props.theme.theme_vars.colours.focus} !important;
       }
     }
   }
-  &:active{
+  &:active {
     opacity: 1;
 
     svg {
       path {
-        fill: ${props => props.theme.theme_vars.colours.focus} !important;
+        fill: ${(props) => props.theme.theme_vars.colours.focus} !important;
       }
     }
   }
-`
+`;
+
 export const FooterLink = styled.a`
-  ${props => props.theme.linkStyles}
-  color: ${props => props.theme.theme_vars.colours.white};
+  ${(props) => props.theme.linkStyles}
+  color: ${(props) => props.theme.theme_vars.colours.white};
   font-weight: 400;
 
-  &:hover{
-      ${props => props.theme.linkStylesHover}
-      color: ${props => props.theme.theme_vars.colours.white};
-      opacity: 0.8;
-    }
-  &:focus{
-      ${props => props.theme.linkStylesFocus}
-      box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
-      -webkit-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
-      -moz-box-shadow: 0px -2px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    color: ${(props) => props.theme.theme_vars.colours.white};
+    opacity: 0.8;
   }
-  &:active{
-    ${props => props.theme.linkStylesActive}
-    box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
-    -webkit-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
-    -moz-box-shadow: 0px -1px 0px 0px ${props => props.theme.theme_vars.colours.white} inset;
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+    box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
+    -webkit-box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
+    -moz-box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
   }
-`
-export const FooterCopy = styled.p`
-  
-`
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+    box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
+    -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
+    -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.white} inset;
+  }
+`;
+
+export const FooterCopy = styled.p``;
+
 export const FooterAlignment = styled.div`
   display: flex;
   -webkit-flex-direction: row;
@@ -92,11 +99,12 @@ export const FooterAlignment = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-`
+`;
+
 export const LogoWhite = styled.div`
   svg {
     width: 240px;
     height: auto;
     vertical-align: middle;
   }
-`
+`;
