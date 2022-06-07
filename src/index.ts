@@ -27,6 +27,7 @@ export {
 import Accordion from './library/slices/Accordion/Accordion';
 import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
+import Cards from './library/slices/Cards/Cards';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
 import GoogleMap from './library/slices/GoogleMap/GoogleMap';
@@ -40,6 +41,7 @@ export {
   Accordion,
   BlockQuote,
   CallToAction,
+  Cards,
   Divider,
   DownloadableFiles,
   GoogleMap,
