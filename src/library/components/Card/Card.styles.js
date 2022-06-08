@@ -16,6 +16,10 @@ export const Container = styled.div`
 export const Content = styled.div`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   flex-grow: 1;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 export const Image = styled.img`
@@ -29,7 +33,7 @@ export const Header = styled.div`
 `;
 
 export const Footer = styled.div`
-  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-top: 0;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small}
     ${(props) => props.theme.theme_vars.spacingSizes.medium} ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
