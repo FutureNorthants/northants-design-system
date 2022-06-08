@@ -55,6 +55,7 @@ export const AutocompleteSuggestionList = styled.ul`
 export const AutocompleteSuggestionItem = styled.li`
   display: block;
   width: auto;
+  left: 0;
   padding: calc(
     ${(props) =>
         props.isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small} +
