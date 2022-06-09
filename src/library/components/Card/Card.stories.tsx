@@ -22,7 +22,7 @@ const Template: Story<CardProps> = (args) => (
     <MaxWidthContainer>
       <Row>
         <Column>
-        <Card {...args} />
+          <Card {...args} />
         </Column>
       </Row>
     </MaxWidthContainer>
@@ -57,6 +57,19 @@ CardWithImage.args = {
   imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
   imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
   imageAltText: 'Parkland',
+};
+
+export const CardWithImageLink = Template.bind({});
+CardWithImageLink.args = {
+  header: 'Example Heading',
+  content: '<p>Some example content</p>',
+  imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+  imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+  imageAltText: 'Parkland',
+  footerLink: {
+    url: '/test',
+    title: 'Example link text',
+  },
 };
 
 export const CardWithOnlyImage = Template.bind({});
