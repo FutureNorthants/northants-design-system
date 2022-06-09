@@ -50,4 +50,36 @@ describe('Test Component', () => {
     expect(link).toHaveTextContent('Example link');
     expect(link).toHaveAttribute('href', '/test');
   });
+
+  it('should render the image', () => {
+    props.imageLarge = '/img/example-large.jpg';
+    props.imageSmall = '/img/example-small.jpg';
+    props.imageAltText = 'The image alt text';
+    props.header = undefined;
+    props.content = undefined;
+
+    const { getByRole } = renderComponent();
+    const image = getByRole('img');
+
+    expect(image).toHaveAttribute('src', '/img/example-large.jpg');
+    expect(image).toHaveAttribute('alt', 'The image alt text');
+  });
+
+  it('should render the image link', () => {
+    props.imageLarge = '/img/example-large.jpg';
+    props.imageSmall = '/img/example-small.jpg';
+    props.imageAltText = 'The image alt text';
+    props.footerLink = {
+      url: '/test',
+      title: 'Example link',
+    };
+
+    const { getAllByRole } = renderComponent();
+    const links = getAllByRole('link');
+
+    expect(links).toHaveLength(2);
+    expect(links[0]).toHaveAttribute('href', '/test');
+    expect(links[1]).toHaveTextContent('Example link');
+    expect(links[1]).toHaveAttribute('href', '/test');
+  });
 });

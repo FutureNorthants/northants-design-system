@@ -24,6 +24,13 @@ export const Content = styled.div`
 
 export const Image = styled.img`
   width: 100%;
+  vertical-align: bottom;
+`;
+
+export const ImageLink = styled.a`
+  &:hover {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const Header = styled.div`
