@@ -29,13 +29,8 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
           partialVisibility: true,
         }}
       >
-        {(src, loading) => (
-          <Styles.Container
-            image={src}
-            loading={loading.toString()}
-            backgroundBox={backgroundBox}
-            data-testid="HeroImage"
-          >
+        {(src) => (
+          <Styles.Container image={src} backgroundBox={backgroundBox} data-testid="HeroImage">
             <Styles.InnerContainer>
               <Styles.Overlay backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
                 {breadcrumb && (
