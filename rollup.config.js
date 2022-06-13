@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import svg from 'rollup-plugin-svg';
 import json from '@rollup/plugin-json';
+import analyze from 'rollup-plugin-analyzer';
 
 const packageJson = require('./package.json');
 
@@ -27,12 +28,10 @@ export default {
     peerDepsExternal(),
     resolve({
       extensions: extensions,
+      preferBuiltins: true,
     }),
     commonjs({
       include: 'node_modules/**',
-      namedExports: {
-        'react-is': ['isForwardRef'],
-      },
     }),
     svg(),
     typescript({ useTsconfigDeclarationDir: true }),
@@ -55,6 +54,11 @@ export default {
 
       // generate a named export for every property of the JSON object
       namedExports: true, // Default: true
+    }),
+    analyze({
+      limit: 10,
+      summaryOnly: true,
+      hideDeps: true,
     }),
   ],
 };
