@@ -27,6 +27,8 @@ export const FooterList = styled.ul`
 
 export const FooterListItem = styled.li`
   display: inline-block;
+  left: 0;
+  padding-right: 0;
   margin-right: 25px;
   margin-bottom: 15px;
 `;

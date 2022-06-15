@@ -9,6 +9,7 @@ const CommonData = {
     'Pear',
     'Peach',
     'Kiwifruit is a hairy little fruit from China and this expands nicely to fit on other lines',
+    'Kiwi[fruit] $is a hairy little fruit from China and this expands nicely to fit on other lines',
     'Killer tomato',
     'Kinetic energy weapon',
     'Kid gloves',
