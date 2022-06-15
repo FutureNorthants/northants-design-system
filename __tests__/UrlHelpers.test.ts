@@ -87,7 +87,7 @@ describe('Url Helpers', () => {
   });
 
   /**
-   * Uses ASCI code `%2C` instead of `,` to separate multiple params
+   * Uses URL encoded ASCII code `%2C` instead of `,` to separate multiple params
    */
   describe('removeValueFromParam', () => {
     it('removes a specific value from a given param', () => {
