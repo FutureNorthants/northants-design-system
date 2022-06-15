@@ -26,11 +26,11 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
   const formatParishData = (data) => {
     const sortData = data.reduce((r, e) => {
       // get first letter of name of current element
-      let group = e.parish[0];
+      let group = e.banding_parish[0];
       // if there is no property in accumulator with this letter create it
-      if (!r[group]) r[group] = { group, children: [{ title: e.parish, values: e.values }] };
+      if (!r[group]) r[group] = { group, children: [{ title: e.banding_parish, values: e.bands }] };
       // if there is push current element to children array for that letter
-      else r[group].children.push({ title: e.parish, values: e.values });
+      else r[group].children.push({ title: e.banding_parish, values: e.bands });
       // return accumulator
       return r;
     }, {});
@@ -139,16 +139,18 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
                   <thead>
                     <tr>
                       <th scope="col">Bands</th>
-                      <th scope="col">{parish.values[0].financialYear}</th>
+                      {/* <th scope="col">{parish.values[0].financialYear}</th> */}
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.keys(parish.values[0].bands).map((vals, i) => (
-                      <tr key={i}>
-                        <th scope="row">{vals}</th>
-                        <td>{parish.values[0].bands[vals]}</td>
-                      </tr>
-                    ))}
+                    {parish.values.map((band) => {
+                      return Object.keys(band).map((vals, i) => (
+                        <tr key={i}>
+                          <th scope="row">{vals.replace('band_', '').toUpperCase()}</th>
+                          <td>{Number(band[vals]).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })}</td>
+                        </tr>
+                      ));
+                    })}
                   </tbody>
                 </table>
               </div>
