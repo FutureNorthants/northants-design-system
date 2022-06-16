@@ -131,26 +131,23 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
             <>
               <Styles.BackButton onClick={() => setCurrentParish(null)}>Back</Styles.BackButton>
 
-              {/* this assumes that the first year listed is the latest / that we're even going to get more than the latest years data */}
-              {/* this data will need to be re-formed when we get the final data structures */}
               <div className="table-container">
                 <table>
                   <caption>{`Council tax charges for ${parish.title}`}</caption>
                   <thead>
                     <tr>
                       <th scope="col">Bands</th>
-                      {/* <th scope="col">{parish.values[0].financialYear}</th> */}
                     </tr>
                   </thead>
                   <tbody>
-                    {parish.values.map((band) => {
-                      return Object.keys(band).map((vals, i) => (
-                        <tr key={i}>
-                          <th scope="row">{vals.replace('band_', '').toUpperCase()}</th>
-                          <td>{Number(band[vals]).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })}</td>
-                        </tr>
-                      ));
-                    })}
+                    {Object.keys(parish.values).map((band, i) => (
+                      <tr key={i}>
+                        <th scope="row">{band.toUpperCase()}</th>
+                        <td>
+                          {Number(parish.values[band]).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

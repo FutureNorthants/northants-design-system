@@ -1,7 +1,6 @@
+import React, { createContext, useContext, useState } from 'react';
 
-import React, {createContext, useContext, useState} from "react";
-
-import { PostCodeAddressProviderProps, PostCodeAddressContextType } from "./PostCodeAddressProvider.types";
+import { PostCodeAddressProviderProps, PostCodeAddressContextType } from './PostCodeAddressProvider.types';
 
 // const PostCodeAddressContext = createContext(
 //     {
@@ -12,36 +11,30 @@ import { PostCodeAddressProviderProps, PostCodeAddressContextType } from "./Post
 //         results: {
 //             state: {},
 //             actions: {}
-//         }   
+//         }
 //     }
 // );
 
-const PostCodeAddressContext = createContext({});
+const PostCodeAddressContext = createContext<PostCodeAddressContextType>({});
 
-export const PostCodeAddressProvider: React.FC<PostCodeAddressProviderProps> = ({ children }) => {    
-    const [postcode, setPostCode] = useState('');
-    const [results, setResults] = useState({});
+export const PostCodeAddressProvider: React.FunctionComponent<PostCodeAddressProviderProps> = ({ children }) => {
+  const [postcode, setPostCode] = useState<PostCodeAddressContextType['postcodeValue']['postcode']>('');
+  const [results, setResults] = useState<PostCodeAddressContextType['resultsValue']['results']>([]);
 
-    const value = {
-        postcodeValue: {
-            state: {postcode},
-            actions: {setPostCode}
-        },
-        resultsValue: {
-            state: {results},
-            actions: {setResults}
-        }
-    }
+  const value: PostCodeAddressContextType = {
+    postcodeValue: {
+      postcode: postcode,
+      setPostcode: setPostCode,
+    },
+    resultsValue: {
+      results: results,
+      setResults: setResults,
+    },
+  };
 
-    return (
-        <PostCodeAddressContext.Provider value={value}>
-            {children}
-        </PostCodeAddressContext.Provider>
-    )
-
+  return <PostCodeAddressContext.Provider value={value}>{children}</PostCodeAddressContext.Provider>;
 };
 
-
 export const usePostcodeAddressContext = () => {
-    return useContext(PostCodeAddressContext)// as PostCodeAddressContextType;
-}
+  return useContext(PostCodeAddressContext); // as PostCodeAddressContextType;
+};
