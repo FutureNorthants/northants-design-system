@@ -256,18 +256,19 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                 <div className="result">
                   <p>
                     This postcode <strong>{currentPostcode}</strong> is in{' '}
-                    <strong>{responseData.unitary[0].name}</strong>, in the{' '}
+                    <strong>{responseData.unitary[0].name} Northamptonshire</strong>, in the{' '}
                     <strong>{responseData.sovereigns[0].name}</strong> area.
                   </p>
                   <p>
                     In order to find the right information for you, please visit the {responseData.unitary[0].name}{' '}
-                    website and find your local area ({responseData.sovereigns[0].name}) for this service.
+                    Northamptonshire website and find your local area ({responseData.sovereigns[0].name}) for this
+                    service.
                   </p>
 
                   <Button
                     size="large"
                     colourOverride={themeContext.theme_vars.other_council_action}
-                    text={'Go to ' + responseData.unitary[0].name + "'s website"}
+                    text={'Go to ' + responseData.unitary[0].name + " Northamptonshire's website"}
                     url={otherCouncilLink}
                     isExternal={true}
                   />

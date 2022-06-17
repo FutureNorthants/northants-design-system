@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import axios from 'axios';
-
 import { PostCodeAddressSearchProps } from './PostCodeAddressSearch.types';
 import * as Styles from './PostCodeAddressSearch.styles';
-
 import HintText from '../../components/HintText/HintText';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
 import FormButton from '../../components/FormButton/FormButton';
-
-import Button from '../../components/Button/Button';
-import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-
-// PostCodeAddressSearchApiKey
+import { defaultResults } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import { PostcodeSearchApiUrl } from '../../helpers/api-helpers';
-
 import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
 /**
@@ -35,43 +28,11 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
     postcodeValue: { postcode: postcode, setPostcode: setPostCode },
     resultsValue: { results: results, setResults: setResults },
   } = usePostcodeAddressContext();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setisError] = useState(formError);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setisError] = useState<boolean>(formError);
   const [errorText, setErrorText] = useState('');
-  const [currentPostcode, setCurrentPostcode] = useState('');
-  const [isMultiple, setIsMultiple] = useState(false);
-  const [addressArray, setAddressArray] = useState([]);
-
-  const defaultArray = {
-    numOfSovereign: 0,
-    sovereign: [
-      {
-        sovereignName: '',
-        sovereignCode: 0,
-      },
-    ],
-    numOfUnitary: 0,
-    unitary: [
-      {
-        unitary: '',
-        unitaryCode: 0,
-      },
-    ],
-    addresses: [],
-  };
-
-  const [responseData, setResponseData] = useState(defaultArray);
-
-  /**
-   * Clear the form and reset
-   */
-  const clearData = () => {
-    setResponseData(defaultArray);
-    setCurrentPostcode('');
-    setAddressArray([]);
-    setPostCode('');
-    setResults([]);
-  };
+  const [currentPostcode, setCurrentPostcode] = useState<string | undefined>('');
+  const [filterAddress, setFilterAddress] = useState<boolean>(false);
 
   /**
    * Postcode form submission handler
@@ -83,9 +44,10 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
     if (e.target.postcode.value === '') {
       handleError(true, 'You need to enter a postcode');
     } else {
+      setResults(defaultResults);
       setPostCode(e.target.postcode.value);
       setIsLoading(true);
-      checkPostcode(e.target.postcode.value);
+      checkPostcode(e.target.postcode.value, e.target?.address_search ? e.target.address_search.value : '');
     }
   };
 
@@ -94,21 +56,30 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
    * This method only returns results if postcode is within north / west
    * @param postcode string
    */
-  const checkPostcode = async (postcode) => {
+  const checkPostcode = async (postcode, address) => {
+    setErrorText(null);
+    setisError(false);
+    const addressSearch = address != '' ? `?address=${address}` : '';
     axios({
       method: 'GET',
-      url: `${PostcodeSearchApiUrl}${postcode.replace(/ /g, '')}`,
-      // headers: { 'x-api-key': `${PostCodeAddressSearchApiKey}` }
+      url: `${PostcodeSearchApiUrl}${postcode.replace(/ /g, '')}${addressSearch}`,
     })
       .then((response) => {
         setIsLoading(false);
         // num of unitary is whether its in north or west
-        if (response.data.hasOwnProperty('unitaries') && response.data.unitaries.length > 0) {
-          setResponseData(response.data);
-          setResults(response.data);
+        if (response.data?.total_records > 0) {
+          if (response.data.total_pages > 1) {
+            // Trigger advanced search to filter address
+            setFilterAddress(true);
+            setResults(response.data);
+          } else {
+            // setResponseData(response.data);
+            setResults(response.data);
+          }
         } else {
           // console.log(response)
           handleError(true);
+          setResults(response.data);
         }
       })
       .catch((error) => {
@@ -132,65 +103,8 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
     setisError(error);
   };
 
-  useEffect(() => {
-    if (responseData.numOfUnitary > 0) {
-      if (isError) {
-        handleError(false, '');
-      }
-      if (responseData.numOfUnitary > 1) {
-        setIsMultiple(true);
-        responseData.addresses.map((address) => {
-          setAddressArray((addressArray) => [
-            ...addressArray,
-            {
-              title:
-                address
-                  .split(',')[0]
-                  .toLowerCase()
-                  .replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase())) +
-                ', ' +
-                address
-                  .split(',')[1]
-                  .toLowerCase()
-                  .replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase())),
-              value: address.uprn,
-              info: [
-                {
-                  numOfSovereign: 1,
-                  sovereign: [
-                    {
-                      sovereignName: address.sovereign,
-                      // sovereignCode: address.SOVEREIGN_COUNCIL_CODE,
-                    },
-                  ],
-                  numOfUnitary: 1,
-                  unitary: [
-                    {
-                      unitary: address.unitary,
-                      // unitaryCode: address.UNITARY_COUNCIL_CODE
-                    },
-                  ],
-                  addresses: [],
-                },
-              ],
-            },
-          ]);
-        });
-      }
-    }
-  }, [responseData]);
-
-  function handleAddressChange(e) {
-    if (e.target.value !== '') {
-      const singleAddress = addressArray.find((address) => address.value === e.target.value);
-      setIsMultiple(false);
-      setResponseData(singleAddress.info[0]);
-      setCurrentPostcode(currentPostcode + ' (' + singleAddress.title + ')');
-    }
-  }
-
   return (
-    <Styles.Container>
+    <Styles.Container data-testid="PostCodeAddressSearch">
       <FormWithLine
         onSubmit={(e) => {
           handleSubmit(e);
@@ -198,24 +112,42 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
         isError={isError}
         lineColour={themeContext.theme_vars.colours.grey_dark}
       >
-        {isLoading ? (
+        {isLoading && (
           <Styles.LoadingContainer>
             <LoadingSpinner />
             <p>Loading...</p>
           </Styles.LoadingContainer>
-        ) : (
-          <>
-            <Styles.Label htmlFor="postcode">
-              Enter your postcode
-              <HintText
-                text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'}
-              />
-              <Input type="text" placeholder="Search" name="postcode" errorText={errorText} isErrored={isError} />
-            </Styles.Label>
-
-            <FormButton type="submit" aria-label="Submit" text="Find" />
-          </>
         )}
+
+        <Styles.FormContainer isLoading={isLoading}>
+          <Styles.Label htmlFor="postcode">
+            Enter your postcode
+            <HintText text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'} />
+            <Input
+              type="text"
+              placeholder="Enter a postcode"
+              name="postcode"
+              errorText={errorText}
+              isErrored={isError}
+            />
+          </Styles.Label>
+
+          {filterAddress && (
+            <Styles.Label htmlFor="address_search">
+              Enter the start of your address to filter results
+              <HintText text="For example, Room 2, Flat 4" />
+              <Input
+                type="text"
+                placeholder="Enter start of address"
+                name="address_search"
+                errorText={errorText}
+                isErrored={isError}
+              />
+            </Styles.Label>
+          )}
+
+          <FormButton type="submit" aria-label="Submit" text="Search" />
+        </Styles.FormContainer>
       </FormWithLine>
     </Styles.Container>
   );

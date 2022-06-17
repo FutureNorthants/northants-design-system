@@ -100,14 +100,14 @@ describe('PostCodeSearch', () => {
         ],
         unitaries: [
           {
-            name: 'North Northamptonshire',
+            name: 'North',
           },
         ],
         addresses: [
           {
             address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
             soverign: 'Kettering',
-            unitary: 'North Northamptonshire',
+            unitary: 'North',
             uprn: '12345678910',
           },
         ],

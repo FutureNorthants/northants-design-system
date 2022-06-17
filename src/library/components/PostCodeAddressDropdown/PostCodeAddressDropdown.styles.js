@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small}
+    ${(props) => props.theme.theme_vars.spacingSizes.large};
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.large};
+  background-color: ${(props) =>
+    props.theme.cardinal_name === 'north'
+      ? props.theme.theme_vars.colours.grey + '7a'
+      : props.theme.theme_vars.colours.grey_light};
   ${(props) => props.theme.fontStyles}
 `;
 
