@@ -105,8 +105,8 @@ describe('PostCodeSearch', () => {
         ],
         addresses: [
           {
-            address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
-            soverign: 'Kettering',
+            single_line_address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
+            sovereign: 'Kettering',
             unitary: 'North',
             uprn: '12345678910',
           },
@@ -137,6 +137,75 @@ describe('PostCodeSearch', () => {
 
       expect(councilLink).toHaveAttribute('href', west_theme.theme_vars.other_council_link);
       expect(councilLink).toHaveTextContent("Go to North Northamptonshire's website");
+    });
+  });
+
+  it('should find multiple unitaries', async () => {
+    mockedAxios.mockResolvedValue({
+      statusText: 'Ok',
+      headers: {},
+      config: {},
+      status: 200,
+      data: {
+        sovereigns: [
+          {
+            name: 'Kettering',
+            website: '',
+          },
+          {
+            name: 'South Northants',
+            website: '',
+          },
+        ],
+        unitaries: [
+          {
+            name: 'North',
+          },
+          {
+            name: 'West',
+          },
+        ],
+        addresses: [
+          {
+            single_line_address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
+            sovereign: 'Kettering',
+            unitary: 'North',
+            uprn: '12345678910',
+          },
+          {
+            single_line_address: '124, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
+            sovereign: 'South Northants',
+            unitary: 'West',
+            uprn: '12345678911',
+          },
+        ],
+      },
+    });
+
+    const { getByTestId, getByPlaceholderText, getByText, getByRole } = renderComponent();
+    const component = getByTestId('PostCodeSearch');
+    const expandButton = getByText(props.title);
+
+    fireEvent.click(expandButton);
+    const searchInput = getByPlaceholderText('Enter a postcode');
+
+    fireEvent.change(searchInput, { target: { value: 'NORTH POSTCODE' } });
+
+    fireEvent.submit(getByTestId('FormWithLine'));
+
+    await waitFor(async () => {
+      expect(component).toHaveTextContent(
+        'This postcode NORTH POSTCODE includes addresses that are in multiple areas, please select your address so that we can tell you which area you are in'
+      );
+      expect(component).toHaveTextContent('Select an address to continue');
+    });
+
+    fireEvent.change(getByRole('combobox'), { target: { value: '12345678911' } });
+
+    await waitFor(() => {
+      expect(component).toHaveTextContent(
+        'This postcode NORTH POSTCODE (124, Example Road) is in West Northamptonshire, in the South Northants area.'
+      );
     });
   });
 });

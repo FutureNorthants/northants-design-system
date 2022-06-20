@@ -72,7 +72,7 @@ export interface AddressProps {
   /**
    * The address as a one line string
    */
-  address: string;
+  single_line_address: string;
 
   /**
    * Council tax amount
