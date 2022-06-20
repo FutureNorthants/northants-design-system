@@ -31,6 +31,7 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setisError] = useState<boolean>(formError);
   const [errorText, setErrorText] = useState('');
+  const [addressErrorText, setAddressErrorText] = useState('');
   const [currentPostcode, setCurrentPostcode] = useState<string | undefined>('');
   const [filterAddress, setFilterAddress] = useState<boolean>(false);
 
@@ -58,6 +59,7 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
    */
   const checkPostcode = async (postcode, address) => {
     setErrorText(null);
+    setAddressErrorText(null);
     setisError(false);
     const addressSearch = address != '' ? `?address=${address}` : '';
     axios({
@@ -66,26 +68,22 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
     })
       .then((response) => {
         setIsLoading(false);
-        // num of unitary is whether its in north or west
         if (response.data?.total_records > 0) {
           if (response.data.total_pages > 1) {
             // Trigger advanced search to filter address
             setFilterAddress(true);
-            setResults(response.data);
-          } else {
-            // setResponseData(response.data);
-            setResults(response.data);
           }
-        } else {
-          // console.log(response)
-          handleError(true);
+
           setResults(response.data);
+        } else {
+          handleError(true);
+          setResults(defaultResults);
         }
       })
       .catch((error) => {
         setIsLoading(false);
         handleError(true);
-        console.log(error);
+        setResults(defaultResults);
       });
   };
 
@@ -98,8 +96,12 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
     error,
     errorMsg = 'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new post codes.'
   ) => {
-    console.log(error, errorMsg);
-    setErrorText(errorMsg);
+    if (filterAddress) {
+      setAddressErrorText('No matching addresses found. Please try another search term.');
+    } else {
+      setErrorText(errorMsg);
+    }
+
     setisError(error);
   };
 
@@ -144,7 +146,7 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
                   type="text"
                   placeholder="Enter start of address"
                   name="address_search"
-                  errorText={errorText}
+                  errorText={addressErrorText}
                   isErrored={isError}
                 />
               </Styles.Label>

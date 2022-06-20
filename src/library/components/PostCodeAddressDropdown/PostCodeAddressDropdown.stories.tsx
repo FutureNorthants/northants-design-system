@@ -28,6 +28,4 @@ const Template: Story<PostCodeAddressDropdownProps> = (args) => (
 );
 
 export const ExamplePostCodeAddressDropdown = Template.bind({});
-ExamplePostCodeAddressDropdown.args = {
-  foo: 'bar',
-};
+ExamplePostCodeAddressDropdown.args = {};
