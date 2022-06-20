@@ -3,19 +3,13 @@ import { PostCodeAddressTableProps } from './PostCodeAddressTable.types';
 import * as Styles from './PostCodeAddressTable.styles';
 import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
-const PostCodeAddressTable: React.FC<PostCodeAddressTableProps> = () => {
+const PostCodeAddressTable: React.FunctionComponent<PostCodeAddressTableProps> = () => {
   const {
-    postcodeValue: {
-      state: { postcode },
-      actions: { setPostCode },
-    },
-    resultsValue: {
-      state: { results },
-      actions: { setResults },
-    },
+    postcodeValue: { postcode: postcode, setPostcode: setPostCode },
+    resultsValue: { results: results, setResults: setResults },
   } = usePostcodeAddressContext();
 
-  const hasResults = Object.keys(results).length > 0 ? true : false;
+  const hasResults = results.addresses.length > 0;
 
   return (
     <>
