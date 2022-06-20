@@ -1,18 +1,26 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { CouncilTaxAlphabeticalDirectoryProps } from './CouncilTaxAlphabeticalDirectory.types';
+import {
+  CouncilTaxAlphabeticalDirectoryProps,
+  Parish,
+  SortedData,
+  SortedParish,
+} from './CouncilTaxAlphabeticalDirectory.types';
 import * as Styles from './CouncilTaxAlphabeticalDirectory.styles';
 import axios from 'axios';
 import { ParishApiUrl } from '../../helpers/api-helpers';
 import { ThemeContext } from 'styled-components';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
+/**
+ * An list of parishes, sorted alphabetically, containing parish council tax bands
+ */
 const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabeticalDirectoryProps> = () => {
   const themeContext = useContext(ThemeContext);
-  const [data, setData] = useState([]);
-  const [parish, setCurrentParish] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setisError] = useState(false);
-  const [errorText, setErrorText] = useState('');
+  const [data, setData] = useState<SortedData[]>([]);
+  const [parish, setCurrentParish] = useState<SortedParish>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isError, setisError] = useState<boolean>(false);
+  const [errorText, setErrorText] = useState<string>('');
 
   useEffect(() => {
     getParishData();
@@ -23,7 +31,7 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
    * @param data
    * @returns
    */
-  const formatParishData = (data) => {
+  const formatParishData = (data: Parish[]) => {
     const sortData = data.reduce((r, e) => {
       // get first letter of name of current element
       let group = e.banding_parish[0];
@@ -49,21 +57,19 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
     axios({
       method: 'GET',
       url: `${ParishApiUrl(themeContext.cardinal_name)}`,
-      // headers: { 'x-api-key': `${PostCodeAddressSearchApiKey}` }
     })
       .then((response) => {
-        if (response.data.hasOwnProperty('parishes') && response.data.parishes.length > 0) {
+        setIsLoading(false);
+
+        if (response.data.parishes?.length > 0) {
           setData(formatParishData(response.data.parishes));
-          setIsLoading(false);
         } else {
-          console.log(response);
           handleError(true);
         }
       })
       .catch((error) => {
         setIsLoading(false);
         handleError(true);
-        console.log(error);
       });
   };
 
@@ -73,7 +79,6 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
    * @param errorMsg string
    */
   const handleError = (error, errorMsg = 'There was an issue fetching the parish data. Please try again later.') => {
-    console.log(error, errorMsg);
     setisError(error);
     setErrorText(errorMsg);
   };
@@ -98,7 +103,6 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
         }
         return 0;
       });
-
       return letterData;
     });
 

@@ -6,7 +6,7 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import { MaxWidthContainer, PageMain } from '../../structure/PageStructures';
 
 export default {
-  title: 'Library/Prototypes/Council Tax Alphabetical Directory',
+  title: 'Library/Slices/Council Tax Alphabetical Directory',
   component: CouncilTaxAlphabeticalDirectory,
   parameters: {
     status: {
