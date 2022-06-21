@@ -19,9 +19,9 @@ module.exports = {
   ],
   env: (config) => ({
     ...config,
-    POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search/postcode/',
-    CTAX_PARISH_API_URL_NORTH: 'https://api.westnorthants.digital/address-search/north-parishes',
-    CTAX_PARISH_API_URL_WEST: 'https://api.westnorthants.digital/address-search/west-parishes',
+    NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search/postcode/',
+    NEXT_PUBLIC_CTAX_PARISH_API_URL_NORTH: 'https://api.westnorthants.digital/address-search/north-parishes',
+    NEXT_PUBLIC_CTAX_PARISH_API_URL_WEST: 'https://api.westnorthants.digital/address-search/west-parishes',
   }),
   webpackFinal: async (config) => {
     config.module.rules.push({
