@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import CouncilTaxAlphabeticalDirectory from './CouncilTaxAlphabeticalDirectory';
-import { ParishBands } from './CouncilTaxAlphabeticalDirectory.types';
+import { CouncilTaxAlphabeticalDirectoryProps, ParishBands } from './CouncilTaxAlphabeticalDirectory.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 import axios from 'axios';
@@ -44,11 +44,15 @@ const mockedResponse = {
   ],
 };
 
+const props: CouncilTaxAlphabeticalDirectoryProps = {
+  financialYear: '2022/23',
+};
+
 describe('Council Tax Alphabetical Directory', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <CouncilTaxAlphabeticalDirectory />
+        <CouncilTaxAlphabeticalDirectory {...props} />
       </ThemeProvider>
     );
 
@@ -105,7 +109,7 @@ describe('Council Tax Alphabetical Directory', () => {
     const component = getByTestId('AlphabeticalDirectory');
 
     await waitFor(() => {
-      expect(component).not.toHaveTextContent('Council tax charges for Example Parish');
+      expect(component).not.toHaveTextContent('Council tax charges for Example Parish in 2022/23');
 
       fireEvent.click(getByText('Example Parish'));
 

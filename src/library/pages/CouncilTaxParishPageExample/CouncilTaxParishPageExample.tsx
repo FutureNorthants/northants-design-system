@@ -32,9 +32,9 @@ export const CouncilTaxParishPageExample: React.FC<CouncilTaxParishPageExamplePr
         />
         <PageStructures.PageWithSidebarContainer>
           <PageStructures.PageMain>
-            <Heading level={1} text="2020/21 council tax charges by Parish" />
+            <Heading level={1} text="2022/23 council tax charges by Parish" />
 
-            <CouncilTaxAlphabeticalDirectory />
+            <CouncilTaxAlphabeticalDirectory financialYear="2022/23" />
 
             <Heading level={2} text="Check a property's band" />
 

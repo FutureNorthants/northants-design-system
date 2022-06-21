@@ -14,7 +14,9 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 /**
  * An list of parishes, sorted alphabetically, containing parish council tax bands
  */
-const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabeticalDirectoryProps> = () => {
+const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabeticalDirectoryProps> = ({
+  financialYear,
+}) => {
   const themeContext = useContext(ThemeContext);
   const [data, setData] = useState<SortedData[]>([]);
   const [parish, setCurrentParish] = useState<SortedParish>(null);
@@ -137,7 +139,7 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
 
               <div className="table-container">
                 <table>
-                  <caption>{`Council tax charges for ${parish.title}`}</caption>
+                  <caption>{`Council tax charges for ${parish.title} in ${financialYear}`}</caption>
                   <thead>
                     <tr>
                       <th scope="col">Bands</th>

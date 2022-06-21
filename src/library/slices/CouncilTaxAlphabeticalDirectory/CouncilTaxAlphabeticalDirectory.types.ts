@@ -1,4 +1,6 @@
-export interface CouncilTaxAlphabeticalDirectoryProps {}
+export interface CouncilTaxAlphabeticalDirectoryProps {
+  financialYear: string;
+}
 
 /**
  * The sorted parishes, grouped by first letter

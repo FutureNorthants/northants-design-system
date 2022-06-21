@@ -26,4 +26,6 @@ const Template: Story<CouncilTaxAlphabeticalDirectoryProps> = (args) => (
 );
 
 export const ExampleCouncilTaxAlphabeticalDirectory = Template.bind({});
-ExampleCouncilTaxAlphabeticalDirectory.args = {};
+ExampleCouncilTaxAlphabeticalDirectory.args = {
+  financialYear: '2022/23',
+};
