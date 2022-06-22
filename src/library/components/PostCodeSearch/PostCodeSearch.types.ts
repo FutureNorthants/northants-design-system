@@ -70,9 +70,9 @@ export interface AddressProps {
   single_line_address: string;
 
   /**
-   * Lattitude of the address
+   * Latitude of the address
    */
-  lattitude: string;
+  latitude: string;
 
   /**
    * Longitude of the address
