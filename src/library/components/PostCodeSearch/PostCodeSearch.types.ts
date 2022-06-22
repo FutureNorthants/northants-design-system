@@ -29,7 +29,7 @@ export interface PostCodeSearchProps {
 
 export interface SovereignProps {
   /**
-   * The soverign name
+   * The sovereign name
    */
   name: string;
 
@@ -44,14 +44,9 @@ export interface UnitaryProps {
    * The Unitary council name
    */
   name: string;
-
-  /**
-   * The optional unitary council code
-   */
-  unitaryCode?: number;
 }
 
-export interface AddressArrayProps {
+export interface AddressOption {
   /**
    * The title of the address
    */
@@ -73,16 +68,6 @@ export interface AddressProps {
    * The address as a one line string
    */
   single_line_address: string;
-
-  /**
-   * Council tax amount
-   */
-  ctaxamount: string;
-
-  /**
-   * Council tax band
-   */
-  ctaxband: string;
 
   /**
    * Lattitude of the address
@@ -115,7 +100,7 @@ export interface AddressProps {
   postcodens: string;
 
   /**
-   * The soverign council name
+   * The sovereign council name
    */
   sovereign: string;
 
@@ -142,24 +127,14 @@ export interface AddressProps {
 
 export interface PostcodeResponseProps {
   /**
-   * The quantity of soverigns
-   */
-  numOfSovereign: number;
-
-  /**
-   * An array of soverigns
+   * An array of sovereigns
    */
   sovereigns: SovereignProps[];
 
   /**
-   * The quantity of Unitaries
-   */
-  numOfUnitary: number;
-
-  /**
    * An array of Unitaries
    */
-  unitary: UnitaryProps[];
+  unitaries: UnitaryProps[];
 
   /**
    * An array of addresses for the postcode

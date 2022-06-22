@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import {
   CouncilTaxAlphabeticalDirectoryProps,
-  Parish,
+  ParishAPIResponse,
   SortedData,
   SortedParish,
 } from './CouncilTaxAlphabeticalDirectory.types';
@@ -33,23 +33,25 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
    * @param data
    * @returns
    */
-  const formatParishData = (data: Parish[]) => {
+  const formatParishData = (data: ParishAPIResponse[]) => {
     const sortData = data.reduce((r, e) => {
       // get first letter of name of current element
       let group = e.banding_parish[0];
-      // if there is no property in accumulator with this letter create it
-      if (!r[group]) r[group] = { group, children: [{ title: e.banding_parish, values: e.bands }] };
-      // if there is push current element to children array for that letter
-      else r[group].children.push({ title: e.banding_parish, values: e.bands });
-      // return accumulator
+
+      if (!r[group]) {
+        // there is no property in accumulator with this letter so create it
+        r[group] = { group, children: [{ title: e.banding_parish, values: e.bands }] };
+      } else {
+        // push current element to children array for that letter
+        r[group].children.push({ title: e.banding_parish, values: e.bands });
+      }
+
       return r;
     }, {});
 
-    const correctedData = Object.keys(sortData).map((west, i) => {
+    return Object.keys(sortData).map((west, i) => {
       return sortData[west];
     });
-
-    return correctedData;
   };
 
   /**

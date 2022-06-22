@@ -28,7 +28,6 @@ export const Data = styled.div`
 `;
 
 export const Link = styled.a`
-  /* display: block; */
   padding: 0.5em 0px;
   width: 100%;
   display: inline-block;

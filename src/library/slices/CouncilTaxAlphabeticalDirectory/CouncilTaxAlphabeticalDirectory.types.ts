@@ -49,7 +49,7 @@ export interface ParishBands {
 /**
  * The raw parish returned from the API
  */
-export interface Parish {
+export interface ParishAPIResponse {
   /**
    * The banding parish title
    */
