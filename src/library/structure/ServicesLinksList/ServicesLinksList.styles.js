@@ -184,6 +184,7 @@ export const QuicklinkItem = styled.li`
   padding: 0 !important;
   padding-left: 25px;
   position: relative;
+  left: 0;
 
   &:before {
     background: ${(props) => props.theme.theme_vars.colours.grey} !important;
