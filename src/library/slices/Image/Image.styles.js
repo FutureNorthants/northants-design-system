@@ -7,13 +7,13 @@ export const Container = styled.figure`
       ? props.theme.theme_vars.colours.white
       : props.theme.theme_vars.colours.grey_light};
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-  margin-bottom: 15px;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
   width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
-  margin-top: 1rem;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
 
-  @media screen and (max-width: ${props => props.theme.theme_vars.breakpoints.s}){
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     float: none;
     width: 100%;
     margin-right: 0;
