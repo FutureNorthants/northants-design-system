@@ -2,8 +2,7 @@ import React, { ReactNode } from 'react';
 import { ImageWithCaption } from '../Image/Image.storydata';
 import { ImageAndTextProps } from './ImageAndText.types';
 
-const longContent: ReactNode = (
-  <>
+const longContent: string = `
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet eleifend ante, ut pretium nibh laoreet ac.
     </p>
@@ -20,12 +19,10 @@ const longContent: ReactNode = (
     <p>
       Duis non elit placerat mauris vulputate semper. Sed aliquet gravida orci, vel vehicula massa imperdiet elementum.
       Praesent eget faucibus sem. Cras efficitur efficitur lorem, eu eleifend odio iaculis non. Suspendisse potenti.
-    </p>
-  </>
-);
+    </p>`;
 
 export const ImageAndTextWithHeading: ImageAndTextProps = {
   heading: 'An example heading',
-  content: longContent,
+  textContent: longContent,
   image: ImageWithCaption,
 };

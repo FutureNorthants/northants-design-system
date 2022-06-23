@@ -5,11 +5,12 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import Image from '../Image/Image';
 import Heading from '../../components/Heading/Heading';
+import sanitizeHtml from 'sanitize-html';
 
 /**
  * A container for an image and text content, with an optional heading
  */
-const ImageAndText: React.FunctionComponent<ImageAndTextProps> = ({ heading, content, image }) => (
+const ImageAndText: React.FunctionComponent<ImageAndTextProps> = ({ heading, textContent, image }) => (
   <Styles.Container data-testid="ImageAndText">
     <Row>
       {heading && (
@@ -23,7 +24,7 @@ const ImageAndText: React.FunctionComponent<ImageAndTextProps> = ({ heading, con
         <Image {...image} />
       </Column>
       <Column small="full" medium="two-thirds" large="two-thirds">
-        <Styles.Content>{content}</Styles.Content>
+        <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(textContent) }} />
       </Column>
     </Row>
   </Styles.Container>

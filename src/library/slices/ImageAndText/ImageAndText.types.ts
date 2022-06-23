@@ -5,12 +5,12 @@ export interface ImageAndTextProps {
   /**
    * An optional heading
    */
-  heading?: string;
+  heading?: string | null;
 
   /**
-   * The html text content
+   * The string of html text content
    */
-  content: React.ReactNode;
+  textContent: string;
 
   /**
    * The image, containing the paths, alt text and caption
