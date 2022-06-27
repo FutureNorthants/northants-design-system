@@ -1,10 +1,9 @@
-import { AlertBannerServiceProps } from '../../structure/AlertBannerService/AlertBannerService.types';
 import { BreadcrumbProp } from '../../structure/Breadcrumbs/Breadcrumbs.types';
 import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { HeroImageProps } from '../../structure/HeroImage/HeroImage.types';
 import { ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 
-export interface PromotionPageExampleProps {
+export interface ServiceLandingPromotionPageExampleProps {
   /**
    * The Service landing page title
    */

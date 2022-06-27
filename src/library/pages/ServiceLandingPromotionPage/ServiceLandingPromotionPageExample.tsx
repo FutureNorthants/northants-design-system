@@ -1,15 +1,18 @@
 import React from 'react';
-import { PromotionPageExampleProps } from './PromotionPageExample.types';
+import { ServiceLandingPromotionPageExampleProps } from './ServiceLandingPromotionPageExample.types';
 import Heading from '../../components/Heading/Heading';
 import * as PageStructures from '../../structure/PageStructures';
 import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 import Cards from '../../slices/Cards/Cards';
-import { cardsData, imageCardsData } from './PromotionPageExample.storydata';
+import { cardsData, imageCardsData } from './ServiceLandingPromotionPageExample.storydata';
 import CallToAction from '../../slices/CallToAction/CallToAction';
 import ImageAndText from '../../slices/ImageAndText/ImageAndText';
 import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
 
-export const PromotionPageExample: React.FunctionComponent<PromotionPageExampleProps> = ({
+/**
+ * An example of a Service Landing Page without Sections and example slice content
+ */
+export const ServiceLandingPromotionPageExample: React.FunctionComponent<ServiceLandingPromotionPageExampleProps> = ({
   title,
   heroImage,
   breadcrumbsArray,

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { PromotionPageExample } from './PromotionPageExample';
+import { ServiceLandingPromotionPageExample } from './ServiceLandingPromotionPageExample';
 import { PromotionPageExampleProps } from './PromotionPageExample.types';
-import { footerLinks, HeroImageData, threeTopServicesData } from './PromotionPageExample.storydata';
+import { footerLinks, HeroImageData, threeTopServicesData } from './ServiceLandingPromotionPageExample.storydata';
 
 export default {
-  title: 'Page Examples/Promotion Page',
-  component: PromotionPageExample,
+  title: 'Page Examples/Service Landing Promotion Page',
+  component: ServiceLandingPromotionPageExample,
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PromotionPageExampleProps> = (args) => <PromotionPageExample {...args} />;
+const Template: Story<PromotionPageExampleProps> = (args) => <ServiceLandingPromotionPageExample {...args} />;
 
 export const ExamplePromotionPage = Template.bind({});
 ExamplePromotionPage.args = {
