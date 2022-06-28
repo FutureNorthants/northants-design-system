@@ -60,8 +60,13 @@ describe('PostCodeSearch', () => {
 
   it('should display an error for incorrect postcode', async () => {
     mockedAxios.mockResolvedValue({
-      status: 200,
-      data: 'Incorrect postcode',
+      status: 400,
+      data: {
+        postcode: 'FAKE POSTCODE',
+        records_in_payload: 0,
+        status: 'ERROR invalid postcode format.',
+        total_records: 0,
+      },
       statusText: 'Ok',
       headers: {},
       config: {},
