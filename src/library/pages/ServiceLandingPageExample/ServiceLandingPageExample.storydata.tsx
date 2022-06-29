@@ -1,8 +1,12 @@
+import React from 'react';
 import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.types';
 import { FooterLinkProp } from '../../structure/Footer/Footer.types';
 import { BreadcrumbProp } from '../../structure/Breadcrumbs/Breadcrumbs.types';
 import { PageLinkProp, ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 import { AlertBannerServiceProps } from '../../structure/AlertBannerService/AlertBannerService.types';
+import { CardsProps } from '../../slices/Cards/Cards.types';
+import { CallToAction, Cards, Heading, ImageAndText } from '../../..';
+import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
 
 const topServicesData: Array<PageLinkProp> = [
   {
@@ -191,3 +195,120 @@ export const serviceAlert: AlertBannerServiceProps = {
   title: 'An example service alert',
   alertType: 'alert',
 };
+
+/**
+ * Promo Page Storydata
+ */
+
+export const promoHeroImageData = {
+  headline: 'Sustainable West Northants',
+  content: '<p>We have collated a variety of small changes that can have a big impact for you to try today.</p>',
+  imageLarge:
+    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1440/810/0/2021-12/Abington_Park_1.jpg',
+  imageSmall:
+    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/144/81/0/2021-12/Abington_Park_1.jpg',
+  imageAltText: 'Parkland',
+  backgroundBox: true,
+};
+
+export const promoTopServices: Array<PageLinkProp> = [
+  {
+    title: 'In your business',
+    url: 'in-your-business',
+    iconKey: 'births',
+    quickLinksArray: [],
+  },
+  {
+    title: 'In your home',
+    url: 'in-your-home',
+    iconKey: 'business',
+    quickLinksArray: [],
+  },
+  {
+    title: 'In your community',
+    url: 'in-your-community',
+    iconKey: 'children',
+    quickLinksArray: [],
+  },
+];
+
+export const promoTopServicesData: ServicesLinksListProps = {
+  ...topServicesCommon,
+  serviceLinksArray: promoTopServices,
+};
+
+export const cardsData: CardsProps = {
+  cards: [
+    {
+      header: 'Commitment 1',
+      content:
+        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mi mattis, facilisis est et, portaurna.</p>',
+    },
+    {
+      header: 'Commitment 2',
+      content:
+        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mi mattis, facilisis est et, portaurna.</p>',
+    },
+    {
+      header: 'Commitment 3',
+      content:
+        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mi mattis, facilisis est et, portaurna.</p>',
+    },
+  ],
+};
+
+export const imageCardsData: CardsProps = {
+  cards: [
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+    {
+      imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
+      imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
+      imageAltText: 'Parkland',
+    },
+  ],
+};
+
+export const promoBodyText: React.ReactNode = (
+  <>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mi mattis, facilisis est et, porta urna.
+      Sed porttitor neque vitae elit vehicula eleifend. Vivamus sed purus finibus, tincidunt neque quis, mollis urna.
+      Donec dapibus tellus quam, vitae fringilla mi tristique nec. Sed sit amet ligula vel ante congue gravida
+    </p>
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ligula vel ante congue gravida.</li>
+      <li>Phasellus vel mi mattis, facilisis est et, porta urna. Sed sit amet ligula vel ante congue gravida</li>
+      <li>Vivamus sed purus finibus, tincidunt neque quis, mollis urna. Sed sit amet ligula vel ante congue gravida</li>
+    </ul>
+    <Heading level={2} text="Our commitments" />
+    <Cards {...cardsData} />
+    <Heading level={2} text="Sustainable development goals" />
+    <Cards {...imageCardsData} />
+    <Heading level={2} text="Ideas bank" />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mi mattis, facilisis est et, porta urna.
+      Sed porttitor neque vitae elit vehicula eleifend. Vivamus sed purus finibus, tincidunt neque quis, mollis urna.
+      Donec dapibus tellus quam, vitae fringilla mi tristique nec. Sed sit amet ligula vel ante congue gravida
+    </p>
+    <ImageAndText {...ImageAndTextWithHeading} />
+    <ImageAndText {...ImageAndTextWithHeading} />
+    <ImageAndText {...ImageAndTextWithHeading} />
+    <Heading level={2} text="Pledge" />
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      <li>Phasellus vel mi mattis, facilisis est et, porta urna.</li>
+      <li>Vivamus sed purus finibus, tincidunt neque quis, mollis urna.</li>
+    </ul>
+    <p></p>
+    <CallToAction url="/example-link" text="Share your pledge" />
+  </>
+);
