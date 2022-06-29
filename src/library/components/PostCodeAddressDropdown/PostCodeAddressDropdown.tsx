@@ -3,8 +3,8 @@ import { PostCodeAddressDropdownProps } from './PostCodeAddressDropdown.types';
 import * as Styles from './PostCodeAddressDropdown.styles';
 import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
-import { AddressesProps } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider.types';
 import Heading from '../Heading/Heading';
+import { AddressesProps } from '../../helpers/api-helpers';
 
 /**
  * The dropdown component for selecting and displaying address information

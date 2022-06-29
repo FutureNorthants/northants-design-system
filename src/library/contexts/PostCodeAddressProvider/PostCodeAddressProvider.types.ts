@@ -1,4 +1,5 @@
 import React, { SetStateAction, Dispatch } from 'react';
+import { PostcodeResultsProps } from '../../helpers/api-helpers';
 
 export interface PostCodeAddressProviderProps {
   /**
@@ -13,46 +14,7 @@ export interface PostCodeAddressContextType {
     setPostcode: Dispatch<SetStateAction<string>>;
   };
   resultsValue?: {
-    results?: ResultsProps;
-    setResults: Dispatch<SetStateAction<ResultsProps>>;
+    results?: PostcodeResultsProps;
+    setResults: Dispatch<SetStateAction<PostcodeResultsProps>>;
   };
-}
-
-export interface ResultsProps {
-  addresses: AddressProps[];
-  postcode: string;
-  records_in_payload: number;
-  requested_page: number;
-  total_pages: number;
-  total_records: number;
-}
-
-export interface AddressProps {
-  bands: CouncilTaxBands;
-  latitude: string;
-  longitude: string;
-  parish: string;
-  postcode: string;
-  single_line_address: string;
-  sovereign: string;
-  unitary: string;
-  uprn: string;
-  ward: string;
-}
-
-export interface AddressesProps {
-  title: string;
-  value: string;
-  extra?: AddressProps;
-}
-
-export interface CouncilTaxBands {
-  a: string;
-  b: string;
-  c: string;
-  d: string;
-  e: string;
-  f: string;
-  g: string;
-  h: string;
 }

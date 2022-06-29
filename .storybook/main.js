@@ -20,8 +20,6 @@ module.exports = {
   env: (config) => ({
     ...config,
     NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
-    NEXT_PUBLIC_CTAX_PARISH_API_URL_NORTH: 'https://api.westnorthants.digital/address-search-test/north-parishes',
-    NEXT_PUBLIC_CTAX_PARISH_API_URL_WEST: 'https://api.westnorthants.digital/address-search-test/west-parishes',
   }),
   webpackFinal: async (config) => {
     config.module.rules.push({

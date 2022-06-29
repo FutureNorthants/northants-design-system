@@ -1,3 +1,4 @@
+import { AddressProps, PostcodeResultsProps, SovereignProps, UnitaryProps } from '../../helpers/api-helpers';
 import { SignpostLinkProp } from '../../structure/SignpostLinks/SignpostLinks.types';
 
 export interface PostCodeSearchProps {
@@ -27,25 +28,6 @@ export interface PostCodeSearchProps {
   isUnitary?: boolean;
 }
 
-export interface SovereignProps {
-  /**
-   * The sovereign name
-   */
-  name: string;
-
-  /**
-   * The optional website
-   */
-  website?: string;
-}
-
-export interface UnitaryProps {
-  /**
-   * The Unitary council name
-   */
-  name: string;
-}
-
 export interface AddressOption {
   /**
    * The title of the address
@@ -60,72 +42,10 @@ export interface AddressOption {
   /**
    * Array of postcode response props
    */
-  info: PostcodeResponseProps[];
+  info: AddressOptionInfoProps[];
 }
 
-export interface AddressProps {
-  /**
-   * The address as a one line string
-   */
-  single_line_address: string;
-
-  /**
-   * Latitude of the address
-   */
-  latitude: string;
-
-  /**
-   * Longitude of the address
-   */
-  longitude: string;
-
-  /**
-   * The parish
-   */
-  parish: string;
-
-  /**
-   * The polling district
-   */
-  polling_district: string;
-
-  /**
-   * The postcode
-   */
-  postcode: string;
-
-  /**
-   * The postcode without spaces
-   */
-  postcodens: string;
-
-  /**
-   * The sovereign council name
-   */
-  sovereign: string;
-
-  /**
-   * The unitary council name
-   */
-  unitary: string;
-
-  /**
-   * The Unique Property Reference Number
-   */
-  uprn: string;
-
-  /**
-   * The ward
-   */
-  ward: string;
-
-  /**
-   * The website url
-   */
-  website_url: string;
-}
-
-export interface PostcodeResponseProps {
+export interface AddressOptionInfoProps {
   /**
    * An array of sovereigns
    */

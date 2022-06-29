@@ -1,19 +1,18 @@
 import React, { createContext, useContext, useState } from 'react';
-import {
-  PostCodeAddressProviderProps,
-  PostCodeAddressContextType,
-  ResultsProps,
-} from './PostCodeAddressProvider.types';
+import { PostcodeResultsProps } from '../../helpers/api-helpers';
+import { PostCodeAddressProviderProps, PostCodeAddressContextType } from './PostCodeAddressProvider.types';
 
 const PostCodeAddressContext = createContext<PostCodeAddressContextType>({});
 
-export const defaultResults: ResultsProps = {
+export const defaultResults: PostcodeResultsProps = {
   addresses: [],
   postcode: '',
   records_in_payload: null,
   requested_page: null,
   total_pages: null,
   total_records: null,
+  sovereigns: [],
+  unitaries: [],
 };
 
 export const PostCodeAddressProvider: React.FunctionComponent<PostCodeAddressProviderProps> = ({ children }) => {

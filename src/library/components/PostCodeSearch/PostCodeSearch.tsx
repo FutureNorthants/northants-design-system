@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import axios from 'axios';
-import { PostCodeSearchProps, PostcodeResponseProps, AddressOption } from './PostCodeSearch.types';
+import { PostCodeSearchProps, AddressOptionInfoProps, AddressOption } from './PostCodeSearch.types';
 import * as Styles from './PostCodeSearch.styles';
 import HintText from '../HintText/HintText';
 import FormWithLine from '../FormWithLine/FormWithLine';
@@ -13,10 +13,7 @@ import Button from '../Button/Button';
 import { SignpostLinks } from '../../structure/PageStructures';
 import DropDownSelect from '../DropDownSelect/DropDownSelect';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-
-// PostCodeSearchApiKey
-
-import { PostcodeSearchApiUrl } from '../../helpers/api-helpers';
+import { PostcodeResultsProps, PostcodeSearchApiUrl } from '../../helpers/api-helpers';
 
 /**
  * The functionality for searching for a postcode
@@ -37,7 +34,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
   const [isMultiple, setIsMultiple] = useState<boolean>(false);
   const [addressOptions, setAddressOptions] = useState<AddressOption[]>([]);
 
-  const defaultArray: PostcodeResponseProps = {
+  const defaultArray: AddressOptionInfoProps = {
     sovereigns: [],
     unitaries: [],
     addresses: [],
@@ -71,14 +68,8 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
       .then((response) => {
         setIsLoading(false);
 
-        const responseData: PostcodeResponseProps = {
-          sovereigns: response.data?.sovereigns || [],
-          unitaries: response.data?.unitaries || [],
-          addresses: response.data?.addresses || [],
-        };
-
-        if (responseData.unitaries?.length > 0) {
-          setResponseData(responseData);
+        if (response.data.unitaries?.length > 0) {
+          setResponseData(response.data);
         } else {
           handleError(true);
         }
