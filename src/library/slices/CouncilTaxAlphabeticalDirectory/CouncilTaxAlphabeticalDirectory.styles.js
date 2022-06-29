@@ -97,10 +97,6 @@ export const BackButton = styled.a`
   }
 `;
 
-export const LoadingContainer = styled.div`
-  text-align: center;
-`;
-
 export const ErrorText = styled.p`
   ${(props) => props.theme.fontStyles}
   color: ${(props) => props.theme.theme_vars.colours.negative};

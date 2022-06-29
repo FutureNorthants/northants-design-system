@@ -1,5 +1,6 @@
 export interface CouncilTaxAlphabeticalDirectoryProps {
   financialYear: string;
+  parishes: ParishAPIResponse[] | undefined;
 }
 
 /**

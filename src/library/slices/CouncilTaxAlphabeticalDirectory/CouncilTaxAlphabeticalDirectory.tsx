@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   CouncilTaxAlphabeticalDirectoryProps,
   ParishAPIResponse,
@@ -6,26 +6,19 @@ import {
   SortedParish,
 } from './CouncilTaxAlphabeticalDirectory.types';
 import * as Styles from './CouncilTaxAlphabeticalDirectory.styles';
-import axios from 'axios';
-import { ParishApiUrl } from '../../helpers/api-helpers';
-import { ThemeContext } from 'styled-components';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 /**
  * An list of parishes, sorted alphabetically, containing parish council tax bands
  */
 const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabeticalDirectoryProps> = ({
   financialYear,
+  parishes,
 }) => {
-  const themeContext = useContext(ThemeContext);
   const [data, setData] = useState<SortedData[]>([]);
   const [parish, setCurrentParish] = useState<SortedParish>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isError, setisError] = useState<boolean>(false);
-  const [errorText, setErrorText] = useState<string>('');
 
   useEffect(() => {
-    getParishData();
+    setData(formatParishData(parishes));
   }, []);
 
   /**
@@ -54,39 +47,6 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
     });
   };
 
-  /**
-   * Fetch the data from the API
-   */
-  const getParishData = async () => {
-    axios({
-      method: 'GET',
-      url: `${ParishApiUrl(themeContext.cardinal_name)}`,
-    })
-      .then((response) => {
-        setIsLoading(false);
-
-        if (response.data.parishes?.length > 0) {
-          setData(formatParishData(response.data.parishes));
-        } else {
-          handleError(true);
-        }
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        handleError(true);
-      });
-  };
-
-  /**
-   * Is there an error and if so what is it
-   * @param error boolean
-   * @param errorMsg string
-   */
-  const handleError = (error, errorMsg = 'There was an issue fetching the parish data. Please try again later.') => {
-    setisError(error);
-    setErrorText(errorMsg);
-  };
-
   const sortedData = data
     .sort(function (a, b) {
       if (a.group.toLowerCase() < b.group.toLowerCase()) {
@@ -112,43 +72,43 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
 
   return (
     <Styles.Container data-testid="AlphabeticalDirectory">
-      {isError && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
-      {isLoading ? (
-        <Styles.LoadingContainer>
-          <LoadingSpinner />
-          <p>Loading...</p>
-        </Styles.LoadingContainer>
-      ) : (
-        <>
-          {parish === null ? (
-            <>
-              {sortedData.map((letter, i) => (
-                <Styles.Row key={i}>
-                  <Styles.Letter>{letter.group}</Styles.Letter>
-                  <Styles.Data>
-                    {letter.children.map((letterData, i) => (
-                      <Styles.Link onClick={() => setCurrentParish(letterData)} key={i}>
-                        {letterData.title}
-                      </Styles.Link>
-                    ))}
-                  </Styles.Data>
-                </Styles.Row>
-              ))}
-            </>
-          ) : (
-            <>
-              <Styles.BackButton onClick={() => setCurrentParish(null)}>Back</Styles.BackButton>
+      <>
+        {parishes.length === 0 && (
+          <Styles.ErrorText>There was an issue fetching the parish data. Please try again later.</Styles.ErrorText>
+        )}
+        {parish === null ? (
+          <>
+            {sortedData.map((letter, i) => (
+              <Styles.Row key={i}>
+                <Styles.Letter>{letter.group}</Styles.Letter>
+                <Styles.Data>
+                  {letter.children.map((letterData, i) => (
+                    <Styles.Link onClick={() => setCurrentParish(letterData)} key={i}>
+                      {letterData.title}
+                    </Styles.Link>
+                  ))}
+                </Styles.Data>
+              </Styles.Row>
+            ))}
+          </>
+        ) : (
+          <>
+            <Styles.BackButton onClick={() => setCurrentParish(null)}>Back</Styles.BackButton>
 
-              <div className="table-container">
-                <table>
-                  <caption>{`Council tax charges for ${parish.title} in ${financialYear}`}</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">Bands</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Object.keys(parish.values).map((band, i) => (
+            <div className="table-container">
+              <table>
+                <caption>{`Council tax charges for ${parish.title} in ${financialYear}`}</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Bands</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.keys(parish.values)
+                    .filter((item) => {
+                      return item !== '__typename';
+                    })
+                    .map((band, i) => (
                       <tr key={i}>
                         <th scope="row">{band.toUpperCase()}</th>
                         <td>
@@ -156,13 +116,12 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
                         </td>
                       </tr>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-            </>
-          )}
-        </>
-      )}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+      </>
     </Styles.Container>
   );
 };
