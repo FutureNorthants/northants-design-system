@@ -10,7 +10,7 @@ export default {
   parameters: {
     status: {
       type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 } as Meta;
 
@@ -18,10 +18,5 @@ const Template: Story<CouncilTaxPageExampleProps> = (args) => <CouncilTaxPageExa
 
 export const AddressDropdown = Template.bind({});
 AddressDropdown.args = {
-  version: 'b'
-}
-
-// export const VersionC = Template.bind({});
-// VersionC.args = {
-//   version: 'c'
-// }
+  version: 'b',
+};

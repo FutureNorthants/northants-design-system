@@ -9,14 +9,11 @@ export default {
   component: CouncilTaxParishPageExample,
   parameters: {
     status: {
-      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
   },
 } as Meta;
 
 const Template: Story<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
-
-//version d
 export const AlphabeticalList = Template.bind({});
-AlphabeticalList.args = {
-}
+AlphabeticalList.args = {};

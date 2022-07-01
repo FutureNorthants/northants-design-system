@@ -11,7 +11,7 @@ export default {
   component: CouncilTaxAlphabeticalDirectory,
   parameters: {
     status: {
-      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
 };

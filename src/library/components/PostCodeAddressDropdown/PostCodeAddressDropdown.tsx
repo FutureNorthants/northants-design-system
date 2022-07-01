@@ -39,7 +39,10 @@ const PostCodeAddressDropdown: React.FunctionComponent<PostCodeAddressDropdownPr
         extra: addr,
       };
     });
-    addresses = [{ title: 'Choose an address', value: 'choose-address' }, ...addresses];
+
+    if (addresses.length > 1) {
+      addresses = [{ title: 'Choose an address', value: 'choose-address' }, ...addresses];
+    }
   }
 
   return (

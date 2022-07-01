@@ -137,14 +137,17 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
           {filterAddress && (
             <>
               <p>
-                <strong>{Number(results.total_records).toLocaleString('en-GB')} addresses found.</strong>
+                <strong>
+                  {Number(results.total_records).toLocaleString('en-GB')}{' '}
+                  {Number(results.total_records) > 1 ? `addresses` : `address`} found.
+                </strong>
               </p>
               <Styles.Label htmlFor="address_search">
-                Enter the start of your address to filter results
+                Enter part of your address to filter results
                 <HintText text="For example, Room 2, Flat 4" />
                 <Input
                   type="text"
-                  placeholder="Enter start of address"
+                  placeholder="Enter part of address"
                   name="address_search"
                   errorText={addressErrorText}
                   isErrored={isError}
