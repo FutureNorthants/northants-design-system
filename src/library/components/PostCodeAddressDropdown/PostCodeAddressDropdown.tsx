@@ -40,8 +40,11 @@ const PostCodeAddressDropdown: React.FunctionComponent<PostCodeAddressDropdownPr
       };
     });
 
-    if (addresses.length > 1) {
-      addresses = [{ title: 'Choose an address', value: 'choose-address' }, ...addresses];
+    addresses = [{ title: 'Choose an address', value: 'choose-address' }, ...addresses];
+
+    // Set the currentAddress if there is only one address and it is different
+    if (addresses.length === 2 && currentAddress?.value !== addresses[1].value) {
+      setCurrentAddress(addresses[1]);
     }
   }
 
@@ -55,7 +58,7 @@ const PostCodeAddressDropdown: React.FunctionComponent<PostCodeAddressDropdownPr
             label="Select your address"
             options={addresses}
             onChange={optionPicked}
-            selected={hasResults ? 'choose-address' : 'no-results'}
+            selected={currentAddress ? currentAddress.value : hasResults ? 'choose-address' : 'no-results'}
           />
           <br />
 
