@@ -15,6 +15,9 @@ import {
   micrositeBreadcrumbs,
   footerLinks,
   serviceAlert,
+  promoHeroImageData,
+  promoTopServicesData,
+  promoBodyText,
 } from './ServiceLandingPageExample.storydata';
 
 export default {
@@ -129,4 +132,18 @@ MicroSiteWithAlertExample.args = {
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   showSummary: true,
   serviceAlert,
+};
+
+export const PromoPageExample = Template.bind({});
+PromoPageExample.args = {
+  title: 'Sustainable West Northants',
+  heroImage: promoHeroImageData,
+  breadcrumbsArray: null,
+  bodyText: promoBodyText,
+  sections: [],
+  footerLinks,
+  topServices: promoTopServicesData,
+  summary:
+    'Sustainability is all about living in a way that protects our natural resources and opportunities for future generations.',
+  showSummary: true,
 };

@@ -65,14 +65,14 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
     )}
 
     <PageStructures.MaxWidthContainer>
-      <PageStructures.PageMain>
+      <PageStructures.PageMain fullWidthText>
         {showSummary && summary?.trim() && (
           <Summary>
             <p>{summary}</p>
           </Summary>
         )}
 
-        <p>{bodyText ? bodyText : 'Any introductory text and slices for the landing page goes here.'}</p>
+        <>{bodyText ? bodyText : 'Any introductory text and slices for the landing page goes here.'}</>
 
         {sections.length > 1 ? (
           <SectionLinksMobileContents
