@@ -33,6 +33,7 @@ import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFi
 import Divider from './library/slices/Divider/Divider';
 import GoogleMap from './library/slices/GoogleMap/GoogleMap';
 import Image from './library/slices/Image/Image';
+import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
@@ -48,6 +49,7 @@ export {
   DownloadableFiles,
   GoogleMap,
   Image,
+  ImageAndText,
   Promotions,
   Video,
   WarningText,
