@@ -1,4 +1,5 @@
-import React from "react";
+import React, { SetStateAction, Dispatch } from 'react';
+import { PostcodeResultsProps } from '../../helpers/api-helpers';
 
 export interface PostCodeAddressProviderProps {
   /**
@@ -7,14 +8,13 @@ export interface PostCodeAddressProviderProps {
   children: React.ReactNode;
 }
 
-
-export type PostCodeAddressContextType = {
-  postcodeValue: {
-    state: string,
-    actions: Function
-  },
-  resultsValue: {
-      state: () => void,
-      actions: Function
-  }  
+export interface PostCodeAddressContextType {
+  postcodeValue?: {
+    postcode: string;
+    setPostcode: Dispatch<SetStateAction<string>>;
+  };
+  resultsValue?: {
+    results?: PostcodeResultsProps;
+    setResults: Dispatch<SetStateAction<PostcodeResultsProps>>;
+  };
 }

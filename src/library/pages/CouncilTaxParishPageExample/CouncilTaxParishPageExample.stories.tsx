@@ -5,17 +5,15 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { CouncilTaxParishPageExample, CouncilTaxParishPageExampleProps } from './CouncilTaxParishPageExample';
 
 export default {
-  title: 'Page Examples/Council Tax Prototypes/By Parish',
+  title: 'Page Examples/Council Tax By Parish',
   component: CouncilTaxParishPageExample,
   parameters: {
     status: {
-      type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+    },
   },
 } as Meta;
 
 const Template: Story<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
-
-export const VersionD = Template.bind({});
-VersionD.args = {
-}
+export const AlphabeticalList = Template.bind({});
+AlphabeticalList.args = {};

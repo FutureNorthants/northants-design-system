@@ -27,6 +27,7 @@ export {
 import Accordion from './library/slices/Accordion/Accordion';
 import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
+import CouncilTaxAlphabeticalDirectory from './library/slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
 import Cards from './library/slices/Cards/Cards';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
@@ -42,6 +43,7 @@ export {
   BlockQuote,
   CallToAction,
   Cards,
+  CouncilTaxAlphabeticalDirectory,
   Divider,
   DownloadableFiles,
   GoogleMap,

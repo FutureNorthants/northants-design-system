@@ -1,196 +1,166 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import axios from 'axios'
-
-import { PostCodeAddressSearchProps } from "./PostCodeAddressSearch.types";
-import * as Styles from "./PostCodeAddressSearch.styles";
-
-import HintText from "../../components/HintText/HintText";
-import FormWithLine from "../../components/FormWithLine/FormWithLine";
-import Input from "../../components/Input/Input";
-import FormButton from "../../components/FormButton/FormButton";
-
-import Button from "../../components/Button/Button";
-import DropDownSelect from "../../components/DropDownSelect/DropDownSelect";
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-
-
-// PostCodeAddressSearchApiKey
-import {PostCodeAddressSearchApiUrl} from '../../helpers/api-helpers';
-
-import {usePostcodeAddressContext} from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import axios from 'axios';
+import { PostCodeAddressSearchProps } from './PostCodeAddressSearch.types';
+import * as Styles from './PostCodeAddressSearch.styles';
+import HintText from '../../components/HintText/HintText';
+import FormWithLine from '../../components/FormWithLine/FormWithLine';
+import Input from '../../components/Input/Input';
+import FormButton from '../../components/FormButton/FormButton';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import { defaultResults } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import { PostcodeSearchApiUrl } from '../../helpers/api-helpers';
+import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
 /**
  * The functionality for searching for a postcode
  */
-const PostCodeAddressSearch: React.FC<PostCodeAddressSearchProps> = ({
-    title = "Enter your postcode to find your area",
-    formError = false,
-    otherCouncilLink,
-    signPostLinks,
-    isUnitary = false
-  }) => {
-    const themeContext = useContext(ThemeContext);
-    const {postcodeValue: {state: {postcode}, actions: {setPostCode}}, resultsValue: {state: {results}, actions: {setResults}}} = usePostcodeAddressContext();
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setisError] = useState(formError);
-    const [errorText, setErrorText] = useState("");
-    const [currentPostcode, setCurrentPostcode] = useState("");
-    const [isMultiple, setIsMultiple] = useState(false);
-    const [addressArray, setAddressArray] = useState([]);
+const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps> = ({
+  title = 'Enter your postcode to find your area',
+  formError = false,
+  otherCouncilLink,
+  signPostLinks,
+  isUnitary = false,
+}) => {
+  const themeContext = useContext(ThemeContext);
+  const {
+    postcodeValue: { postcode: postcode, setPostcode: setPostCode },
+    resultsValue: { results: results, setResults: setResults },
+  } = usePostcodeAddressContext();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setisError] = useState<boolean>(formError);
+  const [errorText, setErrorText] = useState('');
+  const [addressErrorText, setAddressErrorText] = useState('');
+  const [currentPostcode, setCurrentPostcode] = useState<string | undefined>('');
+  const [filterAddress, setFilterAddress] = useState<boolean>(false);
 
-    const defaultArray = { 
-      numOfSovereign: 0,
-      sovereign: [{
-        sovereignName: "",
-        sovereignCode: 0 
-      }],
-      numOfUnitary: 0,
-      unitary: [{
-        unitary: "",
-        unitaryCode: 0
-      }],
-      addresses: []
+  /**
+   * Postcode form submission handler
+   * @param e
+   */
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCurrentPostcode(e.target.postcode.value);
+    if (e.target.postcode.value === '') {
+      handleError(true, 'You need to enter a postcode');
+    } else {
+      setResults(defaultResults);
+      setPostCode(e.target.postcode.value);
+      setIsLoading(true);
+      checkPostcode(e.target.postcode.value, e.target?.address_search ? e.target.address_search.value : '');
     }
+  };
 
-    const [responseData, setResponseData] =  useState(defaultArray);
-
-    /**
-     * Clear the form and reset
-     */
-    const clearData = () => {
-      setResponseData(defaultArray)
-      setCurrentPostcode("")
-      setAddressArray([])
-      setPostCode('')
-      setResults({})
-    }
-
-    /**
-     * Postcode form submission handler
-     * @param e 
-     */
-    const handleSubmit= (e) => {
-      e.preventDefault();
-      setCurrentPostcode(e.target.postcode.value)
-      if(e.target.postcode.value === "") {
-        handleError(true, "You need to enter a postcode");
-      } else {
-        setPostCode(e.target.postcode.value)
-        setIsLoading(true);
-        checkPostcode(e.target.postcode.value);
-      }
-    }
-
-    /**
-     * Do the actual postcode lookup
-     * This method only returns results if postcode is within north / west
-     * @param postcode string
-     */
-    const checkPostcode = async (postcode) => {
-      axios({
-        method: "GET",
-        url: `${PostCodeAddressSearchApiUrl}${postcode.replace(/ /g,'')}`
-        // headers: { 'x-api-key': `${PostCodeAddressSearchApiKey}` }
-      })
+  /**
+   * Do the actual postcode lookup
+   * This method only returns results if postcode is within north / west
+   * @param postcode string
+   */
+  const checkPostcode = async (postcode, address) => {
+    setErrorText(null);
+    setAddressErrorText(null);
+    setisError(false);
+    const addressSearch = address != '' ? `?address=${address}` : '';
+    axios({
+      method: 'GET',
+      url: `${PostcodeSearchApiUrl}${postcode.replace(/ /g, '')}${addressSearch}`,
+    })
       .then((response) => {
         setIsLoading(false);
-        // num of unitary is whether its in north or west
-        if (response.data.numOfUnitary > 0) {
-          setResponseData(response.data)
-          setResults(response.data)
+        if (response.data?.total_records > 0) {
+          if (response.data.total_pages > 1) {
+            // Trigger advanced search to filter address
+            setFilterAddress(true);
+          }
+
+          setResults(response.data);
         } else {
-          // console.log(response)
           handleError(true);
+          setResults(defaultResults);
         }
       })
       .catch((error) => {
         setIsLoading(false);
         handleError(true);
-        console.log(error)
-      })
-    }
-
-    /**
-     * Is there an error and if so what is it
-     * @param error boolean
-     * @param errorMsg string
-     */
-    const handleError = (error, errorMsg = "There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new post codes.") => {
-      console.log(error, errorMsg)
-      setErrorText(errorMsg)
-      setisError(error)
-    }
-
-    useEffect(() => {
-      if(responseData.numOfUnitary > 0) {
-        if(isError) {
-          handleError(false, "");
-        }
-        if(responseData.numOfUnitary > 1) {
-          setIsMultiple(true);
-          responseData.addresses.map(address => {
-            setAddressArray(addressArray => [...addressArray, {
-              title: address.DPA.ADDRESS.split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + address.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
-              value: address.DPA.UPRN,
-              info: [{
-                numOfSovereign: 1,
-                sovereign: [{
-                  sovereignName: address.DPA.SOVEREIGN_COUNCIL_NAME,
-                  sovereignCode: address.DPA.SOVEREIGN_COUNCIL_CODE, 
-                }],
-                numOfUnitary: 1,
-                unitary: [{
-                  unitary: address.DPA.UNITARY_COUNCIL_NAME,
-                  unitaryCode: address.DPA.UNITARY_COUNCIL_CODE
-                }],
-                addresses: []                
-              }] 
-            }])
-          })
-        }
-      }
-    }, [responseData]);
-
-
-    function handleAddressChange(e){
-      if(e.target.value !== "") {
-        const singleAddress = addressArray.find(address => address.value === e.target.value);
-        setIsMultiple(false);
-        setResponseData(singleAddress.info[0]);
-        setCurrentPostcode(currentPostcode + " ("+singleAddress.title+")")
-      }
-    }
-
-    return(
-      <Styles.Container>
-
-              <FormWithLine onSubmit={e => { handleSubmit(e) }} isError={isError} lineColour={themeContext.theme_vars.colours.grey_dark}>
-                {isLoading ?
-                  <Styles.LoadingContainer>
-                    <LoadingSpinner />
-                    <p>Loading...</p>
-                  </Styles.LoadingContainer>
-                  
-                :
-                <>
-                <Styles.Label htmlFor="postcode">
-                  Enter your postcode
-                  <HintText text={themeContext.cardinal_name === "north" ? "For example NN16 0AP" : "For example NN1 1DE"} />
-
-                  <Input type="text" placeholder="Search" name="postcode" errorText={errorText} isErrored={isError} />
-                </Styles.Label>
-
-                <FormButton type="submit" aria-label="Submit" text="Find" />
-                </>
-                }
-              </FormWithLine>
-
-      </Styles.Container>
-    );
+        setResults(defaultResults);
+      });
   };
-  
+
+  /**
+   * Is there an error and if so what is it
+   * @param error boolean
+   * @param errorMsg string
+   */
+  const handleError = (
+    error,
+    errorMsg = 'There is an issue with the postcode you entered, it may not be in Northamptonshire, or if your property is new there may be a 6 week delay for new post codes.'
+  ) => {
+    if (filterAddress) {
+      setAddressErrorText('No matching addresses found. Please try another search term.');
+    } else {
+      setErrorText(errorMsg);
+    }
+
+    setisError(error);
+  };
+
+  return (
+    <Styles.Container data-testid="PostCodeAddressSearch">
+      <FormWithLine
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+        isError={isError}
+        lineColour={themeContext.theme_vars.colours.grey_dark}
+      >
+        {isLoading && (
+          <Styles.LoadingContainer>
+            <LoadingSpinner />
+            <p>Loading...</p>
+          </Styles.LoadingContainer>
+        )}
+
+        <Styles.FormContainer isLoading={isLoading}>
+          <Styles.Label htmlFor="postcode">
+            Enter your postcode
+            <HintText text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'} />
+            <Input
+              type="text"
+              placeholder="Enter a postcode"
+              name="postcode"
+              errorText={errorText}
+              isErrored={isError}
+            />
+          </Styles.Label>
+
+          {filterAddress && (
+            <>
+              <p>
+                <strong>
+                  {Number(results.total_records).toLocaleString('en-GB')}{' '}
+                  {Number(results.total_records) > 1 ? `addresses` : `address`} found.
+                </strong>
+              </p>
+              <Styles.Label htmlFor="address_search">
+                Enter part of your address to filter results
+                <HintText text="For example, Room 2, Flat 4" />
+                <Input
+                  type="text"
+                  placeholder="Enter part of address"
+                  name="address_search"
+                  errorText={addressErrorText}
+                  isErrored={isError}
+                />
+              </Styles.Label>
+            </>
+          )}
+
+          <FormButton type="submit" aria-label="Submit" text="Search" />
+        </Styles.FormContainer>
+      </FormWithLine>
+    </Styles.Container>
+  );
+};
 
 export default PostCodeAddressSearch;
-

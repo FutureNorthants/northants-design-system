@@ -1,96 +1,129 @@
+import React, { useState } from 'react';
+import { PostCodeAddressDropdownProps } from './PostCodeAddressDropdown.types';
+import * as Styles from './PostCodeAddressDropdown.styles';
+import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
+import Heading from '../Heading/Heading';
+import { AddressesProps } from '../../helpers/api-helpers';
 
-import React, {useState} from "react";
+/**
+ * The dropdown component for selecting and displaying address information
+ */
+const PostCodeAddressDropdown: React.FunctionComponent<PostCodeAddressDropdownProps> = () => {
+  const [currentAddress, setCurrentAddress] = useState<AddressesProps>(null);
+  const {
+    resultsValue: { results: results },
+  } = usePostcodeAddressContext();
 
-import { PostCodeAddressDropdownProps } from "./PostCodeAddressDropdown.types";
-import * as Styles from "./PostCodeAddressDropdown.styles";
-
-
-import {usePostcodeAddressContext} from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
-import DropDownSelect from "../../components/DropDownSelect/DropDownSelect";
-
-const PostCodeAddressDropdown: React.FC<PostCodeAddressDropdownProps> = () => {
-
-    const [currentAddress, setCurrentAddress] = useState(null);
-    const {postcodeValue: {state: {postcode}, actions: {setPostCode}}, resultsValue: {state: {results}, actions: {setResults}}} = usePostcodeAddressContext();
-
-    const optionPicked = (e) => {
-
-        if(e.target.value !== "") {
-            const singleAddress = addresses.find(address => address.value === e.target.value);
-            setCurrentAddress(singleAddress);
-          }
-
+  const optionPicked = (e) => {
+    if (e.target.value !== '') {
+      const singleAddress = addresses.find((address) => parseInt(address.value) === parseInt(e.target.value));
+      setCurrentAddress(singleAddress);
     }
+  };
 
-    const hasResults = (Object.keys(results).length > 0) ? true : false;
+  const hasResults = results.total_records > 0;
 
-    
-    let addresses = [{
-        title: 'No results found',
-        value: 'no-results'
-    }];
+  let addresses: AddressesProps[] = [
+    {
+      title: 'No results found',
+      value: 'no-results',
+    },
+  ];
 
-    if(hasResults) {
-        addresses = results.addresses.map((addr) => {
-            return {
-                title: addr.DPA.ADDRESS,
-                // .split(',')[0].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + ", " + addr.DPA.ADDRESS.split(',')[1].toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))),
-                value: addr.DPA.UPRN,
-                extra: addr.DPA
-            }
-        });
-        addresses = [{ title: "Choose an address", value: 'choose-address'}, ...addresses]
+  if (hasResults) {
+    addresses = results.addresses.map((addr) => {
+      return {
+        title: addr.single_line_address,
+        value: addr.uprn,
+        extra: addr,
+      };
+    });
+
+    addresses = [{ title: 'Choose an address', value: 'choose-address' }, ...addresses];
+
+    // Set the currentAddress if there is only one address and it is different
+    if (addresses.length === 2 && currentAddress?.value !== addresses[1].value) {
+      setCurrentAddress(addresses[1]);
     }
+  }
 
+  return (
+    <>
+      {hasResults && (
+        <Styles.Container data-testid="PostCodeAddressDropdown">
+          <Heading level={3} text="Address Results" />
+          <DropDownSelect
+            id="postcodeAddressLookup"
+            label="Select your address"
+            options={addresses}
+            onChange={optionPicked}
+            selected={currentAddress ? currentAddress.value : hasResults ? 'choose-address' : 'no-results'}
+          />
+          <br />
 
-    return (
-        <>
-            {hasResults &&
-                <Styles.Container data-testid="PostCodeAddressDropdown">
-                     <DropDownSelect id="postcodeAddressLookup" label="Select your address" options={addresses} onChange={optionPicked} selected={hasResults ? 'choose-address' : 'no-results' }/>
-                     <br />
-
-                    {currentAddress &&
-                        <Styles.AddressList>
-
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Council tax band:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>D</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Charge per year:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>£1,342</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Town/Parish:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>Hunsbury</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Address:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>{currentAddress.extra.ADDRESS}</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Postcode:</Styles.AddressListKey> 
-                                <Styles.AddressListValue>{currentAddress.extra.POSTCODE}</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Area:</Styles.AddressListKey> 
-                                <Styles.AddressListValue><p>This address is in <strong>{currentAddress.extra.UNITARY_COUNCIL_NAME} Northamptonshire</strong>, in the <strong>{currentAddress.extra.SOVEREIGN_COUNCIL_NAME}</strong> area.</p></Styles.AddressListValue>
-                            </Styles.AddressListRow>
-                            <Styles.AddressListRow>
-                                <Styles.AddressListKey>Map:</Styles.AddressListKey> 
-                                <Styles.AddressListValue><a href={`https://www.google.com/maps/search/?api=1&query=${currentAddress.extra.LAT},${currentAddress.extra.LNG}`} target="_blank">View on google maps</a> (link opens in a new window)</Styles.AddressListValue>
-                            </Styles.AddressListRow>
-
-                        </Styles.AddressList>
-                    }
-                </Styles.Container>
-            }
-        </>
-            
-        )
-
+          {currentAddress && (
+            <>
+              {currentAddress.extra.bands && (
+                <>
+                  <Heading level={3} text="Council Tax Bands" />
+                  <Styles.AddressList>
+                    {Object.keys(currentAddress.extra.bands).map((band) => (
+                      <Styles.AddressListRow key={band}>
+                        <Styles.AddressListKey>{band.toUpperCase()}</Styles.AddressListKey>
+                        <Styles.AddressListValue>
+                          {Number(currentAddress.extra.bands[band]).toLocaleString('en-GB', {
+                            style: 'currency',
+                            currency: 'GBP',
+                          })}
+                        </Styles.AddressListValue>
+                      </Styles.AddressListRow>
+                    ))}
+                  </Styles.AddressList>
+                </>
+              )}
+              <Heading level={3} text="Property Details" />
+              <Styles.AddressList>
+                <Styles.AddressListRow>
+                  <Styles.AddressListKey>Town/Parish:</Styles.AddressListKey>
+                  <Styles.AddressListValue>{currentAddress.extra.parish}</Styles.AddressListValue>
+                </Styles.AddressListRow>
+                <Styles.AddressListRow>
+                  <Styles.AddressListKey>Address:</Styles.AddressListKey>
+                  <Styles.AddressListValue>{currentAddress.extra.single_line_address}</Styles.AddressListValue>
+                </Styles.AddressListRow>
+                <Styles.AddressListRow>
+                  <Styles.AddressListKey>Postcode:</Styles.AddressListKey>
+                  <Styles.AddressListValue>{currentAddress.extra.postcode}</Styles.AddressListValue>
+                </Styles.AddressListRow>
+                <Styles.AddressListRow>
+                  <Styles.AddressListKey>Area:</Styles.AddressListKey>
+                  <Styles.AddressListValue>
+                    <p>
+                      This address is in <strong>{currentAddress.extra.unitary}</strong> Northamptonshire, in the{' '}
+                      <strong>{currentAddress.extra.sovereign}</strong> area.
+                    </p>
+                  </Styles.AddressListValue>
+                </Styles.AddressListRow>
+                <Styles.AddressListRow>
+                  <Styles.AddressListKey>Map:</Styles.AddressListKey>
+                  <Styles.AddressListValue>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${currentAddress.extra.latitude},${currentAddress.extra.longitude}`}
+                      target="_blank"
+                    >
+                      View on google maps
+                    </a>{' '}
+                    (link opens in a new window)
+                  </Styles.AddressListValue>
+                </Styles.AddressListRow>
+              </Styles.AddressList>
+            </>
+          )}
+        </Styles.Container>
+      )}
+    </>
+  );
 };
 
 export default PostCodeAddressDropdown;
-

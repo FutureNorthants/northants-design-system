@@ -17,6 +17,10 @@ module.exports = {
     '@etchteam/storybook-addon-status', // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
     '@storybook/addon-ie11',
   ],
+  env: (config) => ({
+    ...config,
+    NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
+  }),
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
