@@ -15,5 +15,5 @@ export interface ImageAndTextProps {
   /**
    * The image, containing the paths, alt text and caption
    */
-  image: ImageProps;
+  image?: ImageProps | null;
 }

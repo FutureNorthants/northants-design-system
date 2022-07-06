@@ -23,9 +23,4 @@ export interface ImageProps {
    * The optional image caption that goes under the image
    */
   caption?: string | null;
-
-  /**
-   * Set to true to have following text wrap against image
-   */
-  wrapText?: boolean;
 }

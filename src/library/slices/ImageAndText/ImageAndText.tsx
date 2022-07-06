@@ -20,12 +20,20 @@ const ImageAndText: React.FunctionComponent<ImageAndTextProps> = ({ heading, tex
           </Styles.HeadingContainer>
         </Column>
       )}
-      <Column small="full" medium="one-third" large="one-third">
-        <Image {...image} />
-      </Column>
-      <Column small="full" medium="two-thirds" large="two-thirds">
-        <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(textContent) }} />
-      </Column>
+      {image ? (
+        <>
+          <Column small="full" medium="one-third" large="one-third">
+            <Image {...image} />
+          </Column>
+          <Column small="full" medium="two-thirds" large="two-thirds">
+            <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(textContent) }} />
+          </Column>
+        </>
+      ) : (
+        <Column small="full" medium="full" large="full">
+          <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(textContent) }} />
+        </Column>
+      )}
     </Row>
   </Styles.Container>
 );
