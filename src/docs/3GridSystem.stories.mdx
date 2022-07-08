@@ -16,19 +16,23 @@ The Row is the outer container and is the full width of it's parent container. I
 
 ### hasBorder
 
-You may also pass in `hasBorder` into the Row props to display the border. This should only be used for demonstration purposes in development and not in the production code.
+You may set in `hasBorder` in the Row props to display the border. This should only be used for demonstration purposes in development and not in the production code.
 
 ### isList
 
-If you want to change the Row to be an unordered list &lt;ul&gt; instead of a &lt;div&gt;, then set `isList` to true.
+If you want to change the Row to be an unordered list &lt;ul&gt; instead of a &lt;div&gt;, then set `isList` to true (false by default).
+
+If enabled, the child Column components should also set isList to true so they are list items.
 
 ### hasWrap
 
-By default the container has `flex-wrap` set to `wrap`, but you can set `hasWrap={false}` to override this behaviour to set it to `nowrap`. However, this will only apply on screens larger than the large breakpoint.
+By default the container will allow the content to wrap onto multiple lines. You can set `hasWrap={false}` to override this behaviour and force content to be on the same line, however, this will only apply on screens wider than the large breakpoint.
 
 ## Column
 
-Columns belong within a Row component. The Column allows you to pass in the column width for `small`, `medium` and `large` breakpoints as props.
+Columns belong within a parent Row component.
+
+The Column allows you to pass in the column width for `small`, `medium` and `large` breakpoints as props.
 
 The available options for the Column widths are:
 
@@ -40,25 +44,27 @@ The available options for the Column widths are:
 - three-quarters
 - auto
 
+The `auto` option sets `flex-grow: 1` which means the columns will automatically grow to fit the container, depending on how many columns there are and whether the Row has `hasWrap` set to true or false.
+
 The default values will be:
 
 - full for small
 - one-half for medium
 - one-third for large
 
-The `auto` option sets `flex-grow: 1` which means the columns will automatically grow to fit the container, depending on how many columns there are and whether the Row has `hasWrap` set to true or false.
-
 ### hasPadding
 
-You may also pass in `hasPadding={false}` into the Column props to disable the default padding.
+Set `hasPadding={false}` in the Column props to disable the default padding.
 
 ### hasBorder
 
-You may also pass in `hasBorder` into the Column props to display the border. This should only be used for demonstration purposes in development and not in the production code.
+Set `hasBorder={true}` into the Column props to display the border. This should only be used for demonstration purposes in development and not in the production code.
 
 ### isList
 
-To be used with `<Row isList>`. This makes the Column container a &lt;li&gt; instead of a &lt;div&gt; which is useful for containing lists of navigation items, but within the grid structure.
+To be used with `<Row isList>` in the parent Row.
+
+This makes the Column container a &lt;li&gt; instead of a &lt;div&gt; which is useful for containing lists of navigation items, but within the grid structure.
 
 ## Example
 

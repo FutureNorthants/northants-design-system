@@ -44,9 +44,9 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
 
             <Styles.QuickLinksContainer show={index === activeServiceLink} ref={refs.current[index]}>
               <Styles.QuickLinksInnerContainer>
-                <Row>
+                <Row isList>
                   {serviceLink.quickLinksArray?.map((quickLink, quickLinkIndex) => (
-                    <Column small="full" medium="one-half" large="one-third" key={quickLinkIndex}>
+                    <Column isList small="full" medium="one-half" large="one-third" key={quickLinkIndex}>
                       <Styles.QuickLink href={quickLink.url}>{quickLink.title}</Styles.QuickLink>
                     </Column>
                   ))}

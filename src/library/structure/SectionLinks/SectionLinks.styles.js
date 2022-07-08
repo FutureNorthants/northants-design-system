@@ -16,7 +16,7 @@ export const SectionTitle = styled(Heading)`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    width: calc(100% - 30px);
+    width: 100%;
     margin-left: 0;
     margin-bottom: 25px;
   }
