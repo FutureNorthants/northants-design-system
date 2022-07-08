@@ -13,16 +13,30 @@ export const exampleBands: ParishBands = {
 
 export const exampleParishes: ParishAPIResponse[] = [
   {
-    banding_parish: 'Abthorpe',
+    banding_parish: 'Abthorpe and Adstone',
     bands: exampleBands,
     official_parish: 'Abthorpe CP',
     code: 'E04006798',
     unitary: 'West',
   },
   {
-    banding_parish: 'Adstone',
+    banding_parish: 'Abthorpe and Adstone',
     bands: exampleBands,
     official_parish: 'Adstone CP',
+    code: 'E04006799',
+    unitary: 'West',
+  },
+  {
+    banding_parish: 'Alderton',
+    bands: exampleBands,
+    official_parish: 'Alderton NCP',
+    code: 'E04006799',
+    unitary: 'West',
+  },
+  {
+    banding_parish: 'Althorpe',
+    bands: exampleBands,
+    official_parish: 'Althorpe CP',
     code: 'E04006799',
     unitary: 'West',
   },

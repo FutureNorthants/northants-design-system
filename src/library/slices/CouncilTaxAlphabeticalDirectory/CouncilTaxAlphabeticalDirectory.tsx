@@ -6,6 +6,8 @@ import {
   SortedParish,
 } from './CouncilTaxAlphabeticalDirectory.types';
 import * as Styles from './CouncilTaxAlphabeticalDirectory.styles';
+import Column from '../../components/Column/Column';
+import Row from '../../components/Row/Row';
 
 /**
  * An list of parishes, sorted alphabetically, containing parish council tax bands
@@ -22,6 +24,21 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
   }, []);
 
   /**
+   * Trim NCP or CP from the end of the parish name
+   */
+  const trimParishName = (officialParish: string): string => {
+    if (officialParish.endsWith('NCP')) {
+      return officialParish.slice(0, -4);
+    }
+
+    if (officialParish.endsWith('CP')) {
+      return officialParish.slice(0, -3);
+    }
+
+    return officialParish;
+  };
+
+  /**
    * take the data we get from the API and make it how we want it
    * @param data
    * @returns
@@ -29,14 +46,17 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
   const formatParishData = (data: ParishAPIResponse[]) => {
     const sortData = data.reduce((r, e) => {
       // get first letter of name of current element
-      let group = e.banding_parish[0];
+      let group = e.official_parish[0];
 
       if (!r[group]) {
         // there is no property in accumulator with this letter so create it
-        r[group] = { group, children: [{ title: e.banding_parish, values: e.bands }] };
+        r[group] = {
+          group,
+          children: [{ title: trimParishName(e.official_parish), values: e.bands }],
+        };
       } else {
         // push current element to children array for that letter
-        r[group].children.push({ title: e.banding_parish, values: e.bands });
+        r[group].children.push({ title: trimParishName(e.official_parish), values: e.bands });
       }
 
       return r;
@@ -80,14 +100,20 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
           <>
             {sortedData.map((letter, i) => (
               <Styles.Row key={i}>
-                <Styles.Letter>{letter.group}</Styles.Letter>
-                <Styles.Data>
-                  {letter.children.map((letterData, i) => (
-                    <Styles.Link onClick={() => setCurrentParish(letterData)} key={i}>
-                      {letterData.title}
-                    </Styles.Link>
-                  ))}
-                </Styles.Data>
+                <Row>
+                  <Column small="full" medium="one-quarter" large="one-quarter">
+                    <Styles.Letter>{letter.group}</Styles.Letter>
+                  </Column>
+                  <Column small="full" medium="three-quarters" large="three-quarters">
+                    <Row>
+                      {letter.children.map((letterData, i) => (
+                        <Column small="one-half" medium="one-half" large="one-half" key={i}>
+                          <Styles.Link onClick={() => setCurrentParish(letterData)}>{letterData.title}</Styles.Link>
+                        </Column>
+                      ))}
+                    </Row>
+                  </Column>
+                </Row>
               </Styles.Row>
             ))}
           </>
