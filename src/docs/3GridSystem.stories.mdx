@@ -18,6 +18,14 @@ The Row is the outer container and is the full width of it's parent container. I
 
 You may also pass in `hasBorder` into the Row props to display the border. This should only be used for demonstration purposes in development and not in the production code.
 
+### isList
+
+If you want to change the Row to be an unordered list &lt;ul&gt; instead of a &lt;div&gt;, then set `isList` to true.
+
+### hasWrap
+
+By default the container has `flex-wrap` set to `wrap`, but you can set `hasWrap={false}` to override this behaviour to set it to `nowrap`. However, this will only apply on screens larger than the large breakpoint.
+
 ## Column
 
 Columns belong within a Row component. The Column allows you to pass in the column width for `small`, `medium` and `large` breakpoints as props.
@@ -30,12 +38,15 @@ The available options for the Column widths are:
 - two-thirds
 - one-quarter
 - three-quarters
+- auto
 
 The default values will be:
 
 - full for small
 - one-half for medium
 - one-third for large
+
+The `auto` option sets `flex-grow: 1` which means the columns will automatically grow to fit the container, depending on how many columns there are and whether the Row has `hasWrap` set to true or false.
 
 ### hasPadding
 
@@ -44,6 +55,10 @@ You may also pass in `hasPadding={false}` into the Column props to disable the d
 ### hasBorder
 
 You may also pass in `hasBorder` into the Column props to display the border. This should only be used for demonstration purposes in development and not in the production code.
+
+### isList
+
+To be used with `<Row isList>`. This makes the Column container a &lt;li&gt; instead of a &lt;div&gt; which is useful for containing lists of navigation items, but within the grid structure.
 
 ## Example
 

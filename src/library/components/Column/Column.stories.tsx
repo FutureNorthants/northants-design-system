@@ -75,6 +75,14 @@ OneThirdWidthColumns.args = {
   hasPadding: true,
 };
 
+export const AutoWidthColumns = Template.bind({});
+AutoWidthColumns.args = {
+  small: 'auto',
+  medium: 'auto',
+  large: 'auto',
+  hasPadding: true,
+};
+
 const CombinedTemplate: Story<ColumnProps> = (args) => (
   <SBPadding>
     <Row hasBorder>
@@ -106,3 +114,26 @@ const CombinedTemplate: Story<ColumnProps> = (args) => (
 );
 
 export const CombinedColumnExample = CombinedTemplate.bind({});
+
+const TemplateIsList: Story<ColumnProps> = (args) => (
+  <SBPadding>
+    <Row hasBorder isList>
+      <Column {...args} hasBorder>
+        <div style={divStyle}>The column content</div>
+      </Column>
+      <Column {...args} hasBorder>
+        <div style={divStyle}>The column content</div>
+      </Column>
+      <Column {...args} hasBorder>
+        <div style={divStyle}>The column content</div>
+      </Column>
+    </Row>
+    <br />
+    <p>The Row is a &lt;ul&gt; and the Columns are &lt;li&gt;</p>
+  </SBPadding>
+);
+
+export const ColumnsIsList = TemplateIsList.bind({});
+ColumnsIsList.args = {
+  isList: true,
+};

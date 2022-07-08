@@ -86,4 +86,14 @@ describe('Column', () => {
 
     expect(component).toHaveStyle('padding: 0;');
   });
+
+  it('should render the column as a list item', () => {
+    props.isList = true;
+    const { getByRole } = renderComponent();
+
+    const listItem = getByRole('listitem');
+
+    expect(listItem).toBeVisible();
+    expect(listItem).toHaveTextContent('example content');
+  });
 });

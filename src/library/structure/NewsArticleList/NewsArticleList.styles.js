@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles};
-  padding: 15px 0;
 `;
 
 export const Title = styled.div`
@@ -60,7 +59,7 @@ export const ArticleContainer = styled.a`
     }
   }
 
-  margin-bottom: 40px;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: flex;

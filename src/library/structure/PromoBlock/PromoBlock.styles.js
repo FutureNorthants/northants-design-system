@@ -23,6 +23,8 @@ export const PromoTilesContainer = styled.div`
  * A promo tile, containing image and text area
  */
 export const PromoTile = styled.a`
+  display: block;
+  width: 100%;
   background: ${(props) =>
     props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.white
@@ -67,33 +69,6 @@ export const PromoTile = styled.a`
     -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15),
       0px 2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} !important;
   }
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-  }
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: 100%;
-    margin-right: 30px;
-    margin-bottom: 20px;
-    display: block;
-    flex: 1;
-    max-width: 50%;
-    min-width: 30%;
-
-    &:nth-of-type(2n) {
-      margin-right: 30px;
-    }
-    &:nth-of-type(3n) {
-      margin-right: 0;
-    }
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
 `;
 
 /**
@@ -104,17 +79,17 @@ export const PromoImage = styled.span`
   width: 100%;
   height: ${imageHeightMobile}px;
   overflow: hidden;
-  background-image: url("${(props) => props.background}");
+  background-image: url('${(props) => props.background}');
   background-size: cover;
   background-position: center;
   justify-self: center;
 
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}){
-    flex: 0 0 40%;  
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    flex: 0 0 40%;
     height: 100%;
     min-height: ${imageHeightMobile}px;
   }
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}){
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     flex: none;
     height: ${imageHeightDesktop}px;
   }
