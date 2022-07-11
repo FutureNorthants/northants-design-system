@@ -97,14 +97,6 @@ export const ArticleContainer = styled.a`
 
 export const ArticleContent = styled.div`
   padding: 15px;
-  height: calc(100% - ${imageHeightMobile + 30}px);
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    height: calc(100% - ${imageHeightDesktop + 30}px);
-  }
 `;
 
 export const ImageContainer = styled.span`

@@ -1,14 +1,10 @@
 import Uri from 'jsuri';
 import { NewsArticleFilterFields } from '../NewsArticleFilterAccordion/NewsArticleFilterAccordionText';
+import { NewsArticleListProps } from './NewsArticleList.types';
 
 var uri = new Uri(window.location);
 
-export const newsArticleData = {
-  pageNumber: 1,
-  totalResults: 23,
-  sortBy: uri.hasQueryParam(NewsArticleFilterFields.sortBy.queryParamKey)
-    ? uri.getQueryParamValue(NewsArticleFilterFields.sortBy.queryParamKey)
-    : 'recentAsc',
+export const NewsArticleFilters = {
   articleType: uri.hasQueryParam(NewsArticleFilterFields.articleType.queryParamKey)
     ? uri.getQueryParamValue(NewsArticleFilterFields.articleType.queryParamKey).split(',')
     : ['article', 'press-release'],
@@ -18,6 +14,15 @@ export const newsArticleData = {
   searchTerm: uri.hasQueryParam(NewsArticleFilterFields.search.queryParamKey)
     ? uri.getQueryParamValue(NewsArticleFilterFields.search.queryParamKey)
     : undefined,
+};
+
+export const newsArticleData: NewsArticleListProps = {
+  pageNumber: 1,
+  totalResults: 23,
+  sortBy: uri.hasQueryParam(NewsArticleFilterFields.sortBy.queryParamKey)
+    ? uri.getQueryParamValue(NewsArticleFilterFields.sortBy.queryParamKey)
+    : 'recentAsc',
+
   results: [
     {
       id: '6036694e465dd0e61e7f784e',
@@ -63,6 +68,8 @@ export const newsArticleData = {
       date: 1614178638,
       image720x405:
         'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
+      image72x41:
+        'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
       url: 'http://',
     },
     {
@@ -92,6 +99,8 @@ export const newsArticleData = {
         'Nulla tempor qui reprehenderit qui. Est esse irure nulla ea veniam mollit consectetur velit. Sunt anim incididunt et dolore sunt ullamco. Eiusmod reprehenderit sunt adipisicing eu irure ullamco nulla cillum esse pariatur.\r\n',
       date: 1614178638,
       image720x405:
+        'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
+      image72x41:
         'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
       url: 'http://',
     },
@@ -152,6 +161,8 @@ export const newsArticleData = {
         'Cillum occaecat eiusmod pariatur cillum Lorem sunt pariatur proident aliquip pariatur aute nostrud. Veniam aliqua qui id consectetur sit incididunt. Sint non voluptate adipisicing anim. Amet tempor id in adipisicing sunt. Aliquip dolore ipsum occaecat officia anim aliqua minim consequat Lorem ipsum.\r\n',
       date: 1614178638,
       image720x405:
+        'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
+      image72x41:
         'https://core-cms.bfi.org.uk/sites/default/files/styles/responsive/public/1440/810/1/2020-08/bfi-film-academy-2020-recruitment-campaign-watershed-two-girls-behind-camera.jpeg',
       url: 'http://',
     },

@@ -14,8 +14,8 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
       <Styles.Container data-testid="NewsArticleList">
         <Row isList>
           {results.map((article) => (
-            <Column isList small="full" medium="full" large="full">
-              <Styles.ArticleContainer href={article.url} title={article.title} key={article.id}>
+            <Column isList small="full" medium="full" large="full" key={article.id}>
+              <Styles.ArticleContainer href={article.url} title={article.title}>
                 {article.image720x405 && (
                   <LazyImage
                     src={article.image720x405}

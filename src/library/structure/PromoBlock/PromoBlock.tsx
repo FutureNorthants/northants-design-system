@@ -13,11 +13,11 @@ import Column from '../../components/Column/Column';
 const PromoBlock: React.FunctionComponent<PromoBlockProps> = ({ promos }) => (
   <>
     {promos && promos.length > 0 && (
-      <Styles.PromoTilesContainer>
+      <Styles.PromoTilesContainer data-testid="PromoBlock">
         <Row isList hasWrap={false}>
           {promos.map((promo, index) => (
-            <Column isList small="full" medium="one-half" large="auto">
-              <Styles.PromoTile key={promo.callToActionURL} href={promo.callToActionURL}>
+            <Column isList small="full" medium="one-half" large="auto" key={promo.callToActionURL}>
+              <Styles.PromoTile href={promo.callToActionURL}>
                 <LazyImage
                   src={promo.imageMedium}
                   placeholder={promo.imageSmall}
