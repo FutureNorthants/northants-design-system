@@ -25,6 +25,7 @@ export const PromoTilesContainer = styled.div`
 export const PromoTile = styled.a`
   display: block;
   width: 100%;
+  height: 100%;
   background: ${(props) =>
     props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.white

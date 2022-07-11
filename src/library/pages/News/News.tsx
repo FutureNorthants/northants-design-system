@@ -22,7 +22,7 @@ export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
     <>
       <PageStructures.Header />
 
-      <PageStructures.MaxWidthContainer noPadding={true}>
+      <PageStructures.MaxWidthContainer noPadding={true} overflowVisible>
         <PageStructures.Breadcrumbs
           breadcrumbsArray={[
             {

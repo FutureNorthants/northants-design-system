@@ -73,7 +73,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
 
       <PageStructures.HomeHero promotedLinksArray={promotedLinksArray} imagesArray={heroArray} />
 
-      <PageStructures.MaxWidthContainer>
+      <PageStructures.MaxWidthContainer overflowVisible>
         <PageStructures.PageMain>
           {themeContext.cardinal_name === 'north' && (
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />

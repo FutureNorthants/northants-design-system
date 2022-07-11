@@ -23,7 +23,7 @@ export interface ContentPageProps {}
 export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
   <>
     <PageStructures.Header />
-    <PageStructures.MaxWidthContainer>
+    <PageStructures.MaxWidthContainer overflowVisible>
       <PageStructures.PageMain>
         <Heading level={1} text="Example page with all slices" />
 

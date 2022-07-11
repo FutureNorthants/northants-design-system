@@ -107,7 +107,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
         </PageStructures.MemorialHero>
 
         <PageStructures.PageWrapper colour="grey_light">
-          <PageStructures.MaxWidthContainer noBackground={true}>
+          <PageStructures.MaxWidthContainer noBackground={true} overflowVisible>
             <PageStructures.ServicesLinksList
               hideHeader={true}
               serviceLinksArray={memorialServiceLinksArray}
@@ -121,7 +121,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
           </PageStructures.MaxWidthContainer>
         </PageStructures.PageWrapper>
 
-        <PageStructures.MaxWidthContainer>
+        <PageStructures.MaxWidthContainer overflowVisible>
           <PageStructures.PageMain>
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
 
