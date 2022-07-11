@@ -54,4 +54,11 @@ export const exampleParishes: ParishAPIResponse[] = [
     code: 'E04006799',
     unitary: 'West',
   },
+  {
+    banding_parish: 'Daventry',
+    bands: exampleBands,
+    official_parish: 'Daventry CP',
+    code: 'E04006799',
+    unitary: 'West',
+  },
 ];

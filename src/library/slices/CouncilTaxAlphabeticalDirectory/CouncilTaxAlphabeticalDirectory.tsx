@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   CouncilTaxAlphabeticalDirectoryProps,
   ParishAPIResponse,
@@ -18,10 +18,16 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
 }) => {
   const [data, setData] = useState<SortedData[]>([]);
   const [parish, setCurrentParish] = useState<SortedParish>(null);
+  const directoryRef = useRef(null);
 
   useEffect(() => {
     setData(formatParishData(parishes));
   }, []);
+
+  const showParish = (sortedParish: SortedParish) => {
+    setCurrentParish(sortedParish);
+    directoryRef.current.scrollIntoView();
+  };
 
   /**
    * Trim NCP or CP from the end of the parish name
@@ -91,7 +97,7 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
     });
 
   return (
-    <Styles.Container data-testid="AlphabeticalDirectory">
+    <Styles.Container data-testid="AlphabeticalDirectory" ref={directoryRef}>
       <>
         {parishes.length === 0 && (
           <Styles.ErrorText>There was an issue fetching the parish data. Please try again later.</Styles.ErrorText>
@@ -108,7 +114,7 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
                     <Row>
                       {letter.children.map((letterData, i) => (
                         <Column small="one-half" medium="one-half" large="one-half" key={i}>
-                          <Styles.Link onClick={() => setCurrentParish(letterData)}>{letterData.title}</Styles.Link>
+                          <Styles.Link onClick={() => showParish(letterData)}>{letterData.title}</Styles.Link>
                         </Column>
                       ))}
                     </Row>
