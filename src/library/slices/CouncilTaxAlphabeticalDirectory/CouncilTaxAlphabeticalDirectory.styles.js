@@ -8,23 +8,11 @@ export const Container = styled.div`
 export const Row = styled.div`
   margin-bottom: 15px;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-  display: grid;
-  grid-template-columns: minmax(80px, min-content) 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 1em;
-  grid-template-areas: 'letter data';
 `;
 
 export const Letter = styled.div`
   text-transform: uppercase;
   ${(props) => props.theme.theme_vars.h1}
-  grid-area: letter;
-`;
-
-export const Data = styled.div`
-  padding: 15px;
-  column-count: 2;
-  column-gap: 15px;
 `;
 
 export const Link = styled.a`
