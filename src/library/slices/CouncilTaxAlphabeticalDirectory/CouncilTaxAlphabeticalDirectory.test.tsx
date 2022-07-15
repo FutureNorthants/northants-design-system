@@ -48,6 +48,9 @@ describe('Council Tax Alphabetical Directory', () => {
   });
 
   it('should display the bands when the parish name is clicked, then hide when back is clicked', async () => {
+    // scrollIntoView is not implemented in jsdom
+    window.HTMLElement.prototype.scrollIntoView = function () {};
+
     const { getByTestId, getByText } = renderComponent();
     const component = getByTestId('AlphabeticalDirectory');
 
