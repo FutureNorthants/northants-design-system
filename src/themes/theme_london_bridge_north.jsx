@@ -13,7 +13,7 @@ export const lb_vars_north = {
   council_link: 'https://www.northnorthants.gov.uk',
   other_council_link: 'https://www.westnorthants.gov.uk',
   other_council_name: 'West Northamptonshire',
-  other_council_action: '#386193',
+  other_council_action: '#385889',
   twitter_link: 'https://twitter.com/NNorthantsC',
   linkedin_link: 'https://www.linkedin.com/company/north-northamptonshire-council',
   facebook_link: 'https://www.facebook.com/NorthNorthants',
