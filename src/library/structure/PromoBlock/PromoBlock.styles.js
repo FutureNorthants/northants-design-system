@@ -86,9 +86,7 @@ export const PromoImage = styled.span`
   justify-self: center;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    flex: 0 0 40%;
-    height: 100%;
-    min-height: ${imageHeightMobile}px;
+    min-height: ${imageHeightDesktop}px;
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     flex: none;
