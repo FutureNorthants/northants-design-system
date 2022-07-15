@@ -14,7 +14,7 @@ export const Outer = styled.div`
 export const Link = styled.a`
   margin-bottom: 15px;
   display: block;
-  width: fit-content;
+  width: 100%;
   position: relative;
   min-width: 300px;
 

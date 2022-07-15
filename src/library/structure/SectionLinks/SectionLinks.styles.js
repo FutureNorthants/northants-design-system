@@ -10,7 +10,6 @@ export const SectionTitle = styled(Heading)`
       : props.theme.theme_vars.colours.grey_light};
   padding: 10px 15px;
   width: 100%;
-  margin-left: -15px;
   margin-bottom: 15px;
   max-width: none !important;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
@@ -22,16 +21,6 @@ export const SectionTitle = styled(Heading)`
   }
 `;
 
-export const LinksList = styled.div`
-  display: flex;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
 export const Pagelink = styled.a`
   color: ${(props) => props.theme.theme_vars.colours.black};
   text-decoration: none !important;
@@ -39,6 +28,7 @@ export const Pagelink = styled.a`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   width: 100%;
+  height: 100%;
 
   &:hover,
   &:focus {

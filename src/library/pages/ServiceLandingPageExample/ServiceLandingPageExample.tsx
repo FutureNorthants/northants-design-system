@@ -64,7 +64,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
       </PageStructures.FullWidthContainer>
     )}
 
-    <PageStructures.MaxWidthContainer overflowVisible>
+    <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain fullWidthText>
         {showSummary && summary?.trim() && (
           <Summary>
