@@ -52,7 +52,7 @@ export const ServiceLinksArray = [
   {
     title: 'Bin collection, recycling and waste',
     url: '/iframe.html?id=page-examples-service-landing-page-examples--bin-collection-example&viewMode=story',
-    iconKey: 'bins',
+    iconKey: 'flytip',
     quickLinksArray: [
       {
         title: 'Find your collection day',

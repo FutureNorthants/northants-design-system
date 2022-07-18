@@ -1,4 +1,5 @@
 const path = require('path');
+const pathToInlineSvg = path.resolve(__dirname, '../src/icons');
 
 module.exports = {
   core: {
@@ -26,6 +27,26 @@ module.exports = {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
+    });
+
+    const rules = config.module.rules;
+
+    // modify storybook's file-loader rule to avoid conflicts with svgr
+    const fileLoaderRule = rules.find((rule) => rule.test.test('.svg'));
+    fileLoaderRule.exclude = pathToInlineSvg;
+
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            typescript: true,
+            replaceAttrValues: { '#386193': '{props.colourFill}' },
+          },
+        },
+      ],
     });
 
     config.module.rules.push({

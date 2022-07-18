@@ -4,7 +4,7 @@ import AddressChangeIcon from './AddressChangeIcon/Icon';
 import AddressChangeIconHover from './AddressChangeIconHover/Icon';
 import AddressIcon from './AddressIcon/Icon';
 import AddressIconHover from './AddressIconHover/Icon';
-import AdultsIcon from './AdultsIcon/Icon';
+import AdultsIcon from '../../../../icons/adults.svg';
 import AdultsIconHover from './AdultsIconHover/Icon';
 import BenefitsIcon from './BenefitsIcon/Icon';
 import BenefitsIconHover from './BenefitsIconHover/Icon';
@@ -109,6 +109,9 @@ import SportsIconHover from './SportsIconHover/Icon';
 import ValuationIcon from './ValuationIcon/Icon';
 import ValuationIconHover from './ValuationIconHover/Icon';
 
+import Flytip from '../../../../icons/flytip.svg';
+import FlytipHover from '../../../../icons/flytip-hover.svg';
+
 let components = {
   adults: AdultsIcon,
   adultsHover: AdultsIconHover,
@@ -166,6 +169,8 @@ let components = {
   financeHover: FinanceIconHover,
   flower: FlowerIcon,
   flowerHover: FlowerIconHover,
+  flytip: Flytip,
+  flytipHover: FlytipHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
   highway: HighwayIcon,
