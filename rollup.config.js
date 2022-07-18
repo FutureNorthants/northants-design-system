@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import svg from 'rollup-plugin-svg';
 import json from '@rollup/plugin-json';
+import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
 
@@ -24,6 +25,7 @@ export default {
     },
   ],
   plugins: [
+    svgr(),
     peerDepsExternal(),
     resolve({
       extensions: extensions,
@@ -34,7 +36,7 @@ export default {
         'react-is': ['isForwardRef'],
       },
     }),
-    svg(),
+    // svg(),
     typescript({ useTsconfigDeclarationDir: true }),
     json({
       // All JSON files will be parsed by default,

@@ -44,6 +44,7 @@ module.exports = {
           options: {
             typescript: true,
             replaceAttrValues: { '#386193': '{props.colourFill}' },
+            dimensions: true,
           },
         },
       ],
