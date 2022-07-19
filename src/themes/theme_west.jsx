@@ -13,7 +13,7 @@ export const west_vars = {
   council_link: 'https://www.westnorthants.gov.uk',
   other_council_link: 'https://www.northnorthants.gov.uk',
   other_council_name: 'North Northamptonshire',
-  other_council_action: '#017F34',
+  other_council_action: '#016600',
   twitter_link: 'https://twitter.com/WestNorthants',
   linkedin_link: 'https://www.linkedin.com/company/west-northamptonshire-council',
   facebook_link: 'https://www.facebook.com/WestNorthants',
@@ -40,7 +40,7 @@ export const west_vars = {
     grey_light: '#F5F5F5',
     white: '#FFFFFF',
 
-    action: '#386193',
+    action: '#385889',
     action_light: '#E9EEF3',
     action_dark: '#0E335B',
     positive: '#6C9A36',
