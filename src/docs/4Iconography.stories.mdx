@@ -1,15 +1,11 @@
-import { Meta, Story } from '@storybook/addon-docs';
-
-import AdultsIcon from '../library/components/icons/services/AdultsIcon/Icon';
-import BenefitsIcon from '../library/components/icons/services/BenefitsIcon/Icon';
-import BinsIcon from '../library/components/icons/services/BinsIcon/Icon';
-import BirthsIcon from '../library/components/icons/services/BirthsIcon/Icon';
-import BusinessIcon from '../library/components/icons/services/BusinessIcon/Icon';
-import CareersIcon from '../library/components/icons/services/CareersIcon/Icon';
-import ChildrenIcon from '../library/components/icons/services/ChildrenIcon/Icon';
-import CouncilIcon from '../library/components/icons/services/CouncilIcon/Icon';
-import CouncilTaxIcon from '../library/components/icons/services/CouncilTaxIcon/Icon';
-import CovidIcon from '../library/components/icons/services/CovidIcon/Icon';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import serviceIcons from '../library/components/icons/services/ServicesIcons';
+import DynamicIcon from '../library/components/DynamicIcon/DynamicIcon';
+import Row from '../library/components/Row/Row';
+import Column from '../library/components/Column/Column';
+import HeadingWithIcon from '../library/components/HeadingWithIcon/HeadingWithIcon';
+import Heading from '../library/components/Heading/Heading';
+import MaxWidthContainer from '../library/structure/MaxWidthContainer/MaxWidthContainer';
 
 <Meta title="Documentation/Iconography" />
 
@@ -17,4 +13,23 @@ import CovidIcon from '../library/components/icons/services/CovidIcon/Icon';
 
 text here
 
-<AdultsIcon colourFill="black" />
+<Canvas>
+  <Story name="All Service Icons">
+    <MaxWidthContainer>
+      <Row>
+        <Column small="full" medium="full" large="full">
+          <Heading level={1} text="All Service Icons" />
+        </Column>
+        {Object.keys(serviceIcons).map((serviceIcon) => (
+          <>
+            {!serviceIcon.endsWith('Hover') && (
+              <Column small="full" medium="full" large="one-half" key={serviceIcon}>
+                <HeadingWithIcon level={3} text={serviceIcon} icon={serviceIcon} hasHover={true} />
+              </Column>
+            )}
+          </>
+        ))}
+      </Row>
+    </MaxWidthContainer>
+  </Story>
+</Canvas>
