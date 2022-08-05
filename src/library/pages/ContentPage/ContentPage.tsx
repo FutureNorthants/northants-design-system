@@ -143,8 +143,8 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               </tr>
             </thead>
             <tbody>
-              {smallTable.data.map((row) => (
-                <tr key={row}>
+              {smallTable.data.map((row, index) => (
+                <tr key={index}>
                   {row.map((item) => (
                     <td key={item}>{item}</td>
                   ))}
@@ -176,6 +176,38 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
                   ))}
                 </tr>
               ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p>Example table with a nested list:</p>
+        <div className="table-container">
+          <table>
+            <caption>Example table with a nested list</caption>
+            <thead>
+              <tr>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Example item</th>
+                <td>
+                  <ul>
+                    <li>List item</li>
+                    <li>
+                      List item
+                      <ul>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                      </ul>
+                    </li>
+                    <li>List item</li>
+                  </ul>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
