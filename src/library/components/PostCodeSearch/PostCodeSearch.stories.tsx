@@ -24,4 +24,6 @@ const Template: Story<PostCodeSearchProps> = (args) => (
 );
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  otherCouncilLink: 'https://www.westnorthants.gov.uk',
+};

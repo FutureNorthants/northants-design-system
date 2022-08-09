@@ -27,11 +27,13 @@ export {
 import Accordion from './library/slices/Accordion/Accordion';
 import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
+import CouncilTaxAlphabeticalDirectory from './library/slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
 import Cards from './library/slices/Cards/Cards';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
 import Divider from './library/slices/Divider/Divider';
 import GoogleMap from './library/slices/GoogleMap/GoogleMap';
 import Image from './library/slices/Image/Image';
+import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import Promotions from './library/slices/Promotions/Promotions';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
@@ -42,10 +44,12 @@ export {
   BlockQuote,
   CallToAction,
   Cards,
+  CouncilTaxAlphabeticalDirectory,
   Divider,
   DownloadableFiles,
   GoogleMap,
   Image,
+  ImageAndText,
   Promotions,
   Video,
   WarningText,

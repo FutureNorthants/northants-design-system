@@ -11,7 +11,6 @@ import FullWidthContainer from './FullWidthContainer/FullWidthContainer';
 import Header from './Header/Header';
 import HeroImage from './HeroImage/HeroImage';
 import HomeHero from './HomeHero/HomeHero';
-import HomeUnitarySection from './HomeUnitarySection/HomeUnitarySection';
 import MaxWidthContainer from './MaxWidthContainer/MaxWidthContainer';
 import MemorialHero from './MemorialHero/MemorialHero';
 import NewsArticleDate from './NewsArticleDate/NewsArticleDate';
@@ -54,7 +53,6 @@ export {
   Header,
   HeroImage,
   HomeHero,
-  HomeUnitarySection,
   MaxWidthContainer,
   MemorialHero,
   NewsArticleDate,

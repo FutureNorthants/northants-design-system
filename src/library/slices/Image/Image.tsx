@@ -13,7 +13,7 @@ const Image: React.FunctionComponent<ImageProps> = ({
   imageAltText,
   ratio = '4by3',
   caption,
-  wrapText = false,
+  wrapText,
 }) => (
   <Styles.Container data-testid="Image" wrapText={wrapText}>
     <Styles.ImageContainer data-testid="ImageContainer" ratio={ratio}>

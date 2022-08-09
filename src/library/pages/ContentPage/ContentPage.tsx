@@ -13,6 +13,10 @@ import Promotions from '../../slices/Promotions/Promotions';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
 import { GoogleMapWithTitleAndDescription } from '../../slices/GoogleMap/GoogleMap.storydata';
 import GoogleMap from '../../slices/GoogleMap/GoogleMap';
+import Image from '../../slices/Image/Image';
+import ImageAndText from '../../slices/ImageAndText/ImageAndText';
+import { ImageWithCaption } from '../../slices/Image/Image.storydata';
+import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
 
 export interface ContentPageProps {}
 
@@ -56,7 +60,13 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.
         </p>
         <ul>
-          <li>list 1 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+          <li>
+            list 1 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </li>
           <li>list 2</li>
           <li>list 3</li>
         </ul>
@@ -133,8 +143,8 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               </tr>
             </thead>
             <tbody>
-              {smallTable.data.map((row) => (
-                <tr key={row}>
+              {smallTable.data.map((row, index) => (
+                <tr key={index}>
                   {row.map((item) => (
                     <td key={item}>{item}</td>
                   ))}
@@ -166,6 +176,38 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
                   ))}
                 </tr>
               ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p>Example table with a nested list:</p>
+        <div className="table-container">
+          <table>
+            <caption>Example table with a nested list</caption>
+            <thead>
+              <tr>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Example item</th>
+                <td>
+                  <ul>
+                    <li>List item</li>
+                    <li>
+                      List item
+                      <ul>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                      </ul>
+                    </li>
+                    <li>List item</li>
+                  </ul>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -205,6 +247,9 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         />
         <Promotions promos={PromoBlocksData} />
         <GoogleMap {...GoogleMapWithTitleAndDescription} />
+        <Heading level={2} text="Full Width Image" />
+        <Image {...ImageWithCaption} />
+        <ImageAndText {...ImageAndTextWithHeading} />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
