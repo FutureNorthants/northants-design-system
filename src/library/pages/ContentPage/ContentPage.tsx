@@ -179,6 +179,38 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
             </tbody>
           </table>
         </div>
+
+        <p>Example table with a nested list:</p>
+        <div className="table-container">
+          <table>
+            <caption>Example table with a nested list</caption>
+            <thead>
+              <tr>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Example item</th>
+                <td>
+                  <ul>
+                    <li>List item</li>
+                    <li>
+                      List item
+                      <ul>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                      </ul>
+                    </li>
+                    <li>List item</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <Accordion
           sections={[
             {

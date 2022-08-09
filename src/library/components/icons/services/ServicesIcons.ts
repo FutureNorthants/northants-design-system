@@ -8,6 +8,8 @@ import AdultsIcon from './AdultsIcon/Icon';
 import AdultsIconHover from './AdultsIconHover/Icon';
 import BenefitsIcon from './BenefitsIcon/Icon';
 import BenefitsIconHover from './BenefitsIconHover/Icon';
+import BinDayIcon from './BinDay/Icon';
+import BinDayIconHover from './BinDayHover/Icon';
 import BinsIcon from './BinsIcon/Icon';
 import BinsIconHover from './BinsIconHover/Icon';
 import BirthsIcon from './BirthsIcon/Icon';
@@ -54,6 +56,10 @@ import FinanceIcon from './FinanceIcon/Icon';
 import FinanceIconHover from './FinanceIconHover/Icon';
 import FlowerIcon from './Flower/Icon';
 import FlowerIconHover from './FlowerHover/Icon';
+import FlyTipIcon from './FlyTip/Icon';
+import FlyTipIconHover from './FlyTipHover/Icon';
+import FoodWasteIcon from './FoodWaste/Icon';
+import FoodWasteIconHover from './FoodWasteHover/Icon';
 import GovUKIcon from './GovUKIcon/Icon';
 import GovUKIconHover from './GovUKIconHover/Icon';
 import HighwayIcon from './Highway/Icon';
@@ -66,6 +72,10 @@ import IndependenceIcon from './IndependenceIcon/Icon';
 import IndependenceIconHover from './IndependenceIconHover/Icon';
 import LibrariesIcon from './LibrariesIcon/Icon';
 import LibrariesIconHover from './LibrariesIconHover/Icon';
+import MapPinIcon from './MapPin/Icon';
+import MapPinIconHover from './MapPinHover/Icon';
+import MissedBinIcon from './MissedBin/Icon';
+import MissedBinIconHover from './MissedBinHover/Icon';
 import NewIcon from './NewIcon/Icon';
 import NewIconHover from './NewIconHover/Icon';
 import OccupationalTherapyIcon from './OccupationalTherapyIcon/Icon';
@@ -108,6 +118,10 @@ import SportsIcon from './SportsIcon/Icon';
 import SportsIconHover from './SportsIconHover/Icon';
 import ValuationIcon from './ValuationIcon/Icon';
 import ValuationIconHover from './ValuationIconHover/Icon';
+import WasteChecklistIcon from './WasteChecklist/Icon';
+import WasteChecklistIconHover from './WasteChecklistHover/Icon';
+import WasteSortingIcon from './WasteSorting/Icon';
+import WasteSortingIconHover from './WasteSortingHover/Icon';
 
 let components = {
   adults: AdultsIcon,
@@ -118,6 +132,8 @@ let components = {
   addressHover: AddressIconHover,
   benefits: BenefitsIcon,
   benefitsHover: BenefitsIconHover,
+  binday: BinDayIcon,
+  bindayHover: BinDayIconHover,
   bins: BinsIcon,
   binsHover: BinsIconHover,
   births: BirthsIcon,
@@ -166,6 +182,10 @@ let components = {
   financeHover: FinanceIconHover,
   flower: FlowerIcon,
   flowerHover: FlowerIconHover,
+  flytip: FlyTipIcon,
+  flytipHover: FlyTipIconHover,
+  foodwaste: FoodWasteIcon,
+  foodwasteHover: FoodWasteIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
   highway: HighwayIcon,
@@ -178,6 +198,10 @@ let components = {
   independenceHover: IndependenceIconHover,
   libraries: LibrariesIcon,
   librariesHover: LibrariesIconHover,
+  mappin: MapPinIcon,
+  mappinHover: MapPinIconHover,
+  missedbin: MissedBinIcon,
+  missedbinHover: MissedBinIconHover,
   new: NewIcon,
   newHover: NewIconHover,
   occupationaltherapy: OccupationalTherapyIcon,
@@ -220,6 +244,10 @@ let components = {
   sportsHover: SportsIconHover,
   valuation: ValuationIcon,
   valuationHover: ValuationIconHover,
+  wastechecklist: WasteChecklistIcon,
+  wastechecklistHover: WasteChecklistIconHover,
+  wastesorting: WasteSortingIcon,
+  wastesortingHover: WasteSortingIconHover,
 };
 
 export default components;
