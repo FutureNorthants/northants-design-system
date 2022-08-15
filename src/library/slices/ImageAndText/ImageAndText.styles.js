@@ -11,5 +11,7 @@ export const HeadingContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  }
 `;

@@ -1,24 +1,24 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import PromotedLinks from "./PromotedLinks";
-import { PromotedLinksProps } from "./PromotedLinks.types";
-import { ThemeProvider } from "styled-components";
-import { west_theme } from "../../../themes/theme_generator";
+import PromotedLinks from './PromotedLinks';
+import { PromotedLinksProps } from './PromotedLinks.types';
+import { ThemeProvider } from 'styled-components';
+import { west_theme } from '../../../themes/theme_generator';
 
-describe("Test Component", () => {
+describe('Test Component', () => {
   let props: PromotedLinksProps;
 
   beforeEach(() => {
     props = {
       promotedLinksArray: [
         {
-          title: "The first link",
-          url: "/the-first-url/",
+          title: 'The first link',
+          url: '/the-first-url/',
         },
         {
-          title: "The second link",
-          url: "/the-second-url/",
+          title: 'The second link',
+          url: '/the-second-url/',
         },
       ],
       oneCol: true,
@@ -32,11 +32,11 @@ describe("Test Component", () => {
       </ThemeProvider>
     );
 
-  it("should render foo text correctly", () => {
+  it('should render the link text correctly', () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("PromotedLinks");
+    const component = getByTestId('PromotedLinks');
 
-    expect(component).toHaveTextContent("The first link");
+    expect(component).toHaveTextContent('The first link');
   });
 });

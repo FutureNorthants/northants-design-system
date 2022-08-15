@@ -8,15 +8,15 @@ export const Container = styled.figure`
       : props.theme.theme_vars.colours.grey_light};
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
-  width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
+  float: none;
+  width: 100%;
+  margin-right: 0;
 
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    float: none;
-    width: 100%;
-    margin-right: 0;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
+    width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
+    margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
   }
 `;
 

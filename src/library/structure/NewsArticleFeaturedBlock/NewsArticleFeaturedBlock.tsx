@@ -5,6 +5,8 @@ import * as Styles from './NewsArticleFeaturedBlock.styles';
 import NewsArticleDate from '../NewsArticleDate/NewsArticleDate';
 import Heading from '../../components/Heading/Heading';
 import Button from '../../components/Button/Button';
+import Row from '../../components/Row/Row';
+import Column from '../../components/Column/Column';
 
 /**
  * Block displaying up to 9 news article tiles, with image, title and date for each
@@ -19,33 +21,43 @@ const NewsArticleFeaturedBlock: React.FunctionComponent<NewsArticleFeaturedBlock
       <>
         {!withoutTitle && <Heading text="News articles and press releases" />}
         <Styles.Container>
-          {articles.map((article) => (
-            <Styles.ArticleContainer key={article.id} href={article.url}>
-              {article.image720x405 && (
-                <LazyImage
-                  src={article.image720x405}
-                  placeholder={article.image72x41}
-                  visibilitySensorProps={{
-                    partialVisibility: true,
-                  }}
-                >
-                  {(src) => (
-                    <Styles.ImageContainer
-                      background={src}
-                      role="img"
-                      aria-label={article.imageAltText ? article.imageAltText : ''}
-                    />
-                  )}
-                </LazyImage>
-              )}
-              <Styles.ArticleContent>
-                <Styles.Title className="article_title">{article.title}</Styles.Title>
-                <Styles.DateContainer>
-                  <NewsArticleDate text={article.date.toString()} format="X" />
-                </Styles.DateContainer>
-              </Styles.ArticleContent>
-            </Styles.ArticleContainer>
-          ))}
+          <Row isList>
+            {articles.map((article) => (
+              <Column isList small="full" medium="one-half" large="one-third" key={article.id}>
+                <Styles.ArticleContainer href={article.url}>
+                  <Row>
+                    {article.image720x405 && (
+                      <Column small="full" medium="full" large="full" hasPadding={false}>
+                        <LazyImage
+                          src={article.image720x405}
+                          placeholder={article.image72x41}
+                          visibilitySensorProps={{
+                            partialVisibility: true,
+                          }}
+                        >
+                          {(src) => (
+                            <Styles.ImageContainer
+                              background={src}
+                              role="img"
+                              aria-label={article.imageAltText ? article.imageAltText : ''}
+                            />
+                          )}
+                        </LazyImage>
+                      </Column>
+                    )}
+                    <Column small="full" medium="full" large="full">
+                      <Styles.ArticleContent>
+                        <Styles.Title className="article_title">{article.title}</Styles.Title>
+                        <Styles.DateContainer>
+                          <NewsArticleDate text={article.date.toString()} format="X" />
+                        </Styles.DateContainer>
+                      </Styles.ArticleContent>
+                    </Column>
+                  </Row>
+                </Styles.ArticleContainer>
+              </Column>
+            ))}
+          </Row>
         </Styles.Container>
         {viewAllLink && (
           <Styles.ViewAllContainer>

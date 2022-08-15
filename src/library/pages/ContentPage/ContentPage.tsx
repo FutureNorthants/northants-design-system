@@ -143,8 +143,8 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               </tr>
             </thead>
             <tbody>
-              {smallTable.data.map((row, index) => (
-                <tr key={index}>
+              {smallTable.data.map((row, rowIndex) => (
+                <tr key={rowIndex}>
                   {row.map((item) => (
                     <td key={item}>{item}</td>
                   ))}

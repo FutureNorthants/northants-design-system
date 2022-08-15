@@ -20,10 +20,23 @@ describe('Test Component', () => {
     );
 
   it('should render content correctly', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, queryByRole } = renderComponent();
 
     const component = getByTestId('Row');
+    const list = queryByRole('list');
 
     expect(component).toHaveTextContent('example content');
+    expect(list).toBeNull();
+  });
+
+  it('should render the container as an unordered list', () => {
+    props.isList = true;
+
+    const { getByRole } = renderComponent();
+
+    const list = getByRole('list');
+
+    expect(list).toBeVisible();
+    expect(list).toHaveAttribute('data-testid', 'Row');
   });
 });

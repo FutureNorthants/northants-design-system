@@ -33,14 +33,18 @@ export const FooterListItem = styled.li`
   margin-bottom: 15px;
 `;
 
-export const SocialLinks = styled.div`
-  margin-bottom: 15px;
-  margin-top: 5px;
+export const SocialLinks = styled.ul`
+  margin: 5px 0 15px 0;
+  list-style: none;
+`;
+
+export const SocialLinkItem = styled.li`
+  left: 0;
+  display: inline-block;
 `;
 
 export const SocialLinkSingle = styled.a`
   display: inline-block;
-  margin-right: 15px;
   height: 36px;
 
   &:hover {

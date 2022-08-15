@@ -38,7 +38,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         rejectButtonText="No, thanks"
         acceptCallback={() => {
           var tag = document.createElement('script');
-          tag.src = 'https://www.googletagmanager.com/gtag/js?id=GTM_TRACKING_ID';
+          tag.src = 'https://www.googletagmanager.com/gtag/js?id=<%= ENV["GTM_TRACKING_ID"] %>';
           document.getElementsByTagName('head')[0].appendChild(tag);
           window.dataLayer = window.dataLayer || [];
 
