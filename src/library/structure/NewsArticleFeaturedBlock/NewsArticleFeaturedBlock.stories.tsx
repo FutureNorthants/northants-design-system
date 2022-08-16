@@ -43,6 +43,7 @@ export const Example3Articles = Template.bind({});
 Example3Articles.args = {
   articles: NewsArticleData.slice(0, 3),
 };
+
 export const Example2Articles = Template.bind({});
 Example2Articles.args = {
   articles: NewsArticleData.slice(0, 2),
