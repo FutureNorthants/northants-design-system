@@ -4,4 +4,14 @@ export interface RowProps {
    * Should only used for demonstrating grid
    */
   hasBorder?: boolean;
+
+  /**
+   * Is the container an unordered list?
+   */
+  isList?: boolean;
+
+  /**
+   * Option to prevent wrapping
+   */
+  hasWrap?: boolean;
 }

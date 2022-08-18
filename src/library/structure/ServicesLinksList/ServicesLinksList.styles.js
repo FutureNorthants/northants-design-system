@@ -24,7 +24,7 @@ export const Container = styled.div`
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     max-height: none;
-    margin-top: 30px;
+    margin-top: 15px;
   }
 `;
 

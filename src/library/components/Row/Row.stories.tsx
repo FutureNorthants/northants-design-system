@@ -22,3 +22,8 @@ const Template: Story<RowProps> = (args) => (
 
 export const ExampleRow = Template.bind({});
 ExampleRow.args = {};
+
+export const ExampleRowList = Template.bind({});
+ExampleRowList.args = {
+  isList: true,
+};

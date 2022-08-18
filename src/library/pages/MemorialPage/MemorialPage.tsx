@@ -121,7 +121,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
           </PageStructures.MaxWidthContainer>
         </PageStructures.PageWrapper>
 
-        <PageStructures.MaxWidthContainer>
+        <PageStructures.MaxWidthContainer overflowVisible>
           <PageStructures.PageMain>
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
 

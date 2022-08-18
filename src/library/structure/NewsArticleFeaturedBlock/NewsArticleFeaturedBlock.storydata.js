@@ -5,7 +5,7 @@ export const NewsArticleData = [
   {
     id: '6036694e95f7c8c6729a46bf',
     url: '/',
-    title: 'Veniam nostrud excepteur elit non cupidatat deserunt sunt amet ad ipsum sunt incididunt.',
+    title: 'Veniam nostrud excepteur',
     date: 1614178638,
     image720x405:
       'https://cms-staging.westnorthants.gov.uk/sites/default/files/styles/responsive/public/720/405/0/2022-02/HMD-Facebook-graphic_3.jpg',
@@ -16,7 +16,7 @@ export const NewsArticleData = [
   {
     id: '6036694e71b8eedb00cff39f',
     url: '/',
-    title: 'Non minim ad ullamco exercitation pariatur eu dolor occaecat ullamco culpa excepteur cillum irure.',
+    title: 'Non minim ad ullamco',
     excerpt:
       'Cillum occaecat eiusmod pariatur cillum Lorem sunt pariatur proident aliquip pariatur aute nostrud. Veniam aliqua qui id consectetur sit incididunt. Sint non voluptate adipisicing anim. Amet tempor id in adipisicing sunt. Aliquip dolore ipsum occaecat officia anim aliqua minim consequat Lorem ipsum.\r\n',
     date: 1614178638,
@@ -29,7 +29,7 @@ export const NewsArticleData = [
   {
     id: '6036694ed3c1de9114024a02',
     url: '/',
-    title: 'In sint incididunt dolor officia consectetur proident mollit exercitation magna.',
+    title: 'In sint incididunt dolor',
     date: 1614178638,
     image720x405:
       'https://cms-staging.westnorthants.gov.uk/sites/default/files/styles/responsive/public/720/405/0/2022-01/For%20The%20Love%20Of%20Books%20-%20logo%20-%20landscape.png',

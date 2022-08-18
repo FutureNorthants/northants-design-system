@@ -12,5 +12,5 @@ export const smallTable = {
 
 export const largeTable = {
   caption: 'Example table with lots of data',
-  headings: ['', 'Band A', 'Band B', 'Band C', 'Band D', 'Band E', 'Band F', 'Band G', 'Band H'],
+  headings: ['Parish', 'Band A', 'Band B', 'Band C', 'Band D', 'Band E', 'Band F', 'Band G', 'Band H'],
 };
