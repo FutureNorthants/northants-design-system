@@ -51,7 +51,10 @@ describe('CheckboxListFilter', () => {
     expect(checkboxes[1]).toHaveAttribute('value', 'press-release');
     expect(checkboxes[1]).not.toBeChecked();
 
-    expect(legend).not.toBeVisible();
+    // Legend should be Visually Hidden
+    expect(legend).toHaveStyle('width: 1px;');
+    expect(legend).toHaveStyle('height: 1px;');
+
     expect(hint).not.toBeVisible();
   });
 
@@ -60,8 +63,11 @@ describe('CheckboxListFilter', () => {
     props.displayLegend = false;
 
     const { getByTestId } = renderComponent();
+    const legend = getByTestId('CheckboxListFilterLegend');
 
-    expect(getByTestId('CheckboxListFilterLegend')).not.toBeVisible();
+    // Legend should be Visually Hidden
+    expect(legend).toHaveStyle('width: 1px;');
+    expect(legend).toHaveStyle('height: 1px;');
   });
 
   it('checks the checked checkbox', () => {
@@ -83,7 +89,8 @@ describe('CheckboxListFilter', () => {
 
     const legend = getByText('The legend label');
 
-    expect(legend).toBeVisible();
+    expect(legend).not.toHaveStyle('width: 1px;');
+    expect(legend).not.toHaveStyle('height: 1px;');
     expect(legend).toHaveStyle('display: table;');
   });
 

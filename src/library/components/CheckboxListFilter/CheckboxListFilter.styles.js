@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { VisuallyHidden } from './../../helpers/style-helpers';
 
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles};
@@ -19,14 +20,8 @@ export const Fieldset = styled.fieldset`
 `;
 
 const hideLabel = (props) => {
-  if (props.labelHidden === true) {
-    return css`
-      display: none;
-    `;
-  } else {
-    return css`
-      display: table;
-    `;
+  if (props.labelHidden == true) {
+    return VisuallyHidden;
   }
 };
 
@@ -34,6 +29,7 @@ export const Legend = styled.legend`
   color: #0b0c0c;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: table;
   max-width: 100%;
   margin-bottom: 10px;
   padding: 0;
