@@ -55,7 +55,9 @@ describe('CheckboxListFilter', () => {
     expect(legend).toHaveStyle('width: 1px;');
     expect(legend).toHaveStyle('height: 1px;');
 
-    expect(hint).not.toBeVisible();
+    // Hint should be Visually Hidden
+    expect(hint).toHaveStyle('width: 1px;');
+    expect(hint).toHaveStyle('height: 1px;');
   });
 
   it('hides the ledgend when label is set', () => {
@@ -96,6 +98,7 @@ describe('CheckboxListFilter', () => {
 
   it('displays the hint text', () => {
     props.hint = 'The hint text';
+    props.hintId = 'my-custom-hint-id';
 
     const { getByText } = renderComponent();
 
@@ -103,5 +106,6 @@ describe('CheckboxListFilter', () => {
 
     expect(hintText).toBeVisible();
     expect(hintText).toHaveStyle('display: block;');
+    expect(hintText).toHaveAttribute('id', 'my-custom-hint-id');
   });
 });

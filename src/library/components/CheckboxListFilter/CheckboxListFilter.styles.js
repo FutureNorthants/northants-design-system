@@ -20,7 +20,7 @@ export const Fieldset = styled.fieldset`
 `;
 
 const hideLabel = (props) => {
-  if (props.labelHidden == true) {
+  if (props.labelHidden) {
     return VisuallyHidden;
   }
 };
@@ -39,18 +39,13 @@ export const Legend = styled.legend`
 
 const hideHint = (props) => {
   if (props.hintHidden) {
-    return css`
-      display: none;
-    `;
-  } else {
-    return css`
-      display: block;
-    `;
+    return VisuallyHidden;
   }
 };
 
 export const Hint = styled.div`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+  display: block;
   margin-bottom: 15px;
   color: #505a5f;
   margin-top: -5px;

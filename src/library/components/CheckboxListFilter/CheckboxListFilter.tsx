@@ -10,6 +10,7 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   label = null,
   hint = null,
   displayLegend,
+  hintId = 'hint',
 }) => {
   let labelHidden = label === null || !displayLegend ? true : false;
   let hintHidden = hint === null ? true : false;
@@ -43,11 +44,11 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   const backupLabel = Math.random().toString(36).substring(7);
   return (
     <Styles.Container data-testid="CheckboxListFilter">
-      <Styles.Fieldset aria-describedby="waste-hint">
+      <Styles.Fieldset aria-describedby={hintId}>
         <Styles.Legend labelHidden={labelHidden} data-testid="CheckboxListFilterLegend">
           {label}
         </Styles.Legend>
-        <Styles.Hint id="waste-hint" hintHidden={hintHidden} data-testid="CheckboxListFilterHint">
+        <Styles.Hint id={hintId} hintHidden={hintHidden} data-testid="CheckboxListFilterHint">
           {hint}
         </Styles.Hint>
         <Styles.Checkboxes>
