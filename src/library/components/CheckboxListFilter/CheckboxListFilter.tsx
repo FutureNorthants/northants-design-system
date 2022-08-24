@@ -7,7 +7,7 @@ import { handleParams } from './../../helpers/url-helpers';
 const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   options,
   checked,
-  label,
+  label = null,
   hint = null,
   displayLegend,
 }) => {
@@ -44,8 +44,10 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   return (
     <Styles.Container data-testid="CheckboxListFilter">
       <Styles.Fieldset aria-describedby="waste-hint">
-        <Styles.Legend labelHidden={labelHidden}>{label}</Styles.Legend>
-        <Styles.Hint id="waste-hint" hintHidden={hintHidden}>
+        <Styles.Legend labelHidden={labelHidden} data-testid="CheckboxListFilterLegend">
+          {label}
+        </Styles.Legend>
+        <Styles.Hint id="waste-hint" hintHidden={hintHidden} data-testid="CheckboxListFilterHint">
           {hint}
         </Styles.Hint>
         <Styles.Checkboxes>

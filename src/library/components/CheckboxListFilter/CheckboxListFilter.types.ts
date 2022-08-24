@@ -12,12 +12,12 @@ export interface CheckboxListFilterProps {
   /**
    * The label text
    */
-  label: string;
+  label: string | null;
 
   /**
    * The hint text
    */
-  hint: string;
+  hint: string | null;
 
   /**
    * Should the legend be displayed

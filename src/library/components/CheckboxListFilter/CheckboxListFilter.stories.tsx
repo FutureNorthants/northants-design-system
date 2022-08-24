@@ -27,4 +27,15 @@ export const ExampleCheckboxListFilter = Template.bind({});
 ExampleCheckboxListFilter.args = {
   options: articleOptions,
   checked: NewsArticleFilters.articleType,
+  label: 'An example label',
+  hint: 'Some example hint text',
+  displayLegend: true,
+};
+
+export const ExampleCheckboxListFilterHiddenLabelHint = Template.bind({});
+ExampleCheckboxListFilterHiddenLabelHint.args = {
+  options: articleOptions,
+  checked: NewsArticleFilters.articleType,
+  hint: null,
+  label: null,
 };

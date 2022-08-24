@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { VisuallyHidden } from './../../helpers/style-helpers';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles};
@@ -21,7 +20,13 @@ export const Fieldset = styled.fieldset`
 
 const hideLabel = (props) => {
   if (props.labelHidden === true) {
-    return VisuallyHidden;
+    return css`
+      display: none;
+    `;
+  } else {
+    return css`
+      display: table;
+    `;
   }
 };
 
@@ -29,7 +34,6 @@ export const Legend = styled.legend`
   color: #0b0c0c;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: table;
   max-width: 100%;
   margin-bottom: 10px;
   padding: 0;
@@ -38,14 +42,19 @@ export const Legend = styled.legend`
 `;
 
 const hideHint = (props) => {
-  if (props.hintHidden === true) {
-    return VisuallyHidden;
+  if (props.hintHidden) {
+    return css`
+      display: none;
+    `;
+  } else {
+    return css`
+      display: block;
+    `;
   }
 };
 
 export const Hint = styled.div`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
-  display: block;
   margin-bottom: 15px;
   color: #505a5f;
   margin-top: -5px;

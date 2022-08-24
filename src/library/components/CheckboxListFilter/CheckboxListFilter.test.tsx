@@ -1,0 +1,100 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import CheckboxListFilter from './CheckboxListFilter';
+import { CheckboxListFilterProps } from './CheckboxListFilter.types';
+import { ThemeProvider } from 'styled-components';
+import { west_theme } from '../../../themes/theme_generator';
+
+describe('CheckboxListFilter', () => {
+  let props: CheckboxListFilterProps;
+
+  beforeEach(() => {
+    props = {
+      options: [
+        {
+          title: 'Article',
+          value: 'article',
+        },
+        {
+          title: 'Press Release',
+          value: 'press-release',
+        },
+      ],
+      checked: [],
+      label: null,
+      hint: null,
+      displayLegend: false,
+    };
+  });
+
+  const renderComponent = () =>
+    render(
+      <ThemeProvider theme={west_theme}>
+        <CheckboxListFilter {...props} />
+      </ThemeProvider>
+    );
+
+  it('renders the component', () => {
+    const { getByTestId, getAllByRole } = renderComponent();
+
+    const component = getByTestId('CheckboxListFilter');
+    const checkboxes = getAllByRole('checkbox');
+    const legend = getByTestId('CheckboxListFilterLegend');
+    const hint = getByTestId('CheckboxListFilterHint');
+
+    expect(component).toBeVisible();
+
+    expect(checkboxes).toHaveLength(2);
+    expect(checkboxes[0]).toHaveAttribute('value', 'article');
+    expect(checkboxes[0]).not.toBeChecked();
+
+    expect(checkboxes[1]).toHaveAttribute('value', 'press-release');
+    expect(checkboxes[1]).not.toBeChecked();
+
+    expect(legend).not.toBeVisible();
+    expect(hint).not.toBeVisible();
+  });
+
+  it('hides the ledgend when label is set', () => {
+    props.label = 'The legend label';
+    props.displayLegend = false;
+
+    const { getByTestId } = renderComponent();
+
+    expect(getByTestId('CheckboxListFilterLegend')).not.toBeVisible();
+  });
+
+  it('checks the checked checkbox', () => {
+    props.checked = ['article'];
+
+    const { getAllByRole } = renderComponent();
+
+    const checkboxes = getAllByRole('checkbox');
+
+    expect(checkboxes[0]).toBeChecked();
+    expect(checkboxes[1]).not.toBeChecked();
+  });
+
+  it('displays the legend', () => {
+    props.label = 'The legend label';
+    props.displayLegend = true;
+
+    const { getByText } = renderComponent();
+
+    const legend = getByText('The legend label');
+
+    expect(legend).toBeVisible();
+    expect(legend).toHaveStyle('display: table;');
+  });
+
+  it('displays the hint text', () => {
+    props.hint = 'The hint text';
+
+    const { getByText } = renderComponent();
+
+    const hintText = getByText('The hint text');
+
+    expect(hintText).toBeVisible();
+    expect(hintText).toHaveStyle('display: block;');
+  });
+});
