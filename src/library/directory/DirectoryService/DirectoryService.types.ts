@@ -8,6 +8,7 @@ export interface DirectoryServiceProps {
   organization: OrganizationProps;
   regular_schedules?: RegularScheduleProps[];
   service_at_locations?: LocationProps[];
+  url?: string;
 }
 
 export interface OrganizationProps {

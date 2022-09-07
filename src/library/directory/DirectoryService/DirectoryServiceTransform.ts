@@ -1,11 +1,15 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 import { DirectoryServiceProps, LocationProps } from './DirectoryService.types';
 
-export const transformService = (email: string): SummaryRowProps[] => {
+export const transformService = (email: string, url: string): SummaryRowProps[] => {
   return [
     {
       term: 'Email',
       detail: email,
+    },
+    {
+      term: 'Website',
+      detail: url,
     },
   ];
 };

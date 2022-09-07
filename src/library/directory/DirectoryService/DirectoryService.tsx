@@ -18,6 +18,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   regular_schedules,
   contacts,
   service_at_locations,
+  url,
 }) => {
   const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
@@ -66,10 +67,12 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   return (
     <Styles.Container data-testid="DirectoryService">
       <Row>
-        <Column small="full" medium="full" large="full">
+        <Column small="full" medium="full" large="one-half">
           <Heading level={2} text={name} />
           <div dangerouslySetInnerHTML={{ __html: description }} />
-          <SummaryList terms={transformService(email)} />
+        </Column>
+        <Column small="full" medium="full" large="one-half">
+          <SummaryList terms={transformService(email, url)} />
         </Column>
 
         {service_at_locations?.map((location, locationIndex) => (
