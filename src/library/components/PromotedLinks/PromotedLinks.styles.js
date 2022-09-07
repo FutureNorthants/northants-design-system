@@ -43,7 +43,7 @@ export const PromotedLink = styled.a`
     0px 4px 15px rgba(0, 0, 0, 0.11);
 
   padding: 20px 15px;
-  width: calc(100% - 30px);
+  width: 100%;
   margin-bottom: 15px;
 
   span {
