@@ -45,7 +45,7 @@ export const globalTypes = {
     toolbar: {
       icon: 'circlehollow',
       items: ['north_theme', 'west_theme', 'lb_theme_north', 'lb_theme_west'],
-      showName: true,
+      title: 'Theme',
     },
   },
 };

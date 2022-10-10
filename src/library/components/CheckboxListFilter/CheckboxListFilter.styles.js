@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { VisuallyHidden } from './../../helpers/style-helpers';
 
 export const Container = styled.div`
@@ -20,7 +20,7 @@ export const Fieldset = styled.fieldset`
 `;
 
 const hideLabel = (props) => {
-  if (props.labelHidden === true) {
+  if (props.labelHidden) {
     return VisuallyHidden;
   }
 };
@@ -38,7 +38,7 @@ export const Legend = styled.legend`
 `;
 
 const hideHint = (props) => {
-  if (props.hintHidden === true) {
+  if (props.hintHidden) {
     return VisuallyHidden;
   }
 };

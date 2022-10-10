@@ -1,22 +1,25 @@
 import { DirectoryServiceProps } from './DirectoryService.types';
 
 export const ExampleService: DirectoryServiceProps = {
+  id: 'abc123',
   contacts: [
     {
       name: 'Mrs Smith',
       title: 'Managing Director',
       phones: [
         {
+          id: 1,
           number: '0123456789',
         },
         {
+          id: 2,
           number: '0123456799',
         },
       ],
     },
   ],
   description:
-    'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire. It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and now delivers all the services which were previously provided by these councils.',
+    '<p>West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire.</p> <p>It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and now delivers all the services which were previously provided by these councils.</p>',
   name: 'West Northants Council',
   email: 'example@service.net',
   organization: {

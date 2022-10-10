@@ -28,4 +28,9 @@ export interface InputProps {
    * The max length attribute
    */
   maxLength?: number;
+
+  /**
+   * Optional default value
+   */
+  defaultValue?: string;
 }

@@ -10,6 +10,7 @@ import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { SummaryListProps, SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 import { transformLocation, transformService } from './DirectoryServiceTransform';
+import sanitizeHtml from 'sanitize-html';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   name,
@@ -68,8 +69,8 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
     <Styles.Container data-testid="DirectoryService">
       <Row>
         <Column small="full" medium="full" large="one-half">
-          <Heading level={2} text={name} />
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          <Heading level={1} text={name} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(description) }} />
         </Column>
         <Column small="full" medium="full" large="one-half">
           <SummaryList terms={transformService(email, url)} />

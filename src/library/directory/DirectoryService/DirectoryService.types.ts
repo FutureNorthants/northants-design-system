@@ -1,6 +1,7 @@
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 
 export interface DirectoryServiceProps {
+  id: string;
   contacts?: ServiceContactProps[];
   description: string;
   email?: string;

@@ -5,5 +5,6 @@ export interface ServiceContactProps {
 }
 
 export interface PhoneProps {
+  id: number;
   number: string;
 }
