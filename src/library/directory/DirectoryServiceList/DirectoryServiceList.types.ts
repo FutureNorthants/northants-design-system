@@ -14,7 +14,12 @@ export interface DirectoryServiceListProps {
   /**
    * The search term string
    */
-  searchTerm: string;
+  searchTerm?: string;
+
+  /**
+   * The postcode search term
+   */
+  searchPostcode?: string;
 
   /**
    * The total amount of results

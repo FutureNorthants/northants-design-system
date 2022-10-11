@@ -13,13 +13,14 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
   directoryPath,
   services,
   searchTerm = '',
+  searchPostcode = '',
   totalResults = 0,
   pageNumber,
   extractLength = 140,
 }) => {
   const [submit, setSubmit] = useState<boolean>(false);
   const [search, setSearch] = useState<string>(searchTerm);
-  const [postcode, setPostcode] = useState<string>('');
+  const [postcode, setPostcode] = useState<string>(searchPostcode);
 
   useEffect(() => {
     if (!submit) return;

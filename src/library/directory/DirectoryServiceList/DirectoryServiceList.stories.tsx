@@ -39,4 +39,5 @@ ExampleDirectoryServiceList.args = {
   ],
   totalResults: 156,
   searchTerm: 'council',
+  searchPostcode: 'NN1 1ED',
 };

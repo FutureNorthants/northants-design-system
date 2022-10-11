@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const MapContainer = styled.div`
   position: relative;
-  padding-top: 100%;
+  padding-top: 50%;
 `;
 
 export const MapImage = styled.img`

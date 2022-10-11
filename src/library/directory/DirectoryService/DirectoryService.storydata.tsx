@@ -1,3 +1,4 @@
+import React from 'react';
 import { DirectoryServiceProps } from './DirectoryService.types';
 
 export const ExampleService: DirectoryServiceProps = {
@@ -18,8 +19,18 @@ export const ExampleService: DirectoryServiceProps = {
       ],
     },
   ],
-  description:
-    '<p>West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire.</p> <p>It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and now delivers all the services which were previously provided by these councils.</p>',
+  description: (
+    <>
+      <p>
+        West Northamptonshire Council is the single unitary council responsible for providing a range of public services
+        to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire.
+      </p>{' '}
+      <p>
+        It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and
+        now delivers all the services which were previously provided by these councils.
+      </p>
+    </>
+  ),
   name: 'West Northants Council',
   email: 'example@service.net',
   organization: {
@@ -55,6 +66,7 @@ export const ExampleService: DirectoryServiceProps = {
       longitude: '-0.8941710250996565',
       physical_addresses: [
         {
+          id: 123,
           address_1: '1 Angel Square, Angel Street',
           city: 'Northampton',
           state_province: 'Northamptonshire',

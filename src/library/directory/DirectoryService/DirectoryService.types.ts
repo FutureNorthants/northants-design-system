@@ -1,9 +1,10 @@
+import React from 'react';
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 
 export interface DirectoryServiceProps {
   id: string;
   contacts?: ServiceContactProps[];
-  description: string;
+  description: React.ReactNode;
   email?: string;
   name: string;
   organization: OrganizationProps;
@@ -36,6 +37,7 @@ export interface LocationProps {
 }
 
 export interface PhysicalAddressProps {
+  id: number;
   address_1: string;
   city: string;
   state_province: string;
