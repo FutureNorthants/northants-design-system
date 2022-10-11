@@ -14,9 +14,11 @@ describe('Test Component', () => {
       title: 'Manager',
       phones: [
         {
+          id: 123,
           number: '123456789',
         },
         {
+          id: 124,
           number: '111222333444',
         },
       ],

@@ -1,10 +1,11 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 
 export interface DirectoryServiceProps {
   id: string;
   contacts?: ServiceContactProps[];
-  description: React.ReactNode;
+  description: string;
+  descriptionElement?: ReactElement;
   email?: string;
   name: string;
   organization: OrganizationProps;

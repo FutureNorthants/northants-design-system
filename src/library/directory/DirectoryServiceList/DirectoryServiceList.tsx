@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
@@ -63,11 +64,11 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
             >
               <Styles.Label htmlFor="search">
                 What are you looking for?
-                <Input name="search" type="text" defaultValue={searchTerm} />
+                <Input name="search" type="text" defaultValue={searchTerm} placeholder="Enter a search term" />
               </Styles.Label>
               <Styles.Label htmlFor="postcode">
                 Postcode
-                <Input name="postcode" type="text" defaultValue={postcode} />
+                <Input name="postcode" type="text" defaultValue={postcode} placeholder="Enter a postcode" />
               </Styles.Label>
               <Styles.Button>
                 <Styles.ButtonText>Search</Styles.ButtonText>
@@ -97,10 +98,10 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
                     <Column small="full" medium="full" large="one-half">
                       <a href={`${directoryPath}/${service.id}`}>{service.name}</a>
                       <div>
-                        {sanitizeHtml(service.description, { allowedTags: [], allowedAttributes: {} }).substr(
-                          0,
-                          extractLength
-                        ) + String.fromCharCode(8230)}
+                        {sanitizeHtml(service.description, {
+                          allowedTags: [],
+                          allowedAttributes: {},
+                        }).substr(0, extractLength) + String.fromCharCode(8230)}
                       </div>
                     </Column>
                     <Column small="full" medium="full" large="one-quarter">

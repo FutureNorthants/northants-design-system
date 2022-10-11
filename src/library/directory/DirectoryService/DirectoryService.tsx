@@ -12,7 +12,7 @@ import sanitizeHtml from 'sanitize-html';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   name,
-  description,
+  descriptionElement,
   email,
   regular_schedules,
   contacts,
@@ -88,8 +88,9 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
 
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="About this service" />
-          {/* <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(description) }} /> */}
-          <div>{description}</div>
+          <div>
+            <>{descriptionElement}</>
+          </div>
         </Column>
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="Contact details" />

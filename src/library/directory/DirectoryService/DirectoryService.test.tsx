@@ -4,23 +4,13 @@ import DirectoryService from './DirectoryService';
 import { DirectoryServiceProps } from './DirectoryService.types';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
+import { ExampleService } from './DirectoryService.storydata';
 
 describe('Test Component', () => {
   let props: DirectoryServiceProps;
 
   beforeEach(() => {
-    props = {
-      name: 'Example Service',
-      description: 'The service description',
-      organization: {
-        id: 'aaa-bbb-123-444-ccc',
-        name: 'Example Organzation',
-        description: 'The organization description',
-        logo: '',
-        url: '',
-        uri: '',
-      },
-    };
+    props = ExampleService;
   });
 
   const renderComponent = () =>
@@ -31,11 +21,14 @@ describe('Test Component', () => {
     );
 
   it('should render Service correctly', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getByRole } = renderComponent();
 
     const component = getByTestId('DirectoryService');
+    const heading = getByRole('heading', { level: 1 });
 
-    expect(component).toHaveTextContent('Example Service');
-    expect(component).toHaveTextContent('The service description');
+    expect(heading).toHaveTextContent('West Northants Council');
+    expect(component).toHaveTextContent(
+      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses'
+    );
   });
 });

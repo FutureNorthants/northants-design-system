@@ -19,12 +19,21 @@ export const ExampleService: DirectoryServiceProps = {
       ],
     },
   ],
-  description: (
+  description: `
+      <p>
+        West Northamptonshire Council is the single unitary council responsible for providing a range of public services
+        to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire.
+      </p>
+      <p>
+        It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and
+        now delivers all the services which were previously provided by these councils.
+      </p>`,
+  descriptionElement: (
     <>
       <p>
         West Northamptonshire Council is the single unitary council responsible for providing a range of public services
         to residents and businesses in the areas of Daventry, Northampton and South Northamptonshire.
-      </p>{' '}
+      </p>
       <p>
         It has replaced Daventry District Council, Northampton Borough Council and South Northamptonshire Council, and
         now delivers all the services which were previously provided by these councils.
