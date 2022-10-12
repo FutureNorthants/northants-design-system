@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
@@ -18,24 +17,44 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
   totalResults = 0,
   pageNumber,
   extractLength = 140,
+  categories,
 }) => {
   const [submit, setSubmit] = useState<boolean>(false);
   const [search, setSearch] = useState<string>(searchTerm);
   const [postcode, setPostcode] = useState<string>(searchPostcode);
+  const [checkboxState, setCheckboxState] = useState(categories);
 
   useEffect(() => {
     if (!submit) return;
 
-    handleParams(directoryPath, [
-      {
+    let params = [];
+
+    if (search !== '') {
+      params.push({
         key: 'search',
         value: search,
-      },
-      {
+      });
+    }
+
+    if (postcode !== '') {
+      params.push({
         key: 'postcode',
         value: postcode,
-      },
-    ]);
+      });
+    }
+
+    categories?.forEach((category) => {
+      category.options.forEach((taxonomy) => {
+        if (taxonomy.checked) {
+          params.push({
+            key: 'taxonomy_id',
+            value: taxonomy.id,
+          });
+        }
+      });
+    });
+
+    handleParams(directoryPath, params);
   }, [submit]);
 
   const handleSubmit = (e) => {
@@ -50,6 +69,18 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
     }
 
     setSubmit(true);
+  };
+
+  const optionChecked = (e, categoryIndex) => {
+    let newCheckboxState = [...checkboxState];
+
+    newCheckboxState[categoryIndex].options.find((option) => {
+      if (option.id === e.target.value) {
+        option.checked = !option.checked;
+      }
+    });
+
+    setCheckboxState(newCheckboxState);
   };
 
   return (
@@ -78,11 +109,27 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
           </Styles.SearchHeader>
         </Column>
         <Column small="full" medium="one-third" large="one-quarter">
-          <Row>
-            <Column small="full" medium="full" large="full">
-              <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
-            </Column>
-          </Row>
+          <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
+          {categories?.map((category, categoryIndex) => (
+            <Styles.Fieldset key={category.label}>
+              <Styles.Legend>{category.label}</Styles.Legend>
+              {category.options.map((taxonomy) => (
+                <Styles.Checkbox key={taxonomy.id}>
+                  <Styles.CheckboxInput
+                    type="checkbox"
+                    value={taxonomy.id}
+                    id={taxonomy.name.replace(' ', '')}
+                    name={taxonomy.vocabulary}
+                    onChange={(e) => optionChecked(e, categoryIndex)}
+                    checked={taxonomy.checked}
+                  />
+                  <Styles.CheckboxLabel isChecked={taxonomy.checked} htmlFor={taxonomy.name.replace(' ', '')}>
+                    {taxonomy.name}
+                  </Styles.CheckboxLabel>
+                </Styles.Checkbox>
+              ))}
+            </Styles.Fieldset>
+          ))}
         </Column>
         <Column small="full" medium="two-thirds" large="three-quarters">
           <Row>

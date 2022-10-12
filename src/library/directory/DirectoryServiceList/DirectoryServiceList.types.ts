@@ -35,4 +35,53 @@ export interface DirectoryServiceListProps {
    * The max length of each service description extract
    */
   extractLength?: number;
+
+  /**
+   * The filter categories
+   */
+  categories?: DirectoryCategory[];
+}
+
+export interface DirectoryCategory {
+  /**
+   * The category label
+   */
+  label: string;
+
+  /**
+   * The vocabulary name
+   */
+  vocabulary: string;
+
+  /**
+   * An array of taxonomies
+   */
+  options: DirectoryTaxonomy[];
+}
+
+export interface DirectoryTaxonomy {
+  /**
+   * Unique taxonomy identifier in curie format (e.g. localOffer1)
+   */
+  id: string;
+
+  /**
+   * The name of the taxonomy
+   */
+  name: string;
+
+  /**
+   * The vocabulary name
+   */
+  vocabulary: string;
+
+  /**
+   * The optional parent taxonomy
+   */
+  parent?: string | null;
+
+  /**
+   * Is the option checked
+   */
+  checked?: boolean;
 }

@@ -64,3 +64,89 @@ export const ServiceContainer = styled.div`
 export const Address = styled.span`
   word-wrap: break-word;
 `;
+
+export const Legend = styled.legend`
+  color: #0b0c0c;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  margin-bottom: 10px;
+  padding: 0;
+  white-space: normal;
+`;
+
+export const Fieldset = styled.fieldset`
+  display: block;
+  margin: 1rem 0;
+`;
+
+export const Checkbox = styled.div`
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  clear: left;
+`;
+
+export const CheckboxInput = styled.input`
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px ${(props) => props.theme.theme_vars.colours.focus};
+  }
+`;
+
+export const CheckboxLabel = styled.label`
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  color: #0b0c0c;
+  display: block;
+  margin-bottom: 5px;
+
+  &:before {
+    content: '';
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid currentColor;
+    background: transparent;
+  }
+
+  &:after {
+    content: '';
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    width: 23px;
+    height: 12px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border: solid;
+    border-width: 0 0 5px 5px;
+    border-top-color: transparent;
+    opacity: ${(props) => (props.isChecked ? 1 : 0)};
+    background: transparent;
+  }
+`;

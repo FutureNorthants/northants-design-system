@@ -7,6 +7,7 @@ import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import { uniqueID } from '../../helpers/helpers';
+import { ExampleDirectoryCategories } from './DirectoryServiceList.storydata';
 
 export default {
   title: 'Library/Directory/Directory Service List',
@@ -40,4 +41,5 @@ ExampleDirectoryServiceList.args = {
   totalResults: 156,
   searchTerm: 'council',
   searchPostcode: 'NN1 1ED',
+  categories: ExampleDirectoryCategories,
 };
