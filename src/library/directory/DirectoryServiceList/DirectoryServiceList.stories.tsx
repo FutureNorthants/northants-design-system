@@ -42,4 +42,15 @@ ExampleDirectoryServiceList.args = {
   searchTerm: 'council',
   searchPostcode: 'NN1 1ED',
   categories: ExampleDirectoryCategories,
+  pageNumber: 2,
+  perPage: 5,
+};
+
+export const DirectoryServiceNoResults = Template.bind({});
+DirectoryServiceNoResults.args = {
+  services: [],
+  totalResults: 0,
+  categories: ExampleDirectoryCategories,
+  pageNumber: 1,
+  perPage: 5,
 };

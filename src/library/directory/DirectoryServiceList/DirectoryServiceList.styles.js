@@ -16,6 +16,11 @@ export const Label = styled.label`
   font-weight: bold;
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Button = styled.button`
   border: 1px solid ${(props) => props.theme.theme_vars.colours.white};
   background: ${(props) => props.theme.theme_vars.colours.action};
@@ -23,6 +28,8 @@ export const Button = styled.button`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  min-height: 42px;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_dark};
@@ -74,11 +81,11 @@ export const Legend = styled.legend`
   margin-bottom: 10px;
   padding: 0;
   white-space: normal;
+  font-weight: bold;
 `;
 
 export const Fieldset = styled.fieldset`
   display: block;
-  margin: 1rem 0;
 `;
 
 export const Checkbox = styled.div`

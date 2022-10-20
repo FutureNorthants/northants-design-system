@@ -33,7 +33,7 @@ describe('Test Component', () => {
     const component = getByTestId('DirectoryServiceList');
 
     expect(component).toHaveTextContent(ExampleService.name);
-    expect(component).toHaveTextContent('Showing 1 out of 1');
+    expect(component).toHaveTextContent('Showing 1 to 1 out of 1');
     expect(component).toHaveTextContent(
       'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to …'
     );
@@ -50,5 +50,18 @@ describe('Test Component', () => {
 
     expect(searchInput).toHaveValue('the search term');
     expect(postcodeInput).toHaveValue('NN1 1AA');
+  });
+
+  it('should render correctly when no search results returned', () => {
+    props.services = [];
+    props.pageNumber = 0;
+    props.perPage = 5;
+    props.totalResults = 0;
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryServiceList');
+
+    expect(component).not.toHaveTextContent('Showing 0 to 0 out of 0');
+    expect(component).toHaveTextContent('No results found');
   });
 });

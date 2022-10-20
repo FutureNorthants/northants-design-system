@@ -6,16 +6,17 @@ import Column from '../../components/Column/Column';
 import sanitizeHtml from 'sanitize-html';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
-import { handleParams } from '../../helpers/url-helpers';
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
+import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
 
-const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
+const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
   services,
   searchTerm = '',
   searchPostcode = '',
   totalResults = 0,
-  pageNumber,
+  pageNumber = 1,
+  perPage = 5,
   extractLength = 140,
   categories,
 }) => {
@@ -67,7 +68,7 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(e.target.search.value);
+    setSearch(e.target.directorySearch.value);
     setPostcode(e.target.postcode.value);
     setSubmit(true);
   };
@@ -84,6 +85,13 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
     setCheckboxState(newCheckboxState);
   };
 
+  const from = pageNumber * perPage - (perPage - 1);
+  const to = from + (services?.length ? services.length - 1 : 0);
+
+  const clearSearch = () => {
+    window.location.href = directoryPath;
+  };
+
   return (
     <Styles.Container data-testid="DirectoryServiceList">
       <Row>
@@ -94,50 +102,66 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
                 handleSubmit(e);
               }}
             >
-              <Styles.Label htmlFor="search">
+              <Styles.Label htmlFor="directorySearch">
                 What are you looking for?
-                <Input name="search" type="text" defaultValue={searchTerm} placeholder="Enter a search term" />
+                <Input name="directorySearch" type="text" defaultValue={searchTerm} placeholder="Enter a search term" />
               </Styles.Label>
               <Styles.Label htmlFor="postcode">
                 Postcode
                 <Input name="postcode" type="text" defaultValue={postcode} placeholder="Enter a postcode" />
               </Styles.Label>
-              <Styles.Button>
-                <Styles.ButtonText>Search</Styles.ButtonText>
-                <SearchIcon colourFill="#fff" />
-              </Styles.Button>
+              <Styles.ButtonContainer>
+                <Styles.Button>
+                  <Styles.ButtonText>Search</Styles.ButtonText>
+                  <SearchIcon colourFill="#fff" />
+                </Styles.Button>
+                <Styles.Button onClick={clearSearch}>
+                  <Styles.ButtonText>Clear</Styles.ButtonText>
+                  <CloseIcon colourFill="#fff" />
+                </Styles.Button>
+              </Styles.ButtonContainer>
             </FormWithLine>
           </Styles.SearchHeader>
         </Column>
         <Column small="full" medium="one-third" large="one-quarter">
-          <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
-          {categories?.map((category, categoryIndex) => (
-            <Styles.Fieldset key={category.label}>
-              <Styles.Legend>{category.label}</Styles.Legend>
-              {category.options.map((taxonomy) => (
-                <Styles.Checkbox key={taxonomy.id}>
-                  <Styles.CheckboxInput
-                    type="checkbox"
-                    value={taxonomy.id}
-                    id={taxonomy.name.replace(' ', '')}
-                    name={taxonomy.vocabulary}
-                    onChange={(e) => optionChecked(e, categoryIndex)}
-                    checked={taxonomy.checked}
-                  />
-                  <Styles.CheckboxLabel isChecked={taxonomy.checked} htmlFor={taxonomy.name.replace(' ', '')}>
-                    {taxonomy.name}
-                  </Styles.CheckboxLabel>
-                </Styles.Checkbox>
-              ))}
-            </Styles.Fieldset>
-          ))}
+          <Row>
+            <Column small="full" medium="full" large="full">
+              <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
+            </Column>
+            {categories?.map((category, categoryIndex) => (
+              <Column small="full" medium="full" large="full" key={category.label}>
+                <Styles.Fieldset>
+                  <Styles.Legend>{category.label}</Styles.Legend>
+                  {category.options.map((taxonomy) => (
+                    <Styles.Checkbox key={taxonomy.id}>
+                      <Styles.CheckboxInput
+                        type="checkbox"
+                        value={taxonomy.id}
+                        id={taxonomy.name.replace(' ', '')}
+                        name={taxonomy.vocabulary}
+                        onChange={(e) => optionChecked(e, categoryIndex)}
+                        checked={taxonomy.checked}
+                      />
+                      <Styles.CheckboxLabel isChecked={taxonomy.checked} htmlFor={taxonomy.name.replace(' ', '')}>
+                        {taxonomy.name}
+                      </Styles.CheckboxLabel>
+                    </Styles.Checkbox>
+                  ))}
+                </Styles.Fieldset>
+              </Column>
+            ))}
+          </Row>
         </Column>
         <Column small="full" medium="two-thirds" large="three-quarters">
           <Row>
             <Column small="full" medium="full" large="full">
-              <Styles.ResultInfo>
-                Showing {services.length} out of {totalResults.toLocaleString()}
-              </Styles.ResultInfo>
+              {services?.length > 0 ? (
+                <Styles.ResultInfo>
+                  Showing {from} to {to} out of {totalResults.toLocaleString()}
+                </Styles.ResultInfo>
+              ) : (
+                <Styles.ResultInfo>No results found</Styles.ResultInfo>
+              )}
             </Column>
             {services.map((service, index) => (
               <Column small="full" medium="full" large="full" key={service.id}>

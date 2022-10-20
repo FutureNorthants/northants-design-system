@@ -32,6 +32,11 @@ export interface DirectoryServiceListProps {
   pageNumber?: number;
 
   /**
+   * The number of results per page
+   */
+  perPage?: number;
+
+  /**
    * The max length of each service description extract
    */
   extractLength?: number;

@@ -24,6 +24,7 @@ const Input: React.FC<InputProps> = ({
         isErrored={isErrored}
         maxLength={maxLength}
         defaultValue={defaultValue}
+        id={name}
       />
     </>
   );
