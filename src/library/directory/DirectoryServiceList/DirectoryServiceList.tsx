@@ -43,7 +43,7 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
       });
     }
 
-    categories?.forEach((category) => {
+    checkboxState?.forEach((category) => {
       category.options.forEach((taxonomy) => {
         if (taxonomy.checked) {
           params.push({
@@ -54,20 +54,21 @@ const DirectoryServiceList: React.FC<DirectoryServiceListProps> = ({
       });
     });
 
-    handleParams(directoryPath, params);
+    setSubmit(false);
+
+    const query = params
+      .map((param) => {
+        return `${param.key}=${param.value}`;
+      })
+      .join('&');
+
+    window.location.href = directoryPath + '?' + query;
   }, [submit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (e.target.search.value !== '') {
-      setSearch(e.target.search.value);
-    }
-
-    if (e.target.postcode.value !== '') {
-      setPostcode(e.target.postcode.value);
-    }
-
+    setSearch(e.target.search.value);
+    setPostcode(e.target.postcode.value);
     setSubmit(true);
   };
 
