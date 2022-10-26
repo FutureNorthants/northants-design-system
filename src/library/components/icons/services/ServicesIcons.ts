@@ -16,6 +16,8 @@ import BirthsIcon from './Births/Icon';
 import BirthsIconHover from './Births/IconHover';
 import BollardIcon from './Bollard/Icon';
 import BollardIconHover from './Bollard/IconHover';
+import BulkWasteIcon from './BulkWaste/Icon';
+import BulkWasteIconHover from './BulkWaste/IconHover';
 import BusIcon from './Bus/Icon';
 import BusIconHover from './Bus/IconHover';
 import BusPassIcon from './BusPass/Icon';
@@ -46,6 +48,8 @@ import CultureWestIcon from './CultureWest/Icon';
 import CultureWestIconHover from './CultureWest/IconHover';
 import DemocracyIcon from './Democracy/Icon';
 import DemocracyIconHover from './Democracy/IconHover';
+import DogFoulingIcon from './DogFouling/Icon';
+import DogFoulingIconHover from './DogFouling/IconHover';
 import DOLSIcon from './DOLS/Icon';
 import DOLSIconHover from './DOLS/IconHover';
 import EditIcon from './Edit/Icon';
@@ -62,6 +66,8 @@ import FoodWasteIcon from './FoodWaste/Icon';
 import FoodWasteIconHover from './FoodWaste/IconHover';
 import GovUKIcon from './GovUK/Icon';
 import GovUKIconHover from './GovUK/IconHover';
+import GraffitiIcon from './Graffiti/Icon';
+import GraffitiIconHover from './Graffiti/IconHover';
 import HighwayIcon from './Highway/Icon';
 import HighwayIconHover from './Highway/IconHover';
 import HouseMoneyIcon from './HouseMoney/Icon';
@@ -72,6 +78,8 @@ import IndependenceIcon from './Independence/Icon';
 import IndependenceIconHover from './Independence/IconHover';
 import LibrariesIcon from './Libraries/Icon';
 import LibrariesIconHover from './Libraries/IconHover';
+import LitterIcon from './Litter/Icon';
+import LitterIconHover from './Litter/IconHover';
 import MapPinIcon from './MapPin/Icon';
 import MapPinIconHover from './MapPin/IconHover';
 import MissedBinIcon from './MissedBin/Icon';
@@ -142,6 +150,8 @@ let components = {
   birthsHover: BirthsIconHover,
   bollard: BollardIcon,
   bollardHover: BollardIconHover,
+  bulkwaste: BulkWasteIcon,
+  bulkwasteHover: BulkWasteIconHover,
   bus: BusIcon,
   busHover: BusIconHover,
   buspass: BusPassIcon,
@@ -172,6 +182,8 @@ let components = {
   culturewestHover: CultureWestIconHover,
   democracy: DemocracyIcon,
   democracyHover: DemocracyIconHover,
+  dogfouling: DogFoulingIcon,
+  dogfoulingHover: DogFoulingIconHover,
   dols: DOLSIcon,
   dolsHover: DOLSIconHover,
   edit: EditIcon,
@@ -188,6 +200,8 @@ let components = {
   foodwasteHover: FoodWasteIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
+  graffiti: GraffitiIcon,
+  graffitiHover: GraffitiIconHover,
   highway: HighwayIcon,
   highwayHover: HighwayIconHover,
   housemoney: HouseMoneyIcon,
@@ -198,6 +212,8 @@ let components = {
   independenceHover: IndependenceIconHover,
   libraries: LibrariesIcon,
   librariesHover: LibrariesIconHover,
+  litter: LitterIcon,
+  litterHover: LitterIconHover,
   mappin: MapPinIcon,
   mappinHover: MapPinIconHover,
   missedbin: MissedBinIcon,
