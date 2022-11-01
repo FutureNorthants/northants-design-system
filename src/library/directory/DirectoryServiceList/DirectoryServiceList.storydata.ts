@@ -3,6 +3,7 @@ import { DirectoryCategory } from './DirectoryServiceList.types';
 export const LocalOfferTaxonomy: DirectoryCategory = {
   label: 'Select a category',
   vocabulary: 'localOffer',
+  singleSelection: true,
   options: [
     {
       id: 'localOffer:1',
@@ -30,6 +31,7 @@ export const LocalOfferTaxonomy: DirectoryCategory = {
 export const SpecialNeedTaxonomy: DirectoryCategory = {
   label: 'For people with/who are',
   vocabulary: 'specialNeeds',
+  singleSelection: false,
   options: [
     {
       id: 'specialNeeds:1',

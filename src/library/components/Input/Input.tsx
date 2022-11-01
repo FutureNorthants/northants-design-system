@@ -13,11 +13,13 @@ const Input: React.FC<InputProps> = ({
   name,
   maxLength,
   defaultValue,
+  onChange,
 }) => {
   return (
     <>
       {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
       <Styles.StyledInput
+        onChange={onChange}
         type={type}
         placeholder={placeholder}
         name={name}

@@ -32,5 +32,10 @@ export interface InputProps {
   /**
    * Optional default value
    */
-  defaultValue?: string;
+  defaultValue?: string | number;
+
+  /**
+   * An optional function to be called on change
+   */
+  onChange?: React.ReactNode;
 }

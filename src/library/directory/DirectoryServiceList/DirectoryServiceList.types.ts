@@ -45,6 +45,16 @@ export interface DirectoryServiceListProps {
    * The filter categories
    */
   categories?: DirectoryCategory[];
+
+  /**
+   * The minimum age filter
+   */
+  searchMinimumAge?: number;
+
+  /**
+   * The maximum age filter
+   */
+  searchMaximumAge?: number;
 }
 
 export interface DirectoryCategory {
@@ -62,6 +72,11 @@ export interface DirectoryCategory {
    * An array of taxonomies
    */
   options: DirectoryTaxonomy[];
+
+  /**
+   * Should multiple options be allowed
+   */
+  singleSelection: boolean;
 }
 
 export interface DirectoryTaxonomy {

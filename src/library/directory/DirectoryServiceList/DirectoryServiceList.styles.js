@@ -2,23 +2,35 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+
+  input {
+    max-width: 100%;
+  }
 `;
 
 export const SearchHeader = styled.div`
-  background-color: ${(props) => props.theme.theme_vars.colours.action};
-  color: ${(props) => props.theme.theme_vars.colours.white};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  width: 100%;
+  display: flex;
+
+  input {
+    width: 100%;
+  }
 `;
 
 export const Label = styled.label`
-  color: ${(props) => props.theme.theme_vars.colours.white};
   margin-bottom: 5px;
   font-weight: bold;
 `;
 
+export const HintText = styled.div`
+  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+`;
+
 export const ButtonContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: end;
+  padding-bottom: 25px;
+  height: 100%;
 `;
 
 export const Button = styled.button`
@@ -88,7 +100,7 @@ export const Fieldset = styled.fieldset`
   display: block;
 `;
 
-export const Checkbox = styled.div`
+export const Category = styled.div`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
   display: block;
   position: relative;
@@ -98,7 +110,7 @@ export const Checkbox = styled.div`
   clear: left;
 `;
 
-export const CheckboxInput = styled.input`
+export const CategoryInput = styled.input`
   cursor: pointer;
   position: absolute;
   z-index: 1;
@@ -114,7 +126,38 @@ export const CheckboxInput = styled.input`
   }
 `;
 
-export const CheckboxLabel = styled.label`
+/**
+ * If single selection then use styles for radio button, otherwise checkbox styles
+ */
+const checkedMarker = (props) => {
+  if (props.singleSelection) {
+    return css`
+      top: 10px;
+      left: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid currentcolor;
+      border-radius: 50%;
+      background: currentcolor;
+    `;
+  } else {
+    return css`
+      top: 11px;
+      left: 9px;
+      width: 23px;
+      height: 12px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 5px 5px;
+      border-top-color: transparent;
+      background: transparent;
+    `;
+  }
+};
+
+export const CategoryInputLabel = styled.label`
   display: inline-block;
   margin-bottom: 0;
   padding: 8px 15px 5px;
@@ -136,6 +179,7 @@ export const CheckboxLabel = styled.label`
     height: 40px;
     border: 2px solid currentColor;
     background: transparent;
+    border-radius: ${(props) => (props.singleSelection ? '100%' : 0)};
   }
 
   &:after {
@@ -143,17 +187,17 @@ export const CheckboxLabel = styled.label`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
-    top: 11px;
-    left: 9px;
-    width: 23px;
-    height: 12px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    border: solid;
-    border-width: 0 0 5px 5px;
-    border-top-color: transparent;
     opacity: ${(props) => (props.isChecked ? 1 : 0)};
-    background: transparent;
+    ${checkedMarker}
+  }
+`;
+
+export const ColumnLabels = styled.div`
+  font-weight: bold;
+  display: none;
+  padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    display: block;
   }
 `;
