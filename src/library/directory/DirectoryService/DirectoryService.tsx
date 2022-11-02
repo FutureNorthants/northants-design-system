@@ -32,7 +32,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             <Heading level={2} text="Location" />
             {service_at_locations?.map((location, locationIndex) => (
               <Row key={locationIndex}>
-                <Column small="full" medium="two-thirds" large="one-half">
+                <Column small="full" medium="full" large="one-half">
                   {location.physical_addresses.map((address) => (
                     <p key={address.id}>
                       {address.address_1}
@@ -47,7 +47,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                     </p>
                   ))}
                 </Column>
-                <Column small="full" medium="one-third" large="one-half">
+                <Column small="full" medium="full" large="one-half">
                   <Styles.MapContainer>
                     <Styles.MapImage
                       src={`https://maps.googleapis.com/maps/api/staticmap?size=640x320&maptype=roadmap&markers=size:large%7Ccolor:red%7C${location.latitude},${location.longitude}&key=${apiKey}`}
@@ -94,7 +94,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
         </Column>
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="Contact details" />
-          <SummaryList terms={transformService(email, url)} />
+          <SummaryList terms={transformService(email, url)} hasMargin={false} />
           {contacts?.map((contact, contactIndex) => (
             <ServiceContact {...contact} key={contactIndex} />
           ))}

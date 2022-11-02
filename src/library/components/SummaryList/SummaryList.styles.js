@@ -5,7 +5,7 @@ export const SummaryList = styled.dl`
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  margin: ${(props) => (props.hasMargin ? props.theme.theme_vars.spacingSizes.medium : 0)} 0;
 `;
 
 export const SummaryRow = styled.div`

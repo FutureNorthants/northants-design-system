@@ -38,3 +38,21 @@ ExampleServiceContact.args = {
     },
   ],
 };
+
+export const ServiceContactNoPhones = Template.bind({});
+ServiceContactNoPhones.args = {
+  name: 'John Smith',
+  title: 'Senior Manager',
+  phones: [],
+};
+
+export const ServiceContactNoTitle = Template.bind({});
+ServiceContactNoTitle.args = {
+  name: 'John Smith',
+  title: '',
+  phones: [
+    {
+      number: '0123456789',
+    },
+  ],
+};

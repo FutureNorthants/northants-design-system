@@ -29,3 +29,6 @@ const Template: Story<DirectoryServiceProps> = (args) => (
 
 export const ExampleDirectoryService = Template.bind({});
 ExampleDirectoryService.args = ExampleService;
+
+export const ExampleDirectoryServiceNoEmail = Template.bind({});
+ExampleDirectoryServiceNoEmail.args = { ...ExampleService, ...{ email: '' } };
