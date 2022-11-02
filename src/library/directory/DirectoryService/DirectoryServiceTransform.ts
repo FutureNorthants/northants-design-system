@@ -1,5 +1,5 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
-import { LocationProps } from './DirectoryService.types';
+import { LocationProps, ServiceAreaProps } from './DirectoryService.types';
 
 export const transformService = (email: string, url: string): SummaryRowProps[] => {
   const service: SummaryRowProps[] = [];
@@ -49,4 +49,39 @@ export const transformLocation = (location: LocationProps): SummaryRowProps[] =>
   });
 
   return terms;
+};
+
+export const transformDescriptionDetails = (
+  accreditations: string,
+  fees: string,
+  service_areas: ServiceAreaProps[]
+): SummaryRowProps[] => {
+  const details: SummaryRowProps[] = [];
+
+  if (accreditations) {
+    details.push({
+      term: 'Accreditations',
+      detail: accreditations,
+    });
+  }
+
+  if (fees) {
+    details.push({
+      term: 'Cost',
+      detail: fees,
+    });
+  }
+
+  if (service_areas?.length > 0) {
+    details.push({
+      term: 'Service Areas',
+      detail: service_areas
+        .map((service_area) => {
+          return service_area.service_area;
+        })
+        .join(', '),
+    });
+  }
+
+  return details;
 };

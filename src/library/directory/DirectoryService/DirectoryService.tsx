@@ -7,8 +7,7 @@ import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
 import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
-import { transformService } from './DirectoryServiceTransform';
-import sanitizeHtml from 'sanitize-html';
+import { transformDescriptionDetails, transformService } from './DirectoryServiceTransform';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   name,
@@ -18,6 +17,9 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   contacts,
   service_at_locations,
   url,
+  accreditations,
+  fees,
+  service_areas,
 }) => {
   const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
@@ -46,6 +48,16 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                       {address.country}
                     </p>
                   ))}
+                  {location?.accessibility_for_disabilities.length > 0 && (
+                    <>
+                      <Heading level={3} text="Facilities" />
+                      <ul>
+                        {location.accessibility_for_disabilities.map((accessibility) => (
+                          <li key={accessibility.id}>{accessibility.accessibility}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </Column>
                 <Column small="full" medium="full" large="one-half">
                   <Styles.MapContainer>
@@ -54,6 +66,11 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                       alt={location.name}
                     />
                   </Styles.MapContainer>
+                  <Styles.MapLink
+                    href={`https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`}
+                  >
+                    View in Google Maps
+                  </Styles.MapLink>
                 </Column>
               </Row>
             ))}
@@ -91,6 +108,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <div>
             <>{descriptionElement}</>
           </div>
+          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas)} />
         </Column>
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="Contact details" />

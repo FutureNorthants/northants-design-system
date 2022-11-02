@@ -71,8 +71,8 @@ export const ExampleService: DirectoryServiceProps = {
     {
       name: 'Main office',
       description: 'The main council building',
-      latitude: '52.23730603697195',
-      longitude: '-0.8941710250996565',
+      latitude: '52.23555414368587',
+      longitude: '-0.8957390701320571',
       physical_addresses: [
         {
           id: 123,
@@ -83,7 +83,29 @@ export const ExampleService: DirectoryServiceProps = {
           country: 'United Kingdom',
         },
       ],
+      accessibility_for_disabilities: [
+        {
+          id: 1,
+          accessibility: 'Car parking',
+        },
+        {
+          id: 2,
+          accessibility: 'Restaurant/Café',
+        },
+      ],
     },
   ],
   url: 'https://www.westnorthants.gov.uk',
+  accreditations: 'Ofsted grade Good (4 July 2019)',
+  fees: 'Contact provider for cost details',
+  service_areas: [
+    {
+      id: 1,
+      service_area: 'Northampton',
+    },
+    {
+      id: 2,
+      service_area: 'West Northamptonshire',
+    },
+  ],
 };

@@ -12,6 +12,9 @@ export interface DirectoryServiceProps {
   regular_schedules?: RegularScheduleProps[];
   service_at_locations?: LocationProps[];
   url?: string;
+  accreditations?: string;
+  fees?: string;
+  service_areas: ServiceAreaProps[];
 }
 
 export interface OrganizationProps {
@@ -35,6 +38,7 @@ export interface LocationProps {
   latitude: string;
   longitude: string;
   physical_addresses: PhysicalAddressProps[];
+  accessibility_for_disabilities: AccessibilityForDisabilityProps[];
 }
 
 export interface PhysicalAddressProps {
@@ -44,4 +48,16 @@ export interface PhysicalAddressProps {
   state_province: string;
   postal_code: string;
   country: string;
+}
+
+export interface AccessibilityForDisabilityProps {
+  id: number;
+  accessibility: string;
+}
+
+export interface ServiceAreaProps {
+  id: number;
+  extent?: string | null;
+  service_area: string;
+  uri?: string | null;
 }

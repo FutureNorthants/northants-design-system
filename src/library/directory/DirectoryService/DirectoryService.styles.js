@@ -7,6 +7,7 @@ export const Container = styled.div`
 export const MapContainer = styled.div`
   position: relative;
   padding-top: 50%;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const MapImage = styled.img`
@@ -17,4 +18,9 @@ export const MapImage = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
+`;
+
+export const MapLink = styled.a`
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  display: block;
 `;
