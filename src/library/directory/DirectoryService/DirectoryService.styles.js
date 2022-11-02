@@ -21,6 +21,5 @@ export const MapImage = styled.img`
 `;
 
 export const MapLink = styled.a`
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   display: block;
 `;
