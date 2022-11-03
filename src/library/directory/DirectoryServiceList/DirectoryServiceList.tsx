@@ -9,6 +9,7 @@ import Input from '../../components/Input/Input';
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
 import HintText from '../../components/HintText/HintText';
+import Pagination from '../../components/Pagination/Pagination';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -284,6 +285,14 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 </Styles.ServiceContainer>
               </Column>
             ))}
+            <Column small="full" medium="full" large="full">
+              <Pagination
+                currentPage={pageNumber}
+                totalResults={totalResults}
+                resultsPerPage={perPage}
+                postTo={directoryPath}
+              />
+            </Column>
           </Row>
         </Column>
       </Row>
