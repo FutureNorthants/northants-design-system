@@ -11,9 +11,12 @@ export const Container = styled.div`
 export const SearchHeader = styled.div`
   width: 100%;
   display: flex;
+  background: ${(props) => props.theme.theme_vars.colours.grey_light}75;
+  padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   input {
     width: 100%;
+    margin-bottom: 0;
   }
 `;
 
@@ -29,7 +32,7 @@ export const HintText = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: end;
-  padding-bottom: 25px;
+  padding-bottom: 0;
   height: 100%;
 `;
 
@@ -249,4 +252,52 @@ export const ColumnLabels = styled.div`
 
 export const Accordion = styled.div`
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
+`;
+
+export const AddToShortlist = styled.button`
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
+  background: ${(props) => props.theme.theme_vars.colours.white};
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  cursor: pointer;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    background: ${(props) => props.theme.theme_vars.colours.action_light}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+
+  svg {
+    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
+`;
+
+export const ServiceLink = styled.a`
+  display: block;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  ${(props) => props.theme.theme_vars.h4}
+  ${(props) => props.theme.linkStyles}
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const Age = styled.p`
+  font-weight: bold;
+  margin: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 `;

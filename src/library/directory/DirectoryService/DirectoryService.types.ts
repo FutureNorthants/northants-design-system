@@ -6,6 +6,7 @@ export interface DirectoryServiceProps {
   contacts?: ServiceContactProps[];
   description: string;
   descriptionElement?: React.ReactNode;
+  eligibilities: EligibilitiesProps[];
   email?: string;
   name: string;
   organization: OrganizationProps;
@@ -60,4 +61,11 @@ export interface ServiceAreaProps {
   extent?: string | null;
   service_area: string;
   uri?: string | null;
+}
+
+export interface EligibilitiesProps {
+  id: number;
+  eligibility: string;
+  minimum_age: number;
+  maximum_age: number;
 }

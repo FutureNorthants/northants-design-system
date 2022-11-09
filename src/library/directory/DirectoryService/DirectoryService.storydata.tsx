@@ -41,6 +41,14 @@ export const ExampleService: DirectoryServiceProps = {
     </>
   ),
   name: 'West Northants Council',
+  eligibilities: [
+    {
+      id: 1,
+      eligibility: '',
+      minimum_age: 0,
+      maximum_age: 200,
+    },
+  ],
   email: 'example@service.net',
   organization: {
     name: 'Example Organization',

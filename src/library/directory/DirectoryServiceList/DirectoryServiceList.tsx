@@ -19,7 +19,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   totalResults = 0,
   pageNumber = 1,
   perPage = 5,
-  extractLength = 140,
+  extractLength = 190,
   categories = [],
   searchMinimumAge = '',
   searchMaximumAge = '',
@@ -174,7 +174,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
             </FormWithLine>
           </Styles.SearchHeader>
         </Column>
-        <Column small="full" medium="one-third" large="one-quarter">
+        <Column small="full" medium="one-third" large="one-third">
           <Row>
             <Column small="full" medium="full" large="full">
               <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
@@ -244,7 +244,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
             </Column>
           </Row>
         </Column>
-        <Column small="full" medium="two-thirds" large="three-quarters">
+        <Column small="full" medium="two-thirds" large="two-thirds">
           <Row>
             <Column small="full" medium="full" large="full">
               {services?.length > 0 ? (
@@ -256,57 +256,47 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               )}
             </Column>
 
-            {services?.length > 0 && (
-              <Column small="full" medium="full" large="full">
-                <Styles.ColumnLabels>
-                  <Row>
-                    <Column small="full" medium="full" large="one-half">
-                      Name
-                    </Column>
-                    <Column small="full" medium="full" large="one-quarter">
-                      Address
-                    </Column>
-                    <Column small="full" medium="full" large="one-quarter">
-                      Telephone
-                    </Column>
-                  </Row>
-                </Styles.ColumnLabels>
-              </Column>
-            )}
-
             {services.map((service, index) => (
               <Column small="full" medium="full" large="full" key={service.id}>
                 <Styles.ServiceContainer resultNumber={index}>
                   <Row>
-                    <Column small="full" medium="full" large="one-half">
-                      <a href={`${directoryPath}/${service.id}`}>{service.name}</a>
+                    <Column small="full" medium="full" large="full">
+                      <Styles.ServiceLink href={`${directoryPath}/${service.id}`}>{service.name}</Styles.ServiceLink>
                       <div>
                         {sanitizeHtml(service.description, {
                           allowedTags: [],
                           allowedAttributes: {},
                         }).substr(0, extractLength) + String.fromCharCode(8230)}
                       </div>
-                    </Column>
-                    <Column small="full" medium="full" large="one-quarter">
-                      {service.service_at_locations?.length > 0 &&
-                        service.service_at_locations[0].physical_addresses?.length > 0 && (
-                          <Styles.Address>
-                            {Object.values(service.service_at_locations[0].physical_addresses[0])
-                              .filter((key) => {
-                                return key !== '';
-                              })
-                              .join(', ')}
-                          </Styles.Address>
-                        )}
-                    </Column>
-                    <Column small="full" medium="full" large="one-quarter">
-                      {service.contacts?.length > 0 && service.contacts[0].phones?.length > 0 && (
+                      {service.eligibilities && (
                         <>
-                          {service.contacts[0].phones.map((phone) => (
-                            <p key={phone.id}>{phone.number}</p>
+                          {service.eligibilities.map((eligibility) => (
+                            <Styles.Age>
+                              Suitable for ages from {eligibility.minimum_age} to {eligibility.maximum_age}
+                            </Styles.Age>
                           ))}
                         </>
                       )}
+                    </Column>
+                    <Column small="full" medium="full" large="full">
+                      <Styles.AddToShortlist>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          width="15px"
+                          height="15px"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          />
+                        </svg>
+                        Add to shortlist
+                      </Styles.AddToShortlist>
                     </Column>
                   </Row>
                 </Styles.ServiceContainer>
