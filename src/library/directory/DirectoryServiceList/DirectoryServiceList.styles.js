@@ -281,6 +281,28 @@ export const AddToShortlist = styled.button`
   }
 `;
 
+export const Favourites = styled.a`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+
+  svg {
+    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
+`;
+
 export const ServiceLink = styled.a`
   display: block;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};

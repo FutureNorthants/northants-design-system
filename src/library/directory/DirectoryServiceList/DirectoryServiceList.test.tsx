@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import DirectoryServiceList from './DirectoryServiceList';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
+import { DirectoryFavouritesProvider } from '../../contexts/DirectoryFavouritesProvider/DirectoryFavouritesProvider';
 
 describe('Test Component', () => {
   let props: DirectoryServiceListProps;
@@ -17,13 +18,42 @@ describe('Test Component', () => {
       pageNumber: 1,
       searchTerm: 'the search term',
       searchPostcode: 'NN1 1AA',
+      categories: [
+        {
+          label: 'Filter by category',
+          vocabulary: 'colours',
+          options: [
+            {
+              id: 'colours:1',
+              name: 'Green',
+              vocabulary: 'colours',
+              checked: false,
+            },
+            {
+              id: 'colours:2',
+              name: 'Blue',
+              vocabulary: 'colours',
+              checked: false,
+            },
+            {
+              id: 'colours:3',
+              name: 'Red',
+              vocabulary: 'colours',
+              checked: true,
+            },
+          ],
+          singleSelection: false,
+        },
+      ],
     };
   });
 
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <DirectoryServiceList {...props} />
+        <DirectoryFavouritesProvider>
+          <DirectoryServiceList {...props} />
+        </DirectoryFavouritesProvider>
       </ThemeProvider>
     );
 
@@ -35,7 +65,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent(ExampleService.name);
     expect(component).toHaveTextContent('Showing 1 to 1 out of 1');
     expect(component).toHaveTextContent(
-      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to …'
+      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry,…'
     );
   });
 
@@ -63,5 +93,27 @@ describe('Test Component', () => {
 
     expect(component).not.toHaveTextContent('Showing 0 to 0 out of 0');
     expect(component).toHaveTextContent('No results found');
+  });
+
+  it('should render the categories', () => {
+    const { getByLabelText, getAllByRole, getByText } = renderComponent();
+    const legend = getByText('Filter by category');
+
+    expect(legend).toBeVisible();
+    expect(getByText('Green')).not.toBeVisible();
+
+    fireEvent.click(legend);
+
+    const checkboxes = getAllByRole('checkbox');
+    const redCheckbox = getByLabelText('Red');
+    const greenCheckbox = getByLabelText('Green');
+
+    expect(checkboxes).toHaveLength(3);
+    expect(redCheckbox).toBeChecked();
+    expect(greenCheckbox).not.toBeChecked();
+
+    fireEvent.click(redCheckbox);
+
+    expect(redCheckbox).not.toBeChecked();
   });
 });

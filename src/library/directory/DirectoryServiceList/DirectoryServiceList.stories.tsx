@@ -8,6 +8,7 @@ import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContain
 import PageMain from '../../structure/PageMain/PageMain';
 import { uniqueID } from '../../helpers/helpers';
 import { ExampleDirectoryCategories } from './DirectoryServiceList.storydata';
+import { DirectoryFavouritesProvider } from '../../contexts/DirectoryFavouritesProvider/DirectoryFavouritesProvider';
 
 export default {
   title: 'Library/Directory/Directory Service List',
@@ -23,7 +24,9 @@ const Template: Story<DirectoryServiceListProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
-        <DirectoryServiceList {...args} />
+        <DirectoryFavouritesProvider>
+          <DirectoryServiceList {...args} />
+        </DirectoryFavouritesProvider>
       </PageMain>
     </MaxWidthContainer>
   </SBPadding>
