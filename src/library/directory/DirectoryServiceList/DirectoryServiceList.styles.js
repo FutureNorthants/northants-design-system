@@ -84,20 +84,65 @@ export const Address = styled.span`
   word-wrap: break-word;
 `;
 
-export const Legend = styled.legend`
-  color: #0b0c0c;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: table;
-  max-width: 100%;
-  margin-bottom: 10px;
-  padding: 0;
-  white-space: normal;
-  font-weight: bold;
-`;
-
 export const Fieldset = styled.fieldset`
   display: block;
+  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  position: relative;
+`;
+
+export const Legend = styled.legend`
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0;
+`;
+
+export const LegendButton = styled.button`
+  background: none;
+  border: none;
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  width: 100%;
+  white-space: normal;
+  cursor: pointer;
+  text-align: left;
+  padding-right: 30px;
+  ${(props) => props.theme.theme_vars.h4}
+  ${(props) => props.theme.linkStyles}
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const AccordionIcon = styled.span`
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  width: 34px;
+  height: 32px;
+
+  &:before {
+    border-style: solid;
+    border-width: 4px 4px 0 0;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    vertical-align: top;
+    width: 12px;
+    border-color: ${(props) => props.theme.theme_vars.colours.black};
+    top: ${(props) => (props.isOpen ? `5px` : `0`)};
+    left: 6px;
+    transform: ${(props) => (props.isOpen ? `rotate(-45deg)` : `rotate(135deg)`)};
+  }
 `;
 
 export const Category = styled.div`
@@ -200,4 +245,8 @@ export const ColumnLabels = styled.div`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     display: block;
   }
+`;
+
+export const Accordion = styled.div`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `;

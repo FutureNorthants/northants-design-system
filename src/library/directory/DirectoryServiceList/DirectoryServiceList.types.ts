@@ -103,5 +103,5 @@ export interface DirectoryTaxonomy {
   /**
    * Is the option checked
    */
-  checked?: boolean;
+  checked: boolean;
 }

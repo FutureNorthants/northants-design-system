@@ -20,7 +20,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   pageNumber = 1,
   perPage = 5,
   extractLength = 140,
-  categories,
+  categories = [],
   searchMinimumAge = '',
   searchMaximumAge = '',
 }) => {
@@ -30,6 +30,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [checkboxState, setCheckboxState] = useState(categories);
   const [minimumAge, setMinimumAge] = useState(searchMinimumAge);
   const [maximumAge, setMaximumAge] = useState(searchMaximumAge);
+  const [accordions, setAccordions] = useState([]);
+
+  categories?.forEach((category) => {
+    accordions.push(false);
+  });
+  accordions.push(false);
 
   useEffect(() => {
     if (!submit) return;
@@ -118,6 +124,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     window.location.href = directoryPath;
   };
 
+  const toggleAccordion = (index) => {
+    const updatedAccordions = [...accordions];
+    updatedAccordions[index] = !updatedAccordions[index];
+
+    setAccordions(updatedAccordions);
+  };
+
   return (
     <Styles.Container data-testid="DirectoryServiceList">
       <Row>
@@ -166,53 +179,67 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
             <Column small="full" medium="full" large="full">
               <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
             </Column>
-            {categories?.map((category, categoryIndex) => (
+            {checkboxState?.map((category, categoryIndex) => (
               <Column small="full" medium="full" large="full" key={category.label}>
                 <Styles.Fieldset>
-                  <Styles.Legend>{category.label}</Styles.Legend>
-                  {category.options.map((taxonomy) => (
-                    <Styles.Category key={taxonomy.id}>
-                      <Styles.CategoryInput
-                        type={category.singleSelection ? 'radio' : 'checkbox'}
-                        value={taxonomy.id}
-                        id={taxonomy.name.replace(' ', '')}
-                        name={taxonomy.vocabulary}
-                        onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
-                        checked={taxonomy.checked}
-                      />
-                      <Styles.CategoryInputLabel
-                        isChecked={taxonomy.checked}
-                        htmlFor={taxonomy.name.replace(' ', '')}
-                        singleSelection={category.singleSelection}
-                      >
-                        {taxonomy.name}
-                      </Styles.CategoryInputLabel>
-                    </Styles.Category>
-                  ))}
+                  <Styles.Legend>
+                    <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex)} type="button">
+                      {category.label}
+                      <Styles.AccordionIcon isOpen={accordions[categoryIndex]} />
+                    </Styles.LegendButton>
+                  </Styles.Legend>
+                  <Styles.Accordion isOpen={accordions[categoryIndex]}>
+                    {category.options.map((taxonomy) => (
+                      <Styles.Category key={taxonomy.id}>
+                        <Styles.CategoryInput
+                          type={category.singleSelection ? 'radio' : 'checkbox'}
+                          value={taxonomy.id}
+                          id={taxonomy.id.replace(' ', '')}
+                          name={taxonomy.vocabulary}
+                          onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
+                          checked={taxonomy.checked}
+                        />
+                        <Styles.CategoryInputLabel
+                          isChecked={taxonomy.checked}
+                          htmlFor={taxonomy.id.replace(' ', '')}
+                          singleSelection={category.singleSelection}
+                        >
+                          {taxonomy.name}
+                        </Styles.CategoryInputLabel>
+                      </Styles.Category>
+                    ))}
+                  </Styles.Accordion>
                 </Styles.Fieldset>
               </Column>
             ))}
             <Column small="full" medium="full" large="full">
               <Styles.Fieldset>
-                <Styles.Legend>Select age group (years)</Styles.Legend>
-                <Row>
-                  <Column small="full" medium="one-half" large="one-half">
-                    <Styles.Label htmlFor="minimum_age">From</Styles.Label>
-                    <Input
-                      name="minimum_age"
-                      onChange={(e) => setMinimumAge(parseInt(e.target.value) ?? '')}
-                      defaultValue={minimumAge}
-                    />
-                  </Column>
-                  <Column small="full" medium="one-half" large="one-half">
-                    <Styles.Label htmlFor="maximum_age">To</Styles.Label>
-                    <Input
-                      name="maximum_age"
-                      onChange={(e) => setMaximumAge(parseInt(e.target.value) ?? '')}
-                      defaultValue={maximumAge}
-                    />
-                  </Column>
-                </Row>
+                <Styles.Legend onClick={(e) => toggleAccordion(checkboxState.length)}>
+                  <Styles.LegendButton onClick={(e) => toggleAccordion(checkboxState.length)} type="button">
+                    Select age group (years)
+                    <Styles.AccordionIcon isOpen={accordions[checkboxState.length]} />
+                  </Styles.LegendButton>
+                </Styles.Legend>
+                <Styles.Accordion isOpen={accordions[checkboxState.length]}>
+                  <Row>
+                    <Column small="full" medium="one-half" large="one-half">
+                      <Styles.Label htmlFor="minimum_age">From</Styles.Label>
+                      <Input
+                        name="minimum_age"
+                        onChange={(e) => setMinimumAge(parseInt(e.target.value) ?? '')}
+                        defaultValue={minimumAge}
+                      />
+                    </Column>
+                    <Column small="full" medium="one-half" large="one-half">
+                      <Styles.Label htmlFor="maximum_age">To</Styles.Label>
+                      <Input
+                        name="maximum_age"
+                        onChange={(e) => setMaximumAge(parseInt(e.target.value) ?? '')}
+                        defaultValue={maximumAge}
+                      />
+                    </Column>
+                  </Row>
+                </Styles.Accordion>
               </Styles.Fieldset>
             </Column>
           </Row>
