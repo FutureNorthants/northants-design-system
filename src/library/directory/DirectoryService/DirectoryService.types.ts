@@ -6,7 +6,7 @@ export interface DirectoryServiceProps {
   contacts?: ServiceContactProps[];
   description: string;
   descriptionElement?: React.ReactNode;
-  eligibilities: EligibilitiesProps[];
+  eligibilitys: EligibilitiesProps[];
   email?: string;
   name: string;
   organization: OrganizationProps;

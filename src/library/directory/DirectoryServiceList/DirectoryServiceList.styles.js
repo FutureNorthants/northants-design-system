@@ -79,8 +79,17 @@ const serviceBackground = (props) => {
 };
 
 export const ServiceContainer = styled.div`
+  background: ${(props) =>
+    props.theme.cardinal_name === 'north'
+      ? props.theme.theme_vars.colours.white
+      : props.theme.theme_vars.colours.grey_light} !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  transition: box-shadow 0.3s ease;
+  border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  ${serviceBackground};
 `;
 
 export const Address = styled.span`
@@ -252,33 +261,6 @@ export const ColumnLabels = styled.div`
 
 export const Accordion = styled.div`
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-`;
-
-export const AddToShortlist = styled.button`
-  border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
-  background: ${(props) => props.theme.theme_vars.colours.white};
-  color: ${(props) => props.theme.theme_vars.colours.action};
-  cursor: pointer;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  &:hover {
-    ${(props) => props.theme.linkStylesHover}
-    background: ${(props) => props.theme.theme_vars.colours.action_light}
-  }
-  &:focus {
-    ${(props) => props.theme.linkStylesFocus}
-  }
-  &:active {
-    ${(props) => props.theme.linkStylesActive}
-  }
-
-  svg {
-    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  }
 `;
 
 export const Favourites = styled.a`

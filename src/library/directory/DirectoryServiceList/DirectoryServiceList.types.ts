@@ -7,6 +7,11 @@ export interface DirectoryServiceListProps {
   directoryPath: string;
 
   /**
+   * The url to the shortlist
+   */
+  shortListPath: string;
+
+  /**
    * An array of Directory Services
    */
   services: DirectoryServiceProps[];

@@ -68,5 +68,16 @@ export { GlobalStyleReset } from './themes/GlobalStyleReset.jsx';
 // Directory
 import DirectoryService from './library/directory/DirectoryService/DirectoryService';
 import DirectoryServiceList from './library/directory/DirectoryServiceList/DirectoryServiceList';
+import DirectoryShortList from './library/directory/DirectoryShortList/DirectoryShortList';
+import {
+  DirectoryShortListProvider,
+  useDirectoryShortListContext,
+} from './library/contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
-export { DirectoryService, DirectoryServiceList };
+export {
+  DirectoryService,
+  DirectoryServiceList,
+  DirectoryShortList,
+  DirectoryShortListProvider,
+  useDirectoryShortListContext,
+};

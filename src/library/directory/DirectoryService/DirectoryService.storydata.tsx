@@ -41,7 +41,7 @@ export const ExampleService: DirectoryServiceProps = {
     </>
   ),
   name: 'West Northants Council',
-  eligibilities: [
+  eligibilitys: [
     {
       id: 1,
       eligibility: '',

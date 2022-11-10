@@ -5,7 +5,7 @@ import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
-import { DirectoryFavouritesProvider } from '../../contexts/DirectoryFavouritesProvider/DirectoryFavouritesProvider';
+import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
 describe('Test Component', () => {
   let props: DirectoryServiceListProps;
@@ -13,6 +13,7 @@ describe('Test Component', () => {
   beforeEach(() => {
     props = {
       directoryPath: '/directory',
+      shortListPath: '/directory/short-list',
       services: [ExampleService],
       totalResults: 1,
       pageNumber: 1,
@@ -51,9 +52,9 @@ describe('Test Component', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <DirectoryFavouritesProvider>
+        <DirectoryShortListProvider>
           <DirectoryServiceList {...props} />
-        </DirectoryFavouritesProvider>
+        </DirectoryShortListProvider>
       </ThemeProvider>
     );
 
@@ -115,5 +116,19 @@ describe('Test Component', () => {
     fireEvent.click(redCheckbox);
 
     expect(redCheckbox).not.toBeChecked();
+  });
+
+  it('saves a service as a favourite and removes it', () => {
+    const { queryByText, getByText } = renderComponent();
+
+    expect(getByText('Shortlist (0)')).toBeVisible();
+
+    fireEvent.click(queryByText('Add to shortlist'));
+
+    expect(getByText('Shortlist (1)')).toBeVisible();
+
+    fireEvent.click(queryByText('Remove from shortlist'));
+
+    expect(getByText('Shortlist (0)')).toBeVisible();
   });
 });

@@ -6,9 +6,8 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
-import { uniqueID } from '../../helpers/helpers';
 import { ExampleDirectoryCategories } from './DirectoryServiceList.storydata';
-import { DirectoryFavouritesProvider } from '../../contexts/DirectoryFavouritesProvider/DirectoryFavouritesProvider';
+import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
 export default {
   title: 'Library/Directory/Directory Service List',
@@ -24,9 +23,9 @@ const Template: Story<DirectoryServiceListProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
-        <DirectoryFavouritesProvider>
+        <DirectoryShortListProvider>
           <DirectoryServiceList {...args} />
-        </DirectoryFavouritesProvider>
+        </DirectoryShortListProvider>
       </PageMain>
     </MaxWidthContainer>
   </SBPadding>
@@ -35,11 +34,11 @@ const Template: Story<DirectoryServiceListProps> = (args) => (
 export const ExampleDirectoryServiceList = Template.bind({});
 ExampleDirectoryServiceList.args = {
   services: [
-    { ...ExampleService, ...{ id: uniqueID() } },
-    { ...ExampleService, ...{ id: uniqueID() } },
-    { ...ExampleService, ...{ id: uniqueID() } },
-    { ...ExampleService, ...{ id: uniqueID() } },
-    { ...ExampleService, ...{ id: uniqueID() } },
+    { ...ExampleService, ...{ id: 'abc123' } },
+    { ...ExampleService, ...{ id: 'abc124' } },
+    { ...ExampleService, ...{ id: 'abc125' } },
+    { ...ExampleService, ...{ id: 'abc126' } },
+    { ...ExampleService, ...{ id: 'abc127' } },
   ],
   totalResults: 156,
   searchTerm: 'council',
@@ -47,6 +46,8 @@ ExampleDirectoryServiceList.args = {
   categories: ExampleDirectoryCategories,
   pageNumber: 2,
   perPage: 5,
+  directoryPath: '/directory',
+  shortListPath: '/directory/short-list',
 };
 
 export const DirectoryServiceNoResults = Template.bind({});
@@ -56,4 +57,6 @@ DirectoryServiceNoResults.args = {
   categories: ExampleDirectoryCategories,
   pageNumber: 1,
   perPage: 5,
+  directoryPath: '/directory',
+  shortListPath: '/directory/short-list',
 };
