@@ -29,6 +29,9 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                         <Styles.ServiceLink href={`${directoryPath}/${favourite.id}`}>
                           {favourite.name}
                         </Styles.ServiceLink>
+                        <Styles.PrintLink>
+                          <p>{`${directoryPath}/${favourite.id}`}</p>
+                        </Styles.PrintLink>
                         <div>{favourite.snippet}</div>
                       </Column>
                       <Column small="full" medium="full" large="full">

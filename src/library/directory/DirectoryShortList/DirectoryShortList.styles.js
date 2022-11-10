@@ -20,6 +20,18 @@ export const ServiceLink = styled.a`
   }
 `;
 
+export const PrintLink = styled.div`
+  p {
+    display: none;
+  }
+
+  @media print {
+    p {
+      display: block;
+    }
+  }
+`;
+
 export const FavouriteContainer = styled.div`
   background: ${(props) =>
     props.theme.cardinal_name === 'north'
