@@ -40,7 +40,7 @@ export const north_vars = {
     grey_light: '#F5F5F5',
     white: '#FFFFFF',
 
-    action: '#016600',
+    action: '#016200',
     action_light: '#F3F9F5',
     action_dark: '#065325',
     positive: '#147DAD',
