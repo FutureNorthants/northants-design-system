@@ -28,10 +28,14 @@ import CareersIcon from './Careers/Icon';
 import CareersIconHover from './Careers/IconHover';
 import CashIcon from './Cash/Icon';
 import CashIconHover from './Cash/IconHover';
+import CatalogueIcon from './Catalogue/Icon';
+import CatalogueIconHover from './Catalogue/IconHover';
 import CharityIcon from './Charity/Icon';
 import CharityIconHover from './Charity/IconHover';
 import ChildrenIcon from './Children/Icon';
 import ChildrenIconHover from './Children/IconHover';
+import ComputerIcon from './Computer/Icon';
+import ComputerIconHover from './Computer/IconHover';
 import CondolenceBookIcon from './CondolenceBook/Icon';
 import CondolenceBookIconHover from './CondolenceBook/IconHover';
 import CookingIcon from './Cooking/Icon';
@@ -52,10 +56,14 @@ import DogFoulingIcon from './DogFouling/Icon';
 import DogFoulingIconHover from './DogFouling/IconHover';
 import DOLSIcon from './DOLS/Icon';
 import DOLSIconHover from './DOLS/IconHover';
+import EbookIcon from './Ebook/Icon';
+import EbookIconHover from './Ebook/IconHover';
 import EditIcon from './Edit/Icon';
 import EditIconHover from './Edit/IconHover';
 import EnvironmentIcon from './Environment/Icon';
 import EnvironmentIconHover from './Environment/IconHover';
+import EventsIcon from './Events/Icon';
+import EventsIconHover from './Events/IconHover';
 import FinanceIcon from './Finance/Icon';
 import FinanceIconHover from './Finance/IconHover';
 import FlowerIcon from './Flower/Icon';
@@ -82,6 +90,8 @@ import LitterIcon from './Litter/Icon';
 import LitterIconHover from './Litter/IconHover';
 import MapPinIcon from './MapPin/Icon';
 import MapPinIconHover from './MapPin/IconHover';
+import MemberIcon from './Member/Icon';
+import MemberIconHover from './Member/IconHover';
 import MissedBinIcon from './MissedBin/Icon';
 import MissedBinIconHover from './MissedBin/IconHover';
 import NewIcon from './New/Icon';
@@ -162,10 +172,14 @@ let components = {
   careersHover: CareersIconHover,
   cash: CashIcon,
   cashHover: CashIconHover,
+  catalogue: CatalogueIcon,
+  catalogueHover: CatalogueIconHover,
   charity: CharityIcon,
   charityHover: CharityIconHover,
   children: ChildrenIcon,
   childrenHover: ChildrenIconHover,
+  computer: ComputerIcon,
+  computerHover: ComputerIconHover,
   condolenceBook: CondolenceBookIcon,
   condolenceBookHover: CondolenceBookIconHover,
   cooking: CookingIcon,
@@ -186,10 +200,14 @@ let components = {
   dogfoulingHover: DogFoulingIconHover,
   dols: DOLSIcon,
   dolsHover: DOLSIconHover,
+  ebook: EbookIcon,
+  ebookHover: EbookIconHover,
   edit: EditIcon,
   editHover: EditIconHover,
   environment: EnvironmentIcon,
   environmentHover: EnvironmentIconHover,
+  events: EventsIcon,
+  eventsHover: EventsIconHover,
   finance: FinanceIcon,
   financeHover: FinanceIconHover,
   flower: FlowerIcon,
@@ -216,6 +234,8 @@ let components = {
   litterHover: LitterIconHover,
   mappin: MapPinIcon,
   mappinHover: MapPinIconHover,
+  member: MemberIcon,
+  memberHover: MemberIconHover,
   missedbin: MissedBinIcon,
   missedbinHover: MissedBinIconHover,
   new: NewIcon,
