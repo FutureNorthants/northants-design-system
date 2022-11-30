@@ -16,7 +16,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null,
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Styles.Container>
+    <Styles.Container data-testid="Footer">
       <Styles.StyledMaxWidthContainer noBackground>
         <Styles.FooterAlignment>
           <div>
@@ -73,7 +73,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null,
             </Styles.SocialLinks>
             <Styles.FooterCopy>
               &copy;&nbsp;
-              {themeContext.full_name} Council &nbsp;{year}
+              {themeContext.full_name} Council {year}
             </Styles.FooterCopy>
           </div>
 
