@@ -253,10 +253,11 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <ImageAndText {...ImageAndTextWithHeading} />
         <SearchBox
           fieldName="keyword"
-          label="Search for courses"
+          label="Search adult learning courses"
           method="get"
           path="https://courses.northantsglobal.net/CourseKeySearch.asp"
           searchText="Search courses"
+          labelHidden={false}
         />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
