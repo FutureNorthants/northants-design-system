@@ -78,6 +78,13 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Column>
         )}
 
+        <Column small="full" medium="full" large="full">
+          <Heading level={2} text="About this service" />
+          <div>
+            <>{descriptionElement}</>
+          </div>
+          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)} />
+        </Column>
         {regular_schedules.length > 0 && (
           <Column small="full" medium="full" large="full">
             <Heading level={2} text="Opening times" />
@@ -103,14 +110,6 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </div>
           </Column>
         )}
-
-        <Column small="full" medium="full" large="full">
-          <Heading level={2} text="About this service" />
-          <div>
-            <>{descriptionElement}</>
-          </div>
-          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)} />
-        </Column>
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="Contact details" />
           <SummaryList terms={transformService(email, url)} hasMargin={false} />
