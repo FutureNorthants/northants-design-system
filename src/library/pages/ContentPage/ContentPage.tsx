@@ -17,6 +17,7 @@ import Image from '../../slices/Image/Image';
 import ImageAndText from '../../slices/ImageAndText/ImageAndText';
 import { ImageWithCaption } from '../../slices/Image/Image.storydata';
 import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
+import SearchBox from '../../slices/SearchBox/SearchBox';
 
 export interface ContentPageProps {}
 
@@ -250,6 +251,13 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <Heading level={2} text="Full Width Image" />
         <Image {...ImageWithCaption} />
         <ImageAndText {...ImageAndTextWithHeading} />
+        <SearchBox
+          fieldName="keyword"
+          label="Search for courses"
+          method="get"
+          path="https://courses.northantsglobal.net/CourseKeySearch.asp"
+          searchText="Search courses"
+        />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
