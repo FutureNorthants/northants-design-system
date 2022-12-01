@@ -50,6 +50,16 @@ export const ExampleService: DirectoryServiceProps = {
     },
   ],
   email: 'example@service.net',
+  languages: [
+    {
+      id: 1,
+      language: 'French',
+    },
+    {
+      id: 2,
+      language: 'German',
+    },
+  ],
   organization: {
     name: 'Example Organization',
     id: 'AAA-BBB-CCC-DDD',

@@ -26,6 +26,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   categories = [],
   searchMinimumAge = '',
   searchMaximumAge = '',
+  customTaxonomyFilters = [],
 }) => {
   const [submit, setSubmit] = useState<boolean>(false);
   const [search, setSearch] = useState<string>(searchTerm);
@@ -43,6 +44,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   categories?.forEach((category) => {
     accordions.push(false);
   });
+  accordions.push(false);
   accordions.push(false);
 
   useEffect(() => {
@@ -79,14 +81,25 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     }
 
     checkboxState?.forEach((category) => {
-      category.options.forEach((taxonomy) => {
-        if (taxonomy.checked) {
-          params.push({
-            key: 'taxonomy_id',
-            value: taxonomy.id,
-          });
-        }
-      });
+      if (customTaxonomyFilters.includes(category.vocabulary)) {
+        category.options.forEach((taxonomy) => {
+          if (taxonomy.checked) {
+            params.push({
+              key: category.vocabulary,
+              value: taxonomy.id,
+            });
+          }
+        });
+      } else {
+        category.options.forEach((taxonomy) => {
+          if (taxonomy.checked) {
+            params.push({
+              key: 'taxonomy_id',
+              value: taxonomy.id,
+            });
+          }
+        });
+      }
     });
 
     setSubmit(false);

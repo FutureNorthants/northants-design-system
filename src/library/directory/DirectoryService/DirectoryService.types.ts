@@ -3,19 +3,20 @@ import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 
 export interface DirectoryServiceProps {
   id: string;
+  accreditations?: string;
   contacts?: ServiceContactProps[];
   description: string;
   descriptionElement?: React.ReactNode;
   eligibilitys: EligibilitiesProps[];
   email?: string;
+  fees?: string;
+  languages?: LanguagesProps[];
   name: string;
   organization: OrganizationProps;
   regular_schedules?: RegularScheduleProps[];
+  service_areas: ServiceAreaProps[];
   service_at_locations?: LocationProps[];
   url?: string;
-  accreditations?: string;
-  fees?: string;
-  service_areas: ServiceAreaProps[];
 }
 
 export interface OrganizationProps {
@@ -68,4 +69,9 @@ export interface EligibilitiesProps {
   eligibility: string;
   minimum_age: number;
   maximum_age: number;
+}
+
+export interface LanguagesProps {
+  id: number;
+  language: string;
 }

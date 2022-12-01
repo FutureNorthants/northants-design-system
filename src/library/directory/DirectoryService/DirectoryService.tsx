@@ -11,15 +11,16 @@ import { transformDescriptionDetails, transformService } from './DirectoryServic
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   name,
+  accreditations,
   descriptionElement,
   email,
+  fees,
+  languages,
   regular_schedules,
   contacts,
+  service_areas,
   service_at_locations,
   url,
-  accreditations,
-  fees,
-  service_areas,
 }) => {
   const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
@@ -108,7 +109,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <div>
             <>{descriptionElement}</>
           </div>
-          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas)} />
+          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)} />
         </Column>
         <Column small="full" medium="full" large="full">
           <Heading level={2} text="Contact details" />

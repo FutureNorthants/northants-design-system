@@ -6,7 +6,7 @@ import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
-import { ExampleDirectoryCategories } from './DirectoryServiceList.storydata';
+import { ExampleDirectoryCategories, ExampleFacilities } from './DirectoryServiceList.storydata';
 import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
 export default {
@@ -48,6 +48,7 @@ ExampleDirectoryServiceList.args = {
   perPage: 5,
   directoryPath: '/directory',
   shortListPath: '/directory/short-list',
+  customTaxonomyFilters: ['facilities', 'language'],
 };
 
 export const DirectoryServiceNoResults = Template.bind({});
@@ -59,4 +60,5 @@ DirectoryServiceNoResults.args = {
   perPage: 5,
   directoryPath: '/directory',
   shortListPath: '/directory/short-list',
+  customTaxonomyFilters: ['facilities', 'language'],
 };

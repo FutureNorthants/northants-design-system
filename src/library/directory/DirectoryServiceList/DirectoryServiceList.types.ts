@@ -60,6 +60,11 @@ export interface DirectoryServiceListProps {
    * The maximum age filter
    */
   searchMaximumAge?: number;
+
+  /**
+   * Taxonomy vocabularies that should use custom endpoints
+   */
+  customTaxonomyFilters?: string[];
 }
 
 export interface DirectoryCategory {
