@@ -2,21 +2,59 @@ import styled from 'styled-components';
 import { VisuallyHidden } from './../../helpers/style-helpers';
 
 export const Container = styled.div`
-  background-color: ${(props) =>
-    props.theme.cardinal_name === 'west'
-      ? props.theme.theme_vars.colours.grey_light + '7a'
-      : props.theme.theme_vars.colours.white};
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.large};
-  border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  padding: 0;
   margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   ${(props) => props.theme.fontStyles}
 
-  input[type="text"] {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    background: url('${(props) => props.image}') no-repeat center center;
+    background-size: cover;
+    padding-top: ${(props) => (props.image ? '8rem' : 0)};
+    padding-bottom: ${(props) => (props.image ? '8rem' : 0)};
+    padding-left: ${(props) => (props.image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
+    padding-right: ${(props) => (props.image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
+  }
+
+  input[type='text'] {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     flex-grow: 1;
     margin-bottom: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+`;
+
+export const LinkContainer = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  a {
+    width: 100%;
+    height: 2.28rem;
+    padding: 12px !important;
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      height: 2.6rem;
+    }
+  }
+`;
+
+export const Inner = styled.div`
+  background-color: ${(props) =>
+    props.theme.cardinal_name === 'west'
+      ? props.theme.theme_vars.colours.grey_light
+      : props.theme.theme_vars.colours.white};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    max-width: ${(props) => props.theme.theme_vars.breakpoints.m};
+    margin: 0 auto;
   }
 `;
 
@@ -38,7 +76,7 @@ export const InputWrapper = styled.div`
   width: 100%;
 `;
 
-export const Button = styled.input`
+export const SubmitButton = styled.input`
   flex-grow: 0;
   cursor: pointer;
   margin: 0;
@@ -50,9 +88,9 @@ export const Button = styled.input`
   border-top-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   text-align: center;
-  height: ${(props) => (props.isLarge ? '2.9rem' : '2.28rem')};
+  height: 2.28rem;
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    height: ${(props) => (props.isLarge ? '3.22rem' : '2.6rem')};
+    height: 2.6rem;
   }
 
   &:hover {

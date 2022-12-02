@@ -4,19 +4,13 @@ import SearchBox from './SearchBox';
 import { SearchBoxProps } from './SearchBox.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
+import { ExampleSearchBoxProps } from './SearchBox.storydata';
 
 describe('SearchBox Component', () => {
   let props: SearchBoxProps;
 
   beforeEach(() => {
-    props = {
-      label: 'Search for courses label',
-      method: 'get',
-      fieldName: 'search_field',
-      path: '/test',
-      searchText: 'Search',
-      placeholder: 'Search for courses',
-    };
+    props = ExampleSearchBoxProps;
   });
 
   const renderComponent = () =>
@@ -30,14 +24,21 @@ describe('SearchBox Component', () => {
     const { getByTestId, getByPlaceholderText, getByRole } = renderComponent();
 
     const component = getByTestId('SearchBox');
-    const input = getByPlaceholderText('Search for courses');
+    const input = getByPlaceholderText('Search courses');
     const form = getByRole('form');
+    const link = getByRole('link');
+    const heading = getByRole('heading');
 
     expect(component).toBeVisible();
-    expect(component).toHaveTextContent('Search for courses label');
-    expect(input).toHaveAttribute('name', 'search_field');
+    expect(component).toHaveTextContent('Search for courses');
+    expect(input).toHaveAttribute('name', 'keyword');
 
-    expect(form).toHaveAttribute('method', 'get');
-    expect(form).toHaveAttribute('action', '/test');
+    expect(form).toHaveAttribute('method', 'post');
+    expect(form).toHaveAttribute('action', 'https://courses.northantsglobal.net/CourseKeySearch.asp');
+
+    expect(link).toHaveTextContent('View all courses');
+    expect(link).toHaveAttribute('href', 'https://courses.northantsglobal.net/AvailableCoursesList.asp');
+
+    expect(heading).toHaveTextContent('Search adult learning courses');
   });
 });
