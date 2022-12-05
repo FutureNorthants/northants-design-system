@@ -1,33 +1,21 @@
-import React, { ReactChild } from 'react';
+import React from 'react';
 import { SearchBoxProps } from './SearchBox.types';
 import * as Styles from './SearchBox.styles';
-import Input from '../../components/Input/Input';
-import { uniqueID } from '../../helpers/helpers';
 import LazyImage from 'react-lazy-progressive-image';
 import Column from '../../components/Column/Column';
 import Row from '../../components/Row/Row';
 import Button from '../../components/Button/Button';
 import Heading from '../../components/Heading/Heading';
+import CustomSearch from '../../components/CustomSearch/CustomSearch';
 
 const SearchBox: React.FC<SearchBoxProps> = ({
-  fieldName = 'search',
-  id = null,
-  label,
-  labelHidden = true,
-  method = 'post',
-  path,
-  placeholder,
-  searchText = 'Search',
+  customSearch,
   imageSmall,
   imageLarge,
   imageAltText,
   searchBoxLink,
   title,
 }) => {
-  if (id === null) {
-    id = uniqueID();
-  }
-
   const searchInner = (
     <Styles.Inner>
       <Row>
@@ -37,21 +25,11 @@ const SearchBox: React.FC<SearchBoxProps> = ({
           </Column>
         )}
         <Column small="full" medium="full" large={searchBoxLink ? 'two-thirds' : 'full'}>
-          <form method={method} action={path} aria-label={label}>
-            <div role="search">
-              <Styles.Label htmlFor={id} labelHidden={labelHidden}>
-                {label}
-              </Styles.Label>
-              <Styles.InputWrapper>
-                <Input name={fieldName} placeholder={placeholder} id={id} />
-                <Styles.SubmitButton type="submit" value={searchText} />
-              </Styles.InputWrapper>
-            </div>
-          </form>
+          <CustomSearch {...customSearch} />
         </Column>
         {searchBoxLink && (
           <Column small="full" medium="full" large="one-third">
-            <Styles.LinkContainer labelHidden={labelHidden}>
+            <Styles.LinkContainer>
               <Button text={searchBoxLink.title} url={searchBoxLink.url} />
             </Styles.LinkContainer>
           </Column>

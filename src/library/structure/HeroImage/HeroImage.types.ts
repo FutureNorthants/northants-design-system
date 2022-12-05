@@ -1,3 +1,4 @@
+import { CustomSearchProps } from '../../components/CustomSearch/CustomSearch.types';
 import { BreadcrumbProp } from '../Breadcrumbs/Breadcrumbs.types';
 
 export interface HeroImageProps {
@@ -45,4 +46,9 @@ export interface HeroImageProps {
    * An optional breadcrumb. If not set then the breadcrumb is not shown
    */
   breadcrumb?: BreadcrumbProp;
+
+  /**
+   * An optional custom search
+   */
+  customSearch?: CustomSearchProps;
 }

@@ -1,13 +1,8 @@
 import { SearchBoxProps } from './SearchBox.types';
+import { ExampleCustomSearchProps } from '../../components/CustomSearch/CustomSearch.storydata';
 
 export const ExampleSearchBoxProps: SearchBoxProps = {
-  path: 'https://courses.northantsglobal.net/CourseKeySearch.asp',
-  method: 'post',
-  fieldName: 'keyword',
-  searchText: 'Search courses',
-  placeholder: 'Search courses',
-  label: 'Search for courses',
-  labelHidden: true,
+  customSearch: ExampleCustomSearchProps,
   imageLarge:
     'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1440/810/0/2021-12/Abington_Park_1.jpg',
   imageSmall:

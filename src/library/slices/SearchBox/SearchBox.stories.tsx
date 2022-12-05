@@ -4,6 +4,7 @@ import SearchBox from './SearchBox';
 import { SearchBoxProps } from './SearchBox.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleSearchBoxProps } from './SearchBox.storydata';
+import { ExampleCustomSearchProps } from '../../components/CustomSearch/CustomSearch.storydata';
 
 export default {
   title: 'Library/Slices/SearchBox',
@@ -25,7 +26,10 @@ export const ExampleSearchBox = Template.bind({});
 ExampleSearchBox.args = ExampleSearchBoxProps;
 
 export const ExampleSearchBoxWithLabel = Template.bind({});
-ExampleSearchBoxWithLabel.args = { ...ExampleSearchBoxProps, labelHidden: false };
+ExampleSearchBoxWithLabel.args = {
+  ...ExampleSearchBoxProps,
+  customSearch: { ...ExampleCustomSearchProps, labelHidden: false },
+};
 
 export const ExampleSearchBoxWithoutImage = Template.bind({});
 ExampleSearchBoxWithoutImage.args = { ...ExampleSearchBoxProps, imageLarge: null, imageSmall: null };

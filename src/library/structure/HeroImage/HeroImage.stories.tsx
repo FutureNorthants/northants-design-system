@@ -7,6 +7,7 @@ import {
   HeroImageExampleBoxedData,
   HeroImageExampleMicroSiteData,
   HeroImageExampleBoxedWithBreadcrumbData,
+  HeroImageExampleBoxedWithCustomSearch,
 } from './HeroImage.storydata';
 
 export default {
@@ -61,3 +62,6 @@ HeroImageExampleGradientTitleOnly.args = {
 
 export const HeroImageWithBreadcrumb = Template.bind({});
 HeroImageWithBreadcrumb.args = HeroImageExampleBoxedWithBreadcrumbData;
+
+export const HeroImageWithCustomSearch = Template.bind({});
+HeroImageWithCustomSearch.args = HeroImageExampleBoxedWithCustomSearch;

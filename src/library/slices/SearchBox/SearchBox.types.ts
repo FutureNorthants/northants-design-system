@@ -1,13 +1,7 @@
-export interface SearchBoxProps {
-  /**
-   * Field name for search box
-   */
-  fieldName: string;
+import { CustomSearchProps } from '../../components/CustomSearch/CustomSearch.types';
 
-  /**
-   * The search box id
-   */
-  id?: string;
+export interface SearchBoxProps {
+  customSearch: CustomSearchProps;
 
   /**
    * URL of the hero image (min 400pix high)
@@ -23,36 +17,6 @@ export interface SearchBoxProps {
    * Optional alt text for the image - ideally the image should be decorative only and not require a long description
    */
   imageAltText?: string | null;
-
-  /**
-   * The search box label
-   */
-  label: string;
-
-  /**
-   * Should the label be visible
-   */
-  labelHidden?: boolean;
-
-  /**
-   * Form submission method
-   */
-  method: string;
-
-  /**
-   * Where to submit the form
-   */
-  path: string;
-
-  /**
-   * Optional placeholder text
-   */
-  placeholder?: string | null;
-
-  /**
-   * The search button text
-   */
-  searchText: string;
 
   /**
    * Optional call to action link
