@@ -14,7 +14,7 @@ export const transformService = (email: string, url: string): SummaryRowProps[] 
   if (url) {
     service.push({
       term: 'Website',
-      detail: url,
+      detail: `<a href="${url}">${url}</a>`,
     });
   }
 

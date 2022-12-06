@@ -21,6 +21,11 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
         <Row>
           {favourites.length > 0 ? (
             <>
+              <Column small="full" medium="full" large="full">
+                <Styles.PrintContainer>
+                  <Styles.PrintButton onClick={() => window.print()}>Print Shortlist</Styles.PrintButton>
+                </Styles.PrintContainer>
+              </Column>
               {favourites.map((favourite) => (
                 <Column key={favourite.id} small="full" medium="full" large="full">
                   <Styles.FavouriteContainer>

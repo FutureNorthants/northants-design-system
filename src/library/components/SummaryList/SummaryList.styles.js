@@ -18,7 +18,7 @@ export const SummaryTerm = styled.dt`
   font-weight: bold;
 `;
 
-export const SummaryDetail = styled.dl`
+export const SummaryDetail = styled.dd`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: table-cell;
   overflow-wrap: break-word;

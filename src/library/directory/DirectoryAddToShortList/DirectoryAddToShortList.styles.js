@@ -25,4 +25,8 @@ export const AddToShortlist = styled.button`
   svg {
     margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
+
+  @media print {
+    display: none;
+  }
 `;

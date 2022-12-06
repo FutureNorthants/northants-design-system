@@ -12,6 +12,7 @@ import HintText from '../../components/HintText/HintText';
 import Pagination from '../../components/Pagination/Pagination';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
+import useLocalStorage from '../../helpers/UseLocalStorage';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -34,18 +35,19 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [checkboxState, setCheckboxState] = useState(categories);
   const [minimumAge, setMinimumAge] = useState(searchMinimumAge);
   const [maximumAge, setMaximumAge] = useState(searchMaximumAge);
-  const [accordions, setAccordions] = useState([]);
+  const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace('/', '')}-accordion`, []);
   const {
     favourites: { favourites: favourites, setFavourites: setFavourites },
     toggleFavourites: toggleFavourites,
     isFavourite: isFavourite,
   } = useDirectoryShortListContext();
 
-  categories?.forEach((category) => {
+  if (accordions.length === 0) {
+    categories?.forEach(() => {
+      accordions.push(false);
+    });
     accordions.push(false);
-  });
-  accordions.push(false);
-  accordions.push(false);
+  }
 
   useEffect(() => {
     if (!submit) return;
