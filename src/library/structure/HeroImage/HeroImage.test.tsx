@@ -5,6 +5,7 @@ import { HeroImageProps } from './HeroImage.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 import { breadcrumbs } from '../../pages/ServiceLandingPageExample/ServiceLandingPageExample.storydata';
+import { HeroImageExampleBoxedWithCustomSearch } from './HeroImage.storydata';
 
 describe('HeroImage slice', () => {
   it('should render text in a box when backgroundBox is true', () => {
@@ -159,4 +160,25 @@ describe('HeroImage slice', () => {
 
     expect(queryByText('Home')).toBeNull();
   });
+});
+
+it('should render the custom search box', () => {
+  const props: HeroImageProps = HeroImageExampleBoxedWithCustomSearch;
+
+  const renderComponent = () =>
+    render(
+      <ThemeProvider theme={west_theme}>
+        <HeroImage {...props} />
+      </ThemeProvider>
+    );
+
+  const { getByRole, getByPlaceholderText } = renderComponent();
+
+  const input = getByPlaceholderText('Search courses');
+  const form = getByRole('form');
+
+  expect(input).toBeVisible();
+
+  expect(form).toHaveAttribute('method', 'post');
+  expect(form).toHaveAttribute('action', 'https://courses.northantsglobal.net/CourseKeySearch.asp');
 });
