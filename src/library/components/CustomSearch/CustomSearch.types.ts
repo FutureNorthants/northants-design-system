@@ -17,7 +17,7 @@ export interface CustomSearchProps {
   /**
    * Should the label be visible
    */
-  labelHidden?: boolean;
+  hasHiddenLabel?: boolean;
 
   /**
    * Form submission method

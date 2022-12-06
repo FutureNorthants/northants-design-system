@@ -12,15 +12,13 @@ export const Container = styled.div`
   }
 `;
 
-const hideLabel = (props) => {
-  if (props.labelHidden) {
-    return VisuallyHidden;
-  }
-};
-
 export const Label = styled.label`
   font-weight: bold;
-  ${hideLabel}
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  ${(props) =>
+    props.hasHiddenLabel
+      ? VisuallyHidden
+      : `display: inline-block; padding-bottom: ${props.theme.theme_vars.spacingSizes.small}`}
 `;
 
 export const InputWrapper = styled.div`

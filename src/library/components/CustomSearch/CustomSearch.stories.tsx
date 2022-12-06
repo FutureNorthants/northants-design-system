@@ -23,3 +23,6 @@ const Template: Story<CustomSearchProps> = (args) => (
 
 export const ExampleCustomSearch = Template.bind({});
 ExampleCustomSearch.args = ExampleCustomSearchProps;
+
+export const ExampleCustomSearchWithLabel = Template.bind({});
+ExampleCustomSearchWithLabel.args = { ...ExampleCustomSearchProps, hasHiddenLabel: false };

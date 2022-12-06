@@ -4,11 +4,11 @@ import * as Styles from './CustomSearch.styles';
 import Input from '../Input/Input';
 import { uniqueID } from '../../helpers/helpers';
 
-const CustomSearch: React.FC<CustomSearchProps> = ({
+const CustomSearch: React.FunctionComponent<CustomSearchProps> = ({
   method,
   path,
   label,
-  labelHidden = true,
+  hasHiddenLabel = true,
   fieldName,
   placeholder,
   searchText,
@@ -21,7 +21,7 @@ const CustomSearch: React.FC<CustomSearchProps> = ({
     <Styles.Container data-testid="CustomSearch">
       <form method={method} action={path} aria-label={label}>
         <div role="search">
-          <Styles.Label htmlFor={id} labelHidden={labelHidden}>
+          <Styles.Label htmlFor={id} hasHiddenLabel={hasHiddenLabel}>
             {label}
           </Styles.Label>
           <Styles.InputWrapper>

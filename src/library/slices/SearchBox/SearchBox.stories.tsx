@@ -28,11 +28,15 @@ ExampleSearchBox.args = ExampleSearchBoxProps;
 export const ExampleSearchBoxWithLabel = Template.bind({});
 ExampleSearchBoxWithLabel.args = {
   ...ExampleSearchBoxProps,
-  customSearch: { ...ExampleCustomSearchProps, labelHidden: false },
+  customSearch: { ...ExampleCustomSearchProps, hasHiddenLabel: false },
 };
 
 export const ExampleSearchBoxWithoutImage = Template.bind({});
 ExampleSearchBoxWithoutImage.args = { ...ExampleSearchBoxProps, imageLarge: null, imageSmall: null };
 
 export const ExampleSearchBoxWithoutLink = Template.bind({});
-ExampleSearchBoxWithoutLink.args = { ...ExampleSearchBoxProps, searchBoxLink: null, labelHidden: false };
+ExampleSearchBoxWithoutLink.args = {
+  ...ExampleSearchBoxProps,
+  searchBoxLink: null,
+  customSearch: { ...ExampleCustomSearchProps, hasHiddenLabel: false },
+};

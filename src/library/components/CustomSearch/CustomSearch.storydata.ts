@@ -7,5 +7,5 @@ export const ExampleCustomSearchProps: CustomSearchProps = {
   searchText: 'Search courses',
   placeholder: 'Search courses',
   label: 'Search for courses',
-  labelHidden: true,
+  hasHiddenLabel: true,
 };

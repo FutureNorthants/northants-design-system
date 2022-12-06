@@ -1,6 +1,9 @@
 import { CustomSearchProps } from '../../components/CustomSearch/CustomSearch.types';
 
 export interface SearchBoxProps {
+  /**
+   * The Custom Search sub-component props
+   */
   customSearch: CustomSearchProps;
 
   /**

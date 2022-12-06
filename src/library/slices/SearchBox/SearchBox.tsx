@@ -8,7 +8,7 @@ import Button from '../../components/Button/Button';
 import Heading from '../../components/Heading/Heading';
 import CustomSearch from '../../components/CustomSearch/CustomSearch';
 
-const SearchBox: React.FC<SearchBoxProps> = ({
+const SearchBox: React.FunctionComponent<SearchBoxProps> = ({
   customSearch,
   imageSmall,
   imageLarge,
