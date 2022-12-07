@@ -38,4 +38,9 @@ export interface InputProps {
    * An optional function to be called on change
    */
   onChange?: React.ReactNode;
+
+  /**
+   * The optional input id
+   */
+  id?: string;
 }

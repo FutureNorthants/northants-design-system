@@ -174,12 +174,19 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     type="text"
                     defaultValue={searchTerm}
                     placeholder="Enter a search term"
+                    id="directorySearch"
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="postcode">Postcode</Styles.Label>
                   <HintText text="Enter a postcode" />
-                  <Input name="postcode" type="text" defaultValue={postcode} placeholder="Enter a postcode" />
+                  <Input
+                    name="postcode"
+                    type="text"
+                    defaultValue={postcode}
+                    placeholder="Enter a postcode"
+                    id="postcode"
+                  />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>
@@ -251,6 +258,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         name="minimum_age"
                         onChange={(e) => setMinimumAge(parseInt(e.target.value) ?? '')}
                         defaultValue={minimumAge}
+                        id="minimum_age"
                       />
                     </Column>
                     <Column small="full" medium="one-half" large="one-half">
@@ -259,6 +267,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         name="maximum_age"
                         onChange={(e) => setMaximumAge(parseInt(e.target.value) ?? '')}
                         defaultValue={maximumAge}
+                        id="maximum_age"
                       />
                     </Column>
                   </Row>

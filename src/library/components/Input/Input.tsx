@@ -14,6 +14,7 @@ const Input: React.FC<InputProps> = ({
   maxLength,
   defaultValue,
   onChange,
+  id,
 }) => {
   return (
     <>
@@ -26,7 +27,7 @@ const Input: React.FC<InputProps> = ({
         isErrored={isErrored}
         maxLength={maxLength}
         defaultValue={defaultValue}
-        id={name}
+        id={id}
       />
     </>
   );

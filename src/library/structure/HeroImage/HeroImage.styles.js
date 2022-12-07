@@ -155,3 +155,7 @@ export const BreadcrumbLink = styled.a`
       2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5)`};
   }
 `;
+
+export const Search = styled.div`
+  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+`;
