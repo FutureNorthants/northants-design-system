@@ -46,8 +46,8 @@ ExampleDirectoryServiceList.args = {
   categories: ExampleDirectoryCategories,
   pageNumber: 2,
   perPage: 5,
-  directoryPath: '/directory',
-  shortListPath: '/directory/short-list',
+  directoryPath: '/directory/local-offer',
+  shortListPath: '/directory/local-offer/short-list',
   customTaxonomyFilters: ['facilities', 'language'],
 };
 
@@ -58,7 +58,7 @@ DirectoryServiceNoResults.args = {
   categories: ExampleDirectoryCategories,
   pageNumber: 1,
   perPage: 5,
-  directoryPath: '/directory',
-  shortListPath: '/directory/short-list',
+  directoryPath: '/directory/local-offer',
+  shortListPath: '/directory/local-offer/short-list',
   customTaxonomyFilters: ['facilities', 'language'],
 };
