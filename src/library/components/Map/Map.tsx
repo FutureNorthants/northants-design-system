@@ -2,6 +2,9 @@ import React from 'react';
 import { MapProps } from './Map.types';
 import * as Styles from './Map.styles';
 
+/**
+ * An interactive Google Map which can accept MapMarkers as children
+ */
 const Map: React.FunctionComponent<MapProps> = ({ center, zoom, children }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const [map, setMap] = React.useState<google.maps.Map>();
