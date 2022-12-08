@@ -4,10 +4,13 @@ import Button from './library/components/Button/Button';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
 import Heading from './library/components/Heading/Heading';
 import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
+import Map from './library/components/Map/Map';
+import MapMarker from './library/components/MapMarker/MapMarker';
 import Pagination from './library/components/Pagination/Pagination';
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import StaticMap from './library/components/StaticMap/StaticMap';
 import TextInput from './library/components/TextInput/TextInput';
 
 export {
@@ -16,10 +19,13 @@ export {
   DynamicIcon,
   Heading,
   HeadingWithIcon,
+  Map,
+  MapMarker,
   Pagination,
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  StaticMap,
   TextInput,
 };
 
