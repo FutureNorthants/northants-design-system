@@ -176,9 +176,12 @@ it('should render the custom search box', () => {
 
   const input = getByPlaceholderText('Search courses');
   const form = getByRole('form');
+  const link = getByRole('link');
 
   expect(input).toBeVisible();
 
   expect(form).toHaveAttribute('method', 'post');
   expect(form).toHaveAttribute('action', 'https://courses.northantsglobal.net/CourseKeySearch.asp');
+
+  expect(link).toHaveStyle('background-color: transparent;');
 });
