@@ -13,6 +13,8 @@ import Pagination from '../../components/Pagination/Pagination';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
 import useLocalStorage from '../../helpers/UseLocalStorage';
+import DirectoryMap from '../DirectoryMap/DirectoryMap';
+import { StaticMapProps } from '../../components/StaticMap/StaticMap.types';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -28,6 +30,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   searchMinimumAge = '',
   searchMaximumAge = '',
   customTaxonomyFilters = [],
+  mapCenter = '52.23555414368587,-0.8957390701320571',
+  mapZoom = 9,
 }) => {
   const [submit, setSubmit] = useState<boolean>(false);
   const [search, setSearch] = useState<string>(searchTerm);
@@ -157,6 +161,23 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const notServer = typeof window !== 'undefined';
+
+  const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+
+  const mapProps: StaticMapProps = {
+    centre: mapCenter,
+    zoom: mapZoom,
+    size: '640x320',
+    imageAltText: 'Directory search results displayed on a map',
+    mapMarkers: services.map((service, index) => {
+      return {
+        lat: parseFloat(service.service_at_locations[0]?.latitude),
+        lng: parseFloat(service.service_at_locations[0]?.longitude),
+        label: labelLetters[index],
+        title: service.name,
+      };
+    }),
+  };
 
   return (
     <Styles.Container data-testid="DirectoryServiceList">
@@ -314,6 +335,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               </Styles.Favourites>
             </Column>
 
+            {services?.length > 0 && (
+              <Column small="full" medium="full" large="full">
+                <DirectoryMap mapProps={mapProps} />
+              </Column>
+            )}
+
             {services.map((service, index) => {
               const snippet =
                 sanitizeHtml(service.description, {
@@ -325,7 +352,30 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   <Styles.ServiceContainer resultNumber={index}>
                     <Row>
                       <Column small="full" medium="full" large="full">
-                        <Styles.ServiceLink href={`${directoryPath}/${service.id}`}>{service.name}</Styles.ServiceLink>
+                        <Styles.ServiceHeader>
+                          <Styles.ServiceLink href={`${directoryPath}/${service.id}`}>
+                            {service.name}
+                          </Styles.ServiceLink>
+                          <Styles.MarkerContainer>
+                            <span>{labelLetters[index]}</span>
+
+                            <svg
+                              version="1.1"
+                              id="Layer_1"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 42.4 59.1"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="M19.7,5.6c-0.1,0-0.5,0.1-0.9,0.1c-3.3,0.4-6.5,2-8.9,4.4c-2.6,2.6-4.2,5.9-4.6,9.6c-0.1,1,0,3.1,0.1,4.1c0.3,2.1,1.1,4.2,2.3,6.6c0.9,1.6,1.6,2.9,4.2,7c0.9,1.4,1.9,3.1,2.6,4.2c2.3,3.9,4.1,7.9,5.4,11.9c0.2,0.6,0.3,0.8,0.6,0.9c0.5,0.2,1.1,0.1,1.4-0.3c0.1-0.1,0.2-0.5,0.4-0.9c1.1-3.3,2.5-6.5,4.2-9.5c1.2-2.2,2-3.6,4.4-7.4c1.7-2.7,2.3-3.6,2.9-4.8c1.6-2.9,2.5-5.3,2.9-7.8c0.2-1,0.2-3.1,0.1-4.1c-0.2-1.5-0.5-3-1-4.2c-2.1-5.2-6.8-8.9-12.4-9.8C22.9,5.6,20.2,5.5,19.7,5.6z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </Styles.MarkerContainer>
+                        </Styles.ServiceHeader>
+
                         <div>{snippet}</div>
                         {service.eligibilitys && (
                           <>

@@ -8,6 +8,7 @@ import Heading from '../../components/Heading/Heading';
 import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformDescriptionDetails, transformService } from './DirectoryServiceTransform';
+import DirectoryMap from '../DirectoryMap/DirectoryMap';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   name,
@@ -22,7 +23,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   service_at_locations,
   url,
 }) => {
-  const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+  const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
   return (
     <Styles.Container data-testid="DirectoryService">
@@ -61,12 +62,22 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                   )}
                 </Column>
                 <Column small="full" medium="full" large="one-half">
-                  <Styles.MapContainer>
-                    <Styles.MapImage
-                      src={`https://maps.googleapis.com/maps/api/staticmap?size=640x320&maptype=roadmap&markers=size:large%7Ccolor:red%7C${location.latitude},${location.longitude}&key=${apiKey}`}
-                      alt={location.name}
-                    />
-                  </Styles.MapContainer>
+                  <DirectoryMap
+                    mapProps={{
+                      centre: `${location.latitude},${location.longitude}`,
+                      imageAltText: `${location.name} shown on a map`,
+                      zoom: 14,
+                      size: '640x320',
+                      mapMarkers: [
+                        {
+                          lat: parseFloat(location.latitude),
+                          lng: parseFloat(location.longitude),
+                          label: labelLetters[locationIndex],
+                          title: location.name,
+                        },
+                      ],
+                    }}
+                  />
                   <Styles.MapLink
                     href={`https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`}
                   >

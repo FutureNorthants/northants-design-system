@@ -288,6 +288,7 @@ export const Favourites = styled.a`
 export const ServiceLink = styled.a`
   display: block;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  flex-grow: 1;
   ${(props) => props.theme.theme_vars.h4}
   ${(props) => props.theme.linkStyles}
   &:hover {
@@ -304,4 +305,26 @@ export const ServiceLink = styled.a`
 export const Age = styled.p`
   font-weight: bold;
   margin: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+`;
+
+export const ServiceHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const MarkerContainer = styled.div`
+  width: 32px;
+  height: 58px;
+  position: relative;
+  svg {
+    color: ${(props) => props.theme.theme_vars.colours.action_dark};
+  }
+
+  span {
+    position: absolute;
+    top: 6px;
+    left: 11px;
+    color: white;
+    font-size: 0.9rem;
+  }
 `;

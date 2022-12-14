@@ -55,4 +55,9 @@ export interface MapMarkerProps {
    * Optional marker size. Default is normal
    */
   size?: 'tiny' | 'mid' | 'small' | 'normal';
+
+  /**
+   * Optional marker title
+   */
+  title?: string;
 }

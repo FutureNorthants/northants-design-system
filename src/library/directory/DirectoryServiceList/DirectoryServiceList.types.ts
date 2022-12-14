@@ -65,6 +65,16 @@ export interface DirectoryServiceListProps {
    * Taxonomy vocabularies that should use custom endpoints
    */
   customTaxonomyFilters?: string[];
+
+  /**
+   *  Where to centre the map, in the format 'lat,lng'
+   */
+  mapCenter?: string;
+
+  /**
+   * The optional zoom level, between 1 and 20. 1 = world, 20 = buildings
+   */
+  mapZoom?: number;
 }
 
 export interface DirectoryCategory {
