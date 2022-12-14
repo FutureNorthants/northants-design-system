@@ -174,7 +174,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
         lat: parseFloat(service.service_at_locations[0]?.latitude),
         lng: parseFloat(service.service_at_locations[0]?.longitude),
         label: labelLetters[index],
-        title: service.name,
+        title: `<a href="${directoryPath}/${service.id}">${service.name}</a>`,
       };
     }),
   };

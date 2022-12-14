@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentation/Directory" />
+
+# Directory
+
+The directory components are designed to follow the [Open Referral UK](https://api.porism.com/ServiceDirectoryService/swagger-ui/index.html) data structure for services, with the filters from Taxonomies. The types have been created to mirror the expected response from the API.
+
+The components are purely for displaying the data, with the Frontend website responsible for querying the API and passing the results into the components in the design system. This allows the design system to focus on the look and feel of the components.
+
+## Directory Service List
+
+The `DirectoryServiceList` is designed to display a list of services with filters. The text and postcode filters in the top of the page are standard, but the filters in the left column are passed in as props.
+
+### Taxonomies
+
+Taxonomies are the groups of filters. When a taxonomy is selected and the form is submitted, it will add `&taxonomy_id=SelectedTaxonomy:1` to the query string.
+
+### Custom Taxonomy Filters
+
+This array of strings is used to decide if the taxonomy should be added to the query string in a special way, rather than as a standard taxonomy. Instead of `&taxonomy_id` it will use the vocabulary name in the query string.
+
+## Directory Service
+
+The `DirectoryService` component is designed to display a single service.
+
+## Directory Map
+
+The Directory Map component uses Google Maps and require an API key set in the environment variables using the below key:
+
+```bash
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+```
+
+**Ensure that the API key has the relevant domains eanabled in the Google Developer Console.**
+
+The component checks if cookies have been allowed. If they have, it will display an interactive JavaScript map. If cookies are not enabled, it will display the static image map.
+
+The JavaScript maps (not StaticMap component) need to be wrapped in the `@googlemaps/react-wrapper` and have the API key passed in as a prop.
+
+```jsx
+import { Wrapper } from '@googlemaps/react-wrapper';
+const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+const MyComponent: React.FunctionComponent = () => (
+  <Wrapper apiKey={apiKey}>
+    <Map {...args} />
+  </Wrapper>
+);
+```
+
+`@googlemaps/react-wrapper` is listed as a peer dependency in the package.json file. This will allow the package to be smaller when built, but the frontend will need to require it separately.
+
+### Map Markers
+
+As the DirectoryMap component displays either Map or StaticMap, the props passed in are for the StaticMap as these can also be used for the relevant props for the JavaScript Map component.
+
+The JavaScript map will then loop over the map markers and add them as child components to the Map. For example, resulting in something like this:
+
+```jsx
+<Map {...args}>
+  <MapMarker {...markerOneProps} />
+  <MapMarker {...markerTwoProps} />
+</Map>
+```
+
+## Shortlist
+
+The shortlist makes use of the `DirectoryShortListProvider` within the contexts directory. This allows for easy access to the local storage in multiple different locations and the helper functions.
+
+To allow a componet to access the shortlist context, ensure it is wrapped by the `DirectoryShortListProvider`.
+
+```jsx
+<DirectoryShortListProvider>
+  <DirectoryAddToShortList {...props} />
+</DirectoryShortListProvider>
+```
+
+As the context makes use of local storage, it can only be rendered correctly on the client side as the server will not have access to the browser's local storage.
