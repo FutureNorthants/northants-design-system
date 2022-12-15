@@ -38,17 +38,14 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
               <Row key={locationIndex}>
                 <Column small="full" medium="full" large="one-half">
                   {location.physical_addresses.map((address) => (
-                    <p key={address.id}>
-                      {address.address_1}
-                      <br />
-                      {address.city}
-                      <br />
-                      {address.state_province}
-                      <br />
-                      {address.postal_code}
-                      <br />
-                      {address.country}
-                    </p>
+                    <p
+                      key={address.id}
+                      dangerouslySetInnerHTML={{
+                        __html: Object.values(address)
+                          .filter((item) => item !== '')
+                          .join(' <br />'),
+                      }}
+                    />
                   ))}
                   {location?.accessibility_for_disabilities.length > 0 && (
                     <>

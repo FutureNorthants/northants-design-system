@@ -6,23 +6,29 @@ import { Meta } from '@storybook/addon-docs';
 
 The directory components are designed to follow the [Open Referral UK](https://api.porism.com/ServiceDirectoryService/swagger-ui/index.html) data structure for services, with the filters from Taxonomies. The types have been created to mirror the expected response from the API.
 
-The components are purely for displaying the data, with the Frontend website responsible for querying the API and passing the results into the components in the design system. This allows the design system to focus on the look and feel of the components.
+The components are purely for displaying the data, with the Frontend website responsible for querying the API and passing the results into the components in the design system. This allows the design system to focus on the look and feel of the components, and allows the frontend website to server side render the page.
 
 ## Directory Service List
 
-The `DirectoryServiceList` is designed to display a list of services with filters. The text and postcode filters in the top of the page are standard, but the filters in the left column are passed in as props.
+The `DirectoryServiceList` is designed to display a list of services with filters. The text and postcode filters in the top of the page are standard, but the filters in the left column are passed in as props through categories.
 
-### Taxonomies
+The label in category is used as the accordion label. The category options can be set to display as radio buttons by setting singleSelection to `true` or to checkboxes by setting singleSelection to `false`.
 
-Taxonomies are the groups of filters. When a taxonomy is selected and the form is submitted, it will add `&taxonomy_id=SelectedTaxonomy:1` to the query string.
+### Taxonomy Filters
+
+When a taxonomy is selected and the form is submitted, it will add `&taxonomy_id=SelectedTaxonomy:1` to the query string.
 
 ### Custom Taxonomy Filters
 
-This array of strings is used to decide if the taxonomy should be added to the query string in a special way, rather than as a standard taxonomy. Instead of `&taxonomy_id` it will use the vocabulary name in the query string.
+`customTaxonomyFilters` is an array of strings that is used to decide if the taxonomy should be added to the query string in a special way, rather than as a standard taxonomy. Instead of `&taxonomy_id` it will use the vocabulary name from the category in the query string.
+
+This allows for custom searches, such as facilities and languages, which are not taxonomies in the open referral system.
 
 ## Directory Service
 
-The `DirectoryService` component is designed to display a single service.
+The `DirectoryService` component is designed to display a single service. The component will only display the opening hours and location sections if the data is passed in with the service prop.
+
+A service can have many locations and each location can have many addresses, although generally each service will only have one location, with a single address.
 
 ## Directory Map
 
