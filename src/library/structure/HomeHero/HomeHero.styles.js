@@ -78,7 +78,7 @@ export const Topline = styled.p`
 
 export const LogoColoured = styled.div`
   svg {
-    margin-top: -20px;
+    margin-top: -17px;
     max-width: 450px;
     width: 95%;
     height: auto;
