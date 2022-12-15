@@ -3,7 +3,7 @@ import { IconProps } from '../Icon.types';
 
 const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill }) => {
   return (
-    <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="76" height="76" viewBox="-7 -5 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M7,2.6C5.4,3,3.8,4.4,3.3,5.9L3.2,6.3v26.1v26.1L3.4,59c0.4,1.4,1.8,2.7,3.4,3.2c0.2,0.1,0.4,0.1,0.5,0.2
 	c0.2,0.1,32.5,0.1,32.6,0c0,0,0.2-0.1,0.4-0.1c1.3-0.3,2.8-1.5,3.4-2.6c0.5-1,0.4,1.5,0.4-27.2v-26l-0.2-0.6c-0.4-1.3-1.3-2.3-2.7-3
