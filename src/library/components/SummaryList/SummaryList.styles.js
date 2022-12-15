@@ -9,18 +9,33 @@ export const SummaryList = styled.dl`
 `;
 
 export const SummaryRow = styled.div`
-  display: table-row;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: table-row;
+  }
 `;
 
 export const SummaryTerm = styled.dt`
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   font-weight: bold;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: table-cell;
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    width: 30%;
+  }
 `;
 
 export const SummaryDetail = styled.dd`
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  display: table-cell;
   overflow-wrap: break-word;
-  width: 70%;
+  width: 100%;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: table-cell;
+    width: 70%;
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
 `;
