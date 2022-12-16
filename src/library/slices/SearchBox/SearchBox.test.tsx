@@ -41,4 +41,14 @@ describe('SearchBox Component', () => {
 
     expect(heading).toHaveTextContent('Search adult learning courses');
   });
+
+  it('should render the search box link as secondary button', () => {
+    props.searchBoxLinkIsPrimary = false;
+
+    const { getByRole } = renderComponent();
+
+    const link = getByRole('link');
+
+    expect(link).toHaveStyle('background-color: transparent;');
+  });
 });
