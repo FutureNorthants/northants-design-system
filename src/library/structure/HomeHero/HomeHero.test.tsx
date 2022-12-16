@@ -93,4 +93,10 @@ describe('HomeHero unusual usage', () => {
     expect(img).toHaveProperty('src', 'http://placehold.it/520x150');
     expect(img).toHaveProperty('alt', 'My alt text');
   });
+
+  it('should render the heading one', () => {
+    const heading = rendered.getByRole('heading');
+
+    expect(heading).toBeVisible();
+  });
 });
