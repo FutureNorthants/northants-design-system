@@ -37,6 +37,8 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
         ]}
       />
       <PageStructures.PageMain>
+        <Heading level={1} text="A fourth level basic page" />
+
         {showServiceAlert && (
           <AlertBannerService title="Example Service Alert" alertType="alert">
             <p>
@@ -45,8 +47,6 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
             </p>
           </AlertBannerService>
         )}
-
-        <Heading level={1} text="A fourth level basic page" />
 
         {contents && <Contents {...contents} />}
 
