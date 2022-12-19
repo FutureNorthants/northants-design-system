@@ -144,6 +144,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCheckboxState(newCheckboxState);
+
+    setSubmit(true);
   };
 
   const from = pageNumber * perPage - (perPage - 1);
@@ -296,6 +298,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                             defaultValue={maximumAge}
                             id="maximum_age"
                           />
+                        </Column>
+                        <Column small="full" medium="full" large="full">
+                          <Styles.Button onClick={(e) => setSubmit(true)}>
+                            <Styles.ButtonText>Search</Styles.ButtonText>
+                            <SearchIcon colourFill="#fff" />
+                          </Styles.Button>
                         </Column>
                       </Row>
                     </Styles.Accordion>

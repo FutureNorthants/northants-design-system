@@ -6,6 +6,10 @@ export const Container = styled.div`
   input {
     max-width: 100%;
   }
+
+  input[type='text'] {
+    margin-bottom: 0;
+  }
 `;
 
 export const SearchHeader = styled.div`

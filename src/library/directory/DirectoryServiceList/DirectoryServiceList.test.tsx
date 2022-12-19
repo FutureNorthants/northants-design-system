@@ -11,6 +11,27 @@ describe('Test Component', () => {
   let props: DirectoryServiceListProps;
 
   beforeEach(() => {
+    delete global.window.location;
+    global.window = Object.create(window);
+    global.window.location = {
+      ancestorOrigins: null,
+      hash: '',
+      host: 'localhost',
+      port: '123',
+      protocol: 'http:',
+      hostname: 'dummy.com',
+      href: 'http://localhost',
+      origin: 'http://localhost',
+      pathname: '',
+      search: '',
+      assign: () => {},
+      reload: () => {},
+      replace: () => {},
+      toString: () => {
+        return global.window.location.href;
+      },
+    };
+
     props = {
       directoryPath: '/directory',
       shortListPath: '/directory/short-list',
@@ -113,21 +134,23 @@ describe('Test Component', () => {
     expect(redCheckbox).toBeChecked();
     expect(greenCheckbox).not.toBeChecked();
 
-    fireEvent.click(redCheckbox);
+    fireEvent.click(greenCheckbox);
 
-    expect(redCheckbox).not.toBeChecked();
+    expect(window.location.href).toEqual(
+      '/directory?search=the search term&postcode=NN1 1AA&taxonomy_id=colours:1&taxonomy_id=colours:3'
+    );
   });
 
   it('saves a service as a favourite and removes it', () => {
-    const { queryByText, getByText } = renderComponent();
+    const { getByText } = renderComponent();
 
     expect(getByText('Shortlist (0)')).toBeVisible();
 
-    fireEvent.click(queryByText('Add to shortlist'));
+    fireEvent.click(getByText('Add to shortlist'));
 
     expect(getByText('Shortlist (1)')).toBeVisible();
 
-    fireEvent.click(queryByText('Remove from shortlist'));
+    fireEvent.click(getByText('Remove from shortlist'));
 
     expect(getByText('Shortlist (0)')).toBeVisible();
   });

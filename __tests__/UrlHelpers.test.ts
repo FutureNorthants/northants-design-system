@@ -16,18 +16,18 @@ describe('Url Helpers', () => {
     global.window = Object.create(window);
     global.window.location = {
       ancestorOrigins: null,
-      hash: null,
+      hash: '',
       host: 'dummy.com',
       port: '123',
       protocol: 'http:',
       hostname: 'dummy.com',
       href: 'http://dummy.com?page=1&name=testing',
       origin: 'http://dummy.com',
-      pathname: null,
-      search: null,
-      assign: null,
-      reload: null,
-      replace: null,
+      pathname: '',
+      search: '',
+      assign: () => {},
+      reload: () => {},
+      replace: () => {},
       toString: () => {
         return global.window.location.href;
       },
