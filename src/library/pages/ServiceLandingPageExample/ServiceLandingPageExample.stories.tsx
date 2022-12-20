@@ -60,6 +60,17 @@ TopServicesExample.args = {
   topServices: threeTopServicesData,
 };
 
+export const TopServicesWithAlert = Template.bind({});
+TopServicesWithAlert.args = {
+  title: 'Bin collection, recycling and waste',
+  icon: 'bins',
+  breadcrumbsArray: breadcrumbs,
+  sections: sections.slice(0, 1),
+  footerLinks,
+  topServices: threeTopServicesData,
+  serviceAlert,
+};
+
 export const SixTopServicesExample = Template.bind({});
 SixTopServicesExample.args = {
   title: 'Bin collection, recycling and waste',

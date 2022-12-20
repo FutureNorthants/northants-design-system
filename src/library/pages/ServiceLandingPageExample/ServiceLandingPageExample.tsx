@@ -46,13 +46,14 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
     ) : (
       <PageStructures.MaxWidthContainer noPadding>
         <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbsArray} hasMargin />
+
+        <Heading text={title} level={1} />
+
         {serviceAlert?.alertType && (
           <PageStructures.AlertBannerService {...serviceAlert}>
             {serviceAlert.children}
           </PageStructures.AlertBannerService>
         )}
-
-        {icon ? <HeadingWithIcon icon={icon} level={1} text={title} /> : <Heading text={title} />}
       </PageStructures.MaxWidthContainer>
     )}
 

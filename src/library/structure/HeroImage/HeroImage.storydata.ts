@@ -52,5 +52,6 @@ export const HeroImageExampleBoxedWithCustomSearch: HeroImageProps = {
   content: '<p>Search our catalogue of adult learning courses.</p>',
   callToActionText: 'View all courses',
   callToActionURL: 'https://courses.northantsglobal.net/AvailableCoursesList.asp',
+  callToActionIsPrimary: false,
   customSearch: ExampleCustomSearchProps,
 };

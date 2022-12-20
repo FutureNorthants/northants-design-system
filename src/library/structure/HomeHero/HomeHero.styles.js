@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VisuallyHidden } from '../../helpers/style-helpers';
 
 export const Wrapper = styled.header`
   background: ${(props) =>
@@ -10,51 +11,51 @@ export const Wrapper = styled.header`
 `;
 
 export const Container = styled.div`
-    font-family: ${(props) => props.theme.theme_vars.fontstack};
-    overflow: hidden;
-    background: ${(props) => props.theme.theme_vars.colours.action}5A;
-    padding: 30px 0;
-    padding-bottom: 15px;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  overflow: hidden;
+  background: ${(props) => props.theme.theme_vars.colours.action}5A;
+  padding: 30px 0;
+  padding-bottom: 15px;
 
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}){
-        background-image: url("${(props) => props.image}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    background-image: url('${(props) => props.image}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
-        &.loading {
-            background-image: none;
-        }
+    &.loading {
+      background-image: none;
     }
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}){
-        padding: 60px 0;
-    }
-    @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.l} + 60px)){
-        margin-right: auto;
-        margin-left: auto;
-        padding: 90px 0;
-        max-width: 1680px;
-    }
+  }
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    padding: 60px 0;
+  }
+  @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.l} + 60px)) {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 90px 0;
+    max-width: 1680px;
+  }
 `;
 
 export const StyledMaxWidthContainer = styled.div`
-    ${(props) => props.theme.fontStyles}
-    margin-right: 15px;
-    margin-left: 15px;
+  ${(props) => props.theme.fontStyles}
+  margin-right: 15px;
+  margin-left: 15px;
 
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}){
-        margin-right: 30px;
-        margin-left: 30px;
-    }
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
 
-    @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.l} + 60px)){
-        margin-right: auto;
-        margin-left: auto;
-        max-width: ${(props) => props.theme.theme_vars.breakpoints.l};
-    }
+  @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.l} + 60px)) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: ${(props) => props.theme.theme_vars.breakpoints.l};
+  }
 `;
 export const HiddenH1 = styled.h1`
-  visibility: hidden;
+  ${(props) => VisuallyHidden};
 `;
 
 export const MainBox = styled.div`
@@ -77,7 +78,7 @@ export const Topline = styled.p`
 
 export const LogoColoured = styled.div`
   svg {
-    margin-top: -45px;
+    margin-top: -17px;
     max-width: 450px;
     width: 95%;
     height: auto;

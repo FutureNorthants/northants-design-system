@@ -27,6 +27,11 @@ export interface SearchBoxProps {
   searchBoxLink?: SearchBoxLinkProps | null;
 
   /**
+   * Is the search box link primary (true) or secondary (false)
+   */
+  searchBoxLinkIsPrimary?: boolean;
+
+  /**
    * Optional title
    */
   title?: string | null;

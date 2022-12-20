@@ -25,3 +25,12 @@ ServicePageWithContents.args = {
     contents: ContentsExampleData,
   },
 };
+
+export const ServicePageWithContentsAndAlert = Template.bind({});
+ServicePageWithContentsAndAlert.args = {
+  contents: {
+    currentPath: '/second-page',
+    contents: ContentsExampleData,
+  },
+  showServiceAlert: true,
+};
