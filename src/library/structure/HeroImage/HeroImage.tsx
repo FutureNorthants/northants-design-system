@@ -15,6 +15,7 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
   content,
   callToActionText,
   callToActionURL,
+  callToActionIsPrimary = true,
   backgroundBox = true,
   imageLarge,
   imageSmall,
@@ -47,7 +48,9 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
                     <CustomSearch {...customSearch} />
                   </Styles.Search>
                 )}
-                {callToActionURL && backgroundBox && <CallToAction url={callToActionURL} text={callToActionText} />}
+                {callToActionURL && backgroundBox && (
+                  <CallToAction url={callToActionURL} text={callToActionText} primary={callToActionIsPrimary} />
+                )}
                 {!callToActionURL && backgroundBox && <br />}
                 {callToActionURL && !backgroundBox && (
                   <Styles.CallToActionLink href={callToActionURL}>

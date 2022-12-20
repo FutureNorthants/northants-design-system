@@ -25,6 +25,9 @@ const Template: Story<SearchBoxProps> = (args) => (
 export const ExampleSearchBox = Template.bind({});
 ExampleSearchBox.args = ExampleSearchBoxProps;
 
+export const ExampleSearchBoxSecondaryLink = Template.bind({});
+ExampleSearchBoxSecondaryLink.args = { ...ExampleSearchBoxProps, searchBoxLinkIsPrimary: false };
+
 export const ExampleSearchBoxWithLabel = Template.bind({});
 ExampleSearchBoxWithLabel.args = {
   ...ExampleSearchBoxProps,

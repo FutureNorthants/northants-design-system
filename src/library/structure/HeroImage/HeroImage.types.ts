@@ -38,6 +38,11 @@ export interface HeroImageProps {
   callToActionURL?: string;
 
   /**
+   * Is the call to action a primary button
+   */
+  callToActionIsPrimary?: boolean;
+
+  /**
    * Set to true to put the text and call to action on a white box, false to overlay on a darkened image
    */
   backgroundBox: boolean;
