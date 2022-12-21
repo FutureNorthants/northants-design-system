@@ -100,6 +100,37 @@ export const Address = styled.span`
   word-wrap: break-word;
 `;
 
+export const FilterContainer = styled.div`
+  display: ${(props) => (props.showFilters ? 'flex' : 'none')};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: flex;
+  }
+`;
+
+export const FilterToggle = styled.button`
+  width: 100%;
+  border: none;
+  background: none;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  ${(props) => props.theme.theme_vars.h4}
+  ${(props) => props.theme.linkStyles}
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: none;
+  }
+`;
+
 export const Fieldset = styled.fieldset`
   display: block;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
@@ -267,11 +298,44 @@ export const Accordion = styled.div`
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `;
 
+export const FavouritesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+`;
+
+export const MapToggle = styled.button`
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
+  background: ${(props) => props.theme.theme_vars.colours.white};
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  cursor: pointer;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    background: ${(props) => props.theme.theme_vars.colours.action_light}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
 export const Favourites = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  flex-grow: 1;
   cursor: pointer;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   &:hover {

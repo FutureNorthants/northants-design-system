@@ -33,7 +33,7 @@ export const LocalOfferTaxonomy: DirectoryCategory = {
 };
 
 export const SpecialNeedTaxonomy: DirectoryCategory = {
-  label: 'For people with/who are',
+  label: 'For people with',
   vocabulary: 'specialNeeds',
   singleSelection: false,
   options: [

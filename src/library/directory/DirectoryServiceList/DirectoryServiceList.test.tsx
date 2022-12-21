@@ -95,10 +95,10 @@ describe('Test Component', () => {
     props.searchTerm = 'the search term';
     props.searchPostcode = 'NN1 1AA';
 
-    const { getByPlaceholderText } = renderComponent();
+    const { getByLabelText } = renderComponent();
 
-    const searchInput = getByPlaceholderText('Enter a search term');
-    const postcodeInput = getByPlaceholderText('Enter a postcode');
+    const searchInput = getByLabelText('What are you looking for?');
+    const postcodeInput = getByLabelText('Postcode');
 
     expect(searchInput).toHaveValue('the search term');
     expect(postcodeInput).toHaveValue('NN1 1AA');
@@ -120,6 +120,11 @@ describe('Test Component', () => {
   it('should render the categories', () => {
     const { getByLabelText, getAllByRole, getByText } = renderComponent();
     const legend = getByText('Filter by category');
+    const filterToggle = getByText('Show Filters');
+
+    expect(legend).not.toBeVisible();
+
+    fireEvent.click(filterToggle);
 
     expect(legend).toBeVisible();
     expect(getByText('Green')).not.toBeVisible();

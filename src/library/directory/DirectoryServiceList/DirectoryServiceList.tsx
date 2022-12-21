@@ -40,6 +40,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [minimumAge, setMinimumAge] = useState(searchMinimumAge);
   const [maximumAge, setMaximumAge] = useState(searchMaximumAge);
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
+  const [showMap, setShowMap] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-show-map`, false);
+  const [showFilters, setShowFilters] = useState<boolean>(false);
   const {
     favourites: { favourites: favourites, setFavourites: setFavourites },
     toggleFavourites: toggleFavourites,
@@ -163,8 +165,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const notServer = typeof window !== 'undefined';
-
-  const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+  const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  const labelLetters: string[] = letters.split('');
 
   const mapProps: StaticMapProps = {
     centre: mapCenter,
@@ -196,24 +198,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="directorySearch">What are you looking for?</Styles.Label>
                   <HintText text="Enter a search word or phrase" />
-                  <Input
-                    name="directorySearch"
-                    type="text"
-                    defaultValue={searchTerm}
-                    placeholder="Enter a search term"
-                    id="directorySearch"
-                  />
+                  <Input name="directorySearch" type="text" defaultValue={searchTerm} id="directorySearch" />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="postcode">Postcode</Styles.Label>
                   <HintText text="Enter a postcode" />
-                  <Input
-                    name="postcode"
-                    type="text"
-                    defaultValue={postcode}
-                    placeholder="Enter a postcode"
-                    id="postcode"
-                  />
+                  <Input name="postcode" type="text" defaultValue={postcode} id="postcode" />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>
@@ -232,86 +222,91 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
           </Styles.SearchHeader>
         </Column>
         <Column small="full" medium="one-third" large="one-third">
-          <Row>
-            <Column small="full" medium="full" large="full">
-              <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
-            </Column>
-            {notServer && (
-              <>
-                {checkboxState?.map((category, categoryIndex) => (
-                  <Column small="full" medium="full" large="full" key={category.label}>
+          <Styles.FilterToggle type="button" onClick={(e) => setShowFilters(!showFilters)}>
+            {showFilters ? `Hide Filters` : `Show Filters`}
+          </Styles.FilterToggle>
+          <Styles.FilterContainer showFilters={showFilters}>
+            <Row>
+              <Column small="full" medium="full" large="full">
+                <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
+              </Column>
+              {notServer && (
+                <>
+                  {checkboxState?.map((category, categoryIndex) => (
+                    <Column small="full" medium="full" large="full" key={category.label}>
+                      <Styles.Fieldset>
+                        <Styles.Legend>
+                          <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex)} type="button">
+                            {category.label}
+                            <Styles.AccordionIcon isOpen={accordions[categoryIndex]} />
+                          </Styles.LegendButton>
+                        </Styles.Legend>
+                        <Styles.Accordion isOpen={accordions[categoryIndex]}>
+                          {category.options.map((taxonomy) => (
+                            <Styles.Category key={taxonomy.id}>
+                              <Styles.CategoryInput
+                                type={category.singleSelection ? 'radio' : 'checkbox'}
+                                value={taxonomy.id}
+                                id={taxonomy.id.replace(' ', '')}
+                                name={taxonomy.vocabulary}
+                                onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
+                                checked={taxonomy.checked}
+                              />
+                              <Styles.CategoryInputLabel
+                                isChecked={taxonomy.checked}
+                                htmlFor={taxonomy.id.replace(' ', '')}
+                                singleSelection={category.singleSelection}
+                              >
+                                {taxonomy.name}
+                              </Styles.CategoryInputLabel>
+                            </Styles.Category>
+                          ))}
+                        </Styles.Accordion>
+                      </Styles.Fieldset>
+                    </Column>
+                  ))}
+                  <Column small="full" medium="full" large="full">
                     <Styles.Fieldset>
-                      <Styles.Legend>
-                        <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex)} type="button">
-                          {category.label}
-                          <Styles.AccordionIcon isOpen={accordions[categoryIndex]} />
+                      <Styles.Legend onClick={(e) => toggleAccordion(checkboxState.length)}>
+                        <Styles.LegendButton onClick={(e) => toggleAccordion(checkboxState.length)} type="button">
+                          Select age group (years)
+                          <Styles.AccordionIcon isOpen={accordions[checkboxState.length]} />
                         </Styles.LegendButton>
                       </Styles.Legend>
-                      <Styles.Accordion isOpen={accordions[categoryIndex]}>
-                        {category.options.map((taxonomy) => (
-                          <Styles.Category key={taxonomy.id}>
-                            <Styles.CategoryInput
-                              type={category.singleSelection ? 'radio' : 'checkbox'}
-                              value={taxonomy.id}
-                              id={taxonomy.id.replace(' ', '')}
-                              name={taxonomy.vocabulary}
-                              onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
-                              checked={taxonomy.checked}
+                      <Styles.Accordion isOpen={accordions[checkboxState.length]}>
+                        <Row>
+                          <Column small="full" medium="one-half" large="one-half">
+                            <Styles.Label htmlFor="minimum_age">From</Styles.Label>
+                            <Input
+                              name="minimum_age"
+                              onChange={(e) => setMinimumAge(parseInt(e.target.value) ?? '')}
+                              defaultValue={minimumAge}
+                              id="minimum_age"
                             />
-                            <Styles.CategoryInputLabel
-                              isChecked={taxonomy.checked}
-                              htmlFor={taxonomy.id.replace(' ', '')}
-                              singleSelection={category.singleSelection}
-                            >
-                              {taxonomy.name}
-                            </Styles.CategoryInputLabel>
-                          </Styles.Category>
-                        ))}
+                          </Column>
+                          <Column small="full" medium="one-half" large="one-half">
+                            <Styles.Label htmlFor="maximum_age">To</Styles.Label>
+                            <Input
+                              name="maximum_age"
+                              onChange={(e) => setMaximumAge(parseInt(e.target.value) ?? '')}
+                              defaultValue={maximumAge}
+                              id="maximum_age"
+                            />
+                          </Column>
+                          <Column small="full" medium="full" large="full">
+                            <Styles.Button onClick={(e) => setSubmit(true)}>
+                              <Styles.ButtonText>Search</Styles.ButtonText>
+                              <SearchIcon colourFill="#fff" />
+                            </Styles.Button>
+                          </Column>
+                        </Row>
                       </Styles.Accordion>
                     </Styles.Fieldset>
                   </Column>
-                ))}
-                <Column small="full" medium="full" large="full">
-                  <Styles.Fieldset>
-                    <Styles.Legend onClick={(e) => toggleAccordion(checkboxState.length)}>
-                      <Styles.LegendButton onClick={(e) => toggleAccordion(checkboxState.length)} type="button">
-                        Select age group (years)
-                        <Styles.AccordionIcon isOpen={accordions[checkboxState.length]} />
-                      </Styles.LegendButton>
-                    </Styles.Legend>
-                    <Styles.Accordion isOpen={accordions[checkboxState.length]}>
-                      <Row>
-                        <Column small="full" medium="one-half" large="one-half">
-                          <Styles.Label htmlFor="minimum_age">From</Styles.Label>
-                          <Input
-                            name="minimum_age"
-                            onChange={(e) => setMinimumAge(parseInt(e.target.value) ?? '')}
-                            defaultValue={minimumAge}
-                            id="minimum_age"
-                          />
-                        </Column>
-                        <Column small="full" medium="one-half" large="one-half">
-                          <Styles.Label htmlFor="maximum_age">To</Styles.Label>
-                          <Input
-                            name="maximum_age"
-                            onChange={(e) => setMaximumAge(parseInt(e.target.value) ?? '')}
-                            defaultValue={maximumAge}
-                            id="maximum_age"
-                          />
-                        </Column>
-                        <Column small="full" medium="full" large="full">
-                          <Styles.Button onClick={(e) => setSubmit(true)}>
-                            <Styles.ButtonText>Search</Styles.ButtonText>
-                            <SearchIcon colourFill="#fff" />
-                          </Styles.Button>
-                        </Column>
-                      </Row>
-                    </Styles.Accordion>
-                  </Styles.Fieldset>
-                </Column>
-              </>
-            )}
-          </Row>
+                </>
+              )}
+            </Row>
+          </Styles.FilterContainer>
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Row>
@@ -323,31 +318,36 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               ) : (
                 <Styles.ResultInfo>No results found</Styles.ResultInfo>
               )}
-              <Styles.Favourites href={shortListPath}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  width="15px"
-                  height="15px"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                  />
-                </svg>{' '}
-                Shortlist ({favourites.length})
-              </Styles.Favourites>
-            </Column>
+              <Styles.FavouritesContainer>
+                {services?.length > 0 && (
+                  <Styles.MapToggle type="button" onClick={(e) => setShowMap(!showMap)}>
+                    {showMap ? `Hide Map` : `Show Map`}
+                  </Styles.MapToggle>
+                )}
 
-            {services?.length > 0 && (
-              <Column small="full" medium="full" large="full">
-                <DirectoryMap mapProps={mapProps} />
-              </Column>
-            )}
+                <Styles.Favourites href={shortListPath}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    width="15px"
+                    height="15px"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                    />
+                  </svg>{' '}
+                  Shortlist ({favourites.length})
+                </Styles.Favourites>
+              </Styles.FavouritesContainer>
+            </Column>
+            <Column small="full" medium="full" large="full">
+              {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
+            </Column>
 
             {services.map((service, index) => {
               const snippet =
@@ -369,12 +369,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
 
                             <svg
                               version="1.1"
-                              id="Layer_1"
                               xmlns="http://www.w3.org/2000/svg"
                               x="0px"
                               y="0px"
                               viewBox="0 0 42.4 59.1"
-                              stroke="currentColor"
                             >
                               <path
                                 d="M19.7,5.6c-0.1,0-0.5,0.1-0.9,0.1c-3.3,0.4-6.5,2-8.9,4.4c-2.6,2.6-4.2,5.9-4.6,9.6c-0.1,1,0,3.1,0.1,4.1c0.3,2.1,1.1,4.2,2.3,6.6c0.9,1.6,1.6,2.9,4.2,7c0.9,1.4,1.9,3.1,2.6,4.2c2.3,3.9,4.1,7.9,5.4,11.9c0.2,0.6,0.3,0.8,0.6,0.9c0.5,0.2,1.1,0.1,1.4-0.3c0.1-0.1,0.2-0.5,0.4-0.9c1.1-3.3,2.5-6.5,4.2-9.5c1.2-2.2,2-3.6,4.4-7.4c1.7-2.7,2.3-3.6,2.9-4.8c1.6-2.9,2.5-5.3,2.9-7.8c0.2-1,0.2-3.1,0.1-4.1c-0.2-1.5-0.5-3-1-4.2c-2.1-5.2-6.8-8.9-12.4-9.8C22.9,5.6,20.2,5.5,19.7,5.6z"
