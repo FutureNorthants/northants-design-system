@@ -109,6 +109,7 @@ export const FilterContainer = styled.div`
 `;
 
 export const FilterToggle = styled.button`
+  cursor: pointer;
   width: 100%;
   border: none;
   background: none;
