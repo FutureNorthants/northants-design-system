@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface SummaryProps {
   /**
    * Should the summary have padding
@@ -8,4 +10,9 @@ export interface SummaryProps {
    * Should the summary have a background colour
    */
   hasBackground?: boolean;
+
+  /**
+   * The contents of the summary
+   */
+  children?: React.ReactNode;
 }

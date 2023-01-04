@@ -1,4 +1,1 @@
-
-export interface PostCodeAddressTableProps {
-
-}
+export interface PostCodeAddressTableProps {}

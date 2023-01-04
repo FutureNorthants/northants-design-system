@@ -28,4 +28,9 @@ export interface HeaderProps {
    * Array of suggestions for the autocomplete input in the search bar
    */
   searchSuggestions?: string[];
+
+  /**
+   * The Header contents
+   */
+  children?: React.ReactNode;
 }
