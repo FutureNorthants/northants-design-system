@@ -11,35 +11,22 @@ describe('Test Component', () => {
   let props: DirectoryServiceListProps;
 
   beforeEach(() => {
-    delete global.window.location;
-    global.window = Object.create(window);
-    global.window.location = {
-      ancestorOrigins: null,
-      hash: '',
-      host: 'localhost',
-      port: '123',
-      protocol: 'http:',
-      hostname: 'dummy.com',
-      href: 'http://localhost',
-      origin: 'http://localhost',
-      pathname: '',
-      search: '',
-      assign: () => {},
-      reload: () => {},
-      replace: () => {},
-      toString: () => {
-        return global.window.location.href;
-      },
-    };
-
     props = {
       directoryPath: '/directory',
       shortListPath: '/directory/short-list',
       services: [ExampleService],
       totalResults: 1,
       pageNumber: 1,
-      searchTerm: 'the search term',
-      searchPostcode: 'NN1 1AA',
+      search: 'council',
+      setSearch: () => {},
+      postcode: 'NN1 1ED',
+      setPostcode: () => {},
+      minimumAge: '5',
+      setMinimumAge: () => {},
+      maximumAge: '100',
+      setMaximumAge: () => {},
+      setCategories: () => {},
+      isLoading: false,
       categories: [
         {
           label: 'Filter by category',
@@ -92,8 +79,8 @@ describe('Test Component', () => {
   });
 
   it('should render the provided search terms', () => {
-    props.searchTerm = 'the search term';
-    props.searchPostcode = 'NN1 1AA';
+    props.search = 'the search term';
+    props.postcode = 'NN1 1AA';
 
     const { getByLabelText } = renderComponent();
 
@@ -138,12 +125,6 @@ describe('Test Component', () => {
     expect(checkboxes).toHaveLength(3);
     expect(redCheckbox).toBeChecked();
     expect(greenCheckbox).not.toBeChecked();
-
-    fireEvent.click(greenCheckbox);
-
-    expect(window.location.href).toEqual(
-      '/directory?search=the search term&postcode=NN1 1AA&taxonomy_id=colours:1&taxonomy_id=colours:3'
-    );
   });
 
   it('saves a service as a favourite and removes it', () => {
@@ -158,5 +139,13 @@ describe('Test Component', () => {
     fireEvent.click(getByText('Remove from shortlist'));
 
     expect(getByText('Shortlist (0)')).toBeVisible();
+  });
+
+  it('should show the loading spinner when loading', () => {
+    props.isLoading = true;
+
+    const { getByText } = renderComponent();
+
+    expect(getByText('Loading')).toBeVisible();
   });
 });

@@ -22,11 +22,12 @@ const DirectoryMap: React.FunctionComponent<DirectoryMapProps> = ({ allowCookies
         <>
           <Wrapper apiKey={apiKey}>
             <Map center={center} zoom={mapProps.zoom ?? 14}>
-              {mapProps.mapMarkers.map((marker) => (
+              {mapProps.mapMarkers.map((marker, index) => (
                 <MapMarker
                   position={{ lat: marker.lat, lng: marker.lng }}
                   label={marker.label}
                   title={marker.title ?? ''}
+                  key={index}
                 />
               ))}
             </Map>

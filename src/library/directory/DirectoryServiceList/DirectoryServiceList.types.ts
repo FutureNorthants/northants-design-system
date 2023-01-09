@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { DirectoryServiceProps } from '../DirectoryService/DirectoryService.types';
 
 export interface DirectoryServiceListProps {
@@ -19,12 +20,22 @@ export interface DirectoryServiceListProps {
   /**
    * The search term string
    */
-  searchTerm?: string;
+  search?: string;
+
+  /**
+   * Function prop passed in to handle updating search
+   */
+  setSearch: Dispatch<SetStateAction<string>>;
 
   /**
    * The postcode search term
    */
-  searchPostcode?: string;
+  postcode?: string;
+
+  /**
+   * Function prop passed in to handle updating postcode
+   */
+  setPostcode: Dispatch<SetStateAction<string>>;
 
   /**
    * The total amount of results
@@ -52,19 +63,29 @@ export interface DirectoryServiceListProps {
   categories?: DirectoryCategory[];
 
   /**
+   * Function prop passed in to handle updating categories
+   */
+  setCategories: Dispatch<SetStateAction<DirectoryCategory[]>>;
+
+  /**
    * The minimum age filter
    */
-  searchMinimumAge?: number;
+  minimumAge?: string;
+
+  /**
+   * Function prop passed in to handle updating minimumAge
+   */
+  setMinimumAge: Dispatch<SetStateAction<string>>;
 
   /**
    * The maximum age filter
    */
-  searchMaximumAge?: number;
+  maximumAge?: string;
 
   /**
-   * Taxonomy vocabularies that should use custom endpoints
+   * Function prop passed in to handle updating maximumAge
    */
-  customTaxonomyFilters?: string[];
+  setMaximumAge: Dispatch<SetStateAction<string>>;
 
   /**
    *  Where to centre the map, in the format 'lat,lng'
@@ -75,6 +96,11 @@ export interface DirectoryServiceListProps {
    * The optional zoom level, between 1 and 20. 1 = world, 20 = buildings
    */
   mapZoom?: number;
+
+  /**
+   * Is the data loading
+   */
+  isLoading: boolean;
 }
 
 export interface DirectoryCategory {

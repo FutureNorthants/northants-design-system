@@ -12,17 +12,9 @@ The components are purely for displaying the data, with the Frontend website res
 
 The `DirectoryServiceList` is designed to display a list of services with filters. The text and postcode filters in the top of the page are standard, but the filters in the left column are passed in as props through categories.
 
+Updating the state is also passed to the parent component, such as the frontend page that fetches the data from the API.
+
 The label in category is used as the accordion label. The category options can be set to display as radio buttons by setting singleSelection to `true` or to checkboxes by setting singleSelection to `false`.
-
-### Taxonomy Filters
-
-When a taxonomy is selected and the form is submitted, it will add `&taxonomy_id=SelectedTaxonomy:1` to the query string.
-
-### Custom Taxonomy Filters
-
-`customTaxonomyFilters` is an array of strings that is used to decide if the taxonomy should be added to the query string in a special way, rather than as a standard taxonomy. Instead of `&taxonomy_id` it will use the vocabulary name from the category in the query string.
-
-This allows for custom searches, such as facilities and languages, which are not taxonomies in the open referral system.
 
 ## Directory Service
 
