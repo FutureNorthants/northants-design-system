@@ -8,4 +8,9 @@ export interface WarningTextProps {
    * 	Optional to change the colour from a secondary colour to warning
    */
   isWarning?: boolean;
+
+  /**
+   * The WarningText contents
+   */
+  children?: React.ReactNode;
 }

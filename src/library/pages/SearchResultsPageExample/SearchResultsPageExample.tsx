@@ -4,11 +4,11 @@ import Heading from '../../components/Heading/Heading';
 import SearchResultsList from '../../structure/SearchResultsList/SearchResultsList';
 import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
-import {SignpostLinkProp} from '../../components/SignpostLinksList/SignpostLinksList.types'
+import { SignpostLinkProp } from '../../components/SignpostLinksList/SignpostLinksList.types';
 import { noSearchResults, searchResultsWithServiceArea } from './../../structure/SearchResultsList/SearchResultsData';
 
 export interface SearchResultsPageExampleProps {
-  results: Array<SearchResultProps>
+  results: Array<SearchResultProps>;
 }
 interface SearchResultProps {
   /**
@@ -33,41 +33,41 @@ interface SearchResultProps {
   service: string;
 }
 
-
 export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
   <>
     <PageStructures.Header hideSearchBar />
     <PageStructures.MaxWidthContainer>
-    <PageStructures.Breadcrumbs 
-      breadcrumbsArray={[
-      {
-          title: "Home",
-          url: "/"
-      }
-      ]}
-    />
+      <PageStructures.Breadcrumbs
+        breadcrumbsArray={[
+          {
+            title: 'Home',
+            url: '/',
+          },
+        ]}
+      />
       <PageStructures.PageMain>
         <Heading level={1} text="Search results" />
-        <Searchbar isLight={true} isLarge={true} searchTerm="council tax" submitInfo={[{
-            postTo: "/search",
+        <Searchbar
+          isLight={true}
+          isLarge={true}
+          searchTerm="council tax"
+          submitInfo={{
+            postTo: '/search',
             params: {
-                type: "search",
-                searchTerm: "council tax"
-            }
-        }]} />
+              type: 'search',
+              searchTerm: 'council tax',
+            },
+          }}
+        />
 
-        {results ?
-        <SearchResultsList {...searchResultsWithServiceArea} />
-        :
-        <SearchResultsList {...noSearchResults} />
-        }
+        {results ? <SearchResultsList {...searchResultsWithServiceArea} /> : <SearchResultsList {...noSearchResults} />}
 
-
-        {results &&
-          <Pagination currentPage={searchResultsWithServiceArea.pageNumber} totalResults={searchResultsWithServiceArea.totalResults}  />
-        }
-
-
+        {results && (
+          <Pagination
+            currentPage={searchResultsWithServiceArea.pageNumber}
+            totalResults={searchResultsWithServiceArea.totalResults}
+          />
+        )}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer />
