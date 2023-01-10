@@ -48,6 +48,11 @@ export interface DirectoryServiceListProps {
   pageNumber?: number;
 
   /**
+   * Function prop passed in to handle the update page number
+   */
+  setPageNumber: Dispatch<SetStateAction<number>>;
+
+  /**
    * The number of results per page
    */
   perPage?: number;

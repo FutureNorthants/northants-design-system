@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
@@ -6,7 +6,6 @@ import Column from '../../components/Column/Column';
 import sanitizeHtml from 'sanitize-html';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
-import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
 import HintText from '../../components/HintText/HintText';
 import Pagination from '../../components/Pagination/Pagination';
@@ -27,6 +26,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   setPostcode,
   totalResults = 0,
   pageNumber = 1,
+  setPageNumber,
   perPage = 5,
   extractLength = 190,
   categories = [],
@@ -341,6 +341,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   totalResults={totalResults}
                   resultsPerPage={perPage}
                   postTo={directoryPath}
+                  buttonClickOverride={setPageNumber}
                 />
               )}
             </Column>

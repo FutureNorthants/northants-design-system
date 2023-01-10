@@ -17,6 +17,7 @@ describe('Test Component', () => {
       services: [ExampleService],
       totalResults: 1,
       pageNumber: 1,
+      setPageNumber: () => {},
       search: 'council',
       setSearch: () => {},
       postcode: 'NN1 1ED',
