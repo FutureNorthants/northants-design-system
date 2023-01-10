@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface RowProps {
   /**
    * Option to display the border
@@ -14,4 +16,9 @@ export interface RowProps {
    * Option to prevent wrapping
    */
   hasWrap?: boolean;
+
+  /**
+   * The contents of the Row (should be Column)
+   */
+  children?: React.ReactNode;
 }

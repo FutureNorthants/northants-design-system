@@ -29,8 +29,8 @@ const PostCodeAddressTable: React.FunctionComponent<PostCodeAddressTableProps> =
                 {results.addresses.map((addr, i) => (
                   <tr key={i}>
                     <th scope="row">{addr.single_line_address}</th>
-                    <td>{addr.ctaxband}</td>
-                    <td>{addr.ctaxamount}</td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 ))}
               </tbody>

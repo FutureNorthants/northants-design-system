@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface MapProps {
   /**
    * Where to centre the map
@@ -8,4 +10,9 @@ export interface MapProps {
    * The zoom level
    */
   zoom: number;
+
+  /**
+   * Contents of the map
+   */
+  children: React.ReactNode;
 }

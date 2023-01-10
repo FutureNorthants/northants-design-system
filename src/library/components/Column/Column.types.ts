@@ -29,4 +29,9 @@ export interface ColumnProps {
    * Is the column within a list
    */
   isList?: boolean;
+
+  /**
+   * The contents of the column
+   */
+  children?: React.ReactNode;
 }

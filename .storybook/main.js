@@ -1,5 +1,4 @@
 const path = require('path');
-
 module.exports = {
   core: {
     builder: 'webpack5',
@@ -13,8 +12,10 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-a11y', // https://github.com/storybookjs/storybook/tree/master/addons/a11y
-    '@etchteam/storybook-addon-status', // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
+    '@storybook/addon-a11y',
+    // https://github.com/storybookjs/storybook/tree/master/addons/a11y
+    '@etchteam/storybook-addon-status',
+    // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
     '@storybook/addon-ie11',
   ],
   env: (config) => ({
@@ -27,13 +28,18 @@ module.exports = {
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });
-
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve('babel-loader'),
       options: {
         presets: [
-          ['react-app', { flow: false, typescript: true }],
+          [
+            'react-app',
+            {
+              flow: false,
+              typescript: true,
+            },
+          ],
           ['@babel/preset-typescript'],
           [
             '@babel/preset-env',
@@ -41,7 +47,9 @@ module.exports = {
               useBuiltIns: 'usage',
               loose: true,
               shippedProposals: true,
-              corejs: { version: 3 },
+              corejs: {
+                version: 3,
+              },
               targets: {
                 ie: '11',
               },
@@ -51,7 +59,9 @@ module.exports = {
       },
     });
     config.resolve.extensions.push('.ts', '.tsx');
-
     return config;
+  },
+  docs: {
+    autodocs: true,
   },
 };
