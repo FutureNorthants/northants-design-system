@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export interface PaginationProps {
   /**
@@ -24,5 +24,5 @@ export interface PaginationProps {
   /**
    * An optional pagination override function
    */
-  buttonClickOverride?: Dispatch<SetStateAction<number>>;;
+  buttonClickOverride?: Dispatch<SetStateAction<number>>;
 }

@@ -149,6 +149,7 @@ export const Legend = styled.legend`
 `;
 
 export const LegendButton = styled.button`
+  position: relative;
   background: none;
   border: none;
   color: ${(props) => props.theme.theme_vars.colours.action};

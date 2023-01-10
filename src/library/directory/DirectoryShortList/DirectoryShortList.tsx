@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { DirectoryShortListProps } from './DirectoryShortList.types';
 import * as Styles from './DirectoryShortList.styles';
 import {
@@ -15,8 +15,11 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
     toggleFavourites: toggleFavourites,
     isFavourite: isFavourite,
   } = useDirectoryShortListContext();
+  const [notServer, setNotServer] = useState<boolean>(false);
 
-  const notServer = typeof window !== 'undefined';
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
 
   return (
     <Styles.Container data-testid="DirectoryShortList">

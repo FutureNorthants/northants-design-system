@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DirectoryServiceProps } from './DirectoryService.types';
 import * as Styles from './DirectoryService.styles';
@@ -24,6 +24,11 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   url,
 }) => {
   const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+  const [notServer, setNotServer] = useState<boolean>(false);
+
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
 
   return (
     <Styles.Container data-testid="DirectoryService">
@@ -59,22 +64,24 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                   )}
                 </Column>
                 <Column small="full" medium="full" large="one-half">
-                  <DirectoryMap
-                    mapProps={{
-                      centre: `${location.latitude},${location.longitude}`,
-                      imageAltText: `${location.name} shown on a map`,
-                      zoom: 14,
-                      size: '640x320',
-                      mapMarkers: [
-                        {
-                          lat: parseFloat(location.latitude),
-                          lng: parseFloat(location.longitude),
-                          label: labelLetters[locationIndex],
-                          title: location.name,
-                        },
-                      ],
-                    }}
-                  />
+                  {notServer && (
+                    <DirectoryMap
+                      mapProps={{
+                        centre: `${location.latitude},${location.longitude}`,
+                        imageAltText: `${location.name} shown on a map`,
+                        zoom: 14,
+                        size: '640x320',
+                        mapMarkers: [
+                          {
+                            lat: parseFloat(location.latitude),
+                            lng: parseFloat(location.longitude),
+                            label: labelLetters[locationIndex],
+                            title: location.name,
+                          },
+                        ],
+                      }}
+                    />
+                  )}
                   <Styles.MapLink
                     href={`https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`}
                   >

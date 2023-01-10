@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
@@ -47,6 +47,11 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     toggleFavourites: toggleFavourites,
     isFavourite: isFavourite,
   } = useDirectoryShortListContext();
+  const [notServer, setNotServer] = useState(false);
+
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
 
   if (accordions.length === 0) {
     const tempAccordions = [];
@@ -89,7 +94,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setAccordions(updatedAccordions);
   };
 
-  const notServer = typeof window !== 'undefined';
   const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   const labelLetters: string[] = letters.split('');
 

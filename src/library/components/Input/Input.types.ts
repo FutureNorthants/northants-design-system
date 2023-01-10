@@ -37,7 +37,7 @@ export interface InputProps {
   /**
    * An optional function to be called on change
    */
-  onChange?: React.ReactNode;
+  onChange?: React.ReactNode | ((e: any) => void);
 
   /**
    * The optional input id
