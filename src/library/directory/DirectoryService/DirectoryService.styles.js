@@ -4,6 +4,20 @@ export const Container = styled.div`
   display: block;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+
+  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}) {
+      flex-wrap: wrap;
+    }
+
+  h1 {
+    flex-grow: 1;
+  }
+`;
+
 export const MapContainer = styled.div`
   position: relative;
   padding-top: 50%;

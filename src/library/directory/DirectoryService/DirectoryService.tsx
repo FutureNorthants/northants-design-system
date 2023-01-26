@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { DirectoryServiceProps } from './DirectoryService.types';
 import * as Styles from './DirectoryService.styles';
 import Row from '../../components/Row/Row';
@@ -9,10 +8,21 @@ import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformDescriptionDetails, transformService } from './DirectoryServiceTransform';
 import DirectoryMap from '../DirectoryMap/DirectoryMap';
+import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
+import sanitizeHtml from 'sanitize-html';
+
+export const getSnippet = (description: string, extractLength: number = 190) => {
+  return sanitizeHtml(description, {
+    allowedTags: [],
+    allowedAttributes: {},
+  }).substr(0, extractLength) + String.fromCharCode(8230);
+}
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
+  id,
   name,
   accreditations,
+  description,
   descriptionElement,
   email,
   fees,
@@ -34,7 +44,10 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
     <Styles.Container data-testid="DirectoryService">
       <Row>
         <Column small="full" medium="full" large="full">
-          <Heading level={1} text={name} />
+          <Styles.Header>
+            <Heading level={1} text={name} />
+            <DirectoryAddToShortList id={id} name={name} snippet={getSnippet(description, 190)} />
+          </Styles.Header>
         </Column>
         {service_at_locations.length > 0 && (
           <Column small="full" medium="full" large="full">

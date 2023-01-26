@@ -5,7 +5,7 @@ import { DirectoryServiceProps } from './DirectoryService.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleService } from './DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-import { PageMain } from '../../..';
+import { DirectoryShortListProvider, PageMain } from '../../..';
 
 export default {
   title: 'Library/Directory/Directory Service',
@@ -21,7 +21,9 @@ const Template: Story<DirectoryServiceProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
-        <DirectoryService {...args} />
+        <DirectoryShortListProvider>
+          <DirectoryService {...args} />
+        </DirectoryShortListProvider>
       </PageMain>
     </MaxWidthContainer>
   </SBPadding>

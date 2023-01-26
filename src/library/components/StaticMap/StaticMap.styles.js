@@ -4,4 +4,6 @@ export const Container = styled.div`
   display: block;
 `;
 
-export const MapImage = styled.img``;
+export const MapImage = styled.img`
+  max-width: 100%;
+`;
