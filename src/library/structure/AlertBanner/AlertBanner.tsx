@@ -14,9 +14,15 @@ const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, al
   const themeContext = useContext(ThemeContext);
   const elementRef = useRef(null);
   const [showAlert, setShowAlert] = useLocalStorage('alert_' + uid, true);
+  const [notServer, setNotServer] = useState(false);
   useEffect(() => {
     elementRef?.current?.addEventListener('click', embeddedLinkCLickHandler);
   }, [elementRef]);
+
+  /* Stop flash of banner on page load when previously dismissed */
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
 
   /* A click on any link within the alert text dismisses the banner too */
   const embeddedLinkCLickHandler = (event) => {
@@ -27,9 +33,6 @@ const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, al
   const hideClickHandler = () => {
     setShowAlert(false);
   };
-
-  /* Stop flash of banner on page load when previously dismissed */
-  const notServer = typeof window !== 'undefined';
 
   return (
     showAlert &&
