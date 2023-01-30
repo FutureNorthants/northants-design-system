@@ -5,6 +5,7 @@ import { DirectoryServiceProps } from './DirectoryService.types';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import { ExampleService } from './DirectoryService.storydata';
+import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
 describe('Test Component', () => {
   let props: DirectoryServiceProps;
@@ -16,7 +17,9 @@ describe('Test Component', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <DirectoryService {...props} />
+        <DirectoryShortListProvider>
+          <DirectoryService {...props} />
+        </DirectoryShortListProvider>
       </ThemeProvider>
     );
 

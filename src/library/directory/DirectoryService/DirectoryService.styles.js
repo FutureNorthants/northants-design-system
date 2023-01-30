@@ -7,11 +7,11 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}) {
-      flex-wrap: wrap;
-    }
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    flex-wrap: nowrap;
+  }
 
   h1 {
     flex-grow: 1;
