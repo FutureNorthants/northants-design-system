@@ -38,4 +38,13 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE');
     expect(component).toHaveTextContent('01/02/2023, 10:00:00');
   });
+
+  it('should display the message when no results are returned', () => {
+    props.CaseAppointments = [];
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('InquestSchedule');
+
+    expect(component).toHaveTextContent('No inquests found');
+  });
 });

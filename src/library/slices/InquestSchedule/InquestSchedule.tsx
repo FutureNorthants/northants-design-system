@@ -31,6 +31,11 @@ const InquestSchedule: React.FC<InquestScheduleProps> = ({ CaseAppointments, tit
               <td>{new Date(item.StartDateTime).toLocaleString('en-GB')}</td>
             </tr>
           ))}
+          {CaseAppointments.length === 0 && (
+            <tr>
+              <td colSpan={7}>No inquests found</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

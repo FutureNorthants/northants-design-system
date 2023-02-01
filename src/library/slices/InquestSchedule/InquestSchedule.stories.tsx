@@ -37,3 +37,9 @@ ExampleInquestSchedule.args = {
   ],
   title: 'Upcoming inquests',
 };
+
+export const InquestScheduleNoItems = Template.bind({});
+InquestScheduleNoItems.args = {
+  CaseAppointments: [],
+  title: 'Upcoming inquests',
+};
