@@ -7,6 +7,7 @@ import sanitizeHtml from 'sanitize-html';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
 import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
+import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 import HintText from '../../components/HintText/HintText';
 import Pagination from '../../components/Pagination/Pagination';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
@@ -48,6 +49,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     isFavourite: isFavourite,
   } = useDirectoryShortListContext();
   const [notServer, setNotServer] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(search);
+  const [postcodeSearch, setPostcodeSearch] = useState(postcode);
 
   useEffect(() => {
     setNotServer(true);
@@ -94,6 +97,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setAccordions(updatedAccordions);
   };
 
+  const submitSearch = (e) => {
+    e.preventDefault();
+    setSearch(searchTerm);
+    setPostcode(postcodeSearch);
+  };
+
   const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   const labelLetters: string[] = letters.split('');
 
@@ -117,7 +126,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
       <Row>
         <Column small="full" medium="full" large="full">
           <Styles.SearchHeader>
-            <FormWithLine hideLine onSubmit={() => {}}>
+            <FormWithLine hideLine onSubmit={submitSearch}>
               <Row>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="directorySearch">What are you looking for?</Styles.Label>
@@ -125,10 +134,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   <Input
                     name="directorySearch"
                     type="text"
-                    defaultValue={search}
+                    defaultValue={searchTerm}
                     id="directorySearch"
                     onChange={(e) => {
-                      setSearch(e.target.value);
+                      setSearchTerm(e.target.value);
                     }}
                   />
                 </Column>
@@ -138,13 +147,17 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   <Input
                     name="postcode"
                     type="text"
-                    defaultValue={postcode}
+                    defaultValue={postcodeSearch}
                     id="postcode"
-                    onChange={(e) => setPostcode(e.target.value)}
+                    onChange={(e) => setPostcodeSearch(e.target.value)}
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>
+                    <Styles.Button onClick={submitSearch} type="submit">
+                      <Styles.ButtonText>Search</Styles.ButtonText>
+                      <SearchIcon colourFill="#fff" />
+                    </Styles.Button>
                     <Styles.Button onClick={clearSearch} type="button">
                       <Styles.ButtonText>Clear</Styles.ButtonText>
                       <CloseIcon colourFill="#fff" />
