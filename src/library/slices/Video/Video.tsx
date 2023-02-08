@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { VideoProps, VideoProvider } from './Video.types';
 import * as Styles from './Video.styles';
 import { wereCookiesAccepted } from './../../helpers/cookies';
@@ -8,6 +8,7 @@ import { wereCookiesAccepted } from './../../helpers/cookies';
  */
 const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, description, allowCookies, ...props }) => {
   const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
+  const [notServer, setNotServer] = useState(false);
   let watchLink: string;
   let embedLink: string;
 
@@ -25,9 +26,13 @@ const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, descri
 
   defineLinks();
 
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
+
   return (
     <>
-      {cookiesAccepted && (
+      {cookiesAccepted && notServer ? (
         <Styles.VideoContainer data-testid="Video">
           <iframe
             src={embedLink}
@@ -36,8 +41,7 @@ const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, descri
             data-testid="VideoIframe"
           ></iframe>
         </Styles.VideoContainer>
-      )}
-      {!cookiesAccepted && (
+      ) : (
         <Styles.VideoLink href={watchLink} title={description} data-testid="VideoLink">
           {description}
         </Styles.VideoLink>
