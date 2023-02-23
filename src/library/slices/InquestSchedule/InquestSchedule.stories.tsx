@@ -29,7 +29,7 @@ const Template: Story<InquestScheduleProps> = (args) => (
 
 export const ExampleInquestSchedule = Template.bind({});
 ExampleInquestSchedule.args = {
-  CaseAppointments: [
+  caseAppointments: [
     ExampleInquestScheduleData,
     ExampleInquestScheduleData,
     ExampleInquestScheduleData,
@@ -40,6 +40,6 @@ ExampleInquestSchedule.args = {
 
 export const InquestScheduleNoItems = Template.bind({});
 InquestScheduleNoItems.args = {
-  CaseAppointments: [],
+  caseAppointments: [],
   title: 'Upcoming inquests',
 };

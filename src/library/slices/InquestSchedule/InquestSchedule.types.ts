@@ -2,7 +2,7 @@ export interface InquestScheduleProps {
   /**
    * An array of Case Appointments
    */
-  CaseAppointments: CaseAppointmentProps[];
+  caseAppointments: CaseAppointmentProps[];
 
   /**
    * The table title or caption
@@ -11,12 +11,12 @@ export interface InquestScheduleProps {
 }
 
 export interface CaseAppointmentProps {
-  FullName: string;
-  Age: number;
-  PlaceOfDeath?: string | null;
-  DateTimeOfDeath: string;
-  Coroner: string;
-  CourtroomFullAddress: string;
-  AppointmentType: string;
-  StartDateTime: string;
+  fullName: string;
+  age: number;
+  placeOfDeath?: string | null;
+  dateTimeOfDeath: string;
+  coroner: string;
+  courtroomFullAddress: string;
+  appointmentType: string;
+  startDateTime: string;
 }

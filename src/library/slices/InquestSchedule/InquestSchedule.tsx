@@ -1,9 +1,11 @@
 import React from 'react';
-
 import { InquestScheduleProps } from './InquestSchedule.types';
 import * as Styles from './InquestSchedule.styles';
 
-const InquestSchedule: React.FC<InquestScheduleProps> = ({ CaseAppointments, title }) => (
+/**
+ * A table displaying a schedule of inquests
+ */
+const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAppointments, title }) => (
   <Styles.Container data-testid="InquestSchedule">
     <div className="table-container">
       <table>
@@ -20,20 +22,27 @@ const InquestSchedule: React.FC<InquestScheduleProps> = ({ CaseAppointments, tit
           </tr>
         </thead>
         <tbody>
-          {CaseAppointments.map((item, index) => (
+          {caseAppointments.map((item, index) => (
             <tr key={index}>
-              <td>{item.FullName}</td>
-              <td>{item.Age}</td>
-              <td>{item.PlaceOfDeath}</td>
-              <td>{new Date(item.DateTimeOfDeath).toLocaleString('en-GB')}</td>
-              <td>{item.Coroner}</td>
-              <td>{item.CourtroomFullAddress}</td>
-              <td>{new Date(item.StartDateTime).toLocaleString('en-GB')}</td>
+              <td>{item.fullName}</td>
+              <td>{item.age}</td>
+              <td>{item.placeOfDeath}</td>
+              <td>{new Date(item.dateTimeOfDeath).toLocaleString('en-GB')}</td>
+              <td>{item.coroner}</td>
+              <td>{item.courtroomFullAddress}</td>
+              <td>{new Date(item.startDateTime).toLocaleString('en-GB')}</td>
             </tr>
           ))}
-          {CaseAppointments.length === 0 && (
+          {caseAppointments.length === 0 && (
             <tr>
-              <td colSpan={7}>No inquests found</td>
+              <td colSpan={7}>
+                <p>We can't find any results at the moment.</p>
+                <p>
+                  This could either be because there are no inquests scheduled for next month or the system is currently
+                  unavailable.
+                </p>
+                <p>Please try again later.</p>
+              </td>
             </tr>
           )}
         </tbody>

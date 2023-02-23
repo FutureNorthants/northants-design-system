@@ -11,7 +11,7 @@ describe('Test Component', () => {
 
   beforeEach(() => {
     props = {
-      CaseAppointments: [ExampleInquestScheduleData],
+      caseAppointments: [ExampleInquestScheduleData],
       title: 'Upcoming Inquests',
     };
   });
@@ -40,7 +40,7 @@ describe('Test Component', () => {
   });
 
   it('should display the message when no results are returned', () => {
-    props.CaseAppointments = [];
+    props.caseAppointments = [];
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('InquestSchedule');
