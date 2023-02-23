@@ -45,6 +45,6 @@ describe('Test Component', () => {
 
     const component = getByTestId('InquestSchedule');
 
-    expect(component).toHaveTextContent('No inquests found');
+    expect(component).toHaveTextContent("We can't find any results at the moment.");
   });
 });
