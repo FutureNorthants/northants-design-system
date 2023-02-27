@@ -1,4 +1,4 @@
-import { ParishAPIResponse, ParishBands } from './CouncilTaxAlphabeticalDirectory.types';
+import { BandingAPIResponse, ParishAPIResponse, ParishBands } from './CouncilTaxAlphabeticalDirectory.types';
 
 export const exampleBands: ParishBands = {
   a: '1319.87',
@@ -60,5 +60,32 @@ export const exampleParishes: ParishAPIResponse[] = [
     official_parish: 'Daventry CP',
     code: 'E04006799',
     unitary: 'West',
+  },
+];
+
+export const exampleBandings: BandingAPIResponse[] = [
+  {
+    parish: 'Abthorpe',
+    bands: exampleBands,
+  },
+  {
+    parish: 'Adstone',
+    bands: exampleBands,
+  },
+  {
+    parish: 'Alderton',
+    bands: exampleBands,
+  },
+  {
+    parish: 'Althorp',
+    bands: exampleBands,
+  },
+  {
+    parish: 'Arthingworth',
+    bands: exampleBands,
+  },
+  {
+    parish: 'Ashby Saint Ledgers',
+    bands: exampleBands,
   },
 ];
