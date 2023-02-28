@@ -26,3 +26,6 @@ ExampleCustomSearch.args = ExampleCustomSearchProps;
 
 export const ExampleCustomSearchWithLabel = Template.bind({});
 ExampleCustomSearchWithLabel.args = { ...ExampleCustomSearchProps, hasHiddenLabel: false };
+
+export const ExampleCustomSearchWithId = Template.bind({});
+ExampleCustomSearchWithId.args = { ...ExampleCustomSearchProps, id: 'myCustomId' };
