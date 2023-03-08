@@ -27,12 +27,10 @@ export default {
     peerDepsExternal(),
     resolve({
       extensions: extensions,
+      preferBuiltins: true,
     }),
     commonjs({
       include: 'node_modules/**',
-      namedExports: {
-        'react-is': ['isForwardRef'],
-      },
     }),
     svg(),
     typescript({ useTsconfigDeclarationDir: true }),
