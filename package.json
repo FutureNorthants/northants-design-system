@@ -14,7 +14,7 @@
     "url": "https://github.com/wearefuturegov/northants-design-system/issues"
   },
   "homepage": "https://northants-design-system.netlify.app/",
-  "module": "build/index.esm.js",
+  "module": "build/index.mjs.js",
   "files": [
     "build"
   ],
@@ -88,7 +88,7 @@
     "node-sass": "^8.0.0",
     "react": "~18",
     "react-dom": "~18",
-    "rollup": "^2",
+    "rollup": "^3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
