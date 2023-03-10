@@ -16,7 +16,6 @@ module.exports = {
     // https://github.com/storybookjs/storybook/tree/master/addons/a11y
     '@etchteam/storybook-addon-status',
     // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
-    '@storybook/addon-ie11',
   ],
   env: (config) => ({
     ...config,

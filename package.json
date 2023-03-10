@@ -56,7 +56,6 @@
     "@rollup/plugin-node-resolve": "^15",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-ie11": "0.0.6",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
