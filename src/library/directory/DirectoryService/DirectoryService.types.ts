@@ -1,5 +1,6 @@
 import React from 'react';
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
+import { FileDownloadProps } from '../../components/FileDownload/FileDownload.types';
 
 export interface DirectoryServiceProps {
   id: string;
@@ -17,6 +18,7 @@ export interface DirectoryServiceProps {
   service_areas: ServiceAreaProps[];
   service_at_locations?: LocationProps[];
   url?: string;
+  uploads?: FileDownloadProps[];
 }
 
 export interface OrganizationProps {

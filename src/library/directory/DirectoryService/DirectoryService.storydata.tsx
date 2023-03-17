@@ -126,4 +126,20 @@ export const ExampleService: DirectoryServiceProps = {
       service_area: 'West Northamptonshire',
     },
   ],
+  uploads: [
+    {
+      title: 'A file containing more information',
+      type: 'application/pdf',
+      url: '#',
+      size: '0.5MB',
+      archived: false,
+    },
+    {
+      title: 'An example file download',
+      type: 'application/pdf',
+      url: '#',
+      size: '0.25MB',
+      archived: false,
+    },
+  ],
 };

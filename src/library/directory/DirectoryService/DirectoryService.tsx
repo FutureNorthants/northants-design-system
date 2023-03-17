@@ -10,13 +10,16 @@ import { transformDescriptionDetails, transformService } from './DirectoryServic
 import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
 import sanitizeHtml from 'sanitize-html';
+import DownloadableFiles from '../../slices/DownloadableFiles/DownloadableFiles';
 
 export const getSnippet = (description: string, extractLength: number = 190) => {
-  return sanitizeHtml(description, {
-    allowedTags: [],
-    allowedAttributes: {},
-  }).substr(0, extractLength) + String.fromCharCode(8230);
-}
+  return (
+    sanitizeHtml(description, {
+      allowedTags: [],
+      allowedAttributes: {},
+    }).substr(0, extractLength) + String.fromCharCode(8230)
+  );
+};
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -32,6 +35,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   service_areas,
   service_at_locations,
   url,
+  uploads,
 }) => {
   const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   const [notServer, setNotServer] = useState<boolean>(false);
@@ -145,6 +149,12 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             <ServiceContact {...contact} key={contactIndex} />
           ))}
         </Column>
+        {uploads && (
+          <Column small="full" medium="full" large="full">
+            <Heading level={2} text="Resources" />
+            <DownloadableFiles files={uploads} />
+          </Column>
+        )}
       </Row>
     </Styles.Container>
   );
