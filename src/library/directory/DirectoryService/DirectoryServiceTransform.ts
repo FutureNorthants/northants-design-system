@@ -7,7 +7,7 @@ export const transformService = (email: string, url: string): SummaryRowProps[] 
   if (email) {
     service.push({
       term: 'Email',
-      detail: email,
+      detail: `<a href="mailto:${email}">${email}</a>`,
     });
   }
 

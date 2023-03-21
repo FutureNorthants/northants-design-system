@@ -64,7 +64,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                       key={address.id}
                       dangerouslySetInnerHTML={{
                         __html: Object.values(address)
-                          .filter((item) => item !== '')
+                          .filter((item) => item !== '' && item !== address.id)
                           .join(' <br />'),
                       }}
                     />

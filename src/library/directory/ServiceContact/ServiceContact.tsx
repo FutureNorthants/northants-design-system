@@ -24,7 +24,7 @@ const ServiceContact: React.FC<ServiceContactProps> = ({ name, title, phones }) 
   if (phones.length > 0) {
     terms.push({
       term: 'Phone',
-      detail: phones.flatMap((phone) => phone.number).join('<br /> '),
+      detail: phones.flatMap((phone) => `<p><a href="tel:${phone.number}">${phone.number}</a></p>`).join(''),
     });
   }
 
