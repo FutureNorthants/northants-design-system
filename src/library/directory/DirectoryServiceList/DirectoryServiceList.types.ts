@@ -3,6 +3,11 @@ import { DirectoryServiceProps } from '../DirectoryService/DirectoryService.type
 
 export interface DirectoryServiceListProps {
   /**
+   * Are the ages in months? Defaults to false
+   */
+  ageInMonths?: boolean;
+
+  /**
    * The base url for the directory
    */
   directoryPath: string;
@@ -75,22 +80,22 @@ export interface DirectoryServiceListProps {
   /**
    * The minimum age filter
    */
-  minimumAge?: string;
+  minimumAge?: number;
 
   /**
    * Function prop passed in to handle updating minimumAge
    */
-  setMinimumAge: Dispatch<SetStateAction<string>>;
+  setMinimumAge: Dispatch<SetStateAction<number | undefined>>;
 
   /**
    * The maximum age filter
    */
-  maximumAge?: string;
+  maximumAge?: number;
 
   /**
    * Function prop passed in to handle updating maximumAge
    */
-  setMaximumAge: Dispatch<SetStateAction<string>>;
+  setMaximumAge: Dispatch<SetStateAction<number | undefined>>;
 
   /**
    *  Where to centre the map, in the format 'lat,lng'

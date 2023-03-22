@@ -46,7 +46,7 @@ export const ExampleService: DirectoryServiceProps = {
       id: 1,
       eligibility: '',
       minimum_age: 0,
-      maximum_age: 200,
+      maximum_age: 216,
     },
   ],
   email: 'example@service.net',

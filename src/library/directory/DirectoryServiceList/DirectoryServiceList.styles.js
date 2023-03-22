@@ -300,6 +300,36 @@ export const Accordion = styled.div`
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `;
 
+export const AccordionControls = styled.div`
+  text-align: right;
+`;
+
+export const OpenAllButton = styled.button`
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  border-width: 0;
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  background: none;
+  cursor: pointer;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
+`;
+
+export const VisuallyHidden = styled.span`
+  ${(props) => props.theme.visuallyHidden}
+`;
+
 export const FavouritesContainer = styled.div`
   display: flex;
   flex-direction: row;

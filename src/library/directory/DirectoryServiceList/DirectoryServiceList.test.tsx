@@ -12,6 +12,7 @@ describe('Test Component', () => {
 
   beforeEach(() => {
     props = {
+      ageInMonths: true,
       directoryPath: '/directory',
       shortListPath: '/directory/short-list',
       services: [ExampleService],
@@ -22,9 +23,9 @@ describe('Test Component', () => {
       setSearch: () => {},
       postcode: 'NN1 1ED',
       setPostcode: () => {},
-      minimumAge: '5',
+      minimumAge: 5,
       setMinimumAge: () => {},
-      maximumAge: '100',
+      maximumAge: 100,
       setMaximumAge: () => {},
       setCategories: () => {},
       isLoading: false,
@@ -148,5 +149,32 @@ describe('Test Component', () => {
     const { getByText } = renderComponent();
 
     expect(getByText('Loading')).toBeVisible();
+  });
+
+  it('should format the age correctly', () => {
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryServiceList');
+
+    expect(component).toHaveTextContent('0 to 18 years');
+  });
+
+  it('should format the service age in months', () => {
+    props.services[0].eligibilitys[0].minimum_age = 12;
+    props.services[0].eligibilitys[0].maximum_age = 24;
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryServiceList');
+
+    expect(component).toHaveTextContent('12 months to 24 months');
+  });
+
+  it('should mix the age in months and years', () => {
+    props.services[0].eligibilitys[0].minimum_age = 12;
+    props.services[0].eligibilitys[0].maximum_age = 60;
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryServiceList');
+
+    expect(component).toHaveTextContent('12 months to 5 years');
   });
 });

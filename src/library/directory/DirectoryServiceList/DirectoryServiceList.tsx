@@ -32,15 +32,17 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   extractLength = 190,
   categories = [],
   setCategories,
-  minimumAge = '',
+  minimumAge = undefined,
   setMinimumAge,
-  maximumAge = '',
+  maximumAge = undefined,
   setMaximumAge,
   mapCenter = '52.23555414368587,-0.8957390701320571',
   mapZoom = 9,
   isLoading = false,
+  ageInMonths = false,
 }) => {
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
+  const [openAll, setOpenAll] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion-all`, true);
   const [showMap, setShowMap] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-show-map`, false);
   const [showFilters, setShowFilters] = useState<boolean>(false);
   const {
@@ -97,6 +99,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setAccordions(updatedAccordions);
   };
 
+  const toggleAll = () => {
+    setOpenAll(!openAll);
+
+    const updatedAccordions = accordions.map(() => {
+      return openAll;
+    });
+
+    setAccordions(updatedAccordions);
+  };
+
   const submitSearch = (e) => {
     e.preventDefault();
     setSearch(searchTerm);
@@ -119,6 +131,32 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
         title: `<a href="${directoryPath}/${service.id}">${service.name}</a>`,
       };
     }),
+  };
+
+  const formatAge = (age) => {
+    if (age === 0) {
+      return age;
+    }
+    if (ageInMonths) {
+      if (age > 36) {
+        return Math.ceil(age / 12) + ' years';
+      }
+      return `${age} months`;
+    }
+    return `${age} years`;
+  };
+
+  const handleAgeChange = (e, field: string) => {
+    let age: number = e.target.value ? parseInt(e.target.value, 10) : undefined;
+    if (ageInMonths && age) {
+      age = age * 12;
+    }
+
+    if (field === 'maximumAge') {
+      setMaximumAge(age);
+    } else {
+      setMinimumAge(age);
+    }
   };
 
   return (
@@ -179,6 +217,14 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               </Column>
               {notServer && (
                 <>
+                  <Column small="full" medium="full" large="full">
+                    <Styles.AccordionControls>
+                      <Styles.OpenAllButton onClick={toggleAll} type="button" aria-expanded={!openAll}>
+                        {openAll ? 'Open all' : 'Close all'}
+                        <Styles.VisuallyHidden> sections</Styles.VisuallyHidden>
+                      </Styles.OpenAllButton>
+                    </Styles.AccordionControls>
+                  </Column>
                   {categories?.map((category, categoryIndex) => (
                     <Column small="full" medium="full" large="full" key={category.label}>
                       <Styles.Fieldset>
@@ -226,18 +272,20 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                             <Styles.Label htmlFor="minimum_age">From</Styles.Label>
                             <Input
                               name="minimum_age"
-                              onChange={(e) => setMinimumAge(e.target.value ?? '')}
-                              defaultValue={minimumAge}
+                              onChange={(e) => handleAgeChange(e, 'minimumAge')}
+                              defaultValue={ageInMonths && minimumAge ? minimumAge / 12 : minimumAge}
                               id="minimum_age"
+                              type="number"
                             />
                           </Column>
                           <Column small="full" medium="one-half" large="one-half">
                             <Styles.Label htmlFor="maximum_age">To</Styles.Label>
                             <Input
                               name="maximum_age"
-                              onChange={(e) => setMaximumAge(e.target.value ?? '')}
-                              defaultValue={maximumAge}
+                              onChange={(e) => handleAgeChange(e, 'maximumAge')}
+                              defaultValue={ageInMonths && maximumAge ? maximumAge / 12 : maximumAge}
                               id="maximum_age"
+                              type="number"
                             />
                           </Column>
                         </Row>
@@ -334,7 +382,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               <>
                                 {service.eligibilitys.map((eligibility) => (
                                   <Styles.Age key={eligibility.id}>
-                                    Suitable for ages from {eligibility.minimum_age} to {eligibility.maximum_age}
+                                    Suitable for ages from {formatAge(eligibility.minimum_age)} to{' '}
+                                    {formatAge(eligibility.maximum_age)}
                                   </Styles.Age>
                                 ))}
                               </>
