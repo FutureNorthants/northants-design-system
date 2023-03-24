@@ -59,9 +59,9 @@ const generate_theme = (theme_vars) => {
       background: ${theme_vars.colours.focus};
       outline: none;
       text-decoration: none !important;
-      box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
-      -webkit-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
-      -moz-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 3px ${theme_vars.colours.black};
+      box-shadow: 0 0 0 1px ${theme_vars.colours.focus}, 0 0 0 3px ${theme_vars.colours.black};
+      -webkit-box-shadow: 0 0 0 1px ${theme_vars.colours.focus}, 0 0 0 3px ${theme_vars.colours.black};
+      -moz-box-shadow: 0 0 0 1px ${theme_vars.colours.focus}, 0 0 0 3px ${theme_vars.colours.black};
     `,
     linkStylesActive: css`
       color: ${theme_vars.colours.black};

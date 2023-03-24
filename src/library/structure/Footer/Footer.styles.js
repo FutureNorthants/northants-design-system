@@ -51,7 +51,10 @@ export const SocialLinkSingle = styled.a`
     opacity: 0.8;
   }
   &:focus {
-    outline: none;
+    outline: 2px transparent solid;
+    border-radius: 4px;
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+    transition: box-shadow 0.3s ease 0s;
 
     svg {
       path {
@@ -61,6 +64,9 @@ export const SocialLinkSingle = styled.a`
   }
   &:active {
     opacity: 1;
+    border-radius: 4px;
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+    transition: box-shadow 0.3s ease 0s;
 
     svg {
       path {
