@@ -8,6 +8,11 @@ export interface InquestScheduleProps {
    * The table title or caption
    */
   title: string;
+
+  /**
+   * Was there an error fetching results
+   */
+  error?: boolean;
 }
 
 export interface CaseAppointmentProps {

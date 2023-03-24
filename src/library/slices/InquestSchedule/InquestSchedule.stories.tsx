@@ -43,3 +43,10 @@ InquestScheduleNoItems.args = {
   caseAppointments: [],
   title: 'Upcoming inquests',
 };
+
+export const InquestScheduleError = Template.bind({});
+InquestScheduleError.args = {
+  caseAppointments: [],
+  title: 'Upcoming inquests',
+  error: true,
+};

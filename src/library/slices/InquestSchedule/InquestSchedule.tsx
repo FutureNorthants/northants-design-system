@@ -5,7 +5,7 @@ import * as Styles from './InquestSchedule.styles';
 /**
  * A table displaying a schedule of inquests
  */
-const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAppointments, title }) => (
+const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAppointments, title, error = false }) => (
   <Styles.Container data-testid="InquestSchedule">
     <div className="table-container">
       <table>
@@ -37,11 +37,11 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
             <tr>
               <td colSpan={7}>
                 <p>We can't find any results at the moment.</p>
-                <p>
-                  This could either be because there are no inquests scheduled for next month or the system is currently
-                  unavailable.
-                </p>
-                <p>Please try again later.</p>
+                {error ? (
+                  <p> The information is currently unavailable.</p>
+                ) : (
+                  <p>There are no inquests scheduled for next month.</p>
+                )}
               </td>
             </tr>
           )}
