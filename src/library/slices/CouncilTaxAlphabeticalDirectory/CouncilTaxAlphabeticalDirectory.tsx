@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
+  BandingAPIResponse,
   CouncilTaxAlphabeticalDirectoryProps,
-  ParishAPIResponse,
   SortedData,
   SortedParish,
 } from './CouncilTaxAlphabeticalDirectory.types';
@@ -49,20 +49,20 @@ const CouncilTaxAlphabeticalDirectory: React.FunctionComponent<CouncilTaxAlphabe
    * @param data
    * @returns
    */
-  const formatParishData = (data: ParishAPIResponse[]) => {
+  const formatParishData = (data: BandingAPIResponse[]) => {
     const sortData = data.reduce((r, e) => {
       // get first letter of name of current element
-      let group = e.official_parish[0];
+      let group = e.parish[0];
 
       if (!r[group]) {
         // there is no property in accumulator with this letter so create it
         r[group] = {
           group,
-          children: [{ title: trimParishName(e.official_parish), values: e.bands }],
+          children: [{ title: trimParishName(e.parish), values: e.bands }],
         };
       } else {
         // push current element to children array for that letter
-        r[group].children.push({ title: trimParishName(e.official_parish), values: e.bands });
+        r[group].children.push({ title: trimParishName(e.parish), values: e.bands });
       }
 
       return r;

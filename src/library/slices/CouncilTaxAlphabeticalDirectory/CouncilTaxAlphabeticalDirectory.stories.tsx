@@ -4,7 +4,7 @@ import CouncilTaxAlphabeticalDirectory from './CouncilTaxAlphabeticalDirectory';
 import { CouncilTaxAlphabeticalDirectoryProps } from './CouncilTaxAlphabeticalDirectory.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { MaxWidthContainer, PageMain } from '../../structure/PageStructures';
-import { exampleParishes } from './CouncilTaxAlphabeticalDirectory.storydata';
+import { exampleBandings } from './CouncilTaxAlphabeticalDirectory.storydata';
 
 export default {
   title: 'Library/Slices/Council Tax Alphabetical Directory',
@@ -29,5 +29,5 @@ const Template: Story<CouncilTaxAlphabeticalDirectoryProps> = (args) => (
 export const ExampleCouncilTaxAlphabeticalDirectory = Template.bind({});
 ExampleCouncilTaxAlphabeticalDirectory.args = {
   financialYear: '2022/23',
-  parishes: exampleParishes,
+  parishes: exampleBandings,
 };
