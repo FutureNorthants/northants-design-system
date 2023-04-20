@@ -1,7 +1,7 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 import { LanguagesProps, LocationProps, ServiceAreaProps } from './DirectoryService.types';
 
-export const transformService = (email: string, url: string): SummaryRowProps[] => {
+export const transformService = (email: string, url: string, phone?: string): SummaryRowProps[] => {
   const service: SummaryRowProps[] = [];
 
   if (email) {
@@ -15,6 +15,16 @@ export const transformService = (email: string, url: string): SummaryRowProps[] 
     service.push({
       term: 'Website',
       detail: `<a href="${url}">${url}</a>`,
+    });
+  }
+
+  if (phone) {
+    service.push({
+      term: 'Phone',
+      detail: phone
+        .split(',')
+        .flatMap((phone) => `<p><a href="tel:${phone}">${phone}</a></p>`)
+        .join(''),
     });
   }
 

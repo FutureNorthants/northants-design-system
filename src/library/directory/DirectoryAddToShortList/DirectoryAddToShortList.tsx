@@ -6,13 +6,20 @@ import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
 import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
 import { ThemeContext } from 'styled-components';
 
-const DirectoryAddToShortList: React.FunctionComponent<DirectoryAddToShortListProps> = ({ id, name, snippet }) => {
+const DirectoryAddToShortList: React.FunctionComponent<DirectoryAddToShortListProps> = ({
+  id,
+  name,
+  snippet,
+  email,
+  website,
+  phone,
+}) => {
   const { toggleFavourites: toggleFavourites, isFavourite: isFavourite } = useDirectoryShortListContext();
   const themeContext = useContext(ThemeContext);
   const favourite = isFavourite(id);
   return (
     <Styles.AddToShortlist
-      onClick={(e) => toggleFavourites(id, name, snippet)}
+      onClick={(e) => toggleFavourites(id, name, snippet, email, website, phone)}
       data-testid="DirectoryAddToShortList"
       favourite={favourite}
     >

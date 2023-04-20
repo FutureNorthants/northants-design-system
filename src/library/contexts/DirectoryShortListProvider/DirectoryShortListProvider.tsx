@@ -11,7 +11,14 @@ const DirectoryShortListContext = createContext<DirectoryShortListContextType>({
 export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortListProviderProps> = ({ children }) => {
   const [favourites, setFavourites] = useLocalStorage('DirectoryShort', []);
 
-  const toggleFavourites = (id: string, name: string, snippet?: string) => {
+  const toggleFavourites = (
+    id: string,
+    name: string,
+    snippet?: string,
+    email?: string,
+    website?: string,
+    phone?: string
+  ) => {
     const updatedFavourites: ShortListProps[] = [...favourites];
 
     if (isFavourite(id)) {
@@ -22,6 +29,9 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
         id: id,
         name: name,
         snippet: snippet,
+        email: email,
+        website: website,
+        phone: phone,
       });
     }
 

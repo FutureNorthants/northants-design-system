@@ -383,7 +383,14 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                             )}
                           </Column>
                           <Column small="full" medium="full" large="full">
-                            <DirectoryAddToShortList id={service.id} name={service.name} snippet={snippet} />
+                            <DirectoryAddToShortList
+                              id={service.id}
+                              name={service.name}
+                              snippet={snippet}
+                              email={service.email}
+                              website={service.url}
+                              phone={service.contacts[0].phones?.flatMap((phone) => phone.number).join(', ')}
+                            />
                           </Column>
                         </Row>
                       </Styles.ServiceContainer>

@@ -50,7 +50,16 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
         <Column small="full" medium="full" large="full">
           <Styles.Header>
             <Heading level={1} text={name} />
-            {notServer && <DirectoryAddToShortList id={id} name={name} snippet={getSnippet(description, 190)} />}
+            {notServer && (
+              <DirectoryAddToShortList
+                id={id}
+                name={name}
+                snippet={getSnippet(description, 190)}
+                email={email}
+                website={url}
+                phone={contacts?.[0].phones?.flatMap((phone) => phone.number).join(', ')}
+              />
+            )}
           </Styles.Header>
         </Column>
         {service_at_locations.length > 0 && (

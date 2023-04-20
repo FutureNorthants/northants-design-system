@@ -12,7 +12,14 @@ export interface DirectoryShortListContextType {
     favourites: ShortListProps[];
     setFavourites: Dispatch<SetStateAction<ShortListProps[]>>;
   };
-  toggleFavourites?: (id: string, name: string, snippet: string) => void;
+  toggleFavourites?: (
+    id: string,
+    name: string,
+    snippet: string,
+    email?: string,
+    website?: string,
+    phone?: string
+  ) => void;
   isFavourite?: (id: string) => boolean;
 }
 
@@ -31,4 +38,19 @@ export interface ShortListProps {
    * The optional description snippet
    */
   snippet?: string;
+
+  /**
+   * The optional email
+   */
+  email?: string;
+
+  /**
+   * The optional website
+   */
+  website?: string;
+
+  /**
+   * The optional phone number
+   */
+  phone?: string;
 }

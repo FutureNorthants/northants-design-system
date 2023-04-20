@@ -4,7 +4,7 @@ import * as Styles from './ServiceContact.styles';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 
-const ServiceContact: React.FC<ServiceContactProps> = ({ title, phones }) => {
+const ServiceContact: React.FunctionComponent<ServiceContactProps> = ({ title, phones }) => {
   const terms: SummaryRowProps[] = [];
 
   if (title) {

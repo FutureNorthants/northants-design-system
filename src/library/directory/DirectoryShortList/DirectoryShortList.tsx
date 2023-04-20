@@ -8,6 +8,8 @@ import {
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import SummaryList from '../../components/SummaryList/SummaryList';
+import { transformService } from '../DirectoryService/DirectoryServiceTransform';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
@@ -44,14 +46,27 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                           <Styles.PrintLink>
                             <p>{`${directoryPath}/${favourite.id}`}</p>
                           </Styles.PrintLink>
+                        </Column>
+                        <Column small="full" medium="full" large="one-half">
                           <div>{favourite.snippet}</div>
                         </Column>
-                        <Column small="full" medium="full" large="full">
-                          <DirectoryAddToShortList
-                            id={favourite.id}
-                            name={favourite.name}
-                            snippet={favourite.snippet}
+                        <Column small="full" medium="full" large="one-half">
+                          <SummaryList
+                            terms={transformService(favourite.email, favourite.website, favourite.phone)}
+                            hasMargin={false}
                           />
+                        </Column>
+                        <Column small="full" medium="full" large="full">
+                          <Styles.AddContainer>
+                            <DirectoryAddToShortList
+                              id={favourite.id}
+                              name={favourite.name}
+                              snippet={favourite.snippet}
+                              email={favourite.email}
+                              website={favourite.website}
+                              phone={favourite.phone}
+                            />
+                          </Styles.AddContainer>
                         </Column>
                       </Row>
                     </Styles.FavouriteContainer>

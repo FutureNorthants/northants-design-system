@@ -88,3 +88,12 @@ export const PrintButton = styled.button`
     ${(props) => props.theme.linkStylesActive}
   }
 `;
+
+export const AddContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    justify-content: flex-end;
+  }
+`;
