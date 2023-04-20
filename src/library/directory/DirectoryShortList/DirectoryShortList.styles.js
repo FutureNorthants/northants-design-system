@@ -37,6 +37,17 @@ export const PrintLink = styled.div`
   }
 `;
 
+export const QRCodeContainer = styled.div`
+  max-width: 80px;
+  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  display: none;
+  float: right;
+
+  @media print {
+    display: block;
+  }
+`;
+
 export const FavouriteContainer = styled.div`
   background: ${(props) =>
     props.theme.cardinal_name === 'north'

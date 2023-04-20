@@ -10,6 +10,7 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformService } from '../DirectoryService/DirectoryServiceTransform';
+import QRCode from 'react-qr-code';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
@@ -40,6 +41,14 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                     <Styles.FavouriteContainer>
                       <Row>
                         <Column small="full" medium="full" large="full">
+                          <Styles.QRCodeContainer>
+                            <QRCode
+                              value={`${directoryPath}/${favourite.id}`}
+                              size={256}
+                              style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
+                              viewBox={`0 0 256 256`}
+                            />
+                          </Styles.QRCodeContainer>
                           <Styles.ServiceLink href={`${directoryPath}/${favourite.id}`}>
                             {favourite.name}
                           </Styles.ServiceLink>
