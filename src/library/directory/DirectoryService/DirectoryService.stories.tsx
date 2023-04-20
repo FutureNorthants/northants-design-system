@@ -3,7 +3,7 @@ import { Story } from '@storybook/react/types-6-0';
 import DirectoryService from './DirectoryService';
 import { DirectoryServiceProps } from './DirectoryService.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ExampleService } from './DirectoryService.storydata';
+import { ExampleService, MultipleLocations } from './DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { DirectoryShortListProvider, PageMain } from '../../..';
 
@@ -34,3 +34,6 @@ ExampleDirectoryService.args = ExampleService;
 
 export const ExampleDirectoryServiceNoEmail = Template.bind({});
 ExampleDirectoryServiceNoEmail.args = { ...ExampleService, ...{ email: '' } };
+
+export const ExampleDirectoryServiceTwoLocations = Template.bind({});
+ExampleDirectoryServiceTwoLocations.args = { ...ExampleService, ...{ service_at_locations: MultipleLocations } };

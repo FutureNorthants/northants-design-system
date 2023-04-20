@@ -4,15 +4,8 @@ import * as Styles from './ServiceContact.styles';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 
-const ServiceContact: React.FC<ServiceContactProps> = ({ name, title, phones }) => {
+const ServiceContact: React.FC<ServiceContactProps> = ({ title, phones }) => {
   const terms: SummaryRowProps[] = [];
-
-  if (name) {
-    terms.push({
-      term: 'Name',
-      detail: name,
-    });
-  }
 
   if (title) {
     terms.push({

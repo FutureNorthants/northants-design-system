@@ -9,7 +9,7 @@ export const LocalOfferTaxonomy: DirectoryCategory = {
       id: 'localOffer:1',
       name: 'Adulthood',
       vocabulary: 'localOffer',
-      checked: false,
+      checked: true,
     },
     {
       id: 'localOffer:2',

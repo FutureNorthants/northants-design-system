@@ -37,7 +37,7 @@ describe('Test Component', () => {
 
     const component = getByTestId('ServiceContact');
 
-    expect(component).toHaveTextContent('Mr Smith');
+    expect(component).not.toHaveTextContent('Mr Smith');
     expect(component).toHaveTextContent('Manager');
     expect(component).toHaveTextContent('123456789');
     expect(component).toHaveTextContent('111222333444');

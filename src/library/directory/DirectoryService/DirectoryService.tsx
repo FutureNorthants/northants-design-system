@@ -50,63 +50,75 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
         <Column small="full" medium="full" large="full">
           <Styles.Header>
             <Heading level={1} text={name} />
-            <DirectoryAddToShortList id={id} name={name} snippet={getSnippet(description, 190)} />
+            {notServer && <DirectoryAddToShortList id={id} name={name} snippet={getSnippet(description, 190)} />}
           </Styles.Header>
         </Column>
         {service_at_locations.length > 0 && (
           <Column small="full" medium="full" large="full">
-            <Heading level={2} text="Location" />
-            {service_at_locations?.map((location, locationIndex) => (
-              <Row key={locationIndex}>
-                <Column small="full" medium="full" large="one-half">
-                  {location.physical_addresses.map((address) => (
-                    <p
-                      key={address.id}
-                      dangerouslySetInnerHTML={{
-                        __html: Object.values(address)
-                          .filter((item) => item !== '' && item !== address.id)
-                          .join(' <br />'),
-                      }}
-                    />
-                  ))}
-                  {location?.accessibility_for_disabilities.length > 0 && (
-                    <>
-                      <Heading level={3} text="Facilities" />
-                      <ul>
-                        {location.accessibility_for_disabilities.map((accessibility) => (
-                          <li key={accessibility.id}>{accessibility.accessibility}</li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                </Column>
-                <Column small="full" medium="full" large="one-half">
+            <Heading level={2} text={service_at_locations.length > 1 ? `Locations` : `Location`} />
+            <Row>
+              <Column small="full" medium="full" large="one-half">
+                {service_at_locations?.map((location, locationIndex) => (
+                  <div key={locationIndex}>
+                    <Heading level={3} text={location.name} />
+                    {location.physical_addresses.map((address) => (
+                      <p
+                        key={address.id}
+                        dangerouslySetInnerHTML={{
+                          __html: Object.values(address)
+                            .filter((item) => item !== '' && item !== address.id)
+                            .join(' <br />'),
+                        }}
+                      />
+                    ))}
+                    {location?.accessibility_for_disabilities.length > 0 && (
+                      <>
+                        <Heading level={4} text="Facilities" />
+                        <ul>
+                          {location.accessibility_for_disabilities.map((accessibility) => (
+                            <li key={accessibility.id}>{accessibility.accessibility}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                ))}
+
+                <Heading level={2} text="Contact details" />
+                <SummaryList terms={transformService(email, url)} hasMargin={false} />
+                {contacts?.map((contact, contactIndex) => (
+                  <ServiceContact {...contact} key={contactIndex} />
+                ))}
+              </Column>
+
+              <Column small="full" medium="full" large="one-half">
+                <>
                   {notServer && (
                     <DirectoryMap
                       mapProps={{
-                        centre: `${location.latitude},${location.longitude}`,
-                        imageAltText: `${location.name} shown on a map`,
+                        centre: `${service_at_locations[0].latitude},${service_at_locations[0].longitude}`,
+                        imageAltText: `${service_at_locations[0].name} shown on a map`,
                         zoom: 14,
                         size: '640x320',
-                        mapMarkers: [
-                          {
+                        mapMarkers: service_at_locations.map((location, locationIndex) => {
+                          return {
                             lat: parseFloat(location.latitude),
                             lng: parseFloat(location.longitude),
                             label: labelLetters[locationIndex],
                             title: location.name,
-                          },
-                        ],
+                          };
+                        }),
                       }}
                     />
                   )}
                   <Styles.MapLink
-                    href={`https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${service_at_locations[0].latitude}%2C${service_at_locations[0].longitude}`}
                   >
                     View in Google Maps
                   </Styles.MapLink>
-                </Column>
-              </Row>
-            ))}
+                </>
+              </Column>
+            </Row>
           </Column>
         )}
 
@@ -142,13 +154,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </div>
           </Column>
         )}
-        <Column small="full" medium="full" large="full">
-          <Heading level={2} text="Contact details" />
-          <SummaryList terms={transformService(email, url)} hasMargin={false} />
-          {contacts?.map((contact, contactIndex) => (
-            <ServiceContact {...contact} key={contactIndex} />
-          ))}
-        </Column>
+        <Column small="full" medium="full" large="full"></Column>
         {uploads && (
           <Column small="full" medium="full" large="full">
             <Heading level={2} text="Resources" />

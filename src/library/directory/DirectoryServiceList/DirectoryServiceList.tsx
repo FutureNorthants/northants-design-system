@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
@@ -6,7 +6,8 @@ import Column from '../../components/Column/Column';
 import sanitizeHtml from 'sanitize-html';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
-import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
+import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
+import PinIcon from '../../components/icons/PinIcon/PinIcon';
 import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 import HintText from '../../components/HintText/HintText';
 import Pagination from '../../components/Pagination/Pagination';
@@ -16,6 +17,7 @@ import useLocalStorage from '../../helpers/UseLocalStorage';
 import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import { StaticMapProps } from '../../components/StaticMap/StaticMap.types';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import { ThemeContext } from 'styled-components';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -53,9 +55,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [notServer, setNotServer] = useState(false);
   const [searchTerm, setSearchTerm] = useState(search);
   const [postcodeSearch, setPostcodeSearch] = useState(postcode);
+  const themeContext = useContext(ThemeContext);
+  const [filtersActive, setFiltersActive] = useState(false);
 
   useEffect(() => {
     setNotServer(true);
+    setFiltersActive(hasActiveFilters());
   }, []);
 
   if (accordions.length === 0) {
@@ -83,6 +88,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCategories(newCategories);
+    setFiltersActive(hasActiveFilters());
   };
 
   const from = pageNumber * perPage - (perPage - 1);
@@ -159,6 +165,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     }
   };
 
+  const hasActiveFilters = () => {
+    return categories.some((category) => {
+      return category.options.some((option) => {
+        return option.checked == true;
+      });
+    });
+  };
+
+  hasActiveFilters();
+
   return (
     <Styles.Container data-testid="DirectoryServiceList">
       <Row>
@@ -196,10 +212,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       <Styles.ButtonText>Search</Styles.ButtonText>
                       <SearchIcon colourFill="#fff" />
                     </Styles.Button>
-                    <Styles.Button onClick={clearSearch} type="button">
-                      <Styles.ButtonText>Clear</Styles.ButtonText>
-                      <CloseIcon colourFill="#fff" />
-                    </Styles.Button>
                   </Styles.ButtonContainer>
                 </Column>
               </Row>
@@ -219,54 +231,29 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 <>
                   <Column small="full" medium="full" large="full">
                     <Styles.AccordionControls>
-                      <Styles.OpenAllButton onClick={toggleAll} type="button" aria-expanded={!openAll}>
+                      {filtersActive ? (
+                        <Styles.TextLink onClick={clearSearch} type="button">
+                          <Styles.ButtonText>Clear all filters</Styles.ButtonText>
+                        </Styles.TextLink>
+                      ) : (
+                        <div></div>
+                      )}
+
+                      <Styles.TextLink onClick={toggleAll} type="button" aria-expanded={!openAll}>
                         {openAll ? 'Open all' : 'Close all'}
                         <Styles.VisuallyHidden> sections</Styles.VisuallyHidden>
-                      </Styles.OpenAllButton>
+                      </Styles.TextLink>
                     </Styles.AccordionControls>
                   </Column>
-                  {categories?.map((category, categoryIndex) => (
-                    <Column small="full" medium="full" large="full" key={category.label}>
-                      <Styles.Fieldset>
-                        <Styles.Legend>
-                          <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex)} type="button">
-                            {category.label}
-                            <Styles.AccordionIcon isOpen={accordions[categoryIndex]} />
-                          </Styles.LegendButton>
-                        </Styles.Legend>
-                        <Styles.Accordion isOpen={accordions[categoryIndex]}>
-                          {category.options.map((taxonomy) => (
-                            <Styles.Category key={taxonomy.id}>
-                              <Styles.CategoryInput
-                                type={category.singleSelection ? 'radio' : 'checkbox'}
-                                value={taxonomy.id}
-                                id={taxonomy.id.replace(' ', '')}
-                                name={taxonomy.vocabulary}
-                                onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
-                                checked={taxonomy.checked}
-                              />
-                              <Styles.CategoryInputLabel
-                                isChecked={taxonomy.checked}
-                                htmlFor={taxonomy.id.replace(' ', '')}
-                                singleSelection={category.singleSelection}
-                              >
-                                {taxonomy.name}
-                              </Styles.CategoryInputLabel>
-                            </Styles.Category>
-                          ))}
-                        </Styles.Accordion>
-                      </Styles.Fieldset>
-                    </Column>
-                  ))}
                   <Column small="full" medium="full" large="full">
                     <Styles.Fieldset>
-                      <Styles.Legend onClick={(e) => toggleAccordion(categories.length)}>
-                        <Styles.LegendButton onClick={(e) => toggleAccordion(categories.length)} type="button">
+                      <Styles.Legend onClick={(e) => toggleAccordion(0)}>
+                        <Styles.LegendButton onClick={(e) => toggleAccordion(0)} type="button">
                           Select age group (years)
-                          <Styles.AccordionIcon isOpen={accordions[categories.length]} />
+                          <Styles.AccordionIcon isOpen={accordions[0]} />
                         </Styles.LegendButton>
                       </Styles.Legend>
-                      <Styles.Accordion isOpen={accordions[categories.length]}>
+                      <Styles.Accordion isOpen={accordions[0]}>
                         <Row>
                           <Column small="full" medium="one-half" large="one-half">
                             <Styles.Label htmlFor="minimum_age">From</Styles.Label>
@@ -292,6 +279,39 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       </Styles.Accordion>
                     </Styles.Fieldset>
                   </Column>
+                  {categories?.map((category, categoryIndex) => (
+                    <Column small="full" medium="full" large="full" key={category.label}>
+                      <Styles.Fieldset>
+                        <Styles.Legend>
+                          <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex + 1)} type="button">
+                            {category.label}
+                            <Styles.AccordionIcon isOpen={accordions[categoryIndex + 1]} />
+                          </Styles.LegendButton>
+                        </Styles.Legend>
+                        <Styles.Accordion isOpen={accordions[categoryIndex + 1]}>
+                          {category.options.map((taxonomy) => (
+                            <Styles.Category key={taxonomy.id}>
+                              <Styles.CategoryInput
+                                type={category.singleSelection ? 'radio' : 'checkbox'}
+                                value={taxonomy.id}
+                                id={taxonomy.id.replace(' ', '')}
+                                name={taxonomy.vocabulary}
+                                onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
+                                checked={taxonomy.checked}
+                              />
+                              <Styles.CategoryInputLabel
+                                isChecked={taxonomy.checked}
+                                htmlFor={taxonomy.id.replace(' ', '')}
+                                singleSelection={category.singleSelection}
+                              >
+                                {taxonomy.name}
+                              </Styles.CategoryInputLabel>
+                            </Styles.Category>
+                          ))}
+                        </Styles.Accordion>
+                      </Styles.Fieldset>
+                    </Column>
+                  ))}
                 </>
               )}
             </Row>
@@ -322,22 +342,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     )}
 
                     <Styles.Favourites href={shortListPath}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        width="15px"
-                        height="15px"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                        />
-                      </svg>{' '}
-                      Shortlist ({favourites.length})
+                      <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
                     </Styles.Favourites>
                   </Styles.FavouritesContainer>
                 </Column>
@@ -361,19 +366,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               </Styles.ServiceLink>
                               <Styles.MarkerContainer>
                                 <span>{labelLetters[index]}</span>
-
-                                <svg
-                                  version="1.1"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  x="0px"
-                                  y="0px"
-                                  viewBox="0 0 42.4 59.1"
-                                >
-                                  <path
-                                    d="M19.7,5.6c-0.1,0-0.5,0.1-0.9,0.1c-3.3,0.4-6.5,2-8.9,4.4c-2.6,2.6-4.2,5.9-4.6,9.6c-0.1,1,0,3.1,0.1,4.1c0.3,2.1,1.1,4.2,2.3,6.6c0.9,1.6,1.6,2.9,4.2,7c0.9,1.4,1.9,3.1,2.6,4.2c2.3,3.9,4.1,7.9,5.4,11.9c0.2,0.6,0.3,0.8,0.6,0.9c0.5,0.2,1.1,0.1,1.4-0.3c0.1-0.1,0.2-0.5,0.4-0.9c1.1-3.3,2.5-6.5,4.2-9.5c1.2-2.2,2-3.6,4.4-7.4c1.7-2.7,2.3-3.6,2.9-4.8c1.6-2.9,2.5-5.3,2.9-7.8c0.2-1,0.2-3.1,0.1-4.1c-0.2-1.5-0.5-3-1-4.2c-2.1-5.2-6.8-8.9-12.4-9.8C22.9,5.6,20.2,5.5,19.7,5.6z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
+                                <PinIcon colourFill={themeContext.theme_vars.colours.action_dark} />
                               </Styles.MarkerContainer>
                             </Styles.ServiceHeader>
 

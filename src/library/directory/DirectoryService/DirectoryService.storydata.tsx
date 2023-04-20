@@ -1,5 +1,5 @@
 import React from 'react';
-import { DirectoryServiceProps } from './DirectoryService.types';
+import { DirectoryServiceProps, LocationProps } from './DirectoryService.types';
 
 export const ExampleService: DirectoryServiceProps = {
   id: 'abc123',
@@ -143,3 +143,54 @@ export const ExampleService: DirectoryServiceProps = {
     },
   ],
 };
+
+export const MultipleLocations: LocationProps[] = [
+  {
+    name: 'Main office',
+    description: 'The main council building',
+    latitude: '52.23555414368587',
+    longitude: '-0.8957390701320571',
+    physical_addresses: [
+      {
+        id: 123,
+        address_1: '1 Angel Square, Angel Street',
+        city: 'Northampton',
+        state_province: 'Northamptonshire',
+        postal_code: 'NN1 1ED',
+        country: 'United Kingdom',
+      },
+    ],
+    accessibility_for_disabilities: [
+      {
+        id: 1,
+        accessibility: 'Car parking',
+      },
+      {
+        id: 2,
+        accessibility: 'Restaurant/Café',
+      },
+    ],
+  },
+  {
+    name: 'The Guildhall',
+    description: 'Another council building',
+    latitude: '52.237187',
+    longitude: '-0.894843',
+    physical_addresses: [
+      {
+        id: 123,
+        address_1: 'The Guildhall, St Giles Square',
+        city: 'Northampton',
+        state_province: 'Northamptonshire',
+        postal_code: 'NN1 1DE',
+        country: 'United Kingdom',
+      },
+    ],
+    accessibility_for_disabilities: [
+      {
+        id: 3,
+        accessibility: 'Restaurant/Café',
+      },
+    ],
+  },
+];

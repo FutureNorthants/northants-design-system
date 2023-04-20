@@ -301,10 +301,11 @@ export const Accordion = styled.div`
 `;
 
 export const AccordionControls = styled.div`
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 `;
 
-export const OpenAllButton = styled.button`
+export const TextLink = styled.button`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   position: relative;
   z-index: 1;
