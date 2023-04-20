@@ -57,7 +57,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                 snippet={getSnippet(description, 190)}
                 email={email}
                 website={url}
-                phone={contacts?.[0].phones?.flatMap((phone) => phone.number).join(', ')}
+                phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
               />
             )}
           </Styles.Header>
