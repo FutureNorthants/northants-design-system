@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { CustomSearchProps } from './CustomSearch.types';
 import * as Styles from './CustomSearch.styles';
 import Input from '../Input/Input';
@@ -14,8 +14,8 @@ const CustomSearch: React.FunctionComponent<CustomSearchProps> = ({
   searchText,
   id,
 }) => {
-  if (id === null) {
-    id = uniqueID();
+  if (!id) {
+    id = useId();
   }
   return (
     <Styles.Container data-testid="CustomSearch">
