@@ -389,7 +389,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               snippet={snippet}
                               email={service.email}
                               website={service.url}
-                              phone={service.contacts[0].phones?.flatMap((phone) => phone.number).join(', ')}
+                              phone={service.contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
                             />
                           </Column>
                         </Row>
