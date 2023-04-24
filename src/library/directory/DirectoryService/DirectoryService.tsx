@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DirectoryServiceProps } from './DirectoryService.types';
 import * as Styles from './DirectoryService.styles';
 import Row from '../../components/Row/Row';
@@ -6,20 +6,13 @@ import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
 import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
-import { transformDescriptionDetails, transformService } from './DirectoryServiceTransform';
+import { transformDescriptionDetails, transformService, transformSnippet } from './DirectoryServiceTransform';
 import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
-import sanitizeHtml from 'sanitize-html';
 import DownloadableFiles from '../../slices/DownloadableFiles/DownloadableFiles';
-
-export const getSnippet = (description: string, extractLength: number = 190) => {
-  return (
-    sanitizeHtml(description, {
-      allowedTags: [],
-      allowedAttributes: {},
-    }).substr(0, extractLength) + String.fromCharCode(8230)
-  );
-};
+import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
+import { ThemeContext } from 'styled-components';
+import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -36,9 +29,14 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   service_at_locations,
   url,
   uploads,
+  shortListPath,
 }) => {
   const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   const [notServer, setNotServer] = useState<boolean>(false);
+  const themeContext = useContext(ThemeContext);
+  const {
+    favourites: { favourites: favourites },
+  } = useDirectoryShortListContext();
 
   useEffect(() => {
     setNotServer(true);
@@ -51,14 +49,21 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <Styles.Header>
             <Heading level={1} text={name} />
             {notServer && (
-              <DirectoryAddToShortList
-                id={id}
-                name={name}
-                snippet={getSnippet(description, 190)}
-                email={email}
-                website={url}
-                phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
-              />
+              <>
+                {shortListPath && (
+                  <Styles.Favourites href={shortListPath}>
+                    <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
+                  </Styles.Favourites>
+                )}
+                <DirectoryAddToShortList
+                  id={id}
+                  name={name}
+                  snippet={transformSnippet(description, 350)}
+                  email={email}
+                  website={url}
+                  phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                />
+              </>
             )}
           </Styles.Header>
         </Column>
@@ -164,7 +169,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Column>
         )}
         <Column small="full" medium="full" large="full"></Column>
-        {uploads && (
+        {uploads?.length > 1 && (
           <Column small="full" medium="full" large="full">
             <Heading level={2} text="Resources" />
             <DownloadableFiles files={uploads} />

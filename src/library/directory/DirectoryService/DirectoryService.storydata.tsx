@@ -142,6 +142,7 @@ export const ExampleService: DirectoryServiceProps = {
       archived: false,
     },
   ],
+  shortListPath: '/directory/local-offer',
 };
 
 export const MultipleLocations: LocationProps[] = [

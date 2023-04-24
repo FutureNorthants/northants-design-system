@@ -19,6 +19,11 @@ export interface DirectoryServiceProps {
   service_at_locations?: LocationProps[];
   url?: string;
   uploads?: FileDownloadProps[];
+
+  /**
+   * The url to the shortlist
+   */
+  shortListPath?: string;
 }
 
 export interface OrganizationProps {

@@ -1,5 +1,6 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 import { LanguagesProps, LocationProps, ServiceAreaProps } from './DirectoryService.types';
+import sanitizeHtml from 'sanitize-html';
 
 export const transformService = (email: string, url: string, phone?: string): SummaryRowProps[] => {
   const service: SummaryRowProps[] = [];
@@ -106,4 +107,13 @@ export const transformDescriptionDetails = (
   }
 
   return details;
+};
+
+export const transformSnippet = (description: string, extractLength: number = 190): string => {
+  return (
+    sanitizeHtml(description, {
+      allowedTags: [],
+      allowedAttributes: {},
+    }).substr(0, extractLength) + String.fromCharCode(8230)
+  );
 };

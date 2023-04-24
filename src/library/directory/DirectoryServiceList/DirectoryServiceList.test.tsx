@@ -76,7 +76,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent(ExampleService.name);
     expect(component).toHaveTextContent('Showing 1 to 1 out of 1');
     expect(component).toHaveTextContent(
-      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry,…'
+      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry'
     );
   });
 

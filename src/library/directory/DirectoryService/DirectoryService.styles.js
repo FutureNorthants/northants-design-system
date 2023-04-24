@@ -37,3 +37,27 @@ export const MapImage = styled.img`
 export const MapLink = styled.a`
   display: block;
 `;
+
+export const Favourites = styled.a`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  cursor: pointer;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+
+  svg {
+    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
+`;

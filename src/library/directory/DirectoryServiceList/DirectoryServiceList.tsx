@@ -3,7 +3,6 @@ import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import * as Styles from './DirectoryServiceList.styles';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
-import sanitizeHtml from 'sanitize-html';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import Input from '../../components/Input/Input';
 import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
@@ -18,6 +17,7 @@ import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import { StaticMapProps } from '../../components/StaticMap/StaticMap.types';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { ThemeContext } from 'styled-components';
+import { transformSnippet } from '../DirectoryService/DirectoryServiceTransform';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -31,7 +31,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   pageNumber = 1,
   setPageNumber,
   perPage = 5,
-  extractLength = 190,
+  extractLength = 350,
   categories = [],
   setCategories,
   minimumAge = undefined,
@@ -350,11 +350,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
                 </Column>
                 {services.map((service, index) => {
-                  const snippet =
-                    sanitizeHtml(service.description, {
-                      allowedTags: [],
-                      allowedAttributes: {},
-                    }).substr(0, extractLength) + String.fromCharCode(8230);
+                  const snippet = transformSnippet(service.description, extractLength);
                   return (
                     <Column small="full" medium="full" large="full" key={service.id}>
                       <Styles.ServiceContainer resultNumber={index}>
