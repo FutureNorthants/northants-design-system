@@ -14,7 +14,20 @@ export const Header = styled.div`
   }
 
   h1 {
-    flex-grow: 1;
+    flex-grow: 2;
+  }
+`;
+
+export const HeaderRight = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 `;
 
@@ -41,7 +54,7 @@ export const MapLink = styled.a`
 export const Favourites = styled.a`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-grow: 1;
   cursor: pointer;

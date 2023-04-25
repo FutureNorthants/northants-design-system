@@ -49,7 +49,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <Styles.Header>
             <Heading level={1} text={name} />
             {notServer && (
-              <>
+              <Styles.HeaderRight>
                 {shortListPath && (
                   <Styles.Favourites href={shortListPath}>
                     <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
@@ -63,7 +63,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                   website={url}
                   phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
                 />
-              </>
+              </Styles.HeaderRight>
             )}
           </Styles.Header>
         </Column>

@@ -1,6 +1,7 @@
 import AccessibleLinks from './AccessibleLinks/AccessibleLinks';
 import AlertBanner from './AlertBanner/AlertBanner';
 import AlertBannerService from './AlertBannerService/AlertBannerService';
+import BackLink from './BackLink/BackLink';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Contents from './Contents/Contents';
 import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
@@ -43,6 +44,7 @@ export {
   AccessibleLinks,
   AlertBanner,
   AlertBannerService,
+  BackLink,
   Breadcrumbs,
   Contents,
   ContentsNavigation,

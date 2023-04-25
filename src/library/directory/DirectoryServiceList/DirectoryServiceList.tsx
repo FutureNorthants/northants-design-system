@@ -360,10 +360,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               <Styles.ServiceLink href={`${directoryPath}/${service.id}`}>
                                 {service.name}
                               </Styles.ServiceLink>
-                              <Styles.MarkerContainer>
-                                <span>{labelLetters[index]}</span>
-                                <PinIcon colourFill={themeContext.theme_vars.colours.action_dark} />
-                              </Styles.MarkerContainer>
+                              {showMap && (
+                                <Styles.MarkerContainer>
+                                  <span>{labelLetters[index]}</span>
+                                  <PinIcon colourFill={themeContext.theme_vars.colours.action_dark} />
+                                </Styles.MarkerContainer>
+                              )}
                             </Styles.ServiceHeader>
 
                             <div>{snippet}</div>
