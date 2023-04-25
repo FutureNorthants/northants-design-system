@@ -1,11 +1,9 @@
 import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
-
-import AlphabeticalDirectory from '../../components/AlphabeticalDirectory/AlphabeticalDirectory';
-
 import CouncilTaxAlphabeticalDirectory from '../../slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
-import { exampleParishes } from '../../slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory.storydata';
+import { exampleBandings } from '../../slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory.storydata';
+
 export interface CouncilTaxParishPageExampleProps {
   version: string;
 }
@@ -35,7 +33,7 @@ export const CouncilTaxParishPageExample: React.FC<CouncilTaxParishPageExamplePr
           <PageStructures.PageMain>
             <Heading level={1} text="2022/23 council tax charges by Parish" />
 
-            <CouncilTaxAlphabeticalDirectory financialYear="2022/23" parishes={exampleParishes} />
+            <CouncilTaxAlphabeticalDirectory financialYear="2022/23" parishes={exampleBandings} />
 
             <Heading level={2} text="Check a property's band" />
 

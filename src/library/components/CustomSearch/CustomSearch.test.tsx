@@ -33,4 +33,16 @@ describe('CustomSearch Component', () => {
     expect(form).toHaveAttribute('method', 'post');
     expect(form).toHaveAttribute('action', 'https://courses.northantsglobal.net/CourseKeySearch.asp');
   });
+
+  it('should render the custom ID correctly', () => {
+    props.id = 'aCustomId';
+
+    const { getByPlaceholderText, getByText } = renderComponent();
+
+    const input = getByPlaceholderText('Search courses');
+    expect(input).toHaveAttribute('id', 'aCustomId');
+
+    const label = getByText('Search for courses', { selector: 'label' });
+    expect(label).toHaveAttribute('for', 'aCustomId');
+  });
 });

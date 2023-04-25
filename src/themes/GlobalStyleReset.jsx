@@ -151,4 +151,7 @@ export const GlobalStyleReset = createGlobalStyle`
   .table-container li {
     left: 0;
   }
+  table tr td {
+    vertical-align: top;
+  }
 `;

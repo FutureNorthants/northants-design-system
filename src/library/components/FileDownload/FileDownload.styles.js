@@ -65,10 +65,11 @@ export const FileDetails = styled.div`
   max-width: calc(100% - 45px);
   transition: transform 0.3s;
 `;
-export const Title = styled.span`
+export const Title = styled.p`
   display: block;
   color: ${(props) => props.theme.theme_vars.colours.action};
   font-weight: 700;
+  margin-bottom: 0 !important;
 `;
 export const Type = styled.span`
   color: ${(props) => props.theme.theme_vars.colours.black};
