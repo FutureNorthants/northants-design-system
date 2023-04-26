@@ -29,7 +29,7 @@ describe('Test Component', () => {
     const component = getByTestId('DirectoryService');
     const heading = getByRole('heading', { level: 1 });
 
-    expect(heading).toHaveTextContent('West Northants Council');
+    expect(heading).toHaveTextContent('West Northamptonshire Council');
     expect(component).toHaveTextContent(
       'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses'
     );

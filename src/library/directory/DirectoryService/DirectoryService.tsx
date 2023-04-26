@@ -46,26 +46,30 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
     <Styles.Container data-testid="DirectoryService">
       <Row>
         <Column small="full" medium="full" large="full">
-          <Styles.Header>
-            <Heading level={1} text={name} />
-            {notServer && (
-              <Styles.HeaderRight>
-                {shortListPath && (
-                  <Styles.Favourites href={shortListPath}>
-                    <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
-                  </Styles.Favourites>
-                )}
-                <DirectoryAddToShortList
-                  id={id}
-                  name={name}
-                  snippet={transformSnippet(description, 350)}
-                  email={email}
-                  website={url}
-                  phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
-                />
-              </Styles.HeaderRight>
-            )}
-          </Styles.Header>
+          <Row>
+            <Column small="full" medium="full" large="two-thirds">
+              <Heading level={1} text={name} />
+            </Column>
+            <Column small="full" medium="full" large="one-third">
+              {notServer && (
+                <Styles.ShortListLinks>
+                  {shortListPath && (
+                    <Styles.Favourites href={shortListPath}>
+                      <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
+                    </Styles.Favourites>
+                  )}
+                  <DirectoryAddToShortList
+                    id={id}
+                    name={name}
+                    snippet={transformSnippet(description, 350)}
+                    email={email}
+                    website={url}
+                    phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                  />
+                </Styles.ShortListLinks>
+              )}
+            </Column>
+          </Row>
         </Column>
         {service_at_locations.length > 0 && (
           <Column small="full" medium="full" large="full">

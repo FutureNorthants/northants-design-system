@@ -32,6 +32,12 @@ const Template: Story<DirectoryServiceProps> = (args) => (
 export const ExampleDirectoryService = Template.bind({});
 ExampleDirectoryService.args = ExampleService;
 
+export const ExampleDirectoryServiceLongName = Template.bind({});
+ExampleDirectoryServiceLongName.args = {
+  ...ExampleService,
+  ...{ name: 'This service has a very long name and will probably wrap' },
+};
+
 export const ExampleDirectoryServiceNoEmail = Template.bind({});
 ExampleDirectoryServiceNoEmail.args = { ...ExampleService, ...{ email: '' } };
 
