@@ -42,6 +42,7 @@ export interface RegularScheduleProps {
 }
 
 export interface LocationProps {
+  id: number;
   name: string;
   description: string;
   latitude: string;

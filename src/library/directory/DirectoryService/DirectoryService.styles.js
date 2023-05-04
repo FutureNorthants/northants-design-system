@@ -75,3 +75,5 @@ export const Favourites = styled.a`
     margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 `;
+
+export const PhysicalAddress = styled.div``;

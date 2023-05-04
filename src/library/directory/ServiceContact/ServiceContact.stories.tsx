@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 import ServiceContact from './ServiceContact';
-import { ServiceContactProps } from './ServiceContact.types';
+import { ServiceContactComponentProps } from './ServiceContact.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { MaxWidthContainer, PageMain } from '../../..';
 
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<ServiceContactProps> = (args) => (
+const Template: Story<ServiceContactComponentProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
@@ -27,32 +27,49 @@ const Template: Story<ServiceContactProps> = (args) => (
 
 export const ExampleServiceContact = Template.bind({});
 ExampleServiceContact.args = {
-  name: 'John Smith',
-  title: 'Senior Manager',
-  phones: [
+  email: 'test@test.com',
+  website: 'https://www.test.com',
+  contacts: [
     {
-      number: '0123456789',
-    },
-    {
-      number: '0777777777',
+      id: 1,
+      name: 'John Smith',
+      title: 'Senior Manager',
+      phones: [
+        {
+          number: '0123456789',
+        },
+        {
+          number: '0777777777',
+        },
+      ],
     },
   ],
 };
 
 export const ServiceContactNoPhones = Template.bind({});
 ServiceContactNoPhones.args = {
-  name: 'John Smith',
-  title: 'Senior Manager',
-  phones: [],
+  contacts: [
+    {
+      id: 1,
+      name: 'John Smith',
+      title: 'Senior Manager',
+      phones: [],
+    },
+  ],
 };
 
 export const ServiceContactNoTitle = Template.bind({});
 ServiceContactNoTitle.args = {
-  name: 'John Smith',
-  title: '',
-  phones: [
+  contacts: [
     {
-      number: '0123456789',
+      id: 1,
+      name: 'John Smith',
+      title: '',
+      phones: [
+        {
+          number: '0123456789',
+        },
+      ],
     },
   ],
 };

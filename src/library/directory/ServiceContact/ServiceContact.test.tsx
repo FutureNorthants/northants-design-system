@@ -1,25 +1,32 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import ServiceContact from './ServiceContact';
-import { ServiceContactProps } from './ServiceContact.types';
+import { ServiceContactComponentProps, ServiceContactProps } from './ServiceContact.types';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 
 describe('Test Component', () => {
-  let props: ServiceContactProps;
+  let props: ServiceContactComponentProps;
 
   beforeEach(() => {
     props = {
-      name: 'Mr Smith',
-      title: 'Manager',
-      phones: [
+      email: 'test@test.com',
+      website: 'https://www.test.com',
+      contacts: [
         {
-          id: 123,
-          number: '123456789',
-        },
-        {
-          id: 124,
-          number: '111222333444',
+          id: 1,
+          name: 'Mr Smith',
+          title: 'Manager',
+          phones: [
+            {
+              id: 123,
+              number: '123456789',
+            },
+            {
+              id: 124,
+              number: '111222333444',
+            },
+          ],
         },
       ],
     };
@@ -37,8 +44,9 @@ describe('Test Component', () => {
 
     const component = getByTestId('ServiceContact');
 
-    expect(component).not.toHaveTextContent('Mr Smith');
-    expect(component).toHaveTextContent('Manager');
+    expect(component).toHaveTextContent('test@test.com');
+    expect(component).toHaveTextContent('https://www.test.com');
+    expect(component).toHaveTextContent('Mr Smith');
     expect(component).toHaveTextContent('123456789');
     expect(component).toHaveTextContent('111222333444');
   });

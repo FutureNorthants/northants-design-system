@@ -5,6 +5,7 @@ export const ExampleService: DirectoryServiceProps = {
   id: 'abc123',
   contacts: [
     {
+      id: 1,
       name: 'Mrs Smith',
       title: 'Managing Director',
       phones: [
@@ -87,6 +88,7 @@ export const ExampleService: DirectoryServiceProps = {
   ],
   service_at_locations: [
     {
+      id: 123,
       name: 'Main office',
       description: 'The main council building',
       latitude: '52.23555414368587',
@@ -147,6 +149,7 @@ export const ExampleService: DirectoryServiceProps = {
 
 export const MultipleLocations: LocationProps[] = [
   {
+    id: 124,
     name: 'Main office',
     description: 'The main council building',
     latitude: '52.23555414368587',
@@ -173,6 +176,7 @@ export const MultipleLocations: LocationProps[] = [
     ],
   },
   {
+    id: 125,
     name: 'The Guildhall',
     description: 'Another council building',
     latitude: '52.237187',

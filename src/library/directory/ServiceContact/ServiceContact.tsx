@@ -1,22 +1,59 @@
-import React from 'react';
-import { ServiceContactProps } from './ServiceContact.types';
+import React, { useContext } from 'react';
+import { ServiceContactComponentProps } from './ServiceContact.types';
 import * as Styles from './ServiceContact.styles';
-import SummaryList from '../../components/SummaryList/SummaryList';
-import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
+import Row from '../../components/Row/Row';
+import Column from '../../components/Column/Column';
+import WebsiteIcon from '../../components/icons/WebsiteIcon/WebsiteIcon';
+import EmailIcon from '../../components/icons/EmailIcon/EmailIcon';
+import PhoneIcon from '../../components/icons/PhoneIcon/PhoneIcon';
+import { ThemeContext } from 'styled-components';
 
-const ServiceContact: React.FunctionComponent<ServiceContactProps> = ({ title, phones }) => {
-  const terms: SummaryRowProps[] = [];
-
-  if (phones.length > 0) {
-    terms.push({
-      term: title ?? 'Phone',
-      detail: phones.flatMap((phone) => `<p><a href="tel:${phone.number}">${phone.number}</a></p>`).join(''),
-    });
-  }
+const ServiceContact: React.FunctionComponent<ServiceContactComponentProps> = ({ website, email, contacts }) => {
+  const themeContext = useContext(ThemeContext);
 
   return (
     <Styles.Container data-testid="ServiceContact">
-      <SummaryList terms={terms} hasMargin={false} />
+      <Row>
+        {website && (
+          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+            <Styles.IconContainer>
+              <WebsiteIcon colourFill={themeContext.theme_vars.colours.black} />
+            </Styles.IconContainer>
+            <Styles.Content>
+              <a href={website}>{website}</a>
+            </Styles.Content>
+          </Column>
+        )}
+        {email && (
+          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+            <Styles.IconContainer>
+              <EmailIcon colourFill={themeContext.theme_vars.colours.black} />
+            </Styles.IconContainer>
+            <Styles.Content>
+              <a href={`mailto:${email}`}>{email}</a>
+            </Styles.Content>
+          </Column>
+        )}
+        {contacts?.length > 0 && (
+          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+            <Styles.IconContainer>
+              <PhoneIcon colourFill={themeContext.theme_vars.colours.black} />
+            </Styles.IconContainer>
+            <Styles.Content>
+              {contacts.map((contact) => (
+                <Styles.Contact key={contact.id}>
+                  {contact.name && <Styles.ContactName>{contact.name}</Styles.ContactName>}
+                  {contact.phones.map((phone, phoneIndex) => (
+                    <Styles.ContactLink href={`tel:${phone.number}`} key={phoneIndex}>
+                      {phone.number}
+                    </Styles.ContactLink>
+                  ))}
+                </Styles.Contact>
+              ))}
+            </Styles.Content>
+          </Column>
+        )}
+      </Row>
     </Styles.Container>
   );
 };

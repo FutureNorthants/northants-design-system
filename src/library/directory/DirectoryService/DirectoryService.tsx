@@ -75,12 +75,12 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
         {service_at_locations.length > 0 && (
           <Column small="full" medium="full" large="full" classes="striped-column">
             <Row>
-              <Column small="full" medium="full" large="one-half">
+              <Column small="full" medium="full" large="one-third">
                 {service_at_locations?.map((location, locationIndex) => (
-                  <div key={locationIndex}>
+                  <div key={location.id}>
                     {service_at_locations.length > 1 && <Heading level={2} text={location.name} />}
                     {location.physical_addresses.map((address) => (
-                      <>
+                      <Styles.PhysicalAddress key={address.id}>
                         <p
                           key={address.id}
                           dangerouslySetInnerHTML={{
@@ -93,7 +93,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                           url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
                           text="Get directions"
                         />
-                      </>
+                      </Styles.PhysicalAddress>
                     ))}
                     {location?.accessibility_for_disabilities.length > 0 && (
                       <>
@@ -109,7 +109,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                 ))}
               </Column>
 
-              <Column small="full" medium="full" large="one-half">
+              <Column small="full" medium="full" large="two-thirds">
                 <>
                   {notServer && (
                     <DirectoryMap
@@ -142,10 +142,8 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
 
         <Column small="full" medium="full" large="full" classes="striped-column">
           <Heading level={2} text="How to contact this service" />
-          <SummaryList terms={transformService(email, url)} hasMargin={false} />
-          {contacts?.map((contact, contactIndex) => (
-            <ServiceContact {...contact} key={contactIndex} />
-          ))}
+
+          <ServiceContact email={email} website={url} contacts={contacts} />
         </Column>
 
         <Column small="full" medium="full" large="full" classes="striped-column">
