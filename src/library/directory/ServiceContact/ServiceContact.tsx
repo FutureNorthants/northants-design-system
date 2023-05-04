@@ -7,16 +7,9 @@ import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types'
 const ServiceContact: React.FunctionComponent<ServiceContactProps> = ({ title, phones }) => {
   const terms: SummaryRowProps[] = [];
 
-  if (title) {
-    terms.push({
-      term: 'Title',
-      detail: title,
-    });
-  }
-
   if (phones.length > 0) {
     terms.push({
-      term: 'Phone',
+      term: title ?? 'Phone',
       detail: phones.flatMap((phone) => `<p><a href="tel:${phone.number}">${phone.number}</a></p>`).join(''),
     });
   }

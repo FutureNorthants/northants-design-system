@@ -9,6 +9,7 @@ const Column: React.FunctionComponent<ColumnProps> = ({
   hasPadding = true,
   hasBorder = false,
   isList = false,
+  classes,
   children,
 }) => (
   <Styles.Container
@@ -19,6 +20,7 @@ const Column: React.FunctionComponent<ColumnProps> = ({
     hasPadding={hasPadding}
     hasBorder={hasBorder}
     as={isList ? 'li' : 'div'}
+    className={classes}
   >
     {children}
   </Styles.Container>

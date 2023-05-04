@@ -13,6 +13,7 @@ import DownloadableFiles from '../../slices/DownloadableFiles/DownloadableFiles'
 import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
 import { ThemeContext } from 'styled-components';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
+import Button from '../../components/Button/Button';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -72,26 +73,31 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Row>
         </Column>
         {service_at_locations.length > 0 && (
-          <Column small="full" medium="full" large="full">
-            <Heading level={2} text={service_at_locations.length > 1 ? `Locations` : `Location`} />
+          <Column small="full" medium="full" large="full" classes="striped-column">
             <Row>
               <Column small="full" medium="full" large="one-half">
                 {service_at_locations?.map((location, locationIndex) => (
                   <div key={locationIndex}>
-                    <Heading level={3} text={location.name} />
+                    {service_at_locations.length > 1 && <Heading level={2} text={location.name} />}
                     {location.physical_addresses.map((address) => (
-                      <p
-                        key={address.id}
-                        dangerouslySetInnerHTML={{
-                          __html: Object.values(address)
-                            .filter((item) => item !== '' && item !== address.id)
-                            .join(' <br />'),
-                        }}
-                      />
+                      <>
+                        <p
+                          key={address.id}
+                          dangerouslySetInnerHTML={{
+                            __html: Object.values(address)
+                              .filter((item) => item !== '' && item !== address.id)
+                              .join(' <br />'),
+                          }}
+                        />
+                        <Button
+                          url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
+                          text="Get directions"
+                        />
+                      </>
                     ))}
                     {location?.accessibility_for_disabilities.length > 0 && (
                       <>
-                        <Heading level={4} text="Facilities" />
+                        <Heading level={3} text="You can also access" />
                         <ul>
                           {location.accessibility_for_disabilities.map((accessibility) => (
                             <li key={accessibility.id}>{accessibility.accessibility}</li>
@@ -100,12 +106,6 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                       </>
                     )}
                   </div>
-                ))}
-
-                <Heading level={2} text="Contact details" />
-                <SummaryList terms={transformService(email, url)} hasMargin={false} />
-                {contacts?.map((contact, contactIndex) => (
-                  <ServiceContact {...contact} key={contactIndex} />
                 ))}
               </Column>
 
@@ -140,16 +140,24 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Column>
         )}
 
-        <Column small="full" medium="full" large="full">
-          <Heading level={2} text="About this service" />
+        <Column small="full" medium="full" large="full" classes="striped-column">
+          <Heading level={2} text="How to contact this service" />
+          <SummaryList terms={transformService(email, url)} hasMargin={false} />
+          {contacts?.map((contact, contactIndex) => (
+            <ServiceContact {...contact} key={contactIndex} />
+          ))}
+        </Column>
+
+        <Column small="full" medium="full" large="full" classes="striped-column">
+          <Heading level={2} text="How this service can help" />
           <div>
             <>{descriptionElement}</>
           </div>
           <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)} />
         </Column>
         {regular_schedules.length > 0 && (
-          <Column small="full" medium="full" large="full">
-            <Heading level={2} text="Opening times" />
+          <Column small="full" medium="full" large="full" classes="striped-column">
+            <Heading level={2} text="Service hours" />
             <div className="table-container">
               <table>
                 <thead>
@@ -172,10 +180,9 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </div>
           </Column>
         )}
-        <Column small="full" medium="full" large="full"></Column>
         {uploads?.length > 1 && (
-          <Column small="full" medium="full" large="full">
-            <Heading level={2} text="Resources" />
+          <Column small="full" medium="full" large="full" classes="striped-column">
+            <Heading level={2} text="Some resources that can help" />
             <DownloadableFiles files={uploads} />
           </Column>
         )}

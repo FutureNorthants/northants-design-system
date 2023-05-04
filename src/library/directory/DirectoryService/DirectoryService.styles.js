@@ -2,6 +2,21 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+
+  .striped-column {
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      padding: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    }
+
+    &:nth-of-type(even) {
+      background-color: ${(props) =>
+        props.theme.cardinal_name === 'north'
+          ? props.theme.theme_vars.colours.white
+          : props.theme.theme_vars.colours.action_light};
+    }
+  }
 `;
 
 export const ShortListLinks = styled.div`
