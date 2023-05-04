@@ -12,13 +12,13 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         <caption>{title}</caption>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Place of death</th>
-            <th>Date of death</th>
-            <th>Name of coroner</th>
-            <th>Location</th>
-            <th>Date and time</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Place of death</th>
+            <th scope="col">Date of death</th>
+            <th scope="col">Name of coroner</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date and time</th>
           </tr>
         </thead>
         <tbody>
