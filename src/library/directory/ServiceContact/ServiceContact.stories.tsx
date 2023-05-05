@@ -58,16 +58,22 @@ ServiceContactNoPhones.args = {
   ],
 };
 
-export const ServiceContactNoTitle = Template.bind({});
-ServiceContactNoTitle.args = {
+export const ServiceContactLongWebsite = Template.bind({});
+ServiceContactLongWebsite.args = {
+  email: 'long.email.address.that.could.wrap@westnorthants.gov.uk',
+  website:
+    'http://www.northamptonshire.gov.uk/councilservices/children-families-education/young-northants/education/Pages/after-year-11.aspx',
   contacts: [
     {
       id: 1,
-      name: 'John Smith',
+      name: 'Johnathan David Webster-Smith-Jones',
       title: '',
       phones: [
         {
           number: '0123456789',
+        },
+        {
+          number: '0123456799',
         },
       ],
     },

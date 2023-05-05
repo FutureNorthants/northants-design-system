@@ -13,29 +13,29 @@ const ServiceContact: React.FunctionComponent<ServiceContactComponentProps> = ({
 
   return (
     <Styles.Container data-testid="ServiceContact">
-      <Row>
+      <Row hasWrap={false}>
         {website && (
-          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+          <Column small="full" medium="full" large="auto" classes="striped-contacts">
             <Styles.IconContainer>
               <WebsiteIcon colourFill={themeContext.theme_vars.colours.black} />
             </Styles.IconContainer>
             <Styles.Content>
-              <a href={website}>{website}</a>
+              <Styles.WebLink href={website}>{website}</Styles.WebLink>
             </Styles.Content>
           </Column>
         )}
         {email && (
-          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+          <Column small="full" medium="full" large="auto" classes="striped-contacts">
             <Styles.IconContainer>
               <EmailIcon colourFill={themeContext.theme_vars.colours.black} />
             </Styles.IconContainer>
             <Styles.Content>
-              <a href={`mailto:${email}`}>{email}</a>
+              <Styles.EmailLink href={`mailto:${email}`}>{email}</Styles.EmailLink>
             </Styles.Content>
           </Column>
         )}
         {contacts?.length > 0 && (
-          <Column small="full" medium="one-half" large="one-third" classes="striped-contacts">
+          <Column small="full" medium="full" large="auto" classes="striped-contacts">
             <Styles.IconContainer>
               <PhoneIcon colourFill={themeContext.theme_vars.colours.black} />
             </Styles.IconContainer>
