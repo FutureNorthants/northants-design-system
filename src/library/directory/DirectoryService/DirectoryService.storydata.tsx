@@ -1,5 +1,6 @@
 import React from 'react';
 import { DirectoryServiceProps, LocationProps } from './DirectoryService.types';
+import { ExampleSocialProfiles } from '../ServiceSocialLinks/ServiceSocialLinks.storydata';
 
 export const ExampleService: DirectoryServiceProps = {
   id: 'abc123',
@@ -145,6 +146,7 @@ export const ExampleService: DirectoryServiceProps = {
     },
   ],
   shortListPath: '/directory/local-offer',
+  service_social_profiles: ExampleSocialProfiles.profiles,
 };
 
 export const MultipleLocations: LocationProps[] = [

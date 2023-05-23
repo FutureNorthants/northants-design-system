@@ -1,6 +1,7 @@
 import React from 'react';
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 import { FileDownloadProps } from '../../components/FileDownload/FileDownload.types';
+import { ServiceSocialLinksProps, SocialProfile } from '../ServiceSocialLinks/ServiceSocialLinks.types';
 
 export interface DirectoryServiceProps {
   id: string;
@@ -17,6 +18,7 @@ export interface DirectoryServiceProps {
   regular_schedules?: RegularScheduleProps[];
   service_areas: ServiceAreaProps[];
   service_at_locations?: LocationProps[];
+  service_social_profiles?: SocialProfile[];
   url?: string;
   uploads?: FileDownloadProps[];
 

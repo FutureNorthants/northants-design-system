@@ -9,16 +9,17 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-    background-color: ${(props) =>
-      props.theme.cardinal_name === 'north'
-        ? props.theme.theme_vars.colours.grey_light
-        : props.theme.theme_vars.colours.action_light + '80'};
 
-    &:nth-of-type(even) {
-      background-color: ${(props) =>
-        props.theme.cardinal_name === 'north'
-          ? props.theme.theme_vars.colours.white
-          : props.theme.theme_vars.colours.action_light};
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+      border-right: 1px solid
+        ${(props) =>
+          props.theme.cardinal_name === 'north'
+            ? props.theme.theme_vars.colours.grey
+            : props.theme.theme_vars.colours.action_light};
+    }
+
+    &:last-of-type {
+      border: none;
     }
   }
 `;

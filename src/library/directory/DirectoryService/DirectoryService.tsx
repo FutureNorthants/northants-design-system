@@ -14,6 +14,7 @@ import HeartIcon from '../../components/icons/HeartIcon/HeartIcon';
 import { ThemeContext } from 'styled-components';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 import Button from '../../components/Button/Button';
+import ServiceSocialLinks from '../ServiceSocialLinks/ServiceSocialLinks';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -28,6 +29,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   contacts,
   service_areas,
   service_at_locations,
+  service_social_profiles,
   url,
   uploads,
   shortListPath,
@@ -178,10 +180,17 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </div>
           </Column>
         )}
-        {uploads?.length > 1 && (
+        {uploads?.length > 0 && (
           <Column small="full" medium="full" large="full" classes="striped-column">
             <Heading level={2} text="Some resources that can help" />
             <DownloadableFiles files={uploads} />
+          </Column>
+        )}
+        {service_social_profiles?.length > 0 && (
+          <Column small="full" medium="full" large="full" classes="striped-column">
+            <Heading level={2} text="Follow this service" />
+
+            <ServiceSocialLinks profiles={service_social_profiles} />
           </Column>
         )}
       </Row>
