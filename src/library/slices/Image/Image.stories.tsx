@@ -78,3 +78,12 @@ StandardImageWithoutCaption.args = {
   imageAltText: 'Parkland',
   ratio: '4by3',
 };
+
+export const BannerImage = Template.bind({});
+BannerImage.args = {
+  imageLarge: 'https://via.placeholder.com/800x200?text=4+by+1+image',
+  imageSmall: 'https://via.placeholder.com/400x100',
+  imageAltText: 'Parkland',
+  ratio: '4by1',
+  caption: 'The caption helps describe the image',
+};
