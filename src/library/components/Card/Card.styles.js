@@ -25,6 +25,7 @@ export const Content = styled.div`
 export const Image = styled.img`
   width: 100%;
   vertical-align: bottom;
+  height: auto;
 `;
 
 export const ImageLink = styled.a`

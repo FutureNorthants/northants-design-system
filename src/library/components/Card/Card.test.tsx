@@ -58,11 +58,10 @@ describe('Test Component', () => {
     props.header = undefined;
     props.content = undefined;
 
-    const { getByRole } = renderComponent();
-    const image = getByRole('img');
+    const { getByAltText } = renderComponent();
+    const image = getByAltText('The image alt text');
 
     expect(image).toHaveAttribute('src', '/img/example-large.jpg');
-    expect(image).toHaveAttribute('alt', 'The image alt text');
   });
 
   it('should render the image link', () => {

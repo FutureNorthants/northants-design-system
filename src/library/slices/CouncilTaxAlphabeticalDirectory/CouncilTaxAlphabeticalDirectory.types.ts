@@ -1,6 +1,6 @@
 export interface CouncilTaxAlphabeticalDirectoryProps {
   financialYear: string;
-  parishes: ParishAPIResponse[] | undefined;
+  parishes: BandingAPIResponse[] | undefined;
 }
 
 /**
@@ -75,4 +75,19 @@ export interface ParishAPIResponse {
    * The unitary council name, such as 'West' or 'North'
    */
   unitary: string;
+}
+
+/**
+ * The raw banding data from the API
+ */
+export interface BandingAPIResponse {
+  /**
+   * The parish name
+   */
+  parish: string;
+
+  /**
+   * An object of Parish Bands
+   */
+  bands: ParishBands;
 }

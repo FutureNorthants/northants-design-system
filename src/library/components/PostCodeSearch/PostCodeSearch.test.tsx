@@ -187,7 +187,7 @@ describe('PostCodeSearch', () => {
       },
     });
 
-    const { getByTestId, getByPlaceholderText, getByText, getByRole } = renderComponent();
+    const { getByTestId, getByPlaceholderText, getByText, getByLabelText } = renderComponent();
     const component = getByTestId('PostCodeSearch');
     const expandButton = getByText(props.title);
 
@@ -205,7 +205,7 @@ describe('PostCodeSearch', () => {
       expect(component).toHaveTextContent('Select an address to continue');
     });
 
-    fireEvent.change(getByRole('combobox'), { target: { value: '12345678911' } });
+    fireEvent.change(getByLabelText('Select your address'), { target: { value: '12345678911' } });
 
     await waitFor(() => {
       expect(component).toHaveTextContent(

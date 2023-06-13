@@ -1,21 +1,21 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import CouncilTaxAlphabeticalDirectory from './CouncilTaxAlphabeticalDirectory';
-import { CouncilTaxAlphabeticalDirectoryProps, ParishBands } from './CouncilTaxAlphabeticalDirectory.types';
-import { exampleParishes } from './CouncilTaxAlphabeticalDirectory.storydata';
+import { CouncilTaxAlphabeticalDirectoryProps } from './CouncilTaxAlphabeticalDirectory.types';
+import { exampleBandings } from './CouncilTaxAlphabeticalDirectory.storydata';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 
 let props: CouncilTaxAlphabeticalDirectoryProps = {
   financialYear: '2022/23',
-  parishes: exampleParishes,
+  parishes: exampleBandings,
 };
 
 describe('Council Tax Alphabetical Directory', () => {
   beforeEach(() => {
     props = {
       financialYear: '2022/23',
-      parishes: exampleParishes,
+      parishes: exampleBandings,
     };
   });
 
@@ -44,7 +44,7 @@ describe('Council Tax Alphabetical Directory', () => {
 
     expect(component).toBeVisible();
     expect(component).toHaveTextContent('Abthorpe');
-    expect(component).toHaveTextContent('Brixworth');
+    expect(component).toHaveTextContent('Adstone');
   });
 
   it('should display the bands when the parish name is clicked, then hide when back is clicked', async () => {

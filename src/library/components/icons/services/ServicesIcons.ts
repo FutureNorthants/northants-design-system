@@ -12,6 +12,8 @@ import BinDayIcon from './BinDay/Icon';
 import BinDayIconHover from './BinDay/IconHover';
 import BinsIcon from './Bins/Icon';
 import BinsIconHover from './Bins/IconHover';
+import BirthCertificateIcon from './BirthCertificate/Icon';
+import BirthCertificateIconHover from './BirthCertificate/IconHover';
 import BirthsIcon from './Births/Icon';
 import BirthsIconHover from './Births/IconHover';
 import BollardIcon from './Bollard/Icon';
@@ -30,6 +32,8 @@ import CashIcon from './Cash/Icon';
 import CashIconHover from './Cash/IconHover';
 import CatalogueIcon from './Catalogue/Icon';
 import CatalogueIconHover from './Catalogue/IconHover';
+import CeremonyIcon from './Ceremony/Icon';
+import CeremonyIconHover from './Ceremony/IconHover';
 import CharityIcon from './Charity/Icon';
 import CharityIconHover from './Charity/IconHover';
 import ChildrenIcon from './Children/Icon';
@@ -50,6 +54,8 @@ import CultureNorthIcon from './CultureNorth/Icon';
 import CultureNorthIconHover from './CultureNorth/IconHover';
 import CultureWestIcon from './CultureWest/Icon';
 import CultureWestIconHover from './CultureWest/IconHover';
+import DeathCertificateIcon from './DeathCertificate/Icon';
+import DeathCertificateIconHover from './DeathCertificate/IconHover';
 import DemocracyIcon from './Democracy/Icon';
 import DemocracyIconHover from './Democracy/IconHover';
 import DogFoulingIcon from './DogFouling/Icon';
@@ -72,6 +78,8 @@ import FlyTipIcon from './FlyTip/Icon';
 import FlyTipIconHover from './FlyTip/IconHover';
 import FoodWasteIcon from './FoodWaste/Icon';
 import FoodWasteIconHover from './FoodWaste/IconHover';
+import GiveNoticeIcon from './GiveNotice/Icon';
+import GiveNoticeIconHover from './GiveNotice/IconHover';
 import GovUKIcon from './GovUK/Icon';
 import GovUKIconHover from './GovUK/IconHover';
 import GraffitiIcon from './Graffiti/Icon';
@@ -116,6 +124,10 @@ import ProtectIcon from './Protect/Icon';
 import ProtectIconHover from './Protect/IconHover';
 import RatePayIcon from './RatePay/Icon';
 import RatePayIconHover from './RatePay/IconHover';
+import RegisterBirthIcon from './RegisterBirth/Icon';
+import RegisterBirthIconHover from './RegisterBirth/IconHover';
+import RegisterDeathIcon from './RegisterDeath/Icon';
+import RegisterDeathIconHover from './RegisterDeath/IconHover';
 import ReportIcon from './Report/Icon';
 import ReportIconHover from './Report/IconHover';
 import RestrictIcon from './Restrict/Icon';
@@ -136,6 +148,8 @@ import SportsIcon from './Sports/Icon';
 import SportsIconHover from './Sports/IconHover';
 import ValuationIcon from './Valuation/Icon';
 import ValuationIconHover from './Valuation/IconHover';
+import VenueIcon from './Venue/Icon';
+import VenueIconHover from './Venue/IconHover';
 import WasteChecklistIcon from './WasteChecklist/Icon';
 import WasteChecklistIconHover from './WasteChecklist/IconHover';
 import WasteSortingIcon from './WasteSorting/Icon';
@@ -156,6 +170,8 @@ let components = {
   bindayHover: BinDayIconHover,
   bins: BinsIcon,
   binsHover: BinsIconHover,
+  birthcertificate: BirthCertificateIcon,
+  birthcertificateHover: BirthCertificateIconHover,
   births: BirthsIcon,
   birthsHover: BirthsIconHover,
   bollard: BollardIcon,
@@ -174,6 +190,8 @@ let components = {
   cashHover: CashIconHover,
   catalogue: CatalogueIcon,
   catalogueHover: CatalogueIconHover,
+  ceremony: CeremonyIcon,
+  ceremonyHover: CeremonyIconHover,
   charity: CharityIcon,
   charityHover: CharityIconHover,
   children: ChildrenIcon,
@@ -194,6 +212,8 @@ let components = {
   culturenorthHover: CultureNorthIconHover,
   culturewest: CultureWestIcon,
   culturewestHover: CultureWestIconHover,
+  deathcertificate: DeathCertificateIcon,
+  deathcertificateHover: DeathCertificateIconHover,
   democracy: DemocracyIcon,
   democracyHover: DemocracyIconHover,
   dogfouling: DogFoulingIcon,
@@ -216,6 +236,8 @@ let components = {
   flytipHover: FlyTipIconHover,
   foodwaste: FoodWasteIcon,
   foodwasteHover: FoodWasteIconHover,
+  givenotice: GiveNoticeIcon,
+  givenoticeHover: GiveNoticeIconHover,
   govUK: GovUKIcon,
   govUKHover: GovUKIconHover,
   graffiti: GraffitiIcon,
@@ -260,6 +282,10 @@ let components = {
   protectHover: ProtectIconHover,
   ratepay: RatePayIcon,
   ratepayHover: RatePayIconHover,
+  registerbirth: RegisterBirthIcon,
+  registerbirthHover: RegisterBirthIconHover,
+  registerdeath: RegisterDeathIcon,
+  registerdeathHover: RegisterDeathIconHover,
   report: ReportIcon,
   reportHover: ReportIconHover,
   restrict: RestrictIcon,
@@ -280,6 +306,8 @@ let components = {
   sportsHover: SportsIconHover,
   valuation: ValuationIcon,
   valuationHover: ValuationIconHover,
+  venue: VenueIcon,
+  venueHover: VenueIconHover,
   wastechecklist: WasteChecklistIcon,
   wastechecklistHover: WasteChecklistIconHover,
   wastesorting: WasteSortingIcon,

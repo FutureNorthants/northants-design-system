@@ -1,6 +1,6 @@
 {
   "name": "northants-design-system",
-  "version": "0.3.12",
+  "version": "0.3.14",
   "private": false,
   "description": "Design system for West & North Northamptonshire Councils, two unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.",
   "main": "build/index.js",
@@ -39,6 +39,7 @@
     "Storybook"
   ],
   "peerDependencies": {
+    "axios": "^1",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "styled-components": "^5.3.3"
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@etchteam/storybook-addon-status": "^4.2.2",
@@ -68,6 +70,7 @@
     "@types/styled-components": "^5.1.19",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
+    "axios": "^1",
     "babel-jest": "^29.0.0",
     "babel-loader": "^9.0.0",
     "babel-preset-react-app": "^10.0.1",
@@ -100,7 +103,6 @@
     "webpack": "^5.69.0"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "core-js": "^3.20.2",
     "downshift": "^6.1.7",
     "html-react-parser": "^3",
