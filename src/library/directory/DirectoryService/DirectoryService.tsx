@@ -25,6 +25,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   email,
   fees,
   languages,
+  organization,
   regular_schedules,
   contacts,
   service_areas,
@@ -50,27 +51,40 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
       <Row>
         <Column small="full" medium="full" large="full">
           <Row>
-            <Column small="full" medium="full" large="two-thirds">
-              <Heading level={1} text={name} />
+            <Column small="full" medium="full" large="full">
+              <Styles.ServiceHeader>
+                <Heading level={1} text={name} />
+                {organization?.logo && (
+                  <Styles.ServiceImageOuter>
+                    <Styles.ServiceImageContainer>
+                      <Styles.ServiceImage src={organization.logo} alt={name + ' logo'} loading="lazy" />
+                    </Styles.ServiceImageContainer>
+                  </Styles.ServiceImageOuter>
+                )}
+              </Styles.ServiceHeader>
             </Column>
-            <Column small="full" medium="full" large="one-third">
-              {notServer && (
-                <Styles.ShortListLinks>
-                  {shortListPath && (
-                    <Styles.Favourites href={shortListPath}>
-                      <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
-                    </Styles.Favourites>
-                  )}
-                  <DirectoryAddToShortList
-                    id={id}
-                    name={name}
-                    snippet={transformSnippet(description, 350)}
-                    email={email}
-                    website={url}
-                    phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
-                  />
-                </Styles.ShortListLinks>
-              )}
+
+            <Column small="full" medium="full" large="full">
+
+                {notServer && (
+                  <Styles.ShortListLinks>
+                    {shortListPath && (
+                      <Styles.Favourites href={shortListPath}>
+                        <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length}
+                        )
+                      </Styles.Favourites>
+                    )}
+                    <DirectoryAddToShortList
+                      id={id}
+                      name={name}
+                      snippet={transformSnippet(description, 350)}
+                      email={email}
+                      website={url}
+                      phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                    />
+                  </Styles.ShortListLinks>
+                )}
+
             </Column>
           </Row>
         </Column>

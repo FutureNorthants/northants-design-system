@@ -43,3 +43,6 @@ ExampleDirectoryServiceNoEmail.args = { ...ExampleService, ...{ email: '' } };
 
 export const ExampleDirectoryServiceTwoLocations = Template.bind({});
 ExampleDirectoryServiceTwoLocations.args = { ...ExampleService, ...{ service_at_locations: MultipleLocations } };
+
+export const ExampleDirectoryNoLogo = Template.bind({});
+ExampleDirectoryNoLogo.args = { ...ExampleService, ...{ organization: { logo: null } } };

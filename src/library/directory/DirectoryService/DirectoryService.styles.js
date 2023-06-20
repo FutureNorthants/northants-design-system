@@ -21,13 +21,13 @@ export const Container = styled.div`
 
 export const ShortListLinks = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   flex-grow: 1;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     flex-wrap: nowrap;
-    align-items: flex-end;
     justify-content: flex-end;
   }
 `;
@@ -52,12 +52,18 @@ export const MapLink = styled.a`
   display: block;
 `;
 
+export const ShortListContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const Favourites = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex-grow: 1;
+  flex-grow: 0;
   cursor: pointer;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
@@ -77,3 +83,36 @@ export const Favourites = styled.a`
 `;
 
 export const PhysicalAddress = styled.div``;
+
+export const ServiceHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    flex-wrap: nowrap;
+    flex-grow: 0;
+  }
+`;
+
+export const ServiceImageOuter = styled.div`
+  min-width: 200px;
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const ServiceImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 70%;
+`;
+
+export const ServiceImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+`;

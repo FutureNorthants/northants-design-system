@@ -66,7 +66,7 @@ export const ExampleService: DirectoryServiceProps = {
     name: 'Example Organization',
     id: 'AAA-BBB-CCC-DDD',
     description: 'The org description',
-    logo: 'logo.jpg',
+    logo: 'https://via.placeholder.com/425x283?text=425+by+283+image',
     uri: '',
     url: 'https://www.example.com',
   },

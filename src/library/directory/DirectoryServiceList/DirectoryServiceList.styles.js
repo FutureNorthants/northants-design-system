@@ -436,3 +436,17 @@ export const LoadingContainer = styled.div`
   align-items: center;
   width: 100%;
 `;
+
+export const ServiceImageContainer = styled.div`
+  width: 100%;
+  padding-top: 70%;
+  position: relative;
+`;
+
+export const ServiceImage = styled.img`
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;

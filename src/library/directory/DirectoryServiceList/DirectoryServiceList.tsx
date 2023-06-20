@@ -31,7 +31,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   pageNumber = 1,
   setPageNumber,
   perPage = 5,
-  extractLength = 350,
+  extractLength = 300,
   categories = [],
   setCategories,
   minimumAge = undefined,
@@ -367,8 +367,26 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                                 </Styles.MarkerContainer>
                               )}
                             </Styles.ServiceHeader>
-
+                          </Column>
+                          <Column
+                            small="full"
+                            medium={service.organization?.logo ? 'two-thirds' : 'full'}
+                            large={service.organization?.logo ? 'two-thirds' : 'full'}
+                          >
                             <div>{snippet}</div>
+                          </Column>
+                          {service.organization?.logo && (
+                            <Column small="full" medium="one-third" large="one-third">
+                              <Styles.ServiceImageContainer>
+                                <Styles.ServiceImage
+                                  src={service.organization.logo}
+                                  alt={service.name + ' logo'}
+                                  loading="lazy"
+                                />
+                              </Styles.ServiceImageContainer>
+                            </Column>
+                          )}
+                          <Column small="full" medium="full" large="full">
                             {service.eligibilitys && (
                               <>
                                 {service.eligibilitys.map((eligibility) => (
