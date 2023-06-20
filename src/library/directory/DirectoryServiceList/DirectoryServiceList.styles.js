@@ -83,10 +83,7 @@ const serviceBackground = (props) => {
 };
 
 export const ServiceContainer = styled.div`
-  background: ${(props) =>
-    props.theme.cardinal_name === 'north'
-      ? props.theme.theme_vars.colours.white
-      : props.theme.theme_vars.colours.grey_light} !important;
+  background: ${(props) => props.theme.theme_vars.colours.white};
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
