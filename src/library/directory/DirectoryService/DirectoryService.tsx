@@ -65,26 +65,23 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </Column>
 
             <Column small="full" medium="full" large="full">
-
-                {notServer && (
-                  <Styles.ShortListLinks>
-                    {shortListPath && (
-                      <Styles.Favourites href={shortListPath}>
-                        <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length}
-                        )
-                      </Styles.Favourites>
-                    )}
-                    <DirectoryAddToShortList
-                      id={id}
-                      name={name}
-                      snippet={transformSnippet(description, 350)}
-                      email={email}
-                      website={url}
-                      phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
-                    />
-                  </Styles.ShortListLinks>
-                )}
-
+              {notServer && (
+                <Styles.ShortListLinks>
+                  {shortListPath && (
+                    <Styles.Favourites href={shortListPath}>
+                      <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
+                    </Styles.Favourites>
+                  )}
+                  <DirectoryAddToShortList
+                    id={id}
+                    name={name}
+                    snippet={transformSnippet(description, 350)}
+                    email={email}
+                    website={url}
+                    phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                  />
+                </Styles.ShortListLinks>
+              )}
             </Column>
           </Row>
         </Column>
@@ -176,9 +173,9 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
               <table>
                 <thead>
                   <tr>
-                    <th>Weekday</th>
-                    <th>Opens</th>
-                    <th>Closes</th>
+                    <th scope="col">Weekday</th>
+                    <th scope="col">Opens</th>
+                    <th scope="col">Closes</th>
                   </tr>
                 </thead>
                 <tbody>
