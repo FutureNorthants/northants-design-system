@@ -89,9 +89,9 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <Column small="full" medium="full" large="full" classes="striped-column">
             <Row>
               <Column small="full" medium="full" large="one-third">
-                {service_at_locations?.map((location, locationIndex) => (
+                {service_at_locations?.map((location) => (
                   <div key={location.id}>
-                    {service_at_locations.length > 1 && <Heading level={2} text={location.name} />}
+                    <Heading level={2} text={location.name} />
                     {location.physical_addresses.map((address) => (
                       <Styles.PhysicalAddress key={address.id}>
                         <p
@@ -123,31 +123,37 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
               </Column>
 
               <Column small="full" medium="full" large="two-thirds">
-                <>
-                  {notServer && (
-                    <DirectoryMap
-                      mapProps={{
-                        centre: `${service_at_locations[0].latitude},${service_at_locations[0].longitude}`,
-                        imageAltText: `${service_at_locations[0].name} shown on a map`,
-                        zoom: 14,
-                        size: '640x320',
-                        mapMarkers: service_at_locations.map((location, locationIndex) => {
-                          return {
-                            lat: parseFloat(location.latitude),
-                            lng: parseFloat(location.longitude),
-                            label: labelLetters[locationIndex],
-                            title: location.name,
-                          };
-                        }),
-                      }}
-                    />
-                  )}
-                  <Styles.MapLink
-                    href={`https://www.google.com/maps/search/?api=1&query=${service_at_locations[0].latitude}%2C${service_at_locations[0].longitude}`}
-                  >
-                    View in Google Maps
-                  </Styles.MapLink>
-                </>
+                {service_at_locations[0]?.latitude && service_at_locations[0]?.longitude && (
+                  <>
+                    {notServer && (
+                      <DirectoryMap
+                        mapProps={{
+                          centre: `${service_at_locations[0].latitude},${service_at_locations[0].longitude}`,
+                          imageAltText: `${service_at_locations[0].name} shown on a map`,
+                          zoom: 14,
+                          size: '640x320',
+                          mapMarkers: service_at_locations
+                            .filter((location) => {
+                              return location.latitude != null && location.longitude != null;
+                            })
+                            .map((location, locationIndex) => {
+                              return {
+                                lat: parseFloat(location.latitude),
+                                lng: parseFloat(location.longitude),
+                                label: labelLetters[locationIndex],
+                                title: location.name,
+                              };
+                            }),
+                        }}
+                      />
+                    )}
+                    <Styles.MapLink
+                      href={`https://www.google.com/maps/search/?api=1&query=${service_at_locations[0].latitude}%2C${service_at_locations[0].longitude}`}
+                    >
+                      View in Google Maps
+                    </Styles.MapLink>
+                  </>
+                )}
               </Column>
             </Row>
           </Column>
