@@ -129,14 +129,18 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     zoom: mapZoom,
     size: '640x320',
     imageAltText: 'Directory search results displayed on a map',
-    mapMarkers: services.map((service, index) => {
-      return {
-        lat: parseFloat(service.service_at_locations[0]?.latitude),
-        lng: parseFloat(service.service_at_locations[0]?.longitude),
-        label: labelLetters[index],
-        title: `<a href="${directoryPath}/${service.id}">${service.name}</a>`,
-      };
-    }),
+    mapMarkers: services
+      .filter((service) => {
+        return service.service_at_locations[0]?.is_visitable != false;
+      })
+      .map((service, index) => {
+        return {
+          lat: parseFloat(service.service_at_locations[0]?.latitude),
+          lng: parseFloat(service.service_at_locations[0]?.longitude),
+          label: labelLetters[index],
+          title: `<a href="${directoryPath}/${service.id}">${service.name}</a>`,
+        };
+      }),
   };
 
   const formatAge = (age) => {

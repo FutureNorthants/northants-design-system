@@ -201,3 +201,30 @@ export const MultipleLocations: LocationProps[] = [
     ],
   },
 ];
+
+export const OneVisitableLocation: LocationProps[] = [
+  {
+    id: 126,
+    name: 'County Hall',
+    description: 'One more council building',
+    latitude: '52.237187',
+    longitude: '-0.894843',
+    is_visitable: false,
+    physical_addresses: [
+      {
+        id: 123,
+        address_1: 'County Hall, St Giles Square',
+        city: 'Northampton',
+        state_province: 'Northamptonshire',
+        postal_code: 'NN1 1DE',
+        country: 'United Kingdom',
+      },
+    ],
+    accessibility_for_disabilities: [
+      {
+        id: 3,
+        accessibility: 'Restaurant/Café',
+      },
+    ],
+  },
+];

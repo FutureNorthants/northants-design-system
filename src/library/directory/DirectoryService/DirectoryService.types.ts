@@ -47,6 +47,7 @@ export interface LocationProps {
   id: number;
   name: string;
   description: string;
+  is_visitable?: boolean;
   latitude: string;
   longitude: string;
   physical_addresses: PhysicalAddressProps[];

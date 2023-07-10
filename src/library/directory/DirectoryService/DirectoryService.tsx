@@ -85,75 +85,89 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             </Column>
           </Row>
         </Column>
-        {service_at_locations.length > 0 && (
+        {service_at_locations.filter((location) => {
+          return location.is_visitable != false;
+        }).length > 0 && (
           <Column small="full" medium="full" large="full" classes="striped-column">
             <Row>
               <Column small="full" medium="full" large="one-third">
-                {service_at_locations?.map((location) => (
-                  <div key={location.id}>
-                    <Heading level={2} text={location.name} />
-                    {location.physical_addresses.map((address) => (
-                      <Styles.PhysicalAddress key={address.id}>
-                        <p
-                          key={address.id}
-                          dangerouslySetInnerHTML={{
-                            __html: Object.values(address)
-                              .filter((item) => item !== '' && item !== address.id)
-                              .join(' <br />'),
-                          }}
-                        />
-                        <Button
-                          url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
-                          text="Get directions"
-                        />
-                      </Styles.PhysicalAddress>
-                    ))}
-                    {location?.accessibility_for_disabilities.length > 0 && (
-                      <>
-                        <Heading level={3} text="You can also access" />
-                        <ul>
-                          {location.accessibility_for_disabilities.map((accessibility) => (
-                            <li key={accessibility.id}>{accessibility.accessibility}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </div>
-                ))}
+                {service_at_locations
+                  ?.filter((location) => {
+                    return location.is_visitable != false;
+                  })
+                  .map((location) => (
+                    <div key={location.id}>
+                      <Heading level={2} text={location.name} />
+                      {location.physical_addresses.map((address) => (
+                        <Styles.PhysicalAddress key={address.id}>
+                          <p
+                            key={address.id}
+                            dangerouslySetInnerHTML={{
+                              __html: Object.values(address)
+                                .filter((item) => item !== '' && item !== address.id)
+                                .join(' <br />'),
+                            }}
+                          />
+                          <Button
+                            url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
+                            text="Get directions"
+                          />
+                        </Styles.PhysicalAddress>
+                      ))}
+                      {location?.accessibility_for_disabilities.length > 0 && (
+                        <>
+                          <Heading level={3} text="Other facilities on site" />
+                          <ul>
+                            {location.accessibility_for_disabilities.map((accessibility) => (
+                              <li key={accessibility.id}>{accessibility.accessibility}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
+                  ))}
               </Column>
 
               <Column small="full" medium="full" large="two-thirds">
-                {service_at_locations[0]?.latitude && service_at_locations[0]?.longitude && (
-                  <>
-                    {notServer && (
-                      <DirectoryMap
-                        mapProps={{
-                          centre: `${service_at_locations[0].latitude},${service_at_locations[0].longitude}`,
-                          imageAltText: `${service_at_locations[0].name} shown on a map`,
-                          zoom: 14,
-                          size: '640x320',
-                          mapMarkers: service_at_locations
-                            .filter((location) => {
-                              return location.latitude != null && location.longitude != null;
-                            })
-                            .map((location, locationIndex) => {
-                              return {
-                                lat: parseFloat(location.latitude),
-                                lng: parseFloat(location.longitude),
-                                label: labelLetters[locationIndex],
-                                title: location.name,
-                              };
-                            }),
-                        }}
-                      />
-                    )}
-                    <Styles.MapLink
-                      href={`https://www.google.com/maps/search/?api=1&query=${service_at_locations[0].latitude}%2C${service_at_locations[0].longitude}`}
-                    >
-                      View in Google Maps
-                    </Styles.MapLink>
-                  </>
-                )}
+                {service_at_locations.filter((location) => {
+                  return location.is_visitable != false;
+                }).length > 0 &&
+                  service_at_locations[0]?.latitude &&
+                  service_at_locations[0]?.longitude && (
+                    <>
+                      {notServer && (
+                        <DirectoryMap
+                          mapProps={{
+                            centre: `${service_at_locations[0].latitude},${service_at_locations[0].longitude}`,
+                            imageAltText: `${service_at_locations[0].name} shown on a map`,
+                            zoom: 14,
+                            size: '640x320',
+                            mapMarkers: service_at_locations
+                              .filter((location) => {
+                                return (
+                                  location.latitude != null &&
+                                  location.longitude != null &&
+                                  location.is_visitable != false
+                                );
+                              })
+                              .map((location, locationIndex) => {
+                                return {
+                                  lat: parseFloat(location.latitude),
+                                  lng: parseFloat(location.longitude),
+                                  label: labelLetters[locationIndex],
+                                  title: location.name,
+                                };
+                              }),
+                          }}
+                        />
+                      )}
+                      <Styles.MapLink
+                        href={`https://www.google.com/maps/search/?api=1&query=${service_at_locations[0].latitude}%2C${service_at_locations[0].longitude}`}
+                      >
+                        View in Google Maps
+                      </Styles.MapLink>
+                    </>
+                  )}
               </Column>
             </Row>
           </Column>
@@ -208,6 +222,45 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             <Heading level={2} text="Follow this service" />
 
             <ServiceSocialLinks profiles={service_social_profiles} />
+          </Column>
+        )}
+        {service_at_locations.filter((location) => {
+          return location.is_visitable == false;
+        }).length > 0 && (
+          <Column small="full" medium="full" large="full" classes="striped-column">
+            <Row>
+              {service_at_locations
+                .filter((location) => {
+                  return location.is_visitable == false;
+                })
+                .map((location) => (
+                  <Column small="full" medium="one-half" large="one-half" key={location.id}>
+                    <Heading level={2} text={location.name} />
+                    {location.physical_addresses.map((address) => (
+                      <Styles.PhysicalAddress key={address.id}>
+                        <p
+                          key={address.id}
+                          dangerouslySetInnerHTML={{
+                            __html: Object.values(address)
+                              .filter((item) => item !== '' && item !== address.id)
+                              .join(' <br />'),
+                          }}
+                        />
+                      </Styles.PhysicalAddress>
+                    ))}
+                    {location?.accessibility_for_disabilities.length > 0 && (
+                      <>
+                        <Heading level={3} text="Other facilities on site" />
+                        <ul>
+                          {location.accessibility_for_disabilities.map((accessibility) => (
+                            <li key={accessibility.id}>{accessibility.accessibility}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </Column>
+                ))}
+            </Row>
           </Column>
         )}
       </Row>
