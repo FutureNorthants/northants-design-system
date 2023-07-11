@@ -1,5 +1,6 @@
 // Components
 import Autocomplete from './library/components/Autocomplete/Autocomplete';
+import BackToTop from './library/components/BackToTop/BackToTop';
 import Button from './library/components/Button/Button';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
 import Heading from './library/components/Heading/Heading';
@@ -15,6 +16,7 @@ import TextInput from './library/components/TextInput/TextInput';
 
 export {
   Autocomplete,
+  BackToTop,
   Button,
   DynamicIcon,
   Heading,

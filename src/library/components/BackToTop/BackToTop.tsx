@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BackToTopProps } from './BackToTop.types';
 import * as Styles from './BackToTop.styles';
 import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
@@ -25,7 +25,9 @@ const BackToTop: React.FunctionComponent<BackToTopProps> = ({ isActive = false }
     });
   };
 
-  window.addEventListener('scroll', toggleVisible);
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible);
+  });
 
   return (
     <Styles.Container data-testid="BackToTop">
