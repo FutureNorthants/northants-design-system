@@ -15,6 +15,7 @@ import { ThemeContext } from 'styled-components';
 import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 import Button from '../../components/Button/Button';
 import ServiceSocialLinks from '../ServiceSocialLinks/ServiceSocialLinks';
+import WarningText from '../../slices/WarningText/WarningText';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -228,13 +229,13 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           return location.is_visitable == false;
         }).length > 0 && (
           <Column small="full" medium="full" large="full" classes="striped-column">
-            <Row>
-              {service_at_locations
-                .filter((location) => {
-                  return location.is_visitable == false;
-                })
-                .map((location) => (
-                  <Column small="full" medium="one-half" large="one-half" key={location.id}>
+            {service_at_locations
+              .filter((location) => {
+                return location.is_visitable == false;
+              })
+              .map((location) => (
+                <Row>
+                  <Column small="full" medium="one-half" large="one-third" key={location.id}>
                     <Heading level={2} text={location.name} />
                     {location.physical_addresses.map((address) => (
                       <Styles.PhysicalAddress key={address.id}>
@@ -259,8 +260,13 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                       </>
                     )}
                   </Column>
-                ))}
-            </Row>
+                  <Column small="full" medium="one-half" large="two-thirds">
+                    <WarningText title="Please note" isWarning>
+                      <p>This address is not open to visitors.</p>
+                    </WarningText>
+                  </Column>
+                </Row>
+              ))}
           </Column>
         )}
       </Row>

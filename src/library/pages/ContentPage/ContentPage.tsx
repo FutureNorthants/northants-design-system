@@ -19,6 +19,7 @@ import { ImageWithCaption } from '../../slices/Image/Image.storydata';
 import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
 import SearchBox from '../../slices/SearchBox/SearchBox';
 import { ExampleSearchBoxProps } from '../../slices/SearchBox/SearchBox.storydata';
+import BackToTop from '../../components/BackToTop/BackToTop';
 
 export interface ContentPageProps {}
 
@@ -284,5 +285,6 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         },
       ]}
     />
+    <BackToTop isActive={true} />
   </>
 );
