@@ -32,7 +32,13 @@ const BackToTop: React.FunctionComponent<BackToTopProps> = ({ isActive = false }
   return (
     <Styles.Container data-testid="BackToTop">
       {isActive && (
-        <Styles.BackToTopButton onClick={scrollToTop} visible={visible} data-testid="BackToTopButton" type="button">
+        <Styles.BackToTopButton
+          onClick={scrollToTop}
+          visible={visible}
+          data-testid="BackToTopButton"
+          type="button"
+          aria-label="Go to the top of the page"
+        >
           <ChevronIcon colourFill={themeContext.theme_vars.colours.white} direction="up" />
         </Styles.BackToTopButton>
       )}

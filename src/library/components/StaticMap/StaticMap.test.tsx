@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import StaticMap from './StaticMap';
 import { StaticMapProps } from './StaticMap.types';
+import { ThemeProvider } from 'styled-components';
+import { west_theme } from '../../../themes/theme_generator';
 
 describe('Test Static Map Component', () => {
   let props: StaticMapProps;
@@ -13,7 +15,12 @@ describe('Test Static Map Component', () => {
     };
   });
 
-  const renderComponent = () => render(<StaticMap {...props} />);
+  const renderComponent = () =>
+    render(
+      <ThemeProvider theme={west_theme}>
+        <StaticMap {...props} />
+      </ThemeProvider>
+    );
 
   it('should render static map correctly', () => {
     const { getByTestId, getByRole } = renderComponent();

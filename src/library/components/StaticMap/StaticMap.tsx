@@ -27,6 +27,9 @@ const StaticMap: React.FunctionComponent<StaticMapProps> = ({
 
   return (
     <Styles.Container data-testid="StaticMap">
+      <Styles.Message>
+        <span>To interact with the map, you need to accept cookies.</span>
+      </Styles.Message>
       <Styles.MapImage
         src={`https://maps.googleapis.com/maps/api/staticmap?center=${centre}&size=${size}&zoom=${zoom}&maptype=${mapType}${markerPath}&key=${apiKey}`}
         alt={imageAltText}
