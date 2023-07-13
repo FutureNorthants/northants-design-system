@@ -116,8 +116,70 @@ export const ExampleService: DirectoryServiceProps = {
       ],
     },
   ],
+  service_taxonomys: [
+    {
+      id: 'localOffer:3',
+      name: 'Education',
+      vocabulary: 'localOffer',
+      parent: null,
+    },
+    {
+      id: 'localOffer:12',
+      name: 'Training and Apprenticeships',
+      vocabulary: 'localOffer',
+      parent: null,
+    },
+    {
+      id: 'specialNeeds:25',
+      name: 'Special Educational Needs or a Disability (SEND)',
+      vocabulary: 'specialNeeds',
+      parent: null,
+    },
+    {
+      id: 'providerType:12',
+      name: 'Local Government Department',
+      vocabulary: 'providerType',
+      parent: null,
+    },
+    {
+      id: 'providerCategory:2',
+      name: 'Targeted',
+      vocabulary: 'providerCategory',
+      parent: null,
+    },
+    {
+      id: 'referralRoute:11',
+      name: 'Professional referral',
+      vocabulary: 'referralRoute',
+      parent: null,
+    },
+    {
+      id: 'eligibilityCriteria:3',
+      name: 'Age - Adulthood (18-25)',
+      vocabulary: 'eligibilityCriteria',
+      parent: null,
+    },
+  ],
+  taxonomiesToShow: [
+    {
+      vocabulary: 'referralRoute',
+      label: 'Referral Route',
+    },
+    {
+      vocabulary: 'providerType',
+      label: 'Type of Service',
+    },
+    {
+      vocabulary: 'eligibilityCriteria',
+      label: 'Eligibility Criteria',
+    },
+    {
+      vocabulary: 'providerCategory',
+      label: 'Provider Category',
+    },
+  ],
   url: 'https://www.westnorthants.gov.uk',
-  accreditations: 'Ofsted grade Good (4 July 2019)',
+  accreditations: 'Ofsted Grade: Good (4 July 2019)',
   fees: 'Contact provider for cost details',
   service_areas: [
     {

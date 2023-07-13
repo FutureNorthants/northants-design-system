@@ -6,7 +6,12 @@ import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
 import ServiceContact from '../ServiceContact/ServiceContact';
 import SummaryList from '../../components/SummaryList/SummaryList';
-import { transformDescriptionDetails, transformService, transformSnippet } from './DirectoryServiceTransform';
+import {
+  transformDescriptionDetails,
+  transformService,
+  transformSnippet,
+  transformTaxonomies,
+} from './DirectoryServiceTransform';
 import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import DirectoryAddToShortList from '../DirectoryAddToShortList/DirectoryAddToShortList';
 import DownloadableFiles from '../../slices/DownloadableFiles/DownloadableFiles';
@@ -32,6 +37,8 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   service_areas,
   service_at_locations,
   service_social_profiles,
+  service_taxonomys,
+  taxonomiesToShow,
   url,
   uploads,
   shortListPath,
@@ -185,7 +192,11 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           <div>
             <>{descriptionElement}</>
           </div>
-          <SummaryList terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)} />
+          <SummaryList
+            terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)}
+            hasMargin={false}
+          />
+          <SummaryList terms={transformTaxonomies(service_taxonomys, taxonomiesToShow)} hasMargin={false} />
         </Column>
         {regular_schedules.length > 0 && (
           <Column small="full" medium="full" large="full" classes="striped-column">

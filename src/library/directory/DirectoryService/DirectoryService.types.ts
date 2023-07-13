@@ -19,6 +19,8 @@ export interface DirectoryServiceProps {
   service_areas: ServiceAreaProps[];
   service_at_locations?: LocationProps[];
   service_social_profiles?: SocialProfile[];
+  service_taxonomys?: ServiceTaxonomy[];
+  taxonomiesToShow: TaxonomyToShow[];
   url?: string;
   uploads?: FileDownloadProps[];
 
@@ -85,4 +87,16 @@ export interface EligibilitiesProps {
 export interface LanguagesProps {
   id: number;
   language: string;
+}
+
+export interface ServiceTaxonomy {
+  id: string;
+  name: string;
+  vocabulary: string;
+  parent?: string;
+}
+
+export interface TaxonomyToShow {
+  vocabulary: string;
+  label: string;
 }

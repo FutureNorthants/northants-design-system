@@ -1,6 +1,13 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
-import { LanguagesProps, LocationProps, ServiceAreaProps } from './DirectoryService.types';
+import {
+  LanguagesProps,
+  LocationProps,
+  ServiceAreaProps,
+  ServiceTaxonomy,
+  TaxonomyToShow,
+} from './DirectoryService.types';
 import sanitizeHtml from 'sanitize-html';
+import { groupBy } from '../../helpers/helpers';
 
 export const transformService = (email: string, url: string, phone?: string): SummaryRowProps[] => {
   const service: SummaryRowProps[] = [];
@@ -87,22 +94,28 @@ export const transformDescriptionDetails = (
   if (service_areas?.length > 0) {
     details.push({
       term: 'Service Areas',
-      detail: service_areas
-        .map((service_area) => {
-          return service_area.service_area;
-        })
-        .join(', '),
+      detail:
+        '<ul>' +
+        service_areas
+          .map((service_area) => {
+            return `<li>${service_area.service_area}</li>`;
+          })
+          .join('') +
+        '</ul>',
     });
   }
 
   if (languages?.length > 0) {
     details.push({
       term: 'Additional languages',
-      detail: languages
-        .map((language) => {
-          return language.language;
-        })
-        .join(', '),
+      detail:
+        '<ul>' +
+        languages
+          .map((language) => {
+            return `<li>${language.language}</li>`;
+          })
+          .join('') +
+        '</ul>',
     });
   }
 
@@ -116,4 +129,27 @@ export const transformSnippet = (description: string, extractLength: number = 19
       allowedAttributes: {},
     }).substr(0, extractLength) + String.fromCharCode(8230)
   );
+};
+
+export const transformTaxonomies = (service_taxonomys: ServiceTaxonomy[], taxonomiesToShow: TaxonomyToShow[] = []) => {
+  const details: SummaryRowProps[] = [];
+  const groupedTaxonomies = groupBy(service_taxonomys, 'vocabulary');
+
+  taxonomiesToShow.forEach((taxonomy, taxonomyIndex) => {
+    if (groupedTaxonomies.hasOwnProperty(taxonomy.vocabulary)) {
+      details.push({
+        term: taxonomy.label,
+        detail:
+          '<ul>' +
+          groupedTaxonomies[taxonomy.vocabulary]
+            .map((item) => {
+              return `<li>${item.name}</li>`;
+            })
+            .join('') +
+          '</ul>',
+      });
+    }
+  });
+
+  return details;
 };
