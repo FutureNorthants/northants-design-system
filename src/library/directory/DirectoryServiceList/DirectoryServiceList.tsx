@@ -18,6 +18,7 @@ import { StaticMapProps } from '../../components/StaticMap/StaticMap.types';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { ThemeContext } from 'styled-components';
 import { transformSnippet } from '../DirectoryService/DirectoryServiceTransform';
+import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -295,21 +296,14 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         <Styles.Accordion isOpen={accordions[categoryIndex + 1]}>
                           {category.options.map((taxonomy) => (
                             <Styles.Category key={taxonomy.id}>
-                              <Styles.CategoryInput
-                                type={category.singleSelection ? 'radio' : 'checkbox'}
-                                value={taxonomy.id}
-                                id={taxonomy.id.replace(' ', '')}
+                              <RadioCheckboxInput
                                 name={taxonomy.vocabulary}
-                                onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
-                                checked={taxonomy.checked}
-                              />
-                              <Styles.CategoryInputLabel
-                                isChecked={taxonomy.checked}
-                                htmlFor={taxonomy.id.replace(' ', '')}
+                                value={taxonomy.id}
+                                label={taxonomy.name}
                                 singleSelection={category.singleSelection}
-                              >
-                                {taxonomy.name}
-                              </Styles.CategoryInputLabel>
+                                checked={taxonomy.checked}
+                                onChange={(e) => optionChecked(e, categoryIndex, category.singleSelection)}
+                              />
                             </Styles.Category>
                           ))}
                         </Styles.Accordion>
