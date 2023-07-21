@@ -209,6 +209,7 @@ export const ExampleService: DirectoryServiceProps = {
   ],
   shortListPath: '/directory/local-offer',
   service_social_profiles: ExampleSocialProfiles.profiles,
+  updated_at: '2023-07-21',
 };
 
 export const MultipleLocations: LocationProps[] = [

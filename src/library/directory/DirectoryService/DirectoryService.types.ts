@@ -1,7 +1,7 @@
 import React from 'react';
 import { ServiceContactProps } from '../ServiceContact/ServiceContact.types';
 import { FileDownloadProps } from '../../components/FileDownload/FileDownload.types';
-import { ServiceSocialLinksProps, SocialProfile } from '../ServiceSocialLinks/ServiceSocialLinks.types';
+import { SocialProfile } from '../ServiceSocialLinks/ServiceSocialLinks.types';
 
 export interface DirectoryServiceProps {
   id: string;
@@ -23,6 +23,7 @@ export interface DirectoryServiceProps {
   taxonomiesToShow: TaxonomyToShow[];
   url?: string;
   uploads?: FileDownloadProps[];
+  updated_at?: string;
 
   /**
    * The url to the shortlist
