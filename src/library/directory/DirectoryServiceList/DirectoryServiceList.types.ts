@@ -111,6 +111,11 @@ export interface DirectoryServiceListProps {
    * Is the data loading
    */
   isLoading: boolean;
+
+  /**
+   * Does the directory have documents?
+   */
+  hasDocuments?: boolean;
 }
 
 export interface DirectoryCategory {

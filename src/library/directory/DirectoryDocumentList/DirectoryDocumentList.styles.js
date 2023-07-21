@@ -93,3 +93,10 @@ export const DocumentContainer = styled.div`
 `;
 
 export const DocumentDescription = styled.p``;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;

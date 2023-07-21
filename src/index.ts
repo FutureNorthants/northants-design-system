@@ -85,6 +85,7 @@ import {
   DirectoryShortListProvider,
   useDirectoryShortListContext,
 } from './library/contexts/DirectoryShortListProvider/DirectoryShortListProvider';
+import DirectoryDocumentList from './library/directory/DirectoryDocumentList/DirectoryDocumentList';
 
 export {
   DirectoryService,
@@ -92,4 +93,5 @@ export {
   DirectoryShortList,
   DirectoryShortListProvider,
   useDirectoryShortListContext,
+  DirectoryDocumentList,
 };

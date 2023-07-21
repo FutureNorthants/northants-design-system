@@ -57,6 +57,7 @@ ExampleDirectoryServiceList.args = {
   shortListPath: '/directory/local-offer/short-list',
   customTaxonomyFilters: ['facilities', 'language'],
   ageInMonths: true,
+  hasDocuments: true,
 };
 
 export const DirectoryServiceNoResults = Template.bind({});
@@ -70,4 +71,5 @@ DirectoryServiceNoResults.args = {
   shortListPath: '/directory/local-offer/short-list',
   customTaxonomyFilters: ['facilities', 'language'],
   ageInMonths: true,
+  hasDocuments: true,
 };

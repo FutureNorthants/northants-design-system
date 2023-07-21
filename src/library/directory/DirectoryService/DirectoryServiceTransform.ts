@@ -93,7 +93,7 @@ export const transformDescriptionDetails = (
 
   if (service_areas?.length > 0) {
     details.push({
-      term: 'Service Areas',
+      term: 'Locality',
       detail:
         '<ul>' +
         service_areas

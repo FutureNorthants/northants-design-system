@@ -181,11 +181,13 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Column>
         )}
 
-        <Column small="full" medium="full" large="full" classes="striped-column">
-          <Heading level={2} text="How to contact this service" />
+        {(email || url || contacts) && (
+          <Column small="full" medium="full" large="full" classes="striped-column">
+            <Heading level={2} text="How to contact this service" />
 
-          <ServiceContact email={email} website={url} contacts={contacts} />
-        </Column>
+            <ServiceContact email={email} website={url} contacts={contacts} />
+          </Column>
+        )}
 
         <Column small="full" medium="full" large="full" classes="striped-column">
           <Heading level={2} text="How this service can help" />

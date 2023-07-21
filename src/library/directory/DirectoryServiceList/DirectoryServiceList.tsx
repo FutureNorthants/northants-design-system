@@ -19,6 +19,7 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { ThemeContext } from 'styled-components';
 import { transformSnippet } from '../DirectoryService/DirectoryServiceTransform';
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
+import Button from '../../components/Button/Button';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -43,6 +44,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   mapZoom = 9,
   isLoading = false,
   ageInMonths = false,
+  hasDocuments = false,
 }) => {
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
   const [openAll, setOpenAll] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion-all`, true);
@@ -219,6 +221,15 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     </Styles.Button>
                   </Styles.ButtonContainer>
                 </Column>
+                {hasDocuments && (
+                  <Column small="full" medium="full" large="full">
+                    <Button
+                      url={`${directoryPath}/documents?search=${searchTerm}`}
+                      text="View documents and resources"
+                      primary={false}
+                    />
+                  </Column>
+                )}
               </Row>
             </FormWithLine>
           </Styles.SearchHeader>

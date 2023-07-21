@@ -34,4 +34,16 @@ describe('Test Component', () => {
       'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses'
     );
   });
+
+  it('should not show the how to contact section if no contact details set', () => {
+    delete props.email;
+    delete props.contacts;
+    delete props.url;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('DirectoryService');
+
+    expect(component).not.toHaveTextContent('How to contact this service');
+  });
 });
