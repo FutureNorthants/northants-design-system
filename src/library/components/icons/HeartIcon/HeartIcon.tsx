@@ -4,7 +4,7 @@ import { HeartIconProps } from './HeartIcon.types';
 /**
  * Heart favourite icon
  */
-const IconDownload: React.FunctionComponent<HeartIconProps> = ({ colourFill }) => {
+const HeartIcon: React.FunctionComponent<HeartIconProps> = ({ colourFill }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,4 +24,4 @@ const IconDownload: React.FunctionComponent<HeartIconProps> = ({ colourFill }) =
   );
 };
 
-export default IconDownload;
+export default HeartIcon;

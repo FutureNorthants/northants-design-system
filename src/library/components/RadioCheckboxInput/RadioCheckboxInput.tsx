@@ -2,7 +2,7 @@ import React, { useId } from 'react';
 import { RadioCheckboxInputProps } from './RadioCheckboxInput.types';
 import * as Styles from './RadioCheckboxInput.styles';
 
-const RadioCheckboxInput: React.FC<RadioCheckboxInputProps> = ({
+const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
   singleSelection,
   value,
   name,

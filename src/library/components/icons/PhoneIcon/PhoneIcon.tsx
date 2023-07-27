@@ -2,7 +2,7 @@ import React from 'react';
 import { PhoneIconProps } from './PhoneIcon.types';
 import * as Styles from './PhoneIcon.styles';
 
-const ChevronIcon: React.FunctionComponent<PhoneIconProps> = ({ colourFill = '' }) => {
+const PhoneIcon: React.FunctionComponent<PhoneIconProps> = ({ colourFill = '' }) => {
   return (
     <Styles.StyledSVG
       enableBackground="new 0 0 32 32"
@@ -49,4 +49,4 @@ const ChevronIcon: React.FunctionComponent<PhoneIconProps> = ({ colourFill = '' 
   );
 };
 
-export default ChevronIcon;
+export default PhoneIcon;

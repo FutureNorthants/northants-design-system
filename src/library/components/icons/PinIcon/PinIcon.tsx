@@ -4,7 +4,7 @@ import { PinIconProps } from './PinIcon.types';
 /**
  * Map pin icon
  */
-const IconDownload: React.FunctionComponent<PinIconProps> = ({ colourFill }) => {
+const PinIcon: React.FunctionComponent<PinIconProps> = ({ colourFill }) => {
   return (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 42.4 59.1">
       <path
@@ -15,4 +15,4 @@ const IconDownload: React.FunctionComponent<PinIconProps> = ({ colourFill }) => 
   );
 };
 
-export default IconDownload;
+export default PinIcon;

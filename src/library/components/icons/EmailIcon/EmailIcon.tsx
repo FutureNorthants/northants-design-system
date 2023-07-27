@@ -1,7 +1,7 @@
 import React from 'react';
 import { EmailIconProps } from './EmailIcon.types';
 
-const ChevronIcon: React.FunctionComponent<EmailIconProps> = ({ colourFill = '' }) => {
+const EmailIcon: React.FunctionComponent<EmailIconProps> = ({ colourFill = '' }) => {
   return (
     <svg
       enableBackground="new 0 0 32 32"
@@ -59,4 +59,4 @@ const ChevronIcon: React.FunctionComponent<EmailIconProps> = ({ colourFill = '' 
   );
 };
 
-export default ChevronIcon;
+export default EmailIcon;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { WebsiteIconProps } from './WebsiteIcon.types';
 
-const ChevronIcon: React.FunctionComponent<WebsiteIconProps> = ({ colourFill = '' }) => {
+const WebsiteIcon: React.FunctionComponent<WebsiteIconProps> = ({ colourFill = '' }) => {
   return (
     <svg
       enableBackground="new 0 0 32 32"
@@ -59,4 +59,4 @@ const ChevronIcon: React.FunctionComponent<WebsiteIconProps> = ({ colourFill = '
   );
 };
 
-export default ChevronIcon;
+export default WebsiteIcon;

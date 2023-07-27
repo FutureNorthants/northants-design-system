@@ -26,6 +26,11 @@ const Template: Story<RadioCheckboxInputProps> = (args) => (
   </SBPadding>
 );
 
+/**
+ * TODO - the component is a controlled react component so story can
+ * be updated in future to demo state change
+ */
+
 export const ExampleCheckboxInput = Template.bind({});
 ExampleCheckboxInput.args = {
   label: 'Example',
