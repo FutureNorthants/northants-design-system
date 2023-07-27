@@ -25,6 +25,7 @@ export const SummaryTerm = styled.dt`
     display: table-cell;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
     width: 30%;
+    vertical-align: middle;
   }
 `;
 

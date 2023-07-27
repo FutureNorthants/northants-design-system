@@ -203,7 +203,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
-                  <Styles.Label htmlFor="postcode">Postcode</Styles.Label>
+                  <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
                   <HintText text="Enter a postcode" />
                   <Input
                     name="postcode"
