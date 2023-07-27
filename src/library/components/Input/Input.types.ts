@@ -30,6 +30,16 @@ export interface InputProps {
   maxLength?: number;
 
   /**
+   * Optional default value
+   */
+  defaultValue?: string | number;
+
+  /**
+   * An optional function to be called on change
+   */
+  onChange?: React.ReactNode | ((e: any) => void);
+
+  /**
    * The optional input id
    */
   id?: string;

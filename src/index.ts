@@ -1,25 +1,33 @@
 // Components
 import Autocomplete from './library/components/Autocomplete/Autocomplete';
+import BackToTop from './library/components/BackToTop/BackToTop';
 import Button from './library/components/Button/Button';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
 import Heading from './library/components/Heading/Heading';
 import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
+import Map from './library/components/Map/Map';
+import MapMarker from './library/components/MapMarker/MapMarker';
 import Pagination from './library/components/Pagination/Pagination';
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import StaticMap from './library/components/StaticMap/StaticMap';
 import TextInput from './library/components/TextInput/TextInput';
 
 export {
   Autocomplete,
+  BackToTop,
   Button,
   DynamicIcon,
   Heading,
   HeadingWithIcon,
+  Map,
+  MapMarker,
   Pagination,
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  StaticMap,
   TextInput,
 };
 
@@ -68,3 +76,22 @@ export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } fro
 
 // CSS reset/common to all
 export { GlobalStyleReset } from './themes/GlobalStyleReset.jsx';
+
+// Directory
+import DirectoryService from './library/directory/DirectoryService/DirectoryService';
+import DirectoryServiceList from './library/directory/DirectoryServiceList/DirectoryServiceList';
+import DirectoryShortList from './library/directory/DirectoryShortList/DirectoryShortList';
+import {
+  DirectoryShortListProvider,
+  useDirectoryShortListContext,
+} from './library/contexts/DirectoryShortListProvider/DirectoryShortListProvider';
+import DirectoryDocumentList from './library/directory/DirectoryDocumentList/DirectoryDocumentList';
+
+export {
+  DirectoryService,
+  DirectoryServiceList,
+  DirectoryShortList,
+  DirectoryShortListProvider,
+  useDirectoryShortListContext,
+  DirectoryDocumentList,
+};
