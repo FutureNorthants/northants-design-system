@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByLabelText } from '@testing-library/react';
 import DirectoryServiceList from './DirectoryServiceList';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';

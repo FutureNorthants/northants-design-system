@@ -94,6 +94,20 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setFiltersActive(hasActiveFilters());
   };
 
+  /**
+   * Uncheck all the options for a specific category
+   */
+  const clearCategory = (categoryIndex: number) => {
+    let newCategories = [...categories];
+
+    newCategories[categoryIndex].options.forEach((option) => {
+      option.checked = false;
+    });
+
+    setCategories(newCategories);
+    setFiltersActive(hasActiveFilters());
+  };
+
   const from = pageNumber * perPage - (perPage - 1);
   const to = from + (services?.length ? services.length - 1 : 0);
 
@@ -305,6 +319,11 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                           </Styles.LegendButton>
                         </Styles.Legend>
                         <Styles.Accordion isOpen={accordions[categoryIndex + 1]}>
+                          <Styles.ClearFilter>
+                            <Styles.TextLink onClick={(e) => clearCategory(categoryIndex)}>
+                              Clear filter
+                            </Styles.TextLink>
+                          </Styles.ClearFilter>
                           {category.options.map((taxonomy) => (
                             <Styles.Category key={taxonomy.id}>
                               <RadioCheckboxInput

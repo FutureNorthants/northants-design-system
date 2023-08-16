@@ -20,7 +20,7 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
           value={value}
           id={id}
           name={name}
-          onChange={onChange}
+          onClick={onChange}
           defaultChecked={checked}
         />
         <Styles.CategoryInputLabel isChecked={checked} htmlFor={id} singleSelection={singleSelection}>
