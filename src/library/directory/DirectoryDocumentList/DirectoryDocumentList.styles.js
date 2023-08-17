@@ -62,6 +62,34 @@ export const ResultInfo = styled.div`
   color: ${(props) => props.theme.theme_vars.colours.grey_dark};
 `;
 
+export const ClearFilter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+`;
+
+export const TextLink = styled.button`
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  border-width: 0;
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  background: none;
+  cursor: pointer;
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
+`;
+
 export const Fieldset = styled.fieldset`
   display: block;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
