@@ -21,12 +21,22 @@ export default {
 
 const Template: Story<DirectoryServiceListProps> = (args) => {
   const [categories, setCategories] = useState(ExampleDirectoryCategories);
+  const [minimumAge, setMinimumAge] = useState(args.minimumAge);
+  const [maximumAge, setMaximumAge] = useState(args.maximumAge);
   return (
     <SBPadding>
       <MaxWidthContainer>
         <PageMain>
           <DirectoryShortListProvider>
-            <DirectoryServiceList {...args} categories={categories} setCategories={setCategories} />
+            <DirectoryServiceList
+              {...args}
+              categories={categories}
+              setCategories={setCategories}
+              minimumAge={minimumAge}
+              setMinimumAge={setMinimumAge}
+              maximumAge={maximumAge}
+              setMaximumAge={setMaximumAge}
+            />
           </DirectoryShortListProvider>
         </PageMain>
       </MaxWidthContainer>
@@ -48,9 +58,9 @@ ExampleDirectoryServiceList.args = {
   setSearch: () => {},
   postcode: 'NN1 1ED',
   setPostcode: () => {},
-  minimumAge: '60',
+  minimumAge: 60,
   setMinimumAge: () => {},
-  maximumAge: '288',
+  maximumAge: 288,
   setMaximumAge: () => {},
   categories: ExampleDirectoryCategories,
   setCategories: () => {},

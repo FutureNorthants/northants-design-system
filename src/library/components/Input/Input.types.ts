@@ -30,7 +30,8 @@ export interface InputProps {
   maxLength?: number;
 
   /**
-   * Optional default value
+   * Optional default value.
+   * Don't set both defaultValue and value.
    */
   defaultValue?: string | number;
 
@@ -43,4 +44,10 @@ export interface InputProps {
    * The optional input id
    */
   id?: string;
+
+  /**
+   * The optional value for a controlled component.
+   * Don't set both defaultValue and value.
+   */
+  value?: string | number;
 }

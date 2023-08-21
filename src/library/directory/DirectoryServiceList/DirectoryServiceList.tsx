@@ -108,6 +108,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setFiltersActive(hasActiveFilters());
   };
 
+  const clearAges = (e) => {
+    e.target.value = '';
+
+    handleAgeChange(e, 'minimumAge');
+    handleAgeChange(e, 'maximumAge');
+  };
+
   const from = pageNumber * perPage - (perPage - 1);
   const to = from + (services?.length ? services.length - 1 : 0);
 
@@ -174,8 +181,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const handleAgeChange = (e, field: string) => {
-    let age: number = e.target.value ? parseInt(e.target.value, 10) : undefined;
-    if (ageInMonths && age) {
+    let age: number | string = e.target.value ? parseInt(e.target.value, 10) : '';
+    if (typeof age === 'number' && ageInMonths) {
       age = age * 12;
     }
 
@@ -284,13 +291,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         </Styles.LegendButton>
                       </Styles.Legend>
                       <Styles.Accordion isOpen={accordions[0]}>
+                        <Styles.ClearFilter>
+                          <Styles.TextLink onClick={(e) => clearAges(e)}>Clear filter</Styles.TextLink>
+                        </Styles.ClearFilter>
                         <Row>
                           <Column small="full" medium="one-half" large="one-half">
                             <Styles.Label htmlFor="minimum_age">From</Styles.Label>
                             <Input
                               name="minimum_age"
                               onChange={(e) => handleAgeChange(e, 'minimumAge')}
-                              defaultValue={ageInMonths && minimumAge ? minimumAge / 12 : minimumAge}
+                              value={ageInMonths && typeof minimumAge === 'number' ? minimumAge / 12 : minimumAge}
                               id="minimum_age"
                               type="number"
                             />
@@ -300,7 +310,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                             <Input
                               name="maximum_age"
                               onChange={(e) => handleAgeChange(e, 'maximumAge')}
-                              defaultValue={ageInMonths && maximumAge ? maximumAge / 12 : maximumAge}
+                              value={ageInMonths && typeof maximumAge === 'number' ? maximumAge / 12 : maximumAge}
                               id="maximum_age"
                               type="number"
                             />
