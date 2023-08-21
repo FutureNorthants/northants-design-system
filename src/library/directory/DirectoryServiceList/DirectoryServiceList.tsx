@@ -95,7 +95,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCategories(newCategories);
-    setFiltersActive(hasActiveFilters());
   };
 
   /**
