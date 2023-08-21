@@ -50,6 +50,19 @@ const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps>
     setCategories(newCategories);
   };
 
+  /**
+   * Uncheck all the options for a specific category
+   */
+  const clearCategory = (categoryIndex: number) => {
+    let newCategories = [...categories];
+
+    newCategories[categoryIndex].options.forEach((option) => {
+      option.checked = false;
+    });
+
+    setCategories(newCategories);
+  };
+
   const from = pageNumber * perPage - (perPage - 1);
   const to = from + (documents?.length ? documents.length - 1 : 0);
 
@@ -94,6 +107,10 @@ const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps>
               <Column small="full" medium="full" large="full" key={category.label}>
                 <Styles.Fieldset>
                   <Styles.Legend>{category.label}</Styles.Legend>
+
+                  <Styles.ClearFilter>
+                    <Styles.TextLink onClick={(e) => clearCategory(categoryIndex)}>Clear filter</Styles.TextLink>
+                  </Styles.ClearFilter>
 
                   {category.options.map((taxonomy) => (
                     <Styles.Category key={taxonomy.id}>

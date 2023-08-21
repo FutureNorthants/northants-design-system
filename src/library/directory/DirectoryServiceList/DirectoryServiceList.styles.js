@@ -212,6 +212,12 @@ export const AccordionControls = styled.div`
   justify-content: space-between;
 `;
 
+export const ClearFilter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+`;
+
 export const TextLink = styled.button`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   position: relative;
