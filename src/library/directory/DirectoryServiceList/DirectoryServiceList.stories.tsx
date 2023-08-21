@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story } from '@storybook/react/types-6-0';
 import DirectoryServiceList from './DirectoryServiceList';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
@@ -19,17 +19,20 @@ export default {
   },
 };
 
-const Template: Story<DirectoryServiceListProps> = (args) => (
-  <SBPadding>
-    <MaxWidthContainer>
-      <PageMain>
-        <DirectoryShortListProvider>
-          <DirectoryServiceList {...args} />
-        </DirectoryShortListProvider>
-      </PageMain>
-    </MaxWidthContainer>
-  </SBPadding>
-);
+const Template: Story<DirectoryServiceListProps> = (args) => {
+  const [categories, setCategories] = useState(ExampleDirectoryCategories);
+  return (
+    <SBPadding>
+      <MaxWidthContainer>
+        <PageMain>
+          <DirectoryShortListProvider>
+            <DirectoryServiceList {...args} categories={categories} setCategories={setCategories} />
+          </DirectoryShortListProvider>
+        </PageMain>
+      </MaxWidthContainer>
+    </SBPadding>
+  );
+};
 
 export const ExampleDirectoryServiceList = Template.bind({});
 ExampleDirectoryServiceList.args = {
