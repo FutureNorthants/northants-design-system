@@ -24,21 +24,23 @@ describe('Test Component', () => {
     );
 
   it('should render Service correctly', () => {
-    const { getByTestId, getByRole } = renderComponent();
+    const { getByTestId, getByRole, getByText } = renderComponent();
 
     const component = getByTestId('DirectoryService');
     const heading = getByRole('heading', { level: 1 });
+    const howToContact = getByText('How to contact this service');
 
     expect(heading).toHaveTextContent('West Northamptonshire Council');
     expect(component).toHaveTextContent(
       'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses'
     );
+    expect(howToContact).toBeVisible();
   });
 
   it('should not show the how to contact section if no contact details set', () => {
-    delete props.email;
-    delete props.contacts;
-    delete props.url;
+    props.email = '';
+    props.contacts = [];
+    props.url = '';
 
     const { getByTestId } = renderComponent();
 

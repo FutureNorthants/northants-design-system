@@ -181,7 +181,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
           </Column>
         )}
 
-        {(email || url || contacts) && (
+        {(email || url || contacts?.length > 0) && (
           <Column small="full" medium="full" large="full" classes="striped-column">
             <Heading level={2} text="How to contact this service" />
 
