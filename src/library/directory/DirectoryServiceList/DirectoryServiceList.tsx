@@ -66,6 +66,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setFiltersActive(hasActiveFilters());
   }, []);
 
+  useEffect(() => {
+    setFiltersActive(hasActiveFilters());
+  }, [minimumAge, maximumAge, categories]);
+
   if (accordions.length === 0) {
     const tempAccordions = [];
     categories?.forEach(() => {
@@ -105,7 +109,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCategories(newCategories);
-    setFiltersActive(hasActiveFilters());
   };
 
   const clearAges = (e) => {
@@ -194,14 +197,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const hasActiveFilters = () => {
-    return categories.some((category) => {
-      return category.options.some((option) => {
-        return option.checked == true;
-      });
-    });
+    return (
+      maximumAge !== '' ||
+      minimumAge !== '' ||
+      categories.some((category) => {
+        return category.options.some((option) => {
+          return option.checked == true;
+        });
+      })
+    );
   };
-
-  hasActiveFilters();
 
   return (
     <Styles.Container data-testid="DirectoryServiceList">
