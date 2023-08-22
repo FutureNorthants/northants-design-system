@@ -46,4 +46,19 @@ describe('Test Component', () => {
 
     expect(component).not.toHaveTextContent('How to contact this service');
   });
+
+  it('should sanitize the accreditations and remove tags', () => {
+    props.accreditations =
+      '<p>This is an accreditation</p><h4>This is a heading</h4><blockquote>This is a block quote</blockquote>';
+
+    const { getByTestId, queryByText } = renderComponent();
+
+    const component = getByTestId('DirectoryService');
+
+    expect(component).toHaveTextContent('This is a heading');
+    expect(component).toHaveTextContent('This is a block quote');
+
+    expect(queryByText('This is a heading', { selector: 'h4' })).toBeNull();
+    expect(queryByText('This is a block quote', { selector: 'blockquote' })).toBeNull();
+  });
 });

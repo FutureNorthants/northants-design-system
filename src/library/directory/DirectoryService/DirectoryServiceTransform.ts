@@ -80,7 +80,10 @@ export const transformDescriptionDetails = (
   if (accreditations) {
     details.push({
       term: 'Accreditations',
-      detail: accreditations,
+      detail: sanitizeHtml(accreditations, {
+        allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'li', 'ol'],
+        allowedStyles: {},
+      }),
     });
   }
 
