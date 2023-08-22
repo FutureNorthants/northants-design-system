@@ -190,7 +190,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
         )}
 
         <Column small="full" medium="full" large="full" classes="striped-column">
-          <Heading level={2} text="How this service can help" />
+          <Heading level={2} text="Description" />
           <div>
             <>{descriptionElement}</>
           </div>
