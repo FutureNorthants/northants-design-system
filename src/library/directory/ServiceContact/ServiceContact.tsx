@@ -20,7 +20,9 @@ const ServiceContact: React.FunctionComponent<ServiceContactComponentProps> = ({
               <WebsiteIcon colourFill={themeContext.theme_vars.colours.black} />
             </Styles.IconContainer>
             <Styles.Content>
-              <Styles.WebLink href={website}>{website}</Styles.WebLink>
+              <Styles.WebLink href={website} target="_blank">
+                {website}
+              </Styles.WebLink>
             </Styles.Content>
           </Column>
         )}
