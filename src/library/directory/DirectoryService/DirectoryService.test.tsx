@@ -28,12 +28,17 @@ describe('Test Component', () => {
 
     const component = getByTestId('DirectoryService');
     const heading = getByRole('heading', { level: 1 });
+    const descriptionHeading = getByText('Description');
     const howToContact = getByText('How to contact this service');
 
     expect(heading).toHaveTextContent('West Northamptonshire Council');
     expect(component).toHaveTextContent(
       'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses'
     );
+    expect(component).toHaveTextContent('Ofsted Grade: Good (4 July 2019)');
+    expect(component).toHaveTextContent('Contact provider for cost details');
+    expect(descriptionHeading).toBeVisible();
+    expect(descriptionHeading.tagName).toEqual('H2');
     expect(howToContact).toBeVisible();
   });
 
