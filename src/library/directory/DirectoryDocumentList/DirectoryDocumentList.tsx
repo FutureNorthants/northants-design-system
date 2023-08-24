@@ -11,6 +11,7 @@ import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckbo
 import FileDownload from '../../components/FileDownload/FileDownload';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Pagination from '../../components/Pagination/Pagination';
+import Button from '../../components/Button/Button';
 
 const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps> = ({
   directoryPath,
@@ -93,6 +94,9 @@ const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps>
                       <SearchIcon colourFill="#fff" />
                     </Styles.Button>
                   </Styles.ButtonContainer>
+                </Column>
+                <Column small="full" medium="full" large="full">
+                  <Button url={`${directoryPath}?search=${searchTerm}`} text="View directory" primary={false} />
                 </Column>
               </Row>
             </FormWithLine>
