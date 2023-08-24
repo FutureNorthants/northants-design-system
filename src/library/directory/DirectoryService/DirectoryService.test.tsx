@@ -29,6 +29,7 @@ describe('Test Component', () => {
     const component = getByTestId('DirectoryService');
     const heading = getByRole('heading', { level: 1 });
     const descriptionHeading = getByText('Description');
+    const howToContact = getByText('How to contact this service');
 
     expect(heading).toHaveTextContent('West Northamptonshire Council');
     expect(component).toHaveTextContent(
@@ -38,12 +39,13 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Contact provider for cost details');
     expect(descriptionHeading).toBeVisible();
     expect(descriptionHeading.tagName).toEqual('H2');
+    expect(howToContact).toBeVisible();
   });
 
   it('should not show the how to contact section if no contact details set', () => {
-    delete props.email;
-    delete props.contacts;
-    delete props.url;
+    props.email = '';
+    props.contacts = [];
+    props.url = '';
 
     const { getByTestId } = renderComponent();
 
@@ -65,5 +67,41 @@ describe('Test Component', () => {
 
     expect(queryByText('This is a heading', { selector: 'h4' })).toBeNull();
     expect(queryByText('This is a block quote', { selector: 'blockquote' })).toBeNull();
+  });
+
+  it('should show the map when is_visitable and latitude and longitude is set', () => {
+    const { getByText } = renderComponent();
+
+    const addressTitle = getByText('Main office');
+    const mapLink = getByText('View in Google Maps');
+
+    expect(addressTitle).toBeVisible();
+
+    expect(mapLink).toBeVisible();
+    expect(mapLink).toHaveAttribute(
+      'href',
+      'https://www.google.com/maps/search/?api=1&query=52.23555414368587%2C-0.8957390701320571'
+    );
+  });
+
+  it('should not show the map when is_visitable and latitude and longitude is not set', () => {
+    const locationWithoutLatLon = { ...ExampleService.service_at_locations[0], ...{ latitude: '', longitude: '' } };
+    props.service_at_locations = [locationWithoutLatLon];
+
+    const { queryByText } = renderComponent();
+
+    expect(queryByText('View in Google Maps')).toBeNull();
+  });
+
+  it('should show the service address but not the map when not visitable', () => {
+    const nonVisitableLocation = { ...ExampleService.service_at_locations[0], ...{ is_visitable: false } };
+    props.service_at_locations = [nonVisitableLocation];
+
+    const { getByText, queryByText } = renderComponent();
+    const addressTitle = getByText('Main office');
+
+    expect(addressTitle).toBeVisible();
+
+    expect(queryByText('View in Google Maps')).toBeNull();
   });
 });
