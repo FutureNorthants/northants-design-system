@@ -247,7 +247,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                 return location.is_visitable == false;
               })
               .map((location) => (
-                <Row>
+                <Row key={location.id}>
                   <Column small="full" medium="one-half" large="one-third" key={location.id}>
                     <Heading level={2} text={location.name} />
                     {location.physical_addresses.map((address) => (
@@ -272,11 +272,6 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                         </ul>
                       </>
                     )}
-                  </Column>
-                  <Column small="full" medium="one-half" large="two-thirds">
-                    <WarningText title="Please note" isWarning>
-                      <p>This address is not open to visitors.</p>
-                    </WarningText>
                   </Column>
                 </Row>
               ))}
