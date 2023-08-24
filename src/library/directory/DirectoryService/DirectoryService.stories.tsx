@@ -54,4 +54,4 @@ export const ExampleDirectoryNoLogo = Template.bind({});
 ExampleDirectoryNoLogo.args = { ...ExampleService, ...{ organization: { logo: null } } };
 
 export const ExampleDirectoryServiceNoContactDetails = Template.bind({});
-ExampleDirectoryServiceNoContactDetails.args = { ...ExampleService, ...{ email: null, url: null, contacts: null } };
+ExampleDirectoryServiceNoContactDetails.args = { ...ExampleService, ...{ email: '', url: '', contacts: [] } };
