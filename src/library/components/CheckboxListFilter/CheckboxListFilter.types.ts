@@ -1,4 +1,3 @@
-
 export interface CheckboxListFilterProps {
   /**
    * What to show in the checkboxes
@@ -10,26 +9,33 @@ export interface CheckboxListFilterProps {
    */
   checked: Array<string>;
 
-    /**
-     * 
-   */
-  label: string;
   /**
-   * 
+   * The label text
    */
-  hint: string;
-    /**
-   * 
-   */
-  displayLegend: boolean
-}
+  label: string | null;
 
+  /**
+   * The hint text
+   */
+  hint: string | null;
+
+  /**
+   * The id for the hint aria-describedby
+   */
+  hintId?: string;
+
+  /**
+   * Should the legend be displayed
+   */
+  displayLegend: boolean;
+}
 
 export interface CheckboxValsProps {
   /**
    * Text shown in dropdown
    */
   title: string;
+
   /**
    * Filter sent to the all seeing server
    */

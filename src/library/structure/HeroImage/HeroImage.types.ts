@@ -1,3 +1,4 @@
+import { CustomSearchProps } from '../../components/CustomSearch/CustomSearch.types';
 import { BreadcrumbProp } from '../Breadcrumbs/Breadcrumbs.types';
 
 export interface HeroImageProps {
@@ -37,6 +38,11 @@ export interface HeroImageProps {
   callToActionURL?: string;
 
   /**
+   * Is the call to action a primary button
+   */
+  callToActionIsPrimary?: boolean;
+
+  /**
    * Set to true to put the text and call to action on a white box, false to overlay on a darkened image
    */
   backgroundBox: boolean;
@@ -45,4 +51,9 @@ export interface HeroImageProps {
    * An optional breadcrumb. If not set then the breadcrumb is not shown
    */
   breadcrumb?: BreadcrumbProp;
+
+  /**
+   * An optional custom search
+   */
+  customSearch?: CustomSearchProps;
 }

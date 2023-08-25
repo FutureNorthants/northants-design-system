@@ -8,6 +8,8 @@ const Column: React.FunctionComponent<ColumnProps> = ({
   large = 'one-third',
   hasPadding = true,
   hasBorder = false,
+  isList = false,
+  classes,
   children,
 }) => (
   <Styles.Container
@@ -17,6 +19,8 @@ const Column: React.FunctionComponent<ColumnProps> = ({
     large={large}
     hasPadding={hasPadding}
     hasBorder={hasBorder}
+    as={isList ? 'li' : 'div'}
+    className={classes}
   >
     {children}
   </Styles.Container>

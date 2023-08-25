@@ -8,4 +8,9 @@ export interface PageMainProps {
    * Should the paragraph text be full width?
    */
   fullWidthText?: boolean;
+
+  /**
+   * The PageMain contents
+   */
+  children?: React.ReactNode;
 }

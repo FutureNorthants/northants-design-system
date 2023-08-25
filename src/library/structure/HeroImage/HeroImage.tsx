@@ -4,6 +4,7 @@ import * as Styles from './HeroImage.styles';
 import LazyImage from 'react-lazy-progressive-image';
 import sanitizeHtml from 'sanitize-html';
 import CallToAction from '../../slices/CallToAction/CallToAction';
+import CustomSearch from '../../components/CustomSearch/CustomSearch';
 
 /**
  * Hero image banner with optional text and call to action with varying presentation of text area.
@@ -14,11 +15,13 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
   content,
   callToActionText,
   callToActionURL,
+  callToActionIsPrimary = true,
   backgroundBox = true,
   imageLarge,
   imageSmall,
   imageAltText,
   breadcrumb,
+  customSearch,
 }) => {
   return (
     <>
@@ -40,7 +43,14 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
                 )}
                 {headline && <Styles.Headline level={1} text={headline} backgroundBox={backgroundBox} />}
                 {content && <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />}
-                {callToActionURL && backgroundBox && <CallToAction url={callToActionURL} text={callToActionText} />}
+                {customSearch && (
+                  <Styles.Search>
+                    <CustomSearch {...customSearch} />
+                  </Styles.Search>
+                )}
+                {callToActionURL && backgroundBox && (
+                  <CallToAction url={callToActionURL} text={callToActionText} primary={callToActionIsPrimary} />
+                )}
                 {!callToActionURL && backgroundBox && <br />}
                 {callToActionURL && !backgroundBox && (
                   <Styles.CallToActionLink href={callToActionURL}>

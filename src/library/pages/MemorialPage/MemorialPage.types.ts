@@ -23,7 +23,7 @@ export interface MemorialPageProps {
   /**
    * Content of the alert banner
    */
-  alertBannerContent: React.Component;
+  alertBannerContent: React.ReactNode;
 
   /**
    * Condolence links on memorial hero
@@ -58,7 +58,7 @@ export interface MemorialPageProps {
   /**
    * Promo banner content (children)
    */
-  promoBannerContent: React.Component;
+  promoBannerContent: React.ReactNode;
 
   /**
    * Promo blocks

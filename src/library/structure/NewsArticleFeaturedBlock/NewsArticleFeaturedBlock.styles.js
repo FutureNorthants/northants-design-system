@@ -53,6 +53,8 @@ export const ArticleContainer = styled.a`
   text-decoration: none !important;
   font-weight: normal !important;
   margin-bottom: 15px;
+  width: 100%;
+  height: 100%;
 
   &:hover {
     border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action_dark};
@@ -91,45 +93,10 @@ export const ArticleContainer = styled.a`
       ${(props) => props.theme.linkStylesActive};
     }
   }
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-  }
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: 100%;
-    margin-right: 30px;
-    margin-bottom: 20px;
-    display: block;
-    flex: 1;
-    max-width: 50%;
-    min-width: 30%;
-
-    &:nth-of-type(2n) {
-      margin-right: 30px;
-    }
-    &:nth-of-type(3n) {
-      margin-right: 0;
-    }
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
 `;
 
 export const ArticleContent = styled.div`
   padding: 15px;
-  height: calc(100% - ${imageHeightMobile + 30}px);
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    height: calc(100% - ${imageHeightDesktop + 30}px);
-  }
 `;
 
 export const ImageContainer = styled.span`

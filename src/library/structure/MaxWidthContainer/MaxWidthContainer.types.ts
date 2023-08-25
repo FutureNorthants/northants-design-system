@@ -3,7 +3,7 @@ export interface MaxWidthContainerProps {
    * Any unique class names to apply to the page container outer div
    */
   classes?: string;
-  
+
   /**
    * Remove background colour
    */
@@ -17,5 +17,10 @@ export interface MaxWidthContainerProps {
   /**
    * Allow overflow to be visible in inner div (only makes sense with padding allowed)
    */
-   overflowVisible?: boolean;
+  overflowVisible?: boolean;
+
+  /**
+   * The MaxWidthContainer contents
+   */
+  children?: React.ReactNode;
 }

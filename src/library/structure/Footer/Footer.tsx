@@ -16,7 +16,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null,
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Styles.Container>
+    <Styles.Container data-testid="Footer">
       <Styles.StyledMaxWidthContainer noBackground>
         <Styles.FooterAlignment>
           <div>
@@ -33,34 +33,47 @@ const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null,
             )}
             <Styles.SocialLinks>
               {themeContext.theme_vars.twitter_link && (
-                <Styles.SocialLinkSingle href={themeContext.theme_vars.twitter_link} title="View our Twitter feed">
-                  <TwitterIcon colourFill={themeContext.theme_vars.colours.white} />
-                </Styles.SocialLinkSingle>
+                <Styles.SocialLinkItem>
+                  <Styles.SocialLinkSingle href={themeContext.theme_vars.twitter_link} title="View our Twitter feed">
+                    <TwitterIcon colourFill={themeContext.theme_vars.colours.white} />
+                  </Styles.SocialLinkSingle>
+                </Styles.SocialLinkItem>
               )}
               {themeContext.theme_vars.facebook_link && (
-                <Styles.SocialLinkSingle href={themeContext.theme_vars.facebook_link} title="View our Facebook page">
-                  <FacebookIcon colourFill={themeContext.theme_vars.colours.white} />
-                </Styles.SocialLinkSingle>
+                <Styles.SocialLinkItem>
+                  <Styles.SocialLinkSingle href={themeContext.theme_vars.facebook_link} title="View our Facebook page">
+                    <FacebookIcon colourFill={themeContext.theme_vars.colours.white} />
+                  </Styles.SocialLinkSingle>
+                </Styles.SocialLinkItem>
               )}
               {themeContext.theme_vars.instagram_link && (
-                <Styles.SocialLinkSingle href={themeContext.theme_vars.instagram_link} title="View our Instagram feed">
-                  <InstagramIcon colourFill={themeContext.theme_vars.colours.white} />
-                </Styles.SocialLinkSingle>
+                <Styles.SocialLinkItem>
+                  <Styles.SocialLinkSingle
+                    href={themeContext.theme_vars.instagram_link}
+                    title="View our Instagram feed"
+                  >
+                    <InstagramIcon colourFill={themeContext.theme_vars.colours.white} />
+                  </Styles.SocialLinkSingle>
+                </Styles.SocialLinkItem>
               )}
               {themeContext.theme_vars.youtube_link && (
-                <Styles.SocialLinkSingle href={themeContext.theme_vars.youtube_link} title="View our YouTube channel">
-                  <YouTubeIcon colourFill={themeContext.theme_vars.colours.white} />
-                </Styles.SocialLinkSingle>
+                <Styles.SocialLinkItem>
+                  <Styles.SocialLinkSingle href={themeContext.theme_vars.youtube_link} title="View our YouTube channel">
+                    <YouTubeIcon colourFill={themeContext.theme_vars.colours.white} />
+                  </Styles.SocialLinkSingle>
+                </Styles.SocialLinkItem>
               )}
               {themeContext.theme_vars.linkedin_link && (
-                <Styles.SocialLinkSingle href={themeContext.theme_vars.linkedin_link} title="View our LinkedIn page">
-                  <LinkedInIcon colourFill={themeContext.theme_vars.colours.white} />
-                </Styles.SocialLinkSingle>
+                <Styles.SocialLinkItem>
+                  <Styles.SocialLinkSingle href={themeContext.theme_vars.linkedin_link} title="View our LinkedIn page">
+                    <LinkedInIcon colourFill={themeContext.theme_vars.colours.white} />
+                  </Styles.SocialLinkSingle>
+                </Styles.SocialLinkItem>
               )}
             </Styles.SocialLinks>
             <Styles.FooterCopy>
               &copy;&nbsp;
-              {themeContext.full_name} Council &nbsp;{year}
+              {themeContext.full_name} Council {year}
             </Styles.FooterCopy>
           </div>
 

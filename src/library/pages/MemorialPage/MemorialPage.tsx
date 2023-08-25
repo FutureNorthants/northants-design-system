@@ -59,35 +59,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
         }
         acceptButtonText="Accept cookies policy"
         rejectButtonText="No, thanks"
-        acceptCallback={() => {
-          var tag = document.createElement('script');
-          tag.src = 'https://www.googletagmanager.com/gtag/js?id=<%= ENV["GTM_TRACKING_ID"] %>';
-          document.getElementsByTagName('head')[0].appendChild(tag);
-          window.dataLayer = window.dataLayer || [];
-
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', '<%= ENV["GA_TRACKING_ID"] %>');
-
-          (function (h, o, t, j, a, r) {
-            h.hj =
-              h.hj ||
-              function () {
-                (h.hj.q = h.hj.q || []).push(arguments);
-              };
-            h._hjSettings = {
-              hjid: 12345,
-              hjsv: 6,
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-          })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-        }}
+        acceptCallback={() => {}}
       />
       <PageStructures.AlertBanner title={alertBannerTitle} uid="homealert">
         {alertBannerContent}
@@ -121,7 +93,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
           </PageStructures.MaxWidthContainer>
         </PageStructures.PageWrapper>
 
-        <PageStructures.MaxWidthContainer>
+        <PageStructures.MaxWidthContainer overflowVisible>
           <PageStructures.PageMain>
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
 

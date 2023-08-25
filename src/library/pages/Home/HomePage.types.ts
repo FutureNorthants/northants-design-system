@@ -24,7 +24,7 @@ export interface HomePageProps {
   /**
    * Content of the alert banner
    */
-  alertBannerContent: React.Component;
+  alertBannerContent: React.ReactNode;
 
   /**
    * Hero images
@@ -59,7 +59,7 @@ export interface HomePageProps {
   /**
    * Promo banner content (children)
    */
-  promoBannerContent: React.Component;
+  promoBannerContent: React.ReactNode;
 
   /**
    * Promo blocks

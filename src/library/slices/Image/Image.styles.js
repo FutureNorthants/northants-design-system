@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.figure`
   display: block;
@@ -8,21 +8,42 @@ export const Container = styled.figure`
       : props.theme.theme_vars.colours.grey_light};
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
-  width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
+  float: none;
+  width: 100%;
+  margin-right: 0;
 
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    float: none;
-    width: 100%;
-    margin-right: 0;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    float: ${(props) => (props.wrapText === true ? 'left' : 'none')};
+    width: ${(props) => (props.wrapText === true ? '30%' : '100%')};
+    margin-right: ${(props) => (props.wrapText === true ? '1.5rem' : '0')};
   }
 `;
 
+const imageRatio = (props) => {
+  switch (props.ratio) {
+    case '4by3':
+      return css`
+        padding-top: 75%;
+      `;
+    case '4by1':
+      return css`
+        padding-top: 25%;
+      `;
+    case '16by9':
+      return css`
+        padding-top: 56.25%;
+      `;
+    default:
+      return css`
+        padding-top: 56.25%;
+      `;
+  }
+};
+
 export const ImageContainer = styled.div`
   position: relative;
-  padding-top: ${(props) => (props.ratio === '4by3' ? '75%' : '56.25%')};
+  ${imageRatio}
 `;
 
 export const Image = styled.img`

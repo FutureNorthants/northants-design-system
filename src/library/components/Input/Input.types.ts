@@ -28,4 +28,26 @@ export interface InputProps {
    * The max length attribute
    */
   maxLength?: number;
+
+  /**
+   * Optional default value.
+   * Don't set both defaultValue and value.
+   */
+  defaultValue?: string | number;
+
+  /**
+   * An optional function to be called on change
+   */
+  onChange?: React.ReactNode | ((e: any) => void);
+
+  /**
+   * The optional input id
+   */
+  id?: string;
+
+  /**
+   * The optional value for a controlled component.
+   * Don't set both defaultValue and value.
+   */
+  value?: string | number;
 }

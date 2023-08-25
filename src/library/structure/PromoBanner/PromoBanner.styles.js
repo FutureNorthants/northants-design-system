@@ -8,8 +8,6 @@ export const Container = styled.div`
     props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.white
       : props.theme.theme_vars.colours.grey_light};
-  margin-left: -15px;
-  width: calc(100% + 30px);
   border-bottom: 3px solid ${(props) => props.theme.theme_vars.colours.action};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
@@ -21,8 +19,6 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: -30px;
-    width: calc(100% + 60px);
     border-bottom: none;
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {

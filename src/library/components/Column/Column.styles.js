@@ -26,6 +26,10 @@ const calculateWidth = (size) => {
       return css`
         width: 75%;
       `;
+    case 'auto':
+      return css`
+        flex-grow: 1;
+      `;
   }
 };
 
@@ -48,5 +52,6 @@ export const Container = styled.div`
   display: block;
   padding: ${(props) => (props.hasPadding ? props.theme.theme_vars.spacingSizes.small : `0`)};
   border: ${(props) => (props.hasBorder ? `1px solid ${props.theme.theme_vars.colours.negative}` : 'none')};
+  left: 0;
   ${widths};
 `;

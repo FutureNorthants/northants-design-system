@@ -8,7 +8,7 @@ import NewsArticleListHeader from '../../structure/NewsArticleListHeader/NewsArt
 import NewsArticleFilterAccordion from '../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordion';
 import CheckboxListFilter from '../../components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from '../../components/DropDownFilter/DropDownFilter';
-import { newsArticleData, newsArticleDataFiltered } from '../../structure/NewsArticleList/NewsArticleData';
+import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 import { articleOptions } from './../../components/CheckboxListFilter/CheckboxListFilterData';
 import { serviceOptions } from './../../components/DropDownFilter/DropDownFilterData';
 import { NewsArticleFilterFields } from './../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText';
@@ -45,13 +45,13 @@ export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
                     <>
                       <PageStructures.Searchbar
                         id="news-search"
-                        searchTerm={newsArticleData.searchTerm ? newsArticleData.searchTerm : undefined}
+                        searchTerm={NewsArticleFilters.searchTerm ? NewsArticleFilters.searchTerm : undefined}
                         isLight={true}
                         submitInfo={{
                           postTo: '/news',
                           params: {
                             type: 'search',
-                            searchTerm: newsArticleData.searchTerm ? newsArticleData.searchTerm : undefined,
+                            searchTerm: NewsArticleFilters.searchTerm ? NewsArticleFilters.searchTerm : undefined,
                           },
                         }}
                       />
@@ -67,7 +67,7 @@ export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
                         label={null}
                         id="services-options"
                         options={serviceOptions}
-                        selected={newsArticleData.services}
+                        selected={NewsArticleFilters.services}
                       />
                     </>
                   ),
@@ -81,7 +81,7 @@ export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
                         label="Type of article"
                         hint={null}
                         options={articleOptions}
-                        checked={newsArticleData.articleType}
+                        checked={NewsArticleFilters.articleType}
                         displayLegend={false}
                       />
                     </>

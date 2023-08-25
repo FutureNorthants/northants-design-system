@@ -3,6 +3,8 @@ import { Story } from '@storybook/react/types-6-0';
 import FileDownload from './FileDownload';
 import { FileDownloadProps } from './FileDownload.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
+import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
+import PageMain from '../../structure/PageMain/PageMain';
 
 export default {
   title: 'Library/Components/File download',
@@ -16,7 +18,11 @@ export default {
 
 const Template: Story<FileDownloadProps> = (args) => (
   <SBPadding>
-    <FileDownload {...args} />
+    <MaxWidthContainer>
+      <PageMain>
+        <FileDownload {...args} />
+      </PageMain>
+    </MaxWidthContainer>
   </SBPadding>
 );
 

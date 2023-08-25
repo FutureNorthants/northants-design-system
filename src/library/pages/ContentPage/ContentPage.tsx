@@ -17,6 +17,9 @@ import Image from '../../slices/Image/Image';
 import ImageAndText from '../../slices/ImageAndText/ImageAndText';
 import { ImageWithCaption } from '../../slices/Image/Image.storydata';
 import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.storydata';
+import SearchBox from '../../slices/SearchBox/SearchBox';
+import { ExampleSearchBoxProps } from '../../slices/SearchBox/SearchBox.storydata';
+import BackToTop from '../../components/BackToTop/BackToTop';
 
 export interface ContentPageProps {}
 
@@ -143,8 +146,8 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
               </tr>
             </thead>
             <tbody>
-              {smallTable.data.map((row, index) => (
-                <tr key={index}>
+              {smallTable.data.map((row, rowIndex) => (
+                <tr key={rowIndex}>
                   {row.map((item) => (
                     <td key={item}>{item}</td>
                   ))}
@@ -250,6 +253,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <Heading level={2} text="Full Width Image" />
         <Image {...ImageWithCaption} />
         <ImageAndText {...ImageAndTextWithHeading} />
+        <SearchBox {...ExampleSearchBoxProps} />
         <WarningTextDisclaimer />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
@@ -281,5 +285,6 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         },
       ]}
     />
+    <BackToTop isActive={true} />
   </>
 );

@@ -1,4 +1,5 @@
 import { HeroImageProps } from './HeroImage.types';
+import { ExampleCustomSearchProps } from '../../components/CustomSearch/CustomSearch.storydata';
 
 /* Example data for HeroImage stories */
 export const HeroImageExampleBoxedData: HeroImageProps = {
@@ -43,4 +44,14 @@ export const HeroImageExampleBoxedWithBreadcrumbData: HeroImageProps = {
     url: '/',
   },
   ...HeroImageExampleBoxedData,
+};
+
+export const HeroImageExampleBoxedWithCustomSearch: HeroImageProps = {
+  ...HeroImageExampleBoxedData,
+  headline: 'Adult Learning Courses',
+  content: '<p>Search our catalogue of adult learning courses.</p>',
+  callToActionText: 'View all courses',
+  callToActionURL: 'https://courses.northantsglobal.net/AvailableCoursesList.asp',
+  callToActionIsPrimary: false,
+  customSearch: ExampleCustomSearchProps,
 };
