@@ -389,6 +389,15 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   </Styles.FavouritesContainer>
                 </Column>
                 <Column small="full" medium="full" large="full">
+                  <Pagination
+                    currentPage={pageNumber}
+                    totalResults={totalResults}
+                    resultsPerPage={perPage}
+                    postTo={directoryPath}
+                    buttonClickOverride={setPageNumber}
+                  />
+                </Column>
+                <Column small="full" medium="full" large="full">
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
                 </Column>
                 {services.map((service, index) => {
@@ -455,20 +464,17 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     </Column>
                   );
                 })}
+                <Column small="full" medium="full" large="full">
+                  <Pagination
+                    currentPage={pageNumber}
+                    totalResults={totalResults}
+                    resultsPerPage={perPage}
+                    postTo={directoryPath}
+                    buttonClickOverride={setPageNumber}
+                  />
+                </Column>
               </>
             )}
-
-            <Column small="full" medium="full" large="full">
-              {!isLoading && (
-                <Pagination
-                  currentPage={pageNumber}
-                  totalResults={totalResults}
-                  resultsPerPage={perPage}
-                  postTo={directoryPath}
-                  buttonClickOverride={setPageNumber}
-                />
-              )}
-            </Column>
           </Row>
         </Column>
       </Row>
