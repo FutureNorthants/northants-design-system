@@ -140,17 +140,24 @@ export const transformTaxonomies = (service_taxonomys: ServiceTaxonomy[], taxono
 
   taxonomiesToShow.forEach((taxonomy, taxonomyIndex) => {
     if (groupedTaxonomies.hasOwnProperty(taxonomy.vocabulary)) {
-      details.push({
-        term: taxonomy.label,
-        detail:
-          '<ul>' +
-          groupedTaxonomies[taxonomy.vocabulary]
-            .map((item) => {
-              return `<li>${item.name}</li>`;
-            })
-            .join('') +
-          '</ul>',
-      });
+      if (groupedTaxonomies[taxonomy.vocabulary].length === 1) {
+        details.push({
+          term: taxonomy.label,
+          detail: '<p>' + groupedTaxonomies[taxonomy.vocabulary][0].name + '</p>',
+        });
+      } else {
+        details.push({
+          term: taxonomy.label,
+          detail:
+            '<ul>' +
+            groupedTaxonomies[taxonomy.vocabulary]
+              .map((item) => {
+                return `<li>${item.name}</li>`;
+              })
+              .join('') +
+            '</ul>',
+        });
+      }
     }
   });
 

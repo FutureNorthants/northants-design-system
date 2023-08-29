@@ -69,6 +69,18 @@ describe('Test Component', () => {
     expect(queryByText('This is a block quote', { selector: 'blockquote' })).toBeNull();
   });
 
+  it('should have single value taxonomies in a paragraph and multiple in a list', () => {
+    const { getByText } = renderComponent();
+
+    const frenchLanguage = getByText('French');
+    const germanLanguage = getByText('German');
+    const referralRoute = getByText('Professional referral');
+
+    expect(frenchLanguage.tagName).toBe('LI');
+    expect(germanLanguage.tagName).toBe('LI');
+    expect(referralRoute.tagName).toBe('P');
+  });
+
   it('should show the map when is_visitable and latitude and longitude is set', () => {
     const { getByText } = renderComponent();
 
