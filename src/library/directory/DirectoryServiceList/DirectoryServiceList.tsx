@@ -66,6 +66,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     setFiltersActive(hasActiveFilters());
   }, []);
 
+  useEffect(() => {
+    setFiltersActive(hasActiveFilters());
+  }, [minimumAge, maximumAge, categories]);
+
   if (accordions.length === 0) {
     const tempAccordions = [];
     categories?.forEach(() => {
@@ -91,7 +95,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCategories(newCategories);
-    setFiltersActive(hasActiveFilters());
   };
 
   /**
@@ -105,7 +108,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     });
 
     setCategories(newCategories);
-    setFiltersActive(hasActiveFilters());
+  };
+
+  const clearAges = (e) => {
+    e.target.value = '';
+
+    handleAgeChange(e, 'minimumAge');
+    handleAgeChange(e, 'maximumAge');
   };
 
   const from = pageNumber * perPage - (perPage - 1);
@@ -174,8 +183,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const handleAgeChange = (e, field: string) => {
-    let age: number = e.target.value ? parseInt(e.target.value, 10) : undefined;
-    if (ageInMonths && age) {
+    let age: number | string = e.target.value ? parseInt(e.target.value, 10) : '';
+    if (typeof age === 'number' && ageInMonths) {
       age = age * 12;
     }
 
@@ -187,14 +196,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   };
 
   const hasActiveFilters = () => {
-    return categories.some((category) => {
-      return category.options.some((option) => {
-        return option.checked == true;
-      });
-    });
+    return (
+      maximumAge !== '' ||
+      minimumAge !== '' ||
+      categories.some((category) => {
+        return category.options.some((option) => {
+          return option.checked == true;
+        });
+      })
+    );
   };
-
-  hasActiveFilters();
 
   return (
     <Styles.Container data-testid="DirectoryServiceList">
@@ -284,13 +295,16 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         </Styles.LegendButton>
                       </Styles.Legend>
                       <Styles.Accordion isOpen={accordions[0]}>
+                        <Styles.ClearFilter>
+                          <Styles.TextLink onClick={(e) => clearAges(e)}>Clear filter</Styles.TextLink>
+                        </Styles.ClearFilter>
                         <Row>
                           <Column small="full" medium="one-half" large="one-half">
                             <Styles.Label htmlFor="minimum_age">From</Styles.Label>
                             <Input
                               name="minimum_age"
                               onChange={(e) => handleAgeChange(e, 'minimumAge')}
-                              defaultValue={ageInMonths && minimumAge ? minimumAge / 12 : minimumAge}
+                              value={ageInMonths && typeof minimumAge === 'number' ? minimumAge / 12 : minimumAge}
                               id="minimum_age"
                               type="number"
                             />
@@ -300,7 +314,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                             <Input
                               name="maximum_age"
                               onChange={(e) => handleAgeChange(e, 'maximumAge')}
-                              defaultValue={ageInMonths && maximumAge ? maximumAge / 12 : maximumAge}
+                              value={ageInMonths && typeof maximumAge === 'number' ? maximumAge / 12 : maximumAge}
                               id="maximum_age"
                               type="number"
                             />
@@ -375,6 +389,15 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   </Styles.FavouritesContainer>
                 </Column>
                 <Column small="full" medium="full" large="full">
+                  <Pagination
+                    currentPage={pageNumber}
+                    totalResults={totalResults}
+                    resultsPerPage={perPage}
+                    postTo={directoryPath}
+                    buttonClickOverride={setPageNumber}
+                  />
+                </Column>
+                <Column small="full" medium="full" large="full">
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
                 </Column>
                 {services.map((service, index) => {
@@ -441,20 +464,17 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     </Column>
                   );
                 })}
+                <Column small="full" medium="full" large="full">
+                  <Pagination
+                    currentPage={pageNumber}
+                    totalResults={totalResults}
+                    resultsPerPage={perPage}
+                    postTo={directoryPath}
+                    buttonClickOverride={setPageNumber}
+                  />
+                </Column>
               </>
             )}
-
-            <Column small="full" medium="full" large="full">
-              {!isLoading && (
-                <Pagination
-                  currentPage={pageNumber}
-                  totalResults={totalResults}
-                  resultsPerPage={perPage}
-                  postTo={directoryPath}
-                  buttonClickOverride={setPageNumber}
-                />
-              )}
-            </Column>
           </Row>
         </Column>
       </Row>

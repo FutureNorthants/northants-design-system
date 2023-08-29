@@ -80,22 +80,22 @@ export interface DirectoryServiceListProps {
   /**
    * The minimum age filter
    */
-  minimumAge?: number;
+  minimumAge?: number | string;
 
   /**
    * Function prop passed in to handle updating minimumAge
    */
-  setMinimumAge: Dispatch<SetStateAction<number | undefined>>;
+  setMinimumAge: Dispatch<SetStateAction<number | string | undefined>>;
 
   /**
    * The maximum age filter
    */
-  maximumAge?: number;
+  maximumAge?: number | string;
 
   /**
    * Function prop passed in to handle updating maximumAge
    */
-  setMaximumAge: Dispatch<SetStateAction<number | undefined>>;
+  setMaximumAge: Dispatch<SetStateAction<number | string | undefined>>;
 
   /**
    *  Where to centre the map, in the format 'lat,lng'

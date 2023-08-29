@@ -94,6 +94,7 @@ export const ExampleService: DirectoryServiceProps = {
       description: 'The main council building',
       latitude: '52.23555414368587',
       longitude: '-0.8957390701320571',
+      is_visitable: true,
       physical_addresses: [
         {
           id: 123,
