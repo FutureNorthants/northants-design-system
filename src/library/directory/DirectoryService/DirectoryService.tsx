@@ -215,7 +215,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                 <tbody>
                   {regular_schedules?.map((schedule, scheduleIndex) => (
                     <tr key={scheduleIndex}>
-                      <th>{schedule.weekday}</th>
+                      <td>{schedule.weekday}</td>
                       <td>{schedule.opens_at}</td>
                       <td>{schedule.closes_at}</td>
                     </tr>
