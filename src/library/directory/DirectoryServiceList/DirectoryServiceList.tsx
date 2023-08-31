@@ -17,7 +17,7 @@ import DirectoryMap from '../DirectoryMap/DirectoryMap';
 import { StaticMapProps } from '../../components/StaticMap/StaticMap.types';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { ThemeContext } from 'styled-components';
-import { transformSnippet } from '../DirectoryService/DirectoryServiceTransform';
+import { transformSnippet, transformAge } from '../DirectoryService/DirectoryServiceTransform';
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Button from '../../components/Button/Button';
 
@@ -167,19 +167,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
           title: `<a href="${directoryPath}/${service.id}">${service.name}</a>`,
         };
       }),
-  };
-
-  const formatAge = (age) => {
-    if (age === 0) {
-      return age;
-    }
-    if (ageInMonths) {
-      if (age > 36) {
-        return Math.ceil(age / 12) + ' years';
-      }
-      return `${age} months`;
-    }
-    return `${age} years`;
   };
 
   const handleAgeChange = (e, field: string) => {
@@ -442,8 +429,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               <>
                                 {service.eligibilitys.map((eligibility) => (
                                   <Styles.Age key={eligibility.id}>
-                                    Suitable for ages from {formatAge(eligibility.minimum_age)} to{' '}
-                                    {formatAge(eligibility.maximum_age)}
+                                    Suitable for ages from {transformAge(eligibility.minimum_age, ageInMonths)} to{' '}
+                                    {transformAge(eligibility.maximum_age, ageInMonths)}
                                   </Styles.Age>
                                 ))}
                               </>

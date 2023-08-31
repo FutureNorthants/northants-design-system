@@ -15,6 +15,11 @@ export interface DirectoryServiceProps {
   accreditations?: string;
 
   /**
+   * Should the age be displayed in months?
+   */
+  ageInMonths?: boolean;
+
+  /**
    * An array of contacts with phone numbers
    */
   contacts?: ServiceContactProps[];

@@ -4,6 +4,7 @@ import { ExampleSocialProfiles } from '../ServiceSocialLinks/ServiceSocialLinks.
 
 export const ExampleService: DirectoryServiceProps = {
   id: 'abc123',
+  ageInMonths: true,
   contacts: [
     {
       id: 1,

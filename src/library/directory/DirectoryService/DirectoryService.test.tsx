@@ -7,7 +7,7 @@ import { west_theme } from '../../../themes/theme_generator';
 import { ExampleService } from './DirectoryService.storydata';
 import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
-describe('Test Component', () => {
+describe('Directory Service', () => {
   let props: DirectoryServiceProps;
 
   beforeEach(() => {
@@ -78,7 +78,7 @@ describe('Test Component', () => {
 
     expect(frenchLanguage.tagName).toBe('LI');
     expect(germanLanguage.tagName).toBe('LI');
-    expect(referralRoute.tagName).toBe('P');
+    expect(referralRoute.tagName).toBe('SPAN');
   });
 
   it('should show the map when is_visitable and latitude and longitude is set', () => {
@@ -115,5 +115,14 @@ describe('Test Component', () => {
     expect(addressTitle).toBeVisible();
 
     expect(queryByText('View in Google Maps')).toBeNull();
+  });
+
+  it('should show and format the age range', () => {
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('DirectoryService');
+
+    expect(component).toHaveTextContent('Age range');
+    expect(component).toHaveTextContent('Suitable for ages from 0 to 18 years');
   });
 });
