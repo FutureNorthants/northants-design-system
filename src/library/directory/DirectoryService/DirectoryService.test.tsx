@@ -116,4 +116,16 @@ describe('Test Component', () => {
 
     expect(queryByText('View in Google Maps')).toBeNull();
   });
+
+  it('should show the opening hours', () => {
+    const { getByTestId, getByText } = renderComponent();
+    const component = getByTestId('DirectoryService');
+    const dayOfWeek = getByText('Monday');
+
+    expect(component).toHaveTextContent('Monday');
+    expect(component).toHaveTextContent('Tuesday');
+    expect(component).toHaveTextContent('Wednesday');
+
+    expect(dayOfWeek.tagName).toBe('TD');
+  });
 });
