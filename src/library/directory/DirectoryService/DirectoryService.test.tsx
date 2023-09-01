@@ -125,4 +125,16 @@ describe('Directory Service', () => {
     expect(component).toHaveTextContent('Age range');
     expect(component).toHaveTextContent('Suitable for ages from 0 to 18 years');
   });
+
+  it('should show the opening hours', () => {
+    const { getByTestId, getByText } = renderComponent();
+    const component = getByTestId('DirectoryService');
+    const dayOfWeek = getByText('Monday');
+
+    expect(component).toHaveTextContent('Monday');
+    expect(component).toHaveTextContent('Tuesday');
+    expect(component).toHaveTextContent('Wednesday');
+
+    expect(dayOfWeek.tagName).toBe('TD');
+  });
 });
