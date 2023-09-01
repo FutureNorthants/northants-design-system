@@ -26,8 +26,10 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
   name,
   accreditations,
+  ageInMonths = false,
   description,
   descriptionElement,
+  eligibilitys,
   email,
   fees,
   languages,
@@ -195,7 +197,14 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
             <>{descriptionElement}</>
           </div>
           <SummaryList
-            terms={transformDescriptionDetails(accreditations, fees, service_areas, languages)}
+            terms={transformDescriptionDetails(
+              accreditations,
+              fees,
+              service_areas,
+              languages,
+              eligibilitys,
+              ageInMonths
+            )}
             hasMargin={false}
           />
           <SummaryList terms={transformTaxonomies(service_taxonomys, taxonomiesToShow)} hasMargin={false} />

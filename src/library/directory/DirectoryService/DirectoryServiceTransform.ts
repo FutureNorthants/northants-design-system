@@ -1,5 +1,6 @@
 import { SummaryRowProps } from '../../components/SummaryList/SummaryList.types';
 import {
+  EligibilitiesProps,
   LanguagesProps,
   LocationProps,
   ServiceAreaProps,
@@ -73,7 +74,9 @@ export const transformDescriptionDetails = (
   accreditations: string,
   fees: string,
   service_areas: ServiceAreaProps[],
-  languages: LanguagesProps[]
+  languages: LanguagesProps[],
+  eligibilities: EligibilitiesProps[],
+  ageInMonths: boolean = false
 ): SummaryRowProps[] => {
   const details: SummaryRowProps[] = [];
 
@@ -94,7 +97,12 @@ export const transformDescriptionDetails = (
     });
   }
 
-  if (service_areas?.length > 0) {
+  if (service_areas?.length === 1) {
+    details.push({
+      term: 'Locality',
+      detail: `<span>${service_areas[0].service_area}</span>`,
+    });
+  } else if (service_areas?.length > 1) {
     details.push({
       term: 'Locality',
       detail:
@@ -108,7 +116,12 @@ export const transformDescriptionDetails = (
     });
   }
 
-  if (languages?.length > 0) {
+  if (languages?.length === 1) {
+    details.push({
+      term: 'Additional languages',
+      detail: `<span>${languages[0].language}</span>`,
+    });
+  } else if (languages?.length > 1) {
     details.push({
       term: 'Additional languages',
       detail:
@@ -116,6 +129,27 @@ export const transformDescriptionDetails = (
         languages
           .map((language) => {
             return `<li>${language.language}</li>`;
+          })
+          .join('') +
+        '</ul>',
+    });
+  }
+
+  if (eligibilities?.length === 1) {
+    details.push({
+      term: 'Age range',
+      detail: `<span>Suitable for ages from ${transformAge(eligibilities[0].minimum_age, ageInMonths)} to
+      ${transformAge(eligibilities[0].maximum_age, ageInMonths)}</span>`,
+    });
+  } else if (eligibilities?.length > 1) {
+    details.push({
+      term: 'Age range',
+      detail:
+        '<ul>' +
+        eligibilities
+          .map((eligibility) => {
+            return `<li>Suitable for ages from ${transformAge(eligibility.minimum_age, ageInMonths)} to 
+            ${transformAge(eligibility.maximum_age, ageInMonths)}</li>`;
           })
           .join('') +
         '</ul>',
@@ -143,7 +177,7 @@ export const transformTaxonomies = (service_taxonomys: ServiceTaxonomy[], taxono
       if (groupedTaxonomies[taxonomy.vocabulary].length === 1) {
         details.push({
           term: taxonomy.label,
-          detail: '<p>' + groupedTaxonomies[taxonomy.vocabulary][0].name + '</p>',
+          detail: '<span>' + groupedTaxonomies[taxonomy.vocabulary][0].name + '</span>',
         });
       } else {
         details.push({
@@ -162,4 +196,17 @@ export const transformTaxonomies = (service_taxonomys: ServiceTaxonomy[], taxono
   });
 
   return details;
+};
+
+export const transformAge = (age: number, ageInMonths: boolean = false) => {
+  if (age === 0) {
+    return age;
+  }
+  if (ageInMonths) {
+    if (age > 36) {
+      return Math.ceil(age / 12) + ' years';
+    }
+    return `${age} months`;
+  }
+  return `${age} years`;
 };
