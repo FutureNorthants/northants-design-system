@@ -47,7 +47,7 @@ export const FormInnerContainer = styled.div`
 export const FormLabel = styled.label`
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
 
 export const UPRNPageTitleRow = styled.div`

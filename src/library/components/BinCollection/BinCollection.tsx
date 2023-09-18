@@ -9,9 +9,12 @@ import Input from '../Input/Input';
 import FormButton from '../FormButton/FormButton';
 import DropDownSelect from '../DropDownSelect/DropDownSelect';
 
+/**
+ * Returns the Bin Collection Checker form component to conduct search by postcode.
+ */
 const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
   formError = false,
-  baseUrl = process.env.DRUPAL_APP_API_BASE_URL,
+  baseUrl = process.env.NEXT_PUBLIC_DRUPAL_APP_API_BASE_URL,
 }) => {
   const BinCollectionApiUrl = `${baseUrl}bin-collection-search/premiselist/`;
   const CalendarEventsApiUrl = `${baseUrl}bin-collection-search/calendarevents/`;
@@ -34,6 +37,9 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
     }
   };
 
+  /**
+   * Returns an array of address options based on the entered postcode.
+   */
   const fetchAddresses = async (postcode) => {
     axios.get(`${BinCollectionApiUrl}${postcode}`)
       .then((response) => {
@@ -81,6 +87,9 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
 
   const [calendarEvents, setCalendarEvents] = useState({});
 
+  /**
+   * Returns an array of calendar events based on selected address for next 42 days.
+   */
   const handleAddressChange = (e) => {
     const selectedUPRN = e.target.value;
     
@@ -108,12 +117,21 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
   };
 
   const formatTitle = (apiTitle: string) => {
-    if (apiTitle.includes('Bin Refuse bin')) return 'Refuse bin';
-    if (apiTitle.includes('Bin Recycling')) return 'Recycling bin';
-    if (apiTitle.includes('Bin Recycling Paper Box')) return 'Recycling Paper Box bin';
-    if (apiTitle.includes('Garden')) return 'Garden bin';
+    const mappings = [
+        { keyword: 'Bin Refuse bin', replacement: 'Refuse bin' },
+        { keyword: 'Bin Recycling', replacement: 'Recycling bin' },
+        { keyword: 'Recycling Paper Box', replacement: 'Recycling Paper Box bin' },
+        { keyword: 'Garden', replacement: 'Garden bin' }
+    ];
+
+    for (const mapping of mappings) {
+        if (apiTitle.includes(mapping.keyword)) {
+            return mapping.replacement;
+        }
+    }
+
     return apiTitle;
-  };  
+  };
 
   return (
     <Styles.Container data-testid="BinCollection">
@@ -126,7 +144,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
         <Styles.FormContainer isLoading={isLoading}>
           <Styles.FormInnerContainer> 
             <Styles.Label htmlFor="postcode">
-              Bin Collection Cheker
+              Bin Collection Checker
               <Input
                 type="text"
                 placeholder="Enter a postcode"
@@ -137,7 +155,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
               />
             </Styles.Label>
             <Styles.BinCollectionButtonStyles>
-              <FormButton size='large' type="submit" aria-label="Submit" text="Find" />
+              <FormButton size="large" type="submit" aria-label="Submit" text="Find" />
             </Styles.BinCollectionButtonStyles>
           </Styles.FormInnerContainer>
         </Styles.FormContainer>
@@ -167,7 +185,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
                 .map(date => (
                   <Styles.UPRNPageUPRNRow key={`${title}-${date.toString()}`}>
                     <Styles.UPRNPageUPRNTitle>
-                      {date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                      {date.toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                     </Styles.UPRNPageUPRNTitle>
                   </Styles.UPRNPageUPRNRow>
               ))}
@@ -177,7 +195,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       </div>
 
       {Object.keys(calendarEvents).length > 0 && (
-        <FormButton size='small' type="button" aria-label="Reset" text="Find a different address" onClick={resetForm} />
+        <FormButton size="small" type="button" aria-label="Reset" text="Find a different address" onClick={resetForm} />
       )}
 
     </Styles.Container>

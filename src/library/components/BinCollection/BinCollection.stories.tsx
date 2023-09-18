@@ -23,8 +23,9 @@ const Template: Story<BinCollectionProps> = (args) => (
   </SBPadding>
 );
 
-export const TemplateBind = Template.bind({});
-TemplateBind.args = {
+export const ExampleBinCollectionSearch = Template.bind({});
+
+ExampleBinCollectionSearch.args = {
   title: 'Enter your postcode for bin collection details',
   formError: false,
 };
