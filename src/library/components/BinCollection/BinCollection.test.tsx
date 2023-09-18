@@ -4,7 +4,7 @@ import BinCollection from './BinCollection';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import axios from 'axios';
-import { addressMockData } from './BinCollection.mock';
+import { addressMockData } from './BinCollection.testdata';
 
 jest.mock('axios');
 
