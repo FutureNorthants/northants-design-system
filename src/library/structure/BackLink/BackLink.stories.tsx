@@ -1,24 +1,31 @@
-
-import React from "react";
+import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
-import BackLink from "./BackLink";
-import { BackLinkProps } from "./BackLink.types";
+import BackLink from './BackLink';
+import { BackLinkProps } from './BackLink.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
-    title: 'Library/Structure/Back Link',
-    component: BackLink,
-    parameters: {
-      status: {
-        type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-      }
+  title: 'Library/Structure/Back Link',
+  component: BackLink,
+  parameters: {
+    status: {
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
+  },
 };
 
-const Template: Story<BackLinkProps> = (args) => <SBPadding><BackLink {...args} /></SBPadding>;
+const Template: Story<BackLinkProps> = (args) => (
+  <SBPadding>
+    <BackLink {...args} />
+  </SBPadding>
+);
 
-export const ExampleBackLink = Template.bind({});    
+export const ExampleBackLink = Template.bind({});
 ExampleBackLink.args = {
-  link: "/"
+  link: '/',
 };
 
+export const ExampleBackLinkUseHistory = Template.bind({});
+ExampleBackLinkUseHistory.args = {
+  useHistory: true,
+};
