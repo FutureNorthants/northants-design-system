@@ -33,3 +33,20 @@ export const ExampleDirectoryShortList = Template.bind({});
 ExampleDirectoryShortList.args = {
   directoryPath: '/directory',
 };
+
+const TemplateWithKey: Story<DirectoryShortListProps> = (args) => (
+  <SBPadding>
+    <MaxWidthContainer>
+      <PageMain>
+        <DirectoryShortListProvider shortlistKey="ExampleKey">
+          <DirectoryShortList {...args} />
+        </DirectoryShortListProvider>
+      </PageMain>
+    </MaxWidthContainer>
+  </SBPadding>
+);
+
+export const ExampleDirectoryShortListWithCustomKey = TemplateWithKey.bind({});
+ExampleDirectoryShortListWithCustomKey.args = {
+  directoryPath: '/directory',
+};
