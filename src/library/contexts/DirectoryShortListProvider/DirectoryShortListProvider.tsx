@@ -8,8 +8,11 @@ import {
 
 const DirectoryShortListContext = createContext<DirectoryShortListContextType>({});
 
-export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortListProviderProps> = ({ children }) => {
-  const [favourites, setFavourites] = useLocalStorage('DirectoryShort', []);
+export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortListProviderProps> = ({
+  shortlistKey = 'DirectoryShort',
+  children,
+}) => {
+  const [favourites, setFavourites] = useLocalStorage(shortlistKey, []);
 
   const toggleFavourites = (
     id: string,

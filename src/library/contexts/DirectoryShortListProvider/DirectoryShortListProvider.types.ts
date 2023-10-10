@@ -5,6 +5,8 @@ export interface DirectoryShortListProviderProps {
    * The child components
    */
   children: React.ReactNode;
+
+  shortlistKey?: string;
 }
 
 export interface DirectoryShortListContextType {
