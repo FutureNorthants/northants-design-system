@@ -5,6 +5,11 @@ export interface DirectoryShortListProviderProps {
    * The child components
    */
   children: React.ReactNode;
+
+  /**
+   * An optional shortlist key to store and get different directory favourites
+   */
+  shortlistKey?: string;
 }
 
 export interface DirectoryShortListContextType {
