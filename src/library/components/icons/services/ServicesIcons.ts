@@ -6,6 +6,8 @@ import AddressIcon from './Address/Icon';
 import AddressIconHover from './Address/IconHover';
 import AdultsIcon from './Adults/Icon';
 import AdultsIconHover from './Adults/IconHover';
+import AssistiveTechnologyIcon from './AssistiveTechnology/Icon';
+import AssistiveTechnologyIconHover from './AssistiveTechnology/IconHover';
 import BenefitsIcon from './Benefits/Icon';
 import BenefitsIconHover from './Benefits/IconHover';
 import BinDayIcon from './BinDay/Icon';
@@ -94,12 +96,18 @@ import IndependenceIcon from './Independence/Icon';
 import IndependenceIconHover from './Independence/IconHover';
 import LibrariesIcon from './Libraries/Icon';
 import LibrariesIconHover from './Libraries/IconHover';
+import KeepingHealthyIcon from './KeepingHealthy/Icon';
+import KeepingHealthyIconHover from './KeepingHealthy/IconHover';
 import LitterIcon from './Litter/Icon';
 import LitterIconHover from './Litter/IconHover';
+import LookingAfterYourselfIcon from './LookingAfterYourself/Icon';
+import LookingAfterYourselfIconHover from './LookingAfterYourself/IconHover';
 import MapPinIcon from './MapPin/Icon';
 import MapPinIconHover from './MapPin/IconHover';
 import MemberIcon from './Member/Icon';
 import MemberIconHover from './Member/IconHover';
+import MentalHealth from './MentalHealth/Icon';
+import MentalHealthIconHover from './MentalHealth/IconHover';
 import MissedBinIcon from './MissedBin/Icon';
 import MissedBinIconHover from './MissedBin/IconHover';
 import NewIcon from './New/Icon';
@@ -120,6 +128,8 @@ import PlanningIcon from './Planning/Icon';
 import PlanningIconHover from './Planning/IconHover';
 import PotholeIcon from './Pothole/Icon';
 import PotholeIconHover from './Pothole/IconHover';
+import PreventingFallsIcon from './PreventingFalls/Icon';
+import PreventingFallsIconHover from './PreventingFalls/IconHover';
 import ProtectIcon from './Protect/Icon';
 import ProtectIconHover from './Protect/IconHover';
 import RatePayIcon from './RatePay/Icon';
@@ -164,6 +174,8 @@ let components = {
   addresschangeHover: AddressChangeIconHover,
   address: AddressIcon,
   addressHover: AddressIconHover,
+  assistivetechnology: AssistiveTechnologyIcon,
+  assistivetechnologyHover: AssistiveTechnologyIconHover,
   benefits: BenefitsIcon,
   benefitsHover: BenefitsIconHover,
   binday: BinDayIcon,
@@ -250,14 +262,20 @@ let components = {
   housingHover: HousingIconHover,
   independence: IndependenceIcon,
   independenceHover: IndependenceIconHover,
+  keepinghealthy: KeepingHealthyIcon,
+  keepinghealthyHover: KeepingHealthyIconHover,
   libraries: LibrariesIcon,
   librariesHover: LibrariesIconHover,
   litter: LitterIcon,
   litterHover: LitterIconHover,
+  lookingafteryourself: LookingAfterYourselfIcon,
+  lookingafteryourselfHover: LookingAfterYourselfIconHover,
   mappin: MapPinIcon,
   mappinHover: MapPinIconHover,
   member: MemberIcon,
   memberHover: MemberIconHover,
+  mentalhealth: MentalHealth,
+  mentalhealthHover: MentalHealthIconHover,
   missedbin: MissedBinIcon,
   missedbinHover: MissedBinIconHover,
   new: NewIcon,
@@ -278,6 +296,8 @@ let components = {
   planningHover: PlanningIconHover,
   pothole: PotholeIcon,
   potholeHover: PotholeIconHover,
+  preventingfalls: PreventingFallsIcon,
+  preventingfallsHover: PreventingFallsIconHover,
   protect: ProtectIcon,
   protectHover: ProtectIconHover,
   ratepay: RatePayIcon,
