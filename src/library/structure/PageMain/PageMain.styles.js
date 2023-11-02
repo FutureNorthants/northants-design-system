@@ -29,6 +29,10 @@ export const Container = styled.main`
     max-width: ${(props) => (props.fullWidthText ? `100%` : '750px')};
   }
 
+  li {
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  }
+
   strong,
   bold {
     font-weight: 700;

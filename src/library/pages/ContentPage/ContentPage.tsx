@@ -80,9 +80,15 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         </ol>
         <p>text inbetween lists</p>
         <ul>
-          <li>list 1</li>
-          <li>list 2</li>
-          <li>list 3</li>
+          <li>
+            <a href="#">list link 1</a>
+          </li>
+          <li>
+            <a href="#">list link 2</a>
+          </li>
+          <li>
+            <a href="#">list link 3</a>
+          </li>
         </ul>
         <Divider />
         <Heading level={2} text="H2 - second level heading" />
