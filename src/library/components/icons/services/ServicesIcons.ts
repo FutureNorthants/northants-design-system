@@ -150,8 +150,12 @@ import RoyalWebsiteIcon from './RoyalWebsite/Icon';
 import RoyalWebsiteIconHover from './RoyalWebsite/IconHover';
 import SafetyIcon from './Safety/Icon';
 import SafetyIconHover from './Safety/IconHover';
+import SchoolAdmissionsIcon from './SchoolAdmissions/Icon';
+import SchoolAdmissionsIconHover from './SchoolAdmissions/IconHover';
 import SchoolsIcon from './Schools/Icon';
 import SchoolsIconHover from './Schools/IconHover';
+import SendIcon from './SEND/Icon';
+import SendIconHover from './SEND/IconHover';
 import SinglePersonIcon from './SinglePerson/Icon';
 import SinglePersonIconHover from './SinglePerson/IconHover';
 import SportsIcon from './Sports/Icon';
@@ -318,8 +322,12 @@ let components = {
   royalWebsiteHover: RoyalWebsiteIconHover,
   safety: SafetyIcon,
   safetyHover: SafetyIconHover,
+  schooladmissions: SchoolAdmissionsIcon,
+  schooladmissionsHover: SchoolAdmissionsIconHover,
   schools: SchoolsIcon,
   schoolsHover: SchoolsIconHover,
+  send: SendIcon,
+  sendHover: SendIconHover,
   singleperson: SinglePersonIcon,
   singlepersonHover: SinglePersonIconHover,
   sports: SportsIcon,
