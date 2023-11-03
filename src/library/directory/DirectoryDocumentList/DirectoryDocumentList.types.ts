@@ -58,6 +58,11 @@ export interface DirectoryDocumentListProps {
    * Is the data loading
    */
   isLoading: boolean;
+
+  /**
+   * Is the component in error state
+   */
+  isError?: boolean;
 }
 
 export interface DirectoryDocument {

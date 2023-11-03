@@ -177,4 +177,14 @@ describe('Test Component', () => {
 
     expect(component).toHaveTextContent('12 months to 5 years');
   });
+
+  it('should display the error message when error occurs', () => {
+    props.isError = true;
+    props.services = [];
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryServiceList');
+
+    expect(component).toHaveTextContent('Sorry, there was a problem fetching results. Please try again later.');
+  });
 });

@@ -43,4 +43,14 @@ describe('Directory Document List Component', () => {
     fireEvent.change(search, { target: { value: 'schools' } });
     expect(directoryLink).toHaveAttribute('href', '/directory/local-offer?search=schools');
   });
+
+  it('should display the error message when error occurs', () => {
+    props.isError = true;
+    props.documents = [];
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId('DirectoryDocumentList');
+
+    expect(component).toHaveTextContent('Sorry, there was a problem fetching results. Please try again later.');
+  });
 });

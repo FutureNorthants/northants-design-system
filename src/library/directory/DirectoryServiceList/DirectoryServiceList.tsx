@@ -20,6 +20,7 @@ import { ThemeContext } from 'styled-components';
 import { transformSnippet, transformAge } from '../DirectoryService/DirectoryServiceTransform';
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Button from '../../components/Button/Button';
+import { AlertBannerService } from '../../structure/PageStructures';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -45,6 +46,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   isLoading = false,
   ageInMonths = false,
   hasDocuments = false,
+  isError = false,
 }) => {
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
   const [openAll, setOpenAll] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion-all`, true);
@@ -348,7 +350,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Row>
-            {isLoading ? (
+            {isError ? (
+              <Column small="full" medium="full" large="full">
+                <AlertBannerService>
+                  <p>Sorry, there was a problem fetching results. Please try again later.</p>
+                </AlertBannerService>
+              </Column>
+            ) : isLoading ? (
               <Styles.LoadingContainer>
                 <LoadingSpinner />
                 <p>Loading</p>
