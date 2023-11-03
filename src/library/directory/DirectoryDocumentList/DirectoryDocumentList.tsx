@@ -12,6 +12,7 @@ import FileDownload from '../../components/FileDownload/FileDownload';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Pagination from '../../components/Pagination/Pagination';
 import Button from '../../components/Button/Button';
+import { AlertBannerService } from '../../structure/PageStructures';
 
 const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps> = ({
   directoryPath,
@@ -25,6 +26,7 @@ const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps>
   categories,
   setCategories,
   isLoading = false,
+  isError = false,
 }) => {
   const [searchTerm, setSearchTerm] = useState(search);
 
@@ -135,7 +137,13 @@ const DirectoryDocumentList: React.FunctionComponent<DirectoryDocumentListProps>
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Row>
-            {isLoading ? (
+            {isError ? (
+              <Column small="full" medium="full" large="full">
+                <AlertBannerService>
+                  <p>Sorry, there was a problem fetching results. Please try again later.</p>
+                </AlertBannerService>
+              </Column>
+            ) : isLoading ? (
               <Styles.LoadingContainer>
                 <LoadingSpinner />
                 <p>Loading</p>

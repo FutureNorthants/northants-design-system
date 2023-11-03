@@ -116,6 +116,11 @@ export interface DirectoryServiceListProps {
    * Does the directory have documents?
    */
   hasDocuments?: boolean;
+
+  /**
+   * Is the component in error state
+   */
+  isError?: boolean;
 }
 
 export interface DirectoryCategory {

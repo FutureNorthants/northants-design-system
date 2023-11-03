@@ -42,3 +42,35 @@ ExampleDirectoryDocumentList.args = {
   setCategories: () => {},
   isLoading: false,
 };
+
+export const ExampleDirectoryDocumentListNoResults = Template.bind({});
+ExampleDirectoryDocumentListNoResults.args = {
+  isError: false,
+  directoryPath: '/directory/local-offer',
+  documents: [],
+  search: 'Example',
+  setSearch: () => {},
+  totalResults: 0,
+  pageNumber: 1,
+  setPageNumber: () => {},
+  perPage: 10,
+  categories: [LocalOfferTaxonomy],
+  setCategories: () => {},
+  isLoading: false,
+};
+
+export const ExampleDirectoryDocumentListError = Template.bind({});
+ExampleDirectoryDocumentListError.args = {
+  isError: true,
+  directoryPath: '/directory/local-offer',
+  documents: [],
+  search: 'Example',
+  setSearch: () => {},
+  totalResults: 0,
+  pageNumber: 1,
+  setPageNumber: () => {},
+  perPage: 10,
+  categories: [],
+  setCategories: () => {},
+  isLoading: false,
+};

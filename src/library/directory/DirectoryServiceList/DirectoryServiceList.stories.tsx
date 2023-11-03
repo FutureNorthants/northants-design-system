@@ -86,3 +86,18 @@ DirectoryServiceNoResults.args = {
   ageInMonths: true,
   hasDocuments: true,
 };
+
+export const DirectoryServiceError = Template.bind({});
+DirectoryServiceError.args = {
+  isError: true,
+  services: [],
+  totalResults: 0,
+  categories: ExampleDirectoryCategories,
+  pageNumber: 1,
+  perPage: 5,
+  directoryPath: '/directory/local-offer',
+  shortListPath: '/directory/local-offer/short-list',
+  customTaxonomyFilters: ['facilities', 'language'],
+  ageInMonths: true,
+  hasDocuments: true,
+};
