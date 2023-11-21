@@ -452,6 +452,9 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               email={service.email}
                               website={service.url}
                               phone={service.contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                              addresses={service.service_at_locations?.flatMap((location) => {
+                                return location.physical_addresses;
+                              })}
                             />
                           </Column>
                         </Row>

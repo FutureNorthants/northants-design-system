@@ -1,4 +1,5 @@
 import React, { SetStateAction, Dispatch } from 'react';
+import { PhysicalAddressProps } from '../../directory/DirectoryService/DirectoryService.types';
 
 export interface DirectoryShortListProviderProps {
   /**
@@ -23,7 +24,8 @@ export interface DirectoryShortListContextType {
     snippet: string,
     email?: string,
     website?: string,
-    phone?: string
+    phone?: string,
+    addresses?: PhysicalAddressProps[]
   ) => void;
   isFavourite?: (id: string) => boolean;
 }
@@ -58,4 +60,9 @@ export interface ShortListProps {
    * The optional phone number
    */
   phone?: string;
+
+  /**
+   * The optional addresses
+   */
+  addresses?: PhysicalAddressProps[];
 }

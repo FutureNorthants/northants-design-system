@@ -8,6 +8,7 @@ import Column from '../../components/Column/Column';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformService } from '../DirectoryService/DirectoryServiceTransform';
 import QRCode from 'react-qr-code';
+import Heading from '../../components/Heading/Heading';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
@@ -52,6 +53,20 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <div>{favourite.snippet}</div>
+                        {favourite.addresses?.length > 0 && (
+                          <div>
+                            <Styles.AddressTitle>Address</Styles.AddressTitle>
+                            <ul>
+                              {favourite.addresses.map((address) => (
+                                <li key={address.id}>
+                                  {Object.values(address)
+                                    .filter((item) => item !== '' && item !== address.id)
+                                    .join(',')}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <SummaryList
@@ -68,6 +83,7 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                             email={favourite.email}
                             website={favourite.website}
                             phone={favourite.phone}
+                            addresses={favourite.addresses}
                           />
                         </Styles.AddContainer>
                       </Column>
