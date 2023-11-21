@@ -6,6 +6,34 @@ import { cookieName, getCookie } from './../../helpers/cookies';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 
+export const AcceptCookies = () => {
+  let date = new Date();
+  // Cookie is valid 1 year
+  date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+  // NB cookie created is actually cookie expiry - safer to minus a year from the value in calculations than change it.
+  const cookie = {
+    bannerDismissed: true,
+    cookiesAccepted: true,
+    cookiesAcceptedConfirmationBanner: false,
+    cookieCreated: date.toUTCString(),
+  };
+  document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
+  location.reload(); // reload to load the updated cookies
+};
+
+export const RejectCookies = () => {
+  let date = new Date();
+  // Cookie is valid 1 year
+  date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+  const cookie = {
+    bannerDismissed: true,
+    cookiesAccepted: false,
+    cookiesAcceptedConfirmationBanner: false,
+    cookieCreated: date.toUTCString(),
+  };
+  document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
+};
+
 const CookieBanner: React.FunctionComponent<CookieBannerProps> = ({
   title,
   paragraph,
@@ -69,28 +97,10 @@ const CookieBanner: React.FunctionComponent<CookieBannerProps> = ({
   };
 
   const toggleCookie = (accepted) => {
-    let cookie = {};
-    let date = new Date();
-    // Cookie is valid 1 year
-    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
     if (accepted === true) {
-      // NB cookie created is actually cookie expiry - safer to minus a year from the value in calculations than change it.
-      cookie = {
-        bannerDismissed: true,
-        cookiesAccepted: true,
-        cookiesAcceptedConfirmationBanner: false,
-        cookieCreated: date.toUTCString(),
-      };
-      document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
-      location.reload(); // reload to load the cookiesss
+      AcceptCookies();
     } else {
-      cookie = {
-        bannerDismissed: true,
-        cookiesAccepted: false,
-        cookiesAcceptedConfirmationBanner: false,
-        cookieCreated: date.toUTCString(),
-      };
-      document.cookie = `${cookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
+      RejectCookies();
       setShowCookieBanner(false);
       setShowCookiesRejectedBanner(true);
     }
