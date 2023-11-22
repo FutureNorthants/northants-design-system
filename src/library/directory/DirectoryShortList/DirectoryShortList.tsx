@@ -53,24 +53,26 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <div>{favourite.snippet}</div>
-                        {favourite.fees && (
-                          <div>
-                            <Styles.SubTitle>Cost</Styles.SubTitle>
-                            <p>{favourite.fees}</p>
-                          </div>
-                        )}
                         {favourite.addresses?.length > 0 && (
                           <div>
                             <Styles.SubTitle>Address</Styles.SubTitle>
-                            <ul>
-                              {favourite.addresses.map((address) => (
-                                <li key={address.id}>
-                                  {Object.values(address)
-                                    .filter((item) => item !== '' && item !== address.id)
-                                    .join(',')}
-                                </li>
-                              ))}
-                            </ul>
+                            {favourite.addresses?.length === 1 ? (
+                              <p>
+                                {Object.values(favourite.addresses[0])
+                                  .filter((item) => item !== '' && item !== favourite.addresses[0].id)
+                                  .join(', ')}
+                              </p>
+                            ) : (
+                              <ul>
+                                {favourite.addresses.map((address) => (
+                                  <li key={address.id}>
+                                    {Object.values(address)
+                                      .filter((item) => item !== '' && item !== address.id)
+                                      .join(', ')}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
                         )}
                       </Column>
@@ -79,6 +81,7 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                           terms={transformService(favourite.email, favourite.website, favourite.phone)}
                           hasMargin={false}
                         />
+                        <SummaryList terms={[{ term: 'Cost', detail: favourite.fees }]} hasMargin={false} />
                       </Column>
                       <Column small="full" medium="full" large="full">
                         <Styles.AddContainer>
