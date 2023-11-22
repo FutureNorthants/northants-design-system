@@ -25,7 +25,8 @@ export interface DirectoryShortListContextType {
     email?: string,
     website?: string,
     phone?: string,
-    addresses?: PhysicalAddressProps[]
+    addresses?: PhysicalAddressProps[],
+    fees?: string
   ) => void;
   isFavourite?: (id: string) => boolean;
 }
@@ -65,4 +66,9 @@ export interface ShortListProps {
    * The optional addresses
    */
   addresses?: PhysicalAddressProps[];
+
+  /**
+   * The optional fees for the service
+   */
+  fees?: string;
 }

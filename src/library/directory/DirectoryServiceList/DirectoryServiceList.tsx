@@ -455,6 +455,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                               addresses={service.service_at_locations?.flatMap((location) => {
                                 return location.physical_addresses;
                               })}
+                              fees={service.fees}
                             />
                           </Column>
                         </Row>

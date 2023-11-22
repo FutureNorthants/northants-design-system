@@ -92,6 +92,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                     addresses={service_at_locations.flatMap((location) => {
                       return location.physical_addresses;
                     })}
+                    fees={fees}
                   />
                 </Styles.ShortListLinks>
               )}

@@ -109,7 +109,7 @@ export const AddContainer = styled.div`
   }
 `;
 
-export const AddressTitle = styled.p`
+export const SubTitle = styled.p`
   font-weight: bold;
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;

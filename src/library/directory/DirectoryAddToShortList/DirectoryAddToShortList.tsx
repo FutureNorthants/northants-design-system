@@ -14,13 +14,14 @@ const DirectoryAddToShortList: React.FunctionComponent<DirectoryAddToShortListPr
   website,
   phone,
   addresses,
+  fees,
 }) => {
   const { toggleFavourites: toggleFavourites, isFavourite: isFavourite } = useDirectoryShortListContext();
   const themeContext = useContext(ThemeContext);
   const favourite = isFavourite(id);
   return (
     <Styles.AddToShortlist
-      onClick={(e) => toggleFavourites(id, name, snippet, email, website, phone, addresses)}
+      onClick={(e) => toggleFavourites(id, name, snippet, email, website, phone, addresses, fees)}
       data-testid="DirectoryAddToShortList"
       favourite={favourite}
     >

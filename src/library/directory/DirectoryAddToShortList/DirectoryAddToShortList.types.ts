@@ -35,4 +35,9 @@ export interface DirectoryAddToShortListProps {
    * The optional addresses
    */
   addresses?: PhysicalAddressProps[];
+
+  /**
+   * The optional fees for the service
+   */
+  fees?: string;
 }

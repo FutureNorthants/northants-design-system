@@ -53,9 +53,15 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <div>{favourite.snippet}</div>
+                        {favourite.fees && (
+                          <div>
+                            <Styles.SubTitle>Cost</Styles.SubTitle>
+                            <p>{favourite.fees}</p>
+                          </div>
+                        )}
                         {favourite.addresses?.length > 0 && (
                           <div>
-                            <Styles.AddressTitle>Address</Styles.AddressTitle>
+                            <Styles.SubTitle>Address</Styles.SubTitle>
                             <ul>
                               {favourite.addresses.map((address) => (
                                 <li key={address.id}>

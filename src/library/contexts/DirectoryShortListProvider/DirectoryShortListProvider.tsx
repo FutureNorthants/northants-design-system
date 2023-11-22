@@ -22,7 +22,8 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
     email?: string,
     website?: string,
     phone?: string,
-    addresses?: PhysicalAddressProps[]
+    addresses?: PhysicalAddressProps[],
+    fees?: string
   ) => {
     const updatedFavourites: ShortListProps[] = [...favourites];
 
@@ -38,6 +39,7 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
         website: website,
         phone: phone,
         addresses: addresses,
+        fees: fees,
       });
     }
 
