@@ -62,6 +62,15 @@ StandardImageWrapped.args = {
   wrapText: true,
 };
 
+export const StandardImageWrappedNoCaption = Template.bind({});
+StandardImageWrappedNoCaption.args = {
+  imageLarge: 'https://via.placeholder.com/800x600?text=4+by+3+image',
+  imageSmall: 'https://via.placeholder.com/400x300',
+  imageAltText: 'Parkland',
+  ratio: '4by3',
+  wrapText: true,
+};
+
 export const WideImage = Template.bind({});
 WideImage.args = {
   imageLarge: 'https://via.placeholder.com/800x450?text=16+by+9+image',
