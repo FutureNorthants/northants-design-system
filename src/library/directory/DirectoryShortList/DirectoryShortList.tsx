@@ -81,7 +81,9 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                           terms={transformService(favourite.email, favourite.website, favourite.phone)}
                           hasMargin={false}
                         />
-                        <SummaryList terms={[{ term: 'Cost', detail: favourite.fees }]} hasMargin={false} />
+                        {favourite.fees && (
+                          <SummaryList terms={[{ term: 'Cost', detail: favourite.fees }]} hasMargin={false} />
+                        )}
                       </Column>
                       <Column small="full" medium="full" large="full">
                         <Styles.AddContainer>
