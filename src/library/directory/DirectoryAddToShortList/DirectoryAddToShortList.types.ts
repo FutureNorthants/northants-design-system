@@ -1,3 +1,5 @@
+import { PhysicalAddressProps } from '../DirectoryService/DirectoryService.types';
+
 export interface DirectoryAddToShortListProps {
   /**
    * The unique identifier
@@ -28,4 +30,14 @@ export interface DirectoryAddToShortListProps {
    * The optional phone number
    */
   phone?: string;
+
+  /**
+   * The optional addresses
+   */
+  addresses?: PhysicalAddressProps[];
+
+  /**
+   * The optional fees for the service
+   */
+  fees?: string;
 }

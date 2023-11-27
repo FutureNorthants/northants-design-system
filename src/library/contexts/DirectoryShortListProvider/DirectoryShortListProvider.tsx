@@ -5,6 +5,7 @@ import {
   DirectoryShortListProviderProps,
   ShortListProps,
 } from './DirectoryShortListProvider.types';
+import { PhysicalAddressProps } from '../../directory/DirectoryService/DirectoryService.types';
 
 const DirectoryShortListContext = createContext<DirectoryShortListContextType>({});
 
@@ -20,7 +21,9 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
     snippet?: string,
     email?: string,
     website?: string,
-    phone?: string
+    phone?: string,
+    addresses?: PhysicalAddressProps[],
+    fees?: string
   ) => {
     const updatedFavourites: ShortListProps[] = [...favourites];
 
@@ -35,6 +38,8 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
         email: email,
         website: website,
         phone: phone,
+        addresses: addresses,
+        fees: fees,
       });
     }
 

@@ -89,6 +89,10 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                     email={email}
                     website={url}
                     phone={contacts?.[0]?.phones?.flatMap((phone) => phone.number).join(', ')}
+                    addresses={service_at_locations.flatMap((location) => {
+                      return location.physical_addresses;
+                    })}
+                    fees={fees}
                   />
                 </Styles.ShortListLinks>
               )}
