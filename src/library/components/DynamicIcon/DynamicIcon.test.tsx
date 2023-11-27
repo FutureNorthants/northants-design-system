@@ -25,10 +25,8 @@ describe('Dynamic Icon', () => {
   it('should render the service icon', () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('DynamicIcon');
-
-    const serviceIcon = component.getElementsByClassName('service-icon')[0];
-    const serviceIconHover = component.getElementsByClassName('service-icon-hover')[0];
+    const serviceIcon = getByTestId('Icon');
+    const serviceIconHover = getByTestId('IconHover');
 
     expect(serviceIcon).toBeInTheDocument();
     expect(serviceIcon).toBeVisible();

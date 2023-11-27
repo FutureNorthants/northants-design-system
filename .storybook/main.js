@@ -1,26 +1,32 @@
 const path = require('path');
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
   features: {
     postcss: false,
     storyStoreV7: false,
   },
-  framework: '@storybook/react',
+
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
+  },
+
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     // https://github.com/storybookjs/storybook/tree/master/addons/a11y
-    '@etchteam/storybook-addon-status',
     // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
+    '@etchteam/storybook-addon-status',
+    '@storybook/addon-mdx-gfm'
   ],
+
   env: (config) => ({
     ...config,
     NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
   }),
+
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
@@ -60,7 +66,8 @@ module.exports = {
     config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
+
   docs: {
     autodocs: true,
-  },
+  }
 };

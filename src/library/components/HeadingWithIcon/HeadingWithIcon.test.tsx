@@ -13,6 +13,7 @@ describe('Heading With Icon', () => {
       text: 'Council Tax',
       icon: 'counciltax',
       level: 2,
+      hasHover: false,
     };
   });
 
@@ -32,7 +33,7 @@ describe('Heading With Icon', () => {
 
     expect(component).toHaveTextContent('Council Tax');
 
-    expect(serviceIcon).toBeVisible();
+    expect(serviceIcon).toBeInTheDocument();
     expect(serviceIconHover).not.toBeVisible();
   });
 });

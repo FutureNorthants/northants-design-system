@@ -11,14 +11,14 @@ const DynamicIcon: React.FunctionComponent<DynamicIconProps> = ({ level, icon })
   const themeContext = useContext(ThemeContext);
 
   const DynamicComponent = ({ name, isHover = false }) => {
-    let DynamicIcon;
+    let DynamicServiceIcon;
     if (name === 'culture') {
       let newName = name + themeContext.cardinal_name;
-      DynamicIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
+      DynamicServiceIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
     } else {
-      DynamicIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
+      DynamicServiceIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
     }
-    return <DynamicIcon colourFill={themeContext.theme_vars.colours.action_dark} />;
+    return <DynamicServiceIcon colourFill={themeContext.theme_vars.colours.action_dark} />;
   };
 
   return (
