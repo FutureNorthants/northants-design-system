@@ -3,8 +3,13 @@ import { PaginationProps } from './Pagination.types';
 import * as Styles from './Pagination.styles';
 import { handleParams } from './../../helpers/url-helpers.js';
 
-const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, totalResults, resultsPerPage, postTo = 'search' }) => {
-  
+const Pagination: React.FunctionComponent<PaginationProps> = ({
+  currentPage,
+  totalResults,
+  resultsPerPage,
+  postTo = 'search',
+  buttonClickOverride,
+}) => {
   // given current page number and max page number, return list of numbers to display with ... to reduce range visible
   const pagination = (currentPage, maxPage) => {
     var current = currentPage;
@@ -49,7 +54,11 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, tot
   const numbers = pagination(currentPage, numberOfNumbers);
 
   const buttonClick = (pageNo) => {
-    handleParams(postTo, [{ key: 'page', value: pageNo }]);
+    if (buttonClickOverride) {
+      buttonClickOverride(pageNo);
+    } else {
+      handleParams(postTo, [{ key: 'page', value: pageNo }]);
+    }
   };
 
   if (numbers.length > 1) {
@@ -64,21 +73,17 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({ currentPage, tot
         <Styles.NumbersContainer>
           {numbers.map((v, i) => (
             <Styles.NumberContainer key={i}>
-              { v === '...' && (
-                <Styles.Ellipsis>...</Styles.Ellipsis>
-              )}
-              { v !== '...' && (
+              {v === '...' && <Styles.Ellipsis>...</Styles.Ellipsis>}
+              {v !== '...' && (
                 <Styles.Number
                   onClick={() => buttonClick(v)}
                   isCurrent={currentPage === v}
-                  title={
-                    currentPage === v ? 'This is the current page' : 'Go to page ' + v
-                  }
+                  title={currentPage === v ? 'This is the current page' : 'Go to page ' + v}
                 >
                   <Styles.VisuallyHidden>Page </Styles.VisuallyHidden>
                   {v}
                 </Styles.Number>
-              )}                
+              )}
             </Styles.NumberContainer>
           ))}
         </Styles.NumbersContainer>

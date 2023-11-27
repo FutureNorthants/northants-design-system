@@ -34,7 +34,7 @@ const FileDownload: React.FunctionComponent<FileDownloadProps> = ({
           <Styles.Type>
             {type == 'Microsoft Office - OOXML - Word Document'
               ? 'Word Document'
-              : type == 'Adobe Portable Document Format'
+              : type == 'Adobe Portable Document Format' || type == 'application/pdf'
               ? 'PDF'
               : type}
           </Styles.Type>

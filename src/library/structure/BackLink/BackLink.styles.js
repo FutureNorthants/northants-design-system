@@ -1,31 +1,29 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.a`
-
-
-
   display: inline-block;
   position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
   padding-left: 14px;
+  border: none;
+  background: transparent;
 
+  ${(props) => props.theme.fontStyles}
 
-  ${props => props.theme.fontStyles}
-
-  &:hover{
-      ${props => props.theme.linkStylesHover}
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    cursor: pointer;
   }
-  &:focus{
-      ${props => props.theme.linkStylesFocus}
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
   }
-  &:active{
-      ${props => props.theme.linkStylesActive}
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
   }
-
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -47,11 +45,11 @@ export const Container = styled.a`
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -14px;
     right: 0;
     bottom: -14px;
     left: 0;
   }
-`
+`;

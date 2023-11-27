@@ -31,6 +31,11 @@ export interface ColumnProps {
   isList?: boolean;
 
   /**
+   * Any optional classes to add to the column
+   */
+  classes?: string;
+
+  /**
    * The contents of the column
    */
   children?: React.ReactNode;
