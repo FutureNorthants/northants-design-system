@@ -2,12 +2,12 @@ const path = require('path');
 module.exports = {
   features: {
     postcss: false,
-    storyStoreV7: false,
+    storyStoreV7: true,
   },
 
   framework: {
     name: '@storybook/react-webpack5',
-    options: {}
+    options: {},
   },
 
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -19,7 +19,7 @@ module.exports = {
     // https://github.com/storybookjs/storybook/tree/master/addons/a11y
     // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
     '@etchteam/storybook-addon-status',
-    '@storybook/addon-mdx-gfm'
+    '@storybook/addon-mdx-gfm',
   ],
 
   env: (config) => ({
@@ -69,5 +69,5 @@ module.exports = {
 
   docs: {
     autodocs: true,
-  }
+  },
 };
