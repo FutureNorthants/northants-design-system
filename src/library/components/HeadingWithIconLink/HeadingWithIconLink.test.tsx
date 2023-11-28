@@ -19,16 +19,21 @@ describe('Test Component', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
+        <button>Button text</button>
         <HeadingWithIconLink {...props} />
       </ThemeProvider>
     );
 
   it('should render link, icon and title text correctly', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getByText } = renderComponent();
 
     const component = getByTestId('HeadingWithIconLink');
+    const text = getByText('Button text');
     const icon = getByTestId('Icon');
     const iconHover = getByTestId('IconHover');
+
+    // Move focus away from the icon
+    text.focus();
 
     expect(component).toBeVisible();
     expect(component).toHaveTextContent('Council Tax');

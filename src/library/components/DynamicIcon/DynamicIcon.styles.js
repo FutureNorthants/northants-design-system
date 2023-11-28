@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Icon = styled.span`
-  vertical-align: middle;
+  /* vertical-align: middle; */
   width: 100%;
+  display: block;
 `;
 
 export const IconWrapper = styled.span`
@@ -21,6 +22,10 @@ export const IconWrapper = styled.span`
   svg {
     width: 100%;
     height: auto;
+  }
+
+  .service-icon {
+    display: block;
   }
 
   .service-icon-hover {
