@@ -72,10 +72,10 @@ export const ArticleContent = styled.div`
   ${(props) => props.theme.fontStyles};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: ${(props) => (props.withImage ? '50%' : '100%')};
+    width: ${(props) => (props.$withImage ? '50%' : '100%')};
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-    width: ${(props) => (props.withImage ? '66%' : '100%')};
+    width: ${(props) => (props.$withImage ? '66%' : '100%')};
   }
 `;
 

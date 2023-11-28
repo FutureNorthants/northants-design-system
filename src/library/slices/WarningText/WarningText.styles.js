@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WarningText = styled.div`
   max-width: 750px;
@@ -6,16 +6,18 @@ export const WarningText = styled.div`
   margin-top: 65px;
   padding: 25px;
   padding-top: 0;
-  background: ${props => props.isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary}80;
-  border-radius: ${props => props.theme.theme_vars.border_radius};
+  background: ${(props) =>
+    props.$isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary}80;
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
 
   a {
-    color: ${props => props.theme.theme_vars.colours.black} !important;
+    color: ${(props) => props.theme.theme_vars.colours.black} !important;
   }
-`
+`;
 
 export const Title = styled.div`
-  background: ${props => props.isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary};
+  background: ${(props) =>
+    props.$isWarning ? props.theme.theme_vars.colours.focus : props.theme.theme_vars.colours.secondary};
   position: relative;
   margin-left: -25px;
   margin-bottom: 0;
@@ -26,12 +28,12 @@ export const Title = styled.div`
   font-size: 24px;
   font-size: 1.3rem;
   line-height: 1.25;
-  border-radius: ${props => props.theme.theme_vars.border_radius};
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
 
-  @media screen and (min-width: ${props => props.theme.theme_vars.breakpoints.m}){
-      font-size: 36px;
-      font-size: 1.5rem;
-      max-width: 960px;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    font-size: 36px;
+    font-size: 1.5rem;
+    max-width: 960px;
   }
-`
-export const Content = styled.div``
+`;
+export const Content = styled.div``;

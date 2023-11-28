@@ -3,20 +3,20 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   background: ${(props) =>
-    props.alertType === 'alert'
+    props.$alertType === 'alert'
       ? props.theme.theme_vars.colours.negative
-      : props.alertType === 'warning'
+      : props.$alertType === 'warning'
       ? props.theme.theme_vars.colours.focus
-      : props.alertType === 'positive'
+      : props.$alertType === 'positive'
       ? props.theme.theme_vars.colours.positive
-      : props.alertType === 'london_bridge'
+      : props.$alertType === 'london_bridge'
       ? props.theme.theme_vars.colours.black
       : props.theme.theme_vars.colours.negative};
   p,
   button {
     line-height: 1.3;
     color: ${(props) =>
-      props.alertType === 'warning'
+      props.$alertType === 'warning'
         ? props.theme.theme_vars.colours.black
         : props.theme.theme_vars.colours.white} !important;
   }
@@ -24,7 +24,7 @@ export const Container = styled.div`
   a {
     ${(props) => props.theme.linkStyles}
     color: ${(props) =>
-      props.alertType === 'warning'
+      props.$alertType === 'warning'
         ? props.theme.theme_vars.colours.black
         : props.theme.theme_vars.colours.white} !important;
 
@@ -34,11 +34,11 @@ export const Container = styled.div`
     &:focus {
       ${(props) => props.theme.linkStylesFocus}
       color: ${(props) =>
-        props.alertType === 'warning'
+        props.$alertType === 'warning'
           ? props.theme.theme_vars.colours.white
           : props.theme.theme_vars.colours.black} !important;
       background: ${(props) =>
-        props.alertType === 'warning'
+        props.$alertType === 'warning'
           ? props.theme.theme_vars.colours.action
           : props.theme.theme_vars.colours.focus} !important;
     }
@@ -49,7 +49,7 @@ export const Container = styled.div`
 
   svg {
     fill: ${(props) =>
-      props.alertType === 'warning'
+      props.$alertType === 'warning'
         ? props.theme.theme_vars.colours.black
         : props.theme.theme_vars.colours.white} !important;
   }
@@ -93,11 +93,11 @@ export const HideLink = styled.button`
     outline: none;
     border-radius: ${(props) => props.theme.theme_vars.border_radius};
     color: ${(props) =>
-      props.alertType === 'warning'
+      props.$alertType === 'warning'
         ? props.theme.theme_vars.colours.white
         : props.theme.theme_vars.colours.black} !important;
     background: ${(props) =>
-      props.alertType === 'warning'
+      props.$alertType === 'warning'
         ? props.theme.theme_vars.colours.action
         : props.theme.theme_vars.colours.focus} !important;
     border-bottom: 3px solid ${(props) => props.theme.theme_vars.colours.black};
@@ -105,7 +105,7 @@ export const HideLink = styled.button`
     svg {
       path {
         fill: ${(props) =>
-          props.alertType === 'warning'
+          props.$alertType === 'warning'
             ? props.theme.theme_vars.colours.white
             : props.theme.theme_vars.colours.black} !important;
       }

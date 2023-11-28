@@ -30,7 +30,7 @@ const BackToTop: React.FunctionComponent<BackToTopProps> = ({ isActive = false }
       {isActive && (
         <Styles.BackToTopButton
           onClick={scrollToTop}
-          visible={visible}
+          $visible={visible}
           data-testid="BackToTopButton"
           type="button"
           aria-label="Go to the top of the page"

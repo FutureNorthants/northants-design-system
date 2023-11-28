@@ -78,8 +78,8 @@ export const Number = styled.button`
     ${(props) => props.theme.linkStylesActive}
   }
 
-  text-decoration: ${(props) => (props.isCurrent ? 'none' : 'underline')};
-  font-weight: ${(props) => (props.isCurrent ? 'normal' : '700')};
+  text-decoration: ${(props) => (props.$isCurrent ? 'none' : 'underline')};
+  font-weight: ${(props) => (props.$isCurrent ? 'normal' : '700')};
 `;
 
 export const Ellipsis = styled.span``;

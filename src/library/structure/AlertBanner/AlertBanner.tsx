@@ -37,7 +37,7 @@ const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, al
   return (
     showAlert &&
     notServer && (
-      <Styles.Container alertType={alertType} data-testid="AlertBanner">
+      <Styles.Container $alertType={alertType} data-testid="AlertBanner">
         <MaxWidthContainer noBackground>
           <Styles.InnerContainer>
             <Styles.BannerContentContainer>
@@ -48,7 +48,7 @@ const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, al
             <Styles.HideLink
               title="Click to dismiss this alert banner"
               onClick={hideClickHandler}
-              alertType={alertType}
+              $alertType={alertType}
             >
               <CloseIcon
                 colourFill={

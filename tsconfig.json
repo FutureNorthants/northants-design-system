@@ -10,7 +10,8 @@
     "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "include": ["src/**/*", "custom.d.ts"],
   "files": ["custom.d.ts"],

@@ -16,7 +16,7 @@ const Contents: React.FunctionComponent<ContentsProps> = ({
           {content.url === currentPath ? (
             <Styles.CurrentPage>{content.title}</Styles.CurrentPage>
           ) : (
-            <Styles.Link href={content.url} active={content.url === currentPath}>
+            <Styles.Link href={content.url} $active={content.url === currentPath}>
               {content.title}
             </Styles.Link>
           )}

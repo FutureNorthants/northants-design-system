@@ -34,7 +34,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
           <Column small="full" medium="one-half" large="one-third" key={index}>
             <Styles.ServiceLink
               onClick={() => toggleActive(index)}
-              show={index === activeServiceLink}
+              $show={index === activeServiceLink}
               aria-label={index === activeServiceLink ? 'Close ' + serviceLink.title : 'View ' + serviceLink.title}
             >
               <DynamicIcon icon={serviceLink.iconKey} level={3} />
@@ -42,7 +42,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
               <span className="serviceLinkChevron"></span>
             </Styles.ServiceLink>
 
-            <Styles.QuickLinksContainer show={index === activeServiceLink} ref={refs.current[index]}>
+            <Styles.QuickLinksContainer $show={index === activeServiceLink} ref={refs.current[index]}>
               <Styles.QuickLinksInnerContainer>
                 <Row isList>
                   {serviceLink.quickLinksArray?.map((quickLink, quickLinkIndex) => (

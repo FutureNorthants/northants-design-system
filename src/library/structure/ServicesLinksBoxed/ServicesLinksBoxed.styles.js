@@ -9,17 +9,17 @@ export const ServiceLink = styled.button`
   align-items: center;
   color: ${(props) => props.theme.theme_vars.colours.action};
   background: ${(props) =>
-    props.show ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.grey_light};
+    props.$show ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.grey_light};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.large}
     ${(props) => props.theme.theme_vars.spacingSizes.medium};
   width: 100%;
   position: relative;
   border: ${(props) => props.theme.theme_vars.border_width_thin} solid
-    ${(props) => (props.show ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey)};
+    ${(props) => (props.$show ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey)};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
-  text-decoration-style: ${(props) => (props.show ? `dashed` : `solid`)};
+  text-decoration-style: ${(props) => (props.$show ? `dashed` : `solid`)};
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_light};
@@ -61,7 +61,7 @@ export const ServiceLink = styled.button`
       border-color: ${(props) => props.theme.theme_vars.colours.black};
       top: ${(props) => (props.show ? `10px` : `0`)};
       left: 6px;
-      transform: ${(props) => (props.show ? `rotate(-45deg)` : `rotate(135deg)`)};
+      transform: ${(props) => (props.$show ? `rotate(-45deg)` : `rotate(135deg)`)};
     }
   }
 `;
@@ -76,7 +76,7 @@ export const ServiceHeading = styled.span`
 `;
 
 export const QuickLinksContainer = styled.div`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${(props) => (props.$show ? 'block' : 'none')};
   position: absolute;
   overflow: hidden;
   top: auto;

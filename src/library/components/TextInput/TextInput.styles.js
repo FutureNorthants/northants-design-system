@@ -7,13 +7,13 @@ export const StyledTextInput = styled.input`
   margin-top: 0 !important;
   margin-bottom: 0;
   padding: ${(props) =>
-    props.isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small};
+    props.$isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small};
   border: solid
-    ${(props) => (props.isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
+    ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
   border-width: ${(props) =>
-    props.isErrored ? props.theme.theme_vars.border_width_error : props.theme.theme_vars.border_width};
+    props.$isErrored ? props.theme.theme_vars.border_width_error : props.theme.theme_vars.border_width};
   border-radius: ${(props) =>
-    props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
+    props.$isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
 
   &:focus {
     outline: none;

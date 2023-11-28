@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: start;
   align-items: stretch;
   margin: 0 -${(props) => props.theme.theme_vars.spacingSizes.small};
-  border: ${(props) => (props.hasBorder ? `1px solid ${props.theme.theme_vars.colours.grey}` : 'none')};
+  border: ${(props) => (props.$hasBorder ? `1px solid ${props.theme.theme_vars.colours.grey}` : 'none')};
   list-style: none;
   max-width: none !important;
   min-width: calc(
@@ -17,6 +17,6 @@ export const Container = styled.div`
   );
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-    flex-wrap: ${(props) => (props.hasWrap ? `wrap` : `nowrap`)};
+    flex-wrap: ${(props) => (props.$hasWrap ? `wrap` : `nowrap`)};
   }
 `;

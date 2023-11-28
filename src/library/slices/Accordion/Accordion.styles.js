@@ -70,7 +70,7 @@ export const SectionHeading = styled.div`
 `;
 
 const SectionButtonIsFilteredStyles = (props) => {
-  if (props.isFilter) {
+  if (props.$isFilter) {
     return css`
       ${(props) => props.theme.theme_vars.h4}
     `;

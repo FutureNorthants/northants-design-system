@@ -20,7 +20,7 @@ export const Fieldset = styled.fieldset`
 `;
 
 const hideLabel = (props) => {
-  if (props.labelHidden) {
+  if (props.$labelHidden) {
     return VisuallyHidden;
   }
 };
@@ -38,7 +38,7 @@ export const Legend = styled.legend`
 `;
 
 const hideHint = (props) => {
-  if (props.hintHidden) {
+  if (props.$hintHidden) {
     return VisuallyHidden;
   }
 };
@@ -121,7 +121,7 @@ export const CheckboxLabel = styled.label`
     border: solid;
     border-width: 0 0 5px 5px;
     border-top-color: transparent;
-    opacity: ${(props) => (props.isChecked ? 1 : 0)};
+    opacity: ${(props) => (props.$isChecked ? 1 : 0)};
     background: transparent;
   }
 `;

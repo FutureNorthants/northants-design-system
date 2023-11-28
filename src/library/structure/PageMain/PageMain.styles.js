@@ -26,7 +26,7 @@ export const Container = styled.main`
   & > h2,
   & > h3,
   & > h4 {
-    max-width: ${(props) => (props.fullWidthText ? `100%` : '750px')};
+    max-width: ${(props) => (props.$fullWidthText ? `100%` : '750px')};
   }
 
   li {

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { SearchbarProps } from "./Searchbar.types";
-import * as Styles from "./Searchbar.styles";
-import { handleParams } from "./../../helpers/url-helpers.js";
-import SearchIcon from "../../components/icons/SearchIcon/SearchIcon";
-import { NewsArticleFilterFields } from "./../NewsArticleFilterAccordion/NewsArticleFilterAccordionText";
-import Autocomplete from "../../components/Autocomplete/Autocomplete";
+import React, { useState, useEffect } from 'react';
+import { SearchbarProps } from './Searchbar.types';
+import * as Styles from './Searchbar.styles';
+import { handleParams } from './../../helpers/url-helpers.js';
+import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
+import { NewsArticleFilterFields } from './../NewsArticleFilterAccordion/NewsArticleFilterAccordionText';
+import Autocomplete from '../../components/Autocomplete/Autocomplete';
 
 const Searchbar: React.FunctionComponent<SearchbarProps> = ({
-  placeholder = "Search",
+  placeholder = 'Search',
   isLight,
   isLarge,
-  searchTerm = "",
+  searchTerm = '',
   submitInfo,
-  id = "search",
+  id = 'search',
   suggestions = [],
   minimumMatchLength = 2,
   maximumMatchesShown = 5,
@@ -53,15 +53,12 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
       setSubmit(false);
 
       let submitParams = submitInfo.params;
-      if (
-        initialSearchTerm !== inputSearchTerm ||
-        !(NewsArticleFilterFields.search.queryParamKey in submitParams)
-      ) {
+      if (initialSearchTerm !== inputSearchTerm || !(NewsArticleFilterFields.search.queryParamKey in submitParams)) {
         submitParams = { ...submitParams, searchTerm: inputSearchTerm };
         let keyValueFormat = Object.keys(submitParams).map(function (key) {
           return { key, value: submitParams[key] };
         });
-        handleParams(submitInfo.postTo, keyValueFormat, ["page"]);
+        handleParams(submitInfo.postTo, keyValueFormat, ['page']);
       }
     },
     [submit, submitInfo, initialSearchTerm, inputSearchTerm, handleParams] // dependencies that this function relies upon
@@ -74,7 +71,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
 
-    if (inputSearchTerm == "") {
+    if (inputSearchTerm == '') {
       if (!isErrored) {
         setIsErrored(true);
       }
@@ -89,7 +86,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
    * Render the component
    */
   return (
-    <Styles.Container data-testid="Searchbar" isLarge={isLarge}>
+    <Styles.Container data-testid="Searchbar" $isLarge={isLarge}>
       <form onSubmit={handleSubmit}>
         <div role="search">
           <Styles.InputWrapper>
@@ -111,8 +108,8 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
             <Styles.Button
               type="submit"
               value="Search"
-              isLarge={isLarge}
-              isLight={isLight}
+              $isLarge={isLarge}
+              $isLight={isLight}
               data-testid="SearchButton"
             >
               <SearchIcon colourFill="#fff" />

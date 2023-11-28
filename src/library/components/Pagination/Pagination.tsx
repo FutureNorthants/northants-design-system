@@ -77,7 +77,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
               {v !== '...' && (
                 <Styles.Number
                   onClick={() => buttonClick(v)}
-                  isCurrent={currentPage === v}
+                  $isCurrent={currentPage === v}
                   title={currentPage === v ? 'This is the current page' : 'Go to page ' + v}
                 >
                   <Styles.VisuallyHidden>Page </Styles.VisuallyHidden>

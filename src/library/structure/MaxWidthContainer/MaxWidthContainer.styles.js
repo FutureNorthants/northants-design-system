@@ -10,12 +10,12 @@ const handleContainerPadding = (noBackground, noPadding) => {
 
 export const Container = styled.div`
   background: ${(props) =>
-    props.noBackground
+    props.$noBackground
       ? 'transparent'
       : props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.grey_light + '7a'
       : props.theme.theme_vars.colours.white};
-  overflow: ${(props) => (props.noPadding ? 'hidden' : 'visible')};
+  overflow: ${(props) => (props.$noPadding ? 'hidden' : 'visible')};
   padding-bottom: ${({ noBackground, noPadding }) => handleContainerPadding(noBackground, noPadding)};
 `;
 
@@ -23,7 +23,7 @@ export const MaxWidth = styled.div`
   ${(props) => props.theme.fontStyles}
   padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  overflow: ${(props) => (props.overflowVisible ? 'visible' : 'hidden')};
+  overflow: ${(props) => (props.$overflowVisible ? 'visible' : 'hidden')};
 
   pre {
     font-family: monospace;

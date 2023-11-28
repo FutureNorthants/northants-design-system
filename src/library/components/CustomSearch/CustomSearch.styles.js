@@ -16,7 +16,7 @@ export const Label = styled.label`
   font-weight: bold;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   ${(props) =>
-    props.hasHiddenLabel
+    props.$hasHiddenLabel
       ? VisuallyHidden
       : `display: inline-block; padding-bottom: ${props.theme.theme_vars.spacingSizes.small}`}
 `;
