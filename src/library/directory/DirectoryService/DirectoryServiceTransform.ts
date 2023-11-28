@@ -198,13 +198,16 @@ export const transformTaxonomies = (service_taxonomys: ServiceTaxonomy[], taxono
   return details;
 };
 
-export const transformAge = (age: number, ageInMonths: boolean = false) => {
+export const transformAge = (age: number, ageInMonths: boolean = false): string => {
   if (age === 0) {
-    return age;
+    return age.toString();
   }
   if (ageInMonths) {
     if (age > 36) {
-      return Math.ceil(age / 12) + ' years';
+      if (age % 12 === 0) {
+        return Math.ceil(age / 12) + ' years';
+      }
+      return Math.floor(age / 12) + ' years and ' + (age % 12) + (age % 12 === 1 ? ' month' : ' months');
     }
     return `${age} months`;
   }
