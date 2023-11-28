@@ -13,6 +13,8 @@ const config: StorybookConfig = {
 
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 
+  staticDirs: ['../public'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -20,7 +22,6 @@ const config: StorybookConfig = {
     // https://github.com/storybookjs/storybook/tree/master/addons/a11y
     // https://storybook.js.org/addons/@etchteam/storybook-addon-status/
     '@etchteam/storybook-addon-status',
-    '@storybook/addon-mdx-gfm',
   ],
 
   env: (config) => ({
