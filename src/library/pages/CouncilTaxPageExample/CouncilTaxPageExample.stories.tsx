@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CouncilTaxPageExampleProps> = (args) => <CouncilTaxPageExample {...args} />;
+const Template: StoryFn<CouncilTaxPageExampleProps> = (args) => <CouncilTaxPageExample {...args} />;
 
 export const AddressDropdown = Template.bind({});
 AddressDropdown.args = {

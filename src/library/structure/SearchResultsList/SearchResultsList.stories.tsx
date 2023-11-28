@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import SearchResultsList from './SearchResultsList';
 import { SearchResultsListProps } from './SearchResultsList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<SearchResultsListProps> = (args) => (
+const Template: StoryFn<SearchResultsListProps> = (args) => (
   <SBPadding>
     <SearchResultsList {...args} />
   </SBPadding>

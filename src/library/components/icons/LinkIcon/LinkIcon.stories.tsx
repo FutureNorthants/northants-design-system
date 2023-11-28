@@ -1,8 +1,7 @@
-
-import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-import LinkIcon from "./LinkIcon";
-import { LinkIconProps } from "./LinkIcon.types";
+import React from 'react';
+import { StoryFn } from '@storybook/react';
+import LinkIcon from './LinkIcon';
+import { LinkIconProps } from './LinkIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
@@ -11,13 +10,17 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 };
 
-const Template: Story<LinkIconProps> = (args) => <SBPadding><LinkIcon {...args} /></SBPadding>;
+const Template: StoryFn<LinkIconProps> = (args) => (
+  <SBPadding>
+    <LinkIcon {...args} />
+  </SBPadding>
+);
 
-export const ExampleLinkIcon = Template.bind({});    
+export const ExampleLinkIcon = Template.bind({});
 ExampleLinkIcon.args = {
-  colourFill: "#111"
+  colourFill: '#111',
 };

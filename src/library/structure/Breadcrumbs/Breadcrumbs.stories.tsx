@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Breadcrumbs from './Breadcrumbs';
 import { BreadcrumbsProps } from './Breadcrumbs.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<BreadcrumbsProps> = (args) => (
+const Template: StoryFn<BreadcrumbsProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <Breadcrumbs {...args} />

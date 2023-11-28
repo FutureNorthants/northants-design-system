@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import EmailIcon from './EmailIcon';
 import { EmailIconProps } from './EmailIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<EmailIconProps> = (args) => (
+const Template: StoryFn<EmailIconProps> = (args) => (
   <SBPadding>
     <EmailIcon {...args} />
   </SBPadding>

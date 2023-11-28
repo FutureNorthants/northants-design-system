@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DropDownFilter from './DropDownFilter';
 import { DropDownFilterProps } from './DropDownFilter.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<DropDownFilterProps> = (args) => (
+const Template: StoryFn<DropDownFilterProps> = (args) => (
   <SBPadding>
     <DropDownFilter {...args} />
   </SBPadding>

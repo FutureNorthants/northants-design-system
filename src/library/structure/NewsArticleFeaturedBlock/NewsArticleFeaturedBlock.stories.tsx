@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import NewsArticleFeaturedBlock from './NewsArticleFeaturedBlock';
 import { NewsArticleFeaturedBlockProps } from './NewsArticleFeaturedBlock.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<NewsArticleFeaturedBlockProps> = (args) => (
+const Template: StoryFn<NewsArticleFeaturedBlockProps> = (args) => (
   <MaxWidthContainer>
     <NewsArticleFeaturedBlock {...args} />
   </MaxWidthContainer>

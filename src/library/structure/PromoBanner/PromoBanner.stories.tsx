@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import PromoBanner from './PromoBanner';
 import { PromoBannerProps } from './PromoBanner.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -35,7 +35,7 @@ export default {
   },
 };
 
-const Template: Story<PromoBannerProps> = (args) => (
+const Template: StoryFn<PromoBannerProps> = (args) => (
   <SBPadding>
     <PromoBanner {...args}>{PromoBannerContent}</PromoBanner>
   </SBPadding>

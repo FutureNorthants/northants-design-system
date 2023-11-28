@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import WebsiteIcon from './WebsiteIcon';
 import { WebsiteIconProps } from './WebsiteIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<WebsiteIconProps> = (args) => (
+const Template: StoryFn<WebsiteIconProps> = (args) => (
   <SBPadding>
     <WebsiteIcon {...args} />
   </SBPadding>

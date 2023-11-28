@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DirectoryService from './DirectoryService';
 import { DirectoryServiceProps } from './DirectoryService.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<DirectoryServiceProps> = (args) => (
+const Template: StoryFn<DirectoryServiceProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import CustomSearch from './CustomSearch';
 import { CustomSearchProps } from './CustomSearch.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<CustomSearchProps> = (args) => (
+const Template: StoryFn<CustomSearchProps> = (args) => (
   <SBPadding>
     <CustomSearch {...args} />
   </SBPadding>

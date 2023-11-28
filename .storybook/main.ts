@@ -1,7 +1,8 @@
+import { StorybookConfig } from '@storybook/react-webpack5';
+
 const path = require('path');
-module.exports = {
+const config: StorybookConfig = {
   features: {
-    postcss: false,
     storyStoreV7: true,
   },
 
@@ -28,12 +29,12 @@ module.exports = {
   }),
 
   webpackFinal: async (config) => {
-    config.module.rules.push({
+    config.module?.rules?.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });
-    config.module.rules.push({
+    config.module?.rules?.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve('babel-loader'),
       options: {
@@ -63,7 +64,7 @@ module.exports = {
         ],
       },
     });
-    config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve?.extensions?.push('.ts', '.tsx');
     return config;
   },
 
@@ -71,3 +72,5 @@ module.exports = {
     autodocs: true,
   },
 };
+
+export default config;

@@ -1,8 +1,7 @@
-
-import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-import DownloadFileIcon from "./DownloadFileIcon";
-import { DownloadFileIconProps } from "./DownloadFileIcon.types";
+import React from 'react';
+import { StoryFn } from '@storybook/react';
+import DownloadFileIcon from './DownloadFileIcon';
+import { DownloadFileIconProps } from './DownloadFileIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
@@ -11,13 +10,17 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 };
 
-const Template: Story<DownloadFileIconProps> = (args) => <SBPadding><DownloadFileIcon {...args} /></SBPadding>;
+const Template: StoryFn<DownloadFileIconProps> = (args) => (
+  <SBPadding>
+    <DownloadFileIcon {...args} />
+  </SBPadding>
+);
 
-export const ExampleDownloadFileIcon = Template.bind({});    
+export const ExampleDownloadFileIcon = Template.bind({});
 ExampleDownloadFileIcon.args = {
-  colourFill: "#111"
+  colourFill: '#111',
 };

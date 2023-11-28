@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHero from './HomeHero';
 import { HomeHeroProps } from './HomeHero.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
 };
 
-const Template: Story<HomeHeroProps> = (args) => <HomeHero {...args}></HomeHero>;
+const Template: StoryFn<HomeHeroProps> = (args) => <HomeHero {...args}></HomeHero>;
 
 export const HomeHeroExample0Links = Template.bind({});
 HomeHeroExample0Links.args = {

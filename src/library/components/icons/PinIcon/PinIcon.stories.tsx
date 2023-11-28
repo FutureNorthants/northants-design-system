@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import PinIcon from './PinIcon';
 import { PinIconProps } from './PinIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<PinIconProps> = (args) => (
+const Template: StoryFn<PinIconProps> = (args) => (
   <SBPadding>
     <PinIcon {...args} />
   </SBPadding>

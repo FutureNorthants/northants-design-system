@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import SectionLinksSidebar from './SectionLinksSidebar';
 import { SectionLinksSidebarProps } from './SectionLinksSidebar.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<SectionLinksSidebarProps> = (args) => (
+const Template: StoryFn<SectionLinksSidebarProps> = (args) => (
   <SBPadding>
     <div style={{ maxWidth: '340px' }}>
       <SectionLinksSidebar {...args} />

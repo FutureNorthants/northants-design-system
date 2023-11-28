@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Cards from './Cards';
 import { CardsProps } from './Cards.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -23,7 +23,7 @@ const longContent = `<p>
       magna, in congue dolor diam sit amet elit. Sed sit amet tortor ut urna finibus fermentum id in libero.
     </p>`;
 
-const Template: Story<CardsProps> = (args) => (
+const Template: StoryFn<CardsProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <Cards {...args} />

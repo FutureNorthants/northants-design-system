@@ -30,7 +30,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ServiceLandingPageExampleProps> = (args) => <ServiceLandingPageExample {...args} />;
+const Template: StoryFn<ServiceLandingPageExampleProps> = (args) => <ServiceLandingPageExample {...args} />;
 
 export const BinCollectionExample = Template.bind({});
 BinCollectionExample.args = {

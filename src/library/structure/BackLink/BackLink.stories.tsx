@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import BackLink from './BackLink';
 import { BackLinkProps } from './BackLink.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<BackLinkProps> = (args) => (
+const Template: StoryFn<BackLinkProps> = (args) => (
   <SBPadding>
     <BackLink {...args} />
   </SBPadding>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import ServicesLinksList from './ServicesLinksList';
 import { ServicesLinksListProps } from './ServicesLinksList.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<ServicesLinksListProps> = (args) => (
+const Template: StoryFn<ServicesLinksListProps> = (args) => (
   <MaxWidthContainer overflowVisible={true}>
     <ServicesLinksList {...args} />
   </MaxWidthContainer>

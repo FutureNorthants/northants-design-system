@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<HomePageProps> = (args) => <HomePage {...args} />;
+const Template: StoryFn<HomePageProps> = (args) => <HomePage {...args} />;
 
 export const ExampleHome = Template.bind({});
 ExampleHome.args = {

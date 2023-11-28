@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCodeAddressSearch from './PostCodeAddressSearch';
 import { PostCodeAddressSearchProps } from './PostCodeAddressSearch.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
@@ -24,7 +24,7 @@ const value = {
   },
 };
 
-const Template: Story<PostCodeAddressSearchProps> = (args) => (
+const Template: StoryFn<PostCodeAddressSearchProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PostCodeAddressProvider value={value}>

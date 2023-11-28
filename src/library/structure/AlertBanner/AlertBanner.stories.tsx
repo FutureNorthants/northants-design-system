@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import AlertBanner from './AlertBanner';
 import { AlertBannerProps } from './AlertBanner.types';
 import Button from '../../components/Button/Button';
@@ -17,16 +17,17 @@ export default {
 
 const childrenMessage = (
   <p>
-    Coronavirus | National lockdown: stay at home. <a href="javascript:;">Learn what this means for residents and workers here</a>
+    Coronavirus | National lockdown: stay at home.{' '}
+    <a href="javascript:;">Learn what this means for residents and workers here</a>
   </p>
 );
 
 const resetAlert = (event) => {
-    window.localStorage.clear();
-    window.location.replace(window.location.href.split('&')[0]);
+  window.localStorage.clear();
+  window.location.replace(window.location.href.split('&')[0]);
 };
 
-const Template: Story<AlertBannerProps> = (args) => (
+const Template: StoryFn<AlertBannerProps> = (args) => (
   <>
     <AlertBanner {...args} />
 
@@ -35,7 +36,9 @@ const Template: Story<AlertBannerProps> = (args) => (
       <br />
       <p>Once this unique alert has been hidden it will not be shown again on this device.</p>
       <br />
-      <Button url={null} onClick={resetAlert}>Click to reset</Button>
+      <Button url={null} onClick={resetAlert}>
+        Click to reset
+      </Button>
     </MaxWidthContainer>
   </>
 );
