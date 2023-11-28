@@ -26,10 +26,11 @@ describe('Image Component', () => {
     );
 
   it('should display the image and caption', () => {
-    const { getByRole, getByTestId, getByAltText } = renderComponent();
+    const { getByRole, getByTestId, getByAltText, getByText } = renderComponent();
     const image = getByAltText('The image alt text');
     const imageContainer = getByTestId('ImageContainer');
     const figure = getByRole('figure');
+    const caption = getByText('The caption for the image');
 
     // Lazy image loads the placeholder image (foo.jpg)
     expect(image).toBeVisible();
@@ -38,7 +39,8 @@ describe('Image Component', () => {
 
     expect(imageContainer).toHaveStyle('padding-top: 75%');
 
-    expect(figure).toHaveTextContent('The caption for the image');
+    expect(figure).not.toHaveStyle(`border-bottom: 1px solid ${west_theme.theme_vars.colours.grey}`);
+    expect(caption).toHaveStyle(`border-bottom: 1px solid ${west_theme.theme_vars.colours.grey}`);
   });
 
   it('should display the wide image without caption', () => {
@@ -58,6 +60,7 @@ describe('Image Component', () => {
     expect(imageContainer).toHaveStyle('padding-top: 56.25%');
 
     expect(figure).not.toHaveTextContent;
+    expect(figure).not.toHaveStyle(`border-bottom: 1px solid ${west_theme.theme_vars.colours.grey}`);
   });
 
   it('should display the banner image', () => {

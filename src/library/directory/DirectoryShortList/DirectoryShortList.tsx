@@ -8,6 +8,7 @@ import Column from '../../components/Column/Column';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformService } from '../DirectoryService/DirectoryServiceTransform';
 import QRCode from 'react-qr-code';
+import Heading from '../../components/Heading/Heading';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
@@ -52,12 +53,37 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <div>{favourite.snippet}</div>
+                        {favourite.addresses?.length > 0 && (
+                          <div>
+                            <Styles.SubTitle>Address</Styles.SubTitle>
+                            {favourite.addresses?.length === 1 ? (
+                              <p>
+                                {Object.values(favourite.addresses[0])
+                                  .filter((item) => item !== '' && item !== favourite.addresses[0].id)
+                                  .join(', ')}
+                              </p>
+                            ) : (
+                              <ul>
+                                {favourite.addresses.map((address) => (
+                                  <li key={address.id}>
+                                    {Object.values(address)
+                                      .filter((item) => item !== '' && item !== address.id)
+                                      .join(', ')}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        )}
                       </Column>
                       <Column small="full" medium="full" large="one-half">
                         <SummaryList
                           terms={transformService(favourite.email, favourite.website, favourite.phone)}
                           hasMargin={false}
                         />
+                        {favourite.fees && (
+                          <SummaryList terms={[{ term: 'Cost', detail: favourite.fees }]} hasMargin={false} />
+                        )}
                       </Column>
                       <Column small="full" medium="full" large="full">
                         <Styles.AddContainer>
@@ -68,6 +94,7 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                             email={favourite.email}
                             website={favourite.website}
                             phone={favourite.phone}
+                            addresses={favourite.addresses}
                           />
                         </Styles.AddContainer>
                       </Column>

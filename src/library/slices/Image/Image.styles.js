@@ -6,7 +6,6 @@ export const Container = styled.figure`
     props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.white
       : props.theme.theme_vars.colours.grey_light};
-  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   float: none;
@@ -61,4 +60,5 @@ export const Caption = styled.figcaption`
   font-size: 0.9rem !important;
   color: ${(props) => props.theme.theme_vars.colours.black};
   padding: 15px;
+  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticMapProps } from './StaticMap.types';
 import * as Styles from './StaticMap.styles';
+import { AcceptCookies } from '../../structure/CookieBanner/CookieBanner';
 
 /**
  * A static Google map with optional markers
@@ -28,7 +29,9 @@ const StaticMap: React.FunctionComponent<StaticMapProps> = ({
   return (
     <Styles.Container data-testid="StaticMap">
       <Styles.Message>
-        <span>To interact with the map, you need to accept cookies.</span>
+        <span>
+          To interact with the map, you need to <Styles.Cookies onClick={AcceptCookies}>accept cookies</Styles.Cookies>.
+        </span>
       </Styles.Message>
       <Styles.MapImage
         src={`https://maps.googleapis.com/maps/api/staticmap?center=${centre}&size=${size}&zoom=${zoom}&maptype=${mapType}${markerPath}&key=${apiKey}`}
