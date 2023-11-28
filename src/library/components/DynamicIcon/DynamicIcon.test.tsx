@@ -18,7 +18,7 @@ describe('Dynamic Icon', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <button>Some text</button>
+        <button>Button text</button>
         <DynamicIcon {...props} />
       </ThemeProvider>
     );
@@ -26,7 +26,7 @@ describe('Dynamic Icon', () => {
   it('should render the service icon', () => {
     const { getByTestId, getByText } = renderComponent();
 
-    const text = getByText('Some text');
+    const text = getByText('Button text');
     const serviceIcon = getByTestId('Icon');
     const serviceIconHover = getByTestId('IconHover');
 
