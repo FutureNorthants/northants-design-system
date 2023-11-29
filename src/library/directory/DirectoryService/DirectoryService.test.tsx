@@ -126,6 +126,18 @@ describe('Directory Service', () => {
     expect(component).toHaveTextContent('Suitable for ages from 0 to 18 years');
   });
 
+  it('should show the age in years and months when not exactly a year', () => {
+    props.eligibilitys[0].minimum_age = 24;
+    props.eligibilitys[0].maximum_age = 47;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('DirectoryService');
+
+    expect(component).toHaveTextContent('Age range');
+    expect(component).toHaveTextContent('Suitable for ages from 24 months to 3 years and 11 months');
+  });
+
   it('should show the opening hours', () => {
     const { getByTestId, getByText } = renderComponent();
     const component = getByTestId('DirectoryService');
