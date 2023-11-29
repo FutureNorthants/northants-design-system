@@ -83,7 +83,7 @@ export const CategoryInputLabel = styled.label`
     height: 40px;
     border: 2px solid currentColor;
     background: transparent;
-    border-radius: ${(props) => (props.singleSelection ? '100%' : 0)};
+    border-radius: ${(props) => (props.$singleSelection ? '100%' : 0)};
   }
 
   &:after {

@@ -16,7 +16,7 @@ export const Container = styled.div`
       ? props.theme.theme_vars.colours.grey_light + '7a'
       : props.theme.theme_vars.colours.white};
   overflow: ${(props) => (props.$noPadding ? 'hidden' : 'visible')};
-  padding-bottom: ${({ noBackground, noPadding }) => handleContainerPadding(noBackground, noPadding)};
+  padding-bottom: ${({ $noBackground, $noPadding }) => handleContainerPadding($noBackground, $noPadding)};
 `;
 
 export const MaxWidth = styled.div`

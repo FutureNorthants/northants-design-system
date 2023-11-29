@@ -91,11 +91,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           </Styles.LogoWrapper>
           {(hasNewsLink || allServicesLink) && (
             <Styles.LinksWrapper>
-              {hasNewsLink && (                
-                <Styles.Link href="/news">
-                News
-                </Styles.Link>
-              )}
+              {hasNewsLink && <Styles.Link href="/news">News</Styles.Link>}
               {allServicesLink && (
                 <Styles.Link href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
                   All services

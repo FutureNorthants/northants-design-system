@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "declaration": true,
     "declarationDir": "build",
     "module": "esnext",
@@ -11,9 +10,9 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom", "@testing-library/jest-dom/jest-globals"]
   },
-  "include": ["src/**/*", "custom.d.ts"],
+  "include": ["src/**/*", "custom.d.ts", "jest.setup.ts"],
   "files": ["custom.d.ts"],
   "exclude": ["node_modules", "build", "storybook-static", "src/**/*.stories.tsx", "src/**/*.test.tsx"]
 }
