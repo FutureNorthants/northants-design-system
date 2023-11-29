@@ -80,7 +80,7 @@ export const PromoImage = styled.span`
   width: 100%;
   height: ${imageHeightMobile}px;
   overflow: hidden;
-  background-image: url('${(props) => props.background}');
+  background-image: url('${(props) => props.$background}');
   background-size: cover;
   background-position: center;
   justify-self: center;

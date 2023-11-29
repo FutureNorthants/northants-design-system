@@ -18,7 +18,7 @@ export const Container = styled.div`
   padding-bottom: 15px;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    background-image: url('${(props) => props.image}');
+    background-image: url('${(props) => props.$image}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

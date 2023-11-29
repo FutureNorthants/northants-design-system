@@ -27,7 +27,7 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
                     {(src) => (
                       <Styles.ImageContainer
                         className="news-article-list__image"
-                        background={src}
+                        $background={src}
                         role="img"
                         aria-label={article.imageAltText ? article.imageAltText : 'News article'}
                       ></Styles.ImageContainer>

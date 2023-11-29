@@ -58,7 +58,7 @@ const ServiceLinksBoxed: React.FunctionComponent<ServiceLinksBoxedProps> = ({ se
                 </Row>
               </Styles.QuickLinksInnerContainer>
             </Styles.QuickLinksContainer>
-            <Styles.Separator margin={index === activeServiceLink ? bottomMargin : 0} />
+            <Styles.Separator $margin={index === activeServiceLink ? bottomMargin : 0} />
           </Column>
         ))}
       </Row>

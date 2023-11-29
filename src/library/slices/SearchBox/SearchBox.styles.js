@@ -7,7 +7,7 @@ export const Container = styled.div`
   ${(props) => props.theme.fontStyles}
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    background: url('${(props) => props.image}') no-repeat center center;
+    background: url('${(props) => props.$image}') no-repeat center center;
     background-size: cover;
     padding-top: ${(props) => (props.image ? '8rem' : 0)};
     padding-bottom: ${(props) => (props.image ? '8rem' : 0)};

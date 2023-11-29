@@ -33,7 +33,7 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
         }}
       >
         {(src) => (
-          <Styles.Container image={src} $backgroundBox={backgroundBox} data-testid="HeroImage">
+          <Styles.Container $image={src} $backgroundBox={backgroundBox} data-testid="HeroImage">
             <Styles.InnerContainer>
               <Styles.Overlay $backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
                 {breadcrumb && (

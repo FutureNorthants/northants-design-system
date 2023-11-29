@@ -127,6 +127,6 @@ export const QuickLink = styled.a`
 `;
 
 export const Separator = styled.div`
-  margin-bottom: ${(props) => props.margin ?? 0}px;
-  padding-bottom: ${(props) => (props.margin ? props.theme.theme_vars.spacingSizes.medium : 0)};
+  margin-bottom: ${(props) => props.$margin ?? 0}px;
+  padding-bottom: ${(props) => (props.$margin ? props.theme.theme_vars.spacingSizes.medium : 0)};
 `;

@@ -45,7 +45,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
           {(src) => (
             <Styles.Container
               className={random !== 999 ? 'loaded' : 'loading'}
-              image={src}
+              $image={src}
               title={random !== 999 && imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ''}
             >
               <Styles.StyledMaxWidthContainer>
