@@ -14,5 +14,5 @@
   },
   "include": ["src/**/*", "custom.d.ts", "jest.setup.ts"],
   "files": ["custom.d.ts"],
-  "exclude": ["node_modules", "build", "storybook-static", "src/**/*.stories.tsx", "src/**/*.test.tsx"]
+  "exclude": ["node_modules", "build", "storybook-static", "src/**/*.stories.tsx"]
 }
