@@ -48,9 +48,9 @@ export const ExampleDirectoryServiceList = Template.bind({});
 ExampleDirectoryServiceList.args = {
   services: [
     { ...ExampleService, ...{ id: 'abc123' } },
-    { ...ExampleService, ...{ id: 'abc124' } },
-    { ...ExampleService, ...{ id: 'abc125' } },
-    { ...ExampleService, ...{ id: 'abc126' } },
+    { ...ExampleService, ...{ id: 'abc124', eligibilitys: [{ minimum_age: 47, maximum_age: 60 }] } },
+    { ...ExampleService, ...{ id: 'abc125', eligibilitys: [{ minimum_age: 12, maximum_age: 37 }] } },
+    { ...ExampleService, ...{ id: 'abc126', eligibilitys: [{ minimum_age: 12, maximum_age: 38 }] } },
     { ...ExampleService, ...{ id: 'abc127' } },
   ],
   totalResults: 156,
