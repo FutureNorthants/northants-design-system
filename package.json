@@ -1,17 +1,17 @@
 {
   "name": "northants-design-system",
-  "version": "0.4.10",
+  "version": "1.0.0-alpha.0",
   "private": false,
   "description": "Design system for West & North Northamptonshire Councils, two unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.",
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wearefuturegov/northants-design-system.git"
+    "url": "git+https://github.com/FutureNorthants/northants-design-system.git"
   },
   "author": "West Northants Council & FutureGov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wearefuturegov/northants-design-system/issues"
+    "url": "https://github.com/FutureNorthants/northants-design-system/issues"
   },
   "homepage": "https://northants-design-system.netlify.app/",
   "module": "build/index.mjs.js",
