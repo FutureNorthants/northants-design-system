@@ -142,6 +142,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                   size: size,
                 })}
                 aria-required={required ? 'true' : 'false'}
+                aria-invalid={isErrored ? 'true' : 'false'}
               />
             </div>
             {
