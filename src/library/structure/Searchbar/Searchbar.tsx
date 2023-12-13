@@ -106,6 +106,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
               hasHiddenLabel={true}
               required={true}
               errorText="The search field is required."
+              isLight={isLight}
             />
             <Styles.Button
               type="submit"

@@ -28,6 +28,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   onSelect,
   onChange,
   required = false,
+  isLight = true,
 }) => {
   /**
    * We save the input value in state or we can't cope with leaving the input
@@ -119,7 +120,15 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
             <Styles.AutocompleteLabel {...getLabelProps()} hasHiddenLabel={hasHiddenLabel}>
               {labelText ? labelText : placeholder}
             </Styles.AutocompleteLabel>
-            {isErrored && errorText ? <ErrorText>{errorText}</ErrorText> : ''}
+            {isErrored && errorText && (
+              <>
+                {isLight ? (
+                  <ErrorText>{errorText}</ErrorText>
+                ) : (
+                  <Styles.LightErrorText>{errorText}</Styles.LightErrorText>
+                )}
+              </>
+            )}
             <div {...getRootProps(undefined, { suppressRefError: true })}>
               <Styles.AutocompleteTextInput
                 {...getInputProps({

@@ -88,4 +88,9 @@ export interface AutocompleteProps {
    * Is the field required?
    */
   required?: boolean;
+
+  /**
+   * Is the autocomplete on a dark background?
+   */
+  isLight?: boolean;
 }
