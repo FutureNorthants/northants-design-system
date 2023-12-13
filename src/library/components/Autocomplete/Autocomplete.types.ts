@@ -90,7 +90,7 @@ export interface AutocompleteProps {
   required?: boolean;
 
   /**
-   * Is the autocomplete on a dark background?
+   * Is the autocomplete on a light background?
    */
-  isLight?: boolean;
+  hasLightBackground?: boolean;
 }
