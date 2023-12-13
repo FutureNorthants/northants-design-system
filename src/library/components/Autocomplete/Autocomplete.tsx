@@ -27,6 +27,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   hasAdjacentButton = false,
   onSelect,
   onChange,
+  required = false,
 }) => {
   /**
    * We save the input value in state or we can't cope with leaving the input
@@ -131,6 +132,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                   hasAdjacentButton: hasAdjacentButton,
                   size: size,
                 })}
+                aria-required={required ? 'true' : 'false'}
               />
             </div>
             {

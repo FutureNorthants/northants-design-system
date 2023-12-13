@@ -83,4 +83,9 @@ export interface AutocompleteProps {
    * Callback function for when input value changes
    */
   onChange?: (inputValue: string) => void;
+
+  /**
+   * Is the field required?
+   */
+  required?: boolean;
 }
