@@ -36,11 +36,11 @@ describe('NewsArticleFeaturedBlock structure', () => {
     expect(imageSpans).toHaveLength(storydata.NewsArticleData.length);
     imageSpans.forEach((imageSpan, index) => {
       expect(imageSpan).toBeVisible();
-      expect(imageSpan).toHaveStyle('background-image: url(' + storydata.NewsArticleData[index].image72x41 + ')');
+      // expect(imageSpan).toHaveAttribute('alt', storydata.NewsArticleData[index].imageAltText);
       if (storydata.NewsArticleData[index].imageAltText) {
-        expect(imageSpan).toHaveAttribute('aria-label', storydata.NewsArticleData[index].imageAltText);
+        expect(imageSpan).toHaveAttribute('alt', storydata.NewsArticleData[index].imageAltText);
       } else {
-        expect(imageSpan).toHaveAttribute('aria-label', '');
+        expect(imageSpan).toHaveAttribute('alt', '');
       }
 
       const para = getByText(storydata.NewsArticleData[index].title);

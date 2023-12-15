@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { VisuallyHidden } from './../../helpers/style-helpers';
 
 export const Container = styled.div`
+  position: relative;
+  z-index: 1;
   padding: 0;
   margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   ${(props) => props.theme.fontStyles}
@@ -9,10 +11,10 @@ export const Container = styled.div`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     background: url('${(props) => props.$image}') no-repeat center center;
     background-size: cover;
-    padding-top: ${(props) => (props.image ? '8rem' : 0)};
-    padding-bottom: ${(props) => (props.image ? '8rem' : 0)};
-    padding-left: ${(props) => (props.image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
-    padding-right: ${(props) => (props.image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
+    padding-top: ${(props) => (props.$image ? '8rem' : 0)};
+    padding-bottom: ${(props) => (props.$image ? '8rem' : 0)};
+    padding-left: ${(props) => (props.$image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
+    padding-right: ${(props) => (props.$image ? props.theme.theme_vars.spacingSizes.x_large : 0)};
   }
 
   h2 {
@@ -36,6 +38,8 @@ export const LinkContainer = styled.div`
 `;
 
 export const Inner = styled.div`
+  position: relative;
+  z-index: 2;
   background-color: ${(props) =>
     props.theme.cardinal_name === 'west'
       ? props.theme.theme_vars.colours.grey_light

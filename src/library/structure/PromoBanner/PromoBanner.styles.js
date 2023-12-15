@@ -29,28 +29,27 @@ export const Container = styled.div`
 `;
 
 export const ImageLink = styled.a`
-  background-image: url('${(props) => props.$img}');
-  background-size: cover;
-  background-position: center;
-  min-height: 200px;
+  padding-top: 56.25%;
+  height: 100%;
+  position: relative;
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: 50%;
-    min-height: 300px;
+    height: 100%;
+    padding-top: 0;
   }
 `;
 
 export const Wrapper = styled.div`
-  width: calc(100% - 30px);
   padding: 15px;
 
   h2 {
     margin-top: 0;
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: calc(50% - 60px);
     padding: 30px;
   }
 `;

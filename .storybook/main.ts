@@ -7,8 +7,12 @@ const config: StorybookConfig = {
   },
 
   framework: {
-    name: '@storybook/react-webpack5',
-    options: {},
+    name: '@storybook/nextjs',
+    options: {
+      builder: {
+        useSWC: true,
+      },
+    },
   },
 
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],

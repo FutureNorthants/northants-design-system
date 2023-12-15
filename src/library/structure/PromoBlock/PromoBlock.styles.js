@@ -78,20 +78,22 @@ export const PromoTile = styled.a`
 export const PromoImage = styled.span`
   display: block;
   width: 100%;
-  height: ${imageHeightMobile}px;
+  /* height: ${imageHeightMobile}px; */
   overflow: hidden;
-  background-image: url('${(props) => props.$background}');
+  padding-top: 56.25%;
+  /* background-image: url('${(props) => props.$background}');
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   justify-self: center;
+  position: relative;
 
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+  /* @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     min-height: ${imageHeightDesktop}px;
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     flex: none;
     height: ${imageHeightDesktop}px;
-  }
+  } */
 `;
 
 /**

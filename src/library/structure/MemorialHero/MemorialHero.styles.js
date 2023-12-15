@@ -47,12 +47,16 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
+  position: relative;
   order: 2;
   flex-grow: 1;
+  height: 760px;
+
   @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     order: 1;
     flex-basis: 100%;
     width: 100%;
+    height: 350px;
   }
 `;
 

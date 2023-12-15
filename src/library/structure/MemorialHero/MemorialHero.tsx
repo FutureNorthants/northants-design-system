@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import LazyImage from 'react-lazy-progressive-image';
 import { MemorialHeroProps } from './MemorialHero.types';
 import * as Styles from './MemorialHero.styles';
 import styled, { ThemeContext, ThemeProvider } from 'styled-components';
+import Image from 'next/image';
 
 const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, theme, children, councilServices }) => {
   const themeContext = useContext(ThemeContext);
@@ -16,15 +16,14 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
             <ThemeProvider theme={theme}>{councilServices}</ThemeProvider>
           </Styles.Left>
           <Styles.Right>
-            <LazyImage
+            <Image
               src={src}
-              placeholder={placeholder}
-              visibilitySensorProps={{
-                partialVisibility: true,
+              alt={alt}
+              fill
+              style={{
+                objectFit: 'cover',
               }}
-            >
-              {(src) => <Styles.Image $image={src} title={alt} />}
-            </LazyImage>
+            />
           </Styles.Right>
         </Styles.Container>
       </Styles.Wrapper>

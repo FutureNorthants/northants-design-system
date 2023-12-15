@@ -48,9 +48,9 @@ describe('HomeHero common usage', () => {
     expect(listbox.children.length).toBe(1);
   });
 
-  it('should not render an image tag', () => {
+  it('should render an image tag', () => {
     const images = rendered.queryAllByRole('img');
-    expect(images).toHaveLength(0);
+    expect(images).toHaveLength(1);
   });
 });
 
@@ -90,7 +90,10 @@ describe('HomeHero unusual usage', () => {
   it('should render an overriden logo image', () => {
     const img = rendered.getByAltText('My alt text');
     expect(img).toBeVisible();
-    expect(img).toHaveProperty('src', 'http://placehold.it/520x150');
+    expect(img).toHaveProperty(
+      'src',
+      'http://localhost/_next/image?url=http%3A%2F%2Fplacehold.it%2F520x150&w=1080&q=75'
+    );
     expect(img).toHaveProperty('alt', 'My alt text');
   });
 

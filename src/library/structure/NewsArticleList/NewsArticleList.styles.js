@@ -79,17 +79,13 @@ export const ArticleContent = styled.div`
   }
 `;
 
-export const ImageContainer = styled.span`
-  display: block;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  background-image: url('${(props) => props.$background}');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+export const ArticleImageContainer = styled.span`
   justify-self: center;
-
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     order: 1;
     height: auto;
@@ -101,6 +97,13 @@ export const ImageContainer = styled.span`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     width: 33%;
   }
+`;
+
+export const ImageContainer = styled.span`
+  display: block;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
 `;
 
 export const DateContainer = styled.div`

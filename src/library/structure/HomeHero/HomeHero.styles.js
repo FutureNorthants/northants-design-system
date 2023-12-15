@@ -11,6 +11,7 @@ export const Wrapper = styled.header`
 `;
 
 export const Container = styled.div`
+  position: relative;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   overflow: hidden;
   background: ${(props) => props.theme.theme_vars.colours.action}5A;
@@ -18,7 +19,7 @@ export const Container = styled.div`
   padding-bottom: 15px;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    background-image: url('${(props) => props.$image}');
+    /* background-image: url('${(props) => props.$image}'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -39,6 +40,8 @@ export const Container = styled.div`
 `;
 
 export const StyledMaxWidthContainer = styled.div`
+  position: relative;
+  z-index: 2;
   ${(props) => props.theme.fontStyles}
   margin-right: 15px;
   margin-left: 15px;
@@ -95,7 +98,7 @@ export const LogoColoured = styled.div`
 
 export const LogoOverride = styled.div`
   img {
-    margin-top: -45px;
+    /* margin-top: -45px; */
     max-width: 520px;
     width: 100%;
     height: auto;

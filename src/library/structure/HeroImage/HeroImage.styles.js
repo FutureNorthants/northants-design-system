@@ -6,9 +6,7 @@ import Heading from '../../components/Heading/Heading';
  * Optimised for an image in 16:5 ratio on all but small width screens
  */
 export const Container = styled.div`
-  background-image: ${(props) =>
-      !props.$backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),` : ``}
-    url('${(props) => props.$image}');
+  position: relative;
 
   padding-bottom: 10px;
   background-position: center;
@@ -34,7 +32,22 @@ export const Container = styled.div`
   }
 `;
 
+export const BackgroundBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+`;
+
 export const InnerContainer = styled.div`
+  position: relative;
+  z-index: 3;
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;

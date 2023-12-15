@@ -20,18 +20,22 @@ export const HomeHeroCommon = {
     {
       image1440x810: 'http://placehold.it/1440x810',
       image144x81: 'http://placehold.it/144x81',
+      imageAltText: 'Example image alt text',
     },
     {
       image1440x810: 'http://placehold.it/1340x810',
       image144x81: 'http://placehold.it/134x81',
+      imageAltText: 'Example image alt text',
     },
     {
       image1440x810: 'http://placehold.it/1240x810',
       image144x81: 'http://placehold.it/124x81',
+      imageAltText: 'Example image alt text',
     },
     {
       image1440x810: 'http://placehold.it/1140x810',
       image144x81: 'http://placehold.it/114x81',
+      imageAltText: 'Example image alt text',
     },
   ],
 };

@@ -102,15 +102,12 @@ export const ArticleContent = styled.div`
 export const ImageContainer = styled.span`
   display: block;
   width: 100%;
-  height: ${imageHeightMobile}px;
   overflow: hidden;
-  background-image: url('${(props) => props.$background}');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding-top: 56.25%;
   justify-self: center;
+  position: relative;
 
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+  /* @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     flex: 0 0 40%;
     height: 100%;
     min-height: ${imageHeightMobile}px;
@@ -118,7 +115,7 @@ export const ImageContainer = styled.span`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     flex: none;
     height: ${imageHeightDesktop}px;
-  }
+  } */
 `;
 
 export const DateContainer = styled.div`

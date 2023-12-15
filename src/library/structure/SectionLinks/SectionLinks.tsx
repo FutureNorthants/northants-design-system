@@ -1,9 +1,9 @@
 import React from 'react';
 import { SectionLinksProps } from './SectionLinks.types';
 import * as Styles from './SectionLinks.styles';
-import LazyImage from 'react-lazy-progressive-image';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import Image from 'next/image';
 
 /**
  * Display a list of links for a section with optional images
@@ -24,21 +24,15 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
             {hasImages && (
               <>
                 {link.imageLarge?.trim() ? (
-                  <LazyImage
-                    placeholder={link.imageSmall}
-                    src={link.imageLarge}
-                    visibilitySensorProps={{
-                      partialVisibility: true,
-                    }}
-                  >
-                    {(src) => (
-                      <Styles.ImageContainer
-                        $image={src}
-                        role="img"
-                        aria-label={link.imageAltText}
-                      ></Styles.ImageContainer>
-                    )}
-                  </LazyImage>
+                  <Styles.ImageContainer>
+                    <Image
+                      src={link.imageLarge}
+                      alt={link.imageAltText}
+                      fill
+                      placeholder="blur"
+                      blurDataURL={link.imageSmall}
+                    />
+                  </Styles.ImageContainer>
                 ) : (
                   <Styles.ImageContainer />
                 )}

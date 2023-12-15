@@ -1,10 +1,10 @@
 import React from 'react';
-import LazyImage from 'react-lazy-progressive-image';
 import { NewsArticleListProps } from './NewsArticleList.types';
 import * as Styles from './NewsArticleList.styles';
 import NewsArticleDate from '../NewsArticleDate/NewsArticleDate';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import Image from 'next/image';
 
 const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ results }) => {
   const extractLength = 140;
@@ -17,22 +17,20 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
             <Column isList small="full" medium="full" large="full" key={article.id}>
               <Styles.ArticleContainer href={article.url} title={article.title}>
                 {article.image720x405 && (
-                  <LazyImage
-                    src={article.image720x405}
-                    placeholder={article.image72x41}
-                    visibilitySensorProps={{
-                      partialVisibility: true,
-                    }}
-                  >
-                    {(src) => (
-                      <Styles.ImageContainer
-                        className="news-article-list__image"
-                        $background={src}
-                        role="img"
-                        aria-label={article.imageAltText ? article.imageAltText : 'News article'}
-                      ></Styles.ImageContainer>
-                    )}
-                  </LazyImage>
+                  <Styles.ArticleImageContainer>
+                    <Styles.ImageContainer>
+                      <Image
+                        src={article.image720x405}
+                        alt={article.imageAltText ?? 'News article'}
+                        fill
+                        placeholder="blur"
+                        blurDataURL={article.image72x41}
+                        style={{
+                          objectFit: 'contain',
+                        }}
+                      />
+                    </Styles.ImageContainer>
+                  </Styles.ArticleImageContainer>
                 )}
                 <Styles.ArticleContent $withImage={article.image720x405 ? true : false}>
                   <Styles.Title className="news-article-list__title">{article.title}</Styles.Title>
