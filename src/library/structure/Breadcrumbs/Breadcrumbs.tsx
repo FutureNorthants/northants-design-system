@@ -5,9 +5,9 @@ import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 
 const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ breadcrumbsArray, hasMargin = false }) => (
   <Styles.Container $hasMargin={hasMargin} data-testid="Breadcrumbs">
-    <Styles.List>
+    <Styles.List as={breadcrumbsArray.length === 1 ? 'div' : 'ol'}>
       {breadcrumbsArray.map((crumb) => (
-        <Styles.Crumb key={crumb.title}>
+        <Styles.Crumb key={crumb.title} as={breadcrumbsArray.length === 1 ? 'span' : 'li'}>
           {
             <>
               <Styles.BreadcrumbLink href={crumb.url} title={crumb.title}>

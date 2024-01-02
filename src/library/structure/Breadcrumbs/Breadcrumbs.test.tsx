@@ -76,4 +76,25 @@ describe('Breadcrumbs', () => {
     expect(links[2]).toHaveAttribute('href', '/service-landing-page/service-page');
     expect(links[2]).toHaveTextContent('Service page');
   });
+
+  it('should not be a list when has one breadcrumb', () => {
+    props.breadcrumbsArray = [
+      {
+        title: 'Home',
+        url: '/',
+      },
+    ];
+
+    const { queryByRole } = renderComponent();
+    const list = queryByRole('list');
+    const listItem = queryByRole('listitem');
+    const link = queryByRole('link');
+
+    expect(list).toBeNull();
+    expect(listItem).toBeNull();
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute('href', '/');
+    expect(link).toHaveTextContent('Home');
+  });
 });

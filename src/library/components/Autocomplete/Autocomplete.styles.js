@@ -109,3 +109,19 @@ export const AutocompleteSuggestionText = styled.span`
 export const AutocompleteSuggestionTextMatch = styled.span`
   font-weight: bold;
 `;
+
+export const LightErrorText = styled.p`
+  ${(props) => props.theme.fontStyles}
+  color: ${(props) => props.theme.theme_vars.colours.white};
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-size: 0.8rem;
+  line-height: 1.1;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+`;
