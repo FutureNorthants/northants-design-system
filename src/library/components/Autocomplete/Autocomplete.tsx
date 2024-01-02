@@ -27,6 +27,8 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
   hasAdjacentButton = false,
   onSelect,
   onChange,
+  required = false,
+  hasLightBackground = true,
 }) => {
   /**
    * We save the input value in state or we can't cope with leaving the input
@@ -118,7 +120,15 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
             <Styles.AutocompleteLabel {...getLabelProps()} hasHiddenLabel={hasHiddenLabel}>
               {labelText ? labelText : placeholder}
             </Styles.AutocompleteLabel>
-            {isErrored && errorText ? <ErrorText>{errorText}</ErrorText> : ''}
+            {isErrored && errorText && (
+              <>
+                {hasLightBackground ? (
+                  <ErrorText>{errorText}</ErrorText>
+                ) : (
+                  <Styles.LightErrorText>{errorText}</Styles.LightErrorText>
+                )}
+              </>
+            )}
             <div {...getRootProps(undefined, { suppressRefError: true })}>
               <Styles.AutocompleteTextInput
                 {...getInputProps({
@@ -131,6 +141,8 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                   hasAdjacentButton: hasAdjacentButton,
                   size: size,
                 })}
+                aria-required={required ? 'true' : 'false'}
+                aria-invalid={isErrored ? 'true' : 'false'}
               />
             </div>
             {
