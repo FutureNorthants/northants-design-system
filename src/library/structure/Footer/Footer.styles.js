@@ -84,8 +84,8 @@ export const FooterLink = styled.a`
   ${(props) => props.theme.linkStyles}
   color: ${(props) => props.theme.theme_vars.colours.white};
   font-weight: 400;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small}
-    ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  padding: ${(props) =>
+    `${props.theme.theme_vars.spacingSizes.small} ${props.theme.theme_vars.spacingSizes.extra_small}`};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: inline-block;
