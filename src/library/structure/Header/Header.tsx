@@ -103,6 +103,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             <Styles.SearchWrapper>
               <Searchbar
                 isLight={themeContext.cardinal_name === 'north' ? true : false}
+                isLarge
                 submitInfo={{
                   postTo: '/search',
                   params: {
