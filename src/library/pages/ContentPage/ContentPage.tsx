@@ -20,6 +20,7 @@ import { ImageAndTextWithHeading } from '../../slices/ImageAndText/ImageAndText.
 import SearchBox from '../../slices/SearchBox/SearchBox';
 import { ExampleSearchBoxProps } from '../../slices/SearchBox/SearchBox.storydata';
 import BackToTop from '../../components/BackToTop/BackToTop';
+import RateThisPage from '../../structure/RateThisPage/RateThisPage';
 
 export interface ContentPageProps {}
 
@@ -261,6 +262,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <ImageAndText {...ImageAndTextWithHeading} />
         <SearchBox {...ExampleSearchBoxProps} />
         <WarningTextDisclaimer />
+        <RateThisPage onSubmit={() => {}} />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer

@@ -111,6 +111,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
                       placeholder=""
                       onChange={onChange}
                       isErrored={errors.TellUsWhy ? true : false}
+                      isFullWidth
                     />
                   )}
                 />
@@ -181,6 +182,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
                       placeholder=""
                       onChange={onChange}
                       isErrored={errors.HowCanWeImprove ? true : false}
+                      isFullWidth
                     />
                   )}
                 />
