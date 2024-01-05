@@ -1,14 +1,14 @@
 import React from 'react';
-import Input from './Input';
-import { InputProps } from './Input.types';
+import Textarea from './Textarea';
+import { TextareaProps } from './Textarea.types';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
 export default {
-  title: 'Library/Components/Input',
-  component: Input,
+  title: 'Library/Components/Textarea',
+  component: Textarea,
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
@@ -16,11 +16,11 @@ export default {
   },
 };
 
-const Template: Story<InputProps> = (args) => (
+const Template: Story<TextareaProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
-        <Input {...args} />
+        <Textarea {...args} />
       </PageMain>
     </MaxWidthContainer>
   </SBPadding>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledInput = styled.input`
+export const StyledTextarea = styled.textarea`
   ${(props) => props.theme.fontStyles}
   margin-top: 0 !important;
   margin-bottom: 25px;

@@ -1,13 +1,12 @@
 import React from 'react';
-import { InputProps } from './Input.types';
-import * as Styles from './Input.styles';
+import { TextareaProps } from './Textarea.types';
+import * as Styles from './Textarea.styles';
 
 /**
  * Primary UI component for user interaction
  * If value is set then treat as controlled component
  */
-const Input: React.FunctionComponent<InputProps> = ({
-  type = 'text',
+const Textarea: React.FunctionComponent<TextareaProps> = ({
   placeholder = '',
   isErrored = false,
   errorText,
@@ -23,9 +22,8 @@ const Input: React.FunctionComponent<InputProps> = ({
     <>
       {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
       {typeof value !== 'undefined' ? (
-        <Styles.StyledInput
+        <Styles.StyledTextarea
           onChange={onChange}
-          type={type}
           placeholder={placeholder}
           name={name}
           isErrored={isErrored}
@@ -35,9 +33,8 @@ const Input: React.FunctionComponent<InputProps> = ({
           isFullWidth={isFullWidth}
         />
       ) : (
-        <Styles.StyledInput
+        <Styles.StyledTextarea
           onChange={onChange}
-          type={type}
           placeholder={placeholder}
           name={name}
           isErrored={isErrored}
@@ -51,4 +48,4 @@ const Input: React.FunctionComponent<InputProps> = ({
   );
 };
 
-export default Input;
+export default Textarea;

@@ -2,6 +2,12 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  border-left: ${(props) =>
+    props.isErrored
+      ? `${props.theme.theme_vars.border_width} solid ${props.theme.theme_vars.colours.negative}`
+      : 'none'};
+  padding-left: ${(props) => (props.isErrored ? ` ${props.theme.theme_vars.spacingSizes.extra_small}` : '0')};
+  padding-bottom: 10px;
 `;
 
 export const Category = styled.div`
@@ -9,7 +15,7 @@ export const Category = styled.div`
   display: block;
   position: relative;
   min-height: 40px;
-  margin-bottom: 10px;
+
   padding-left: 40px;
   clear: left;
 `;

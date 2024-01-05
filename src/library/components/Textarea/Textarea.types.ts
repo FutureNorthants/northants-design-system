@@ -1,9 +1,4 @@
-export interface InputProps {
-  /**
-   * The type, defaults to text
-   */
-  type?: string;
-
+export interface TextareaProps {
   /**
    * The placeholder text for the input
    */
