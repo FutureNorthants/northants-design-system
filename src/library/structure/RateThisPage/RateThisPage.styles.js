@@ -4,6 +4,9 @@ import { VisuallyHidden } from '../../helpers/style-helpers';
 
 export const Container = styled.div`
   display: block;
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
 `;
 
 export const Legend = styled.legend`
@@ -20,4 +23,8 @@ export const FormErrorText = styled(ErrorText)``;
 
 export const Hidden = styled.span`
   ${VisuallyHidden}
+`;
+
+export const Terms = styled.p`
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
 `;

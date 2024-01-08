@@ -21,6 +21,8 @@ module.exports = {
   env: (config) => ({
     ...config,
     NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
+    // Test recaptcha ID: https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do
+    NEXT_PUBLIC_RECAPTCHA_KEY: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
   }),
   webpackFinal: async (config) => {
     config.module.rules.push({

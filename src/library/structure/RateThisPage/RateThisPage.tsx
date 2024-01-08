@@ -8,6 +8,8 @@ import Textarea from '../../components/Textarea/Textarea';
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import { useRecaptcha } from 'react-hook-recaptcha';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 enum RatingEnum {
   easy = 'Easy',
@@ -35,22 +37,48 @@ interface RateFormInputs {
   HowEasyToUnderstand: UnderstandingEnum;
   IsHelpful: HelpfulEnum;
   TellUsWhy: string;
+  ReCaptcha: string;
 }
 
 const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) => {
   const {
     handleSubmit,
     control,
-    reset,
     formState: { errors },
     watch,
+    register,
+    setValue,
   } = useForm<RateFormInputs>({
     defaultValues: {
       HowCanWeImprove: '',
     },
   });
   const watchIsHelpful = watch('IsHelpful');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showFullForm, setShowFullForm] = useState<boolean>(false);
+  const recaptchaKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
+  const recaptchaContainerId = 'recaptchaContainer';
+
+  /**
+   * called when captcha succeeds
+   */
+  const successCallback = (response) => {
+    setValue('ReCaptcha', response);
+    setIsLoading(false);
+    handleSubmit((data) => onSubmit(data))();
+  };
+
+  const errorCallback = () => {
+    setIsLoading(false);
+  };
+
+  const { recaptchaLoaded, execute, reset } = useRecaptcha({
+    containerId: recaptchaContainerId,
+    successCallback,
+    errorCallback,
+    sitekey: recaptchaKey,
+    size: 'invisible',
+  });
 
   useEffect(() => {
     if (watchIsHelpful && String(watchIsHelpful) === 'no') {
@@ -60,9 +88,16 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
     }
   }, [watchIsHelpful]);
 
+  const executeCaptcha = (e) => {
+    e.preventDefault();
+    reset();
+    execute();
+    setIsLoading(true);
+  };
+
   return (
     <Styles.Container data-testid="RateThisPage">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={executeCaptcha}>
         <Row>
           <Column small="full" medium="full" large="full">
             <fieldset aria-describedby={errors.IsHelpful ? 'IsHelpfulError' : 'IsHelpfulLegend'}>
@@ -216,7 +251,20 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
             </>
           )}
           <Column small="full" medium="full" large="full">
-            <FormButton text="Submit" type="submit" size="large" />
+            <div id={recaptchaContainerId} className="g-recaptcha" />
+            <input type="hidden" {...register('ReCaptcha')} />
+            <Styles.Terms>
+              This site is protected by reCAPTCHA and the Google{' '}
+              <a href="https://policies.google.com/privacy">Privacy Policy</a> and{' '}
+              <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </Styles.Terms>
+          </Column>
+          <Column small="full" medium="full" large="full">
+            {isLoading ? (
+              <LoadingSpinner />
+            ) : (
+              <FormButton text="Submit" type="submit" size="large" isDisabled={!recaptchaLoaded} />
+            )}
           </Column>
         </Row>
       </form>
