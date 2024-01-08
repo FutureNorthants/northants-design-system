@@ -40,6 +40,11 @@ interface RateFormInputs {
   ReCaptcha: string;
 }
 
+/**
+ * A form that allows visitors to rate the website page.
+ * If the user answers No to 'Is this information helpful?' then they are presented with more questions.
+ * The form is protected by Google recaptcha and needs a recaptcha sitekey to work.
+ */
 const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) => {
   const {
     handleSubmit,
@@ -253,6 +258,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
           <Column small="full" medium="full" large="full">
             <div id={recaptchaContainerId} className="g-recaptcha" />
             <input type="hidden" {...register('ReCaptcha')} />
+            {/* Terms are required when recaptcha badge is hidden */}
             <Styles.Terms>
               This site is protected by reCAPTCHA and the Google{' '}
               <a href="https://policies.google.com/privacy">Privacy Policy</a> and{' '}

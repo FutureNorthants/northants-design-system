@@ -14,6 +14,9 @@ export default {
       type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
+  argTypes: {
+    onSubmit: {},
+  },
 };
 
 const Template: Story<RateThisPageProps> = (args) => (
