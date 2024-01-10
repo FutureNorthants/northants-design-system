@@ -13,6 +13,8 @@ describe('RateThisPage Component', () => {
   beforeEach(() => {
     props = {
       onSubmit: mockSave,
+      complaintsFormLink:
+        'https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council',
     };
   });
 

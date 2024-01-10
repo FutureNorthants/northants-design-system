@@ -47,7 +47,7 @@ interface RateFormInputs {
  * If the user answers No to 'Is this information helpful?' then they are presented with more questions.
  * The form is protected by Google recaptcha and needs a recaptcha sitekey to work.
  */
-const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) => {
+const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit, complaintsFormLink }) => {
   const {
     handleSubmit,
     control,
@@ -166,9 +166,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
                     <li>I don't think I have been treated fairly</li>
                   </ul>
                   <Styles.QuestionButton>
-                    <Button url="https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council">
-                      I have a comment or complaint about this service
-                    </Button>
+                    <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
                   </Styles.QuestionButton>
                 </Styles.QuestionContainer>
               </Column>

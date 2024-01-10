@@ -16,6 +16,7 @@ export default {
   },
   argTypes: {
     onSubmit: {},
+    complaintsFormLink: {},
   },
 };
 
@@ -35,4 +36,6 @@ const Template: Story<RateThisPageProps> = (args) => (
 export const ExampleRateThisPage = Template.bind({});
 ExampleRateThisPage.args = {
   onSubmit: (data) => alert(JSON.stringify(data)),
+  complaintsFormLink:
+    'https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council',
 };

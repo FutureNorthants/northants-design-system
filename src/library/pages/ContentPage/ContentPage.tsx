@@ -262,7 +262,10 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <ImageAndText {...ImageAndTextWithHeading} />
         <SearchBox {...ExampleSearchBoxProps} />
         <WarningTextDisclaimer />
-        <RateThisPage onSubmit={() => {}} />
+        <RateThisPage
+          onSubmit={() => {}}
+          complaintsFormLink="https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council"
+        />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
