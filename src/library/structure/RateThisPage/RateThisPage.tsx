@@ -10,6 +10,8 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import { useRecaptcha } from 'react-hook-recaptcha';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import Heading from '../../components/Heading/Heading';
+import Button from '../../components/Button/Button';
 
 enum RatingEnum {
   easy = 'Easy',
@@ -60,7 +62,9 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
   });
   const watchIsHelpful = watch('IsHelpful');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showQuestion, setShowQuestion] = useState<boolean>(false);
   const [showFullForm, setShowFullForm] = useState<boolean>(false);
+  const [showSubmit, setShowSubmit] = useState<boolean>(false);
   const recaptchaKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
   const recaptchaContainerId = 'recaptchaContainer';
 
@@ -87,9 +91,16 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
 
   useEffect(() => {
     if (watchIsHelpful && String(watchIsHelpful) === 'no') {
-      setShowFullForm(true);
-    } else {
+      setShowQuestion(true);
+      setShowSubmit(false);
+    } else if (watchIsHelpful && String(watchIsHelpful) === 'yes') {
+      setShowQuestion(false);
+      setShowSubmit(true);
       setShowFullForm(false);
+    } else {
+      setShowQuestion(false);
+      setShowFullForm(false);
+      setShowSubmit(false);
     }
   }, [watchIsHelpful]);
 
@@ -98,6 +109,13 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
     reset();
     execute();
     setIsLoading(true);
+  };
+
+  const handleQuestionButton = (e) => {
+    e.preventDefault();
+    setShowQuestion(false);
+    setShowFullForm(true);
+    setShowSubmit(true);
   };
 
   return (
@@ -135,6 +153,47 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
               />
             </fieldset>
           </Column>
+
+          {showQuestion && (
+            <>
+              <Column small="full" medium="full" large="one-half">
+                <Styles.QuestionContainer>
+                  <Styles.QuestionTitle>Service</Styles.QuestionTitle>
+                  <p>You may have comments about the quality of the service that's been provided, for example:</p>
+                  <ul>
+                    <li>I have waited too long for something to happen</li>
+                    <li>I'm struggling to contact the service</li>
+                    <li>I don't think I have been treated fairly</li>
+                  </ul>
+                  <Styles.QuestionButton>
+                    <Button url="https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council">
+                      I have a comment or complaint about this service
+                    </Button>
+                  </Styles.QuestionButton>
+                </Styles.QuestionContainer>
+              </Column>
+              <Column small="full" medium="full" large="one-half">
+                <Styles.QuestionContainer>
+                  <Styles.QuestionTitle>Content</Styles.QuestionTitle>
+                  <p>Was this information helpful? Your feedback will help us improve our website, for example:</p>
+                  <ul>
+                    <li>I'm struggling to understand this information</li>
+                    <li>This page isn't giving me the information I need</li>
+                    <li>There is information that is out of date</li>
+                    <li>I feel as if this webpage could be written or presented better</li>
+                  </ul>
+                  <Styles.QuestionButton>
+                    <FormButton
+                      text="I have feedback about the information on this page"
+                      type="button"
+                      size="medium"
+                      onClick={handleQuestionButton}
+                    />
+                  </Styles.QuestionButton>
+                </Styles.QuestionContainer>
+              </Column>
+            </>
+          )}
 
           {showFullForm && (
             <>
@@ -265,13 +324,15 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({ onSubmit }) 
               <a href="https://policies.google.com/terms">Terms of Service</a> apply.
             </Styles.Terms>
           </Column>
-          <Column small="full" medium="full" large="full">
-            {isLoading ? (
-              <LoadingSpinner />
-            ) : (
-              <FormButton text="Submit" type="submit" size="large" isDisabled={!recaptchaLoaded} />
-            )}
-          </Column>
+          {showSubmit && (
+            <Column small="full" medium="full" large="full">
+              {isLoading ? (
+                <LoadingSpinner />
+              ) : (
+                <FormButton text="Submit" type="submit" size="large" isDisabled={!recaptchaLoaded} />
+              )}
+            </Column>
+          )}
         </Row>
       </form>
     </Styles.Container>

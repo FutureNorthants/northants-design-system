@@ -31,8 +31,8 @@ describe('RateThisPage Component', () => {
     expect(component).toHaveTextContent('Is this information helpful?');
   });
 
-  it('should show the additional questions when no is selected for IsHelpful', () => {
-    const { getByTestId, getByLabelText } = renderComponent();
+  it('should show the additional question when no is selected for IsHelpful', () => {
+    const { getByTestId, getByLabelText, getByText } = renderComponent();
 
     const component = getByTestId('RateThisPage');
     const isHelpfulNoRadio = getByLabelText('No');
@@ -40,6 +40,10 @@ describe('RateThisPage Component', () => {
     expect(component).not.toHaveTextContent('Please tell us why?');
 
     fireEvent.click(isHelpfulNoRadio);
+
+    expect(component).toHaveTextContent('Your feedback will help us improve our website, for example');
+
+    fireEvent.click(getByText('I have feedback about the information on this page'));
 
     expect(component).toHaveTextContent('Please tell us why?');
   });
