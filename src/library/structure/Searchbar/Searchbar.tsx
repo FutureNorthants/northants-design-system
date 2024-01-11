@@ -104,12 +104,16 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
               hasAdjacentButton
               isErrored={isErrored}
               hasHiddenLabel={true}
+              required={true}
+              errorText="The search field is required."
+              hasLightBackground={isLight}
             />
             <Styles.Button
               type="submit"
               value="Search"
               $isLarge={isLarge}
               $isLight={isLight}
+              $isErrored={isErrored}
               data-testid="SearchButton"
             >
               <SearchIcon colourFill="#fff" />
