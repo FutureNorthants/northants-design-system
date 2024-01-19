@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components';
  * Based upon http://meyerweb.com/eric/tools/css/reset/ with additions to return
  * lists to sane settings. Use for styles common to all themes.
  */
-export const GlobalStyleReset = createGlobalStyle`
+export const GlobalStyleReset: any = createGlobalStyle<any>`
   html {
     box-sizing: border-box;
   }

@@ -4,8 +4,9 @@ import { west_vars } from './theme_west';
 import { lb_vars_north } from './theme_london_bridge_north';
 import { lb_vars_west } from './theme_london_bridge_west';
 import { css } from 'styled-components';
+import { ThemeVars } from './ThemeVars.types';
 
-const generate_theme = (theme_vars) => {
+const generate_theme = (theme_vars: ThemeVars) => {
   return {
     name: theme_vars.theme_name,
     full_name: theme_vars.full_name,

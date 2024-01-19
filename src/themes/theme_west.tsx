@@ -1,15 +1,17 @@
-const breakpointsVals = {
+import { ThemeBreakpointTypes, ThemeVars } from './ThemeVars.types';
+
+const breakpointsVals: ThemeBreakpointTypes = {
   s: '550',
   m: '768', // tablets and larger
   l: '1160', // desktops and larger
   xl: '1440', // large desktops only
 };
 
-export const lb_vars_west = {
-  theme_name: 'Memorial theme West',
+export const west_vars: ThemeVars = {
+  theme_name: 'West Northants theme',
   full_name: 'West Northamptonshire',
   cardinal_name: 'west',
-  is_memorial: true,
+  is_memorial: false,
   council_link: 'https://www.westnorthants.gov.uk',
   other_council_link: 'https://www.northnorthants.gov.uk',
   other_council_name: 'North Northamptonshire',
@@ -40,9 +42,9 @@ export const lb_vars_west = {
     grey_light: '#F5F5F5',
     white: '#FFFFFF',
 
-    action: '#3C3C3B',
-    action_light: '#C6C6C6',
-    action_dark: '#333333',
+    action: '#385889',
+    action_light: '#E9EEF3',
+    action_dark: '#0E335B',
     positive: '#6C9A36',
     negative: '#9D0B1D',
 
