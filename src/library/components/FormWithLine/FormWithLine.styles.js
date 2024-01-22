@@ -12,13 +12,13 @@ export const Container = styled.div`
 export const Form = styled.form`
   padding-top: 10px;
   padding-bottom: 12px;
-  padding-left: ${(props) => (props.hideLine ? '0' : '15px')};
+  padding-left: ${(props) => (props.$hideLine ? '0' : '15px')};
   max-width: 100%;
   width: 100%;
 `;
 export const Line = styled.div`
-  background: ${(props) => (props.isError ? props.theme.theme_vars.colours.negative : props.lineColour)};
-  display: ${(props) => (props.hideLine ? 'none' : 'block')};
+  background: ${(props) => (props.$isError ? props.theme.theme_vars.colours.negative : props.$lineColour)};
+  display: ${(props) => (props.$hideLine ? 'none' : 'block')};
   width: 5px;
   border-radius: 2px;
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import ServiceLinksBoxed from './ServicesLinksBoxed';
 import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<ServiceLinksBoxedProps> = (args) => (
+const Template: StoryFn<ServiceLinksBoxedProps> = (args) => (
   <SBPadding>
     <ServiceLinksBoxed {...args} />
   </SBPadding>

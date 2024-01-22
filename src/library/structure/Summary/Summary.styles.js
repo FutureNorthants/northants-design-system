@@ -11,20 +11,20 @@ const summaryStyles = (props) => {
   switch (props.theme.cardinal_name) {
     case 'north':
       return css`
-        background-color: ${(props) => (props.hasBackground ? props.theme.theme_vars.colours.white : 'transparent')};
+        background-color: ${(props) => (props.$hasBackground ? props.theme.theme_vars.colours.white : 'transparent')};
         color: ${(props) => props.theme.theme_vars.colours.action};
       `;
     case 'west':
       return css`
         background-color: ${(props) =>
-          props.hasBackground ? props.theme.theme_vars.colours.grey_light : 'transparent'};
+          props.$hasBackground ? props.theme.theme_vars.colours.grey_light : 'transparent'};
         color: ${(props) => props.theme.theme_vars.colours.action_dark};
       `;
   }
 };
 
 export const Container = styled.div`
-  padding: ${(props) => (props.hasPadding ? '30px 20px' : '0')};
+  padding: ${(props) => (props.$hasPadding ? '30px 20px' : '0')};
   font-size: 1.2em;
   margin-bottom: 15px;
   ${summaryStyles}

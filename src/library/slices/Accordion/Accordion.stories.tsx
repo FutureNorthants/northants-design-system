@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Accordion from './Accordion';
 import { AccordionProps } from './Accordion.types';
 import Divider from './../Divider/Divider';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<AccordionProps> = (args) => (
+const Template: StoryFn<AccordionProps> = (args) => (
   <SBPadding>
     <Accordion {...args} />
   </SBPadding>

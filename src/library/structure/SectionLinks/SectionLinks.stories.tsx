@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import SectionLinks from './SectionLinks';
 import { SectionLinksProps } from './SectionLinks.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -32,7 +32,7 @@ export default {
   },
 };
 
-const Template: Story<SectionLinksProps> = (args) => (
+const Template: StoryFn<SectionLinksProps> = (args) => (
   <MaxWidthContainer>
     <SectionLinks {...args} />
   </MaxWidthContainer>

@@ -11,7 +11,7 @@ export default {
   component: MemorialPage,
 } as Meta;
 
-const Template: Story<MemorialPageProps> = (args) => <MemorialPage {...args} />;
+const Template: StoryFn<MemorialPageProps> = (args) => <MemorialPage {...args} />;
 
 export const ExampleHome = Template.bind({});
 ExampleHome.args = {

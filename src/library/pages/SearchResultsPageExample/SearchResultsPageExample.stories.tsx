@@ -11,19 +11,18 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 } as Meta;
 
-const Template: Story<SearchResultsPageExampleProps> = (args) => <SearchResultsPageExample {...args} />;
-
+const Template: StoryFn<SearchResultsPageExampleProps> = (args) => <SearchResultsPageExample {...args} />;
 
 export const SearchResultsExample = Template.bind({});
 SearchResultsExample.args = {
-  results: true
-}
+  results: true,
+};
 
 export const SearchNoResultsExample = Template.bind({});
 SearchNoResultsExample.args = {
-  results: false
-}
+  results: false,
+};

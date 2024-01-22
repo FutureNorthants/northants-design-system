@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import CouncilTaxAlphabeticalDirectory from './CouncilTaxAlphabeticalDirectory';
 import { CouncilTaxAlphabeticalDirectoryProps } from './CouncilTaxAlphabeticalDirectory.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<CouncilTaxAlphabeticalDirectoryProps> = (args) => (
+const Template: StoryFn<CouncilTaxAlphabeticalDirectoryProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

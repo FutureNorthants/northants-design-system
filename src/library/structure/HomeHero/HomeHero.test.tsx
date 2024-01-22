@@ -88,7 +88,7 @@ describe('HomeHero unusual usage', () => {
   });
 
   it('should render an overriden logo image', () => {
-    const img = rendered.getByRole('img');
+    const img = rendered.getByAltText('My alt text');
     expect(img).toBeVisible();
     expect(img).toHaveProperty('src', 'http://placehold.it/520x150');
     expect(img).toHaveProperty('alt', 'My alt text');

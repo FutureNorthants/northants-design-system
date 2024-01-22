@@ -1,7 +1,7 @@
 import React from 'react';
 import PageMain from './PageMain';
 import { PageMainProps } from './PageMain.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 
 export default {
   title: 'Library/structure/Page Main Container',
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-const Template: Story<PageMainProps> = (args) => (
+const Template: StoryFn<PageMainProps> = (args) => (
   <PageMain {...args}>Children of the page container goes here</PageMain>
 );
 

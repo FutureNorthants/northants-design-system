@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Summary from './Summary';
 import { SummaryProps } from './Summary.types';
 import PageMain from '../../structure/PageMain/PageMain';
@@ -27,7 +27,7 @@ export default {
   },
 };
 
-const Template: Story<SummaryProps> = (args: SummaryProps) => (
+const Template: StoryFn<SummaryProps> = (args: SummaryProps) => (
   <PageMain>
     <MaxWidthContainer>
       <Summary {...args}>

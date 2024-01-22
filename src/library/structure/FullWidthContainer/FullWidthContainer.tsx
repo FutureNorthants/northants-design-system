@@ -10,7 +10,7 @@ const FullWidthContainer: React.FunctionComponent<FullWidthContainerProps> = ({
   hasBackground = false,
   hasPadding = false,
 }) => (
-  <Styles.Container hasBackground={hasBackground} hasPadding={hasPadding} data-testid="FullWidthContainer">
+  <Styles.Container $hasBackground={hasBackground} $hasPadding={hasPadding} data-testid="FullWidthContainer">
     {children}
   </Styles.Container>
 );

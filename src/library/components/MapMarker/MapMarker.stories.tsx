@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import MapMarker from './MapMarker';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { Wrapper } from '@googlemaps/react-wrapper';
@@ -19,7 +19,7 @@ export default {
 
 const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
-const Template: Story<google.maps.MarkerOptions> = (args) => (
+const Template: StoryFn<google.maps.MarkerOptions> = (args) => (
   <SBPadding>
     <Wrapper apiKey={apiKey}>
       <Map zoom={15} center={{ lat: 52.23555414368587, lng: -0.8957390701320571 }}>
@@ -36,7 +36,7 @@ ExampleGoogleMapMarker.args = {
   title: 'My map marker',
 };
 
-const MultipleMarkerTemplate: Story<google.maps.MarkerOptions> = (args) => (
+const MultipleMarkerTemplate: StoryFn<google.maps.MarkerOptions> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

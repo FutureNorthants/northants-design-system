@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Video from './Video';
 import { VideoProps } from './Video.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<VideoProps> = (args) => (
+const Template: StoryFn<VideoProps> = (args) => (
   <SBPadding>
     <Video {...args} />
   </SBPadding>

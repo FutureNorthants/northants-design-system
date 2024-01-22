@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DropDownSelect from './DropDownSelect';
 import { DropDownSelectProps } from './DropDownSelect.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<DropDownSelectProps> = (args) => (
+const Template: StoryFn<DropDownSelectProps> = (args) => (
   <SBPadding>
     <DropDownSelect {...args} />
   </SBPadding>

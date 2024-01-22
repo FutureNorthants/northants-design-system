@@ -115,5 +115,5 @@ export const LoadingContainer = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  display: ${(props) => (props.isLoading ? `none` : 'block')};
+  display: ${(props) => (props.$isLoading ? `none` : 'block')};
 `;

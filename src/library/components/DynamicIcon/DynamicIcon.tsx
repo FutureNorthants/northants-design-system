@@ -11,24 +11,24 @@ const DynamicIcon: React.FunctionComponent<DynamicIconProps> = ({ level, icon })
   const themeContext = useContext(ThemeContext);
 
   const DynamicComponent = ({ name, isHover = false }) => {
-    let DynamicIcon;
+    let DynamicServiceIcon;
     if (name === 'culture') {
       let newName = name + themeContext.cardinal_name;
-      DynamicIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
+      DynamicServiceIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
     } else {
-      DynamicIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
+      DynamicServiceIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
     }
-    return <DynamicIcon colourFill={themeContext.theme_vars.colours.action_dark} />;
+    return <DynamicServiceIcon colourFill={themeContext.theme_vars.colours.action_dark} />;
   };
 
   return (
-    <Styles.IconWrapper iconSize={level} data-testid="DynamicIcon">
+    <Styles.IconWrapper $iconSize={level} data-testid="DynamicIcon">
       {icon && (
         <>
-          <Styles.Icon className="service-icon" iconSize={level} data-testid="Icon">
+          <Styles.Icon className="service-icon" $iconSize={level} data-testid="Icon">
             <DynamicComponent name={icon} isHover={false} />
           </Styles.Icon>
-          <Styles.Icon className="service-icon-hover" iconSize={level} data-testid="IconHover">
+          <Styles.Icon className="service-icon-hover" $iconSize={level} data-testid="IconHover">
             <DynamicComponent name={icon} isHover={true} />
           </Styles.Icon>
         </>

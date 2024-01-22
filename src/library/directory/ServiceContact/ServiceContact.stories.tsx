@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import ServiceContact from './ServiceContact';
 import { ServiceContactComponentProps } from './ServiceContact.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<ServiceContactComponentProps> = (args) => (
+const Template: StoryFn<ServiceContactComponentProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

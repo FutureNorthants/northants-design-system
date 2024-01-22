@@ -72,10 +72,10 @@ export const ArticleContent = styled.div`
   ${(props) => props.theme.fontStyles};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    width: ${(props) => (props.withImage ? '50%' : '100%')};
+    width: ${(props) => (props.$withImage ? '50%' : '100%')};
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-    width: ${(props) => (props.withImage ? '66%' : '100%')};
+    width: ${(props) => (props.$withImage ? '66%' : '100%')};
   }
 `;
 
@@ -84,7 +84,7 @@ export const ImageContainer = styled.span`
   width: 100%;
   height: 150px;
   overflow: hidden;
-  background-image: url('${(props) => props.background}');
+  background-image: url('${(props) => props.$background}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

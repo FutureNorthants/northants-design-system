@@ -27,14 +27,14 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
                     {(src) => (
                       <Styles.ImageContainer
                         className="news-article-list__image"
-                        background={src}
+                        $background={src}
                         role="img"
                         aria-label={article.imageAltText ? article.imageAltText : 'News article'}
                       ></Styles.ImageContainer>
                     )}
                   </LazyImage>
                 )}
-                <Styles.ArticleContent withImage={article.image720x405 ? true : false}>
+                <Styles.ArticleContent $withImage={article.image720x405 ? true : false}>
                   <Styles.Title className="news-article-list__title">{article.title}</Styles.Title>
                   {article.excerpt.length > extractLength
                     ? article.excerpt.substr(0, extractLength - 1).trim() + String.fromCharCode(8230)

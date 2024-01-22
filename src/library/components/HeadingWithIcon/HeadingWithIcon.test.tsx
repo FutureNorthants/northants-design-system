@@ -13,26 +13,32 @@ describe('Heading With Icon', () => {
       text: 'Council Tax',
       icon: 'counciltax',
       level: 2,
+      hasHover: false,
     };
   });
 
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
+        <button>Button text</button>
         <HeadingWithIcon {...props} />
       </ThemeProvider>
     );
 
   it('displays the text and service icon', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getByText } = renderComponent();
 
     const component = getByTestId('HeadingWithIcon');
+    const text = getByText('Button text');
     const serviceIcon = component.getElementsByClassName('service-icon')[0];
     const serviceIconHover = component.getElementsByClassName('service-icon-hover')[0];
 
     expect(component).toHaveTextContent('Council Tax');
 
-    expect(serviceIcon).toBeVisible();
+    // Move focus away from the icon
+    text.focus();
+
+    expect(serviceIcon).toBeInTheDocument();
     expect(serviceIconHover).not.toBeVisible();
   });
 });

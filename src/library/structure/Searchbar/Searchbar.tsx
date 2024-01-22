@@ -86,7 +86,7 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
    * Render the component
    */
   return (
-    <Styles.Container data-testid="Searchbar" isLarge={isLarge}>
+    <Styles.Container data-testid="Searchbar" $isLarge={isLarge}>
       <form onSubmit={handleSubmit}>
         <div role="search">
           <Styles.InputWrapper>
@@ -111,9 +111,9 @@ const Searchbar: React.FunctionComponent<SearchbarProps> = ({
             <Styles.Button
               type="submit"
               value="Search"
-              isLarge={isLarge}
-              isLight={isLight}
-              isErrored={isErrored}
+              $isLarge={isLarge}
+              $isLight={isLight}
+              $isErrored={isErrored}
               data-testid="SearchButton"
             >
               <SearchIcon colourFill="#fff" />

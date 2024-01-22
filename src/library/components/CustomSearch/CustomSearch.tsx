@@ -21,7 +21,7 @@ const CustomSearch: React.FunctionComponent<CustomSearchProps> = ({
     <Styles.Container data-testid="CustomSearch">
       <form method={method} action={path} aria-label={label}>
         <div role="search">
-          <Styles.Label htmlFor={id} hasHiddenLabel={hasHiddenLabel}>
+          <Styles.Label htmlFor={id} $hasHiddenLabel={hasHiddenLabel}>
             {label}
           </Styles.Label>
           <Styles.InputWrapper>

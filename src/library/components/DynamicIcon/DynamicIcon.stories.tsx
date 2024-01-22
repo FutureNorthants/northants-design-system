@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DynamicIcon from './DynamicIcon';
 import { DynamicIconProps } from './DynamicIcon.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<DynamicIconProps> = (args) => (
+const Template: StoryFn<DynamicIconProps> = (args) => (
   <SBPadding>
     <DynamicIcon {...args} />
   </SBPadding>

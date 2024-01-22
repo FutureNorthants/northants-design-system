@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from './HeroImage';
 import { HeroImageProps } from './HeroImage.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import {
   HeroImageExampleGradientData,
   HeroImageExampleBoxedData,
@@ -46,7 +46,7 @@ export default {
   },
 };
 
-const Template: Story<HeroImageProps> = (args) => <HeroImage {...args}></HeroImage>;
+const Template: StoryFn<HeroImageProps> = (args) => <HeroImage {...args}></HeroImage>;
 
 export const HeroImageExampleBoxed = Template.bind({});
 HeroImageExampleBoxed.args = HeroImageExampleBoxedData;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import ContentsNavigation from './ContentsNavigation';
 import { ContentsProps } from '../Contents/Contents.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<ContentsProps> = (args) => (
+const Template: StoryFn<ContentsProps> = (args) => (
   <SBPadding>
     <ContentsNavigation {...args} />
   </SBPadding>

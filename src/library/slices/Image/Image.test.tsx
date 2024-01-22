@@ -26,8 +26,8 @@ describe('Image Component', () => {
     );
 
   it('should display the image and caption', () => {
-    const { getByRole, getByTestId, getByText } = renderComponent();
-    const image = getByRole('img');
+    const { getByRole, getByTestId, getByAltText, getByText } = renderComponent();
+    const image = getByAltText('The image alt text');
     const imageContainer = getByTestId('ImageContainer');
     const figure = getByRole('figure');
     const caption = getByText('The caption for the image');
@@ -47,9 +47,9 @@ describe('Image Component', () => {
     props.caption = null;
     props.ratio = '16by9';
 
-    const { getByRole, getByTestId } = renderComponent();
+    const { getByRole, getByTestId, getByAltText } = renderComponent();
     const imageContainer = getByTestId('ImageContainer');
-    const image = getByRole('img');
+    const image = getByAltText('The image alt text');
     const figure = getByRole('figure');
 
     // Lazy image loads the placeholder image (bar.jpg)
@@ -66,9 +66,9 @@ describe('Image Component', () => {
   it('should display the banner image', () => {
     props.ratio = '4by1';
 
-    const { getByTestId, getByRole } = renderComponent();
+    const { getByTestId, getByAltText } = renderComponent();
 
-    const image = getByRole('img');
+    const image = getByAltText('The image alt text');
     const imageContainer = getByTestId('ImageContainer');
 
     expect(image).toBeVisible();

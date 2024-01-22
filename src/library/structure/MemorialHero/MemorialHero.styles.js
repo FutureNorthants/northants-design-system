@@ -58,7 +58,7 @@ export const Right = styled.div`
 
 export const Image = styled.div`
   transition: all 0.25s ease;
-  background-image: url('${(props) => props.image}');
+  background-image: url('${(props) => props.$image}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -71,7 +71,7 @@ export const ResultInfo = styled.div`
 `;
 
 const serviceBackground = (props) => {
-  if (props.resultNumber % 2 === 0) {
+  if (props.$resultNumber % 2 === 0) {
     return css`
       background-color: ${(props) => props.theme.theme_vars.colours.grey_light}75;
     `;
@@ -98,7 +98,7 @@ export const Address = styled.span`
 `;
 
 export const FilterContainer = styled.div`
-  display: ${(props) => (props.showFilters ? 'flex' : 'none')};
+  display: ${(props) => (props.$showFilters ? 'flex' : 'none')};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: flex;
@@ -185,9 +185,9 @@ export const AccordionIcon = styled.span`
     vertical-align: top;
     width: 12px;
     border-color: ${(props) => props.theme.theme_vars.colours.black};
-    top: ${(props) => (props.isOpen ? `5px` : `0`)};
+    top: ${(props) => (props.$isOpen ? `5px` : `0`)};
     left: 6px;
-    transform: ${(props) => (props.isOpen ? `rotate(-45deg)` : `rotate(135deg)`)};
+    transform: ${(props) => (props.$isOpen ? `rotate(-45deg)` : `rotate(135deg)`)};
   }
 `;
 
@@ -204,7 +204,7 @@ export const ColumnLabels = styled.div`
 `;
 
 export const Accordion = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props.$isOpen ? 'block' : 'none')};
 `;
 
 export const AccordionControls = styled.div`

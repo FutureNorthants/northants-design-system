@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { getByAltText, render } from '@testing-library/react';
 import ImageAndText from './ImageAndText';
 import { ImageAndTextProps } from './ImageAndText.types';
 import { west_theme } from '../../../themes/theme_generator';
@@ -21,11 +21,11 @@ describe('Test Component', () => {
     );
 
   it('should render the image, heading and content correctly', () => {
-    const { getByTestId, getByRole } = renderComponent();
+    const { getByTestId, getByRole, getByAltText } = renderComponent();
 
     const component = getByTestId('ImageAndText');
     const heading = getByRole('heading');
-    const image = getByRole('img');
+    const image = getByAltText('The image alt text');
 
     expect(heading).toHaveTextContent('An example heading');
     expect(component).toHaveTextContent('Lorem ipsum dolor sit amet');
@@ -37,11 +37,11 @@ describe('Test Component', () => {
   it('should render without a heading', () => {
     props.heading = undefined;
 
-    const { getByTestId, queryByRole, getByRole } = renderComponent();
+    const { getByTestId, queryByRole, getByAltText } = renderComponent();
 
     const component = getByTestId('ImageAndText');
     const heading = queryByRole('heading');
-    const image = getByRole('img');
+    const image = getByAltText('The image alt text');
 
     expect(heading).toBeNull();
     expect(component).toHaveTextContent('Lorem ipsum dolor sit amet');

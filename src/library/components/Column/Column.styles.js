@@ -35,14 +35,14 @@ const calculateWidth = (size) => {
 
 const widths = (props) => {
   return css`
-    ${calculateWidth(props.small)};
+    ${calculateWidth(props.$small)};
 
     @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-      ${calculateWidth(props.medium)};
+      ${calculateWidth(props.$medium)};
     }
 
     @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-      ${calculateWidth(props.large)};
+      ${calculateWidth(props.$large)};
     }
   `;
 };
@@ -50,8 +50,8 @@ const widths = (props) => {
 export const Container = styled.div`
   box-sizing: border-box;
   display: block;
-  padding: ${(props) => (props.hasPadding ? props.theme.theme_vars.spacingSizes.small : `0`)};
-  border: ${(props) => (props.hasBorder ? `1px solid ${props.theme.theme_vars.colours.negative}` : 'none')};
+  padding: ${(props) => (props.$hasPadding ? props.theme.theme_vars.spacingSizes.small : `0`)};
+  border: ${(props) => (props.$hasBorder ? `1px solid ${props.theme.theme_vars.colours.negative}` : 'none')};
   left: 0;
   ${widths};
 `;

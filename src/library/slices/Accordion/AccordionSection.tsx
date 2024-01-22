@@ -22,7 +22,7 @@ const AccordionSection: React.FunctionComponent<AccordionSectionProps> = ({
         <Styles.SectionHeading as={isFilter ? 'h3' : 'h2'}>
           <Styles.SectionButton
             title={isExpanded ? 'Minimise ' + title : title}
-            isFilter={isFilter}
+            $isFilter={isFilter}
             type="button"
             id={`${thisSectionId}_${accordionSectionId}-heading`}
             aria-controls={`${thisSectionId}_${accordionSectionId}-content`}

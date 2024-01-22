@@ -27,7 +27,7 @@ const PromoBlock: React.FunctionComponent<PromoBlockProps> = ({ promos }) => (
                 >
                   {(src) => (
                     <Styles.PromoImage
-                      background={src}
+                      $background={src}
                       role="img"
                       aria-label={promo.imageAltText ? promo.imageAltText : ''}
                     />

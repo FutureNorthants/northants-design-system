@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import CheckboxListFilter from './CheckboxListFilter';
 import { CheckboxListFilterProps } from './CheckboxListFilter.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<CheckboxListFilterProps> = (args) => (
+const Template: StoryFn<CheckboxListFilterProps> = (args) => (
   <SBPadding>
     <CheckboxListFilter {...args} />
   </SBPadding>

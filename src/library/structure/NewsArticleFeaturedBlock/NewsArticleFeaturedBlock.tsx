@@ -37,7 +37,7 @@ const NewsArticleFeaturedBlock: React.FunctionComponent<NewsArticleFeaturedBlock
                         >
                           {(src) => (
                             <Styles.ImageContainer
-                              background={src}
+                              $background={src}
                               role="img"
                               aria-label={article.imageAltText ? article.imageAltText : ''}
                             />

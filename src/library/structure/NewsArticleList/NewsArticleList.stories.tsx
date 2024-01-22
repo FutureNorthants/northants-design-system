@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import NewsArticleList from './NewsArticleList';
 import { NewsArticleListProps } from './NewsArticleList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<NewsArticleListProps> = (args) => (
+const Template: StoryFn<NewsArticleListProps> = (args) => (
   <SBPadding>
     <NewsArticleList {...args} />
   </SBPadding>

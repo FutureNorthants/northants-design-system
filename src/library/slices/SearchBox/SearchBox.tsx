@@ -51,7 +51,7 @@ const SearchBox: React.FunctionComponent<SearchBoxProps> = ({
             }}
           >
             {(src) => (
-              <Styles.Container image={src} data-testid="SearchBox">
+              <Styles.Container $image={src} data-testid="SearchBox">
                 {searchInner}
               </Styles.Container>
             )}

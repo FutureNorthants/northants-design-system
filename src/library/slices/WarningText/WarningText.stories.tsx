@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import WarningText from './WarningText';
 import { WarningTextProps } from './WarningText.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<WarningTextProps> = (args) => (
+const Template: StoryFn<WarningTextProps> = (args) => (
   <MaxWidthContainer noBackground>
     <WarningText {...args}>
       Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit
@@ -23,7 +23,7 @@ const Template: Story<WarningTextProps> = (args) => (
     </WarningText>
   </MaxWidthContainer>
 );
-const Template2: Story<WarningTextProps> = (args) => (
+const Template2: StoryFn<WarningTextProps> = (args) => (
   <MaxWidthContainer noBackground>
     <WarningText {...args}>
       We are in the process of adding information to this new unitary council website. Some pages will give you a link

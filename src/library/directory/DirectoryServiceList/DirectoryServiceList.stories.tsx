@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DirectoryServiceList from './DirectoryServiceList';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const Template: Story<DirectoryServiceListProps> = (args) => {
+const Template: StoryFn<DirectoryServiceListProps> = (args) => {
   const [categories, setCategories] = useState(ExampleDirectoryCategories);
   const [minimumAge, setMinimumAge] = useState(args.minimumAge);
   const [maximumAge, setMaximumAge] = useState(args.maximumAge);

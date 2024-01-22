@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import SummaryList from './SummaryList';
 import { SummaryListProps } from './SummaryList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<SummaryListProps> = (args) => (
+const Template: StoryFn<SummaryListProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

@@ -1,8 +1,7 @@
-
-import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-import SearchIcon from "./SearchIcon";
-import { SearchIconProps } from "./SearchIcon.types";
+import React from 'react';
+import { StoryFn } from '@storybook/react';
+import SearchIcon from './SearchIcon';
+import { SearchIconProps } from './SearchIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
@@ -11,13 +10,17 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 };
 
-const Template: Story<SearchIconProps> = (args) => <SBPadding><SearchIcon {...args} /></SBPadding>;
+const Template: StoryFn<SearchIconProps> = (args) => (
+  <SBPadding>
+    <SearchIcon {...args} />
+  </SBPadding>
+);
 
-export const ExampleSearchIcon = Template.bind({});    
+export const ExampleSearchIcon = Template.bind({});
 ExampleSearchIcon.args = {
-  colourFill: "#111"
+  colourFill: '#111',
 };

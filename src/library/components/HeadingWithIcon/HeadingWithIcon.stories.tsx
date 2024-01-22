@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadingWithIcon from './HeadingWithIcon';
 import { HeadingWithIconProps } from './HeadingWithIcon.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<HeadingWithIconProps> = (args) => (
+const Template: StoryFn<HeadingWithIconProps> = (args) => (
   <SBPadding>
     <HeadingWithIcon {...args} />
   </SBPadding>

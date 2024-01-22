@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import PhoneIcon from './PhoneIcon';
 import { PhoneIconProps } from './PhoneIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<PhoneIconProps> = (args) => (
+const Template: StoryFn<PhoneIconProps> = (args) => (
   <SBPadding>
     <PhoneIcon {...args} />
   </SBPadding>

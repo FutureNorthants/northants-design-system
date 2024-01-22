@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles}
-  width: calc(100% - ${(props) => (props.isLarge ? '5rem' : '3rem')});
+  width: calc(100% - ${(props) => (props.$isLarge ? '5rem' : '3rem')});
 `;
 
 export const Label = styled.label`
@@ -27,27 +27,28 @@ export const InputWrapper = styled.div`
 export const Button = styled.button`
   position: absolute;
   top: 0;
-  right: ${(props) => (props.isLarge ? '-5rem' : '-3rem')};
+  right: ${(props) => (props.$isLarge ? '-5rem' : '-3rem')};
   cursor: pointer;
   margin: 0;
-  margin-top: ${(props) => (props.isErrored ? '25px' : 0)};
+  margin-top: ${(props) => (props.$isErrored ? '25px' : 0)};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   background: ${(props) =>
-    props.isLight ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_darkest};
+    props.$isLight ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_darkest};
   color: ${(props) => props.theme.theme_vars.colours.white};
   border: 1px solid transparent;
   border-top-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
-  width: ${(props) => (props.isLarge ? '5rem' : '3rem')};
+
+  width: ${(props) => (props.$isLarge ? '5rem' : '3rem')};
   text-align: center;
-  height: ${(props) => (props.isLarge ? '2.9rem' : '2.28rem')};
+  height: ${(props) => (props.$isLarge ? '2.9rem' : '2.28rem')};
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    height: ${(props) => (props.isLarge ? '3.22rem' : '2.6rem')};
+    height: ${(props) => (props.$isLarge ? '3.22rem' : '2.6rem')};
   }
 
   &:hover {
     background: ${(props) =>
-      props.isLight ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.black};
+      props.$isLight ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.black};
   }
 
   &:focus {

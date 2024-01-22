@@ -1,8 +1,7 @@
-
-import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-import NorthColouredLogo from "./logo";
-import { LogoProps } from "./logo.types";
+import React from 'react';
+import { StoryFn } from '@storybook/react';
+import NorthColouredLogo from './logo';
+import { LogoProps } from './logo.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
@@ -11,10 +10,14 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 };
 
-const Template: Story<LogoProps> = (args) => <SBPadding><NorthColouredLogo {...args} /></SBPadding>;
+const Template: StoryFn<LogoProps> = (args) => (
+  <SBPadding>
+    <NorthColouredLogo {...args} />
+  </SBPadding>
+);
 
-export const LogoExample = Template.bind({});    
+export const LogoExample = Template.bind({});

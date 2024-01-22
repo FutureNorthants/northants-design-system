@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import WarningTextDisclaimer from './WarningTextDisclaimer';
 import { WarningTextDisclaimerProps } from './WarningTextDisclaimer.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<WarningTextDisclaimerProps> = (args) => (
+const Template: StoryFn<WarningTextDisclaimerProps> = (args) => (
   <MaxWidthContainer>
     <WarningTextDisclaimer {...args}>
       Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit

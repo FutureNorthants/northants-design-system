@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const BackToTopButton = styled.button`
-  display: ${(props) => (props.visible ? 'inline-block' : 'none')};
+  display: ${(props) => (props.$visible ? 'inline-block' : 'none')};
   position: fixed;
   bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   right: ${(props) => props.theme.theme_vars.spacingSizes.medium};

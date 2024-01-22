@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DirectoryAddToShortList from './DirectoryAddToShortList';
 import { DirectoryAddToShortListProps } from './DirectoryAddToShortList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<DirectoryAddToShortListProps> = (args) => (
+const Template: StoryFn<DirectoryAddToShortListProps> = (args) => (
   <SBPadding>
     <DirectoryShortListProvider>
       <DirectoryAddToShortList {...args} />

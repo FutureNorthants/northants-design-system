@@ -14,11 +14,11 @@ const Column: React.FunctionComponent<ColumnProps> = ({
 }) => (
   <Styles.Container
     data-testid="Column"
-    small={small}
-    medium={medium}
-    large={large}
-    hasPadding={hasPadding}
-    hasBorder={hasBorder}
+    $small={small}
+    $medium={medium}
+    $large={large}
+    $hasPadding={hasPadding}
+    $hasBorder={hasBorder}
     as={isList ? 'li' : 'div'}
     className={classes}
   >

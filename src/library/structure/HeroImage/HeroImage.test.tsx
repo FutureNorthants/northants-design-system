@@ -183,5 +183,5 @@ it('should render the custom search box', () => {
   expect(form).toHaveAttribute('method', 'post');
   expect(form).toHaveAttribute('action', 'https://courses.northantsglobal.net/CourseKeySearch.asp');
 
-  expect(link).toHaveStyle('background-color: transparent;');
+  expect(link).toHaveClass('button--secondary');
 });

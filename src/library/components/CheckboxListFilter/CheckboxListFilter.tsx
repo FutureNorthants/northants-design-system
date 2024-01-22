@@ -45,10 +45,10 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   return (
     <Styles.Container data-testid="CheckboxListFilter">
       <Styles.Fieldset aria-describedby={hintId}>
-        <Styles.Legend labelHidden={labelHidden} data-testid="CheckboxListFilterLegend">
+        <Styles.Legend $labelHidden={labelHidden} data-testid="CheckboxListFilterLegend">
           {label}
         </Styles.Legend>
-        <Styles.Hint id={hintId} hintHidden={hintHidden} data-testid="CheckboxListFilterHint">
+        <Styles.Hint id={hintId} $hintHidden={hintHidden} data-testid="CheckboxListFilterHint">
           {hint}
         </Styles.Hint>
         <Styles.Checkboxes>
@@ -62,7 +62,7 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
                 value={option.value}
                 checked={option.checked}
               />
-              <Styles.CheckboxLabel isChecked={option.checked} htmlFor={option.value}>
+              <Styles.CheckboxLabel $isChecked={option.checked} htmlFor={option.value}>
                 {option.title}
               </Styles.CheckboxLabel>
             </Styles.Checkbox>

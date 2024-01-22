@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import RadioCheckboxInput from './RadioCheckboxInput';
 import { RadioCheckboxInputProps } from './RadioCheckboxInput.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<RadioCheckboxInputProps> = (args) => (
+const Template: StoryFn<RadioCheckboxInputProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

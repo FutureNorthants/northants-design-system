@@ -7,8 +7,8 @@ import Heading from '../../components/Heading/Heading';
  */
 export const Container = styled.div`
   background-image: ${(props) =>
-      !props.backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),` : ``}
-    url('${(props) => props.image}');
+      !props.$backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),` : ``}
+    url('${(props) => props.$image}');
 
   padding-bottom: 10px;
   background-position: center;
@@ -56,11 +56,11 @@ export const Overlay = styled.div`
   margin-right: 15px;
   padding: 25px 25px 0 25px;
   color: ${(props) =>
-    props.backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
+    props.$backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
   background-color: ${(props) =>
-    props.backgroundBox ? props.theme.theme_vars.colours.grey_light + 'F2' : `transparent`};
+    props.$backgroundBox ? props.theme.theme_vars.colours.grey_light + 'F2' : `transparent`};
   box-shadow: ${(props) =>
-    props.backgroundBox
+    props.$backgroundBox
       ? `0px -4px 0px 0px ` + props.theme.theme_vars.colours.action + ` inset, 0px 4px 15px rgba(0, 0, 0, 0.11)`
       : `none`};
 
@@ -89,7 +89,7 @@ export const Overlay = styled.div`
 export const Headline = styled(Heading)`
   margin: 0;
   color: ${(props) =>
-    props.backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
+    props.$backgroundBox ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.white};
 
   /* default - phones */
   font-size: 22px;
@@ -141,7 +141,7 @@ export const BreadcrumbLink = styled.a`
   ${(props) => props.theme.fontStyles}
   ${(props) => props.theme.linkStyles}
   color: ${(props) =>
-    props.backgroundBox ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
+    props.$backgroundBox ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: block;
 
@@ -149,7 +149,7 @@ export const BreadcrumbLink = styled.a`
   &:focus {
     text-decoration-style: dashed;
     text-shadow: ${(props) =>
-      props.backgroundBox
+      props.$backgroundBox
         ? 'none'
         : `2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
       2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5)`};
