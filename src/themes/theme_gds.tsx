@@ -1,25 +1,17 @@
-const breakpointsVals = {
+import { ThemeBreakpointTypes, ThemeVars } from './ThemeVars.types';
+
+const breakpointsVals: ThemeBreakpointTypes = {
   s: '550',
   m: '768', // tablets and larger
   l: '1160', // desktops and larger
   xl: '1440', // large desktops only
 };
 
-export const west_vars = {
-  theme_name: 'West Northants theme',
-  full_name: 'West Northamptonshire',
-  cardinal_name: 'west',
+export const gds_vars: ThemeVars = {
+  theme_name: 'GDS theme',
+  cardinal_name: 'gds',
   is_memorial: false,
-  council_link: 'https://www.westnorthants.gov.uk',
-  other_council_link: 'https://www.northnorthants.gov.uk',
-  other_council_name: 'North Northamptonshire',
-  other_council_action: '#016200',
-  twitter_link: 'https://twitter.com/WestNorthants',
-  linkedin_link: 'https://www.linkedin.com/company/west-northamptonshire-council',
-  facebook_link: 'https://www.facebook.com/WestNorthants',
-  instagram_link: 'https://www.instagram.com/westnorthants/',
-  youtube_link: 'https://www.youtube.com/channel/UCDyc2cNcl19OvcGOCuZDTBQ',
-
+  full_name: 'FutureGov Template',
   breakpointsVals: {
     s: breakpointsVals.s,
     m: breakpointsVals.m, // tablets and larger
@@ -40,18 +32,17 @@ export const west_vars = {
     grey_light: '#F5F5F5',
     white: '#FFFFFF',
 
-    action: '#385889',
-    action_light: '#E9EEF3',
-    action_dark: '#0E335B',
+    action: '#1d70b8',
+    action_light: '#FAFAFA',
+    action_dark: '#003078',
     positive: '#6C9A36',
-    negative: '#9D0B1D',
+    negative: '#d4351c',
 
-    focus: '#E2CA76',
+    visited: '#4c2c92',
+    focus: '#fd0',
     placeholder: '#585656',
-
-    secondary: '#6CC7E1',
   },
-  fontstack: 'Roboto, Helvetica, Arial, sans-serif',
+  fontstack: 'GDS Transport, Helvetica, Arial, sans-serif',
   fontSizes: {
     extra_small: '.9em',
     small: '1em',
@@ -61,8 +52,8 @@ export const west_vars = {
   border_width: '2px',
   border_width_error: '3px',
   border_width_thin: '1px',
-  border_radius: '3px',
-  border_radius_large: '6px',
+  border_radius: '0px',
+  border_radius_large: '0px',
   spacingSizes: {
     extra_small: '5px',
     small: '10px',

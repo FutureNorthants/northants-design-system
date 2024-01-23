@@ -1,11 +1,13 @@
-const breakpointsVals = {
+import { ThemeBreakpointTypes, ThemeVars } from './ThemeVars.types';
+
+const breakpointsVals: ThemeBreakpointTypes = {
   s: '550',
   m: '768', // tablets and larger
   l: '1160', // desktops and larger
   xl: '1440', // large desktops only
 };
 
-export const north_vars = {
+export const north_vars: ThemeVars = {
   theme_name: 'North Northants theme',
   full_name: 'North Northamptonshire',
   cardinal_name: 'north',
