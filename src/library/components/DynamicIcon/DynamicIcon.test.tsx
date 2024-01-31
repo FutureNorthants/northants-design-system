@@ -18,17 +18,20 @@ describe('Dynamic Icon', () => {
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
+        <button>Button text</button>
         <DynamicIcon {...props} />
       </ThemeProvider>
     );
 
   it('should render the service icon', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getByText } = renderComponent();
 
-    const component = getByTestId('DynamicIcon');
+    const text = getByText('Button text');
+    const serviceIcon = getByTestId('Icon');
+    const serviceIconHover = getByTestId('IconHover');
 
-    const serviceIcon = component.getElementsByClassName('service-icon')[0];
-    const serviceIconHover = component.getElementsByClassName('service-icon-hover')[0];
+    // Move focus away from the icon
+    text.focus();
 
     expect(serviceIcon).toBeInTheDocument();
     expect(serviceIcon).toBeVisible();

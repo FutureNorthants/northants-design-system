@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import MemorialHero from './MemorialHero';
 import { MemorialHeroProps } from './MemorialHero.types';
 import ServicesLinksList from '../ServicesLinksList/ServicesLinksList';
@@ -11,7 +11,7 @@ export default {
   component: MemorialHero,
 };
 
-const Template: Story<MemorialHeroProps> = (args) => (
+const Template: StoryFn<MemorialHeroProps> = (args) => (
   <ThemeProvider theme={lb_theme_north}>
     <MemorialHero {...args} />
   </ThemeProvider>

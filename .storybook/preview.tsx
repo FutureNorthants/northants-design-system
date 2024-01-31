@@ -3,39 +3,44 @@ import { ThemeProvider } from 'styled-components';
 import { themes } from '../src/themes/theme_generator';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { GlobalStyleReset } from '../src/themes/GlobalStyleReset';
+import { Preview } from '@storybook/react';
 
-export const parameters = {
-  layout: 'fullscreen',
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  viewport: {
-    viewports: INITIAL_VIEWPORTS,
-  },
-  backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: '#fff',
-      },
-      {
-        name: 'dark',
-        value: '#333333',
-      },
-      {
-        name: 'north',
-        value: '#017F34',
-      },
-      {
-        name: 'west',
-        value: '#386193',
-      },
-      {
-        name: 'london_bridge',
-        value: '#000000',
-      },
-    ],
+const preview: Preview = {
+  parameters: {
+    layout: 'fullscreen',
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#fff',
+        },
+        {
+          name: 'dark',
+          value: '#333333',
+        },
+        {
+          name: 'north',
+          value: '#017F34',
+        },
+        {
+          name: 'west',
+          value: '#386193',
+        },
+        {
+          name: 'london_bridge',
+          value: '#000000',
+        },
+      ],
+    },
   },
 };
+
+export default preview;
 
 export const globalTypes = {
   theme: {

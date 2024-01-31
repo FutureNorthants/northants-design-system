@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import PromotedLinks from './PromotedLinks';
 import { PromotedLinksProps } from './PromotedLinks.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -9,7 +9,7 @@ export default {
   component: PromotedLinks,
 };
 
-const Template: Story<PromotedLinksProps> = (args) => (
+const Template: StoryFn<PromotedLinksProps> = (args) => (
   <SBPadding>
     <PromotedLinks {...args} />
   </SBPadding>

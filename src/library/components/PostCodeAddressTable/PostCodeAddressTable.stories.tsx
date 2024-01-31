@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import PostCodeAddressTable from './PostCodeAddressTable';
 import { PostCodeAddressTableProps } from './PostCodeAddressTable.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<PostCodeAddressTableProps> = (args) => (
+const Template: StoryFn<PostCodeAddressTableProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PostCodeAddressProvider>

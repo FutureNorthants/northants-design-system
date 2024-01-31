@@ -4,8 +4,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import svg from 'rollup-plugin-svg';
 import json from '@rollup/plugin-json';
+import { readFileSync } from 'node:fs';
 
-const packageJson = require('./package.json');
+// Use import.meta.url to make the path relative to the current source
+// file instead of process.cwd(). For more information:
+// https://nodejs.org/docs/latest-v16.x/api/esm.html#importmetaurl
+const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)));
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -16,23 +20,23 @@ export default {
       file: packageJson.main,
       format: 'cjs',
       sourcemap: true,
+      interop: 'auto',
     },
     {
       file: packageJson.module,
-      format: 'esm',
+      format: 'es',
       sourcemap: true,
+      interop: 'auto',
     },
   ],
   plugins: [
     peerDepsExternal(),
     resolve({
       extensions: extensions,
+      preferBuiltins: true,
     }),
     commonjs({
       include: 'node_modules/**',
-      namedExports: {
-        'react-is': ['isForwardRef'],
-      },
     }),
     svg(),
     typescript({ useTsconfigDeclarationDir: true }),

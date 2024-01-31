@@ -1,23 +1,23 @@
-import React from "react";
-import { Story } from "@storybook/react/types-6-0";
-import PromoBlock from "./PromoBlock";
-import { PromoBlockProps } from "./PromoBlock.types";
-import MaxWidthContainer from "../MaxWidthContainer/MaxWidthContainer";
-import { PromoBlocksData } from "./PromoBlock.storydata";
+import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
+import PromoBlock from './PromoBlock';
+import { PromoBlockProps } from './PromoBlock.types';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import { PromoBlocksData } from './PromoBlock.storydata';
 
 export default {
-  title: "Library/Structure/Promo Block",
+  title: 'Library/Structure/Promo Block',
   component: PromoBlock,
   parameters: {
     status: {
-      type: "stable", // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
+      type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
   argTypes: {
     promos: {
-      table: { category: "Tiles" },
+      table: { category: 'Tiles' },
       control: {
-        type: "object",
+        type: 'object',
       },
     },
   },
@@ -29,7 +29,7 @@ export default {
  * 1 should degrade to max 50% width. All full width on mobile.
  */
 
-const Template: Story<PromoBlockProps> = (args) => (
+const Template: StoryFn<PromoBlockProps> = (args) => (
   <MaxWidthContainer>
     <PromoBlock {...args} />
   </MaxWidthContainer>

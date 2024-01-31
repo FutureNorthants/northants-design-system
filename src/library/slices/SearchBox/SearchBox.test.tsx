@@ -49,6 +49,8 @@ describe('SearchBox Component', () => {
 
     const link = getByRole('link');
 
-    expect(link).toHaveStyle('background-color: transparent;');
+    expect(link).toHaveAttribute('href', 'https://courses.northantsglobal.net/AvailableCoursesList.asp');
+    expect(link).toHaveClass('button--secondary');
+    expect(link).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.action} ;`);
   });
 });

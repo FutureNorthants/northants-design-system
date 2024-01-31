@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Image from './Image';
 import { ImageProps } from './Image.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<ImageProps> = (args) => (
+const Template: StoryFn<ImageProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <p>

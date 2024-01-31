@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Row from './Row';
 import { RowProps } from './Row.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<RowProps> = (args) => (
+const Template: StoryFn<RowProps> = (args) => (
   <SBPadding>
     <Row {...args}>Some content</Row>
   </SBPadding>

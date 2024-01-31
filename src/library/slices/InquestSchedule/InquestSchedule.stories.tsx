@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import InquestSchedule from './InquestSchedule';
 import { InquestScheduleProps } from './InquestSchedule.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<InquestScheduleProps> = (args) => (
+const Template: StoryFn<InquestScheduleProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

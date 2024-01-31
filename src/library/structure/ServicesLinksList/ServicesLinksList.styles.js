@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const containerMaxHeight = (props) => {
-  if (props.hideHeader || props.isBoxed) {
+  if (props.$hideHeader || props.$isBoxed) {
     return css`
       max-height: none;
       overflow: visible;
@@ -102,7 +102,7 @@ const PromotedLink = css`
 `;
 
 const PagelinkBlockOneCol = (props, other) => {
-  if (props.oneCol) {
+  if (props.$oneCol) {
     return css`
       width: 100%;
       @media screen and (min-width: ${(props) => `${props.theme.theme_vars.breakpointsVals.m}px`}) and (max-width: ${(
@@ -129,7 +129,7 @@ const PagelinkBlockOneCol = (props, other) => {
 };
 
 const backgroundStyles = (props) => {
-  if (props.hasBackground) {
+  if (props.$hasBackground) {
     return PromotedLink;
   }
 };

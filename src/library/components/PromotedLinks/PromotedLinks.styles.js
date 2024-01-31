@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const oneColStyles = (props) => {
-  if (props.oneCol) {
+  if (props.$oneCol) {
     return css`
       width: 100%;
       display: block;

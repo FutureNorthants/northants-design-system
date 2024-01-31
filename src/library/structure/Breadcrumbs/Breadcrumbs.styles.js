@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding-top: 20px;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey}80;
-  margin-bottom: ${(props) => (props.hasMargin ? props.theme.theme_vars.spacingSizes.large : 0)};
+  margin-bottom: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.large : 0)};
 `;
 
 export const List = styled.ol`

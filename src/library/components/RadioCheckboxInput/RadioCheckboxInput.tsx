@@ -14,7 +14,7 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
   const id = useId();
 
   return (
-    <Styles.Container data-testid="RadioCheckboxInput" isErrored={isErrored}>
+    <Styles.Container data-testid="RadioCheckboxInput" $isErrored={isErrored}>
       <Styles.Category>
         <Styles.CategoryInput
           type={singleSelection ? 'radio' : 'checkbox'}
@@ -24,7 +24,7 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
           onClick={onChange}
           defaultChecked={checked}
         />
-        <Styles.CategoryInputLabel isChecked={checked} htmlFor={id} singleSelection={singleSelection}>
+        <Styles.CategoryInputLabel $isChecked={checked} htmlFor={id} $singleSelection={singleSelection}>
           {label}
         </Styles.CategoryInputLabel>
       </Styles.Category>

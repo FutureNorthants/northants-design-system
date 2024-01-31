@@ -1,7 +1,7 @@
-import React from "react";
-import { Story } from '@storybook/react/types-6-0';
-import Icon from "./Icon";
-import { IconProps } from "../services/Icon.types";
+import React from 'react';
+import { StoryFn } from '@storybook/react';
+import Icon from './Icon';
+import { IconProps } from '../services/Icon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 export default {
@@ -10,13 +10,17 @@ export default {
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
-    }
+    },
   },
 };
 
-const Template: Story<IconProps> = (args) => <SBPadding><Icon {...args} /></SBPadding>;
+const Template: StoryFn<IconProps> = (args) => (
+  <SBPadding>
+    <Icon {...args} />
+  </SBPadding>
+);
 
-export const ExampleInstagramIcon = Template.bind({});    
+export const ExampleInstagramIcon = Template.bind({});
 ExampleInstagramIcon.args = {
-  colourFill: "#111"
+  colourFill: '#111',
 };

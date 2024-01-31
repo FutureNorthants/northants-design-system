@@ -166,7 +166,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                 </Styles.LoadingContainer>
               )}
 
-              <Styles.FormContainer isLoading={isLoading}>
+              <Styles.FormContainer $isLoading={isLoading}>
                 <Styles.Label htmlFor="postcode">
                   Enter your postcode
                   <HintText

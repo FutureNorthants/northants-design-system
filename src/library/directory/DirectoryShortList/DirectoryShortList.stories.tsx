@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DirectoryShortList from './DirectoryShortList';
 import { DirectoryShortListProps } from './DirectoryShortList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<DirectoryShortListProps> = (args) => (
+const Template: StoryFn<DirectoryShortListProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
@@ -34,7 +34,7 @@ ExampleDirectoryShortList.args = {
   directoryPath: '/directory',
 };
 
-const TemplateWithKey: Story<DirectoryShortListProps> = (args) => (
+const TemplateWithKey: StoryFn<DirectoryShortListProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

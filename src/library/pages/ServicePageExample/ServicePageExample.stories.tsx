@@ -9,7 +9,7 @@ export default {
   component: ServicePageExample,
 } as Meta;
 
-const Template: Story<ServicePageExampleProps> = (args) => <ServicePageExample {...args} />;
+const Template: StoryFn<ServicePageExampleProps> = (args) => <ServicePageExample {...args} />;
 
 export const ServicePageWithContent = Template.bind({});
 

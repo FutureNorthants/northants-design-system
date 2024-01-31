@@ -13,7 +13,7 @@ const AlertBannerService: React.FunctionComponent<AlertBannerServiceProps> = ({
   alertType = 'alert',
   children,
 }) => (
-  <Styles.Container alertType={alertType} data-testid="AlertBannerService" hasTopSpacing={hasTopSpacing}>
+  <Styles.Container $alertType={alertType} data-testid="AlertBannerService" $hasTopSpacing={hasTopSpacing}>
     <Styles.InnerContainer data-testid="AlertBannerServiceInner">
       {title?.trim() && <Heading text={title} />}
       {children}

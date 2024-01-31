@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import StaticMap from './StaticMap';
 import { StaticMapProps } from './StaticMap.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<StaticMapProps> = (args) => (
+const Template: StoryFn<StaticMapProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

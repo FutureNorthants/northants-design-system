@@ -23,12 +23,12 @@ describe('Test Static Map Component', () => {
     );
 
   it('should render static map correctly', () => {
-    const { getByTestId, getByRole } = renderComponent();
+    const { getByTestId, getByAltText } = renderComponent();
 
     const component = getByTestId('StaticMap');
-    const image = getByRole('img');
+    const image = getByAltText('An example map');
 
     expect(component).toBeVisible();
-    expect(image).toHaveAttribute('alt', 'An example map');
+    expect(image).toBeVisible();
   });
 });

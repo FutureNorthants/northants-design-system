@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import GoogleMap from './GoogleMap';
 import { GoogleMapProps } from './GoogleMap.types';
 import * as storydata from './GoogleMap.storydata';
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<GoogleMapProps> = (args) => (
+const Template: StoryFn<GoogleMapProps> = (args) => (
   <SBPadding>
     <GoogleMap {...args} />
   </SBPadding>

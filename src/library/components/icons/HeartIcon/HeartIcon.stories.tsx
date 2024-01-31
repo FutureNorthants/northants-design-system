@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import HeartIcon from './HeartIcon';
 import { HeartIconProps } from './HeartIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<HeartIconProps> = (args) => (
+const Template: StoryFn<HeartIconProps> = (args) => (
   <SBPadding>
     <HeartIcon {...args} />
   </SBPadding>

@@ -117,7 +117,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
       >
         {({ getInputProps, getItemProps, getLabelProps, getMenuProps, isOpen, inputValue, getRootProps }) => (
           <div>
-            <Styles.AutocompleteLabel {...getLabelProps()} hasHiddenLabel={hasHiddenLabel}>
+            <Styles.AutocompleteLabel {...getLabelProps()} $hasHiddenLabel={hasHiddenLabel}>
               {labelText ? labelText : placeholder}
             </Styles.AutocompleteLabel>
             {isErrored && errorText && (
@@ -135,10 +135,10 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                   name: name,
                   value: inputValue,
                   placeholder: placeholder,
-                  isErrored: isErrored,
-                  isOpen: isOpen && filteredsuggestions.length > 0,
-                  isLarge: isLarge,
-                  hasAdjacentButton: hasAdjacentButton,
+                  $isErrored: isErrored,
+                  $isOpen: isOpen && filteredsuggestions.length > 0,
+                  $isLarge: isLarge,
+                  $hasAdjacentButton: hasAdjacentButton,
                   size: size,
                 })}
                 aria-required={required ? 'true' : 'false'}
@@ -154,7 +154,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                     'aria-label': 'Suggestion',
                     title: 'Suggestion',
                   })}
-                  isLarge={isLarge}
+                  $isLarge={isLarge}
                 >
                   {
                     // Here we are turning our filtered suggestions into list items
@@ -166,7 +166,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                             index: index,
                             item: item,
                           })}
-                          isLarge={isLarge}
+                          $isLarge={isLarge}
                         >
                           {getItemTextChunks(item, inputValue)}
                         </Styles.AutocompleteSuggestionItem>

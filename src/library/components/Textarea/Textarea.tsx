@@ -26,22 +26,22 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
           onChange={onChange}
           placeholder={placeholder}
           name={name}
-          isErrored={isErrored}
+          $isErrored={isErrored}
           maxLength={maxLength}
           value={value}
           id={id}
-          isFullWidth={isFullWidth}
+          $isFullWidth={isFullWidth}
         />
       ) : (
         <Styles.StyledTextarea
           onChange={onChange}
           placeholder={placeholder}
           name={name}
-          isErrored={isErrored}
+          $isErrored={isErrored}
           maxLength={maxLength}
           defaultValue={defaultValue}
           id={id}
-          isFullWidth={isFullWidth}
+          $isFullWidth={isFullWidth}
         />
       )}
     </>

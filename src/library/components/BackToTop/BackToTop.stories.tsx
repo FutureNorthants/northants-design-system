@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import BackToTop from './BackToTop';
 import { BackToTopProps } from './BackToTop.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<BackToTopProps> = (args) => (
+const Template: StoryFn<BackToTopProps> = (args) => (
   <>
     <Header />
     <MaxWidthContainer>

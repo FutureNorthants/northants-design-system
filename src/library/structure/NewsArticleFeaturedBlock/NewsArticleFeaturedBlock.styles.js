@@ -104,7 +104,7 @@ export const ImageContainer = styled.span`
   width: 100%;
   height: ${imageHeightMobile}px;
   overflow: hidden;
-  background-image: url('${(props) => props.background}');
+  background-image: url('${(props) => props.$background}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

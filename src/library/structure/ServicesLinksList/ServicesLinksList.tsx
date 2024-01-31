@@ -36,7 +36,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
 
   return (
     <>
-      <Styles.Container id={serviceId} className={open && 'open'} hideHeader={hideHeader} isBoxed={isBoxed}>
+      <Styles.Container id={serviceId} className={open && 'open'} $hideHeader={hideHeader} $isBoxed={isBoxed}>
         {!hideHeader && (
           <Styles.HomeTitle data-testid="servicesLinksListHeader">
             <Heading text="Council services" />
@@ -91,7 +91,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
         ) : (
           <Styles.LinksList>
             {arrayOrdering.map((link, i) => (
-              <Styles.PagelinkBlock oneCol={oneCol} key={i} hasBackground={hasBackground}>
+              <Styles.PagelinkBlock $oneCol={oneCol} key={i} $hasBackground={hasBackground}>
                 <HeadingWithIconLink title={link.title} iconKey={link.iconKey} link={link.url} />
                 <Styles.PagelinkInner>
                   {link.quickLinksArray?.length > 0 && (

@@ -29,10 +29,10 @@ export const HeadingWrapper = styled.div`
 
   &:hover {
     .service-icon {
-      display: ${(props) => (props.hasHover ? 'none' : 'block')};
+      display: ${(props) => (props.$hasHover ? 'none' : 'block')};
     }
     .service-icon-hover {
-      display: ${(props) => (props.hasHover ? 'block' : 'none')};
+      display: ${(props) => (props.$hasHover ? 'block' : 'none')};
     }
   }
 `;

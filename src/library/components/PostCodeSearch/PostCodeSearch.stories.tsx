@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCodeSearch from './PostCodeSearch';
 import { PostCodeSearchProps } from './PostCodeSearch.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<PostCodeSearchProps> = (args) => (
+const Template: StoryFn<PostCodeSearchProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PostCodeSearch {...args} />

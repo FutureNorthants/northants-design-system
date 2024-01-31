@@ -1,7 +1,7 @@
 import React from 'react';
 import FullWidthContainer from './FullWidthContainer';
 import { FullWidthContainerProps } from './FullWidthContainer.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 
 export default {
   title: 'Library/structure/Full width Container',
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-const Template: Story<FullWidthContainerProps> = (args) => (
+const Template: StoryFn<FullWidthContainerProps> = (args) => (
   <FullWidthContainer {...args}>Children of the page container go here</FullWidthContainer>
 );
 

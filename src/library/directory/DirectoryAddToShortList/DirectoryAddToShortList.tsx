@@ -23,7 +23,7 @@ const DirectoryAddToShortList: React.FunctionComponent<DirectoryAddToShortListPr
     <Styles.AddToShortlist
       onClick={(e) => toggleFavourites(id, name, snippet, email, website, phone, addresses, fees)}
       data-testid="DirectoryAddToShortList"
-      favourite={favourite}
+      $favourite={favourite}
     >
       {favourite ? (
         <CloseIcon colourFill={themeContext.theme_vars.colours.negative} />

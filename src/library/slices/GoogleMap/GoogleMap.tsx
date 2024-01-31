@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleMapProps } from './GoogleMap.types';
 import * as Styles from './GoogleMap.styles';
 import { wereCookiesAccepted } from '../../helpers/cookies';
@@ -18,6 +18,7 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
   allowCookies,
 }) => {
   const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
+  const [notServer, setNotServer] = useState(false);
 
   /* We extract the iframe source URL and check it actually goes to www.google.com/maps */
   const src_matches = iframe_html.match(/src="([^"]+)"/gi);
@@ -32,6 +33,10 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
     const googl_matches = link_url.match(/^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps/gi);
     link_url = googl_matches?.length == 1 ? link_url : '';
   }
+
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
 
   return (
     <>
@@ -51,7 +56,7 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
             {!embed_url && 'iframe data'}; please report this to the content editor
           </AlertBannerService>
         )}
-        {cookiesAccepted && embed_url && (
+        {cookiesAccepted && embed_url && notServer && (
           <Styles.MapEmbed data-testid="GoogleMapContainer">
             <Styles.MapEmbedIFrame
               src={embed_url}
@@ -62,7 +67,8 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
           </Styles.MapEmbed>
         )}
         {cookiesAccepted &&
-          link_url && ( // visually hidden link for screen readers etc. as the embed isn't very accessible so hidden from them
+          link_url &&
+          notServer && ( // visually hidden link for screen readers etc. as the embed isn't very accessible so hidden from them
             <Styles.ProtectiveContainer>
               <Styles.AccessibleMapLink href={link_url}>
                 {link_title ? link_title : 'Google Maps link'}
@@ -70,7 +76,8 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
             </Styles.ProtectiveContainer>
           )}
         {!cookiesAccepted &&
-          link_url && ( // visible link for all if cookies not accepted
+          link_url &&
+          notServer && ( // visible link for all if cookies not accepted
             <Styles.MapLink href={link_url}>{link_title ? link_title : 'Google Maps link'}</Styles.MapLink>
           )}
       </Styles.ProtectiveContainer>

@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   display: block;
   border-left: ${(props) =>
-    props.isErrored
+    props.$isErrored
       ? `${props.theme.theme_vars.border_width} solid ${props.theme.theme_vars.colours.negative}`
       : 'none'};
-  padding-left: ${(props) => (props.isErrored ? ` ${props.theme.theme_vars.spacingSizes.extra_small}` : '0')};
+  padding-left: ${(props) => (props.$isErrored ? ` ${props.theme.theme_vars.spacingSizes.extra_small}` : '0')};
   padding-bottom: 10px;
 `;
 
@@ -40,7 +40,7 @@ export const CategoryInput = styled.input`
  * If single selection then use styles for radio button, otherwise checkbox styles
  */
 const checkedMarker = (props) => {
-  if (props.singleSelection) {
+  if (props.$singleSelection) {
     return css`
       top: 10px;
       left: 10px;
@@ -89,7 +89,7 @@ export const CategoryInputLabel = styled.label`
     height: 40px;
     border: 2px solid currentColor;
     background: transparent;
-    border-radius: ${(props) => (props.singleSelection ? '100%' : 0)};
+    border-radius: ${(props) => (props.$singleSelection ? '100%' : 0)};
   }
 
   &:after {
@@ -97,7 +97,7 @@ export const CategoryInputLabel = styled.label`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
-    opacity: ${(props) => (props.isChecked ? 1 : 0)};
+    opacity: ${(props) => (props.$isChecked ? 1 : 0)};
     ${checkedMarker}
   }
 `;

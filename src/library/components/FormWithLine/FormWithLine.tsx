@@ -19,10 +19,10 @@ const FormWithLine: React.FC<FormWithLineProps> = ({
 }) => {
   return (
     <Styles.Container>
-      <Styles.Line lineColour={lineColour} hideLine={hideLine} isError={isError} />
+      <Styles.Line $lineColour={lineColour} $hideLine={hideLine} $isError={isError} />
       <Styles.Form
         onSubmit={onSubmit}
-        hideLine={hideLine}
+        $hideLine={hideLine}
         role={formRole}
         method={formMethod}
         url={formURL}

@@ -8,28 +8,28 @@ import { VisuallyHidden } from './../../helpers/style-helpers';
 export const AutocompleteTextInput = styled(StyledTextInput)`
   /* right edge squared off if has a button adjacent, and lower corners squared if suggestions visible */
   border-top-right-radius: ${(props) =>
-    props.hasAdjacentButton
+    props.$hasAdjacentButton
       ? '0px'
-      : props.isLarge
+      : props.$isLarge
       ? props.theme.theme_vars.border_radius_large
       : props.theme.theme_vars.border_radius};
   border-bottom-left-radius: ${(props) =>
     props.isOpen
       ? '0px'
-      : props.isLarge
+      : props.$isLarge
       ? props.theme.theme_vars.border_radius_large
       : props.theme.theme_vars.border_radius};
   border-bottom-right-radius: ${(props) =>
-    props.hasAdjacentButton || props.isOpen
+    props.$hasAdjacentButton || props.$isOpen
       ? '0px'
-      : props.isLarge
+      : props.$isLarge
       ? props.theme.theme_vars.border_radius_large
       : props.theme.theme_vars.border_radius};
 `;
 
 export const AutocompleteLabel = styled.label`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
-  ${(props) => (props.hasHiddenLabel ? VisuallyHidden : 'display: inline-block; padding-bottom: 10px')}
+  ${(props) => (props.$hasHiddenLabel ? VisuallyHidden : 'display: inline-block; padding-bottom: 10px')}
 `;
 
 /**
@@ -42,7 +42,7 @@ export const AutocompleteSuggestionList = styled.ul`
   width: auto;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   border-radius: ${(props) =>
-    props.isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
+    props.$isLarge ? props.theme.theme_vars.border_radius_large : props.theme.theme_vars.border_radius};
   border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
   margin: -2px 0 0 0 !important; /* override higher level website css */
   border-top-left-radius: 0px;
@@ -58,7 +58,7 @@ export const AutocompleteSuggestionItem = styled.li`
   left: 0;
   padding: calc(
     ${(props) =>
-        props.isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small} +
+        props.$isLarge ? props.theme.theme_vars.spacingSizes.small : props.theme.theme_vars.spacingSizes.extra_small} +
       0.18rem
   ) !important;
   margin-bottom: 0 !important;

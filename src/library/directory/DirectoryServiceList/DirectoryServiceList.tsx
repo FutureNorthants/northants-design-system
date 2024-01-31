@@ -252,7 +252,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
           <Styles.FilterToggle type="button" onClick={(e) => setShowFilters(!showFilters)}>
             {showFilters ? `Hide Filters` : `Show Filters`}
           </Styles.FilterToggle>
-          <Styles.FilterContainer showFilters={showFilters}>
+          <Styles.FilterContainer $showFilters={showFilters}>
             <Row>
               <Column small="full" medium="full" large="full">
                 <Styles.ResultInfo>Refine your search</Styles.ResultInfo>
@@ -280,10 +280,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       <Styles.Legend onClick={(e) => toggleAccordion(0)}>
                         <Styles.LegendButton onClick={(e) => toggleAccordion(0)} type="button">
                           Select age group (years)
-                          <Styles.AccordionIcon isOpen={accordions[0]} />
+                          <Styles.AccordionIcon $isOpen={accordions[0]} />
                         </Styles.LegendButton>
                       </Styles.Legend>
-                      <Styles.Accordion isOpen={accordions[0]}>
+                      <Styles.Accordion $isOpen={accordions[0]}>
                         <Styles.ClearFilter>
                           <Styles.TextLink onClick={(e) => clearAges(e)}>Clear filter</Styles.TextLink>
                         </Styles.ClearFilter>
@@ -318,10 +318,10 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                         <Styles.Legend>
                           <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex + 1)} type="button">
                             {category.label}
-                            <Styles.AccordionIcon isOpen={accordions[categoryIndex + 1]} />
+                            <Styles.AccordionIcon $isOpen={accordions[categoryIndex + 1]} />
                           </Styles.LegendButton>
                         </Styles.Legend>
-                        <Styles.Accordion isOpen={accordions[categoryIndex + 1]}>
+                        <Styles.Accordion $isOpen={accordions[categoryIndex + 1]}>
                           <Styles.ClearFilter>
                             <Styles.TextLink onClick={(e) => clearCategory(categoryIndex)}>
                               Clear filter
@@ -399,7 +399,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   const snippet = transformSnippet(service.description, extractLength);
                   return (
                     <Column small="full" medium="full" large="full" key={service.id}>
-                      <Styles.ServiceContainer resultNumber={index}>
+                      <Styles.ServiceContainer $resultNumber={index}>
                         <Row>
                           <Column small="full" medium="full" large="full">
                             <Styles.ServiceHeader>

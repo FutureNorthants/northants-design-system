@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Map from './Map';
 import { MapProps } from './Map.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -17,7 +17,7 @@ export default {
 
 const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
-const Template: Story<MapProps> = (args) => (
+const Template: StoryFn<MapProps> = (args) => (
   <SBPadding>
     <Wrapper apiKey={apiKey}>
       <Map {...args} />

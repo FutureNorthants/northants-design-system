@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Autocomplete from './Autocomplete';
 import { AutocompleteProps } from './Autocomplete.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -109,7 +109,7 @@ const CommonEventStubs = {
   onChange: onChangeStub,
 };
 
-const Template: Story<AutocompleteProps> = (args) => (
+const Template: StoryFn<AutocompleteProps> = (args) => (
   <SBPadding>
     <div style={{ width: '750px' }}>
       <Autocomplete {...args} />

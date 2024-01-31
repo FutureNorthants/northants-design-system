@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SignpostPageExampleProps> = (args) => <SignpostPageExample {...args} />;
+const Template: StoryFn<SignpostPageExampleProps> = (args) => <SignpostPageExample {...args} />;
 
 export const FindYourBinCollectionDayNorthExample = Template.bind({});
 FindYourBinCollectionDayNorthExample.args = {

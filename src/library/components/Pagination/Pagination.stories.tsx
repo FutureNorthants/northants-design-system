@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Pagination from './Pagination';
 import { PaginationProps } from './Pagination.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<PaginationProps> = (args) => (
+const Template: StoryFn<PaginationProps> = (args) => (
   <SBPadding>
     <Pagination {...args} />
   </SBPadding>

@@ -6,11 +6,11 @@ export const StyledTextarea = styled.textarea`
   margin-bottom: 25px;
   padding: 5px;
   border: solid
-    ${(props) => (props.isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
-  border-width: ${(props) => (props.isErrored ? '3px' : '2px')};
+    ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
+  border-width: ${(props) => (props.$isErrored ? '3px' : '2px')};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   display: block;
-  width: ${(props) => (props.isFullWidth ? '100%' : 'auto')};
+  width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
 
   &:focus {
     outline: none;

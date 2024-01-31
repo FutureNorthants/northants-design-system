@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import { InputProps } from './Input.types';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<InputProps> = (args) => (
+const Template: StoryFn<InputProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>

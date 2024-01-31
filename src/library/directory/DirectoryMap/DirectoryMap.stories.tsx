@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import DirectoryMap from './DirectoryMap';
 import { DirectoryMapProps } from './DirectoryMap.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template: Story<DirectoryMapProps> = (args) => (
+const Template: StoryFn<DirectoryMapProps> = (args) => (
   <SBPadding>
     <DirectoryMap {...args} />
   </SBPadding>

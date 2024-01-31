@@ -33,15 +33,15 @@ const HeroImage: React.FunctionComponent<HeroImageProps> = ({
         }}
       >
         {(src) => (
-          <Styles.Container image={src} backgroundBox={backgroundBox} data-testid="HeroImage">
+          <Styles.Container $image={src} $backgroundBox={backgroundBox} data-testid="HeroImage">
             <Styles.InnerContainer>
-              <Styles.Overlay backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
+              <Styles.Overlay $backgroundBox={backgroundBox} data-testid="HeroImageOverlay">
                 {breadcrumb && (
-                  <Styles.BreadcrumbLink href={breadcrumb.url} backgroundBox={backgroundBox}>
+                  <Styles.BreadcrumbLink href={breadcrumb.url} $backgroundBox={backgroundBox}>
                     {breadcrumb.title}
                   </Styles.BreadcrumbLink>
                 )}
-                {headline && <Styles.Headline level={1} text={headline} backgroundBox={backgroundBox} />}
+                {headline && <Styles.Headline level={1} text={headline} $backgroundBox={backgroundBox} />}
                 {content && <Styles.Content dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }} />}
                 {customSearch && (
                   <Styles.Search>

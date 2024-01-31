@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useId } from 'react';
 import { AccordionProps } from './Accordion.types';
 import * as Styles from './Accordion.styles';
 import AccordionSection from './AccordionSection';
-import { uniqueID } from './../../helpers/helpers';
 
 const Accordion: React.FunctionComponent<AccordionProps> = ({ sections, isFilter = false, withReadMore = false }) => {
   sections.map((section, i) => {
@@ -42,7 +41,7 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({ sections, isFilter
     setAccordionStates(newStatus);
   };
 
-  const accordionId = `accordion${uniqueID()}`;
+  const accordionId = `accordion${useId()}`;
 
   return (
     <Styles.Container data-testid="Accordion" id={accordionId}>

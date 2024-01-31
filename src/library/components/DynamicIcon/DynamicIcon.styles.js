@@ -9,12 +9,12 @@ export const IconWrapper = styled.span`
   display: flex;
   flex-shrink: 0;
   width: ${(props) =>
-    props.iconSize === 1 ? '65px' : props.iconSize === 2 ? '45px' : props.iconSize === 3 ? '30px' : '20px'};
+    props.$iconSize === 1 ? '65px' : props.$iconSize === 2 ? '45px' : props.$iconSize === 3 ? '30px' : '20px'};
   height: auto;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     width: ${(props) =>
-      props.iconSize === 1 ? '85px' : props.iconSize === 2 ? '76px' : props.iconSize === 3 ? '55px' : '40px'};
+      props.$iconSize === 1 ? '85px' : props.$iconSize === 2 ? '76px' : props.$iconSize === 3 ? '55px' : '40px'};
     height: auto;
   }
 

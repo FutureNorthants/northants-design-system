@@ -1,7 +1,7 @@
 import React from 'react';
 import AlertBannerService from './AlertBannerService';
 import { AlertBannerServiceProps } from './AlertBannerService.types';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';
 
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template: Story<AlertBannerServiceProps> = (args) => (
+const Template: StoryFn<AlertBannerServiceProps> = (args) => (
   <PageMain>
     <MaxWidthContainer>
       <AlertBannerService {...args}>
@@ -27,7 +27,7 @@ const Template: Story<AlertBannerServiceProps> = (args) => (
     </MaxWidthContainer>
   </PageMain>
 );
-const TemplateIE: Story<AlertBannerServiceProps> = (args) => (
+const TemplateIE: StoryFn<AlertBannerServiceProps> = (args) => (
   <PageMain>
     <MaxWidthContainer>
       <AlertBannerService {...args}>

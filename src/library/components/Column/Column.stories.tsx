@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Column from './Column';
 import { ColumnProps } from './Column.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -23,7 +23,7 @@ const divStyle = {
   padding: '20px 0',
 };
 
-const Template: Story<ColumnProps> = (args) => (
+const Template: StoryFn<ColumnProps> = (args) => (
   <SBPadding>
     <Row hasBorder>
       <Column {...args} hasBorder>
@@ -83,7 +83,7 @@ AutoWidthColumns.args = {
   hasPadding: true,
 };
 
-const CombinedTemplate: Story<ColumnProps> = (args) => (
+const CombinedTemplate: StoryFn<ColumnProps> = (args) => (
   <SBPadding>
     <Row hasBorder>
       <Column small="full" medium="full" large="full" hasBorder>
@@ -115,7 +115,7 @@ const CombinedTemplate: Story<ColumnProps> = (args) => (
 
 export const CombinedColumnExample = CombinedTemplate.bind({});
 
-const TemplateIsList: Story<ColumnProps> = (args) => (
+const TemplateIsList: StoryFn<ColumnProps> = (args) => (
   <SBPadding>
     <Row hasBorder isList>
       <Column {...args} hasBorder>

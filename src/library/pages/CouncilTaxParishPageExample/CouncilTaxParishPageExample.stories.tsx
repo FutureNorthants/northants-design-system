@@ -14,6 +14,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
+const Template: StoryFn<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
 export const AlphabeticalList = Template.bind({});
 AlphabeticalList.args = {};
