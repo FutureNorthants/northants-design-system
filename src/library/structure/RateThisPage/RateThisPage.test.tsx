@@ -39,7 +39,7 @@ describe('RateThisPage Component', () => {
     const component = getByTestId('RateThisPage');
     const isHelpfulNoRadio = getByLabelText('No');
 
-    expect(component).not.toHaveTextContent('Please tell us why?');
+    expect(component).not.toHaveTextContent('Did you come across any barriers or issues with this webpage?');
 
     fireEvent.click(isHelpfulNoRadio);
 
@@ -47,6 +47,6 @@ describe('RateThisPage Component', () => {
 
     fireEvent.click(getByText('I have feedback about the information on this page'));
 
-    expect(component).toHaveTextContent('Please tell us why?');
+    expect(component).toHaveTextContent('Did you come across any barriers or issues with this webpage?');
   });
 });

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { ErrorText } from '../../components/Input/Input.styles';
 import { VisuallyHidden } from '../../helpers/style-helpers';
+import { Container } from '../PageMain/PageMain.styles';
 
-export const Container = styled.div`
+export const FormContainer = styled(Container)`
   display: block;
   .grecaptcha-badge {
     visibility: hidden;
@@ -18,6 +19,8 @@ export const Label = styled.label`
   margin-bottom: 5px;
   font-weight: bold;
 `;
+
+export const Hint = styled.p``;
 
 export const FormErrorText = styled(ErrorText)``;
 

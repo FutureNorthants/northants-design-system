@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import RateThisPage from './RateThisPage';
 import { RateThisPageProps } from './RateThisPage.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -20,15 +20,13 @@ export default {
   },
 };
 
-const Template: Story<RateThisPageProps> = (args) => (
+const Template: StoryFn<RateThisPageProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
-      <PageMain>
-        <p>
-          <strong>Note:</strong> Submitting the form will display the form data in an alert.
-        </p>
-        <RateThisPage {...args} />
-      </PageMain>
+      <p>
+        <strong>Note:</strong> Submitting the form will display the form data in an alert.
+      </p>
+      <RateThisPage {...args} />
     </MaxWidthContainer>
   </SBPadding>
 );
