@@ -43,7 +43,7 @@ describe('RateThisPage Component', () => {
 
     fireEvent.click(isHelpfulNoRadio);
 
-    expect(component).toHaveTextContent('Your feedback will help us improve our website, for example');
+    expect(component).toHaveTextContent('Your feedback will help us improve our website and the content we include.');
 
     fireEvent.click(getByText('I have feedback about the information on this page'));
 

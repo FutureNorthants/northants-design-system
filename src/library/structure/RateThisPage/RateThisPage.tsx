@@ -255,6 +255,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="BarriersOrIssues"
                     control={control}
+                    rules={{ max: 500 }}
                     render={({ field: { onChange, value } }) => (
                       <Textarea
                         id="BarriersOrIssues"
@@ -274,6 +275,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="HowCanWeImprove"
                     control={control}
+                    rules={{ max: 500 }}
                     render={({ field: { onChange, value } }) => (
                       <Textarea
                         id="HowCanWeImprove"
@@ -296,6 +298,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     name="Email"
                     control={control}
                     rules={{
+                      max: 150,
                       pattern:
                         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     }}
