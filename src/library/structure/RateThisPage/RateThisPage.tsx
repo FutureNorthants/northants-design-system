@@ -152,11 +152,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 <Column small="full" medium="full" large="one-half">
                   <Styles.QuestionContainer>
                     <Styles.QuestionTitle>Service</Styles.QuestionTitle>
-                    <p>You may have comments about the quality of the service that's been provided, for example:</p>
+                    <p>You may have comments about the quality of the service that's been provided.</p>
                     <ul>
                       <li>I have waited too long for something to happen</li>
                       <li>I'm struggling to contact the service</li>
                       <li>I don't think I have been treated fairly</li>
+                      <li>I feel as if I have been misled</li>
                     </ul>
                     <Styles.QuestionButton>
                       <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
@@ -166,12 +167,13 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 <Column small="full" medium="full" large="one-half">
                   <Styles.QuestionContainer>
                     <Styles.QuestionTitle>Content</Styles.QuestionTitle>
-                    <p>Was this information helpful? Your feedback will help us improve our website, for example:</p>
+                    <p>You may have comments about the content on the webpage.</p>
+                    <p>Your feedback will help us improve our website and the content we include.</p>
                     <ul>
-                      <li>I'm struggling to understand this information</li>
+                      <li>The information on this page is difficult to understand</li>
                       <li>This page isn't giving me the information I need</li>
-                      <li>There is information that is out of date</li>
-                      <li>I feel as if this webpage could be written or presented better</li>
+                      <li>This page contains information that is wrong or out of date</li>
+                      <li>This page could have been written or presented better</li>
                     </ul>
                     <Styles.QuestionButton>
                       <FormButton
