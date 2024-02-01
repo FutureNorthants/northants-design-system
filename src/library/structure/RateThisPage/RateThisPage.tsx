@@ -52,6 +52,8 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   } = useForm<RateFormInputs>({
     defaultValues: {
       HowCanWeImprove: '',
+      Email: '',
+      BarriersOrIssues: '',
     },
   });
   const watchIsHelpful = watch('IsHelpful');
@@ -66,10 +68,13 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
    */
   const successCallback = (response) => {
     setValue('ReCaptcha', response);
+    setIsLoading(false);
     handleSubmit((data) => onSubmit(data))();
   };
 
-  const errorCallback = () => {};
+  const errorCallback = () => {
+    setIsLoading(false);
+  };
 
   const { recaptchaLoaded, execute, reset } = useRecaptcha({
     containerId: recaptchaContainerId,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StoryFn } from '@storybook/react';
 import RateThisPage from './RateThisPage';
 import { RateThisPageProps } from './RateThisPage.types';
@@ -20,16 +20,19 @@ export default {
   },
 };
 
-const Template: StoryFn<RateThisPageProps> = (args) => (
-  <SBPadding>
-    <MaxWidthContainer>
-      <p>
-        <strong>Note:</strong> Submitting the form will display the form data in an alert.
-      </p>
-      <RateThisPage {...args} />
-    </MaxWidthContainer>
-  </SBPadding>
-);
+const Template: StoryFn<RateThisPageProps> = (args) => {
+  const [isLoading, setIsLoading] = useState(false);
+  return (
+    <SBPadding>
+      <MaxWidthContainer>
+        <p>
+          <strong>Note:</strong> Submitting the form will display the form data in an alert.
+        </p>
+        <RateThisPage {...args} isLoading={isLoading} setIsLoading={setIsLoading} />
+      </MaxWidthContainer>
+    </SBPadding>
+  );
+};
 
 export const ExampleRateThisPage = Template.bind({});
 ExampleRateThisPage.args = {
