@@ -5,12 +5,12 @@ import React from "react";
 import { ${componentName}Props } from "./${componentName}.types";
 import * as Styles from "./${componentName}.styles";
 
-const ${componentName}: React.FC<${componentName}Props> = ({ foo }) => (
+const ${componentName}: React.FunctionComponent<${componentName}Props> = ({ foo }) => (
     <Styles.Container data-testid="${componentName}">{foo}</Styles.Container>
 );
 
 export default ${componentName};
 
 `,
-  extension: `.tsx`
+  extension: `.tsx`,
 });
