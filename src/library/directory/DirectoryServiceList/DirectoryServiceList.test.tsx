@@ -187,4 +187,30 @@ describe('Test Component', () => {
 
     expect(component).toHaveTextContent('Sorry, there was a problem fetching results. Please try again later.');
   });
+
+  it('should show the clear filters button when only search term is set', () => {
+    props.categories = [];
+    props.maximumAge = '';
+    props.minimumAge = '';
+    props.search = 'test';
+
+    const { getByRole } = renderComponent();
+    const clearSearch = getByRole('button', { name: 'Clear all filters' });
+
+    expect(clearSearch).toBeVisible();
+    expect(clearSearch).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.negative}`);
+  });
+
+  it('should show the clear filters button when only postcode is set', () => {
+    props.categories = [];
+    props.maximumAge = '';
+    props.minimumAge = '';
+    props.postcode = 'nn1';
+
+    const { getByRole } = renderComponent();
+    const clearSearch = getByRole('button', { name: 'Clear all filters' });
+
+    expect(clearSearch).toBeVisible();
+    expect(clearSearch).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.negative}`);
+  });
 });
