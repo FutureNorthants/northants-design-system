@@ -19,6 +19,9 @@ export interface RateThisPageProps {
    */
   isLoading?: boolean;
 
+  /**
+   * The function to update whether the form is currently loading
+   */
   setIsLoading?: Dispatch<SetStateAction<boolean>>;
 
   /**
