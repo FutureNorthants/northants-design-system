@@ -3,6 +3,8 @@ import { StoryFn } from '@storybook/react';
 import Searchbar from './Searchbar';
 import { SearchbarProps } from './Searchbar.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import PageMain from '../PageMain/PageMain';
 
 export default {
   title: 'Library/structure/Searchbar',
@@ -82,6 +84,16 @@ const Template: StoryFn<SearchbarProps> = (args) => (
   </SBPadding>
 );
 
+const TemplatePage: StoryFn<SearchbarProps> = (args) => (
+  <SBPadding>
+    <MaxWidthContainer>
+      <PageMain>
+        <Searchbar {...args} />
+      </PageMain>
+    </MaxWidthContainer>
+  </SBPadding>
+);
+
 export const ExampleSearchbarDefaultNorth = Template.bind({});
 ExampleSearchbarDefaultNorth.parameters = {
   backgrounds: { default: 'north' },
@@ -104,14 +116,21 @@ ExampleSearchbarWhiteBackground.args = {
   isLight: true,
 };
 
-export const ExampleSearchPage = Template.bind({});
+export const ExampleSearchPage = TemplatePage.bind({});
 ExampleSearchPage.args = {
   ...CommonArgs,
   isLight: true,
   isLarge: true,
 };
 
-export const ExampleSearchPageWithTerm = Template.bind({});
+export const ExampleSearchPageSmall = TemplatePage.bind({});
+ExampleSearchPageSmall.args = {
+  ...CommonArgs,
+  isLight: true,
+  isLarge: false,
+};
+
+export const ExampleSearchPageWithTerm = TemplatePage.bind({});
 ExampleSearchPageWithTerm.args = {
   ...CommonArgs,
   isLight: true,

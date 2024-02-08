@@ -22,6 +22,10 @@ export const InputWrapper = styled.div`
   position: relative;
   width: auto;
   max-width: 750px;
+
+  p {
+    margin-bottom: 5px !important;
+  }
 `;
 
 export const Button = styled.button`
@@ -30,7 +34,7 @@ export const Button = styled.button`
   right: ${(props) => (props.$isLarge ? '-5rem' : '-3rem')};
   cursor: pointer;
   margin: 0;
-  margin-top: ${(props) => (props.$isErrored ? '25px' : 0)};
+  margin-top: ${(props) => (props.$isErrored ? (props.$isLarge ? '20px' : '20px') : 0)};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   background: ${(props) =>
     props.$isLight ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_darkest};
@@ -44,6 +48,7 @@ export const Button = styled.button`
   height: ${(props) => (props.$isLarge ? '2.9rem' : '2.28rem')};
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     height: ${(props) => (props.$isLarge ? '3.22rem' : '2.6rem')};
+    margin-top: ${(props) => (props.$isErrored ? (props.$isLarge ? '26px' : '26px') : 0)};
   }
 
   &:hover {
