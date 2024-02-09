@@ -195,7 +195,7 @@ describe('Test Component', () => {
     props.search = 'test';
 
     const { getByRole } = renderComponent();
-    const clearSearch = getByRole('button', { name: 'Clear all filters' });
+    const clearSearch = getByRole('button', { name: 'Clear search' });
 
     expect(clearSearch).toBeVisible();
     expect(clearSearch).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.negative}`);
@@ -208,7 +208,7 @@ describe('Test Component', () => {
     props.postcode = 'nn1';
 
     const { getByRole } = renderComponent();
-    const clearSearch = getByRole('button', { name: 'Clear all filters' });
+    const clearSearch = getByRole('button', { name: 'Clear search' });
 
     expect(clearSearch).toBeVisible();
     expect(clearSearch).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.negative}`);
