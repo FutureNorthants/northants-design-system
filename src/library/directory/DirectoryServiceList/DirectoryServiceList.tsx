@@ -238,7 +238,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
 
                     {filtersActive && (
                       <Styles.Button onClick={clearSearch} type="button" $isWarning={true}>
-                        <Styles.ButtonText>Clear all filters</Styles.ButtonText>
+                        <Styles.ButtonText>Clear search</Styles.ButtonText>
                       </Styles.Button>
                     )}
                   </Styles.ButtonContainer>
