@@ -242,7 +242,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                               value={ratingValue}
                               label={ratingValue}
                               checked={String(value) == ratingValue}
-                              name="HowEasyToFind"
+                              name="HowEasyToUnderstand"
                               singleSelection={true}
                               onChange={onChange}
                             />
