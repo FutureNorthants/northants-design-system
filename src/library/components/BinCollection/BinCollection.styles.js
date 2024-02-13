@@ -18,6 +18,11 @@ export const CollectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.theme_vars.colours.action_light};
+  flex-wrap: wrap;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    flex-wrap: nowrap;
+  }
 `;
 
 export const CollectionHeading = styled.div`
