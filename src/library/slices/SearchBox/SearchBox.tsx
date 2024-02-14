@@ -1,12 +1,12 @@
 import React from 'react';
 import { SearchBoxProps } from './SearchBox.types';
 import * as Styles from './SearchBox.styles';
-import LazyImage from 'react-lazy-progressive-image';
 import Column from '../../components/Column/Column';
 import Row from '../../components/Row/Row';
 import Button from '../../components/Button/Button';
 import Heading from '../../components/Heading/Heading';
 import CustomSearch from '../../components/CustomSearch/CustomSearch';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
 const SearchBox: React.FunctionComponent<SearchBoxProps> = ({
   customSearch,
@@ -40,28 +40,20 @@ const SearchBox: React.FunctionComponent<SearchBoxProps> = ({
   );
 
   return (
-    <>
-      {imageLarge && imageSmall ? (
-        <>
-          <LazyImage
-            src={imageLarge}
-            placeholder={imageSmall}
-            visibilitySensorProps={{
-              partialVisibility: true,
-            }}
-          >
-            {(src) => (
-              <Styles.Container $image={src} data-testid="SearchBox">
-                {searchInner}
-              </Styles.Container>
-            )}
-          </LazyImage>
-          {imageAltText && <span role="img" aria-label={imageAltText} />}
-        </>
-      ) : (
-        <Styles.Container data-testid="SearchBox">{searchInner}</Styles.Container>
+    <Styles.Container data-testid="SearchBox" $hasImage={imageSmall && imageLarge}>
+      {imageSmall && imageLarge && (
+        <ResponsiveImage
+          imageSmall={imageSmall}
+          imageLarge={imageLarge}
+          imageAltText={imageAltText}
+          smallWidth="400"
+          largeWidth="1200"
+          ratio="auto"
+          objectFit="cover"
+        />
       )}
-    </>
+      {searchInner}
+    </Styles.Container>
   );
 };
 

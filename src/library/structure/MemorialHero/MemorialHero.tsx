@@ -1,10 +1,17 @@
-import React, { useContext, useState } from 'react';
-import LazyImage from 'react-lazy-progressive-image';
+import React, { useContext } from 'react';
 import { MemorialHeroProps } from './MemorialHero.types';
 import * as Styles from './MemorialHero.styles';
-import styled, { ThemeContext, ThemeProvider } from 'styled-components';
+import { ThemeContext, ThemeProvider } from 'styled-components';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
-const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, theme, children, councilServices }) => {
+const MemorialHero: React.FunctionComponent<MemorialHeroProps> = ({
+  src,
+  placeholder,
+  alt,
+  theme,
+  children,
+  councilServices,
+}) => {
   const themeContext = useContext(ThemeContext);
   return (
     <>
@@ -16,15 +23,17 @@ const MemorialHero: React.FC<MemorialHeroProps> = ({ src, placeholder, alt, them
             <ThemeProvider theme={theme}>{councilServices}</ThemeProvider>
           </Styles.Left>
           <Styles.Right>
-            <LazyImage
-              src={src}
-              placeholder={placeholder}
-              visibilitySensorProps={{
-                partialVisibility: true,
-              }}
-            >
-              {(src) => <Styles.Image $image={src} title={alt} />}
-            </LazyImage>
+            <Styles.Image>
+              <ResponsiveImage
+                imageSmall={placeholder}
+                imageLarge={src}
+                imageAltText={alt}
+                smallWidth="144"
+                largeWidth="1440"
+                ratio="16by9"
+                objectFit="contain"
+              />
+            </Styles.Image>
           </Styles.Right>
         </Styles.Container>
       </Styles.Wrapper>

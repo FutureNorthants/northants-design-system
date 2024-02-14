@@ -6,18 +6,12 @@ import Heading from '../../components/Heading/Heading';
  * Optimised for an image in 16:5 ratio on all but small width screens
  */
 export const Container = styled.div`
-  background-image: ${(props) =>
-      !props.$backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),` : ``}
-    url('${(props) => props.$image}');
-
   padding-bottom: 10px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: flex-end;
+  position: relative;
 
   &::before {
     content: '';
@@ -34,11 +28,35 @@ export const Container = styled.div`
   }
 `;
 
+export const ImageContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+
+  &:after {
+    content: '';
+    background: ${(props) =>
+      !props.$backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75))` : ``};
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+`;
+
 export const InnerContainer = styled.div`
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   flex-grow: 1;
+  position: relative;
+  z-index: 3;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     max-width: ${(props) => props.theme.theme_vars.breakpoints.l};
