@@ -36,15 +36,17 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
     <>
       <Styles.Wrapper>
         <Styles.Container className={random !== 999 ? 'loaded' : 'loading'}>
-          <ResponsiveImage
-            imageSmall={random !== 999 && imagesArray[random].image144x81 ? imagesArray[random].image144x81 : ''}
-            imageLarge={random !== 999 && imagesArray[random].image1440x810 ? imagesArray[random].image1440x810 : ''}
-            imageAltText={random !== 999 && imagesArray[random].imageAltText ? imagesArray[random].imageAltText : ''}
-            smallWidth="144"
-            largeWidth="1440"
-            ratio="auto"
-            objectFit="cover"
-          />
+          {random !== 999 && (
+            <ResponsiveImage
+              imageSmall={imagesArray[random].image144x81 ?? ''}
+              imageLarge={imagesArray[random].image1440x810 ?? ''}
+              imageAltText={imagesArray[random].imageAltText ?? ''}
+              smallWidth="144"
+              largeWidth="1440"
+              ratio="auto"
+              objectFit="cover"
+            />
+          )}
 
           <Styles.StyledMaxWidthContainer>
             <Styles.MainBox>
