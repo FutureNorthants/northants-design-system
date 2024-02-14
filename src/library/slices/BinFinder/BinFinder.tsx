@@ -34,6 +34,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
   const [addressOptions, setAddressOptions] = useState<AddressOptionProps[]>([]);
   const [binCollections, setBinCollections] = useState<BinCollectionRecordProps[]>([]);
   const [selectAddressError, setSelectAddressError] = useState<boolean>(false);
+  const [calendar, setCalendar] = useState<string>('');
 
   const {
     register,
@@ -121,6 +122,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         type: 'recycling',
       },
     ]);
+    setCalendar('https://www.southnorthants.gov.uk/download/downloads/id/7346/bin-collection-calendar-2022.pdf');
     setIsLoading(false);
 
     // axios({
@@ -230,7 +232,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         <Styles.CollectionContainer>
           <Row>
             <Column small="full" medium="full" large="full">
-              <BinCollection address={address} binCollections={binCollections} />
+              <BinCollection address={address} binCollections={binCollections} calendar={calendar} />
             </Column>
             <Column small="full" medium="full" large="full">
               <Styles.StartAgain onClick={() => resetForm()} type="button">

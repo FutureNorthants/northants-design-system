@@ -7,7 +7,7 @@ import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContain
 import PageMain from '../../structure/PageMain/PageMain';
 
 export default {
-  title: 'Library/Slices/BinFinder',
+  title: 'Library/Slices/Bin Finder',
   component: BinFinder,
   parameters: {
     status: {

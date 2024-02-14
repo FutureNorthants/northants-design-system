@@ -8,6 +8,16 @@ export interface BinCollectionProps {
    * An array of bin collections
    */
   binCollections: BinCollectionRecordProps[];
+
+  /**
+   * The optional calendar url
+   */
+  calendar?: string;
+
+  /**
+   * The optional file size for the calendar
+   */
+  calendarSize?: string;
 }
 
 export interface BinCollectionRecordProps {
@@ -34,6 +44,4 @@ export interface CollectionTypes {
 export interface CollectionDetails {
   title: string;
   icon: string;
-  yes: string[];
-  no: string[];
 }
