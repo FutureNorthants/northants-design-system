@@ -45,6 +45,7 @@ import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import InquestSchedule from './library/slices/InquestSchedule/InquestSchedule';
 import Promotions from './library/slices/Promotions/Promotions';
 import SearchBox from './library/slices/SearchBox/SearchBox';
+import StreamingVideo from './library/slices/StreamingVideo/StreamingVideo';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
@@ -63,6 +64,7 @@ export {
   InquestSchedule,
   Promotions,
   SearchBox,
+  StreamingVideo,
   Video,
   WarningText,
   WarningTextDisclaimer,
