@@ -78,8 +78,12 @@ import FlowerIcon from './Flower/Icon';
 import FlowerIconHover from './Flower/IconHover';
 import FlyTipIcon from './FlyTip/Icon';
 import FlyTipIconHover from './FlyTip/IconHover';
+import FoodCaddyIcon from './FoodCaddy/Icon';
+import FoodCaddyIconHover from './FoodCaddy/IconHover';
 import FoodWasteIcon from './FoodWaste/Icon';
 import FoodWasteIconHover from './FoodWaste/IconHover';
+import GardenWasteIcon from './GardenWaste/Icon';
+import GardenWasteIconHover from './GardenWaste/IconHover';
 import GiveNoticeIcon from './GiveNotice/Icon';
 import GiveNoticeIconHover from './GiveNotice/IconHover';
 import GovUKIcon from './GovUK/Icon';
@@ -134,6 +138,8 @@ import ProtectIcon from './Protect/Icon';
 import ProtectIconHover from './Protect/IconHover';
 import RatePayIcon from './RatePay/Icon';
 import RatePayIconHover from './RatePay/IconHover';
+import RecyclingBoxIcon from './RecyclingBox/Icon';
+import RecyclingBoxIconHover from './RecyclingBox/IconHover';
 import RegisterBirthIcon from './RegisterBirth/Icon';
 import RegisterBirthIconHover from './RegisterBirth/IconHover';
 import RegisterDeathIcon from './RegisterDeath/Icon';
@@ -164,8 +170,12 @@ import ValuationIcon from './Valuation/Icon';
 import ValuationIconHover from './Valuation/IconHover';
 import VenueIcon from './Venue/Icon';
 import VenueIconHover from './Venue/IconHover';
+import WasteBinIcon from './WasteBin/Icon';
+import WasteBinIconHover from './WasteBin/IconHover';
 import WasteChecklistIcon from './WasteChecklist/Icon';
 import WasteChecklistIconHover from './WasteChecklist/IconHover';
+import WasteSackIcon from './WasteSack/Icon';
+import WasteSackIconHover from './WasteSack/IconHover';
 import WasteSortingIcon from './WasteSorting/Icon';
 import WasteSortingIconHover from './WasteSorting/IconHover';
 
@@ -250,8 +260,12 @@ let components = {
   flowerHover: FlowerIconHover,
   flytip: FlyTipIcon,
   flytipHover: FlyTipIconHover,
+  foodcaddy: FoodCaddyIcon,
+  foodcaddyHover: FoodCaddyIconHover,
   foodwaste: FoodWasteIcon,
   foodwasteHover: FoodWasteIconHover,
+  gardenwaste: GardenWasteIcon,
+  gardenwasteHover: GardenWasteIconHover,
   givenotice: GiveNoticeIcon,
   givenoticeHover: GiveNoticeIconHover,
   govUK: GovUKIcon,
@@ -306,6 +320,8 @@ let components = {
   protectHover: ProtectIconHover,
   ratepay: RatePayIcon,
   ratepayHover: RatePayIconHover,
+  recyclingbox: RecyclingBoxIcon,
+  recyclingboxHover: RecyclingBoxIconHover,
   registerbirth: RegisterBirthIcon,
   registerbirthHover: RegisterBirthIconHover,
   registerdeath: RegisterDeathIcon,
@@ -336,8 +352,12 @@ let components = {
   valuationHover: ValuationIconHover,
   venue: VenueIcon,
   venueHover: VenueIconHover,
+  wastebin: WasteBinIcon,
+  wastebinHover: WasteBinIconHover,
   wastechecklist: WasteChecklistIcon,
   wastechecklistHover: WasteChecklistIconHover,
+  wastesack: WasteSackIcon,
+  wastesackHover: WasteSackIconHover,
   wastesorting: WasteSortingIcon,
   wastesortingHover: WasteSortingIconHover,
 };

@@ -16,15 +16,15 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
   const collectionTypes: CollectionTypes = {
     garden: {
       title: 'Garden Waste',
-      icon: 'bins',
+      icon: 'gardenwaste',
     },
     food: {
       title: 'Food Caddy',
-      icon: 'foodwaste',
+      icon: 'foodcaddy',
     },
     waste: {
       title: 'Waste',
-      icon: 'bins',
+      icon: 'wastebin',
     },
     recycling: {
       title: 'Recycling',
@@ -32,11 +32,11 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
     },
     recycling_boxes: {
       title: 'Recycling Boxes',
-      icon: 'bins',
+      icon: 'recyclingbox',
     },
     sacks: {
       title: 'Sacks',
-      icon: 'bins',
+      icon: 'wastesack',
     },
   };
 
