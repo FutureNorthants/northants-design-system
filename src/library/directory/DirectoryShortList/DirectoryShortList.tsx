@@ -8,17 +8,54 @@ import Column from '../../components/Column/Column';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformService } from '../DirectoryService/DirectoryServiceTransform';
 import QRCode from 'react-qr-code';
-import Heading from '../../components/Heading/Heading';
+import { PhysicalAddressProps } from '../DirectoryService/DirectoryService.types';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
     favourites: { favourites: favourites },
+    clearShortlist,
   } = useDirectoryShortListContext();
   const [notServer, setNotServer] = useState<boolean>(false);
 
   useEffect(() => {
     setNotServer(true);
   }, []);
+
+  const confirmClear = () => {
+    if (window.confirm('Are you sure you want to clear your shortlist?')) {
+      clearShortlist();
+    }
+  };
+
+  const formatAddress = (address: PhysicalAddressProps): string => {
+    return Object.values(address)
+      .filter((item) => item !== '' && item !== address.id)
+      .join(', ');
+  };
+
+  const copyToClipboard = async () => {
+    const data = favourites.map((favourite) => {
+      const address: string = favourite.addresses.length > 0 ? formatAddress(favourite.addresses[0]) : '';
+
+      return `
+Name: ${favourite.name}
+Link: ${directoryPath}/${favourite.id}
+Address: ${address}
+Email: ${favourite.email ?? ''}
+Website: ${favourite.website ?? ''}
+Telephone: ${favourite.phone ?? ''}
+
+      `;
+    });
+
+    try {
+      await navigator.clipboard.writeText(data.join('')).then(() => {
+        window.alert('Copied to clipboard');
+      });
+    } catch {
+      window.alert('Unable to copy');
+    }
+  };
 
   return (
     <Styles.Container data-testid="DirectoryShortList">
@@ -27,9 +64,11 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
           {favourites.length > 0 ? (
             <>
               <Column small="full" medium="full" large="full">
-                <Styles.PrintContainer>
-                  <Styles.PrintButton onClick={() => window.print()}>Print Shortlist</Styles.PrintButton>
-                </Styles.PrintContainer>
+                <Styles.ButtonContainer>
+                  <Styles.ClearShortlistButton onClick={confirmClear}>Clear Shortlist</Styles.ClearShortlistButton>
+                  <Styles.ActionButton onClick={copyToClipboard}>Copy To Clipboard</Styles.ActionButton>
+                  <Styles.ActionButton onClick={() => window.print()}>Print Shortlist</Styles.ActionButton>
+                </Styles.ButtonContainer>
               </Column>
               {favourites.map((favourite) => (
                 <Column key={favourite.id} small="full" medium="full" large="full">
@@ -57,19 +96,11 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                           <div>
                             <Styles.SubTitle>Address</Styles.SubTitle>
                             {favourite.addresses?.length === 1 ? (
-                              <p>
-                                {Object.values(favourite.addresses[0])
-                                  .filter((item) => item !== '' && item !== favourite.addresses[0].id)
-                                  .join(', ')}
-                              </p>
+                              <p>{formatAddress(favourite.addresses[0])}</p>
                             ) : (
                               <ul>
                                 {favourite.addresses.map((address) => (
-                                  <li key={address.id}>
-                                    {Object.values(address)
-                                      .filter((item) => item !== '' && item !== address.id)
-                                      .join(', ')}
-                                  </li>
+                                  <li key={address.id}>{formatAddress(address)}</li>
                                 ))}
                               </ul>
                             )}

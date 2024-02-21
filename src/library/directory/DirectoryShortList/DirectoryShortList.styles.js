@@ -66,16 +66,16 @@ export const FavouriteContainer = styled.div`
   }
 `;
 
-export const PrintContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   @media print {
     display: none;
   }
 `;
 
-export const PrintButton = styled.button`
+export const ActionButton = styled.button`
   border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   background: ${(props) => props.theme.theme_vars.colours.action};
@@ -113,3 +113,32 @@ export const SubTitle = styled.p`
   font-weight: bold;
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
+
+export const ClearShortlistButton = styled.button`
+  border: 1px solid ${(props) => props.theme.theme_vars.colours.negative};
+  background: ${(props) => props.theme.theme_vars.colours.white};
+  color: ${(props) => props.theme.theme_vars.colours.negative};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  cursor: pointer;
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  min-height: 42px;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  font-weight: bold;
+
+  &:hover {
+    background: ${(props) => props.theme.theme_vars.colours.action_light};
+    color: ${(props) => props.theme.theme_vars.colours.action_dark};
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const CopyButton = styled.button``;
