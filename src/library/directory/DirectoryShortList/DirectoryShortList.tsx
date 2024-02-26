@@ -29,7 +29,7 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
 
   const formatAddress = (address: PhysicalAddressProps): string => {
     return Object.values(address)
-      .filter((item) => item !== '' && item !== address.id)
+      .filter((item) => item !== '' && item !== address.id && item !== address.country)
       .join(', ');
   };
 
@@ -44,6 +44,7 @@ Address: ${address}
 Email: ${favourite.email ?? ''}
 Website: ${favourite.website ?? ''}
 Telephone: ${favourite.phone ?? ''}
+About: ${favourite.snippet.replace(/(\r\n|\n|\r)/gm, '').replace(/\s+/g, ' ') ?? ''}
 
       `;
     });
