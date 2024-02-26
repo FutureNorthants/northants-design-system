@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+
+  @media print {
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+  }
 `;
 
 export const ServiceLink = styled.a`
@@ -33,15 +37,21 @@ export const PrintLink = styled.div`
   @media print {
     p {
       display: block;
+      margin-bottom: 0 !important;
     }
+  }
+`;
+
+export const SnippetContainer = styled.div`
+  @media print {
+    display: flex;
+    flex-wrap: nowrap;
   }
 `;
 
 export const QRCodeContainer = styled.div`
   max-width: 80px;
-  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   display: none;
-  float: right;
 
   @media print {
     display: block;
@@ -68,7 +78,7 @@ export const FavouriteContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   @media print {
     display: none;
@@ -87,6 +97,7 @@ export const ActionButton = styled.button`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   &:hover {
     ${(props) => props.theme.linkStylesHover}
     color: ${(props) => props.theme.theme_vars.colours.white};
@@ -122,7 +133,6 @@ export const ClearShortlistButton = styled.button`
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   min-height: 42px;
-  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   font-weight: bold;
 
   &:hover {
@@ -141,4 +151,18 @@ export const ClearShortlistButton = styled.button`
   }
 `;
 
-export const CopyButton = styled.button``;
+export const AddressContainer = styled.div`
+  display: block;
+
+  @media print {
+    display: none;
+  }
+`;
+
+export const PrintAddress = styled.div`
+  display: none;
+
+  @media print {
+    display: block;
+  }
+`;

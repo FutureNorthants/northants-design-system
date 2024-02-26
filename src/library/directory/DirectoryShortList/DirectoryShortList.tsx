@@ -76,14 +76,6 @@ About: ${favourite.snippet.replace(/(\r\n|\n|\r)/gm, '').replace(/\s+/g, ' ') ??
                   <Styles.FavouriteContainer>
                     <Row>
                       <Column small="full" medium="full" large="full">
-                        <Styles.QRCodeContainer>
-                          <QRCode
-                            value={`${directoryPath}/${favourite.id}`}
-                            size={256}
-                            style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
-                            viewBox={`0 0 256 256`}
-                          />
-                        </Styles.QRCodeContainer>
                         <Styles.ServiceLink href={`${directoryPath}/${favourite.id}`}>
                           {favourite.name}
                         </Styles.ServiceLink>
@@ -92,20 +84,39 @@ About: ${favourite.snippet.replace(/(\r\n|\n|\r)/gm, '').replace(/\s+/g, ' ') ??
                         </Styles.PrintLink>
                       </Column>
                       <Column small="full" medium="full" large="one-half">
-                        <div>{favourite.snippet}</div>
+                        <Styles.SnippetContainer>
+                          <div>{favourite.snippet}</div>
+                          <Styles.QRCodeContainer>
+                            <QRCode
+                              value={`${directoryPath}/${favourite.id}`}
+                              size={256}
+                              style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
+                              viewBox={`0 0 256 256`}
+                            />
+                          </Styles.QRCodeContainer>
+                        </Styles.SnippetContainer>
+
                         {favourite.addresses?.length > 0 && (
-                          <div>
-                            <Styles.SubTitle>Address</Styles.SubTitle>
-                            {favourite.addresses?.length === 1 ? (
-                              <p>{formatAddress(favourite.addresses[0])}</p>
-                            ) : (
-                              <ul>
-                                {favourite.addresses.map((address) => (
-                                  <li key={address.id}>{formatAddress(address)}</li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
+                          <>
+                            <Styles.AddressContainer>
+                              <Styles.SubTitle>Address</Styles.SubTitle>
+                              {favourite.addresses?.length === 1 ? (
+                                <p>{formatAddress(favourite.addresses[0])}</p>
+                              ) : (
+                                <ul>
+                                  {favourite.addresses.map((address) => (
+                                    <li key={address.id}>{formatAddress(address)}</li>
+                                  ))}
+                                </ul>
+                              )}
+                            </Styles.AddressContainer>
+                            <Styles.PrintAddress>
+                              <SummaryList
+                                terms={[{ term: 'Address', detail: formatAddress(favourite.addresses[0]) }]}
+                                hasMargin={false}
+                              />
+                            </Styles.PrintAddress>
+                          </>
                         )}
                       </Column>
                       <Column small="full" medium="full" large="one-half">
