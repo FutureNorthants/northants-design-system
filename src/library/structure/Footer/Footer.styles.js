@@ -16,10 +16,6 @@ export const FooterList = styled.ul`
   margin-bottom: 25px;
   list-style-type: none;
 
-  li:last-of-type {
-    margin-bottom: 0;
-  }
-
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     margin-bottom: 0px;
   }
@@ -29,8 +25,15 @@ export const FooterListItem = styled.li`
   display: inline-block;
   left: 0;
   padding-right: 0;
-  margin-right: 25px;
-  margin-bottom: 15px;
+  margin-right: 0;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  width: 100%;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    width: auto;
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
 `;
 
 export const SocialLinks = styled.ul`
@@ -44,8 +47,8 @@ export const SocialLinkItem = styled.li`
 `;
 
 export const SocialLinkSingle = styled.a`
-  display: inline-block;
-  height: 36px;
+  display: block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
 
   &:hover {
     opacity: 0.8;
@@ -77,9 +80,16 @@ export const SocialLinkSingle = styled.a`
 `;
 
 export const FooterLink = styled.a`
+  display: block;
   ${(props) => props.theme.linkStyles}
   color: ${(props) => props.theme.theme_vars.colours.white};
   font-weight: 400;
+  padding: ${(props) =>
+    `${props.theme.theme_vars.spacingSizes.small} ${props.theme.theme_vars.spacingSizes.extra_small}`};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: inline-block;
+  }
 
   &:hover {
     ${(props) => props.theme.linkStylesHover}
