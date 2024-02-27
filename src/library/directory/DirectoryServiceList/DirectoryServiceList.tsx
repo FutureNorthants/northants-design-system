@@ -70,7 +70,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
 
   useEffect(() => {
     setFiltersActive(hasActiveFilters());
-  }, [minimumAge, maximumAge, categories]);
+  }, [minimumAge, maximumAge, categories, search, postcode]);
 
   if (accordions.length === 0) {
     const tempAccordions = [];
@@ -186,6 +186,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
 
   const hasActiveFilters = () => {
     return (
+      search !== '' ||
+      postcode !== '' ||
       maximumAge !== '' ||
       minimumAge !== '' ||
       categories.some((category) => {
@@ -233,6 +235,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       <Styles.ButtonText>Search</Styles.ButtonText>
                       <SearchIcon colourFill="#fff" />
                     </Styles.Button>
+
+                    {filtersActive && (
+                      <Styles.Button onClick={clearSearch} type="button" $isWarning={true}>
+                        <Styles.ButtonText>Clear search</Styles.ButtonText>
+                      </Styles.Button>
+                    )}
                   </Styles.ButtonContainer>
                 </Column>
                 {hasDocuments && (
