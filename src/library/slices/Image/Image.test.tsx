@@ -28,14 +28,16 @@ describe('Image Component', () => {
   it('should display the image and caption', () => {
     const { getByRole, getByTestId, getByAltText, getByText } = renderComponent();
     const image = getByAltText('The image alt text');
-    const imageContainer = getByTestId('ImageContainer');
+    const imageContainer = getByTestId('ResponsiveImage');
     const figure = getByRole('figure');
     const caption = getByText('The caption for the image');
 
     // Lazy image loads the placeholder image (foo.jpg)
     expect(image).toBeVisible();
-    expect(image).toHaveAttribute('src', 'foo.jpg');
+    expect(image).toHaveAttribute('src', 'bar.jpg');
     expect(image).toHaveAttribute('alt', 'The image alt text');
+    expect(image).toHaveAttribute('loading', 'lazy');
+    expect(image).toHaveAttribute('srcset', 'foo.jpg 400w, bar.jpg 1200w');
 
     expect(imageContainer).toHaveStyle('padding-top: 75%');
 
@@ -48,13 +50,13 @@ describe('Image Component', () => {
     props.ratio = '16by9';
 
     const { getByRole, getByTestId, getByAltText } = renderComponent();
-    const imageContainer = getByTestId('ImageContainer');
+    const imageContainer = getByTestId('ResponsiveImage');
     const image = getByAltText('The image alt text');
     const figure = getByRole('figure');
 
     // Lazy image loads the placeholder image (bar.jpg)
     expect(image).toBeVisible();
-    expect(image).toHaveAttribute('src', 'foo.jpg');
+    expect(image).toHaveAttribute('src', 'bar.jpg');
     expect(image).toHaveAttribute('alt', 'The image alt text');
 
     expect(imageContainer).toHaveStyle('padding-top: 56.25%');
@@ -69,7 +71,7 @@ describe('Image Component', () => {
     const { getByTestId, getByAltText } = renderComponent();
 
     const image = getByAltText('The image alt text');
-    const imageContainer = getByTestId('ImageContainer');
+    const imageContainer = getByTestId('ResponsiveImage');
 
     expect(image).toBeVisible();
     expect(imageContainer).toHaveStyle('padding-top: 25%');

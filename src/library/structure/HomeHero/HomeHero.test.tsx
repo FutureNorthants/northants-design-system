@@ -48,9 +48,9 @@ describe('HomeHero common usage', () => {
     expect(listbox.children.length).toBe(1);
   });
 
-  it('should not render an image tag', () => {
+  it('should render an image tag', () => {
     const images = rendered.queryAllByRole('img');
-    expect(images).toHaveLength(0);
+    expect(images).toHaveLength(1);
   });
 });
 

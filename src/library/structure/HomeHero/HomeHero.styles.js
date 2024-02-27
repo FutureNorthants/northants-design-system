@@ -16,17 +16,8 @@ export const Container = styled.div`
   background: ${(props) => props.theme.theme_vars.colours.action}5A;
   padding: 30px 0;
   padding-bottom: 15px;
+  position: relative;
 
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    background-image: url('${(props) => props.$image}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &.loading {
-      background-image: none;
-    }
-  }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     padding: 60px 0;
   }
@@ -42,6 +33,8 @@ export const StyledMaxWidthContainer = styled.div`
   ${(props) => props.theme.fontStyles}
   margin-right: 15px;
   margin-left: 15px;
+  z-index: 2;
+  position: relative;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     margin-right: 30px;
