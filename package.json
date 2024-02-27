@@ -109,7 +109,7 @@
   "dependencies": {
     "core-js": "^3.20.2",
     "downshift": "^6.1.7",
-    "html-react-parser": "^3",
+    "html-react-parser": "^5",
     "react-qr-code": "^2.0.11",
     "sanitize-html": "^2.6.1",
     "stylis": "^4.3.0"
