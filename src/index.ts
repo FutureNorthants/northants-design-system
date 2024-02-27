@@ -75,7 +75,8 @@ export * from './library/structure/PageStructures';
 export { GDS_theme, north_theme, west_theme, lb_theme_north, lb_theme_west } from './themes/theme_generator';
 
 // CSS reset/common to all
-export { GlobalStyleReset } from './themes/GlobalStyleReset.jsx';
+export { GlobalStyleReset } from './themes/GlobalStyleReset';
+export { ThemeVars } from './themes/ThemeVars.types';
 
 // Directory
 import DirectoryService from './library/directory/DirectoryService/DirectoryService';

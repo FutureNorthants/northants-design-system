@@ -4,8 +4,9 @@ import { west_vars } from './theme_west';
 import { lb_vars_north } from './theme_london_bridge_north';
 import { lb_vars_west } from './theme_london_bridge_west';
 import { css } from 'styled-components';
+import { ThemeVars } from './ThemeVars.types';
 
-const generate_theme = (theme_vars) => {
+const generate_theme = (theme_vars: ThemeVars) => {
   return {
     name: theme_vars.theme_name,
     full_name: theme_vars.full_name,
@@ -68,7 +69,7 @@ const generate_theme = (theme_vars) => {
       background: ${theme_vars.colours.focus};
       outline: none;
       text-decoration: none !important;
-      transform: translateY(2px);
+      top: 2px;
       box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
       -webkit-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
       -moz-box-shadow: 0 -6px ${theme_vars.colours.focus}, 0 1px ${theme_vars.colours.black};
