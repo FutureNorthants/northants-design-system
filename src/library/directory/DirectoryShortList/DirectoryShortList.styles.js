@@ -4,7 +4,10 @@ export const Container = styled.div`
   display: block;
 
   @media print {
-    font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small} !important;
+    [data-testid='Column'] {
+      padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small} !important;
+    }
   }
 `;
 
@@ -26,6 +29,8 @@ export const ServiceLink = styled.a`
   @media print {
     color: ${(props) => props.theme.theme_vars.colours.black} !important;
     text-decoration: none !important;
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+    margin-bottom: 0;
   }
 `;
 
@@ -36,7 +41,7 @@ export const PrintLink = styled.div`
 
   @media print {
     p {
-      display: block;
+      display: none;
       margin-bottom: 0 !important;
     }
   }
@@ -55,6 +60,7 @@ export const QRCodeContainer = styled.div`
 
   @media print {
     display: block;
+    margin-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 `;
 
@@ -73,6 +79,7 @@ export const FavouriteContainer = styled.div`
     box-shadow: none;
     border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
     background: none;
+    padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 `;
 
