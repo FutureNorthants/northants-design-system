@@ -16,6 +16,7 @@ describe('RadioCheckboxInput Component', () => {
       onChange: () => {},
       singleSelection: true,
       value: 'example',
+      isErrored: false,
     };
   });
 
@@ -62,5 +63,17 @@ describe('RadioCheckboxInput Component', () => {
     const input = getByLabelText('Example label');
 
     expect(input).not.toBeChecked();
+  });
+
+  it('should show the error state', () => {
+    props.isErrored = true;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('RadioCheckboxInput');
+
+    expect(component).toHaveStyle(
+      `border-left: ${west_theme.theme_vars.border_width} solid ${west_theme.theme_vars.colours.negative};`
+    );
   });
 });
