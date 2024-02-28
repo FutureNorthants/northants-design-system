@@ -19,42 +19,6 @@ export const Container = styled.figure`
   }
 `;
 
-const imageRatio = (props) => {
-  switch (props.$ratio) {
-    case '4by3':
-      return css`
-        padding-top: 75%;
-      `;
-    case '4by1':
-      return css`
-        padding-top: 25%;
-      `;
-    case '16by9':
-      return css`
-        padding-top: 56.25%;
-      `;
-    default:
-      return css`
-        padding-top: 56.25%;
-      `;
-  }
-};
-
-export const ImageContainer = styled.div`
-  position: relative;
-  ${imageRatio}
-`;
-
-export const Image = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 export const Caption = styled.figcaption`
   ${(props) => props.theme.fontStyles};
   font-size: 0.9rem !important;

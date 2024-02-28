@@ -41,22 +41,34 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  border: 1px solid ${(props) => props.theme.theme_vars.colours.white};
-  background: ${(props) => props.theme.theme_vars.colours.action};
-  color: ${(props) => props.theme.theme_vars.colours.white};
+  border: ${(props) => (props.$isWarning ? `3px` : `1px`)} solid
+    ${(props) => (props.$isWarning ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.white)};
+  background: ${(props) =>
+    props.$isWarning ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action};
+  color: ${(props) =>
+    props.$isWarning ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   min-height: 42px;
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  font-weight: bold;
 
   &:hover {
-    background: ${(props) => props.theme.theme_vars.colours.action_dark};
+    background: ${(props) =>
+      props.$isWarning ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.action_dark};
+    color: ${(props) =>
+      props.$isWarning ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.white};
+    text-decoration: underline;
+    text-decoration-style: dotted;
   }
 
   &:focus {
-    outline: none;
-    background: ${(props) => props.theme.theme_vars.colours.focus};
+    ${(props) => props.theme.linkStylesFocus}
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
   }
 `;
 

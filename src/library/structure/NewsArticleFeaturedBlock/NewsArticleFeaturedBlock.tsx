@@ -1,5 +1,4 @@
 import React from 'react';
-import LazyImage from 'react-lazy-progressive-image';
 import { NewsArticleFeaturedBlockProps } from './NewsArticleFeaturedBlock.types';
 import * as Styles from './NewsArticleFeaturedBlock.styles';
 import NewsArticleDate from '../NewsArticleDate/NewsArticleDate';
@@ -7,6 +6,7 @@ import Heading from '../../components/Heading/Heading';
 import Button from '../../components/Button/Button';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
 /**
  * Block displaying up to 9 news article tiles, with image, title and date for each
@@ -28,21 +28,15 @@ const NewsArticleFeaturedBlock: React.FunctionComponent<NewsArticleFeaturedBlock
                   <Row>
                     {article.image720x405 && (
                       <Column small="full" medium="full" large="full" hasPadding={false}>
-                        <LazyImage
-                          src={article.image720x405}
-                          placeholder={article.image72x41}
-                          visibilitySensorProps={{
-                            partialVisibility: true,
-                          }}
-                        >
-                          {(src) => (
-                            <Styles.ImageContainer
-                              $background={src}
-                              role="img"
-                              aria-label={article.imageAltText ? article.imageAltText : ''}
-                            />
-                          )}
-                        </LazyImage>
+                        <ResponsiveImage
+                          imageSmall={article.image72x41}
+                          imageLarge={article.image720x405}
+                          imageAltText={article.imageAltText ?? ''}
+                          smallWidth="72"
+                          largeWidth="720"
+                          ratio="16by9"
+                          objectFit="contain"
+                        />
                       </Column>
                     )}
                     <Column small="full" medium="full" large="full">

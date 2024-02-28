@@ -42,14 +42,18 @@ describe('HeroImage slice', () => {
     expect(link).toHaveTextContent('Google');
     expect(link).toHaveAttribute('href', 'http://www.google.com');
 
-    const imgaltspan = getByRole('img');
-    expect(imgaltspan).toHaveAttribute('aria-label');
+    const img = getByRole('img');
+    expect(img).toHaveAttribute('alt', 'alt text');
+    expect(img).toHaveAttribute(
+      'src',
+      'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1440/810/0/2021-12/Abington_Park_1.jpg'
+    );
 
     const overlay = getByTestId('HeroImageOverlay');
     expect(overlay).not.toHaveStyle('background-color: transparent');
 
     const container = getByTestId('HeroImage');
-    expect(container).not.toHaveStyle('background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))');
+    expect(container).toBeVisible();
   });
 
   it('should render text on a gradient when backgroundBox is false', () => {
@@ -86,8 +90,8 @@ describe('HeroImage slice', () => {
     expect(link).toHaveTextContent('Google');
     expect(link).toHaveAttribute('href', 'http://www.google.com');
 
-    const imgaltspan = getByRole('img');
-    expect(imgaltspan).toHaveAttribute('aria-label');
+    const img = getByRole('img');
+    expect(img).toHaveAttribute('alt', 'alt text');
 
     const overlay = getByTestId('HeroImageOverlay');
     expect(overlay).toHaveStyle('background-color: transparent');
@@ -123,8 +127,8 @@ describe('HeroImage slice', () => {
     const link = queryByRole('link');
     expect(link).toBeNull();
 
-    const imgaltspan = queryByRole('img');
-    expect(imgaltspan).toBeNull();
+    const img = queryByRole('img');
+    expect(img).not.toHaveAttribute('alt');
   });
 
   it('should display the parent breadcrumb in the hero image', () => {
