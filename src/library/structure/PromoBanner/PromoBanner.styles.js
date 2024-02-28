@@ -29,9 +29,6 @@ export const Container = styled.div`
 `;
 
 export const ImageLink = styled.a`
-  background-image: url('${(props) => props.$img}');
-  background-size: cover;
-  background-position: center;
   min-height: 200px;
   width: 100%;
   display: block;

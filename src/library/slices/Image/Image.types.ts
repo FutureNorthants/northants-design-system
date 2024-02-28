@@ -15,7 +15,7 @@ export interface ImageProps {
   imageAltText?: string | null;
 
   /**
-   * The image ratio, either '4by3' or '16by9'
+   * The image ratio, either '4by3', '16by9' or '4by1'
    */
   ratio: string;
 

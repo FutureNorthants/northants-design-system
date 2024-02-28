@@ -43,7 +43,7 @@ describe('Promo Block', () => {
 
     expect(images).toHaveLength(2);
 
-    expect(images[0]).toHaveAttribute('aria-label', 'Some sort of image');
-    expect(images[1]).toHaveAttribute('aria-label', 'A graphical thing');
+    expect(images[0]).toHaveAttribute('alt', 'Some sort of image');
+    expect(images[1]).toHaveAttribute('alt', 'A graphical thing');
   });
 });

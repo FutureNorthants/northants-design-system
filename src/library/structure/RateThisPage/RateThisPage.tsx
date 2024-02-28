@@ -59,7 +59,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   const watchIsHelpful = watch('IsHelpful');
   const [showQuestion, setShowQuestion] = useState<boolean>(false);
   const [showFullForm, setShowFullForm] = useState<boolean>(false);
-  const [showSubmit, setShowSubmit] = useState<boolean>(false);
+  const [showSubmit, setShowSubmit] = useState<boolean>(true);
   const recaptchaKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
   const recaptchaContainerId = 'recaptchaContainer';
 
@@ -95,7 +95,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
     } else {
       setShowQuestion(false);
       setShowFullForm(false);
-      setShowSubmit(false);
+      setShowSubmit(true);
     }
   }, [watchIsHelpful]);
 

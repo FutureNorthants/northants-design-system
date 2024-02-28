@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { HomePage } from './HomePage';
 import { HomePageProps } from './HomePage.types';
 import { NewsArticleData } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.storydata';

@@ -58,16 +58,7 @@ export const Right = styled.div`
 
 export const Image = styled.div`
   transition: all 0.25s ease;
-  background-image: url('${(props) => props.$image}');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 100%;
-  height: 760px;
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
-    background-size: cover;
-    height: 350px;
-  }
 `;
 
 export const Wrapperold = styled.div`

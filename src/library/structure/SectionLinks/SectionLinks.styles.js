@@ -75,7 +75,15 @@ export const ImageContainer = styled.span`
   width: 100%;
   display: block;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  background: ${(props) => (props.$image ? `url("` + props.$image + `") center center / cover no-repeat` : ``)};
+  /* background: ${(props) => (props.$image ? `url("` + props.$image + `") center center / cover no-repeat` : ``)}; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: ${(props) => (props.$largeImage ? `url("` + props.$largeImage + `")` : '')};
+  background-image: image-set(
+    ${(props) => `url("${props.$smallImage}")`} 1x,
+    ${(props) => `url("${props.$largeImage}")`} 2x
+  );
 `;
 
 export const Image = styled.img`

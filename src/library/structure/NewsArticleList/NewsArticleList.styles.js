@@ -82,9 +82,7 @@ export const ArticleContent = styled.div`
 export const ImageContainer = styled.span`
   display: block;
   width: 100%;
-  height: 150px;
-  overflow: hidden;
-  background-image: url('${(props) => props.$background}');
+  height: auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
