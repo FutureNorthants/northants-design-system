@@ -1,4 +1,7 @@
+import { BinCollectionRecordProps } from '../components/BinCollection/BinCollection.types';
+
 export const PostcodeSearchApiUrl: string = process.env.NEXT_PUBLIC_POSTCODE_SEARCH_API_URL ?? '';
+export const BinFinderApiUrl: string = process.env.NEXT_PUBLIC_BIN_FINDER_API_URL ?? '';
 
 export interface PostcodeResultsProps {
   /**
@@ -143,4 +146,12 @@ export interface CouncilTaxBands {
   f: string;
   g: string;
   h: string;
+}
+
+export interface BinFinderResponseProps {
+  unitary: string;
+  sovereign: string;
+  uprn: string;
+  calendar: string;
+  record_items: BinCollectionRecordProps[];
 }

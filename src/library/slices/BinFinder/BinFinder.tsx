@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { BinFinderProps } from './BinFinder.types';
 import * as Styles from './BinFinder.styles';
-import { PostcodeResultsProps, PostcodeSearchApiUrl } from '../../helpers/api-helpers';
+import {
+  BinFinderApiUrl,
+  BinFinderResponseProps,
+  PostcodeResultsProps,
+  PostcodeSearchApiUrl,
+} from '../../helpers/api-helpers';
 import FormWithLine from '../../components/FormWithLine/FormWithLine';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Input from '../../components/Input/Input';
@@ -53,10 +58,10 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
     setIsLoading(true);
     setIsError(undefined);
 
-    axios({
-      method: 'GET',
-      url: `${PostcodeSearchApiUrl}${data.postcode.replace(/ /g, '').substring(0, 10)}?address=${data.houseNumber}`,
-    })
+    axios
+      .get<PostcodeResultsProps>(
+        `${PostcodeSearchApiUrl}${data.postcode.replace(/ /g, '').substring(0, 10)}?address=${data.houseNumber}`
+      )
       .then((response) => {
         setIsLoading(false);
 
@@ -79,7 +84,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
           setAddressOptions(options);
         }
       })
-      .catch(() => {
+      .catch((error) => {
         setIsLoading(false);
         setIsError('No matching addresses found. Please try again.');
       });
@@ -112,35 +117,33 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
   const getBinCollections = () => {
     setIsLoading(true);
 
-    setBinCollections([
-      {
-        date: '2024-02-12',
-        type: 'food',
-      },
-      {
-        date: '2024-02-12',
-        type: 'recycling',
-      },
-    ]);
-    setCalendar('https://www.southnorthants.gov.uk/download/downloads/id/7346/bin-collection-calendar-2022.pdf');
-    setIsLoading(false);
-
-    // axios({
-    //   method: 'GET',
-    //   url: '',
-    // })
-    //   .then((response) => {
-    //     setIsLoading(false);
-    //     if (response.data.record_items.length > 0) {
-    //       setBinCollections(response.data.record_items);
-    //     } else {
-    //       setIsError('No bin collection information found.');
-    //     }
-    //   })
-    //   .catch(() => {
-    //     setIsLoading(false);
-    //     setIsError('Error occurred getting bin collections.');
-    //   });
+    axios
+      .get<BinFinderResponseProps>(`${BinFinderApiUrl}${uprn}`)
+      .then((response) => {
+        setIsLoading(false);
+        if (response.data.record_items.length > 0) {
+          setBinCollections(response.data.record_items);
+          setCalendar(response.data.calendar);
+        } else {
+          setIsError('No bin collection information found.');
+        }
+      })
+      .catch(() => {
+        setIsLoading(false);
+        // TODO: Remove hardcoded response once API is available
+        // setIsError('Error occurred getting bin collections.');
+        setBinCollections([
+          {
+            date: '2024-02-12',
+            type: 'food',
+          },
+          {
+            date: '2024-02-20',
+            type: 'recycling',
+          },
+        ]);
+        setCalendar('https://www.southnorthants.gov.uk/download/downloads/id/7346/bin-collection-calendar-2022.pdf');
+      });
   };
 
   return (

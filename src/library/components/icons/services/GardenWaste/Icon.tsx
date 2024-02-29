@@ -15,7 +15,7 @@ const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill }) => {
           <rect x="17.75" y="4" width="16.12" height="7.11" fill="none" strokeWidth="0" />
         </clipPath>
       </defs>
-      <g clip-path="url(#uuid-153a211c-5ae1-49e1-a6fe-3d2fb2edd03d)">
+      <g clipPath="url(#uuid-153a211c-5ae1-49e1-a6fe-3d2fb2edd03d)">
         <path
           d="m43.28,55.78l1.57-36.83H6.5l2.08,48.5c.1,2.46,2.08,4.4,4.5,4.4h29.52"
           fill="none"
@@ -25,7 +25,7 @@ const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill }) => {
           strokeWidth="2.1"
         />
       </g>
-      <g clip-path="url(#uuid-4570817d-eee5-49ad-91cb-8a220dcd9a25)">
+      <g clipPath="url(#uuid-4570817d-eee5-49ad-91cb-8a220dcd9a25)">
         <path
           d="m50.49,63.8c0,4.45-3.54,8.05-7.9,8.05s-7.9-3.6-7.9-8.05,3.53-8.05,7.9-8.05,7.9,3.61,7.9,8.05"
           fill="none"
@@ -59,7 +59,7 @@ const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill }) => {
         strokeLinejoin="round"
         strokeWidth="2.1"
       />
-      <g clip-path="url(#uuid-3d149009-ecca-4f84-8e9d-d697c07ed449)">
+      <g clipPath="url(#uuid-3d149009-ecca-4f84-8e9d-d697c07ed449)">
         <path
           d="m21.16,5.15h9.03c1.25,0,2.25,1.03,2.25,2.3v2.3h-13.54v-2.3c0-1.27,1.01-2.3,2.25-2.3h0Z"
           fill="none"

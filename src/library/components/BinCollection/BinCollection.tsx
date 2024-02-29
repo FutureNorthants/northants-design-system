@@ -47,12 +47,12 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       <Heading text="Bin collections for:" level={3} />
       <p>{address}</p>
       <Row>
-        {binCollections.map((binCollection) => {
+        {binCollections.map((binCollection, index) => {
           const collectionDay = new Date(binCollection.date);
           const collectionType = collectionTypes[binCollection.type];
           const dueIn = Math.ceil((collectionDay.getTime() - now.getTime()) / (1000 * 3600 * 24));
           return (
-            <Column small="full" medium="full" large="full">
+            <Column small="full" medium="full" large="full" key={index}>
               <Styles.CollectionType>
                 <Styles.CollectionHeader>
                   <HeadingWithIcon
