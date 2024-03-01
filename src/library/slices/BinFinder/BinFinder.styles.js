@@ -5,6 +5,7 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 `;
 
 export const TitleContainer = styled.div`
