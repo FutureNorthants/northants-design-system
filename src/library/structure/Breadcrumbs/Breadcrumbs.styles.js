@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 20px;
+  padding-top: 15px;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey}80;
   margin-bottom: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.large : 0)};
 `;
@@ -17,7 +17,7 @@ export const List = styled.ol`
 
 export const Crumb = styled.li`
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-bottom: 0;
   display: none;
   left: 0;
   padding-right: 0;
@@ -46,6 +46,7 @@ export const BreadcrumbLink = styled.a`
   ${(props) => props.theme.linkStyles}
   font-weight: 400;
   display: inline-block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 
   svg {
     fill: ${(props) => props.theme.theme_vars.colours.action};

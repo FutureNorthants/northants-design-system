@@ -18,15 +18,7 @@ export const ExampleFooter = Template.bind({});
 ExampleFooter.args = {
   footerLinksArray: [
     {
-      title: 'About',
-      url: '/',
-    },
-    {
       title: 'Accessibility',
-      url: '/',
-    },
-    {
-      title: 'Cookies',
       url: '/',
     },
     {
@@ -34,11 +26,19 @@ ExampleFooter.args = {
       url: '/',
     },
     {
-      title: 'Jobs',
+      title: 'Copyright',
       url: '/',
     },
     {
-      title: 'Newsletter',
+      title: 'Payments',
+      url: '/',
+    },
+    {
+      title: 'Privacy',
+      url: '/',
+    },
+    {
+      title: 'Website Feedback',
       url: '/',
     },
   ],

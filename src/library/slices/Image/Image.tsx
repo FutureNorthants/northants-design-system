@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageProps } from './Image.types';
 import * as Styles from './Image.styles';
-import LazyImage from 'react-lazy-progressive-image';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
 /**
  * Responsive image slice component that allows 4 by 3 or 16 by 9 images
@@ -16,17 +16,14 @@ const Image: React.FunctionComponent<ImageProps> = ({
   wrapText,
 }) => (
   <Styles.Container data-testid="Image" $wrapText={wrapText}>
-    <Styles.ImageContainer data-testid="ImageContainer" $ratio={ratio}>
-      <LazyImage
-        placeholder={imageSmall}
-        src={imageLarge}
-        visibilitySensorProps={{
-          partialVisibility: true,
-        }}
-      >
-        {(src) => <Styles.Image src={src} alt={imageAltText} />}
-      </LazyImage>
-    </Styles.ImageContainer>
+    <ResponsiveImage
+      imageSmall={imageSmall}
+      imageLarge={imageLarge}
+      imageAltText={imageAltText}
+      ratio={ratio}
+      smallWidth="400"
+      largeWidth="1200"
+    />
     {caption?.trim() && <Styles.Caption>{caption}</Styles.Caption>}
   </Styles.Container>
 );

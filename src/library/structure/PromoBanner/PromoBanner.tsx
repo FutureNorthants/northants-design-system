@@ -1,8 +1,8 @@
 import React from 'react';
-import LazyImage from 'react-lazy-progressive-image';
 import { PromoBannerProps } from './PromoBanner.types';
 import * as Styles from './PromoBanner.styles';
 import Heading from '../../components/Heading/Heading';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 
 /**
  * Promotional banner used as the first wide line in a promotional block,
@@ -17,15 +17,18 @@ const PromoBanner: React.FunctionComponent<PromoBannerProps> = ({
   children,
 }) => (
   <Styles.Container>
-    <LazyImage
-      src={image1440x810}
-      placeholder={image144x81}
-      visibilitySensorProps={{
-        partialVisibility: true,
-      }}
-    >
-      {(src) => <Styles.ImageLink $img={src} href={ctaUrl} title={ctaText} />}
-    </LazyImage>
+    <Styles.ImageLink href={ctaUrl} title={ctaText}>
+      <ResponsiveImage
+        imageSmall={image144x81}
+        imageLarge={image1440x810}
+        imageAltText={ctaText}
+        smallWidth="144"
+        largeWidth="1440"
+        ratio="16by9"
+        objectFit="cover"
+      />
+    </Styles.ImageLink>
+
     <Styles.Wrapper>
       <Heading text={title} />
       <Styles.Content>{children}</Styles.Content>

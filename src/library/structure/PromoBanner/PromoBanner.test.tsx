@@ -34,12 +34,16 @@ describe('PromoBanner structure', () => {
     const links = getAllByRole('link');
     expect(links).toHaveLength(2);
 
+    const images = getAllByRole('img');
+
     expect(links[0]).toHaveProperty('href', storydata.PromoBannerData.ctaUrl);
     expect(links[0]).toHaveTextContent('');
     expect(links[0]).toHaveProperty('title', storydata.PromoBannerData.ctaText);
-    expect(links[0]).toHaveStyle(`background-image: url(${storydata.PromoBannerData.image144x81});`);
     expect(links[0]).toHaveStyle('display: block;');
     expect(links[0]).toHaveStyle('width: 100%');
+
+    expect(images).toHaveLength(1);
+    expect(images[0]).toHaveAttribute('src', storydata.PromoBannerData.image1440x810);
 
     expect(links[1]).toHaveProperty('href', storydata.PromoBannerData.ctaUrl);
     expect(links[1]).toHaveTextContent(storydata.PromoBannerData.ctaText);
