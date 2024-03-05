@@ -92,7 +92,7 @@ describe('Test Component', () => {
             sovereign: 'Northampton',
             uprn: '15049534',
             calendar: 'https://example.com/calendar.pdf',
-            record_items: [
+            collectionItems: [
               {
                 date: '2024-02-12',
                 type: 'food',

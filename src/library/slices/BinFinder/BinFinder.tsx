@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BinFinderProps } from './BinFinder.types';
 import * as Styles from './BinFinder.styles';
 import {
@@ -54,6 +54,12 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
     },
   });
 
+  useEffect(() => {
+    if (uprn) {
+      getBinCollections();
+    }
+  }, [uprn]);
+
   const onSubmit: SubmitHandler<PostcodeLookupInputs> = (data) => {
     setIsLoading(true);
     setIsError(undefined);
@@ -73,7 +79,6 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         if (response.data?.addresses?.length === 1) {
           setUprn(response.data.addresses[0].uprn);
           setAddress(response.data.addresses[0].single_line_address);
-          getBinCollections();
         } else {
           const options: AddressOptionProps[] = response.data.addresses.map((item) => {
             return {
@@ -105,24 +110,27 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
 
     setUprn(singleAddress.value);
     setAddress(singleAddress.title);
-    getBinCollections();
   };
 
   const resetForm = () => {
     setAddressOptions([]);
     setUprn('');
     setAddress('');
+    setBinCollections([]);
+    setCalendar('');
   };
 
-  const getBinCollections = () => {
+  const getBinCollections = async () => {
     setIsLoading(true);
+    setBinCollections([]);
+    setCalendar('');
 
     axios
       .get<BinFinderResponseProps>(`${BinFinderApiUrl}${uprn}`)
       .then((response) => {
         setIsLoading(false);
-        if (response.data.record_items.length > 0) {
-          setBinCollections(response.data.record_items);
+        if (response.data.collectionItems.length > 0) {
+          setBinCollections(response.data.collectionItems);
           setCalendar(response.data.calendar);
         } else {
           setIsError('No bin collection information found.');
@@ -130,19 +138,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
       })
       .catch(() => {
         setIsLoading(false);
-        // TODO: Remove hardcoded response once API is available
-        // setIsError('Error occurred getting bin collections.');
-        setBinCollections([
-          {
-            date: '2024-02-12',
-            type: 'food',
-          },
-          {
-            date: '2024-09-20',
-            type: 'recycling',
-          },
-        ]);
-        setCalendar('https://www.southnorthants.gov.uk/download/downloads/id/7346/bin-collection-calendar-2022.pdf');
+        setIsError('Error getting bin collections.');
       });
   };
 

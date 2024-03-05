@@ -35,10 +35,11 @@ export interface BinCollectionRecordProps {
 export interface CollectionTypes {
   garden: CollectionDetails;
   food: CollectionDetails;
-  waste: CollectionDetails;
   recycling: CollectionDetails;
   recycling_boxes: CollectionDetails;
+  refuse: CollectionDetails;
   sacks: CollectionDetails;
+  waste: CollectionDetails;
 }
 
 export interface CollectionDetails {

@@ -34,13 +34,26 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       title: 'Recycling Boxes',
       icon: 'recyclingbox',
     },
+    refuse: {
+      title: 'Waste',
+      icon: 'wastebin',
+    },
     sacks: {
       title: 'Sacks',
       icon: 'wastesack',
     },
   };
 
-  const now = new Date();
+  const formatDate = (collectionDay: Date) => {
+    return collectionDay
+      .toLocaleDateString('en-GB', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+      .replace(',', '');
+  };
 
   return (
     <Styles.Container data-testid="BinCollection">
@@ -50,7 +63,6 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
         {binCollections.map((binCollection, index) => {
           const collectionDay = new Date(binCollection.date);
           const collectionType = collectionTypes[binCollection.type];
-          const dueIn = Math.ceil((collectionDay.getTime() - now.getTime()) / (1000 * 3600 * 24));
           return (
             <Column small="full" medium="full" large="full" key={index}>
               <Styles.CollectionType>
@@ -59,14 +71,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
                     level={3}
                     text={collectionType.title}
                     icon={collectionType.icon}
-                    subHeading={collectionDay
-                      .toLocaleDateString('en-GB', {
-                        weekday: 'long',
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
-                      })
-                      .replace(',', '')}
+                    subHeading={formatDate(collectionDay)}
                   />
                 </Styles.CollectionHeader>
               </Styles.CollectionType>

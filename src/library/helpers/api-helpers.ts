@@ -149,9 +149,9 @@ export interface CouncilTaxBands {
 }
 
 export interface BinFinderResponseProps {
-  unitary: string;
   sovereign: string;
   uprn: string;
+  dateRange?: string;
   calendar: string;
-  record_items: BinCollectionRecordProps[];
+  collectionItems: BinCollectionRecordProps[];
 }
