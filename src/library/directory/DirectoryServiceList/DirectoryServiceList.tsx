@@ -21,6 +21,7 @@ import { transformSnippet, transformAge } from '../DirectoryService/DirectorySer
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Button from '../../components/Button/Button';
 import { AlertBannerService } from '../../structure/PageStructures';
+import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -47,6 +48,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   ageInMonths = false,
   hasDocuments = false,
   isError = false,
+  proximity = 2,
+  setProximity,
 }) => {
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
   const [openAll, setOpenAll] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion-all`, true);
@@ -219,15 +222,31 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
-                  <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
-                  <HintText text="Enter a postcode to see results within 2 miles" />
-                  <Input
-                    name="postcode"
-                    type="text"
-                    defaultValue={postcodeSearch}
-                    id="postcode"
-                    onChange={(e) => setPostcodeSearch(e.target.value)}
-                  />
+                  <Styles.PostcodeContainer>
+                    <Styles.PostcodeInner>
+                      <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
+                      <HintText text="Enter a postcode" />
+                      <Input
+                        name="postcode"
+                        type="text"
+                        defaultValue={postcodeSearch}
+                        id="postcode"
+                        onChange={(e) => setPostcodeSearch(e.target.value)}
+                      />
+                    </Styles.PostcodeInner>
+                    <DropDownSelect
+                      id="proximity"
+                      label="Distance"
+                      options={[
+                        { title: '2 miles', value: '2' },
+                        { title: '5 miles', value: '5' },
+                        { title: '10 miles', value: '10' },
+                      ]}
+                      boldLabel={true}
+                      hintText="&nbsp;"
+                      onChange={(e) => setProximity(e.target.value)}
+                    />
+                  </Styles.PostcodeContainer>
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>

@@ -28,6 +28,8 @@ describe('Test Component', () => {
       maximumAge: 288,
       setMaximumAge: () => {},
       setCategories: () => {},
+      proximity: '2',
+      setProximity: () => {},
       isLoading: false,
       categories: [
         {

@@ -15,6 +15,11 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 5px;
   ${hideLabel}
+  font-weight: ${(props) => (props.$boldLabel ? 'bold' : 'normal')};
+`;
+
+export const HintText = styled.div`
+  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
 `;
 
 export const Select = styled.select`
@@ -26,6 +31,7 @@ export const Select = styled.select`
   height: 2.5rem;
   padding: 5px;
   border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
+  display: block;
 
   &:focus {
     outline: 2px transparent solid;

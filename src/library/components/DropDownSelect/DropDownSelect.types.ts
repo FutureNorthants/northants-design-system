@@ -28,6 +28,16 @@ export interface DropDownSelectProps {
    * Hide label, but visible for screen readers (totally optional)
    */
   hideLabel?: boolean;
+
+  /**
+   * Should the label text be bold?
+   */
+  boldLabel?: boolean;
+
+  /**
+   * Optional hint text for the input
+   */
+  hintText?: string;
 }
 
 export interface DropDownSelectOptionsProps {

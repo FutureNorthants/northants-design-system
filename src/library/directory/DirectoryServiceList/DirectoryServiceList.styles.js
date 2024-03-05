@@ -21,6 +21,7 @@ export const SearchHeader = styled.div`
   input {
     width: 100%;
     margin-bottom: 0;
+    height: 40px;
   }
 `;
 
@@ -31,6 +32,16 @@ export const Label = styled.label`
 
 export const HintText = styled.div`
   color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+`;
+
+export const PostcodeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const PostcodeInner = styled.div`
+  flex-grow: 1;
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const ButtonContainer = styled.div`
