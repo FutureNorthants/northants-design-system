@@ -11,7 +11,16 @@ describe('Test Component', () => {
   beforeEach(() => {
     props = {
       address: '4A ANGEL STREET, NORTHAMPTON, NN1 1ED',
-      binCollections: [],
+      binCollections: [
+        {
+          type: 'food',
+          date: '2024-03-04',
+        },
+        {
+          type: 'recycling_boxes',
+          date: '2024-03-05',
+        },
+      ],
     };
   });
 
@@ -28,5 +37,9 @@ describe('Test Component', () => {
     const component = getByTestId('BinCollection');
 
     expect(component).toHaveTextContent('4A ANGEL STREET, NORTHAMPTON, NN1 1ED');
+    expect(component).toHaveTextContent('Food Caddy');
+    expect(component).toHaveTextContent('Monday 4 March 2024');
+    expect(component).toHaveTextContent('Recycling Boxes');
+    expect(component).toHaveTextContent('Tuesday 5 March 2024');
   });
 });

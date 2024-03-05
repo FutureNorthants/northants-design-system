@@ -16,7 +16,7 @@ const HeadingWithIcon: React.FunctionComponent<HeadingWithIconProps> = ({
 }) => (
   <Styles.HeadingWrapper data-testid="HeadingWithIcon" $hasHover={hasHover}>
     <DynamicIcon icon={icon} level={level} />
-    <Styles.HeadingContainer>
+    <Styles.HeadingContainer $level={level}>
       <Heading text={text} level={level} />
       {subHeading && <Styles.SubHeading>{subHeading}</Styles.SubHeading>}
     </Styles.HeadingContainer>

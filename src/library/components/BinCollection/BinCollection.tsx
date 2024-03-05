@@ -57,14 +57,16 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
                 <Styles.CollectionHeader>
                   <HeadingWithIcon
                     level={3}
-                    text={`${collectionType.title} (due in ${dueIn} days)`}
+                    text={collectionType.title}
                     icon={collectionType.icon}
-                    subHeading={collectionDay.toLocaleDateString('en-GB', {
-                      weekday: 'long',
-                      day: 'numeric',
-                      month: 'short',
-                      year: 'numeric',
-                    })}
+                    subHeading={collectionDay
+                      .toLocaleDateString('en-GB', {
+                        weekday: 'long',
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                      })
+                      .replace(',', '')}
                   />
                 </Styles.CollectionHeader>
               </Styles.CollectionType>

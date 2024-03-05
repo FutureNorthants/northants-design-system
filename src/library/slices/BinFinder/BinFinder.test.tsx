@@ -123,9 +123,9 @@ describe('Test Component', () => {
         'Bin collections for:West Northamptonshire Council, One Angel Square, Northampton, NN1 1ED'
       );
       expect(component).toHaveTextContent('Food Caddy');
-      expect(component).toHaveTextContent('Monday, 12 Feb 2024');
+      expect(component).toHaveTextContent('Monday 12 February 2024');
       expect(component).toHaveTextContent('Recycling');
-      expect(component).toHaveTextContent('Tuesday, 20 Feb 2024');
+      expect(component).toHaveTextContent('Tuesday 20 February 2024');
     });
   });
 

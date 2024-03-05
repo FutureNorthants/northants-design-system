@@ -138,7 +138,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
             type: 'food',
           },
           {
-            date: '2024-02-20',
+            date: '2024-09-20',
             type: 'recycling',
           },
         ]);
