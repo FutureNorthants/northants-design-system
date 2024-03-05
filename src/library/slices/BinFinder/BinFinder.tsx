@@ -233,11 +233,13 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
             <Column small="full" medium="full" large="full">
               <BinCollection address={address} binCollections={binCollections} calendar={calendar} />
             </Column>
-            <Column small="full" medium="full" large="full">
-              <Styles.StartAgain onClick={() => resetForm()} type="button">
-                Check another postcode
-              </Styles.StartAgain>
-            </Column>
+            {!isLoading && (
+              <Column small="full" medium="full" large="full">
+                <Styles.StartAgain onClick={() => resetForm()} type="button">
+                  Check another postcode
+                </Styles.StartAgain>
+              </Column>
+            )}
           </Row>
         </Styles.CollectionContainer>
       )}
