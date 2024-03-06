@@ -48,6 +48,7 @@ export const ContactName = styled.div`
 
 export const ContactLink = styled.a`
   display: block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   text-align: center;
 `;
@@ -56,10 +57,12 @@ export const WebLink = styled.a`
   word-break: break-all;
   display: block;
   text-align: center;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 `;
 
 export const EmailLink = styled.a`
   word-break: break-all;
   display: block;
   text-align: center;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 `;

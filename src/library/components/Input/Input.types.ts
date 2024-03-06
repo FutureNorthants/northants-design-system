@@ -50,4 +50,9 @@ export interface InputProps {
    * Don't set both defaultValue and value.
    */
   value?: string | number;
+
+  /**
+   * An optional autocomplete attribute
+   */
+  autocomplete?: string;
 }
