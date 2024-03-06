@@ -210,7 +210,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               <Row>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="directorySearch">What are you looking for?</Styles.Label>
-                  <HintText text="Enter a search word or phrase" />
                   <Input
                     name="directorySearch"
                     type="text"
@@ -225,7 +224,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   <Styles.PostcodeContainer>
                     <Styles.PostcodeInner>
                       <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
-                      <HintText text="Enter a postcode" />
                       <Input
                         name="postcode"
                         type="text"
@@ -238,12 +236,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       id="proximity"
                       label="Distance"
                       options={[
+                        { title: '', value: '2' },
                         { title: '2 miles', value: '2' },
                         { title: '5 miles', value: '5' },
                         { title: '10 miles', value: '10' },
+                        { title: '20+ miles', value: '50' },
                       ]}
                       boldLabel={true}
-                      hintText="&nbsp;"
                       onChange={(e) => setProximity(e.target.value)}
                     />
                   </Styles.PostcodeContainer>
@@ -288,13 +287,13 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 <>
                   <Column small="full" medium="full" large="full">
                     <Styles.AccordionControls>
-                      {filtersActive ? (
+                      {/* {filtersActive ? (
                         <Styles.TextLink onClick={clearSearch} type="button">
                           <Styles.ButtonText>Clear all filters</Styles.ButtonText>
                         </Styles.TextLink>
-                      ) : (
-                        <div></div>
-                      )}
+                      ) : ( */}
+                      <div></div>
+                      {/* )} */}
 
                       <Styles.TextLink onClick={toggleAll} type="button" aria-expanded={!openAll}>
                         {openAll ? 'Open all' : 'Close all'}
@@ -304,7 +303,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   </Column>
                   <Column small="full" medium="full" large="full">
                     <Styles.Fieldset>
-                      <Styles.Legend onClick={(e) => toggleAccordion(0)}>
+                      <Styles.Legend>
                         <Styles.LegendButton onClick={(e) => toggleAccordion(0)} type="button">
                           Select age group (years)
                           <Styles.AccordionIcon $isOpen={accordions[0]} />
@@ -410,7 +409,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     </Styles.Favourites>
                   </Styles.FavouritesContainer>
                 </Column>
-                <Column small="full" medium="full" large="full">
+                {/* <Column small="full" medium="full" large="full">
                   <Pagination
                     currentPage={pageNumber}
                     totalResults={totalResults}
@@ -418,7 +417,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     postTo={directoryPath}
                     buttonClickOverride={setPageNumber}
                   />
-                </Column>
+                </Column> */}
                 <Column small="full" medium="full" large="full">
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
                 </Column>

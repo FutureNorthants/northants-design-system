@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const SearchHeader = styled.div`
   width: 100%;
   display: flex;
-  background: ${(props) => props.theme.theme_vars.colours.grey_light}75;
+  background: ${(props) => props.theme.theme_vars.colours.grey_light}50;
   padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   input {
@@ -28,6 +28,7 @@ export const SearchHeader = styled.div`
 export const Label = styled.label`
   margin-bottom: 5px;
   font-weight: bold;
+  display: block;
 `;
 
 export const HintText = styled.div`
@@ -90,7 +91,7 @@ export const ButtonText = styled.span`
 export const ResultInfo = styled.div`
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+  color: ${(props) => props.theme.theme_vars.colours.grey_darkest};
 `;
 
 const serviceBackground = (props) => {
