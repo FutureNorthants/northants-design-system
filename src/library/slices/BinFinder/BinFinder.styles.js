@@ -19,6 +19,11 @@ export const Label = styled.label`
 export const Error = styled.p`
   font-weight: bold;
   color: ${(props) => props.theme.theme_vars.colours.negative};
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const LoadingContainer = styled.div`
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const StartAgain = styled.button`

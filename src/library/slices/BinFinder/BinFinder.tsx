@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BinFinderProps } from './BinFinder.types';
 import * as Styles from './BinFinder.styles';
 import {
@@ -19,6 +19,7 @@ import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
+import { ThemeContext } from 'styled-components';
 
 interface AddressOptionProps {
   title: string;
@@ -40,6 +41,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
   const [binCollections, setBinCollections] = useState<BinCollectionRecordProps[]>([]);
   const [selectAddressError, setSelectAddressError] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<string>('');
+  const themeContext = useContext(ThemeContext);
 
   const {
     register,
@@ -47,6 +49,8 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
     watch,
     control,
     formState: { errors },
+    getValues,
+    setError,
   } = useForm<PostcodeLookupInputs>({
     defaultValues: {
       postcode: '',
@@ -72,7 +76,18 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         setIsLoading(false);
 
         if (response.data.addresses?.length < 1) {
-          setIsError('No matching results');
+          setIsError('No addresses found.');
+          return;
+        }
+
+        if (
+          response.data.unitaries?.length === 1 &&
+          response.data.unitaries[0].name.toLowerCase() !== themeContext.theme_vars.cardinal_name
+        ) {
+          setError('postcode', {
+            type: 'custom',
+            message: `The postcode is not in ${themeContext.theme_vars.full_name}.`,
+          });
           return;
         }
 
@@ -91,7 +106,25 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
       })
       .catch((error) => {
         setIsLoading(false);
-        setIsError('No matching addresses found. Please try again.');
+
+        if (error.response?.data?.status === 'ERROR invalid postcode format.') {
+          setError('postcode', { type: 'custom', message: 'The postcode format is invalid.' });
+          return;
+        }
+
+        const house = getValues('houseNumber');
+        if (house) {
+          setError('postcode', {
+            type: 'custom',
+            message: 'No addresses found for the postcode and house name or number.',
+          });
+          setError('houseNumber', {
+            type: 'custom',
+            message: 'No addresses found for the postcode and house name or number.',
+          });
+        } else {
+          setError('postcode', { type: 'custom', message: 'No addresses found for the postcode.' });
+        }
       });
   };
 
@@ -169,7 +202,13 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                         onChange={onChange}
                         value={value}
                         isErrored={errors.postcode ? true : false}
-                        errorText={errors.postcode ? 'The postcode is required.' : ''}
+                        errorText={
+                          !errors.postcode
+                            ? ''
+                            : errors.postcode?.message
+                            ? errors.postcode.message
+                            : 'The postcode is required.'
+                        }
                       />
                     )}
                   />
@@ -188,7 +227,13 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                         onChange={onChange}
                         value={value}
                         isErrored={errors.houseNumber ? true : false}
-                        errorText={errors.houseNumber ? 'The house name or number must be below 30 characters.' : ''}
+                        errorText={
+                          !errors.houseNumber
+                            ? ''
+                            : errors.houseNumber?.message
+                            ? errors.houseNumber.message
+                            : 'The house name or number must be below 30 characters.'
+                        }
                       />
                     )}
                   />
@@ -241,7 +286,11 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
           </Row>
         </Styles.CollectionContainer>
       )}
-      {isLoading && <LoadingSpinner />}
+      {isLoading && (
+        <Styles.LoadingContainer>
+          <LoadingSpinner />
+        </Styles.LoadingContainer>
+      )}
       {isError && (
         <Row>
           <Column small="full" medium="full" large="full">
