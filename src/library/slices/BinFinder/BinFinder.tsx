@@ -164,7 +164,6 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                     render={({ field: { onChange, value } }) => (
                       <Input
                         type="text"
-                        placeholder="Enter a postcode"
                         name="postcode"
                         id="postcode"
                         onChange={onChange}
@@ -186,7 +185,6 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                         type="text"
                         name="houseNumber"
                         id="houseNumber"
-                        placeholder="Enter your house name or number"
                         onChange={onChange}
                         value={value}
                         isErrored={errors.houseNumber ? true : false}

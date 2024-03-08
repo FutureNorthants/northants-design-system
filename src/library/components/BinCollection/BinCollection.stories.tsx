@@ -38,7 +38,7 @@ ExampleBinCollection.args = {
       type: 'food',
     },
     {
-      date: now.add(6, 'day').format('YYYY-MM-DD'),
+      date: now.add(5, 'day').format('YYYY-MM-DD'),
       type: 'garden',
     },
     {

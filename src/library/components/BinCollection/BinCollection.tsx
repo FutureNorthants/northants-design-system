@@ -55,30 +55,47 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       .replace(',', '');
   };
 
+  const binCollectionsGrouped = binCollections.reduce((acc, binCollection) => {
+    const collectionDay = binCollection.date;
+    if (!acc[collectionDay]) {
+      acc[collectionDay] = [];
+    }
+    acc[collectionDay].push(binCollection);
+    return acc;
+  }, {});
+
   return (
     <Styles.Container data-testid="BinCollection">
       <Heading text="Bin collections for:" level={3} />
       <p>{address}</p>
-      <Row>
-        {binCollections.map((binCollection, index) => {
-          const collectionDay = new Date(binCollection.date);
-          const collectionType = collectionTypes[binCollection.type];
-          return (
-            <Column small="full" medium="full" large="full" key={index}>
-              <Styles.CollectionType>
+
+      {Object.keys(binCollectionsGrouped).map((day) => {
+        const collectionDay = new Date(day);
+        return (
+          <Styles.DayWrapper>
+            <Row>
+              <Column small="full" medium="full" large="full">
                 <Styles.CollectionHeader>
-                  <HeadingWithIcon
-                    level={3}
-                    text={collectionType.title}
-                    icon={collectionType.icon}
-                    subHeading={formatDate(collectionDay)}
-                  />
+                  <Styles.CollectionDay>{formatDate(collectionDay)}</Styles.CollectionDay>
                 </Styles.CollectionHeader>
-              </Styles.CollectionType>
-            </Column>
-          );
-        })}
-      </Row>
+              </Column>
+              {binCollectionsGrouped[day]
+                .sort((a, b) => a.type.localeCompare(b.type))
+                .map((binCollection, index) => {
+                  const collectionType = collectionTypes[binCollection.type];
+                  return (
+                    <Column small="full" medium="full" large="full" key={index}>
+                      <Styles.CollectionType>
+                        <HeadingWithIcon level={3} text={collectionType.title} icon={collectionType.icon} />
+                      </Styles.CollectionType>
+                    </Column>
+                  );
+                })}
+            </Row>
+          </Styles.DayWrapper>
+        );
+      })}
+
       {calendar && (
         <FileDownload
           title="Bin collection calendar"
