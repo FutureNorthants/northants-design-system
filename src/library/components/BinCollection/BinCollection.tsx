@@ -72,7 +72,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       {Object.keys(binCollectionsGrouped).map((day) => {
         const collectionDay = new Date(day);
         return (
-          <Styles.DayWrapper>
+          <Styles.DayWrapper key={day}>
             <Row>
               <Column small="full" medium="full" large="full">
                 <Styles.CollectionHeader>
