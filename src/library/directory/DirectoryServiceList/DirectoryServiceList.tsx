@@ -287,14 +287,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 <>
                   <Column small="full" medium="full" large="full">
                     <Styles.AccordionControls>
-                      {/* {filtersActive ? (
-                        <Styles.TextLink onClick={clearSearch} type="button">
-                          <Styles.ButtonText>Clear all filters</Styles.ButtonText>
-                        </Styles.TextLink>
-                      ) : ( */}
                       <div></div>
-                      {/* )} */}
-
                       <Styles.TextLink onClick={toggleAll} type="button" aria-expanded={!openAll}>
                         {openAll ? 'Open all' : 'Close all'}
                         <Styles.VisuallyHidden> sections</Styles.VisuallyHidden>
@@ -409,15 +402,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     </Styles.Favourites>
                   </Styles.FavouritesContainer>
                 </Column>
-                {/* <Column small="full" medium="full" large="full">
-                  <Pagination
-                    currentPage={pageNumber}
-                    totalResults={totalResults}
-                    resultsPerPage={perPage}
-                    postTo={directoryPath}
-                    buttonClickOverride={setPageNumber}
-                  />
-                </Column> */}
                 <Column small="full" medium="full" large="full">
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
                 </Column>

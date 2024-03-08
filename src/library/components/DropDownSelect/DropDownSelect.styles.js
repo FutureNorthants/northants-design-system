@@ -18,10 +18,6 @@ export const Label = styled.label`
   font-weight: ${(props) => (props.$boldLabel ? 'bold' : 'normal')};
 `;
 
-export const HintText = styled.div`
-  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
-`;
-
 export const Select = styled.select`
   ${(props) => props.theme.fontStyles};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
