@@ -28,6 +28,7 @@ export const Select = styled.select`
   padding: 5px;
   border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
   display: block;
+  background-color: ${(props) => props.theme.theme_vars.colours.white};
 
   &:focus {
     outline: 2px transparent solid;
