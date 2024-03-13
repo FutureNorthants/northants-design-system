@@ -227,10 +227,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                 {showFirstLine && (
                   <>
                     <Column small="full" medium="full" large="full">
-                      <p>
-                        There are many addresses for this postcode. Please enter the first line of your address and try
-                        again.
-                      </p>
+                      <p>There are several addresses for this postcode. Please enter the first line of your address.</p>
                     </Column>
                     <Column small="full" medium="full" large="full">
                       <Styles.Label htmlFor="houseNumber">First line of address</Styles.Label>
