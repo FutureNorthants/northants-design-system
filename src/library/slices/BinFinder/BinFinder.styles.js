@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: block;
   background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.large};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 `;

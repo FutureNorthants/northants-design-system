@@ -42,6 +42,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
   const [selectAddressError, setSelectAddressError] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<string>('');
   const themeContext = useContext(ThemeContext);
+  const [showFirstLine, setShowFirstLine] = useState<boolean>(false);
 
   const {
     register,
@@ -50,6 +51,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
     control,
     formState: { errors },
     getValues,
+    setValue,
     setError,
   } = useForm<PostcodeLookupInputs>({
     defaultValues: {
@@ -94,6 +96,8 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         if (response.data?.addresses?.length === 1) {
           setUprn(response.data.addresses[0].uprn);
           setAddress(response.data.addresses[0].single_line_address);
+        } else if (response.data.total_pages > 1) {
+          setShowFirstLine(true);
         } else {
           const options: AddressOptionProps[] = response.data.addresses.map((item) => {
             return {
@@ -116,11 +120,11 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         if (house) {
           setError('postcode', {
             type: 'custom',
-            message: 'No addresses found for the postcode and house name or number.',
+            message: 'No addresses found for the postcode and first line of address.',
           });
           setError('houseNumber', {
             type: 'custom',
-            message: 'No addresses found for the postcode and house name or number.',
+            message: 'No addresses found for the postcode and first line of address.',
           });
         } else {
           setError('postcode', { type: 'custom', message: 'No addresses found for the postcode.' });
@@ -151,6 +155,9 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
     setAddress('');
     setBinCollections([]);
     setCalendar('');
+    setValue('houseNumber', '');
+    setValue('postcode', '');
+    setShowFirstLine(false);
   };
 
   const getBinCollections = async () => {
@@ -163,7 +170,11 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
       .then((response) => {
         setIsLoading(false);
         if (response.data.collectionItems.length > 0) {
-          setBinCollections(response.data.collectionItems);
+          const formattedTypes = response.data.collectionItems.map((item) => {
+            item.type = item.type === 'recycling-boxes' ? 'recycling_boxes' : item.type;
+            return item;
+          });
+          setBinCollections(formattedTypes);
           setCalendar(response.data.calendar);
         } else {
           setIsError('No bin collection information found.');
@@ -213,31 +224,42 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                     )}
                   />
                 </Column>
-                <Column small="full" medium="full" large="full">
-                  <Styles.Label htmlFor="houseNumber">House name or number</Styles.Label>
-                  <Controller
-                    name="houseNumber"
-                    control={control}
-                    rules={{ maxLength: 30 }}
-                    render={({ field: { onChange, value } }) => (
-                      <Input
-                        type="text"
+                {showFirstLine && (
+                  <>
+                    <Column small="full" medium="full" large="full">
+                      <p>
+                        There are many addresses for this postcode. Please enter the first line of your address and try
+                        again.
+                      </p>
+                    </Column>
+                    <Column small="full" medium="full" large="full">
+                      <Styles.Label htmlFor="houseNumber">First line of address</Styles.Label>
+                      <Controller
                         name="houseNumber"
-                        id="houseNumber"
-                        onChange={onChange}
-                        value={value}
-                        isErrored={errors.houseNumber ? true : false}
-                        errorText={
-                          !errors.houseNumber
-                            ? ''
-                            : errors.houseNumber?.message
-                            ? errors.houseNumber.message
-                            : 'The house name or number must be below 30 characters.'
-                        }
+                        control={control}
+                        rules={{ maxLength: 30 }}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            type="text"
+                            name="houseNumber"
+                            id="houseNumber"
+                            onChange={onChange}
+                            value={value}
+                            isErrored={errors.houseNumber ? true : false}
+                            isFullWidth
+                            errorText={
+                              !errors.houseNumber
+                                ? ''
+                                : errors.houseNumber?.message
+                                ? errors.houseNumber.message
+                                : 'The first line of address must be below 30 characters.'
+                            }
+                          />
+                        )}
                       />
-                    )}
-                  />
-                </Column>
+                    </Column>
+                  </>
+                )}
                 <Column small="full" medium="full" large="full">
                   <FormButton type="submit" aria-label="Submit" text="Find" />
                 </Column>

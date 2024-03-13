@@ -29,7 +29,7 @@ export interface BinCollectionRecordProps {
   /**
    * The type of collection
    */
-  type: keyof CollectionTypes;
+  type: keyof CollectionTypes | string;
 }
 
 export interface CollectionTypes {

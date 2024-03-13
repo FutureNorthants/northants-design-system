@@ -5,7 +5,6 @@ import { BinFinderProps } from './BinFinder.types';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import axios from 'axios';
-import { BinFinderApiUrl, PostcodeSearchApiUrl } from '../../helpers/api-helpers';
 
 jest.mock('axios');
 
@@ -109,11 +108,9 @@ describe('Test Component', () => {
     const { getByTestId, getByRole, getByLabelText } = renderComponent();
 
     const postcodeInput = getByLabelText('Postcode');
-    const houseNumber = getByLabelText('House name or number');
     const submit = getByRole('button');
 
     fireEvent.change(postcodeInput, { target: { value: 'NN1 1ED' } });
-    fireEvent.change(houseNumber, { target: { value: '1' } });
 
     fireEvent.click(submit);
 
