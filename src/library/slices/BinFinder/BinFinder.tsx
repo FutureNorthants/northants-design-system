@@ -31,7 +31,7 @@ type PostcodeLookupInputs = {
   houseNumber: string;
 };
 
-const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
+const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactUrl }) => {
   const [uprn, setUprn] = useState<string>('');
   const [isError, setIsError] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -88,7 +88,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
         ) {
           setError('postcode', {
             type: 'custom',
-            message: `The postcode is not in ${themeContext.theme_vars.full_name}.`,
+            message: `This postcode is not in ${themeContext.theme_vars.full_name}.`,
           });
           return;
         }
@@ -118,16 +118,15 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
 
         const house = getValues('houseNumber');
         if (house) {
-          setError('postcode', {
-            type: 'custom',
-            message: 'No addresses found for the postcode and first line of address.',
-          });
           setError('houseNumber', {
             type: 'custom',
-            message: 'No addresses found for the postcode and first line of address.',
+            message: 'We were unable to find this address. Please check and try again.',
           });
         } else {
-          setError('postcode', { type: 'custom', message: 'No addresses found for the postcode.' });
+          setError('postcode', {
+            type: 'custom',
+            message: `We were unable to find an address for this postcode in ${themeContext.theme_vars.full_name}.`,
+          });
         }
       });
   };
@@ -176,8 +175,6 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
           });
           setBinCollections(formattedTypes);
           setCalendar(response.data.calendar);
-        } else {
-          setIsError('No bin collection information found.');
         }
       })
       .catch(() => {
@@ -197,7 +194,11 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
       {uprn === '' ? (
         <>
           {addressOptions.length === 0 && (
-            <FormWithLine onSubmit={handleSubmit(onSubmit)} isError={isError ? true : false}>
+            <FormWithLine
+              onSubmit={handleSubmit(onSubmit)}
+              isError={errors.postcode || errors.houseNumber ? true : false}
+              hideLine={false}
+            >
               <Row>
                 <Column small="full" medium="full" large="full">
                   <Styles.Label htmlFor="postcode">Postcode</Styles.Label>
@@ -234,7 +235,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                       <Controller
                         name="houseNumber"
                         control={control}
-                        rules={{ maxLength: 30 }}
+                        rules={{ maxLength: 50 }}
                         render={({ field: { onChange, value } }) => (
                           <Input
                             type="text"
@@ -249,7 +250,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
                                 ? ''
                                 : errors.houseNumber?.message
                                 ? errors.houseNumber.message
-                                : 'The first line of address must be below 30 characters.'
+                                : 'The first line of address must be below 50 characters.'
                             }
                           />
                         )}
@@ -294,6 +295,12 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title }) => {
           <Row>
             <Column small="full" medium="full" large="full">
               <BinCollection address={address} binCollections={binCollections} calendar={calendar} />
+              {binCollections.length === 0 && !isLoading && (
+                <p>
+                  We have no bin collection details for this address. If you think this is wrong, please{' '}
+                  <a href={contactUrl}>contact us</a>
+                </p>
+              )}
             </Column>
             {!isLoading && (
               <Column small="full" medium="full" large="full">

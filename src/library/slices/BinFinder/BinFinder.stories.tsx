@@ -28,5 +28,6 @@ const Template: StoryFn<BinFinderProps> = (args) => (
 
 export const ExampleBinFinder = Template.bind({});
 ExampleBinFinder.args = {
-  title: 'Bin Finder',
+  title: 'Find your bin collection day',
+  contactUrl: 'https://www.westnorthants.gov.uk/your-council/contact-us/contact-details',
 };

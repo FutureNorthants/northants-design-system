@@ -5,9 +5,10 @@ import BinFinder from '../../slices/BinFinder/BinFinder';
 
 export interface BinFinderPageExampleProps {
   title: string;
+  contactUrl: string;
 }
 
-export const BinFinderPageExample: React.FunctionComponent<BinFinderPageExampleProps> = ({ title }) => {
+export const BinFinderPageExample: React.FunctionComponent<BinFinderPageExampleProps> = ({ title, contactUrl }) => {
   return (
     <>
       <PageStructures.Header />
@@ -51,7 +52,7 @@ export const BinFinderPageExample: React.FunctionComponent<BinFinderPageExampleP
               Council app from Google Play or the Apple App Store.
             </p>
 
-            <BinFinder title={title} />
+            <BinFinder title={title} contactUrl={contactUrl} />
           </PageStructures.PageMain>
           <PageStructures.PageSidebar>
             <PageStructures.SectionLinksSidebar

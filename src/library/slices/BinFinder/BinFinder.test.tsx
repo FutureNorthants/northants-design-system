@@ -16,6 +16,7 @@ describe('Test Component', () => {
   beforeEach(() => {
     props = {
       title: 'Bin Finder',
+      contactUrl: 'https://www.westnorthants.gov.uk/your-council/contact-us/contact-details',
     };
   });
 
