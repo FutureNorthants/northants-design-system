@@ -122,10 +122,12 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
                                 .join(' <br />'),
                             }}
                           />
-                          <Button
-                            url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
-                            text="Get directions"
-                          />
+                          {location.latitude && location.longitude && (
+                            <Button
+                              url={`https://google.com/maps/dir//${location.latitude},${location.longitude}`}
+                              text="Get directions"
+                            />
+                          )}
                         </Styles.PhysicalAddress>
                       ))}
                       {location?.accessibility_for_disabilities.length > 0 && (

@@ -3,7 +3,12 @@ import { StoryFn } from '@storybook/react';
 import DirectoryService from './DirectoryService';
 import { DirectoryServiceProps } from './DirectoryService.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ExampleService, MultipleLocations, OneVisitableLocation } from './DirectoryService.storydata';
+import {
+  ExampleService,
+  MultipleLocations,
+  OneVisitableLocation,
+  OneVisitableLocationNoLatLon,
+} from './DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { DirectoryShortListProvider, PageMain } from '../../..';
 
@@ -48,6 +53,12 @@ export const ExampleDirectoryServiceNotVisitable = Template.bind({});
 ExampleDirectoryServiceNotVisitable.args = {
   ...ExampleService,
   ...{ service_at_locations: OneVisitableLocation },
+};
+
+export const ExampleDirectoryServiceVisitableNoLatLon = Template.bind({});
+ExampleDirectoryServiceVisitableNoLatLon.args = {
+  ...ExampleService,
+  ...{ service_at_locations: OneVisitableLocationNoLatLon },
 };
 
 export const ExampleDirectoryNoLogo = Template.bind({});
