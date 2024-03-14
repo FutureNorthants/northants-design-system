@@ -21,7 +21,7 @@ BinFinderExample.args = {
   title: 'Find your bin collection day',
   contactInfo: `
     <p>
-      We have no bin collection details for this address. If you think this is wrong, please{' '}
+      We have no bin collection details for this address. If you think this is wrong, please 
       <a href="https://www.westnorthants.gov.uk/your-council/contact-us/contact-details">contact us</a>
     </p>
   `,
