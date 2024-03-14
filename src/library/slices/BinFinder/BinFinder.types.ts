@@ -5,7 +5,7 @@ export interface BinFinderProps {
   title?: string;
 
   /**
-   * The URL to contact us when no collections found
+   * The contact information for when there are no bin collections found
    */
-  contactUrl: string;
+  contactInfo: string;
 }

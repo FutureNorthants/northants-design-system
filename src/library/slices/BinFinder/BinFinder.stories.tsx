@@ -30,4 +30,10 @@ export const ExampleBinFinder = Template.bind({});
 ExampleBinFinder.args = {
   title: 'Find your bin collection day',
   contactUrl: 'https://www.westnorthants.gov.uk/your-council/contact-us/contact-details',
+  contactInfo: (
+    <p>
+      We have no bin collection details for this address. If you think this is wrong, please{' '}
+      <a href="https://www.westnorthants.gov.uk/your-council/contact-us/contact-details">contact us</a>
+    </p>
+  ),
 };

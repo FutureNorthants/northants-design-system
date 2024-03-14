@@ -20,6 +20,7 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
 import { ThemeContext } from 'styled-components';
+import sanitizeHtml from 'sanitize-html';
 
 interface AddressOptionProps {
   title: string;
@@ -31,7 +32,7 @@ type PostcodeLookupInputs = {
   houseNumber: string;
 };
 
-const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactUrl }) => {
+const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo }) => {
   const [uprn, setUprn] = useState<string>('');
   const [isError, setIsError] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -157,6 +158,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactUrl 
     setValue('houseNumber', '');
     setValue('postcode', '');
     setShowFirstLine(false);
+    setIsError(undefined);
   };
 
   const getBinCollections = async () => {
@@ -296,10 +298,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactUrl 
             <Column small="full" medium="full" large="full">
               <BinCollection address={address} binCollections={binCollections} calendar={calendar} />
               {binCollections.length === 0 && !isLoading && (
-                <p>
-                  We have no bin collection details for this address. If you think this is wrong, please{' '}
-                  <a href={contactUrl}>contact us</a>
-                </p>
+                <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(contactInfo) }} />
               )}
             </Column>
             {!isLoading && (
