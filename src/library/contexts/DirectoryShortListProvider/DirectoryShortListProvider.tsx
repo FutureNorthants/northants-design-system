@@ -50,6 +50,10 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
     return typeof favourites.find((favourite) => favourite.id === id) !== 'undefined';
   };
 
+  const clearShortlist = () => {
+    setFavourites([]);
+  };
+
   const value = {
     favourites: {
       favourites: favourites,
@@ -57,6 +61,7 @@ export const DirectoryShortListProvider: React.FunctionComponent<DirectoryShortL
     },
     toggleFavourites: toggleFavourites,
     isFavourite: isFavourite,
+    clearShortlist: clearShortlist,
   };
 
   return <DirectoryShortListContext.Provider value={value}>{children}</DirectoryShortListContext.Provider>;
