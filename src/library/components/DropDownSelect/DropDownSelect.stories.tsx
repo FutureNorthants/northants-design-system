@@ -24,6 +24,8 @@ const Template: StoryFn<DropDownSelectProps> = (args) => (
 
 export const ExampleDropDownSelect = Template.bind({});
 ExampleDropDownSelect.args = {
+  hideLabel: false,
+  label: 'Services',
   options: [
     {
       title: 'All services',
@@ -79,6 +81,51 @@ ExampleDropDownFakeData.args = {
 export const ExampleDropDownSelectHiddenLabel = Template.bind({});
 ExampleDropDownSelectHiddenLabel.args = {
   hideLabel: true,
+  label: 'Services',
+  options: [
+    {
+      title: 'All services',
+      value: 'all-services',
+    },
+    {
+      title: 'Bins',
+      value: 'bins',
+    },
+    {
+      title: 'Council Tax',
+      value: 'council-tax',
+    },
+  ],
+  selected: NewsArticleFilters.services,
+};
+
+export const ExampleDropDownSelectBoldLabel = Template.bind({});
+ExampleDropDownSelectBoldLabel.args = {
+  hideLabel: false,
+  boldLabel: true,
+  label: 'Services',
+  options: [
+    {
+      title: 'All services',
+      value: 'all-services',
+    },
+    {
+      title: 'Bins',
+      value: 'bins',
+    },
+    {
+      title: 'Council Tax',
+      value: 'council-tax',
+    },
+  ],
+  selected: NewsArticleFilters.services,
+};
+
+export const ExampleDropDownSelectHintText = Template.bind({});
+ExampleDropDownSelectHintText.args = {
+  hintText: 'Select an option from the list',
+  hideLabel: false,
+  boldLabel: true,
   label: 'Services',
   options: [
     {

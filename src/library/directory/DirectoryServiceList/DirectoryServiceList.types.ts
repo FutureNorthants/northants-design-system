@@ -121,6 +121,16 @@ export interface DirectoryServiceListProps {
    * Is the component in error state
    */
   isError?: boolean;
+
+  /**
+   * The optional proximity for the postcode search
+   */
+  proximity?: number | string;
+
+  /**
+   * Function prop passed in to handle updating proximity
+   */
+  setProximity: Dispatch<SetStateAction<number | string | undefined>>;
 }
 
 export interface DirectoryCategory {

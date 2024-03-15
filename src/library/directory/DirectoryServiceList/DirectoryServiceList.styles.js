@@ -15,22 +15,34 @@ export const Container = styled.div`
 export const SearchHeader = styled.div`
   width: 100%;
   display: flex;
-  background: ${(props) => props.theme.theme_vars.colours.grey_light}75;
+  background: ${(props) => props.theme.theme_vars.colours.grey_light}50;
   padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   input {
     width: 100%;
     margin-bottom: 0;
+    height: 40px;
   }
 `;
 
 export const Label = styled.label`
   margin-bottom: 5px;
   font-weight: bold;
+  display: block;
 `;
 
 export const HintText = styled.div`
   color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+`;
+
+export const PostcodeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const PostcodeInner = styled.div`
+  flex-grow: 1;
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const ButtonContainer = styled.div`
@@ -79,7 +91,7 @@ export const ButtonText = styled.span`
 export const ResultInfo = styled.div`
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+  color: ${(props) => props.theme.theme_vars.colours.grey_darkest};
 `;
 
 const serviceBackground = (props) => {

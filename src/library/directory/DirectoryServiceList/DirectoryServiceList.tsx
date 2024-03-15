@@ -21,6 +21,7 @@ import { transformSnippet, transformAge } from '../DirectoryService/DirectorySer
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Button from '../../components/Button/Button';
 import { AlertBannerService } from '../../structure/PageStructures';
+import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -47,6 +48,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   ageInMonths = false,
   hasDocuments = false,
   isError = false,
+  proximity = 2,
+  setProximity,
 }) => {
   const [accordions, setAccordions] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion`, []);
   const [openAll, setOpenAll] = useLocalStorage(`${directoryPath.replace(/\//g, '')}-accordion-all`, true);
@@ -207,7 +210,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
               <Row>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.Label htmlFor="directorySearch">What are you looking for?</Styles.Label>
-                  <HintText text="Enter a search word or phrase" />
                   <Input
                     name="directorySearch"
                     type="text"
@@ -219,15 +221,31 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
-                  <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
-                  <HintText text="Enter a postcode to see results within 2 miles" />
-                  <Input
-                    name="postcode"
-                    type="text"
-                    defaultValue={postcodeSearch}
-                    id="postcode"
-                    onChange={(e) => setPostcodeSearch(e.target.value)}
-                  />
+                  <Styles.PostcodeContainer>
+                    <Styles.PostcodeInner>
+                      <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
+                      <Input
+                        name="postcode"
+                        type="text"
+                        defaultValue={postcodeSearch}
+                        id="postcode"
+                        onChange={(e) => setPostcodeSearch(e.target.value)}
+                      />
+                    </Styles.PostcodeInner>
+                    <DropDownSelect
+                      id="proximity"
+                      label="Distance"
+                      options={[
+                        { title: '', value: '2' },
+                        { title: '2 miles', value: '2' },
+                        { title: '5 miles', value: '5' },
+                        { title: '10 miles', value: '10' },
+                        { title: '20+ miles', value: '50' },
+                      ]}
+                      boldLabel={true}
+                      onChange={(e) => setProximity(e.target.value)}
+                    />
+                  </Styles.PostcodeContainer>
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>
@@ -269,14 +287,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                 <>
                   <Column small="full" medium="full" large="full">
                     <Styles.AccordionControls>
-                      {filtersActive ? (
-                        <Styles.TextLink onClick={clearSearch} type="button">
-                          <Styles.ButtonText>Clear all filters</Styles.ButtonText>
-                        </Styles.TextLink>
-                      ) : (
-                        <div></div>
-                      )}
-
+                      <div></div>
                       <Styles.TextLink onClick={toggleAll} type="button" aria-expanded={!openAll}>
                         {openAll ? 'Open all' : 'Close all'}
                         <Styles.VisuallyHidden> sections</Styles.VisuallyHidden>
@@ -285,7 +296,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                   </Column>
                   <Column small="full" medium="full" large="full">
                     <Styles.Fieldset>
-                      <Styles.Legend onClick={(e) => toggleAccordion(0)}>
+                      <Styles.Legend>
                         <Styles.LegendButton onClick={(e) => toggleAccordion(0)} type="button">
                           Select age group (years)
                           <Styles.AccordionIcon $isOpen={accordions[0]} />
@@ -390,15 +401,6 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       <HeartIcon colourFill={themeContext.theme_vars.colours.action} /> Shortlist ({favourites.length})
                     </Styles.Favourites>
                   </Styles.FavouritesContainer>
-                </Column>
-                <Column small="full" medium="full" large="full">
-                  <Pagination
-                    currentPage={pageNumber}
-                    totalResults={totalResults}
-                    resultsPerPage={perPage}
-                    postTo={directoryPath}
-                    buttonClickOverride={setPageNumber}
-                  />
                 </Column>
                 <Column small="full" medium="full" large="full">
                   {notServer && <>{services?.length > 0 && showMap && <DirectoryMap mapProps={mapProps} />}</>}
