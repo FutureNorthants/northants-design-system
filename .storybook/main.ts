@@ -27,8 +27,7 @@ const config: StorybookConfig = {
   env: (config) => ({
     ...config,
     NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
-    NEXT_PUBLIC_BIN_FINDER_API_URL:
-      'https://khqxlx6coh.execute-api.eu-west-2.amazonaws.com/Test/v1/unified-waste-collections/',
+    NEXT_PUBLIC_BIN_FINDER_API_URL: 'https://api.westnorthants.digital/openapi/v1/unified-waste-collections/',
   }),
 
   webpackFinal: async (config) => {
