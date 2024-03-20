@@ -44,6 +44,7 @@
     "axios": "^1",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
+    "react-hook-form": "^7.5",
     "styled-components": "^6.1.1"
   },
   "resolutions": {
@@ -93,6 +94,7 @@
     "node-sass": "^8.0.0",
     "react": "~18",
     "react-dom": "~18",
+    "react-hook-form": "^7.50.1",
     "rollup": "^3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

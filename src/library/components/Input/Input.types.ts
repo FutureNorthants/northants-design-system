@@ -50,4 +50,9 @@ export interface InputProps {
    * Don't set both defaultValue and value.
    */
   value?: string | number;
+
+  /**
+   * Is the input full width. Defaults to false
+   */
+  isFullWidth?: boolean;
 }
