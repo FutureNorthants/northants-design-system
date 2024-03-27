@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.a`
   display: inline-block;
   position: relative;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 14px;
   border: none;
   background: transparent;

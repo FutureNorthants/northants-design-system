@@ -102,7 +102,10 @@ export const ServiceContainer = styled.div`
   transition: box-shadow 0.3s ease;
   border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const Address = styled.span`
@@ -167,6 +170,8 @@ export const LegendButton = styled.button`
   cursor: pointer;
   text-align: left;
   padding-right: 30px;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   ${(props) => props.theme.theme_vars.h4}
   ${(props) => props.theme.linkStyles}
   &:hover {
@@ -197,7 +202,7 @@ export const AccordionIcon = styled.span`
     vertical-align: top;
     width: 12px;
     border-color: ${(props) => props.theme.theme_vars.colours.black};
-    top: ${(props) => (props.$isOpen ? `5px` : `0`)};
+    top: ${(props) => (props.$isOpen ? `15px` : `10px`)};
     left: 6px;
     transform: ${(props) => (props.$isOpen ? `rotate(-45deg)` : `rotate(135deg)`)};
   }
@@ -235,8 +240,8 @@ export const TextLink = styled.button`
   position: relative;
   z-index: 1;
   margin: 0;
-  margin-bottom: 15px;
-  padding: 0;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-width: 0;
   color: ${(props) => props.theme.theme_vars.colours.action};
   background: none;
@@ -313,7 +318,7 @@ export const Favourites = styled.a`
 
 export const ServiceLink = styled.a`
   display: block;
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   flex-grow: 1;
   ${(props) => props.theme.theme_vars.h4}
   ${(props) => props.theme.linkStyles}

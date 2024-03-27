@@ -50,6 +50,7 @@ export const MapImage = styled.img`
 
 export const MapLink = styled.a`
   display: block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
 
 export const ShortListContainer = styled.div`
