@@ -18,6 +18,7 @@ const Input: React.FunctionComponent<InputProps> = ({
   id,
   value,
   autocomplete,
+  isFullWidth = false,
 }) => {
   return (
     <>
@@ -32,7 +33,8 @@ const Input: React.FunctionComponent<InputProps> = ({
           maxLength={maxLength}
           value={value}
           id={id}
-          autocomplete={autocomplete}
+          autoComplete={autocomplete}
+          $isFullWidth={isFullWidth}
         />
       ) : (
         <Styles.StyledInput
@@ -44,7 +46,8 @@ const Input: React.FunctionComponent<InputProps> = ({
           maxLength={maxLength}
           defaultValue={defaultValue}
           id={id}
-          autocomplete={autocomplete}
+          autoComplete={autocomplete}
+          $isFullWidth={isFullWidth}
         />
       )}
     </>

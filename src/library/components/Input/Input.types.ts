@@ -55,4 +55,9 @@ export interface InputProps {
    * An optional autocomplete attribute
    */
   autocomplete?: string;
+
+  /**
+   * Is the input full width. Defaults to false
+   */
+  isFullWidth?: boolean;
 }

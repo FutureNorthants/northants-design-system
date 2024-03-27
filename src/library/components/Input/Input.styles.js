@@ -10,6 +10,7 @@ export const StyledInput = styled.input`
   border-width: ${(props) => (props.$isErrored ? '3px' : '2px')};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   display: block;
+  width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
 
   &:focus {
     outline: none;

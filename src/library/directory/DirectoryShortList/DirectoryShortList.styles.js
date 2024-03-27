@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+
+  @media print {
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small} !important;
+    [data-testid='Column'] {
+      padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small} !important;
+    }
+  }
 `;
 
 export const ServiceLink = styled.a`
@@ -22,6 +29,8 @@ export const ServiceLink = styled.a`
   @media print {
     color: ${(props) => props.theme.theme_vars.colours.black} !important;
     text-decoration: none !important;
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+    margin-bottom: 0;
   }
 `;
 
@@ -32,19 +41,26 @@ export const PrintLink = styled.div`
 
   @media print {
     p {
-      display: block;
+      display: none;
+      margin-bottom: 0 !important;
     }
+  }
+`;
+
+export const SnippetContainer = styled.div`
+  @media print {
+    display: flex;
+    flex-wrap: nowrap;
   }
 `;
 
 export const QRCodeContainer = styled.div`
   max-width: 80px;
-  margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
   display: none;
-  float: right;
 
   @media print {
     display: block;
+    margin-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 `;
 
@@ -63,10 +79,11 @@ export const FavouriteContainer = styled.div`
     box-shadow: none;
     border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
     background: none;
+    padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 `;
 
-export const PrintContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 
@@ -75,7 +92,7 @@ export const PrintContainer = styled.div`
   }
 `;
 
-export const PrintButton = styled.button`
+export const ActionButton = styled.button`
   border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   background: ${(props) => props.theme.theme_vars.colours.action};
@@ -87,6 +104,7 @@ export const PrintButton = styled.button`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   &:hover {
     ${(props) => props.theme.linkStylesHover}
     color: ${(props) => props.theme.theme_vars.colours.white};
@@ -112,4 +130,46 @@ export const AddContainer = styled.div`
 export const SubTitle = styled.p`
   font-weight: bold;
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const ClearShortlistButton = styled.button`
+  border: 1px solid ${(props) => props.theme.theme_vars.colours.negative};
+  background: ${(props) => props.theme.theme_vars.colours.white};
+  color: ${(props) => props.theme.theme_vars.colours.negative};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  cursor: pointer;
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  min-height: 42px;
+  font-weight: bold;
+
+  &:hover {
+    background: ${(props) => props.theme.theme_vars.colours.action_light};
+    color: ${(props) => props.theme.theme_vars.colours.action_dark};
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const AddressContainer = styled.div`
+  display: block;
+
+  @media print {
+    display: none;
+  }
+`;
+
+export const PrintAddress = styled.div`
+  display: none;
+
+  @media print {
+    display: block;
+  }
 `;

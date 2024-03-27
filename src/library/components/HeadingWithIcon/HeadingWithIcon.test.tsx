@@ -41,4 +41,14 @@ describe('Heading With Icon', () => {
     expect(serviceIcon).toBeInTheDocument();
     expect(serviceIconHover).not.toBeVisible();
   });
+
+  it('displays the sub heading', () => {
+    props.subHeading = 'Example sub heading';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('HeadingWithIcon');
+
+    expect(component).toHaveTextContent('Example sub heading');
+  });
 });
