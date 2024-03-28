@@ -55,3 +55,11 @@ H4.args = {
   text: 'Heading With Icon 4',
   icon: 'roads',
 };
+
+export const H1WithSubHeading = Template.bind({});
+H1WithSubHeading.args = {
+  level: 1,
+  text: 'Heading with Icon 1',
+  icon: 'roads',
+  subHeading: 'Example sub heading',
+};

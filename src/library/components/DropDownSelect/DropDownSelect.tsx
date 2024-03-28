@@ -12,6 +12,8 @@ const DropDownSelect: React.FunctionComponent<DropDownSelectProps> = ({
   hideLabel = false,
   boldLabel = false,
   hintText,
+  isErrored = false,
+  errorText,
 }) => {
   return (
     <Styles.Container>
@@ -19,7 +21,14 @@ const DropDownSelect: React.FunctionComponent<DropDownSelectProps> = ({
         {label}
       </Styles.Label>
       {hintText && <HintText text={hintText} />}
-      <Styles.Select id={id} name={id} onChange={onChange && onChange} defaultValue={selected && selected}>
+      {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
+      <Styles.Select
+        id={id}
+        name={id}
+        onChange={onChange && onChange}
+        defaultValue={selected && selected}
+        $isErrored={isErrored}
+      >
         {options.map((option, i) => (
           <Styles.Option key={i} value={option.value}>
             {option.title}

@@ -46,10 +46,10 @@ export const globalTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
-    defaultValue: 'north_theme',
+    defaultValue: 'west_theme',
     toolbar: {
       icon: 'circlehollow',
-      items: ['north_theme', 'west_theme', 'lb_theme_north', 'lb_theme_west'],
+      items: ['west_theme', 'north_theme', 'lb_theme_north', 'lb_theme_west'],
       title: 'Theme',
     },
   },

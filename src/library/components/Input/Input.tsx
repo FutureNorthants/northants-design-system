@@ -17,6 +17,7 @@ const Input: React.FunctionComponent<InputProps> = ({
   onChange,
   id,
   value,
+  isFullWidth = false,
 }) => {
   return (
     <>
@@ -31,6 +32,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           maxLength={maxLength}
           value={value}
           id={id}
+          $isFullWidth={isFullWidth}
         />
       ) : (
         <Styles.StyledInput
@@ -42,6 +44,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           maxLength={maxLength}
           defaultValue={defaultValue}
           id={id}
+          $isFullWidth={isFullWidth}
         />
       )}
     </>

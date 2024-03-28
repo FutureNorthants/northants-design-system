@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { VisuallyHidden } from '../../helpers/style-helpers';
 
 export const Container = styled.div`
@@ -26,7 +26,8 @@ export const Select = styled.select`
   height: 40px;
   height: 2.5rem;
   padding: 5px;
-  border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
+  border: 2px solid
+    ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
   display: block;
   background-color: ${(props) => props.theme.theme_vars.colours.white};
 
@@ -44,5 +45,21 @@ export const Option = styled.option`
   :focus::-ms-value {
     color: #fff;
     background-color: #1d70b8;
+  }
+`;
+
+export const ErrorText = styled.p`
+  ${(props) => props.theme.fontStyles}
+  color: ${(props) => props.theme.theme_vars.colours.negative};
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-size: 0.8rem;
+  line-height: 1.1;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 `;

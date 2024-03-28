@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import DirectoryShortList from './DirectoryShortList';
 import { DirectoryShortListProps } from './DirectoryShortList.types';
 import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
@@ -58,5 +58,37 @@ describe('DirectoryShortList Component', () => {
 
     expect(component).toHaveTextContent('No items in the shortlist');
     expect(component).not.toHaveTextContent('Easy Read Documents');
+  });
+
+  it('should clear the shortlist', async () => {
+    // Force confirm 'OK' to be pressed
+    window.confirm = jest.fn(() => true);
+    shortlistKey = 'DirectoryShort';
+    const { getByTestId, getByRole } = renderComponent();
+    const component = getByTestId('DirectoryShortList');
+    const clearButton = getByRole('button', { name: 'Clear Shortlist' });
+
+    expect(component).toHaveTextContent('Easy Read Documents');
+
+    fireEvent.click(clearButton);
+
+    expect(window.confirm).toHaveBeenCalled();
+    expect(component).not.toHaveTextContent('Easy Read Documents');
+  });
+
+  it('should not clear the shortlist when pressing cancel', async () => {
+    // Force confirm 'Cancel' to be pressed
+    window.confirm = jest.fn(() => false);
+    shortlistKey = 'DirectoryShort';
+    const { getByTestId, getByRole } = renderComponent();
+    const component = getByTestId('DirectoryShortList');
+    const clearButton = getByRole('button', { name: 'Clear Shortlist' });
+
+    expect(component).toHaveTextContent('Easy Read Documents');
+
+    fireEvent.click(clearButton);
+
+    expect(window.confirm).toHaveBeenCalled();
+    expect(component).toHaveTextContent('Easy Read Documents');
   });
 });

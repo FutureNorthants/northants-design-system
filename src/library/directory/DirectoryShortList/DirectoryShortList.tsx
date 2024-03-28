@@ -8,17 +8,55 @@ import Column from '../../components/Column/Column';
 import SummaryList from '../../components/SummaryList/SummaryList';
 import { transformService } from '../DirectoryService/DirectoryServiceTransform';
 import QRCode from 'react-qr-code';
-import Heading from '../../components/Heading/Heading';
+import { PhysicalAddressProps } from '../DirectoryService/DirectoryService.types';
 
 const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ directoryPath }) => {
   const {
     favourites: { favourites: favourites },
+    clearShortlist,
   } = useDirectoryShortListContext();
   const [notServer, setNotServer] = useState<boolean>(false);
 
   useEffect(() => {
     setNotServer(true);
   }, []);
+
+  const confirmClear = () => {
+    if (window.confirm('Are you sure you want to clear your shortlist?')) {
+      clearShortlist();
+    }
+  };
+
+  const formatAddress = (address: PhysicalAddressProps): string => {
+    return Object.values(address)
+      .filter((item) => item !== '' && item !== address.id && item !== address.country)
+      .join(', ');
+  };
+
+  const copyToClipboard = async () => {
+    const data = favourites.map((favourite) => {
+      const address: string = favourite.addresses.length > 0 ? formatAddress(favourite.addresses[0]) : '';
+
+      return `
+Name: ${favourite.name}
+Link: ${directoryPath}/${favourite.id}
+Address: ${address}
+Email: ${favourite.email ?? ''}
+Website: ${favourite.website ?? ''}
+Telephone: ${favourite.phone ?? ''}
+About: ${favourite.snippet.replace(/(\r\n|\n|\r)/gm, '').replace(/\s+/g, ' ') ?? ''}
+
+      `;
+    });
+
+    try {
+      await navigator.clipboard.writeText(data.join('')).then(() => {
+        window.alert('Copied to clipboard');
+      });
+    } catch {
+      window.alert('Unable to copy');
+    }
+  };
 
   return (
     <Styles.Container data-testid="DirectoryShortList">
@@ -27,23 +65,17 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
           {favourites.length > 0 ? (
             <>
               <Column small="full" medium="full" large="full">
-                <Styles.PrintContainer>
-                  <Styles.PrintButton onClick={() => window.print()}>Print Shortlist</Styles.PrintButton>
-                </Styles.PrintContainer>
+                <Styles.ButtonContainer>
+                  <Styles.ClearShortlistButton onClick={confirmClear}>Clear Shortlist</Styles.ClearShortlistButton>
+                  <Styles.ActionButton onClick={copyToClipboard}>Copy To Clipboard</Styles.ActionButton>
+                  <Styles.ActionButton onClick={() => window.print()}>Print Shortlist</Styles.ActionButton>
+                </Styles.ButtonContainer>
               </Column>
               {favourites.map((favourite) => (
                 <Column key={favourite.id} small="full" medium="full" large="full">
                   <Styles.FavouriteContainer>
                     <Row>
                       <Column small="full" medium="full" large="full">
-                        <Styles.QRCodeContainer>
-                          <QRCode
-                            value={`${directoryPath}/${favourite.id}`}
-                            size={256}
-                            style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
-                            viewBox={`0 0 256 256`}
-                          />
-                        </Styles.QRCodeContainer>
                         <Styles.ServiceLink href={`${directoryPath}/${favourite.id}`}>
                           {favourite.name}
                         </Styles.ServiceLink>
@@ -52,28 +84,39 @@ const DirectoryShortList: React.FunctionComponent<DirectoryShortListProps> = ({ 
                         </Styles.PrintLink>
                       </Column>
                       <Column small="full" medium="full" large="one-half">
-                        <div>{favourite.snippet}</div>
+                        <Styles.SnippetContainer>
+                          <div>{favourite.snippet}</div>
+                          <Styles.QRCodeContainer>
+                            <QRCode
+                              value={`${directoryPath}/${favourite.id}`}
+                              size={256}
+                              style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
+                              viewBox={`0 0 256 256`}
+                            />
+                          </Styles.QRCodeContainer>
+                        </Styles.SnippetContainer>
+
                         {favourite.addresses?.length > 0 && (
-                          <div>
-                            <Styles.SubTitle>Address</Styles.SubTitle>
-                            {favourite.addresses?.length === 1 ? (
-                              <p>
-                                {Object.values(favourite.addresses[0])
-                                  .filter((item) => item !== '' && item !== favourite.addresses[0].id)
-                                  .join(', ')}
-                              </p>
-                            ) : (
-                              <ul>
-                                {favourite.addresses.map((address) => (
-                                  <li key={address.id}>
-                                    {Object.values(address)
-                                      .filter((item) => item !== '' && item !== address.id)
-                                      .join(', ')}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
+                          <>
+                            <Styles.AddressContainer>
+                              <Styles.SubTitle>Address</Styles.SubTitle>
+                              {favourite.addresses?.length === 1 ? (
+                                <p>{formatAddress(favourite.addresses[0])}</p>
+                              ) : (
+                                <ul>
+                                  {favourite.addresses.map((address) => (
+                                    <li key={address.id}>{formatAddress(address)}</li>
+                                  ))}
+                                </ul>
+                              )}
+                            </Styles.AddressContainer>
+                            <Styles.PrintAddress>
+                              <SummaryList
+                                terms={[{ term: 'Address', detail: formatAddress(favourite.addresses[0]) }]}
+                                hasMargin={false}
+                              />
+                            </Styles.PrintAddress>
+                          </>
                         )}
                       </Column>
                       <Column small="full" medium="full" large="one-half">

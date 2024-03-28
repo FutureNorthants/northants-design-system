@@ -10,10 +10,12 @@ export const StyledInput = styled.input`
   border-width: ${(props) => (props.$isErrored ? '3px' : '2px')};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   display: block;
+  width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
 
   &:focus {
     outline: none;
-    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+      ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
     transition: box-shadow 0.3s ease 0s;
   }
 `;

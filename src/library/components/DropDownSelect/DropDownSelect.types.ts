@@ -20,7 +20,7 @@ export interface DropDownSelectProps {
   options: Array<DropDownSelectOptionsProps>;
 
   /**
-   * A function tfor what happnens if the select is changed (totally optional)
+   * A function for what happens if the select is changed (totally optional)
    */
   onChange?: (e: any) => void;
 
@@ -38,6 +38,16 @@ export interface DropDownSelectProps {
    * Optional hint text for the input
    */
   hintText?: string;
+
+  /**
+   * Is the dropdown in error state? Defaults to false
+   */
+  isErrored?: boolean;
+
+  /**
+   * The error text to display
+   */
+  errorText?: string;
 }
 
 export interface DropDownSelectOptionsProps {
