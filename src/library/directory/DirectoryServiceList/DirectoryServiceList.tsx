@@ -63,6 +63,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [notServer, setNotServer] = useState(false);
   const [searchTerm, setSearchTerm] = useState(search);
   const [postcodeSearch, setPostcodeSearch] = useState(postcode);
+  const [proximitySearch, setProximitySearch] = useState(proximity);
   const themeContext = useContext(ThemeContext);
   const [filtersActive, setFiltersActive] = useState(false);
 
@@ -150,6 +151,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
     e.preventDefault();
     setSearch(searchTerm);
     setPostcode(postcodeSearch);
+    setProximity(proximitySearch);
   };
 
   const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -208,7 +210,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
           <Styles.SearchHeader>
             <FormWithLine hideLine onSubmit={submitSearch}>
               <Row>
-                <Column small="full" medium="one-half" large="one-third">
+                <Column small="full" medium="two-thirds" large="two-thirds">
                   <Styles.Label htmlFor="directorySearch">What are you looking for?</Styles.Label>
                   <Input
                     name="directorySearch"
@@ -220,34 +222,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     }}
                   />
                 </Column>
-                <Column small="full" medium="one-half" large="one-third">
-                  <Styles.PostcodeContainer>
-                    <Styles.PostcodeInner>
-                      <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
-                      <Input
-                        name="postcode"
-                        type="text"
-                        defaultValue={postcodeSearch}
-                        id="postcode"
-                        onChange={(e) => setPostcodeSearch(e.target.value)}
-                      />
-                    </Styles.PostcodeInner>
-                    <DropDownSelect
-                      id="proximity"
-                      label="Distance"
-                      options={[
-                        { title: '', value: '2' },
-                        { title: '2 miles', value: '2' },
-                        { title: '5 miles', value: '5' },
-                        { title: '10 miles', value: '10' },
-                        { title: '20+ miles', value: '50' },
-                      ]}
-                      boldLabel={true}
-                      onChange={(e) => setProximity(e.target.value)}
-                    />
-                  </Styles.PostcodeContainer>
-                </Column>
-                <Column small="full" medium="one-half" large="one-third">
+                <Column small="full" medium="one-third" large="one-third">
                   <Styles.ButtonContainer>
                     <Styles.Button onClick={submitSearch} type="submit">
                       <Styles.ButtonText>Search</Styles.ButtonText>
@@ -298,11 +273,55 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     <Styles.Fieldset>
                       <Styles.Legend>
                         <Styles.LegendButton onClick={(e) => toggleAccordion(0)} type="button">
-                          Select age group (years)
+                          Near me
                           <Styles.AccordionIcon $isOpen={accordions[0]} />
                         </Styles.LegendButton>
                       </Styles.Legend>
                       <Styles.Accordion $isOpen={accordions[0]}>
+                        <Row>
+                          <Column small="full" medium="full" large="full">
+                            <Styles.Label htmlFor="postcode">Postcode</Styles.Label>
+                            <Input
+                              name="postcode"
+                              type="text"
+                              defaultValue={postcodeSearch}
+                              id="postcode"
+                              onChange={(e) => setPostcodeSearch(e.target.value)}
+                            />
+                          </Column>
+                          <Column small="full" medium="full" large="full">
+                            <DropDownSelect
+                              id="proximity"
+                              label="Distance"
+                              options={[
+                                { title: '2 miles', value: '2' },
+                                { title: '5 miles', value: '5' },
+                                { title: '10 miles', value: '10' },
+                                { title: '20+ miles', value: '50' },
+                              ]}
+                              boldLabel={true}
+                              onChange={(e) => setProximitySearch(e.target.value)}
+                            />
+                          </Column>
+                          <Column small="full" medium="full" large="full">
+                            <Styles.Button onClick={submitSearch} type="submit">
+                              <Styles.ButtonText>Search</Styles.ButtonText>
+                              <SearchIcon colourFill="#fff" />
+                            </Styles.Button>
+                          </Column>
+                        </Row>
+                      </Styles.Accordion>
+                    </Styles.Fieldset>
+                  </Column>
+                  <Column small="full" medium="full" large="full">
+                    <Styles.Fieldset>
+                      <Styles.Legend>
+                        <Styles.LegendButton onClick={(e) => toggleAccordion(1)} type="button">
+                          Select age group (years)
+                          <Styles.AccordionIcon $isOpen={accordions[1]} />
+                        </Styles.LegendButton>
+                      </Styles.Legend>
+                      <Styles.Accordion $isOpen={accordions[1]}>
                         <Styles.ClearFilter>
                           <Styles.TextLink onClick={(e) => clearAges(e)}>Clear filter</Styles.TextLink>
                         </Styles.ClearFilter>
@@ -335,12 +354,12 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     <Column small="full" medium="full" large="full" key={category.label}>
                       <Styles.Fieldset>
                         <Styles.Legend>
-                          <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex + 1)} type="button">
+                          <Styles.LegendButton onClick={(e) => toggleAccordion(categoryIndex + 2)} type="button">
                             {category.label}
-                            <Styles.AccordionIcon $isOpen={accordions[categoryIndex + 1]} />
+                            <Styles.AccordionIcon $isOpen={accordions[categoryIndex + 2]} />
                           </Styles.LegendButton>
                         </Styles.Legend>
-                        <Styles.Accordion $isOpen={accordions[categoryIndex + 1]}>
+                        <Styles.Accordion $isOpen={accordions[categoryIndex + 2]}>
                           <Styles.ClearFilter>
                             <Styles.TextLink onClick={(e) => clearCategory(categoryIndex)}>
                               Clear filter
