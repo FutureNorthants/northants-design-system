@@ -8,7 +8,7 @@ import { Preview } from '@storybook/react';
 const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    // actions: { argTypesRegex: '^on[A-Z].*' },
     viewport: {
       viewports: INITIAL_VIEWPORTS,
     },
