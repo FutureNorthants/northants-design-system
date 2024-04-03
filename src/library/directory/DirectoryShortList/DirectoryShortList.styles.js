@@ -12,6 +12,10 @@ export const Container = styled.div`
     .favourite-outer:nth-of-type(2n + 1) {
       page-break-after: always;
     }
+
+    .favourite-outer:last-of-type {
+      page-break-after: avoid !important;
+    }
   }
 `;
 
