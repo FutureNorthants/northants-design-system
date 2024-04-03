@@ -18,4 +18,9 @@ export interface HeadingWithIconProps {
    * Should there be a hover effect on the icon
    */
   hasHover?: boolean;
+
+  /**
+   * The optional subheading
+   */
+  subHeading?: string;
 }

@@ -33,6 +33,7 @@ export {
 
 // Slices
 import Accordion from './library/slices/Accordion/Accordion';
+import BinFinder from './library/slices/BinFinder/BinFinder';
 import BlockQuote from './library/slices/BlockQuote/BlockQuote';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import CouncilTaxAlphabeticalDirectory from './library/slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
@@ -51,6 +52,7 @@ import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/Warnin
 
 export {
   Accordion,
+  BinFinder,
   BlockQuote,
   CallToAction,
   Cards,

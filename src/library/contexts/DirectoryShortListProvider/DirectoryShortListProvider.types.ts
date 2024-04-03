@@ -29,6 +29,7 @@ export interface DirectoryShortListContextType {
     fees?: string
   ) => void;
   isFavourite?: (id: string) => boolean;
+  clearShortlist?: () => void;
 }
 
 export interface ShortListProps {

@@ -1,24 +1,23 @@
 import React from 'react';
-
 import { IconProps } from '../Icon.types';
 
-const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
+const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill }) => {
   return (
     <svg width="76" height="76" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 76">
       <defs>
-        <clipPath id="uuid-937e9ad4-d350-4552-8f2a-b23badb0669c">
-          <rect x="4.7" y="18.09" width="39.53" height="52.91" fill="none" strokeWidth="0" />
+        <clipPath id="uuid-153a211c-5ae1-49e1-a6fe-3d2fb2edd03d">
+          <rect x="4.85" y="17.68" width="41.91" height="55.32" fill="none" strokeWidth="0" />
         </clipPath>
-        <clipPath id="uuid-0afcf5ee-0b46-4efd-a938-cc294df2e2a1">
-          <rect x="31.06" y="52.67" width="18.25" height="18.33" fill="none" strokeWidth="0" />
+        <clipPath id="uuid-4570817d-eee5-49ad-91cb-8a220dcd9a25">
+          <rect x="32.79" y="53.84" width="19.34" height="19.16" fill="none" strokeWidth="0" />
         </clipPath>
-        <clipPath id="uuid-dbc5c52f-15a5-4b1d-af2d-7480e3b76eb2">
-          <rect x="16.86" y="5" width="15.2" height="6.8" fill="none" strokeWidth="0" />
+        <clipPath id="uuid-3d149009-ecca-4f84-8e9d-d697c07ed449">
+          <rect x="17.75" y="4" width="16.12" height="7.11" fill="none" strokeWidth="0" />
         </clipPath>
       </defs>
-      <g clipPath="url(#uuid-937e9ad4-d350-4552-8f2a-b23badb0669c)">
+      <g clipPath="url(#uuid-153a211c-5ae1-49e1-a6fe-3d2fb2edd03d)">
         <path
-          d="m40.95,54.53l1.48-35.23H6.25l1.96,46.39c.1,2.35,1.96,4.21,4.24,4.21h27.84"
+          d="m43.28,55.78l1.57-36.83H6.5l2.08,48.5c.1,2.46,2.08,4.4,4.5,4.4h29.52"
           fill="none"
           stroke={colourFill}
           strokeLinecap="round"
@@ -26,43 +25,9 @@ const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
           strokeWidth="2.1"
         />
       </g>
-      <g clipPath="url(#uuid-0afcf5ee-0b46-4efd-a938-cc294df2e2a1)">
+      <g clipPath="url(#uuid-4570817d-eee5-49ad-91cb-8a220dcd9a25)">
         <path
-          d="m47.75,62.2c0,4.25-3.34,7.7-7.45,7.7s-7.45-3.45-7.45-7.7,3.33-7.7,7.45-7.7,7.45,3.45,7.45,7.7"
-          fill="none"
-          stroke={colourFill}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2.1"
-        />
-      </g>
-      <path
-        d="m43.49,62.2c0,4.4-6.38,4.4-6.38,0s6.38-4.4,6.38,0"
-        fill="none"
-        stroke={colourFill}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2.1"
-      />
-      <path
-        d="m4.13,14.9h41.49v2.2c0,1.21-.95,2.2-2.13,2.2H4.13c-1.18,0-2.13-.99-2.13-2.2s.95-2.2,2.13-2.2h0Z"
-        fill="none"
-        stroke={colourFill}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2.1"
-      />
-      <path
-        d="m9.44,10.5h34.05c1.18,0,2.13.99,2.13,2.2v2.2H5.19c0-2.43,1.9-4.4,4.25-4.4h0Z"
-        fill="none"
-        stroke={colourFill}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2.1"
-      />
-      <g clipPath="url(#uuid-dbc5c52f-15a5-4b1d-af2d-7480e3b76eb2)">
-        <path
-          d="m20.08,6.1h8.51c1.18,0,2.13.98,2.13,2.2v2.2h-12.77v-2.2c0-1.22.95-2.2,2.13-2.2h0Z"
+          d="m50.49,63.8c0,4.45-3.54,8.05-7.9,8.05s-7.9-3.6-7.9-8.05,3.53-8.05,7.9-8.05,7.9,3.61,7.9,8.05"
           fill="none"
           stroke={colourFill}
           strokeLinecap="round"
@@ -71,7 +36,7 @@ const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
         />
       </g>
       <path
-        d="m45.62,12.7h4.26c1.18,0,2.13.98,2.13,2.2s-.95,2.2-2.13,2.2h-4.26v-4.4Z"
+        d="m45.98,63.8c0,4.6-6.77,4.6-6.77,0s6.77-4.6,6.77,0"
         fill="none"
         stroke={colourFill}
         strokeLinecap="round"
@@ -79,7 +44,7 @@ const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
         strokeWidth="2.1"
       />
       <path
-        d="m31.79,43.5c0,3.39-2.15,6.39-5.3,7.36-3.14.97-6.53-.29-8.35-3.12-1.81-2.83-1.62-6.55.48-9.16,2.09-2.61,5.6-3.5,8.62-2.18"
+        d="m4.24,14.35h43.99v2.3c0,1.27-1.01,2.3-2.25,2.3H4.24c-1.25,0-2.25-1.03-2.25-2.3s1.01-2.3,2.25-2.3h0Z"
         fill="none"
         stroke={colourFill}
         strokeLinecap="round"
@@ -87,7 +52,41 @@ const ServiceIcon: React.FC<IconProps> = ({ colourFill }) => {
         strokeWidth="2.1"
       />
       <path
-        d="m28.49,34.57l-2.41,4.81,4.7-.53-2.29-4.28Z"
+        d="m9.88,9.75h36.1c1.25,0,2.25,1.03,2.25,2.3v2.3H5.37c0-2.54,2.02-4.6,4.51-4.6h0Z"
+        fill="none"
+        stroke={colourFill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.1"
+      />
+      <g clipPath="url(#uuid-3d149009-ecca-4f84-8e9d-d697c07ed449)">
+        <path
+          d="m21.16,5.15h9.03c1.25,0,2.25,1.03,2.25,2.3v2.3h-13.54v-2.3c0-1.27,1.01-2.3,2.25-2.3h0Z"
+          fill="none"
+          stroke={colourFill}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.1"
+        />
+      </g>
+      <path
+        d="m48.23,12.05h4.51c1.25,0,2.25,1.03,2.25,2.3s-1.01,2.3-2.25,2.3h-4.51v-4.6Z"
+        fill="none"
+        stroke={colourFill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.1"
+      />
+      <path
+        d="m34.13,32.75c.03,6.11-.51,12.77-4.39,16.53-1.17,1.15-2.75,1.76-4.37,1.71-1.62-.06-3.16-.77-4.25-1.99-2.3-2.56-2.18-6.53.28-8.94,3.87-3.77,9.29-.42,12.73-7.31h0Z"
+        fill="none"
+        stroke={colourFill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.1"
+      />
+      <path
+        d="m26.36,44.69s-5.48,3.75-6.58,9.54"
         fill="none"
         stroke={colourFill}
         strokeLinecap="round"

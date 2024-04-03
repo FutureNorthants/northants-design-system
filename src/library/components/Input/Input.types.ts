@@ -52,7 +52,7 @@ export interface InputProps {
   value?: string | number;
 
   /**
-   * Should the input be full width?
+   * Is the input full width. Defaults to false
    */
   isFullWidth?: boolean;
 }

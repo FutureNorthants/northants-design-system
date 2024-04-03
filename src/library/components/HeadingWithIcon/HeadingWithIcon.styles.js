@@ -17,10 +17,6 @@ export const HeadingWrapper = styled.div`
     margin: 0;
     vertical-align: middle;
     display: inline-block;
-    width: calc(100% - 65px);
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-      width: calc(100% - 85px);
-    }
   }
 
   .service-icon-hover {
@@ -35,4 +31,23 @@ export const HeadingWrapper = styled.div`
       display: ${(props) => (props.$hasHover ? 'block' : 'none')};
     }
   }
+`;
+
+export const HeadingContainer = styled.div`
+  width: ${(props) =>
+    props.$level === 1
+      ? `calc(100% - 65px)`
+      : props.$level === 2
+      ? `calc(100% - 45px)`
+      : props.$level === 3
+      ? `calc(100% - 30px)`
+      : `calc(100% - 20px)`};
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    width: calc(100% - 85px);
+  }
+`;
+
+export const SubHeading = styled.span`
+  display: block;
+  margin: 0;
 `;

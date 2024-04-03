@@ -29,6 +29,7 @@ const config: StorybookConfig = {
     NEXT_PUBLIC_POSTCODE_SEARCH_API_URL: 'https://api.westnorthants.digital/address-search-test/postcode/',
     // Test recaptcha ID: https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do
     NEXT_PUBLIC_RECAPTCHA_KEY: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+    NEXT_PUBLIC_BIN_FINDER_API_URL: 'https://api.westnorthants.digital/openapi/v1/unified-waste-collections/',
   }),
 
   webpackFinal: async (config) => {

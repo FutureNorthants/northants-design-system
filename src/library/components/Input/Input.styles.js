@@ -14,7 +14,8 @@ export const StyledInput = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 3px;
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+      ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
     transition: box-shadow 0.3s ease 0s;
   }
 `;

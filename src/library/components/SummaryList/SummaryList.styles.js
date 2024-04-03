@@ -15,6 +15,11 @@ export const SummaryRow = styled.div`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: table-row;
   }
+
+  @media print {
+    display: table-row;
+    border-bottom: none;
+  }
 `;
 
 export const SummaryTerm = styled.dt`
@@ -27,6 +32,11 @@ export const SummaryTerm = styled.dt`
     width: 30%;
     vertical-align: middle;
   }
+
+  @media print {
+    display: table-cell;
+    width: 30%;
+  }
 `;
 
 export const SummaryDetail = styled.dd`
@@ -38,5 +48,10 @@ export const SummaryDetail = styled.dd`
     display: table-cell;
     width: 70%;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
+
+  @media print {
+    display: table-cell;
+    width: 70%;
   }
 `;
