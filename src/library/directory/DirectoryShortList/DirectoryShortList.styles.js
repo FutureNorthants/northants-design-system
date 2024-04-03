@@ -8,6 +8,10 @@ export const Container = styled.div`
     [data-testid='Column'] {
       padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small} !important;
     }
+
+    .favourite-outer:nth-of-type(2n + 1) {
+      page-break-after: always;
+    }
   }
 `;
 
