@@ -89,7 +89,7 @@ describe('Test Component', () => {
     const { getByLabelText } = renderComponent();
 
     const searchInput = getByLabelText('What are you looking for?');
-    const postcodeInput = getByLabelText('Postcode (optional)');
+    const postcodeInput = getByLabelText('Postcode');
 
     expect(searchInput).toHaveValue('the search term');
     expect(postcodeInput).toHaveValue('NN1 1AA');
