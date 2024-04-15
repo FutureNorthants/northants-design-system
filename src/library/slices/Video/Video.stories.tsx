@@ -28,6 +28,14 @@ YoutubeVideo.args = {
   allowCookies: true,
 };
 
+export const YoutubeVideoWithCaptions = Template.bind({});
+YoutubeVideoWithCaptions.args = {
+  video_id: 'B4YqyYBQI3A',
+  provider: 'YouTube',
+  description: 'Watch a video about Borrow Box.',
+  allowCookies: true,
+};
+
 export const VimeoVideo = Template.bind({});
 VimeoVideo.args = {
   video_id: '94177065',

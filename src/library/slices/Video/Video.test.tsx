@@ -52,7 +52,7 @@ describe('Video Component', () => {
     expect(component).toBeVisible();
 
     const iframe = getByTestId('VideoIframe');
-    expect(iframe).toHaveAttribute('src', 'https://www.youtube.com/embed/videoId?rel=0');
+    expect(iframe).toHaveAttribute('src', 'https://www.youtube.com/embed/videoId?rel=0&cc_load_policy=1');
     expect(iframe).toHaveAttribute('title', 'The video description');
   });
 
