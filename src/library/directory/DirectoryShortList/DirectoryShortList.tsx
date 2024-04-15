@@ -72,7 +72,7 @@ About: ${favourite.snippet.replace(/(\r\n|\n|\r)/gm, '').replace(/\s+/g, ' ') ??
                 </Styles.ButtonContainer>
               </Column>
               {favourites.map((favourite) => (
-                <Column key={favourite.id} small="full" medium="full" large="full">
+                <Column key={favourite.id} small="full" medium="full" large="full" classes="favourite-outer">
                   <Styles.FavouriteContainer>
                     <Row>
                       <Column small="full" medium="full" large="full">
