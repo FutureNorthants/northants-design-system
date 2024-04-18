@@ -71,10 +71,11 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
     setIsLoading(true);
     setIsError(undefined);
 
+    const formattedPostcode = data.postcode.replace(/ /g, '').substring(0, 10);
+    const formattedHouseNumber = data.houseNumber.trim();
+
     axios
-      .get<PostcodeResultsProps>(
-        `${PostcodeSearchApiUrl}${data.postcode.replace(/ /g, '').substring(0, 10)}?address=${data.houseNumber}`
-      )
+      .get<PostcodeResultsProps>(`${PostcodeSearchApiUrl}${formattedPostcode}?address=${formattedHouseNumber}`)
       .then((response) => {
         setIsLoading(false);
 
@@ -98,6 +99,13 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
           setUprn(response.data.addresses[0].uprn);
           setAddress(response.data.addresses[0].single_line_address);
         } else if (response.data.total_pages > 1) {
+          if (showFirstLine) {
+            setError('houseNumber', {
+              type: 'custom',
+              message:
+                'This address could not be found based on the information given. Please try entering further information.',
+            });
+          }
           setShowFirstLine(true);
         } else {
           const options: AddressOptionProps[] = response.data.addresses.map((item) => {
@@ -230,10 +238,12 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
                 {showFirstLine && (
                   <>
                     <Column small="full" medium="full" large="full">
-                      <p>There are several addresses for this postcode. Please enter the first line of your address.</p>
+                      <p>
+                        There are several addresses for this postcode. Please enter the full first line of your address.
+                      </p>
                     </Column>
                     <Column small="full" medium="full" large="full">
-                      <Styles.Label htmlFor="houseNumber">First line of address</Styles.Label>
+                      <Styles.Label htmlFor="houseNumber">Full first line of address</Styles.Label>
                       <Controller
                         name="houseNumber"
                         control={control}
