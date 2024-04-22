@@ -227,7 +227,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     defaultValue={postcodeSearch}
                     id="postcode"
                     onChange={(e) => setPostcodeSearch(e.target.value)}
-                    autocomplete="postal_code"
+                    autocomplete="postal-code"
                   />
                 </Column>
                 <Column small="full" medium="one-half" large="one-third">
