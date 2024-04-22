@@ -17,7 +17,7 @@ export const MobileTitleButton = styled.button`
   border: none;
   text-align: left;
   border-bottom: 2px solid ${(props) => props.theme.theme_vars.colours.action};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => `${props.theme.theme_vars.spacingSizes.medium} ${props.theme.theme_vars.spacingSizes.small}`};
   font-size: 1em;
 
   svg {
@@ -124,7 +124,7 @@ export const ListItem = styled.li`
 export const ListItemLink = styled.a`
   display: block;
   color: ${(props) => props.theme.theme_vars.colours.action};
-  padding: 5px 10px;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   text-decoration: none;
 
   &:hover {

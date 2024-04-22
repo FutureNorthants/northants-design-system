@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { ButtonProps } from './Button.types';
 import * as Styles from './Button.styles';
 
 /**
  * Primary UI component for user interaction
  */
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FunctionComponent<ButtonProps> = ({
   primary = true,
   size = 'medium',
   text,

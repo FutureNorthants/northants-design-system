@@ -12,7 +12,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 0px !important;
+  margin-bottom: 5px !important;
 
   &::marker {
     font-size: ${(props) => props.theme.theme_vars.spacingSizes.medium};
@@ -24,6 +24,8 @@ export const ListItem = styled.li`
 `;
 
 export const Link = styled.a`
+  display: inline-block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small} 0;
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
   margin-left: ${(props) => props.theme.theme_vars.spacingSizes.small};

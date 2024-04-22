@@ -16,9 +16,9 @@ const generate_theme = (theme_vars: ThemeVars) => {
     fontStyles: `
             font-family: ${theme_vars.fontstack};
             color: ${theme_vars.colours.black};
-            font-size: 16px;
-            font-size: 1rem;
-            line-height: 1.4;
+            font-size: 19px;
+            font-size: 1.1875rem;
+            line-height: 1.45;
             -webkit-font-smoothing: antialiased;
         
             @media screen and (min-width: ${theme_vars.breakpoints.m}){

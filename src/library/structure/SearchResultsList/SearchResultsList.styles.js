@@ -21,7 +21,19 @@ export const Title = styled.a`
   ${(props) => props.theme.linkStyles};
   font-size: 1.2em;
   display: block;
-  margin-bottom: 5px;
+  padding: 6px 0;
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
 `;
 
 export const ServiceArea = styled.p`
