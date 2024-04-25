@@ -145,8 +145,8 @@ ExampleAccordionExpanded.args = {
   ],
 };
 
-export const ExampleAccordionWithSlices = Template.bind({});
-ExampleAccordionWithSlices.args = {
+export const ExampleAccordionIsFilter = Template.bind({});
+ExampleAccordionIsFilter.args = {
   sections: [
     {
       title: 'Tortor Magna',
@@ -174,6 +174,7 @@ ExampleAccordionWithSlices.args = {
       isExpanded: true,
     },
   ],
+  isFilter: true,
 };
 
 export const ExampleSingleAccordion = Template.bind({});
