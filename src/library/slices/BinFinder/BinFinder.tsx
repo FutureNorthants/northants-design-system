@@ -21,6 +21,7 @@ import Column from '../../components/Column/Column';
 import Heading from '../../components/Heading/Heading';
 import { ThemeContext } from 'styled-components';
 import sanitizeHtml from 'sanitize-html';
+import { wereCookiesAccepted, getCookie } from '../../helpers/cookies';
 
 interface AddressOptionProps {
   title: string;
@@ -61,8 +62,34 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
     },
   });
 
+  const uprnCookieName = 'uprn-cookie';
+
+  // Try and retrieve uprn and address stored in cookie if cookies accepted
+  useEffect(() => {
+    if (wereCookiesAccepted()) {
+      const addressCookie = getCookie(uprnCookieName);
+
+      if (addressCookie !== null) {
+        const parsedCookie = JSON.parse(addressCookie);
+        setUprn(parsedCookie.uprn ?? '');
+        setAddress(parsedCookie.address ?? '');
+      }
+    }
+  }, []);
+
   useEffect(() => {
     if (uprn) {
+      // Store uprn and address in cookie if cookies accepted
+      if (wereCookiesAccepted()) {
+        let date = new Date();
+        date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+        const cookie = {
+          uprn: uprn,
+          address: address,
+        };
+        document.cookie = `${uprnCookieName}=${JSON.stringify(cookie)};expires=${date.toUTCString()};path=/`;
+      }
+
       getBinCollections();
     }
   }, [uprn]);
