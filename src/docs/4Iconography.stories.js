@@ -1,4 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import React from 'react';
 import serviceIcons from '../library/components/icons/services/ServicesIcons';
 import DynamicIcon from '../library/components/DynamicIcon/DynamicIcon';
 import Row from '../library/components/Row/Row';
@@ -17,21 +17,13 @@ import DownloadFileIcon from '../library/components/icons/DownloadFileIcon/Downl
 import SearchIcon from '../library/components/icons/SearchIcon/SearchIcon';
 import { ThemeContext } from 'styled-components';
 
-<Meta title="Documentation/Iconography" component={HeadingWithIcon} />
+export default {
+  title: 'Documentation/Iconography',
+  component: HeadingWithIcon,
+};
 
-# Iconography
-
-There are three main types of icons used in the design system.
-
-- Service Icons
-- Social Icons
-- General Icons
-
-Service icons should be used via the `DynamicIcon` component, or other components that make use of `DynamicIcon` component, such as the
-`HeadingWithIcon` component, as this allows the icon to have a hover state if required.
-
-<Canvas>
-  <Story name="All Service Icons">
+export const AllServiceIcons = {
+  render: () => (
     <MaxWidthContainer>
       <Row>
         <Column small="full" medium="full" large="full">
@@ -48,65 +40,82 @@ Service icons should be used via the `DynamicIcon` component, or other component
         ))}
       </Row>
     </MaxWidthContainer>
-  </Story>
-</Canvas>
+  ),
 
-<Canvas>
-  <Story name="Social Icons">
+  name: 'All Service Icons',
+};
+
+export const SocialIcons = {
+  render: () => (
     <MaxWidthContainer>
       <Row>
         <Column small="full" medium="full" large="full">
           <Heading level={1} text="Social Icons" />
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <FacebookIcon colourFill="#000000" /> Facebook
+          <FacebookIcon colourFill="#000000" />
+          Facebook
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <InstagramIcon colourFill="#000000" /> Instagram
+          <InstagramIcon colourFill="#000000" />
+          Instagram
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <LinkedInIcon colourFill="#000000" /> LinkedIn
+          <LinkedInIcon colourFill="#000000" />
+          LinkedIn
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <TwitterIcon colourFill="#000000" /> X (Twitter)
+          <TwitterIcon colourFill="#000000" />X (Twitter)
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <YouTubeIcon colourFill="#000000" /> YouTube
+          <YouTubeIcon colourFill="#000000" />
+          YouTube
         </Column>
       </Row>
     </MaxWidthContainer>
-  </Story>
-</Canvas>
+  ),
 
-<Canvas>
-  <Story name="General Icons">
+  name: 'Social Icons',
+};
+
+export const GeneralIcons = {
+  render: () => (
     <MaxWidthContainer>
       <Row>
         <Column small="full" medium="full" large="full">
           <Heading level={1} text="General Icons" />
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <ChevronIcon colourFill="#000000" direction="up" /> Chevron up
+          <ChevronIcon colourFill="#000000" direction="up" />
+          Chevron up
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <ChevronIcon colourFill="#000000" direction="right" /> Chevron right
+          <ChevronIcon colourFill="#000000" direction="right" />
+          Chevron right
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <ChevronIcon colourFill="#000000" direction="down" /> Chevron down
+          <ChevronIcon colourFill="#000000" direction="down" />
+          Chevron down
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <ChevronIcon colourFill="#000000" direction="left" /> Chevron left
+          <ChevronIcon colourFill="#000000" direction="left" />
+          Chevron left
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <CloseIcon colourFill="#000000" /> Close
+          <CloseIcon colourFill="#000000" />
+          Close
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <DownloadFileIcon colourFill="#000000" /> Download File
+          <DownloadFileIcon colourFill="#000000" />
+          Download File
         </Column>
         <Column small="full" medium="full" large="one-half">
-          <SearchIcon colourFill="#000000" /> Search
+          <SearchIcon colourFill="#000000" />
+          Search
         </Column>
       </Row>
     </MaxWidthContainer>
-  </Story>
-</Canvas>
+  ),
+
+  name: 'General Icons',
+};

@@ -4,8 +4,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   testPathIgnorePatterns: ['node_modules/'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(t|j)sx?$': '@swc/jest',
   },
   testMatch: ['**/*.test.(ts|tsx)'],
   moduleNameMapper: {

@@ -2,7 +2,7 @@ import React from "react";
 import { AccessibleLinkProps } from "./AccessibleLinks.types";
 import * as Styles from "./AccessibleLinks.styles";
 
-const AccessibleLink: React.FC<AccessibleLinkProps> = ({
+const AccessibleLinks: React.FC<AccessibleLinkProps> = ({
     AccessibleLinksArray = null,
 }) => 
 {
@@ -21,6 +21,6 @@ const AccessibleLink: React.FC<AccessibleLinkProps> = ({
     );
 }
         
-export default AccessibleLink;
+export default AccessibleLinks;
         
         
