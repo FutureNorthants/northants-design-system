@@ -22,8 +22,8 @@ export const Select = styled.select`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   box-sizing: border-box;
   max-width: 100%;
-  height: 40px;
-  height: 2.5rem;
+  height: 44px;
+  height: 2.75rem;
   padding: 5px;
   border: 2px solid
     ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};

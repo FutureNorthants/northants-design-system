@@ -55,9 +55,9 @@ export const Wrapper = styled.div`
 export const Content = styled.div``;
 
 export const CTA = styled.a`
-  margin-top: 10px;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   display: inline-block;
-  padding: 3px 7px;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 7px;
   margin-left: -7px;
   ${(props) => props.theme.linkStyles};
   :hover {

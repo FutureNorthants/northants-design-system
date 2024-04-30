@@ -297,7 +297,7 @@ export const ReorderButton = styled.button`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   margin-top: 10px;
   margin-right: 10px;
-  padding: 5px 12px;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   line-height: 1.5;
   font-size: 0.9em;
   cursor: pointer;
