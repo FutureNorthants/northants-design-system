@@ -15,7 +15,7 @@ const Video: React.FunctionComponent<VideoProps> = ({ video_id, provider, descri
   const defineLinks = () => {
     if (provider == VideoProvider.YouTube) {
       watchLink = `https://www.youtube.com/watch?v=${video_id}`;
-      embedLink = `https://www.youtube.com/embed/${video_id}?rel=0`;
+      embedLink = `https://www.youtube.com/embed/${video_id}?rel=0&cc_load_policy=1`;
     }
 
     if (provider == VideoProvider.Vimeo) {

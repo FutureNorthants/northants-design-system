@@ -11,6 +11,18 @@ export interface BinFinderPageExampleProps {
 export const BinFinderPageExample: React.FunctionComponent<BinFinderPageExampleProps> = ({ title, contactInfo }) => {
   return (
     <>
+      <PageStructures.CookieBanner
+        title="Tell us whether you accept cookies"
+        paragraph={
+          <p>
+            We use <a href="/your-council/cookies">cookies to collect information</a> about how you use this website. We
+            use this information to make it work as well as possible and help make improvements.
+          </p>
+        }
+        acceptButtonText="Accept all cookies"
+        rejectButtonText="Reject all cookies"
+        acceptCallback={() => {}}
+      />
       <PageStructures.Header />
       <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs

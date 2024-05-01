@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/blocks';
 
 <Meta title="Documentation/Grid System" />
 
@@ -20,7 +20,7 @@ You may set `hasBorder` in the Row props to display the border. This should only
 
 ### isList
 
-If you want to change the Row to be an unordered list &lt;ul&gt; instead of a &lt;div&gt;, then set `isList` to true (false by default).
+If you want to change the Row to be an unordered list \<ul> instead of a \<div>, then set `isList` to true (false by default).
 
 If enabled, the child Column components should also set isList to true so they are list items.
 
@@ -36,21 +36,21 @@ The Column allows you to pass in the column width for `small`, `medium` and `lar
 
 The available options for the Column widths are:
 
-- full
-- one-half
-- one-third
-- two-thirds
-- one-quarter
-- three-quarters
-- auto
+* full
+* one-half
+* one-third
+* two-thirds
+* one-quarter
+* three-quarters
+* auto
 
 The `auto` option sets `flex-grow: 1` which means the columns will automatically grow to fit the container, depending on how many columns there are and whether the Row has `hasWrap` set to true or false.
 
 The default values will be:
 
-- full for small
-- one-half for medium
-- one-third for large
+* full for small
+* one-half for medium
+* one-third for large
 
 ### hasPadding
 
@@ -64,7 +64,7 @@ Set `hasBorder={true}` into the Column props to display the border. This should 
 
 To be used with `<Row isList>` in the parent Row.
 
-This makes the Column container a &lt;li&gt; instead of a &lt;div&gt; which is useful for containing lists of navigation items, but within the grid structure.
+This makes the Column container a \<li> instead of a \<div> which is useful for containing lists of navigation items, but within the grid structure.
 
 ## Example
 

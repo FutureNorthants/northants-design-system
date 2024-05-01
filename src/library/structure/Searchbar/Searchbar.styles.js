@@ -45,9 +45,9 @@ export const Button = styled.button`
 
   width: ${(props) => (props.$isLarge ? '5rem' : '3rem')};
   text-align: center;
-  height: ${(props) => (props.$isLarge ? '2.9rem' : '2.28rem')};
+  /* height: ${(props) => (props.$isLarge ? '2.9rem' : '2.28rem')}; */
+  height: ${(props) => (props.$isLarge ? '3.22rem' : '2.6rem')};
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    height: ${(props) => (props.$isLarge ? '3.22rem' : '2.6rem')};
     margin-top: ${(props) => (props.$isErrored ? (props.$isLarge ? '26px' : '26px') : 0)};
   }
 

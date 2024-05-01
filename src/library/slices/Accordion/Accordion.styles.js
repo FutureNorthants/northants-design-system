@@ -21,8 +21,9 @@ export const OpenAllButton = styled.button`
   position: relative;
   z-index: 1;
   margin: 0;
-  margin-bottom: 15px;
-  padding: 0;
+  margin-bottom: 5px;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   border-width: 0;
   color: ${(props) => props.theme.theme_vars.colours.action};
   background: none;
@@ -55,7 +56,7 @@ export const SectionHeader = styled.div`
   border-top: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   color: ${(props) => props.theme.theme_vars.colours.action};
   cursor: pointer;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 
   &:hover {
     border-top-color: ${(props) => props.theme.theme_vars.colours.action};
@@ -64,19 +65,20 @@ export const SectionHeader = styled.div`
   }
 `;
 
-export const SectionHeading = styled.div`
-  margin-top: 10px;
-  margin-bottom: 5px;
-`;
+export const SectionHeading = styled.div``;
 
 const SectionButtonIsFilteredStyles = (props) => {
   if (props.$isFilter) {
     return css`
       ${(props) => props.theme.theme_vars.h4}
+      padding-top: 15px;
+      padding-bottom: 15px;
     `;
   } else {
     return css`
       ${(props) => props.theme.theme_vars.h3}
+      padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+      padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
     `;
   }
 };

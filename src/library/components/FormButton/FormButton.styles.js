@@ -64,6 +64,6 @@ export const StyledButton = styled.button`
   }
   &.button--large {
     font-size: 16px;
-    padding: 12px 24px;
+    padding: 14px 24px;
   }
 `;

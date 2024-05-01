@@ -144,6 +144,7 @@ const CookieBanner: React.FunctionComponent<CookieBannerProps> = ({
                 isDisabled={false}
                 type="button"
                 onClick={acceptCookies}
+                size="large"
               />
               <FormButton
                 primary={true}
@@ -151,6 +152,7 @@ const CookieBanner: React.FunctionComponent<CookieBannerProps> = ({
                 isDisabled={false}
                 type="button"
                 onClick={rejectCookies}
+                size="large"
               />
             </Styles.ButtonsContainer>
           </Styles.CookieMessage>
