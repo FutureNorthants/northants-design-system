@@ -76,36 +76,48 @@ export const west_vars: ThemeVars = {
         font-size: 32px;
         font-size: 2rem;
         font-weight: 700;
+        margin-left: 0;
+        margin-bottom: 20px;
 
         @media (min-width: 40.0625em) {
-            font-size: 48px;
-            font-size: 3rem;
+            font-size: 44px;
+            font-size: 2.6rem;
+            max-width: 960px;
+            margin-bottom: 30px;
         }
     `,
   h2: `
         font-size: 24px;
         font-size: 1.5rem;
         font-weight: 700;
+        margin-top: 25px;
+        margin-bottom: 15px;
         
         @media (min-width: 40.0625em) {
             font-size: 36px;
-            font-size: 2.25rem;
+            font-size: 1.75rem;
+            max-width: 960px;
         }
     `,
   h3: `
-        font-size: 18px;
-        font-size: 1.125rem;
+        font-size: 24px;
+        font-size: 1.3rem;
         font-weight: 700;
+        margin-top: 25px;
+        margin-bottom: 15px;
         
         @media (min-width: 40.0625em) {
             font-size: 24px;
             font-size: 1.5rem;
+            max-width: 960px;
         }
     `,
   h4: `
-        font-size: 16px;
-        font-size: 1rem;
-        font-weight: 700;
+        font-size: 19px;
+        font-size: 1.1875rem;
+        font-weight: 600;
+        margin-top: 25px;
+        margin-bottom: 15px;
         
         @media (min-width: 40.0625em) {
             font-size: 19px;
