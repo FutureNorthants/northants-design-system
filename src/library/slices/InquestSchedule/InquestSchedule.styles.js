@@ -23,5 +23,7 @@ export const InquestTime = styled.div`
 
 export const InquestDetails = styled.div`
   flex-grow: 1;
-  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
 `;

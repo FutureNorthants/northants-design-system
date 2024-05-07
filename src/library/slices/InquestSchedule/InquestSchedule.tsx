@@ -57,13 +57,14 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                           <strong>{formatTime(startDateTime)}</strong>
                         </Styles.InquestTime>
                         <Styles.InquestDetails>
-                          {inquest.fullName}.
+                          <strong>Name:</strong> {inquest.fullName}.
                           <br />
-                          Died {formatDate(timeOfDeath)} at {inquest.placeOfDeath}. Aged {inquest.age} years.
+                          <strong>Died:</strong> {formatDate(timeOfDeath)} at {inquest.placeOfDeath}. Aged {inquest.age}{' '}
+                          years.
                           <br />
-                          Court location: {inquest.courtroomFullAddress}.
+                          <strong>Court location:</strong> {inquest.courtroomFullAddress}.
                           <br />
-                          Coroner: {inquest.coroner}.
+                          <strong>Coroner:</strong> {inquest.coroner}.
                         </Styles.InquestDetails>
                       </Styles.InquestContainer>
                     </Column>
