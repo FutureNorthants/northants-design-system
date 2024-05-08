@@ -36,8 +36,7 @@ const Template: StoryFn<RateThisPageProps> = (args) => {
 export const ExampleRateThisPage = Template.bind({});
 ExampleRateThisPage.args = {
   onSubmit: (data) => alert(JSON.stringify(data)),
-  complaintsFormLink:
-    'https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council',
+  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
 };
 
 const SuccessTemplate: StoryFn<RateThisPageProps> = (args) => {
@@ -66,8 +65,7 @@ const SuccessTemplate: StoryFn<RateThisPageProps> = (args) => {
 
 export const SuccessfulRateThisPage = SuccessTemplate.bind({});
 SuccessfulRateThisPage.args = {
-  complaintsFormLink:
-    'https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council',
+  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
 };
 
 const ErrorTemplate: StoryFn<RateThisPageProps> = (args) => {
@@ -96,6 +94,5 @@ const ErrorTemplate: StoryFn<RateThisPageProps> = (args) => {
 
 export const ErrorRateThisPage = ErrorTemplate.bind({});
 ErrorRateThisPage.args = {
-  complaintsFormLink:
-    'https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council',
+  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
 };

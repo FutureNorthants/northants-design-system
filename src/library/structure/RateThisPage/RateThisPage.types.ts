@@ -34,3 +34,31 @@ export interface RateThisPageProps {
    */
   isError?: boolean;
 }
+
+interface RatingValueProp {
+  value: string;
+  label: string;
+}
+
+export const RatingValues: RatingValueProp[] = [
+  {
+    value: '1',
+    label: '1. Very easy',
+  },
+  {
+    value: '2',
+    label: '2. Easy',
+  },
+  {
+    value: '3',
+    label: '3. Acceptable',
+  },
+  {
+    value: '4',
+    label: '4. Difficult',
+  },
+  {
+    value: '5',
+    label: '5. Extremely difficult',
+  },
+];

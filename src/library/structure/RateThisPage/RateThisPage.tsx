@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { RateThisPageProps } from './RateThisPage.types';
+import { RateThisPageProps, RatingValues } from './RateThisPage.types';
 import * as Styles from './RateThisPage.styles';
 import AlertBannerService from '../AlertBannerService/AlertBannerService';
 import Input from '../../components/Input/Input';
@@ -13,8 +13,6 @@ import { useRecaptcha } from 'react-hook-recaptcha';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Button from '../../components/Button/Button';
 import Panel from '../../components/Panel/Panel';
-
-const ratingValues = ['1', '2', '3', '4', '5'];
 
 enum HelpfulEnum {
   yes = 'Yes',
@@ -174,7 +172,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 <Column small="full" medium="full" large="one-half">
                   <Styles.QuestionContainer>
                     <Styles.QuestionTitle>Service</Styles.QuestionTitle>
-                    <p>You may have comments about the quality of the service that's been provided.</p>
+                    <p>You may have comments about the quality of the service that's been provided. For example:</p>
                     <ul>
                       <li>I have waited too long for something to happen</li>
                       <li>I'm struggling to contact the service</li>
@@ -189,14 +187,14 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 <Column small="full" medium="full" large="one-half">
                   <Styles.QuestionContainer>
                     <Styles.QuestionTitle>Content</Styles.QuestionTitle>
-                    <p>You may have comments about the content on the webpage.</p>
-                    <p>Your feedback will help us improve our website and the content we include.</p>
+                    <p>You may have comments about the content on the webpage. For example:</p>
                     <ul>
                       <li>The information on this page is difficult to understand</li>
                       <li>This page isn't giving me the information I need</li>
                       <li>This page contains information that is wrong or out of date</li>
                       <li>This page could have been written or presented better</li>
                     </ul>
+                    <p>Your feedback will help us improve our website and the content we include.</p>
                     <Styles.QuestionButton>
                       <FormButton
                         text="I have feedback about the information on this page"
@@ -221,18 +219,25 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     <Controller
                       name="HowEasyToFind"
                       control={control}
-                      rules={{ pattern: /^[1-5]+$/i }}
+                      rules={{ pattern: /^[1-5]+$/i, required: true }}
                       render={({ field: { onChange, value } }) => (
                         <>
-                          {ratingValues.map((ratingValue, index) => (
+                          {errors.HowEasyToFind && (
+                            <Styles.FormErrorText id="HowEasyToFindError">
+                              <Styles.Hidden>Error:</Styles.Hidden> The field how easy is it to find what you are
+                              looking for is required.
+                            </Styles.FormErrorText>
+                          )}
+                          {RatingValues.map((ratingValue, index) => (
                             <RadioCheckboxInput
                               key={index}
-                              value={ratingValue}
-                              label={ratingValue}
-                              checked={String(value) == ratingValue}
+                              value={ratingValue.value}
+                              label={ratingValue.label}
+                              checked={String(value) == ratingValue.value}
                               name="HowEasyToFind"
                               singleSelection={true}
                               onChange={onChange}
+                              isErrored={errors.HowEasyToFind ? true : false}
                             />
                           ))}
                         </>
@@ -250,18 +255,25 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     <Controller
                       name="HowEasyToUnderstand"
                       control={control}
-                      rules={{ pattern: /^[1-5]+$/i }}
+                      rules={{ pattern: /^[1-5]+$/i, required: true }}
                       render={({ field: { onChange, value } }) => (
                         <>
-                          {ratingValues.map((ratingValue, index) => (
+                          {errors.HowEasyToUnderstand && (
+                            <Styles.FormErrorText id="HowEasyToUnderstandError">
+                              <Styles.Hidden>Error:</Styles.Hidden> The field how easy was this content to understand is
+                              required.
+                            </Styles.FormErrorText>
+                          )}
+                          {RatingValues.map((ratingValue, index) => (
                             <RadioCheckboxInput
                               key={index}
-                              value={ratingValue}
-                              label={ratingValue}
-                              checked={String(value) == ratingValue}
+                              value={ratingValue.value}
+                              label={ratingValue.label}
+                              checked={String(value) == ratingValue.value}
                               name="HowEasyToUnderstand"
                               singleSelection={true}
                               onChange={onChange}
+                              isErrored={errors.HowEasyToUnderstand ? true : false}
                             />
                           ))}
                         </>
@@ -277,23 +289,31 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="BarriersOrIssues"
                     control={control}
-                    rules={{ maxLength: 500 }}
+                    rules={{ maxLength: 500, required: true }}
                     render={({ field: { onChange, value } }) => (
-                      <Textarea
-                        id="BarriersOrIssues"
-                        name="BarriersOrIssues"
-                        value={value}
-                        placeholder=""
-                        onChange={onChange}
-                        isErrored={errors.BarriersOrIssues ? true : false}
-                        isFullWidth
-                      />
+                      <>
+                        {errors.BarriersOrIssues && (
+                          <Styles.FormErrorText id="BarriersOrIssuesError">
+                            <Styles.Hidden>Error:</Styles.Hidden> The field did you come across any barriers or issues
+                            with this webpage is required.
+                          </Styles.FormErrorText>
+                        )}
+                        <Textarea
+                          id="BarriersOrIssues"
+                          name="BarriersOrIssues"
+                          value={value}
+                          placeholder=""
+                          onChange={onChange}
+                          isErrored={errors.BarriersOrIssues ? true : false}
+                          isFullWidth
+                        />
+                      </>
                     )}
                   />
                 </Column>
 
                 <Column small="full" medium="full" large="full">
-                  <Styles.Label htmlFor="HowCanWeImprove">How could this page be improved?</Styles.Label>
+                  <Styles.Label htmlFor="HowCanWeImprove">How could this page be improved? (optional)</Styles.Label>
                   <Controller
                     name="HowCanWeImprove"
                     control={control}
