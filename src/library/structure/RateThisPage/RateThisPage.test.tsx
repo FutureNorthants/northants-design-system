@@ -9,6 +9,7 @@ describe('RateThisPage Component', () => {
   let props: RateThisPageProps;
 
   const mockSave = jest.fn();
+  window.scrollTo = jest.fn();
 
   beforeEach(() => {
     props = {

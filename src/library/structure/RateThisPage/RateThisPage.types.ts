@@ -28,4 +28,9 @@ export interface RateThisPageProps {
    * Is the form submission successful?
    */
   isSuccessful?: boolean;
+
+  /**
+   * Did the form submission trigger an error?
+   */
+  isError?: boolean;
 }

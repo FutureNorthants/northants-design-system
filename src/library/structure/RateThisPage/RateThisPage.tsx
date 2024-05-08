@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { RateThisPageProps } from './RateThisPage.types';
 import * as Styles from './RateThisPage.styles';
+import AlertBannerService from '../AlertBannerService/AlertBannerService';
 import Input from '../../components/Input/Input';
 import FormButton from '../../components/FormButton/FormButton';
 import Textarea from '../../components/Textarea/Textarea';
@@ -41,6 +42,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   isLoading = false,
   setIsLoading,
   isSuccessful = false,
+  isError = false,
 }) => {
   const {
     handleSubmit,
@@ -55,6 +57,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
       Email: '',
       BarriersOrIssues: '',
     },
+    mode: 'onSubmit',
   });
   const watchIsHelpful = watch('IsHelpful');
   const [showQuestion, setShowQuestion] = useState<boolean>(false);
@@ -62,6 +65,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   const [showSubmit, setShowSubmit] = useState<boolean>(true);
   const recaptchaKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
   const recaptchaContainerId = 'recaptchaContainer';
+  const fullFormRef = useRef(null);
 
   /**
    * called when captcha succeeds
@@ -98,6 +102,19 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
       setShowSubmit(true);
     }
   }, [watchIsHelpful]);
+
+  useEffect(() => {
+    if (showFullForm) {
+      //Scroll to top of form
+      const rect = fullFormRef.current.getBoundingClientRect();
+      const scrollTop = document.documentElement.scrollTop;
+      const goTo = rect.top + scrollTop;
+      window.scrollTo({
+        top: goTo,
+        behavior: 'smooth',
+      });
+    }
+  }, [showFullForm]);
 
   const executeCaptcha = (e) => {
     e.preventDefault();
@@ -196,7 +213,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
             {showFullForm && (
               <>
                 <Column small="full" medium="full" large="full">
-                  <fieldset aria-describedby="HowEasyToFindLegend">
+                  <fieldset aria-describedby="HowEasyToFindLegend" ref={fullFormRef}>
                     <Styles.Legend id="HowEasyToFindLegend">
                       How easy was it to find what you were looking for?
                     </Styles.Legend>
@@ -260,7 +277,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="BarriersOrIssues"
                     control={control}
-                    rules={{ max: 500 }}
+                    rules={{ maxLength: 500 }}
                     render={({ field: { onChange, value } }) => (
                       <Textarea
                         id="BarriersOrIssues"
@@ -280,7 +297,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="HowCanWeImprove"
                     control={control}
-                    rules={{ max: 500 }}
+                    rules={{ maxLength: 500 }}
                     render={({ field: { onChange, value } }) => (
                       <Textarea
                         id="HowCanWeImprove"
@@ -303,7 +320,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     name="Email"
                     control={control}
                     rules={{
-                      max: 150,
+                      maxLength: 150,
                       pattern:
                         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     }}
@@ -324,7 +341,6 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
               </>
             )}
             <Column small="full" medium="full" large="full">
-              <div id={recaptchaContainerId} className="g-recaptcha" />
               <input type="hidden" {...register('ReCaptcha')} />
               {/* Terms are required when recaptcha badge is hidden */}
               <Styles.Terms>
@@ -344,9 +360,17 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 </>
               </Column>
             )}
+            {isError && (
+              <Column small="full" medium="full" large="full">
+                <AlertBannerService>
+                  <p>An error has occurred.</p>
+                </AlertBannerService>
+              </Column>
+            )}
           </Row>
         </form>
       )}
+      <div id={recaptchaContainerId} className="g-recaptcha" />
     </Styles.FormContainer>
   );
 };
