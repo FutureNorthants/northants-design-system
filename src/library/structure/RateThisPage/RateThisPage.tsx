@@ -317,9 +317,9 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     control={control}
                     rules={{
                       maxLength: {
-                        value: 500,
+                        value: 3000,
                         message:
-                          'The field did you come across any barriers or issues with this webpage must be less than 500 characters.',
+                          'The field did you come across any barriers or issues with this webpage must be less than 3000 characters.',
                       },
                       required: {
                         value: true,
@@ -350,8 +350,8 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     control={control}
                     rules={{
                       maxLength: {
-                        value: 500,
-                        message: 'The field how could this page be improved must be less than 500 characters.',
+                        value: 3000,
+                        message: 'The field how could this page be improved must be less than 3000 characters.',
                       },
                     }}
                     render={({ field: { onChange, value } }) => (
