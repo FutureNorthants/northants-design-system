@@ -141,12 +141,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                 <Controller
                   name="IsHelpful"
                   control={control}
-                  rules={{ required: true }}
+                  rules={{ required: { value: true, message: 'The field is this information helpful is required.' } }}
                   render={({ field: { onChange, value } }) => (
                     <>
                       {errors.IsHelpful && (
                         <Styles.FormErrorText id="IsHelpfulError">
-                          <Styles.Hidden>Error:</Styles.Hidden> The field is this information helpful is required.
+                          <Styles.Hidden>Error:</Styles.Hidden> {errors.IsHelpful.message}
                         </Styles.FormErrorText>
                       )}
                       {Object.entries(HelpfulEnum).map(([key, enumValue]) => (
@@ -219,13 +219,21 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     <Controller
                       name="HowEasyToFind"
                       control={control}
-                      rules={{ pattern: /^[1-5]+$/i, required: true }}
+                      rules={{
+                        pattern: {
+                          value: /^[1-5]+$/i,
+                          message: 'The field how easy is it to find what you are looking for is invalid.',
+                        },
+                        required: {
+                          value: true,
+                          message: 'The field how easy is it to find what you are looking for is required.',
+                        },
+                      }}
                       render={({ field: { onChange, value } }) => (
                         <>
                           {errors.HowEasyToFind && (
                             <Styles.FormErrorText id="HowEasyToFindError">
-                              <Styles.Hidden>Error:</Styles.Hidden> The field how easy is it to find what you are
-                              looking for is required.
+                              <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToFind.message}
                             </Styles.FormErrorText>
                           )}
                           {RatingValues.map((ratingValue, index) => (
@@ -255,13 +263,21 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     <Controller
                       name="HowEasyToUnderstand"
                       control={control}
-                      rules={{ pattern: /^[1-5]+$/i, required: true }}
+                      rules={{
+                        pattern: {
+                          value: /^[1-5]+$/i,
+                          message: 'The field how easy was this content to understand is invalid.',
+                        },
+                        required: {
+                          value: true,
+                          message: 'The field how easy was this content to understand is required.',
+                        },
+                      }}
                       render={({ field: { onChange, value } }) => (
                         <>
                           {errors.HowEasyToUnderstand && (
                             <Styles.FormErrorText id="HowEasyToUnderstandError">
-                              <Styles.Hidden>Error:</Styles.Hidden> The field how easy was this content to understand is
-                              required.
+                              <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToUnderstand.message}
                             </Styles.FormErrorText>
                           )}
                           {RatingValues.map((ratingValue, index) => (
@@ -289,15 +305,19 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="BarriersOrIssues"
                     control={control}
-                    rules={{ maxLength: 500, required: true }}
+                    rules={{
+                      maxLength: {
+                        value: 500,
+                        message:
+                          'The field did you come across any barriers or issues with this webpage must be less than 500 characters.',
+                      },
+                      required: {
+                        value: true,
+                        message: 'The field did you come across any barriers or issues with this webpage is required.',
+                      },
+                    }}
                     render={({ field: { onChange, value } }) => (
                       <>
-                        {errors.BarriersOrIssues && (
-                          <Styles.FormErrorText id="BarriersOrIssuesError">
-                            <Styles.Hidden>Error:</Styles.Hidden> The field did you come across any barriers or issues
-                            with this webpage is required.
-                          </Styles.FormErrorText>
-                        )}
                         <Textarea
                           id="BarriersOrIssues"
                           name="BarriersOrIssues"
@@ -305,6 +325,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                           placeholder=""
                           onChange={onChange}
                           isErrored={errors.BarriersOrIssues ? true : false}
+                          errorText={errors.BarriersOrIssues ? errors.BarriersOrIssues.message : null}
                           isFullWidth
                         />
                       </>
@@ -317,7 +338,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                   <Controller
                     name="HowCanWeImprove"
                     control={control}
-                    rules={{ maxLength: 500 }}
+                    rules={{
+                      maxLength: {
+                        value: 500,
+                        message: 'The field how could this page be improved must be less than 500 characters.',
+                      },
+                    }}
                     render={({ field: { onChange, value } }) => (
                       <Textarea
                         id="HowCanWeImprove"
@@ -326,6 +352,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         placeholder=""
                         onChange={onChange}
                         isErrored={errors.HowCanWeImprove ? true : false}
+                        errorText={errors.HowCanWeImprove ? errors.HowCanWeImprove.message : null}
                         isFullWidth
                       />
                     )}
@@ -340,9 +367,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                     name="Email"
                     control={control}
                     rules={{
-                      maxLength: 150,
-                      pattern:
-                        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      maxLength: { value: 150, message: 'The email address must be less than 150 characters.' },
+                      pattern: {
+                        value:
+                          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                        message: 'Invalid email address.',
+                      },
                     }}
                     render={({ field: { onChange, onBlur, value, ref } }) => (
                       <Input
@@ -352,7 +382,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         placeholder=""
                         onChange={onChange}
                         isErrored={errors.Email ? true : false}
-                        errorText={errors.Email && errors.Email.type === 'pattern' ? 'Invalid email address' : null}
+                        errorText={errors.Email ? errors.Email.message : null}
                         isFullWidth
                       />
                     )}
