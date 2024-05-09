@@ -20,7 +20,7 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
 }) => {
   return (
     <>
-      {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
+      {errorText && <Styles.ErrorText id={`${name}Error`}>{errorText}</Styles.ErrorText>}
       {typeof value !== 'undefined' ? (
         <Styles.StyledTextarea
           onChange={onChange}

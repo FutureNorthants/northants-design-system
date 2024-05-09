@@ -22,7 +22,7 @@ const Input: React.FunctionComponent<InputProps> = ({
 }) => {
   return (
     <>
-      {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
+      {errorText && <Styles.ErrorText id={`${name}Error`}>{errorText}</Styles.ErrorText>}
       {typeof value !== 'undefined' ? (
         <Styles.StyledInput
           onChange={onChange}

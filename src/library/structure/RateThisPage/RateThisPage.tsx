@@ -13,6 +13,7 @@ import { useRecaptcha } from 'react-hook-recaptcha';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Button from '../../components/Button/Button';
 import Panel from '../../components/Panel/Panel';
+import ErrorSummary from '../../components/ErrorSummary/ErrorSummary';
 
 enum HelpfulEnum {
   yes = 'Yes',
@@ -71,11 +72,15 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   const successCallback = (response) => {
     setValue('ReCaptcha', response);
     setIsLoading(false);
-    handleSubmit((data) => onSubmit(data))();
+    handleSubmit(
+      (data) => onSubmit(data),
+      () => scrollToTop()
+    )();
   };
 
   const errorCallback = () => {
     setIsLoading(false);
+    scrollToTop();
   };
 
   const { recaptchaLoaded, execute, reset } = useRecaptcha({
@@ -103,16 +108,20 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
 
   useEffect(() => {
     if (showFullForm) {
-      //Scroll to top of form
-      const rect = fullFormRef.current.getBoundingClientRect();
-      const scrollTop = document.documentElement.scrollTop;
-      const goTo = rect.top + scrollTop;
-      window.scrollTo({
-        top: goTo,
-        behavior: 'smooth',
-      });
+      scrollToTop();
     }
   }, [showFullForm]);
+
+  //Scroll to top of form
+  const scrollToTop = () => {
+    const rect = fullFormRef.current.getBoundingClientRect();
+    const scrollTop = document.documentElement.scrollTop;
+    const goTo = rect.top + scrollTop;
+    window.scrollTo({
+      top: goTo,
+      behavior: 'smooth',
+    });
+  };
 
   const executeCaptcha = (e) => {
     e.preventDefault();
@@ -133,8 +142,9 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
       {isSuccessful ? (
         <Panel heading="Thank you for your feedback." />
       ) : (
-        <form onSubmit={executeCaptcha}>
+        <form onSubmit={executeCaptcha} ref={fullFormRef}>
           <Row>
+            {errors && Object.keys(errors).length > 0 && <ErrorSummary errors={errors} />}
             <Column small="full" medium="full" large="full">
               <fieldset aria-describedby={errors.IsHelpful ? 'IsHelpfulError' : 'IsHelpfulLegend'}>
                 <Styles.Legend id="IsHelpfulLegend">Is this information helpful?</Styles.Legend>
@@ -211,7 +221,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
             {showFullForm && (
               <>
                 <Column small="full" medium="full" large="full">
-                  <fieldset aria-describedby="HowEasyToFindLegend" ref={fullFormRef}>
+                  <fieldset aria-describedby="HowEasyToFindLegend">
                     <Styles.Legend id="HowEasyToFindLegend">
                       How easy was it to find what you were looking for?
                     </Styles.Legend>
