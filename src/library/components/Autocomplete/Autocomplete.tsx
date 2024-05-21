@@ -129,7 +129,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
                 )}
               </>
             )}
-            <div {...getRootProps(undefined, { suppressRefError: true })}>
+            <div {...getRootProps({}, { suppressRefError: true })}>
               <Styles.AutocompleteTextInput
                 {...getInputProps({
                   name: name,
