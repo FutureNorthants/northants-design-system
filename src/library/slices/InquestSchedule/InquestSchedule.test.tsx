@@ -33,10 +33,11 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('A Name');
     expect(component).toHaveTextContent('100');
     expect(component).toHaveTextContent('A location');
-    expect(component).toHaveTextContent('01/01/2023, 12:08:00');
+    expect(component).toHaveTextContent('Sunday 1 January 2023');
+    expect(component).not.toHaveTextContent('12:08:00');
     expect(component).toHaveTextContent('Coroner Name');
     expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE');
-    expect(component).toHaveTextContent('01/02/2023, 10:00:00');
+    expect(component).toHaveTextContent('Wednesday 1 February 2023');
   });
 
   it('should display the message when no results are returned', () => {
