@@ -102,7 +102,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
     const formattedHouseNumber = data.houseNumber.trim();
 
     axios
-      .get<PostcodeResultsProps>(`${PostcodeSearchApiUrl}${formattedPostcode}?address=${formattedHouseNumber}`)
+      .get<PostcodeResultsProps>(`${PostcodeSearchApiUrl}${formattedPostcode}?address=${formattedHouseNumber}&defaultSearch=false&recordLimit=50`)
       .then((response) => {
         setIsLoading(false);
 
@@ -251,6 +251,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
                         onChange={onChange}
                         value={value}
                         isErrored={errors.postcode ? true : false}
+                        autocomplete='postal-code'
                         errorText={
                           !errors.postcode
                             ? ''
@@ -284,6 +285,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
                             value={value}
                             isErrored={errors.houseNumber ? true : false}
                             isFullWidth
+                            autocomplete='street-address'
                             errorText={
                               !errors.houseNumber
                                 ? ''
