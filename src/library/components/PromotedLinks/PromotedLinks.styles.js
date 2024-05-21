@@ -35,11 +35,14 @@ export const PromotedLink = styled.a`
   background: ${(props) => props.theme.theme_vars.colours.white};
   background: ${(props) => props.theme.theme_vars.colours.white}F2;
   border-radius: 3px;
-  box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+  box-shadow:
+    0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
     0px 4px 15px rgba(0, 0, 0, 0.11);
-  -webkit-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+  -webkit-box-shadow:
+    0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
     0px 4px 15px rgba(0, 0, 0, 0.11);
-  -moz-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
+  -moz-box-shadow:
+    0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
     0px 4px 15px rgba(0, 0, 0, 0.11);
 
   padding: 20px 15px;
@@ -56,21 +59,31 @@ export const PromotedLink = styled.a`
 
   &:focus {
     ${(props) => props.theme.linkStylesFocus};
-    box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
-      0px 4px 15px rgba(0, 0, 0, 0.11);
-    -webkit-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
-      0px 4px 15px rgba(0, 0, 0, 0.11);
-    -moz-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
-      0px 4px 15px rgba(0, 0, 0, 0.11);
+    box-shadow:
+      0 0 0 2px ${(props) => props.theme.theme_vars.colours.black},
+      0 0 0 4px ${(props) => props.theme.theme_vars.colours.focus};
+    -webkit-box-shadow:
+      0 0 0 2px ${(props) => props.theme.theme_vars.colours.black},
+      0 0 0 4px ${(props) => props.theme.theme_vars.colours.focus};
+    -moz-box-shadow:
+      0 0 0 2px ${(props) => props.theme.theme_vars.colours.black},
+      0 0 0 4px ${(props) => props.theme.theme_vars.colours.focus};
+
+    span {
+      color: ${(props) => props.theme.theme_vars.colours.black};
+    }
   }
   &:active {
     ${(props) => props.theme.linkStylesActive};
     transform: translateY(3px);
-    box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
+    box-shadow:
+      0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
       0px 4px 15px rgba(0, 0, 0, 0.11);
-    -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
+    -webkit-box-shadow:
+      0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
       0px 4px 15px rgba(0, 0, 0, 0.11);
-    -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
+    -moz-box-shadow:
+      0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset,
       0px 4px 15px rgba(0, 0, 0, 0.11);
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {

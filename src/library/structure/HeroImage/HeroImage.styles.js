@@ -12,6 +12,7 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: flex-end;
   position: relative;
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_darkest};
 
   &::before {
     content: '';
@@ -147,8 +148,11 @@ export const CallToActionLink = styled.a`
   &:hover,
   &:focus {
     text-decoration-style: dotted;
-    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
-      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5);
+    text-shadow:
+      2px 2px 4px rgba(150, 150, 150, 0.5),
+      -2px 2px 4px rgba(150, 150, 150, 0.5),
+      2px -2px 4px rgba(150, 150, 150, 0.5),
+      -2px -2px 4px rgba(150, 150, 150, 0.5);
   }
   &:active {
     transform: translate(3px);

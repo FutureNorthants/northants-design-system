@@ -46,8 +46,8 @@ const handleFullScreen = (props) => {
         props.noBackground
           ? 'transparent'
           : props.theme.cardinal_name === 'north'
-          ? props.theme.theme_vars.colours.grey_light
-          : props.theme.theme_vars.colours.white};
+            ? props.theme.theme_vars.colours.grey_light
+            : props.theme.theme_vars.colours.white};
       width: 100%;
       height: 100%;
       position: fixed;

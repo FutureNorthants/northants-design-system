@@ -10,8 +10,7 @@ export const ServiceLink = styled.button`
   color: ${(props) => props.theme.theme_vars.colours.action};
   background: ${(props) =>
     props.$show ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.grey_light};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.large}
-    ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding: ${(props) => `${props.theme.theme_vars.spacingSizes.large} ${props.theme.theme_vars.spacingSizes.medium}`};
   width: 100%;
   position: relative;
   border: ${(props) => props.theme.theme_vars.border_width_thin} solid
@@ -23,8 +22,7 @@ export const ServiceLink = styled.button`
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_light};
-    border: ${(props) => props.theme.theme_vars.border_width_thin} solid
-      ${(props) => props.theme.theme_vars.colours.action};
+    border: ${(props) => `${props.theme.theme_vars.border_width_thin} solid ${props.theme.theme_vars.colours.action}`};
     text-decoration-style: dashed;
     cursor: pointer;
   }
@@ -73,6 +71,8 @@ export const ServiceHeading = styled.span`
   padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   line-height: 1.25;
   ${(props) => props.theme.theme_vars.h3}
+  margin-top: 0;
+  margin-bottom:0;
 `;
 
 export const QuickLinksContainer = styled.div`
@@ -94,8 +94,7 @@ export const QuickLinksInnerContainer = styled.div`
   background: ${(props) => props.theme.theme_vars.colours.action_light};
   border-top: ${(props) => props.theme.theme_vars.border_width_thin} solid
     ${(props) => props.theme.theme_vars.colours.action};
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium}
-    ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => `${props.theme.theme_vars.spacingSizes.medium} ${props.theme.theme_vars.spacingSizes.small}`};
   box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset;
   -webkit-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset;
   -moz-box-shadow: 0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset;
@@ -105,7 +104,7 @@ export const QuickLink = styled.a`
   display: block;
   background: ${(props) => props.theme.theme_vars.colours.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  border: ${(props) => props.theme.theme_vars.border_width_thin} solid ${(props) => props.theme.theme_vars.colours.grey};
+  border: ${(props) => `${props.theme.theme_vars.border_width_thin} solid ${props.theme.theme_vars.colours.grey}`};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};

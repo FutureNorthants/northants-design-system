@@ -3,7 +3,7 @@ import { StoryFn } from '@storybook/react';
 import InquestSchedule from './InquestSchedule';
 import { InquestScheduleProps } from './InquestSchedule.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ExampleInquestScheduleData } from './InquestSchedule.storydata';
+import { ExampleInquestScheduleArray, ExampleInquestScheduleData } from './InquestSchedule.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
@@ -29,12 +29,7 @@ const Template: StoryFn<InquestScheduleProps> = (args) => (
 
 export const ExampleInquestSchedule = Template.bind({});
 ExampleInquestSchedule.args = {
-  caseAppointments: [
-    ExampleInquestScheduleData,
-    ExampleInquestScheduleData,
-    ExampleInquestScheduleData,
-    ExampleInquestScheduleData,
-  ],
+  caseAppointments: ExampleInquestScheduleArray,
   title: 'Upcoming inquests',
 };
 

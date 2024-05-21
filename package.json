@@ -104,9 +104,9 @@
   },
   "dependencies": {
     "core-js": "^3.20.2",
-    "downshift": "^6.1.7",
     "react-hook-form": "^7.49.2",
     "react-hook-recaptcha": "^2.0.1",
+    "downshift": "^9.0",
     "html-react-parser": "^5",
     "react-qr-code": "^2.0.11",
     "sanitize-html": "^2.6.1",
