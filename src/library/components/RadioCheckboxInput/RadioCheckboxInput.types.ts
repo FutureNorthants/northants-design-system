@@ -28,4 +28,9 @@ export interface RadioCheckboxInputProps {
    * The value of the input
    */
   value: string;
+
+  /**
+   * Is the field in an error state
+   */
+  isErrored?: boolean;
 }

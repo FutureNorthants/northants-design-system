@@ -65,7 +65,10 @@ export const SectionHeader = styled.div`
   }
 `;
 
-export const SectionHeading = styled.div``;
+export const SectionHeading = styled.div`
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+`;
 
 const SectionButtonIsFilteredStyles = (props) => {
   if (props.$isFilter) {
@@ -73,12 +76,16 @@ const SectionButtonIsFilteredStyles = (props) => {
       ${(props) => props.theme.theme_vars.h4}
       padding-top: 15px;
       padding-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 0;
     `;
   } else {
     return css`
       ${(props) => props.theme.theme_vars.h3}
       padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
       padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+      margin-top: 0;
+      margin-bottom: 0;
     `;
   }
 };
@@ -103,9 +110,11 @@ export const SectionButton = styled.button`
     outline: 3px solid transparent;
     color: ${(props) => props.theme.theme_vars.colours.black};
     background-color: ${(props) => props.theme.theme_vars.colours.focus};
-    -webkit-box-shadow: 0 -2px ${(props) => props.theme.theme_vars.colours.focus},
+    -webkit-box-shadow:
+      0 -2px ${(props) => props.theme.theme_vars.colours.focus},
       0 4px ${(props) => props.theme.theme_vars.colours.black};
-    box-shadow: 0 -2px ${(props) => props.theme.theme_vars.colours.focus},
+    box-shadow:
+      0 -2px ${(props) => props.theme.theme_vars.colours.focus},
       0 4px ${(props) => props.theme.theme_vars.colours.black};
     text-decoration: none;
   }

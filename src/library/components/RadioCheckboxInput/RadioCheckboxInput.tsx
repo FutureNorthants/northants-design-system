@@ -9,11 +9,12 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
   onChange,
   checked,
   label,
+  isErrored = false,
 }) => {
   const id = useId();
 
   return (
-    <Styles.Container data-testid="RadioCheckboxInput">
+    <Styles.Container data-testid="RadioCheckboxInput" $isErrored={isErrored}>
       <Styles.Category>
         <Styles.CategoryInput
           type={singleSelection ? 'radio' : 'checkbox'}

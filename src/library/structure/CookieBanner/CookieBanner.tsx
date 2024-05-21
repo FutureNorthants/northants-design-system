@@ -141,14 +141,16 @@ const CookieBanner: React.FunctionComponent<CookieBannerProps> = ({
               <FormButton
                 primary={true}
                 text={acceptButtonText}
-                isDisabled={true}
+                isDisabled={false}
+                type="button"
                 onClick={acceptCookies}
                 size="large"
               />
               <FormButton
                 primary={true}
                 text={rejectButtonText}
-                isDisabled={true}
+                isDisabled={false}
+                type="button"
                 onClick={rejectCookies}
                 size="large"
               />

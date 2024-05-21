@@ -256,7 +256,7 @@ export const ServiceLinksArray = [
     ],
   },
   {
-    title: 'Births, deaths marriages and civil partnerships',
+    title: 'Births, deaths and marriages',
     url: '/',
     iconKey: 'births',
     quickLinksArray: [

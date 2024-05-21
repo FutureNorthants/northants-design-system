@@ -1,6 +1,6 @@
 {
   "name": "northants-design-system",
-  "version": "1.0.7",
+  "version": "1.1.0-alpha.2",
   "private": false,
   "description": "Design system for West & North Northamptonshire Councils, two unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.",
   "main": "build/index.js",
@@ -104,6 +104,8 @@
   },
   "dependencies": {
     "core-js": "^3.20.2",
+    "react-hook-form": "^7.49.2",
+    "react-hook-recaptcha": "^2.0.1",
     "downshift": "^9.0",
     "html-react-parser": "^5",
     "react-qr-code": "^2.0.11",

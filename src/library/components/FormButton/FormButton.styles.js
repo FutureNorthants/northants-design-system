@@ -10,6 +10,12 @@ export const StyledButton = styled.button`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   text-decoration: none;
 
+  &:disabled {
+    background-color: ${(props) => props.theme.theme_vars.colours.grey} !important;
+    color: ${(props) => props.theme.theme_vars.colours.black} !important;
+    cursor: not-allowed !important;
+  }
+
   &.button--primary {
     color: white;
     background-color: ${(props) => props.theme.theme_vars.colours.action};
