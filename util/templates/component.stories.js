@@ -1,7 +1,7 @@
 module.exports = (componentName) => ({
   content: `
 import React from "react";
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import ${componentName} from "./${componentName}";
 import { ${componentName}Props } from "./${componentName}.types";
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -16,7 +16,7 @@ export default {
     },
 };
 
-const Template: Story<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;
+const Template: StoryFn<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;
 
 export const Example${componentName} = Template.bind({});    
 Example${componentName}.args = {
@@ -28,5 +28,5 @@ AnotherExample${componentName}.args = {
   foo: "foo"
 };
 `,
-  extension: `.stories.tsx`
+  extension: `.stories.tsx`,
 });
