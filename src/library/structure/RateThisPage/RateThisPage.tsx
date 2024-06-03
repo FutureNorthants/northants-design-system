@@ -140,7 +140,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   return (
     <Styles.FormContainer as="section" data-testid="RateThisPage" aria-label="Rate This Page">
       {isSuccessful ? (
-        <Panel heading="Thank you for your feedback." />
+        <Panel heading="Thank you for your feedback.">
+          <p>
+            If you have left your email address, we will be in touch with you about your feedback in the next 5 working
+            days.
+          </p>
+        </Panel>
       ) : (
         <form onSubmit={executeCaptcha} ref={fullFormRef}>
           <Row>
@@ -181,21 +186,6 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
               <>
                 <Column small="full" medium="full" large="one-half">
                   <Styles.QuestionContainer>
-                    <Styles.QuestionTitle>Service</Styles.QuestionTitle>
-                    <p>You may have comments about the quality of the service that's been provided. For example:</p>
-                    <ul>
-                      <li>I have waited too long for something to happen</li>
-                      <li>I'm struggling to contact the service</li>
-                      <li>I don't think I have been treated fairly</li>
-                      <li>I feel as if I have been misled</li>
-                    </ul>
-                    <Styles.QuestionButton>
-                      <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
-                    </Styles.QuestionButton>
-                  </Styles.QuestionContainer>
-                </Column>
-                <Column small="full" medium="full" large="one-half">
-                  <Styles.QuestionContainer>
                     <Styles.QuestionTitle>Content</Styles.QuestionTitle>
                     <p>You may have comments about the content on the webpage. For example:</p>
                     <ul>
@@ -212,6 +202,21 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         size="medium"
                         onClick={handleQuestionButton}
                       />
+                    </Styles.QuestionButton>
+                  </Styles.QuestionContainer>
+                </Column>
+                <Column small="full" medium="full" large="one-half">
+                  <Styles.QuestionContainer>
+                    <Styles.QuestionTitle>Service</Styles.QuestionTitle>
+                    <p>You may have comments about the quality of the service that's been provided. For example:</p>
+                    <ul>
+                      <li>I have waited too long for something to happen</li>
+                      <li>I'm struggling to contact the service</li>
+                      <li>I don't think I have been treated fairly</li>
+                      <li>I feel as if I have been misled</li>
+                    </ul>
+                    <Styles.QuestionButton>
+                      <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
                     </Styles.QuestionButton>
                   </Styles.QuestionContainer>
                 </Column>
