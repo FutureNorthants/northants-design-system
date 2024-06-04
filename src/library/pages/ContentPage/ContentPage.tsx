@@ -269,6 +269,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
+      hasTranslate
       footerLinksArray={[
         {
           title: 'About',

@@ -204,9 +204,9 @@ export const promoHeroImageData = {
   headline: 'Sustainable West Northants',
   content: '<p>We have collated a variety of small changes that can have a big impact for you to try today.</p>',
   imageLarge:
-    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1440/810/0/2021-12/Abington_Park_1.jpg',
+    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1600/500/0/2022-02/Daventry%20Country%20Park.JPG',
   imageSmall:
-    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/144/81/0/2021-12/Abington_Park_1.jpg',
+    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1600/500/0/2022-02/Daventry%20Country%20Park.JPG',
   imageAltText: 'Parkland',
   backgroundBox: true,
 };
