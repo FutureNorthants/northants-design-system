@@ -141,10 +141,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
     <Styles.FormContainer as="section" data-testid="RateThisPage" aria-label="Rate This Page">
       {isSuccessful ? (
         <Panel heading="Thank you for your feedback.">
-          <p>
-            If you have left your email address, we will be in touch with you about your feedback in the next 5 working
-            days.
-          </p>
+          {String(watchIsHelpful) === 'No' && (
+            <p>
+              If you have left your email address, we will be in touch with you about your feedback in the next 5
+              working days.
+            </p>
+          )}
         </Panel>
       ) : (
         <form onSubmit={executeCaptcha} ref={fullFormRef}>
