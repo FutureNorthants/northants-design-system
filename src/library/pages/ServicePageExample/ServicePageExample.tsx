@@ -149,6 +149,7 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
+      hasTranslate
       footerLinksArray={[
         {
           title: 'About',

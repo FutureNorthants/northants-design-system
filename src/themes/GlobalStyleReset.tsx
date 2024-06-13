@@ -154,4 +154,11 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
   table tr td {
     vertical-align: top;
   }
+  body {
+    position: static;
+    top: 0px !important;
+  }
+  iframe.skiptranslate {
+    display: none !important;
+  }
 `;

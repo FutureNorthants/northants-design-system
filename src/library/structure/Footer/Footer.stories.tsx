@@ -46,3 +46,34 @@ ExampleFooter.args = {
 
 export const ExampleFooterWithoutLinks = Template.bind({});
 ExampleFooterWithoutLinks.args = {};
+
+export const ExampleFooterWithTranslate = Template.bind({});
+ExampleFooterWithTranslate.args = {
+  hasTranslate: true,
+  footerLinksArray: [
+    {
+      title: 'Accessibility',
+      url: '/',
+    },
+    {
+      title: 'Contact us',
+      url: '/',
+    },
+    {
+      title: 'Copyright',
+      url: '/',
+    },
+    {
+      title: 'Payments',
+      url: '/',
+    },
+    {
+      title: 'Privacy',
+      url: '/',
+    },
+    {
+      title: 'Website Feedback',
+      url: '/',
+    },
+  ],
+};

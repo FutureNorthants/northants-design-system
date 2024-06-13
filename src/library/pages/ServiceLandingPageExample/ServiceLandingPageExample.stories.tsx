@@ -1,6 +1,6 @@
 import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { ServiceLandingPageExample } from './ServiceLandingPageExample';
 import { ServiceLandingPageExampleProps } from './ServiceLandingPageExample.types';
 import {
@@ -38,7 +38,7 @@ BinCollectionExample.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections,
-  footerLinks,
+  footerLinksArray: footerLinks,
 };
 
 export const OneSectionExample = Template.bind({});
@@ -47,7 +47,7 @@ OneSectionExample.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
 };
 
 export const TopServicesExample = Template.bind({});
@@ -56,7 +56,7 @@ TopServicesExample.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   topServices: threeTopServicesData,
 };
 
@@ -66,7 +66,7 @@ TopServicesWithAlert.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   topServices: threeTopServicesData,
   serviceAlert,
 };
@@ -77,7 +77,7 @@ SixTopServicesExample.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   topServices: sixTopServicesData,
 };
 
@@ -88,7 +88,7 @@ MicroSiteExample.args = {
   breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   summary:
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   showSummary: true,
@@ -101,7 +101,7 @@ MicroSiteWithTopServicesExample.args = {
   breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   topServices: threeTopServicesData,
   summary:
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
@@ -115,7 +115,7 @@ MicroSiteBoxedExample.args = {
   breadcrumbsArray: micrositeBreadcrumbs,
   bodyText: ' ',
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   summary:
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   showSummary: true,
@@ -127,7 +127,7 @@ ExampleWithServiceAlert.args = {
   icon: 'bins',
   breadcrumbsArray: breadcrumbs,
   sections,
-  footerLinks,
+  footerLinksArray: footerLinks,
   serviceAlert,
 };
 
@@ -138,7 +138,7 @@ MicroSiteWithAlertExample.args = {
   breadcrumbsArray: null,
   bodyText: ' ',
   sections: sections.slice(0, 1),
-  footerLinks,
+  footerLinksArray: footerLinks,
   summary:
     'Explore, discover and enjoy Northamptonshire Country Parks. Woodland walks, reservoir views, play areas, cafes, each country park has its own unique character.',
   showSummary: true,
@@ -152,7 +152,7 @@ PromoPageExample.args = {
   breadcrumbsArray: null,
   bodyText: promoBodyText,
   sections: [],
-  footerLinks,
+  footerLinksArray: footerLinks,
   topServices: promoTopServicesData,
   summary:
     'Sustainability is all about living in a way that protects our natural resources and opportunities for future generations.',

@@ -11,8 +11,13 @@ import FacebookIcon from '../../components/icons/FacebookIcon/Icon';
 import TwitterIcon from '../../components/icons/TwitterIcon/Icon';
 import LinkedInIcon from '../../components/icons/LinkedInIcon/Icon';
 import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
+import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
 
-const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null, year = new Date().getFullYear() }) => {
+const Footer: React.FunctionComponent<FooterProps> = ({
+  footerLinksArray = null,
+  year = new Date().getFullYear(),
+  hasTranslate = false,
+}) => {
   const themeContext = useContext(ThemeContext);
 
   return (
@@ -76,23 +81,25 @@ const Footer: React.FunctionComponent<FooterProps> = ({ footerLinksArray = null,
               {themeContext.full_name} Council {year}
             </Styles.FooterCopy>
           </div>
-
-          <Styles.LogoWhite
-            className={
-              themeContext.theme_vars.theme_name === 'Memorial theme North' ||
-              themeContext.theme_vars.theme_name === 'Memorial theme West'
-                ? 'black_logo'
-                : ''
-            }
-          >
-            {themeContext.cardinal_name === 'north' ? (
-              <NorthWhite />
-            ) : themeContext.cardinal_name === 'west' ? (
-              <WestWhite />
-            ) : (
-              <GDSLogo />
-            )}
-          </Styles.LogoWhite>
+          <div>
+            {hasTranslate && <GoogleTranslate hasDarkBackground={true} />}
+            <Styles.LogoWhite
+              className={
+                themeContext.theme_vars.theme_name === 'Memorial theme North' ||
+                themeContext.theme_vars.theme_name === 'Memorial theme West'
+                  ? 'black_logo'
+                  : ''
+              }
+            >
+              {themeContext.cardinal_name === 'north' ? (
+                <NorthWhite />
+              ) : themeContext.cardinal_name === 'west' ? (
+                <WestWhite />
+              ) : (
+                <GDSLogo />
+              )}
+            </Styles.LogoWhite>
+          </div>
         </Styles.FooterAlignment>
       </Styles.StyledMaxWidthContainer>
     </Styles.Container>
