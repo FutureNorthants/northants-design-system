@@ -206,7 +206,7 @@ export const promoHeroImageData = {
   imageLarge:
     'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1600/500/0/2022-02/Daventry%20Country%20Park.JPG',
   imageSmall:
-    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/1600/500/0/2022-02/Daventry%20Country%20Park.JPG',
+    'https://cms.westnorthants.gov.uk/sites/default/files/styles/responsive/public/400/225/0/2022-02/Daventry%20Country%20Park_0.jpg',
   imageAltText: 'Parkland',
   backgroundBox: true,
 };

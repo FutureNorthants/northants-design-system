@@ -34,8 +34,8 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
 
         <p>
           <strong>
-            Pupils who are eligible for Free School Meals will receive support from Northamptonshire County Council
-            during the February Half Term.
+            Pupils who are eligible for Free School Meals will receive support from West Northamptonshire Council during
+            the February Half Term.
           </strong>
         </p>
         <p>
