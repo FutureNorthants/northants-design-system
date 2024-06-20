@@ -9,6 +9,12 @@ export const StartChat = styled.div`
   position: fixed;
   bottom: calc(${(props) => props.theme.theme_vars.spacingSizes.medium} + 60px);
   right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  /* When larger than xl position button to be just outside the container */
+  @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.xl} + ${(props) =>
+      props.theme.theme_vars.spacingSizes.medium})) {
+    right: calc((100% - ${(props) => props.theme.theme_vars.breakpoints.xl}) / 2);
+  }
 `;
 
 export const Modal = styled.div`
