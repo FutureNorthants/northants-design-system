@@ -267,7 +267,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           onSubmit={() => {}}
           complaintsFormLink="https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council"
         />
-        <WebChatForm method="post" action="https://www.westnorthants.gov.uk" />
+        <WebChatForm action="https://www.westnorthants.gov.uk" />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
