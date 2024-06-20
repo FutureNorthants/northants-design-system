@@ -75,6 +75,10 @@ export const FormContainer = styled.div`
   overflow: auto;
   max-width: 350px;
   max-height: 100vh;
+
+  p {
+    margin-bottom: 0;
+  }
 `;
 
 export const FormHeader = styled.div`
