@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { GoogleTranslateLanguages, GoogleTranslateProps } from './GoogleTranslate.types';
+import { GoogleTranslateProps } from './GoogleTranslate.types';
 import * as Styles from './GoogleTranslate.styles';
 
 const GoogleTranslate: React.FunctionComponent<GoogleTranslateProps> = ({
@@ -7,14 +7,11 @@ const GoogleTranslate: React.FunctionComponent<GoogleTranslateProps> = ({
   label,
   hasDarkBackground = false,
 }) => {
-  const includedLanguages = GoogleTranslateLanguages.map((lang) => lang.value).join(',');
-
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: pageLanguage,
         autoDisplay: false,
-        includedLanguages,
       },
       'google_translate_element'
     );
