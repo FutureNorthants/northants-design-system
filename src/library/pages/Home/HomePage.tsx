@@ -77,7 +77,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
 
-      <PageStructures.Footer footerLinksArray={footerLinksArray} />
+      <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
     </>
   );
 };

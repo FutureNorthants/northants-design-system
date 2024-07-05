@@ -14,6 +14,6 @@
     "types": ["node", "jest", "@testing-library/jest-dom", "@testing-library/jest-dom/jest-globals"]
   },
   "include": ["./src/**/*", "custom.d.ts"],
-  "files": ["custom.d.ts"],
+  "files": ["custom.d.ts", "custom-translate.d.ts"],
   "exclude": ["node_modules", "build", "storybook-static", "src/**/*.stories.tsx"]
 }

@@ -87,6 +87,6 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
         ))}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
-    <PageStructures.Footer footerLinksArray={footerLinksArray} />
+    <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
   </>
 );
