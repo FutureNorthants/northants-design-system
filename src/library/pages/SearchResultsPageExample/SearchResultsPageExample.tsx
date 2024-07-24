@@ -6,6 +6,7 @@ import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
 import { SignpostLinkProp } from '../../components/SignpostLinksList/SignpostLinksList.types';
 import { noSearchResults, searchResultsWithServiceArea } from './../../structure/SearchResultsList/SearchResultsData';
+import Tabs from '../../components/Tabs/Tabs';
 
 export interface SearchResultsPageExampleProps {
   results: Array<SearchResultProps>;
@@ -58,6 +59,25 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
               searchTerm: 'council tax',
             },
           }}
+        />
+
+        <Tabs
+          tabs={[
+            {
+              title: 'All results',
+              onClick: () => {},
+            },
+            {
+              title: 'Service results',
+              onClick: () => {},
+            },
+            {
+              title: 'News results',
+              onClick: () => {},
+            },
+          ]}
+          activeTab={1}
+          hasTopMargin
         />
 
         {results ? <SearchResultsList {...searchResultsWithServiceArea} /> : <SearchResultsList {...noSearchResults} />}
