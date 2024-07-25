@@ -17,33 +17,11 @@ export default {
 };
 
 const Template: StoryFn<TabsProps> = (args) => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [tabProps, setTabProps] = useState([
-    {
-      title: 'All results',
-      onClick: () => {
-        setActiveTab(0);
-      },
-    },
-    {
-      title: 'Service results',
-      onClick: () => {
-        setActiveTab(1);
-      },
-    },
-    {
-      title: 'News results',
-      onClick: () => {
-        setActiveTab(2);
-      },
-    },
-  ]);
-
   return (
     <SBPadding>
       <MaxWidthContainer>
         <PageMain>
-          <Tabs tabs={tabProps} activeTab={activeTab} />
+          <Tabs {...args} />
         </PageMain>
       </MaxWidthContainer>
     </SBPadding>
@@ -51,4 +29,20 @@ const Template: StoryFn<TabsProps> = (args) => {
 };
 
 export const ExampleTabs = Template.bind({});
-ExampleTabs.args = {};
+ExampleTabs.args = {
+  tabs: [
+    {
+      title: 'All results',
+      content: '<p>Some info about all results.</p>',
+    },
+    {
+      title: 'Service results',
+      content: '<p>Some info about service results.</p>',
+    },
+    {
+      title: 'News results',
+      content:
+        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet eleifend ante, ut pretium nibh laoreet ac.</p>',
+    },
+  ],
+};

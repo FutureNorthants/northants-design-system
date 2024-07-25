@@ -12,11 +12,13 @@ export const TabsContainer = styled.ul`
   justify-content: flex-start;
   margin: 0;
   padding: 0;
-  box-shadow: inset 0 -1px 0 ${(props) => props.theme.theme_vars.colours.grey};
+  box-shadow: inset 1px -1px 1px ${(props) => props.theme.theme_vars.colours.grey};
+  background-color: ${(props) => props.theme.theme_vars.colours.white};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     flex-direction: row;
     max-width: 100% !important;
+    flex-wrap: nowrap;
   }
 `;
 
@@ -30,38 +32,18 @@ export const TabItem = styled.li`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     width: auto;
   }
-
-  &:after {
-    content: none;
-    position: absolute;
-    bottom: 0;
-    right: -${(props) => props.theme.theme_vars.spacingSizes.small};
-    width: ${(props) => props.theme.theme_vars.spacingSizes.small};
-    border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-
-    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-      content: '';
-    }
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-
-    &:after {
-      content: none;
-    }
-  }
 `;
 
 export const TabButton = styled.button`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
   background-color: ${(props) =>
-    props.$isActive ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light}80;
+    props.$isActive ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey_light};
   padding: ${(props) => `${props.theme.theme_vars.spacingSizes.medium} ${props.theme.theme_vars.spacingSizes.large}`};
-  border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
   border-bottom: 1px solid
     ${(props) => (props.$isActive ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.grey)};
+  border: none;
+  box-shadow: 1px -3px 3px ${(props) => props.theme.theme_vars.colours.grey};
   border-top-left-radius: ${(props) => props.theme.theme_vars.border_radius};
   border-top-right-radius: ${(props) => props.theme.theme_vars.border_radius};
   cursor: pointer;
@@ -79,11 +61,18 @@ export const TabButton = styled.button`
 
   &:focus {
     ${(props) => props.theme.linkStylesFocus};
-    border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.focus};
   }
 
   &:active {
     ${(props) => props.theme.linkStylesActive};
-    border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.focus};
   }
+`;
+
+export const TabContent = styled.div`
+  display: ${(props) => (props.$isActive ? 'block' : 'none')};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  box-shadow: 1px 2px 3px ${(props) => props.theme.theme_vars.colours.grey};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  border-bottom-left-radius: ${(props) => props.theme.theme_vars.border_radius};
+  border-bottom-right-radius: ${(props) => props.theme.theme_vars.border_radius};
 `;

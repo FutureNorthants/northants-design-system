@@ -7,7 +7,7 @@ export interface TabsProps {
   /**
    * The optional active tab index. Defaults to 0
    */
-  activeTab?: number;
+  defaultTab?: number;
 
   /**
    * The optional top margin
@@ -17,6 +17,5 @@ export interface TabsProps {
 
 export interface TabProp {
   title: string;
-  onClick: () => void;
-  // isActive: boolean;
+  content: string;
 }
