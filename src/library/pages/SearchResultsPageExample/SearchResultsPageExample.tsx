@@ -64,11 +64,13 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
         <ToggleButtons
           buttons={[
             {
-              title: 'Service results',
+              label: 'Service results',
+              ariaLabel: 'View the service results',
               onClick: () => {},
             },
             {
-              title: 'News results',
+              label: 'News results',
+              ariaLabel: 'View the news results',
               onClick: () => {},
             },
           ]}

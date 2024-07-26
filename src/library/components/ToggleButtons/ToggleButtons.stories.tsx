@@ -30,11 +30,13 @@ export const ExampleToggleButtons = Template.bind({});
 ExampleToggleButtons.args = {
   buttons: [
     {
-      title: 'Most used',
+      label: 'Most used',
+      ariaLabel: 'View the list in most used order',
       onClick: () => {},
     },
     {
-      title: 'Alphabetical',
+      label: 'Alphabetical',
+      ariaLabel: 'View the list in alphabetical order',
       onClick: () => {},
     },
   ],

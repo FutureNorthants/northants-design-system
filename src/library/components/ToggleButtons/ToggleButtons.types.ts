@@ -17,12 +17,22 @@ export interface ToggleButtonsProps {
 
 export interface ToggleButtonProps {
   /**
-   * The title for the button
+   * The optional aria-label text used to describe the button to screen readers
    */
-  title: string;
+  ariaLabel?: string;
+
+  /**
+   * The button label text
+   */
+  label: string;
+
+  /**
+   * The optional title for the button
+   */
+  title?: string;
 
   /**
    * The onClick function when the button is pressed
    */
-  onClick: () => void;
+  onClick?: () => void;
 }

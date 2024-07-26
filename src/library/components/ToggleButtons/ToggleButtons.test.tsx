@@ -12,11 +12,13 @@ describe('ToggleButtons Component', () => {
     props = {
       buttons: [
         {
-          title: 'Service results',
+          title: 'See the service results',
+          label: 'Service results',
           onClick: () => {},
         },
         {
-          title: 'News results',
+          title: 'See the news results',
+          label: 'News results',
           onClick: () => {},
         },
       ],

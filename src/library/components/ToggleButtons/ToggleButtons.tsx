@@ -19,11 +19,14 @@ const ToggleButtons: React.FunctionComponent<ToggleButtonsProps> = ({
       <>
         {buttons.map((button, index) => (
           <Styles.ToggleButton
+            type="button"
+            title={button.title}
+            aria-label={button.ariaLabel}
             key={index}
             onClick={() => handleClick(index, button.onClick)}
             $isActive={activeButton == index}
           >
-            {button.title}
+            {button.label}
           </Styles.ToggleButton>
         ))}
       </>
