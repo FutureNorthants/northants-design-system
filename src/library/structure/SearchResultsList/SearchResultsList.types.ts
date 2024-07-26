@@ -52,4 +52,9 @@ export interface SearchResultProps {
    * If there is a service area tied to the result
    */
   service?: string;
+
+  /**
+   * How long ago the page was last edited or news article was published
+   */
+  published?: string;
 }

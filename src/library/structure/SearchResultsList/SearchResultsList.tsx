@@ -29,6 +29,9 @@ const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
           <Styles.Result key={i}>
             {result.service && <Styles.ServiceArea>{result.service}</Styles.ServiceArea>}
             <Styles.Title href={result.link}>{result.title}</Styles.Title>
+            {result.published && result.service === 'News' && (
+              <Styles.Published>Published {result.published}</Styles.Published>
+            )}
             <Styles.Summary>{result.summary}</Styles.Summary>
             {result.signpostLinksArray && themeContext.cardinal_name === 'north' && (
               <Styles.SignpostContainer>

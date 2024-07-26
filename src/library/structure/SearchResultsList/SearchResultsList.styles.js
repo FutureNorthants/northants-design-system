@@ -89,3 +89,7 @@ export const SignpostContainer = styled.div`
     }
   }
 `;
+
+export const Published = styled.p`
+  font-weight: bold;
+`;
