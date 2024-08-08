@@ -11,7 +11,7 @@ export const searchResults: SearchResultsListProps = {
       service: 'Council Tax',
       summary:
         'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.',
-      published: 'one year ago',
+      published: '18 January 2022',
     },
     {
       title: 'Paying council tax',
@@ -44,9 +44,9 @@ export const searchResults: SearchResultsListProps = {
     {
       title: 'Council tax news article',
       link: '/news/council-tax-news-article',
-      published: '2 years ago',
+      published: '18 January 2022',
       service: 'News',
-      summary: 'An example news article that shows when it was published.',
+      summary: 'An example news article that shows it was published over a year ago.',
     },
     {
       title: 'Council tax single CTA',
@@ -136,9 +136,9 @@ export const searchResultsWithServiceArea: SearchResultsListProps = {
     {
       title: 'Council tax news article',
       link: '/news/council-tax-news-article',
-      published: '2 years ago',
+      published: '18 January 2022',
       service: 'News',
-      summary: 'An example news article that shows when it was published.',
+      summary: 'An example news article that shows it was published over a year ago.',
     },
     {
       service: 'Bins, recycling and waste',

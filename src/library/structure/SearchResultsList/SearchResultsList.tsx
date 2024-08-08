@@ -3,6 +3,7 @@ import { SearchResultsListProps } from './SearchResultsList.types';
 import * as Styles from './SearchResultsList.styles';
 import SignpostLinksList from '../../components/SignpostLinksList/SignpostLinksList';
 import { ThemeContext } from 'styled-components';
+import { NewsArticleOldBanner } from '../PageStructures';
 
 const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
   searchTerm,
@@ -11,6 +12,12 @@ const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
   pageNumber = 0,
 }) => {
   const themeContext = useContext(ThemeContext);
+  const isOld = (date): boolean => {
+    const currentDate = new Date();
+    const dateObject = new Date(date);
+    return Math.ceil(Math.abs(currentDate.getTime() - dateObject.getTime()) / (1000 * 60 * 60 * 24)) > 365;
+  };
+
   if (totalResults === 0) {
     return (
       <Styles.Container data-testid="SearchResultsList">
@@ -29,9 +36,7 @@ const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
           <Styles.Result key={i}>
             {result.service && <Styles.ServiceArea>{result.service}</Styles.ServiceArea>}
             <Styles.Title href={result.link}>{result.title}</Styles.Title>
-            {result.published && result.service === 'News' && (
-              <Styles.Published>Published {result.published}</Styles.Published>
-            )}
+            {result.published && result.service === 'News' && isOld(result.published) && <NewsArticleOldBanner />}
             <Styles.Summary>{result.summary}</Styles.Summary>
             {result.signpostLinksArray && themeContext.cardinal_name === 'north' && (
               <Styles.SignpostContainer>
