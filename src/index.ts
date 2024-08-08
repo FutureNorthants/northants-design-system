@@ -13,6 +13,7 @@ import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
 import StaticMap from './library/components/StaticMap/StaticMap';
 import TextInput from './library/components/TextInput/TextInput';
+import ToggleButtons from './library/components/ToggleButtons/ToggleButtons';
 
 export {
   Autocomplete,
@@ -29,6 +30,7 @@ export {
   PromotedLinks,
   StaticMap,
   TextInput,
+  ToggleButtons,
 };
 
 // Slices
