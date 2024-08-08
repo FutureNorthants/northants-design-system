@@ -3,7 +3,7 @@ import { SearchResultsListProps } from './SearchResultsList.types';
 import * as Styles from './SearchResultsList.styles';
 import SignpostLinksList from '../../components/SignpostLinksList/SignpostLinksList';
 import { ThemeContext } from 'styled-components';
-import { NewsArticleOldBanner } from '../PageStructures';
+import NewsArticleOldBanner from '../NewsArticleOldBanner/NewsArticleOldBanner';
 
 const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
   searchTerm,
