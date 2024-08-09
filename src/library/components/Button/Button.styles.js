@@ -45,7 +45,7 @@ export const StyledButton = styled.a`
   &.button--secondary {
     color: ${(props) =>
       props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action} !important;
-    background-color: transparent;
+    background-color: ${(props) => props.theme.theme_vars.colours.white};
     border: 3px solid
       ${(props) => (props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action)};
 
