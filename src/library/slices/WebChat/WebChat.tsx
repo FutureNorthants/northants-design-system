@@ -109,6 +109,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                           isErrored={errors.name ? true : false}
                           errorText={errors.name ? errors.name.message : null}
                           isFullWidth
+                          autocomplete="name"
                         />
                       )}
                     />
@@ -147,13 +148,14 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       render={({ field: { onChange, value } }) => (
                         <Input
                           name="email"
-                          id="im_name"
+                          id="email"
                           value={value}
                           placeholder=""
                           onChange={onChange}
                           isErrored={errors.email ? true : false}
                           errorText={errors.email ? errors.email.message : null}
                           isFullWidth
+                          autocomplete="email"
                         />
                       )}
                     />
@@ -173,6 +175,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                           isErrored={errors.telephone ? true : false}
                           errorText={errors.telephone ? errors.telephone.message : null}
                           isFullWidth
+                          autocomplete="tel"
                         />
                       )}
                     />
