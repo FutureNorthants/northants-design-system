@@ -49,7 +49,7 @@ describe('HomeHero common usage', () => {
   });
 
   it('should render an image tag', () => {
-    const images = rendered.queryAllByRole('img');
+    const images = rendered.queryAllByRole('presentation', { hidden: true });
     expect(images).toHaveLength(1);
   });
 });
