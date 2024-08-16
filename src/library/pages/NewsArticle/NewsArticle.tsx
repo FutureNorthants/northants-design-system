@@ -95,7 +95,6 @@ export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceh
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
-      hasTranslate
       footerLinksArray={[
         {
           title: 'About',
