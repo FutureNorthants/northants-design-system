@@ -29,3 +29,7 @@ export const ResultInfo = styled.div`
   font-weight: bold;
   margin: ${(props) => props.theme.theme_vars.spacingSizes.large} 0;
 `;
+
+export const ServiceSelect = styled.div`
+  margin-bottom: 25px;
+`;

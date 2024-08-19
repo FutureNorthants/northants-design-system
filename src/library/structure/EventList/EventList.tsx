@@ -12,6 +12,9 @@ import Pagination from '../../components/Pagination/Pagination';
 import EventDetails from '../../components/EventDetails/EventDetails';
 import EventLink from '../../components/EventLink/EventLink';
 import { transformSnippet } from '../../directory/DirectoryService/DirectoryServiceTransform';
+import Heading from '../../components/Heading/Heading';
+import FormWithLine from '../../components/FormWithLine/FormWithLine';
+import FormButton from '../../components/FormButton/FormButton';
 
 const EventList: React.FunctionComponent<EventListProps> = ({
   results,
@@ -35,7 +38,31 @@ const EventList: React.FunctionComponent<EventListProps> = ({
     <Styles.Container data-testid="EventList">
       <Row>
         <Column small="full" medium="one-third" large="one-third">
-          <NewsArticleFilterAccordion sections={filters} />
+          {/* <NewsArticleFilterAccordion sections={filters} /> */}
+          <Heading level={2} text="Search and filters" />
+
+          <label htmlFor="eventSearch">Search</label>
+          <Input name="eventSearch" id="eventSearch" type="text" isFullWidth />
+          <Styles.ServiceSelect>
+            <DropDownSelect
+              label="Services"
+              options={[
+                { title: 'All services', value: 'all-services' },
+                { title: 'Adult social care and wellbeing', value: 'adult-social-care-and-wellbeing' },
+                { title: 'Bins, recycling and waste', value: 'bins' },
+                { title: 'Council tax', value: 'council-tax' },
+              ]}
+              onChange={() => {}}
+            />
+          </Styles.ServiceSelect>
+
+          <label htmlFor="startDate">Start Date</label>
+          <Input name="startDate" id="startDate" type="date" isFullWidth />
+
+          <label htmlFor="endDate">End Date</label>
+          <Input name="endDate" id="endDate" type="date" isFullWidth />
+
+          <FormButton text="Search" size="large" />
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Styles.EventListHeader>

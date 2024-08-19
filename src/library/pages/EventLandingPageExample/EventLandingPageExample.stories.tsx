@@ -14,5 +14,5 @@ export default {
 
 const Template: StoryFn<EventLandingPageExampleProps> = (args) => <EventLandingPageExample {...args} />;
 
-export const EventPage = Template.bind({});
-EventPage.args = {};
+export const EventLandingPage = Template.bind({});
+EventLandingPage.args = {};

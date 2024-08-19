@@ -6,6 +6,8 @@ import EventDetails from '../../components/EventDetails/EventDetails';
 import GoogleMap from '../../slices/GoogleMap/GoogleMap';
 import { GoogleMapWithTitleAndDescription } from '../../slices/GoogleMap/GoogleMap.storydata';
 import { EventItemProps, EventListProps } from '../../structure/EventList/EventList.types';
+import Button from '../../components/Button/Button';
+import SummaryList from '../../components/SummaryList/SummaryList';
 
 export interface EventPageExampleProps {
   event: EventItemProps;
@@ -49,15 +51,27 @@ export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = 
 
             <div dangerouslySetInnerHTML={{ __html: event.description }} />
 
+            <Heading level={2} text="Contact details" />
+            <SummaryList
+              terms={[
+                { term: 'Email', detail: event.email ? `<a href="mailto:${event.email}">${event.email}</a>` : '' },
+                { term: 'Website', detail: event.website ? `<a href="${event.website}">${event.website}</a>` : '' },
+                {
+                  term: 'Telephone',
+                  detail: event.telephone ? `<a href="tel:${event.telephone}">${event.telephone}</a>` : '',
+                },
+              ]}
+            />
+
             <Heading level={2} text="Venue" />
+            {event.address && (
+              <>
+                <Heading level={3} text="Address" />
+                <p dangerouslySetInnerHTML={{ __html: event.address.split(',').join('<br />') }} />
+              </>
+            )}
+
             <GoogleMap {...GoogleMapWithTitleAndDescription} />
-            <Heading level={3} text="Address" />
-            <p>
-              1 Street Name <br />
-              Town Name <br />
-              City Name <br />
-              NN1 1AA
-            </p>
           </PageStructures.PageMain>
           <PageStructures.PageSidebar>
             <PageStructures.SectionLinksSidebar

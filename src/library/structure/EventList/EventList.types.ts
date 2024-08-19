@@ -88,4 +88,24 @@ export interface EventItemProps {
    * The alt text for the image
    */
   imageAltText?: string;
+
+  /**
+   * Optional contact email
+   */
+  email?: string;
+
+  /**
+   * Optional website address
+   */
+  website?: string;
+
+  /**
+   * Optional telephone number
+   */
+  telephone?: string;
+
+  /**
+   * Optional address
+   */
+  address?: string;
 }
