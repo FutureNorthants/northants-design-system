@@ -45,7 +45,7 @@ export const ExampleEventListResults: EventListProps = {
       email: 'example@westnorthants.gov.uk',
       website: 'https://www.westnorthants.gov.uk',
       telephone: '0123456789',
-      address: '1 Street Name, Town Name, City Name, NN1 1AA',
+      address: 'One Angel Square, Angel Street, Northampton, Northamptonshire, NN1 1ED',
     },
     {
       id: '2',

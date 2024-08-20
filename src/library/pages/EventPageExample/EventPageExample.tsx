@@ -17,7 +17,7 @@ export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = 
   return (
     <>
       <PageStructures.Header />
-      <PageStructures.MaxWidthContainer noPadding>
+      <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs
           breadcrumbsArray={[
             {
@@ -51,7 +51,20 @@ export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = 
 
             <div dangerouslySetInnerHTML={{ __html: event.description }} />
 
-            <Heading level={2} text="Contact details" />
+            <Heading level={2} text="Venue" />
+            {event.address && (
+              <>
+                <Heading level={3} text="Address" />
+                <p dangerouslySetInnerHTML={{ __html: event.address.split(',').join('<br />') }} />
+              </>
+            )}
+
+            <GoogleMap
+              link_url="https://www.google.com/maps/place/One+Angel+Square/@52.2354975,-0.8957381,17z/data=!3m1!4b1!4m6!3m5!1s0x48770edc25edd1b9:0x78dc9df52ed14fee!8m2!3d52.2354975!4d-0.8957381!16s%2Fg%2F11dz56s7wz?entry=ttu"
+              iframe_html='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.4341513867266!2d-0.898313022311356!3d52.23549747198806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770edc25edd1b9%3A0x78dc9df52ed14fee!2sOne%20Angel%20Square!5e0!3m2!1sen!2suk!4v1724139365516!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            />
+
+            <Heading level={3} text="Contact details" />
             <SummaryList
               terms={[
                 { term: 'Email', detail: event.email ? `<a href="mailto:${event.email}">${event.email}</a>` : '' },
@@ -62,16 +75,6 @@ export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = 
                 },
               ]}
             />
-
-            <Heading level={2} text="Venue" />
-            {event.address && (
-              <>
-                <Heading level={3} text="Address" />
-                <p dangerouslySetInnerHTML={{ __html: event.address.split(',').join('<br />') }} />
-              </>
-            )}
-
-            <GoogleMap {...GoogleMapWithTitleAndDescription} />
           </PageStructures.PageMain>
           <PageStructures.PageSidebar>
             <PageStructures.SectionLinksSidebar
