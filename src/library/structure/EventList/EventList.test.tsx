@@ -5,12 +5,12 @@ import { west_theme } from '../../../themes/theme_generator';
 import EventList from './EventList';
 import { EventListProps } from './EventList.types';
 
-describe('Test Component', () => {
+describe('Event List Component', () => {
   let props: EventListProps;
 
   beforeEach(() => {
     props = {
-      filters: [],
+      services: [],
       results: [
         {
           id: '1',
@@ -39,7 +39,7 @@ describe('Test Component', () => {
     const link = getByRole('link');
 
     expect(component).toHaveTextContent('An example event');
-    expect(component).toHaveTextContent('Friday, 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
     expect(component).toHaveTextContent('The Guildhall');
 
     expect(link).toBeVisible();

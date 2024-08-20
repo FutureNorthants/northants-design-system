@@ -22,12 +22,12 @@ describe('Event Details Component', () => {
       </ThemeProvider>
     );
 
-  it('should render foo text correctly', () => {
+  it('should render date time and location text correctly', () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('Friday, 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
     expect(component).toHaveTextContent('The Guildhall');
   });
 });

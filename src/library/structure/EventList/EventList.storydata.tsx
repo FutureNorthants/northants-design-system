@@ -1,32 +1,14 @@
 import React from 'react';
-import Input from '../../components/Input/Input';
 import { EventListProps } from './EventList.types';
-import Searchbar from '../Searchbar/Searchbar';
 
 export const ExampleEventListResults: EventListProps = {
   totalResults: 10,
   pageNumber: 1,
-  filters: [
-    {
-      title: 'Search',
-      content: (
-        <div>
-          <Searchbar isLight />
-        </div>
-      ),
-    },
-    {
-      title: 'Dates',
-      content: (
-        <div>
-          <label htmlFor="startDate">Start Date</label>
-          <Input name="startDate" value="" id="startDate" type="date" />
-
-          <label htmlFor="endDate">End Date</label>
-          <Input name="endDate" value="" id="endDate" type="date" />
-        </div>
-      ),
-    },
+  services: [
+    { title: 'All services', value: 'all-services' },
+    { title: 'Adult social care and wellbeing', value: 'adult-social-care-and-wellbeing' },
+    { title: 'Bins, recycling and waste', value: 'bins' },
+    { title: 'Council tax', value: 'council-tax' },
   ],
   results: [
     {
@@ -88,4 +70,13 @@ export const ExampleEventListResults: EventListProps = {
       location: 'The Guildhall',
     },
   ],
+  sortBy: 'asc',
+  setSortBy: () => {},
+  service: '',
+  setService: () => {},
+  startDate: '',
+  setStartDate: () => {},
+  endDate: '',
+  setEndDate: () => {},
+  onSubmit: () => {},
 };

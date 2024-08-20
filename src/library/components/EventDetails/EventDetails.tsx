@@ -19,15 +19,17 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
         </Styles.IconContainer>
         <Styles.Details>
           <span>
-            {start.toLocaleDateString('en-GB', {
-              weekday: 'long',
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-              hour: 'numeric',
-              minute: '2-digit',
-              hour12: true,
-            })}
+            {start
+              .toLocaleDateString('en-GB', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true,
+              })
+              .replace(',', '')}
           </span>
         </Styles.Details>
       </Styles.EventRow>

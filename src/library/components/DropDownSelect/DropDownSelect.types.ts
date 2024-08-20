@@ -38,6 +38,11 @@ export interface DropDownSelectProps {
    * The error text to display
    */
   errorText?: string;
+
+  /**
+   * The value used for a controlled component
+   */
+  value?: string;
 }
 
 export interface DropDownSelectOptionsProps {

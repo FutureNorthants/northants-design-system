@@ -1,12 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
-import { AccordionSectionProps } from '../../slices/Accordion/Accordion.types';
+import { DropDownSelectOptionsProps } from '../../components/DropDownSelect/DropDownSelect.types';
 
 export interface EventListProps {
-  /**
-   * The search filters
-   */
-  filters: AccordionSectionProps[];
-
   /**
    * Events that match the search term
    */
@@ -23,6 +18,11 @@ export interface EventListProps {
   pageNumber?: number;
 
   /**
+   * The list of services to select from
+   */
+  services: DropDownSelectOptionsProps[];
+
+  /**
    * What the list is sorted by
    */
   sortBy?: string;
@@ -31,6 +31,48 @@ export interface EventListProps {
    * Function prop passed in to handle updating sort
    */
   setSortBy?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The event search term
+   */
+  eventSearch?: string;
+
+  /**
+   * Function prop passed in to handle updating event search
+   */
+  setEventSearch?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The selected service filter
+   */
+  service?: string;
+
+  /**
+   * Function prop passed in to handle updating the service
+   */
+  setService?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The selected start date filter
+   */
+  startDate?: string;
+
+  /**
+   * Function prop passed in to handle updating the start date
+   */
+  setStartDate?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The selected end date
+   */
+  endDate?: string;
+
+  /**
+   * Function prop passed in to handle updating the end date
+   */
+  setEndDate?: Dispatch<SetStateAction<string>>;
+
+  onSubmit?: () => void;
 }
 
 export interface EventItemProps {
