@@ -16,6 +16,17 @@ export interface EventPageExampleProps {
 export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = ({ event }) => {
   return (
     <>
+      <PageStructures.CookieBanner
+        title="We use cookies on this site to enhance your user experience"
+        paragraph={
+          <p>
+            By clicking the Accept button, you agree to us doing so. <a href="#">More info on our cookie policy</a>
+          </p>
+        }
+        acceptButtonText="Accept cookies policy"
+        rejectButtonText="No, thanks"
+        acceptCallback={() => {}}
+      />
       <PageStructures.Header />
       <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs
