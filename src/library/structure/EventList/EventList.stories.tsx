@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StoryFn } from '@storybook/react';
 import EventList from './EventList';
 import { EventListProps } from './EventList.types';
@@ -17,15 +17,18 @@ export default {
   },
 };
 
-const Template: StoryFn<EventListProps> = (args) => (
-  <SBPadding>
-    <MaxWidthContainer>
-      <PageMain>
-        <EventList {...args} />
-      </PageMain>
-    </MaxWidthContainer>
-  </SBPadding>
-);
+const Template: StoryFn<EventListProps> = (args) => {
+  const [eventSearch, setEventSearch] = useState('');
+  return (
+    <SBPadding>
+      <MaxWidthContainer>
+        <PageMain>
+          <EventList {...args} eventSearch={eventSearch} setEventSearch={setEventSearch} />
+        </PageMain>
+      </MaxWidthContainer>
+    </SBPadding>
+  );
+};
 
 export const ExampleEventList = Template.bind({});
 ExampleEventList.args = ExampleEventListResults;

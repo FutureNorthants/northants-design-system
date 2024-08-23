@@ -59,7 +59,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               type="text"
               isFullWidth
               value={eventSearch}
-              onChange={(e) => setEventSearch(e.value)}
+              onChange={(e) => setEventSearch(e.target.value)}
             />
             <Styles.ServiceSelect>
               <DropDownSelect
@@ -77,7 +77,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               type="date"
               isFullWidth
               value={startDate}
-              onChange={(e) => setStartDate(e.value)}
+              onChange={(e) => setStartDate(e.target.value)}
             />
 
             <label htmlFor="endDate">End Date</label>
@@ -87,7 +87,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               type="date"
               isFullWidth
               value={endDate}
-              onChange={(e) => setEndDate(e.value)}
+              onChange={(e) => setEndDate(e.target.value)}
             />
 
             <FormButton text="Search" size="large" />
@@ -107,7 +107,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                     label="Sort by"
                     value={sortBy}
                     options={sortByOptions}
-                    onChange={(e) => setSortBy(e.value)}
+                    onChange={(e) => setSortBy(e.target.value)}
                   />
                 </Styles.SortCol>
               </Column>

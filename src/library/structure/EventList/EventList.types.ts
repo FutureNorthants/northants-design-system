@@ -89,7 +89,7 @@ export interface EventItemProps {
   /**
    * A description of the event
    */
-  description: string;
+  description?: string;
 
   /**
    * A short summary of the event
@@ -119,17 +119,17 @@ export interface EventItemProps {
   /**
    * The optional large image
    */
-  imageLarge?: string;
+  imageLarge?: string | null;
 
   /**
    * The optional small image
    */
-  imageSmall?: string;
+  imageSmall?: string | null;
 
   /**
    * The alt text for the image
    */
-  imageAltText?: string;
+  imageAltText?: string | null;
 
   /**
    * Optional contact email
