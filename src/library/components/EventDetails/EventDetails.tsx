@@ -2,6 +2,7 @@ import React from 'react';
 import { EventDetailsProps } from './EventDetails.types';
 import * as Styles from './EventDetails.styles';
 import DynamicIcon from '../DynamicIcon/DynamicIcon';
+import dayjs from 'dayjs';
 
 const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   startTime,
@@ -18,19 +19,7 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
           <DynamicIcon icon="events" />
         </Styles.IconContainer>
         <Styles.Details>
-          <span>
-            {start
-              .toLocaleDateString('en-GB', {
-                weekday: 'long',
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true,
-              })
-              .replace(',', '')}
-          </span>
+          <span>{dayjs(startTime).format('dddd D MMMM YYYY [at] h:mm a')}</span>
         </Styles.Details>
       </Styles.EventRow>
       <Styles.EventRow>
