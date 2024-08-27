@@ -31,9 +31,7 @@ const config: StorybookConfig = {
     NEXT_PUBLIC_BIN_FINDER_API_URL: 'https://api.westnorthants.digital/openapi/v1/unified-waste-collections/',
   }),
 
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
 };
 
 export default config;
