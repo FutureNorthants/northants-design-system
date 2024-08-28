@@ -10,6 +10,41 @@ export const Container = styled.div`
   }
 `;
 
+export const ToggleFilters = styled.button`
+  display: block;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  ${(props) => props.theme.fontStyles}
+  ${(props) => props.theme.linkStyles}
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    display: none;
+  }
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const FilterContainer = styled.div`
+  display: ${(props) => (props.$showFilters ? 'block' : 'none')};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    display: block;
+  }
+`;
+
 export const EventListHeader = styled.div`
   padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};

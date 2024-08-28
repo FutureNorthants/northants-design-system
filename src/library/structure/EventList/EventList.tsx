@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { EventListProps } from './EventList.types';
 import * as Styles from './EventList.styles';
 import Row from '../../components/Row/Row';
@@ -29,6 +29,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   setEndDate,
   onSubmit,
 }) => {
+  const [showFilters, setShowFilters] = useState(false);
   const sortByOptions: DropDownSelectOptionsProps[] = [
     {
       title: 'Most recent first',
@@ -49,49 +50,54 @@ const EventList: React.FunctionComponent<EventListProps> = ({
     <Styles.Container data-testid="EventList">
       <Row>
         <Column small="full" medium="one-third" large="one-third">
-          <Heading level={2} text="Search and filters" />
+          <Styles.ToggleFilters onClick={() => setShowFilters(!showFilters)}>
+            <span>{showFilters ? 'Hide' : 'Show'} search and filters</span>
+          </Styles.ToggleFilters>
+          <Styles.FilterContainer $showFilters={showFilters}>
+            <Heading level={2} text="Search and filters" />
 
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <label htmlFor="eventSearch">Search</label>
-            <Input
-              name="eventSearch"
-              id="eventSearch"
-              type="text"
-              isFullWidth
-              value={eventSearch}
-              onChange={(e) => setEventSearch(e.target.value)}
-            />
-            <Styles.ServiceSelect>
-              <DropDownSelect
-                label="Services"
-                options={services}
-                onChange={(e) => setService(e.target.value)}
-                value={service}
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <label htmlFor="eventSearch">Search</label>
+              <Input
+                name="eventSearch"
+                id="eventSearch"
+                type="text"
+                isFullWidth
+                value={eventSearch}
+                onChange={(e) => setEventSearch(e.target.value)}
               />
-            </Styles.ServiceSelect>
+              <Styles.ServiceSelect>
+                <DropDownSelect
+                  label="Services"
+                  options={services}
+                  onChange={(e) => setService(e.target.value)}
+                  value={service}
+                />
+              </Styles.ServiceSelect>
 
-            <label htmlFor="startDate">Start Date</label>
-            <Input
-              name="startDate"
-              id="startDate"
-              type="date"
-              isFullWidth
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-            />
+              <label htmlFor="startDate">Start Date</label>
+              <Input
+                name="startDate"
+                id="startDate"
+                type="date"
+                isFullWidth
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
 
-            <label htmlFor="endDate">End Date</label>
-            <Input
-              name="endDate"
-              id="endDate"
-              type="date"
-              isFullWidth
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-            />
+              <label htmlFor="endDate">End Date</label>
+              <Input
+                name="endDate"
+                id="endDate"
+                type="date"
+                isFullWidth
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
 
-            <FormButton text="Search" size="large" />
-          </form>
+              <FormButton text="Search" size="large" />
+            </form>
+          </Styles.FilterContainer>
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Styles.EventListHeader>
