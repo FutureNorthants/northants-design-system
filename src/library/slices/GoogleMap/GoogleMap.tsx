@@ -30,7 +30,9 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
 
   /* We also check the non-embed link goes to goo.gl/maps or www.google.com/maps */
   if (link_url) {
-    const googl_matches = link_url.match(/^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps/gi);
+    const googl_matches = link_url.match(
+      /^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps|https:\/\/maps.app.goo.gl/gi
+    );
     link_url = googl_matches?.length == 1 ? link_url : '';
   }
 
