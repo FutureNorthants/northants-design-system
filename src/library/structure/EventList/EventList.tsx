@@ -32,12 +32,12 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   const [showFilters, setShowFilters] = useState(false);
   const sortByOptions: DropDownSelectOptionsProps[] = [
     {
-      title: 'Most recent first',
-      value: 'asc',
+      title: 'Latest date',
+      value: 'desc',
     },
     {
-      title: 'Oldest first',
-      value: 'desc',
+      title: 'Earliest date',
+      value: 'asc',
     },
   ];
 
