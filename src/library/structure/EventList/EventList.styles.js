@@ -68,3 +68,32 @@ export const ResultInfo = styled.div`
 export const ServiceSelect = styled.div`
   margin-bottom: 25px;
 `;
+
+export const ClearFilters = styled.button`
+  display: block;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  ${(props) => props.theme.fontStyles}
+  ${(props) => props.theme.linkStyles}
+  color: ${(props) => props.theme.theme_vars.colours.negative} !important;
+  font-weight: normal;
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    color: ${(props) => props.theme.theme_vars.colours.negative} !important;
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+    color: ${(props) => props.theme.theme_vars.colours.black} !important;
+  }
+
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+    color: ${(props) => props.theme.theme_vars.colours.black} !important;
+  }
+`;

@@ -72,7 +72,15 @@ export interface EventListProps {
    */
   setEndDate?: Dispatch<SetStateAction<string>>;
 
+  /**
+   * The function prop passed in to handle the filters being submitted
+   */
   onSubmit?: () => void;
+
+  /**
+   * The function prop passed in to handle the clear filters
+   */
+  clearFilters?: () => void;
 }
 
 export interface EventItemProps {

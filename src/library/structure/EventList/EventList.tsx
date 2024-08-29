@@ -28,6 +28,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   endDate = '',
   setEndDate,
   onSubmit,
+  clearFilters,
 }) => {
   const [showFilters, setShowFilters] = useState(false);
   const sortByOptions: DropDownSelectOptionsProps[] = [
@@ -97,6 +98,9 @@ const EventList: React.FunctionComponent<EventListProps> = ({
 
               <FormButton text="Search" size="large" />
             </form>
+            {(eventSearch || startDate || endDate || service) && (
+              <Styles.ClearFilters onClick={() => clearFilters()}>Clear all filters</Styles.ClearFilters>
+            )}
           </Styles.FilterContainer>
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
