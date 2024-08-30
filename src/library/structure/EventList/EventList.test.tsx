@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
@@ -22,6 +22,8 @@ describe('Event List Component', () => {
           location: 'The Guildhall',
         },
       ],
+      totalResults: 1,
+      pageNumber: 1,
     };
   });
 
@@ -38,11 +40,35 @@ describe('Event List Component', () => {
     const component = getByTestId('EventList');
     const link = getByRole('link');
 
+    expect(component).toHaveTextContent('1 event');
     expect(component).toHaveTextContent('An example event');
     expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
     expect(component).toHaveTextContent('The Guildhall');
+    expect(component).not.toHaveTextContent('Clear filters');
 
     expect(link).toBeVisible();
     expect(link).toHaveAttribute('href', '/events/1');
+  });
+
+  it('should pluralise events when more than one', () => {
+    props.totalResults = 2;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventList');
+
+    expect(component).toHaveTextContent('2 events');
+  });
+
+  it('should show clear filters when a filter  has been applied', () => {
+    props.eventSearch = 'test search term';
+
+    const { getByTestId, getByLabelText } = renderComponent();
+
+    const component = getByTestId('EventList');
+    const eventSearch = getByLabelText('Search');
+
+    expect(eventSearch).toHaveValue('test search term');
+    expect(component).toHaveTextContent('Clear filters');
   });
 });

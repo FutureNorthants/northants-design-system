@@ -19,6 +19,7 @@ describe('Event Link Component', () => {
       imageSmall: 'https://via.placeholder.com/360x203',
       imageAltText: 'The example images alt text',
       location: 'One Angel Square',
+      showSummary: true,
     };
   });
 
@@ -30,10 +31,29 @@ describe('Event Link Component', () => {
     );
 
   it('should render title text correctly', () => {
+    const { getByTestId, getByRole } = renderComponent();
+
+    const component = getByTestId('EventLink');
+    const image = getByRole('img');
+
+    expect(component).toHaveTextContent('An example event');
+    expect(component).toHaveAttribute('href', '/events/1');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('One Angel Square');
+    expect(component).toHaveTextContent('The example events summary.');
+
+    expect(image).toBeVisible();
+    expect(image).toHaveAttribute('alt', 'The example images alt text');
+    expect(image).toHaveAttribute('src', 'https://via.placeholder.com/720x405');
+  });
+
+  it('should hide the summary text', () => {
+    props.showSummary = false;
+
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventLink');
 
-    expect(component).toHaveTextContent('An example event');
+    expect(component).not.toHaveTextContent('The example events summary.');
   });
 });

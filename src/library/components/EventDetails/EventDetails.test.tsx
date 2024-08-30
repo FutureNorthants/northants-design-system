@@ -30,4 +30,14 @@ describe('Event Details Component', () => {
     expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
     expect(component).toHaveTextContent('The Guildhall');
   });
+
+  it('should display 12pm and not 00pm for midday', () => {
+    props.startTime = '16 August 2024 12:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 12:00 pm');
+  });
 });

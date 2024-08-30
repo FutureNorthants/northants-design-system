@@ -99,7 +99,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               <FormButton text="Search" size="large" />
             </form>
             {(eventSearch || startDate || endDate || service) && (
-              <Styles.ClearFilters onClick={() => clearFilters()}>Clear all filters</Styles.ClearFilters>
+              <Styles.ClearFilters onClick={() => clearFilters()}>Clear filters</Styles.ClearFilters>
             )}
           </Styles.FilterContainer>
         </Column>
