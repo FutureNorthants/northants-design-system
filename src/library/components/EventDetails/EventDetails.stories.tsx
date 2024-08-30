@@ -25,3 +25,10 @@ ExampleEventDetails.args = {
   startTime: '16 August 2024 10:00:00',
   location: 'The Guildhall',
 };
+
+export const ExampleEventDetailsWithEnd = Template.bind({});
+ExampleEventDetailsWithEnd.args = {
+  startTime: '16 August 2024 10:00:00',
+  location: 'The Guildhall',
+  endTime: '16 August 2024 11:00:00',
+};

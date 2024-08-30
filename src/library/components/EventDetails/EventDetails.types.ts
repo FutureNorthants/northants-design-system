@@ -5,6 +5,11 @@ export interface EventDetailsProps {
   startTime: string;
 
   /**
+   * Optional end date and time in a format JavaScript can parse
+   */
+  endTime?: string;
+
+  /**
    * Event location
    */
   location: string;

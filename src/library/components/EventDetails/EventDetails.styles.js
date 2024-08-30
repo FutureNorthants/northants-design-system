@@ -29,4 +29,8 @@ export const Details = styled.div`
   display: flex;
   align-items: center;
   font-weight: bold;
+
+  span {
+    display: block;
+  }
 `;

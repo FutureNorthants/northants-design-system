@@ -40,4 +40,14 @@ describe('Event Details Component', () => {
 
     expect(component).toHaveTextContent('Friday 16 August 2024 at 12:00 pm');
   });
+
+  it('should display the end date when set', () => {
+    props.endTime = '16 August 2024 13:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('to Friday 16 August 2024 at 1:00 pm');
+  });
 });
