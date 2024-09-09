@@ -12,11 +12,11 @@ export const NewsArticleFilterFields = {
     queryParamKey: 'articleType',
   },
   year: {
-    title: 'Publish date',
+    title: 'Date',
     queryParamKey: 'year',
   },
   month: {
-    title: 'Publish date',
+    title: 'Date',
     queryParamKey: 'month',
   },
   sortBy: {

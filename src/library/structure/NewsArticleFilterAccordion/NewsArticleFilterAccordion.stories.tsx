@@ -36,5 +36,9 @@ ExampleNewsArticleFilterAccordion.args = {
       title: 'Type of article',
       content: <p>hello</p>,
     },
+    {
+      title: 'Date',
+      content: <p>hello</p>,
+    },
   ],
 };
