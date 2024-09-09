@@ -81,6 +81,11 @@ export interface EventListProps {
    * The function prop passed in to handle the clear filters
    */
   clearFilters?: () => void;
+
+  /**
+   * The optional path for pagination
+   */
+  eventsPagePath?: string;
 }
 
 export interface EventItemProps {

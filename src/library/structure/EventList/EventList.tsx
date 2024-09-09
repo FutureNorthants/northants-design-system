@@ -29,6 +29,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   setEndDate,
   onSubmit,
   clearFilters,
+  eventsPagePath = '/events',
 }) => {
   const [showFilters, setShowFilters] = useState(false);
   const sortByOptions: DropDownSelectOptionsProps[] = [
@@ -136,7 +137,12 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 </Column>
               ))}
               <Column small="full" medium="full" large="full">
-                <Pagination currentPage={pageNumber} totalResults={totalResults} postTo="/" resultsPerPage={5} />
+                <Pagination
+                  currentPage={pageNumber}
+                  totalResults={totalResults}
+                  postTo={eventsPagePath}
+                  resultsPerPage={5}
+                />
               </Column>
             </Row>
           ) : (
