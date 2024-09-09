@@ -66,7 +66,10 @@ export const Container = styled.a`
 `;
 
 export const EventContent = styled.div`
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding: ${(props) =>
+    props.$hasPadding
+      ? props.theme.theme_vars.spacingSizes.medium
+      : `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.medium}`};
   ${(props) => props.theme.fontStyles};
 `;
 

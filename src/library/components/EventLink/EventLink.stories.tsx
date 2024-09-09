@@ -46,3 +46,18 @@ ExampleEventLinkWithSummary.args = {
   location: 'One Angel Square',
   showSummary: true,
 };
+
+export const ExampleEventLinkNoPadding = Template.bind({});
+ExampleEventLinkNoPadding.args = {
+  title: 'An example event',
+  summary: 'The example events summary that describes the event.',
+  startTime: '16 August 2024 10:00:00',
+  endTime: '16 August 2024 11:00:00',
+  url: '/events/1',
+  imageLarge: 'https://via.placeholder.com/720x405',
+  imageSmall: 'https://via.placeholder.com/360x203',
+  imageAltText: 'The example images alt text',
+  location: 'One Angel Square',
+  showSummary: false,
+  hasPadding: false,
+};

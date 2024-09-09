@@ -31,6 +31,6 @@ export const Details = styled.div`
   font-weight: bold;
 
   span {
-    display: block;
+    display: inline;
   }
 `;

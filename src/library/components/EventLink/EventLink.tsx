@@ -17,6 +17,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
   imageSmall,
   imageAltText,
   showSummary = false,
+  hasPadding = true,
 }) => (
   <Styles.Container data-testid="EventLink" href={url}>
     <Row>
@@ -26,7 +27,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
         large={imageLarge ? 'two-thirds' : 'full'}
         hasPadding={false}
       >
-        <Styles.EventContent>
+        <Styles.EventContent $hasPadding={hasPadding}>
           <Styles.Title className="event-list__title">{title}</Styles.Title>
           {summary && showSummary && <Styles.Description>{summary}</Styles.Description>}
           <EventDetails

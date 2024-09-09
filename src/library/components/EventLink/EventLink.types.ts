@@ -48,4 +48,9 @@ export interface EventLinkProps {
    * The alt text for the image
    */
   imageAltText?: string;
+
+  /**
+   * Should the link have padding. Defaults to true
+   */
+  hasPadding?: boolean;
 }

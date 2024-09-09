@@ -12,6 +12,7 @@ import Pagination from './library/components/Pagination/Pagination';
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import RelatedEvents from './library/components/RelatedEvents/RelatedEvents';
 import ResponsiveImage from './library/components/ResponsiveImage/ResponsiveImage';
 import StaticMap from './library/components/StaticMap/StaticMap';
 import SummaryList from './library/components/SummaryList/SummaryList';
@@ -32,6 +33,7 @@ export {
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  RelatedEvents,
   ResponsiveImage,
   StaticMap,
   SummaryList,
