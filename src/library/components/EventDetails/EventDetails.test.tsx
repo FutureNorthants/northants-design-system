@@ -41,13 +41,23 @@ describe('Event Details Component', () => {
     expect(component).toHaveTextContent('Friday 16 August 2024 at 12:00 pm');
   });
 
-  it('should display the end date when set', () => {
+  it('should display the end time when the same day', () => {
     props.endTime = '16 August 2024 13:00:00';
 
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('to Friday 16 August 2024 at 1:00 pm');
+    expect(component).toHaveTextContent('to 1:00 pm');
+  });
+
+  it('should display the end date when not the same day', () => {
+    props.endTime = '17 August 2024 13:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('to Saturday 17 August 2024 at 1:00 pm');
   });
 });

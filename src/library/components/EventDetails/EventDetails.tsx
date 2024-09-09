@@ -11,14 +11,18 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   hasBorder = true,
   hasMargin = true,
 }) => {
-  const start = new Date(startTime);
   const end = () => {
     if (!endTime) {
       return '';
     } else {
       const endDate = dayjs(endTime);
       const startDate = dayjs(startTime);
-      return 'for ' + endDate.diff(startDate, 'hour') + ' hours';
+
+      if (startDate.format('YYYY-MM-DD') === endDate.format('YYYY-MM-DD')) {
+        return `to ${endDate.format('h:mm a')}`;
+      } else {
+        return `to ${endDate.format('dddd D MMMM YYYY [at] h:mm a')}`;
+      }
     }
   };
 
@@ -31,7 +35,7 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
         <Styles.Details>
           <div>
             <span>{dayjs(startTime).format('dddd D MMMM YYYY [at] h:mm a')} </span>
-            {endTime && <span>to {dayjs(endTime).format('dddd D MMMM YYYY [at] h:mm a')}</span>}
+            {endTime && <span>{end()}</span>}
           </div>
         </Styles.Details>
       </Styles.EventRow>

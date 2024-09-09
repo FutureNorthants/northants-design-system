@@ -29,7 +29,13 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
         <Styles.EventContent>
           <Styles.Title className="event-list__title">{title}</Styles.Title>
           {summary && showSummary && <Styles.Description>{summary}</Styles.Description>}
-          <EventDetails startTime={startTime} location={location} hasBorder={false} hasMargin={false} />
+          <EventDetails
+            startTime={startTime}
+            endTime={endTime}
+            location={location}
+            hasBorder={false}
+            hasMargin={false}
+          />
         </Styles.EventContent>
       </Column>
       {imageLarge && (

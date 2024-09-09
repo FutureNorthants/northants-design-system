@@ -32,3 +32,10 @@ ExampleEventDetailsWithEnd.args = {
   location: 'The Guildhall',
   endTime: '16 August 2024 11:00:00',
 };
+
+export const ExampleEventDetailsWithEndDifferentDay = Template.bind({});
+ExampleEventDetailsWithEndDifferentDay.args = {
+  startTime: '16 August 2024 10:00:00',
+  location: 'The Guildhall',
+  endTime: '17 August 2024 11:00:00',
+};

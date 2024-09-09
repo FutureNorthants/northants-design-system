@@ -22,7 +22,7 @@ export interface EventLinkProps {
   /**
    * The date and time the event finishes
    */
-  endTime: string;
+  endTime?: string;
 
   /**
    * The optional location of the event
