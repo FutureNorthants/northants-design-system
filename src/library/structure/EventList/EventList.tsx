@@ -126,25 +126,25 @@ const EventList: React.FunctionComponent<EventListProps> = ({
           </Styles.EventListHeader>
 
           {results && results.length > 0 ? (
-            <Row isList>
-              {results.map((result) => (
-                <Column isList small="full" medium="full" large="full" key={result.id}>
-                  <EventLink
-                    {...result}
-                    showSummary
-                    summary={result.summary ? transformSnippet(result.summary, 50) : ''}
-                  />
-                </Column>
-              ))}
-              <Column small="full" medium="full" large="full">
-                <Pagination
-                  currentPage={pageNumber}
-                  totalResults={totalResults}
-                  postTo={eventsPagePath}
-                  resultsPerPage={5}
-                />
-              </Column>
-            </Row>
+            <>
+              <Row isList>
+                {results.map((result) => (
+                  <Column isList small="full" medium="full" large="full" key={result.id}>
+                    <EventLink
+                      {...result}
+                      showSummary
+                      summary={result.summary ? transformSnippet(result.summary, 50) : ''}
+                    />
+                  </Column>
+                ))}
+              </Row>
+              <Pagination
+                currentPage={pageNumber}
+                totalResults={totalResults}
+                postTo={eventsPagePath}
+                resultsPerPage={5}
+              />
+            </>
           ) : (
             <Styles.ResultInfo>No results found</Styles.ResultInfo>
           )}
