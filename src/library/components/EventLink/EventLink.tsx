@@ -38,7 +38,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
             hasBorder={false}
             hasMargin={false}
           />
-          {isPromoted && <Styles.Promoted>Promoted</Styles.Promoted>}
+          {isPromoted && <Styles.Promoted>Featured</Styles.Promoted>}
         </Styles.EventContent>
       </Column>
       {imageLarge && (

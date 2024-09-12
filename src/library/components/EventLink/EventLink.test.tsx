@@ -64,6 +64,6 @@ describe('Event Link Component', () => {
 
     const component = getByTestId('EventLink');
 
-    expect(component).toHaveTextContent('Promoted');
+    expect(component).toHaveTextContent('Featured');
   });
 });
