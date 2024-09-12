@@ -33,6 +33,20 @@ ExampleEventLink.args = {
   location: 'One Angel Square',
 };
 
+export const ExamplePromotedEventLink = Template.bind({});
+ExamplePromotedEventLink.args = {
+  title: 'An example event',
+  summary: 'The example events summary that describes the event.',
+  startTime: '16 August 2024 10:00:00',
+  endTime: '16 August 2024 11:00:00',
+  url: '/events/1',
+  imageLarge: 'https://via.placeholder.com/720x405',
+  imageSmall: 'https://via.placeholder.com/360x203',
+  imageAltText: 'The example images alt text',
+  location: 'One Angel Square',
+  isPromoted: true,
+};
+
 export const ExampleEventLinkWithSummary = Template.bind({});
 ExampleEventLinkWithSummary.args = {
   title: 'An example event',

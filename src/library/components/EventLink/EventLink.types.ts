@@ -53,4 +53,9 @@ export interface EventLinkProps {
    * Should the link have padding. Defaults to true
    */
   hasPadding?: boolean;
+
+  /**
+   * Is the link a promoted link. Defaults to false.
+   */
+  isPromoted?: boolean;
 }

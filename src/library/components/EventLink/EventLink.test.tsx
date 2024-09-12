@@ -56,4 +56,14 @@ describe('Event Link Component', () => {
 
     expect(component).not.toHaveTextContent('The example events summary.');
   });
+
+  it('should show the promoted tag if promoted', () => {
+    props.isPromoted = true;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventLink');
+
+    expect(component).toHaveTextContent('Promoted');
+  });
 });

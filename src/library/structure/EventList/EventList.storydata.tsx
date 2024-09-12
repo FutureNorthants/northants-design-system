@@ -28,6 +28,7 @@ export const ExampleEventListResults: EventListProps = {
       website: 'https://www.westnorthants.gov.uk',
       telephone: '0123456789',
       address: 'One Angel Square, Angel Street, Northampton, Northamptonshire, NN1 1ED',
+      isPromoted: true,
     },
     {
       id: '2',

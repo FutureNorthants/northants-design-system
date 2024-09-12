@@ -13,7 +13,8 @@ export const Container = styled.a`
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   transition: box-shadow 0.3s ease;
-  border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
+  border-bottom: 5px solid
+    ${(props) => (props.$isPromoted ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action)};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   overflow: hidden;
   text-decoration: none !important;
@@ -63,6 +64,16 @@ export const Container = styled.a`
       min-height: 150px;
     }
   }
+`;
+
+export const Promoted = styled.div`
+  background-color: ${(props) => props.theme.theme_vars.colours.action_light};
+  color: ${(props) => props.theme.theme_vars.colours.action_dark};
+  display: inline-block;
+  padding: ${(props) =>
+    `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
 `;
 
 export const EventContent = styled.div`

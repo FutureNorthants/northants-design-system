@@ -163,4 +163,9 @@ export interface EventItemProps {
    * Optional address
    */
   address?: string;
+
+  /**
+   * Is the event promoted. Defaults to false
+   */
+  isPromoted?: boolean;
 }

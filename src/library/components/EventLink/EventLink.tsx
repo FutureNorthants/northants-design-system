@@ -18,8 +18,9 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
   imageAltText,
   showSummary = false,
   hasPadding = true,
+  isPromoted = false,
 }) => (
-  <Styles.Container data-testid="EventLink" href={url}>
+  <Styles.Container data-testid="EventLink" href={url} $isPromoted={isPromoted}>
     <Row>
       <Column
         small="full"
@@ -28,6 +29,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
         hasPadding={false}
       >
         <Styles.EventContent $hasPadding={hasPadding}>
+          {isPromoted && <Styles.Promoted>Promoted</Styles.Promoted>}
           <Styles.Title className="event-list__title">{title}</Styles.Title>
           {summary && showSummary && <Styles.Description>{summary}</Styles.Description>}
           <EventDetails
