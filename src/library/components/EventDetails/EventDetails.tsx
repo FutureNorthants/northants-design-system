@@ -11,17 +11,20 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   hasBorder = true,
   hasMargin = true,
 }) => {
-  const end = () => {
+  const formatTime = () => {
     if (!endTime) {
-      return '';
+      return dayjs(startTime).format('dddd D MMMM YYYY [at] h:mm a');
     } else {
       const endDate = dayjs(endTime);
       const startDate = dayjs(startTime);
 
       if (startDate.format('YYYY-MM-DD') === endDate.format('YYYY-MM-DD')) {
-        return `to ${endDate.format('h:mm a')}`;
+        if (startDate.format('HH:mm') === '00:00' && endDate.format('HH:mm') === '23:59') {
+          return `${startDate.format('dddd D MMMM YYYY')} - all day`;
+        }
+        return `${startDate.format('dddd D MMMM YYYY [at] h:mm a')} to ${endDate.format('h:mm a')}`;
       } else {
-        return `to ${endDate.format('dddd D MMMM YYYY [at] h:mm a')}`;
+        return `${startDate.format('dddd D MMMM YYYY [at] h:mm a')} to ${endDate.format('dddd D MMMM YYYY [at] h:mm a')}`;
       }
     }
   };
@@ -34,8 +37,7 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
         </Styles.IconContainer>
         <Styles.Details>
           <div>
-            <span>{dayjs(startTime).format('dddd D MMMM YYYY [at] h:mm a')} </span>
-            {endTime && <span>{end()}</span>}
+            <span>{formatTime()}</span>
           </div>
         </Styles.Details>
       </Styles.EventRow>

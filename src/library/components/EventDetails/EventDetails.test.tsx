@@ -60,4 +60,15 @@ describe('Event Details Component', () => {
 
     expect(component).toHaveTextContent('to Saturday 17 August 2024 at 1:00 pm');
   });
+
+  it('should say all day for all day events', () => {
+    props.startTime = '16 August 2024 00:00:00';
+    props.endTime = '16 August 2024 23:59:59';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('Friday 16 August 2024 - all day');
+  });
 });
