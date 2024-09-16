@@ -38,7 +38,7 @@ describe('Event Link Component', () => {
 
     expect(component).toHaveTextContent('An example event');
     expect(component).toHaveAttribute('href', '/events/1');
-    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10am');
     expect(component).toHaveTextContent('One Angel Square');
     expect(component).toHaveTextContent('The example events summary.');
 

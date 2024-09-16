@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
@@ -42,7 +42,7 @@ describe('Event List Component', () => {
 
     expect(component).toHaveTextContent('1 event');
     expect(component).toHaveTextContent('An example event');
-    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10am');
     expect(component).toHaveTextContent('The Guildhall');
     expect(component).not.toHaveTextContent('Clear filters');
 

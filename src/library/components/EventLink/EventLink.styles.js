@@ -1,20 +1,32 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const promotedStyles = (props) => {
+  if (props.$isPromoted) {
+    return css`
+      border: 5px solid ${(props) => props.theme.theme_vars.colours.action_light};
+      background: ${(props) => props.theme.theme_vars.colours.white} !important;
+    `;
+  } else {
+    return css`
+      border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
+      background: ${(props) =>
+        props.theme.cardinal_name === 'north'
+          ? props.theme.theme_vars.colours.white
+          : props.theme.theme_vars.colours.grey_light} !important;
+    `;
+  }
+};
 
 export const Container = styled.a`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   cursor: pointer;
-  background: ${(props) =>
-    props.theme.cardinal_name === 'north'
-      ? props.theme.theme_vars.colours.white
-      : props.theme.theme_vars.colours.grey_light} !important;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
   transition: box-shadow 0.3s ease;
-  border-bottom: 5px solid
-    ${(props) => (props.$isPromoted ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action)};
+  ${promotedStyles};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   overflow: hidden;
   text-decoration: none !important;
@@ -72,7 +84,7 @@ export const Promoted = styled.div`
   display: inline-block;
   padding: ${(props) =>
     `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
 `;
 

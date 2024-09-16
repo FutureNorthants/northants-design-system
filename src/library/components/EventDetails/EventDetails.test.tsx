@@ -10,7 +10,7 @@ describe('Event Details Component', () => {
 
   beforeEach(() => {
     props = {
-      startTime: '16 August 2024 10:00:00',
+      startTime: '16 August 2024 10:15:00',
       location: 'The Guildhall',
     };
   });
@@ -27,38 +27,38 @@ describe('Event Details Component', () => {
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:00 am');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10:15am');
     expect(component).toHaveTextContent('The Guildhall');
   });
 
   it('should display 12pm and not 00pm for midday', () => {
-    props.startTime = '16 August 2024 12:00:00';
+    props.startTime = '16 August 2024 12:30:00';
 
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('Friday 16 August 2024 at 12:00 pm');
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 12:30pm');
   });
 
   it('should display the end time when the same day', () => {
-    props.endTime = '16 August 2024 13:00:00';
+    props.endTime = '16 August 2024 13:10:00';
 
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('to 1:00 pm');
+    expect(component).toHaveTextContent('to 1:10pm');
   });
 
   it('should display the end date when not the same day', () => {
-    props.endTime = '17 August 2024 13:00:00';
+    props.endTime = '17 August 2024 13:10:00';
 
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('EventDetails');
 
-    expect(component).toHaveTextContent('to Saturday 17 August 2024 at 1:00 pm');
+    expect(component).toHaveTextContent('to Saturday 17 August 2024 at 1:10pm');
   });
 
   it('should say all day for all day events', () => {
@@ -70,5 +70,38 @@ describe('Event Details Component', () => {
     const component = getByTestId('EventDetails');
 
     expect(component).toHaveTextContent('Friday 16 August 2024 - all day');
+  });
+
+  it('should not show the minutes if the time is on the hour', () => {
+    props.startTime = '16 August 2024 10:00:00';
+    props.endTime = '16 August 2024 13:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('Friday 16 August 2024 at 10am to 1pm');
+  });
+
+  it('should show the start time as midnight ', () => {
+    props.startTime = '16 August 2024 00:00:00';
+    props.endTime = '16 August 2024 13:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('Friday 16 August 2024 at midnight to 1pm');
+  });
+
+  it('should show the start time as midday ', () => {
+    props.startTime = '16 August 2024 12:00:00';
+    props.endTime = '16 August 2024 13:00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventDetails');
+
+    expect(component).toHaveTextContent('Friday 16 August 2024 at midday to 1pm');
   });
 });
