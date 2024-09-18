@@ -79,6 +79,7 @@ export const Container = styled.a`
 `;
 
 export const Promoted = styled.div`
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.action_light};
   background-color: ${(props) => props.theme.theme_vars.colours.action_light};
   color: ${(props) => props.theme.theme_vars.colours.action_dark};
   display: inline-block;
@@ -86,6 +87,7 @@ export const Promoted = styled.div`
     `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
 
 export const EventContent = styled.div`
@@ -112,4 +114,14 @@ export const Title = styled.div`
 
 export const Description = styled.div`
   ${(props) => props.theme.fontStyles};
+`;
+
+export const Parent = styled.div`
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.action_light};
+  background: transparent;
+  display: inline-block;
+  padding: ${(props) =>
+    `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
 `;

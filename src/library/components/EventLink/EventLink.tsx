@@ -19,6 +19,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
   showSummary = false,
   hasPadding = true,
   isPromoted = false,
+  parentTitle,
 }) => (
   <Styles.Container data-testid="EventLink" href={url} $isPromoted={isPromoted}>
     <Row>
@@ -39,6 +40,7 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
             hasMargin={false}
           />
           {isPromoted && <Styles.Promoted>Featured</Styles.Promoted>}
+          {parentTitle && <Styles.Parent>{parentTitle}</Styles.Parent>}
         </Styles.EventContent>
       </Column>
       {imageLarge && (

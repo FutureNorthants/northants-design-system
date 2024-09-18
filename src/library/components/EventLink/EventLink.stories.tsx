@@ -31,6 +31,7 @@ ExampleEventLink.args = {
   imageSmall: 'https://via.placeholder.com/360x203',
   imageAltText: 'The example images alt text',
   location: 'One Angel Square',
+  parentTitle: 'Bins, recycling and waste',
 };
 
 export const ExamplePromotedEventLink = Template.bind({});
@@ -45,6 +46,7 @@ ExamplePromotedEventLink.args = {
   imageAltText: 'The example images alt text',
   location: 'One Angel Square',
   isPromoted: true,
+  parentTitle: 'Bins, recycling and waste',
 };
 
 export const ExampleEventLinkWithSummary = Template.bind({});
@@ -59,6 +61,7 @@ ExampleEventLinkWithSummary.args = {
   imageAltText: 'The example images alt text',
   location: 'One Angel Square',
   showSummary: true,
+  parentTitle: 'Bins, recycling and waste',
 };
 
 export const ExampleEventLinkNoPadding = Template.bind({});
@@ -74,4 +77,5 @@ ExampleEventLinkNoPadding.args = {
   location: 'One Angel Square',
   showSummary: false,
   hasPadding: false,
+  parentTitle: 'Bins, recycling and waste',
 };

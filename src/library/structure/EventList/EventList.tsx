@@ -134,6 +134,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                       {...result}
                       showSummary
                       summary={result.summary ? transformSnippet(result.summary, 50) : ''}
+                      parentTitle={result.parentTitle}
                     />
                   </Column>
                 ))}

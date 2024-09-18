@@ -20,6 +20,7 @@ describe('Event List Component', () => {
           endTime: '16 August 2024 11:00:00',
           url: '/events/1',
           location: 'The Guildhall',
+          parentTitle: 'Housing',
         },
       ],
       totalResults: 1,
@@ -44,6 +45,7 @@ describe('Event List Component', () => {
     expect(component).toHaveTextContent('An example event');
     expect(component).toHaveTextContent('Friday 16 August 2024 at 10am');
     expect(component).toHaveTextContent('The Guildhall');
+    expect(component).toHaveTextContent('Housing');
     expect(component).not.toHaveTextContent('Clear filters');
 
     expect(link).toBeVisible();

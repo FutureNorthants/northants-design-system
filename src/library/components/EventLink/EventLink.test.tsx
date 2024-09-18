@@ -66,4 +66,14 @@ describe('Event Link Component', () => {
 
     expect(component).toHaveTextContent('Featured');
   });
+
+  it('should show the parent title when set', () => {
+    props.parentTitle = 'Housing';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('EventLink');
+
+    expect(component).toHaveTextContent('Housing');
+  });
 });

@@ -29,6 +29,7 @@ export const ExampleEventListResults: EventListProps = {
       telephone: '0123456789',
       address: 'One Angel Square, Angel Street, Northampton, Northamptonshire, NN1 1ED',
       isPromoted: true,
+      parentTitle: 'Bins, recycling and waste',
     },
     {
       id: '2',
@@ -39,6 +40,7 @@ export const ExampleEventListResults: EventListProps = {
       endTime: '18 August 2024 15:00:00',
       url: '/events/2',
       location: 'The Guildhall',
+      parentTitle: 'Bins, recycling and waste',
     },
     {
       id: '3',
@@ -49,6 +51,7 @@ export const ExampleEventListResults: EventListProps = {
       endTime: '18 August 2024 15:00:00',
       url: '/events/2',
       location: 'The Guildhall',
+      parentTitle: 'Housing',
     },
     {
       id: '4',
@@ -69,6 +72,7 @@ export const ExampleEventListResults: EventListProps = {
       endTime: '18 August 2024 15:00:00',
       url: '/events/2',
       location: 'The Guildhall',
+      parentTitle: 'Health and wellbeing',
     },
   ],
   sortBy: 'asc',

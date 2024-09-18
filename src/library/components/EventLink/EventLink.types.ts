@@ -58,4 +58,9 @@ export interface EventLinkProps {
    * Is the link a promoted link. Defaults to false.
    */
   isPromoted?: boolean;
+
+  /**
+   * The optional parent service landing page title
+   */
+  parentTitle?: string;
 }

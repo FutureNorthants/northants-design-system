@@ -168,4 +168,9 @@ export interface EventItemProps {
    * Is the event promoted. Defaults to false
    */
   isPromoted?: boolean;
+
+  /**
+   * The optional parent service landing page title
+   */
+  parentTitle?: string;
 }
