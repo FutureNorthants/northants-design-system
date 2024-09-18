@@ -14,6 +14,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
   hideLabel = false,
   isErrored = false,
   errorText,
+  value,
 }) => {
   return (
     <Styles.Container>
@@ -27,6 +28,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
         onChange={onChange && onChange}
         defaultValue={selected && selected}
         $isErrored={isErrored}
+        value={value && value}
       >
         {options.map((option, i) => (
           <Styles.Option key={i} value={option.value}>
