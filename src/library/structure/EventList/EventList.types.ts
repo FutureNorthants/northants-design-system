@@ -172,5 +172,5 @@ export interface EventItemProps {
   /**
    * The optional parent service landing page title
    */
-  parentTitle?: string;
+  parentTitle?: string | null;
 }

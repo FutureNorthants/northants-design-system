@@ -62,5 +62,5 @@ export interface EventLinkProps {
   /**
    * The optional parent service landing page title
    */
-  parentTitle?: string;
+  parentTitle?: string | null;
 }
