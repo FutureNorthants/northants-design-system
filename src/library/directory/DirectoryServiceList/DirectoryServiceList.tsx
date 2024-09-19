@@ -28,6 +28,8 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   services,
   search = '',
   setSearch,
+  proximity = 2,
+  showPostcodeSearch = true,
   postcode = '',
   setPostcode,
   totalResults = 0,
@@ -218,18 +220,21 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                     }}
                   />
                 </Column>
-                <Column small="full" medium="one-half" large="one-third">
-                  <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
-                  <HintText text="Enter a postcode to see results within 2 miles" />
-                  <Input
-                    name="postcode"
-                    type="text"
-                    defaultValue={postcodeSearch}
-                    id="postcode"
-                    onChange={(e) => setPostcodeSearch(e.target.value)}
-                    autocomplete="postal-code"
-                  />
-                </Column>
+                {showPostcodeSearch && (
+                  <Column small="full" medium="one-half" large="one-third">
+                    <Styles.Label htmlFor="postcode">Postcode (optional)</Styles.Label>
+                    <HintText text={`Enter a postcode to see results within ${proximity} miles`} />
+                    <Input
+                      name="postcode"
+                      type="text"
+                      defaultValue={postcodeSearch}
+                      id="postcode"
+                      onChange={(e) => setPostcodeSearch(e.target.value)}
+                      autocomplete="postal-code"
+                    />
+                  </Column>
+                )}
+
                 <Column small="full" medium="one-half" large="one-third">
                   <Styles.ButtonContainer>
                     <Styles.Button onClick={submitSearch} type="submit">
