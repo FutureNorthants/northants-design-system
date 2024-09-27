@@ -1,16 +1,23 @@
-import { StorybookConfig } from '@storybook/react-webpack5';
+import { StorybookConfig } from '@storybook/react-vite';
 
-const path = require('path');
+// const path = require('path');
 const config: StorybookConfig = {
   features: {},
 
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-vite',
     options: {},
   },
 
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  core: {
+    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+  },
 
+  async viteFinal(config, options) {
+    return config;
+  },
+
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
 
   addons: [
@@ -32,6 +39,10 @@ const config: StorybookConfig = {
   }),
 
   docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 
 export default config;

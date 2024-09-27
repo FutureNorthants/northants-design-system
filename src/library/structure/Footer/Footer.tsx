@@ -11,7 +11,7 @@ import FacebookIcon from '../../components/icons/FacebookIcon/Icon';
 import TwitterIcon from '../../components/icons/TwitterIcon/Icon';
 import LinkedInIcon from '../../components/icons/LinkedInIcon/Icon';
 import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
-import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
+// import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
 
 const Footer: React.FunctionComponent<FooterProps> = ({
   footerLinksArray = null,
@@ -82,7 +82,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
             </Styles.FooterCopy>
           </div>
           <div>
-            {hasTranslate && <GoogleTranslate hasDarkBackground={true} />}
+            {/* {hasTranslate && <GoogleTranslate hasDarkBackground={true} />} */}
             <Styles.LogoWhite
               className={
                 themeContext.theme_vars.theme_name === 'Memorial theme North' ||
