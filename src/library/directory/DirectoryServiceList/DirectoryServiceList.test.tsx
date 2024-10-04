@@ -213,4 +213,20 @@ describe('Test Component', () => {
     expect(clearSearch).toBeVisible();
     expect(clearSearch).toHaveStyle(`border: 3px solid ${west_theme.theme_vars.colours.negative}`);
   });
+
+  it('hides the postcode search', () => {
+    props.showPostcodeSearch = false;
+
+    const { queryByLabelText } = renderComponent();
+
+    expect(queryByLabelText('Postcode (optional)')).toBeNull();
+  });
+
+  it('overrides the proximity for the postcode search', () => {
+    props.proximity = 6;
+
+    const { getByText } = renderComponent();
+
+    expect(getByText('Enter a postcode to see results within 6 miles')).toBeVisible();
+  });
 });

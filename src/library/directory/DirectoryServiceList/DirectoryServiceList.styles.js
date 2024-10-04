@@ -183,6 +183,7 @@ export const LegendButton = styled.button`
   &:active {
     ${(props) => props.theme.linkStylesActive}
   }
+  margin: 0;
 `;
 
 export const AccordionIcon = styled.span`

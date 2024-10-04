@@ -33,6 +33,16 @@ export interface DirectoryServiceListProps {
   setSearch: Dispatch<SetStateAction<string>>;
 
   /**
+   * The optional proximity the postcode will search. Defaults to 2 miles.
+   */
+  proximity?: number;
+
+  /**
+   * Should the postcode search be shown? Defaults to true.
+   */
+  showPostcodeSearch?: boolean;
+
+  /**
    * The postcode search term
    */
   postcode?: string;

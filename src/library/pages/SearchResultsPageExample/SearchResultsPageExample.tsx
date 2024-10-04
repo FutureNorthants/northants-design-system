@@ -6,6 +6,7 @@ import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
 import { SignpostLinkProp } from '../../components/SignpostLinksList/SignpostLinksList.types';
 import { noSearchResults, searchResultsWithServiceArea } from './../../structure/SearchResultsList/SearchResultsData';
+import ToggleButtons from '../../components/ToggleButtons/ToggleButtons';
 
 export interface SearchResultsPageExampleProps {
   results: Array<SearchResultProps>;
@@ -58,6 +59,23 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
               searchTerm: 'council tax',
             },
           }}
+        />
+
+        <ToggleButtons
+          buttons={[
+            {
+              label: 'Service results',
+              ariaLabel: 'View the service results',
+              onClick: () => {},
+            },
+            {
+              label: 'News results',
+              ariaLabel: 'View the news results',
+              onClick: () => {},
+            },
+          ]}
+          defaultButton={0}
+          hasTopMargin
         />
 
         {results ? <SearchResultsList {...searchResultsWithServiceArea} /> : <SearchResultsList {...noSearchResults} />}

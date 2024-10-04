@@ -1,4 +1,6 @@
-export const searchResults = {
+import { SearchResultsListProps } from './SearchResultsList.types';
+
+export const searchResults: SearchResultsListProps = {
   searchTerm: 'Council tax',
   pageNumber: 1,
   totalResults: 23,
@@ -6,12 +8,15 @@ export const searchResults = {
     {
       title: 'Council tax',
       link: '/council-tax',
+      service: 'Council Tax',
       summary:
         'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.',
+      published: '18 January 2022',
     },
     {
       title: 'Paying council tax',
       link: '/',
+      service: 'Payments',
       summary: 'Pay your council tax online',
       signpostLinksArray: [
         {
@@ -37,10 +42,11 @@ export const searchResults = {
       ],
     },
     {
-      title: 'Council tax',
-      link: '/council-tax',
-      summary:
-        'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.',
+      title: 'Council tax news article',
+      link: '/news/council-tax-news-article',
+      published: '18 January 2022',
+      service: 'News',
+      summary: 'An example news article that shows it was published over a year ago.',
     },
     {
       title: 'Council tax single CTA',
@@ -81,13 +87,13 @@ export const searchResults = {
   ],
 };
 
-export const noSearchResults = {
+export const noSearchResults: SearchResultsListProps = {
   searchTerm: 'Council tax',
   totalResults: 0,
   results: [],
 };
 
-export const searchResultsWithServiceArea = {
+export const searchResultsWithServiceArea: SearchResultsListProps = {
   searchTerm: 'Council tax',
   pageNumber: 2,
   totalResults: 23,
@@ -126,6 +132,13 @@ export const searchResultsWithServiceArea = {
           url: '/',
         },
       ],
+    },
+    {
+      title: 'Council tax news article',
+      link: '/news/council-tax-news-article',
+      published: '18 January 2022',
+      service: 'News',
+      summary: 'An example news article that shows it was published over a year ago.',
     },
     {
       service: 'Bins, recycling and waste',

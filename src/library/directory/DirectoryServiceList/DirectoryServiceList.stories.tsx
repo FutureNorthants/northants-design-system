@@ -71,6 +71,22 @@ ExampleDirectoryServiceList.args = {
   customTaxonomyFilters: ['facilities', 'language'],
   ageInMonths: true,
   hasDocuments: true,
+  proximity: 4,
+};
+
+export const DirectoryServiceNoPostcodeSearch = Template.bind({});
+DirectoryServiceNoPostcodeSearch.args = {
+  services: [],
+  totalResults: 0,
+  categories: ExampleDirectoryCategories,
+  pageNumber: 1,
+  perPage: 5,
+  directoryPath: '/directory/local-offer',
+  shortListPath: '/directory/local-offer/short-list',
+  customTaxonomyFilters: ['facilities', 'language'],
+  ageInMonths: true,
+  hasDocuments: true,
+  showPostcodeSearch: false,
 };
 
 export const DirectoryServiceNoResults = Template.bind({});
