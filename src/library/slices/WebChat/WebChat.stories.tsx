@@ -28,13 +28,31 @@ const Template: StoryFn<WebChatProps> = (args) => (
 
 export const ExampleWebChat = Template.bind({});
 ExampleWebChat.args = {
-  buttonText: 'Open WebChat',
+  buttonText: 'Chat to an advisor',
   action: '/',
+  queues: [
+    {
+      title: 'Select an option',
+      value: '',
+    },
+    {
+      title: 'Council tax',
+      value: 'council_tax',
+    },
+    {
+      title: 'Benefits application',
+      value: 'benefits',
+    },
+    {
+      title: 'Road and highways faults',
+      value: 'highways',
+    },
+  ],
 };
 
 export const WebChatUnavailable = Template.bind({});
 WebChatUnavailable.args = {
-  buttonText: 'Open WebChat',
+  buttonText: 'Chat to an advisor',
   action: '/',
   forceUnavailable: true,
   unavailableMessage: 'Sorry, webchat is currently unavailable.',

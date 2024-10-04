@@ -1,13 +1,20 @@
+import { DropDownSelectOptionsProps } from '../../components/DropDownSelect/DropDownSelect.types';
+
 export interface WebChatProps {
+  /**
+   * The WebChat base url
+   */
+  action: string;
+
   /**
    * The text for the button
    */
   buttonText: string;
 
   /**
-   * The WebChat base url
+   * The enquiry types
    */
-  action: string;
+  queues: DropDownSelectOptionsProps[];
 
   /**
    * Force the webchat to be unavailable
