@@ -21,7 +21,6 @@ import SearchBox from '../../slices/SearchBox/SearchBox';
 import { ExampleSearchBoxProps } from '../../slices/SearchBox/SearchBox.storydata';
 import BackToTop from '../../components/BackToTop/BackToTop';
 import RateThisPage from '../../structure/RateThisPage/RateThisPage';
-import WebChatForm from '../../structure/WebChatForm/WebChatForm';
 
 export interface ContentPageProps {}
 
@@ -267,7 +266,6 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
           onSubmit={() => {}}
           complaintsFormLink="https://northamptonshire-self.achieveservice.com/service/Have_your_say_about_West_Northants_Council"
         />
-        <WebChatForm action="https://www.westnorthants.gov.uk" />
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
