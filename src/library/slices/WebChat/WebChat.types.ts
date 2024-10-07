@@ -14,7 +14,7 @@ export interface WebChatProps {
   /**
    * The enquiry types
    */
-  queues: DropDownSelectOptionsProps[];
+  queues?: DropDownSelectOptionsProps[];
 
   /**
    * Force the webchat to be unavailable

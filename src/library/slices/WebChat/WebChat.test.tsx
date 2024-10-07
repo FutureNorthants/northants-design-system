@@ -12,6 +12,24 @@ describe('WebChat Slice', () => {
     props = {
       buttonText: 'Open WebChat',
       action: '',
+      queues: [
+        {
+          title: 'Select an option',
+          value: '',
+        },
+        {
+          title: 'Council tax',
+          value: 'council_tax',
+        },
+        {
+          title: 'Benefits application',
+          value: 'benefits',
+        },
+        {
+          title: 'Road and highways faults',
+          value: 'highways',
+        },
+      ],
     };
   });
 

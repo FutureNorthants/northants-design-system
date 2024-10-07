@@ -7,6 +7,25 @@ import BackToTop from '../../components/BackToTop/BackToTop';
 
 export interface ContactPageProps {}
 
+const queues = [
+  {
+    title: 'Select an option',
+    value: '',
+  },
+  {
+    title: 'Council tax',
+    value: 'council_tax',
+  },
+  {
+    title: 'Benefits application',
+    value: 'benefits',
+  },
+  {
+    title: 'Road and highways faults',
+    value: 'highways',
+  },
+];
+
 export const ContactPage: React.FunctionComponent<ContactPageProps> = () => (
   <>
     <PageStructures.Header />
@@ -39,7 +58,7 @@ export const ContactPage: React.FunctionComponent<ContactPageProps> = () => (
             />
 
             <Heading level={2} text="Use our live webchat" />
-            <WebChat buttonText="Launch webchat" action="" />
+            <WebChat buttonText="Launch webchat" action="" queues={queues} />
 
             <Heading level={2} text="Call us" />
             <p>
