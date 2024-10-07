@@ -105,7 +105,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
   };
 
   return (
-    <Styles.Container data-testid="WebChat">
+    <Styles.Container data-testid="WebChat" ref={webChatFormRef}>
       {forceUnavailable ? (
         <p>{unavailableMessage}</p>
       ) : (
@@ -113,7 +113,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
           {showForm ? (
             <div>
               {errors && Object.keys(errors).length > 0 && <ErrorSummary errors={errors} />}
-              <form onSubmit={handleSubmit(onSubmit, errorCallback)} ref={webChatFormRef}>
+              <form onSubmit={handleSubmit(onSubmit, errorCallback)}>
                 <Styles.Label htmlFor="name">Name</Styles.Label>
                 <Controller
                   name="name"
