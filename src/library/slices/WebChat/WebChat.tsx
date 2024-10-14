@@ -28,6 +28,9 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
     defaultValues: {
       name: '',
       subject: '',
+      email: '',
+      telephone: '',
+      reference: '',
       enquiryType: '',
     },
   });
@@ -120,7 +123,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                   control={control}
                   rules={{
                     required: { value: true, message: 'The name field is required.' },
-                    maxLength: { value: 50, message: 'The name field must not be greater than 50 characters' },
+                    maxLength: { value: 50, message: 'The name field must not be greater than 50 characters.' },
                   }}
                   render={({ field: { onChange, value } }) => (
                     <Input
@@ -163,7 +166,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                   rules={{
                     maxLength: {
                       value: 100,
-                      message: 'The email address must not be greater than 100 characters.',
+                      message: 'The email field must not be greater than 100 characters.',
                     },
                     pattern: {
                       value:
@@ -191,7 +194,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                   name="telephone"
                   control={control}
                   rules={{
-                    maxLength: { value: 20, message: 'The telephone must not be greater than 20 characters.' },
+                    maxLength: { value: 20, message: 'The telephone field must not be greater than 20 characters.' },
                   }}
                   render={({ field: { onChange, value } }) => (
                     <Input
@@ -212,7 +215,9 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                 <Controller
                   name="reference"
                   control={control}
-                  rules={{ maxLength: { value: 50, message: 'The reference must be less than 50 characters.' } }}
+                  rules={{
+                    maxLength: { value: 50, message: 'The reference field must not be greater than 50 characters.' },
+                  }}
                   render={({ field: { onChange, value } }) => (
                     <Input
                       name="reference"
@@ -233,7 +238,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                   control={control}
                   rules={{
                     required: { value: true, message: 'The subject field is required.' },
-                    maxLength: { value: 100, message: 'The name field must not be greater than 100 characters' },
+                    maxLength: { value: 100, message: 'The subject field must not be greater than 100 characters.' },
                   }}
                   render={({ field: { onChange, value } }) => (
                     <Textarea
