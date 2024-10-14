@@ -14,7 +14,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
   hideLabel = false,
   isErrored = false,
   errorText,
-  value,
+  value = undefined,
   hasBottomMargin = false,
   hasBoldLabel = false,
 }) => {
@@ -24,7 +24,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
         {label}
       </Styles.Label>
       {errorText && <Styles.ErrorText id={`${id}Error`}>{errorText}</Styles.ErrorText>}
-      {typeof value !== undefined ? (
+      {typeof value !== 'undefined' ? (
         <Styles.Select
           id={id}
           name={id}
