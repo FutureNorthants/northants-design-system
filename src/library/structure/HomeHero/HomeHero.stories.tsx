@@ -3,6 +3,7 @@ import HomeHero from './HomeHero';
 import { HomeHeroProps } from './HomeHero.types';
 import { StoryFn } from '@storybook/react';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
+import Header from '../Header/Header';
 
 export default {
   title: 'Library/structure/Home Hero',
@@ -37,7 +38,12 @@ export default {
   },
 };
 
-const Template: StoryFn<HomeHeroProps> = (args) => <HomeHero {...args}></HomeHero>;
+const Template: StoryFn<HomeHeroProps> = (args) => (
+  <>
+    <Header />
+    <HomeHero {...args}></HomeHero>
+  </>
+);
 
 export const HomeHeroExample0Links = Template.bind({});
 HomeHeroExample0Links.args = {

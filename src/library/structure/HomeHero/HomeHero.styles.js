@@ -6,8 +6,9 @@ export const Wrapper = styled.header`
     props.noBackground
       ? 'transparent'
       : props.theme.cardinal_name === 'north'
-      ? props.theme.theme_vars.colours.grey_light + '7a'
-      : props.theme.theme_vars.colours.white};
+        ? props.theme.theme_vars.colours.grey_light + '7a'
+        : props.theme.theme_vars.colours.white};
+  position: relative;
 `;
 
 export const Container = styled.div`
@@ -15,16 +16,16 @@ export const Container = styled.div`
   overflow: hidden;
   background: ${(props) => props.theme.theme_vars.colours.action}5A;
   padding: 30px 0;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
   position: relative;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    padding: 60px 0;
+    padding: ${(props) => (props.$showSearch ? '60px 0' : '0 0 300px 0')};
   }
   @media screen and (min-width: calc(${(props) => props.theme.theme_vars.breakpoints.l} + 60px)) {
     margin-right: auto;
     margin-left: auto;
-    padding: 90px 0;
+    padding: ${(props) => (props.$showSearch ? '90px 0' : '0 0 360px 0')};
     max-width: 1680px;
   }
 `;
@@ -98,4 +99,11 @@ export const LogoOverride = styled.div`
 export const Strapline = styled.p`
   margin-bottom: 20px;
   margin-top: -10px;
+`;
+
+export const PromotedServicesTabContainer = styled.div`
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
 `;
