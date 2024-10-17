@@ -15,8 +15,7 @@ export const Container = styled.div`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   overflow: hidden;
   background: ${(props) => props.theme.theme_vars.colours.action}5A;
-  padding: 30px 0;
-  /* padding-bottom: 15px; */
+  padding: ${(props) => (props.$showSearch ? '60px 0' : '0 0 200px 0')};
   position: relative;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {

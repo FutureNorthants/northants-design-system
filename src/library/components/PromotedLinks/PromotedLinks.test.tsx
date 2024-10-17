@@ -33,10 +33,32 @@ describe('Test Component', () => {
     );
 
   it('should render the link text correctly', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getAllByRole } = renderComponent();
 
     const component = getByTestId('PromotedLinks');
+    const links = getAllByRole('link');
 
     expect(component).toHaveTextContent('The first link');
+    expect(links.length).toBe(2);
+    expect(links[0]).toHaveAttribute('href', '/the-first-url/');
+    expect(links[0]).toHaveTextContent('The first link');
+    expect(links[1]).toHaveAttribute('href', '/the-second-url/');
+    expect(links[1]).toHaveTextContent('The second link');
+  });
+
+  it('should render the tabs when has tabs', () => {
+    props.hasTabs = true;
+
+    const { getByTestId, getAllByRole } = renderComponent();
+
+    const component = getByTestId('PromotedLinks');
+    const links = getAllByRole('link');
+
+    expect(component).toHaveTextContent('The first link');
+    expect(links.length).toBe(2);
+    expect(links[0]).toHaveAttribute('href', '/the-first-url/');
+    expect(links[0]).toHaveTextContent('The first link');
+    expect(links[1]).toHaveAttribute('href', '/the-second-url/');
+    expect(links[1]).toHaveTextContent('The second link');
   });
 });

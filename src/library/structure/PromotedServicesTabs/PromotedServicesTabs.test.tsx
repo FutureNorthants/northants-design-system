@@ -1,5 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { useState } from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import PromotedServicesTabs from './PromotedServicesTabs';
@@ -11,7 +11,10 @@ describe('Promoted Services Tabs Component', () => {
   let props: PromotedServicesTabsProps;
 
   beforeEach(() => {
-    props = ExamplePromotedServicesData;
+    props = {
+      activeTab: 0,
+      ...ExamplePromotedServicesData,
+    };
   });
 
   const renderComponent = () =>
@@ -23,12 +26,19 @@ describe('Promoted Services Tabs Component', () => {
     );
 
   it('should render tabs correctly', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId, getAllByRole } = renderComponent();
 
     const tabComponent = getByTestId('PromotedServicesTabs');
     const tabContentComponent = getByTestId('PromotedServicesTabContent');
+    const allLinks = getAllByRole('link', { hidden: true });
+    const visibleLinks = getAllByRole('link');
 
     expect(tabComponent).toHaveTextContent('Council tax');
     expect(tabContentComponent).toHaveTextContent('Council tax payments');
+
+    expect(allLinks.length).toBe(15);
+    expect(visibleLinks.length).toBe(6);
+    expect(visibleLinks[0]).toHaveAttribute('href', '/first-service/first-sub-service');
+    expect(visibleLinks[0]).toHaveTextContent('Council tax payments');
   });
 });

@@ -7,27 +7,27 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
       services: [
         {
           title: 'Council tax payments',
-          url: '/third-service/first-sub-service',
+          url: '/first-service/first-sub-service',
         },
         {
           title: 'Reductions and discounts',
-          url: '/third-service/first-sub-service',
+          url: '/first-service/first-sub-service',
         },
         {
           title: 'View your account online',
-          url: '/third-service/second-sub-service',
+          url: '/first-service/second-sub-service',
         },
         {
           title: 'Change of address',
-          url: '/third-service/second-sub-service',
+          url: '/first-service/second-sub-service',
         },
         {
           title: 'Valuation and banding',
-          url: '/third-service/second-sub-service',
+          url: '/first-service/second-sub-service',
         },
         {
           title: 'All council tax services',
-          url: '/third-service/second-sub-service',
+          url: '/first-service/second-sub-service',
         },
       ],
     },
@@ -36,15 +36,15 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
       services: [
         {
           title: 'Bin collection day',
-          url: '/third-service/first-sub-service',
+          url: '/second-service/first-sub-service',
         },
         {
           title: 'Household waste recycling centres',
-          url: '/third-service/second-sub-service',
+          url: '/second-service/second-sub-service',
         },
         {
           title: 'Bulky item collection',
-          url: '/third-service/second-sub-service',
+          url: '/second-service/second-sub-service',
         },
       ],
     },
@@ -70,15 +70,15 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
       services: [
         {
           title: 'View and comment on a planning application',
-          url: '/third-service/first-sub-service',
+          url: '/fourth-service/first-sub-service',
         },
         {
           title: 'Making a planning application',
-          url: '/third-service/second-sub-service',
+          url: '/fourth-service/second-sub-service',
         },
         {
           title: 'Planning permission',
-          url: '/third-service/second-sub-service',
+          url: '/fourth-service/second-sub-service',
         },
       ],
     },

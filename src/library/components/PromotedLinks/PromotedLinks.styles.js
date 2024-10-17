@@ -31,8 +31,9 @@ export const PromotedLink = styled.a`
     box-sizing: border-box;
   }
   background: ${(props) => props.theme.theme_vars.colours.white};
-  background: ${(props) => props.theme.theme_vars.colours.white}F2;
-  border-radius: 3px;
+  background: ${(props) =>
+    props.$hasTabs ? props.theme.theme_vars.colours.white : `${props.theme.theme_vars.colours.white}F2`};
+  border-radius: ${(props) => (props.$hasTabs ? '0 0 3px 3px' : '3px')};
   box-shadow:
     0px -4px 0px 0px ${(props) => props.theme.theme_vars.colours.action} inset,
     0px 4px 15px rgba(0, 0, 0, 0.11);
@@ -110,4 +111,20 @@ export const PromotedLink = styled.a`
     }
   }
   ${oneColStyles}
+`;
+
+export const List = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+`;
+
+export const ListItem = styled.li`
+  left: 0;
+  margin: 0;
 `;
