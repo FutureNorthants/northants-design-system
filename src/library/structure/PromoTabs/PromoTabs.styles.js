@@ -51,11 +51,11 @@ export const TitleButton = styled.button`
     ${(props) => props.theme.linkStylesHover};
   }
   &:focus {
-    background-color: ${(props) => props.theme.linkStylesFocus};
+    ${(props) => props.theme.linkStylesFocus};
     z-index: 2;
   }
   &:active {
-    background-color: ${(props) => props.theme.linkStylesActive};
+    ${(props) => props.theme.linkStylesActive};
     z-index: 2;
   }
 `;
@@ -98,4 +98,14 @@ export const PromoLink = styled.a`
   ${(props) => props.theme.linkStyles};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: block;
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
 `;
