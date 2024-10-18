@@ -39,4 +39,15 @@ describe('Test Component', () => {
     expect(list).toBeVisible();
     expect(list).toHaveAttribute('data-testid', 'Row');
   });
+
+  it('should render the custom classes', () => {
+    props.classes = 'my-custom-class my-second-custom-class';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('Row');
+
+    expect(component).toHaveClass('my-custom-class');
+    expect(component).toHaveClass('my-second-custom-class');
+  });
 });
