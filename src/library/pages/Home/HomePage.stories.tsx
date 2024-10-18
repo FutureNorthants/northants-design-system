@@ -50,15 +50,15 @@ ExampleHome.args = {
 
   promotedLinksArray: [
     {
-      title: 'Make a payment',
+      title: 'Apply',
       url: '/',
     },
     {
-      title: 'Contact the council',
+      title: 'Pay',
       url: '/',
     },
     {
-      title: 'About our new website',
+      title: 'Report',
       url: '/',
     },
   ],
@@ -99,10 +99,19 @@ ExampleHome.args = {
       url: '/',
     },
   ],
+  showSearch: true,
 };
 
 export const ExampleHomeServicesBoxed = Template.bind({});
 ExampleHomeServicesBoxed.args = {
   ...ExampleHome.args,
   isBoxed: true,
+  showSearch: true,
+};
+
+export const ExampleHomeNoSearch = Template.bind({});
+ExampleHomeNoSearch.args = {
+  ...ExampleHome.args,
+  isBoxed: true,
+  showSearch: false,
 };

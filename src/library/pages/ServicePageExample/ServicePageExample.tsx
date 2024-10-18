@@ -18,7 +18,7 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
   contents,
 }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[

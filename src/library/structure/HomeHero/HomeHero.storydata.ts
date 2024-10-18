@@ -18,20 +18,20 @@ export const HomeHeroCommon = {
   ],
   imagesArray: [
     {
-      image1440x810: 'http://placehold.it/1440x810',
-      image144x81: 'http://placehold.it/144x81',
+      image1440x810: 'https://picsum.photos/id/18/1440/810',
+      image144x81: 'https://picsum.photos/id/18/144/81',
     },
     {
-      image1440x810: 'http://placehold.it/1340x810',
-      image144x81: 'http://placehold.it/134x81',
+      image1440x810: 'https://picsum.photos/id/17/1440/810',
+      image144x81: 'https://picsum.photos/id/17/144/81',
     },
     {
-      image1440x810: 'http://placehold.it/1240x810',
-      image144x81: 'http://placehold.it/124x81',
+      image1440x810: 'https://picsum.photos/id/93/1440/810',
+      image144x81: 'https://picsum.photos/id/93/144/81',
     },
     {
-      image1440x810: 'http://placehold.it/1140x810',
-      image144x81: 'http://placehold.it/114x81',
+      image1440x810: 'https://picsum.photos/id/62/1440/810',
+      image144x81: 'https://picsum.photos/id/62/144/81',
     },
   ],
 };

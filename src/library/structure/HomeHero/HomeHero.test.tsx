@@ -5,6 +5,7 @@ import { HomeHeroProps } from './HomeHero.types';
 import { west_theme } from '../../../themes/theme_generator';
 import { ThemeProvider } from 'styled-components';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
+import { ExamplePromotedServicesData } from '../PromotedServicesTabs/PromotedServicesTabs.storydata';
 
 describe('HomeHero common usage', () => {
   const props: HomeHeroProps = {
@@ -98,5 +99,46 @@ describe('HomeHero unusual usage', () => {
     const heading = rendered.getByRole('heading');
 
     expect(heading).toBeVisible();
+  });
+});
+
+describe('Home Hero Hide Search', () => {
+  let props: HomeHeroProps = {
+    imageOverrideLogo: 'http://placehold.it/520x150',
+    imageOverrideLogoAltText: 'My alt text',
+    topline: 'To be on top',
+    strapline: 'Strap in',
+    showSearch: false,
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 3),
+    ...HomeHeroCommon,
+  };
+
+  const renderComponent = () =>
+    render(
+      <ThemeProvider theme={west_theme}>
+        <HomeHero {...props} />
+      </ThemeProvider>
+    );
+
+  it('should hide the search from the home hero', () => {
+    const { getByTestId, getAllByRole, queryByLabelText } = renderComponent();
+
+    const component = getByTestId('HomeHero');
+    const links = getAllByRole('link');
+
+    expect(component).toBeVisible();
+    expect(queryByLabelText('Search the site')).toBeNull();
+    expect(links.length).toBe(3);
+  });
+
+  it('should render the promoted services tabs links', () => {
+    props.promotedServicesTabs = ExamplePromotedServicesData;
+
+    const { getAllByRole } = renderComponent();
+
+    const links = getAllByRole('link');
+
+    // 3 promoted links and 6 service links visible
+    expect(links.length).toBe(9);
   });
 });

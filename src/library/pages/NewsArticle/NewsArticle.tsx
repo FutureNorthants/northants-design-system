@@ -16,7 +16,7 @@ export interface NewsArticleProps {
 
 export const NewsArticle: React.FC<NewsArticleProps> = ({ withImage, imagePlaceholder, isOld = false }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         {isOld && <NewsArticleOldBanner />}

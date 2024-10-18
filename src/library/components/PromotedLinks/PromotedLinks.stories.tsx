@@ -51,3 +51,23 @@ ExamplePromotedLinksOneCol.args = {
   ],
   oneCol: true,
 };
+
+export const ExamplePromotedLinksHasTabs = Template.bind({});
+ExamplePromotedLinksHasTabs.args = {
+  promotedLinksArray: [
+    {
+      title: 'Make a payment',
+      url: '/',
+    },
+    {
+      title: 'Contact the council',
+      url: '/',
+    },
+    {
+      title: 'About our new website',
+      url: '/',
+    },
+  ],
+  oneCol: false,
+  hasTabs: true,
+};

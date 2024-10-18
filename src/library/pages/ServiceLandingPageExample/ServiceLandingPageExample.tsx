@@ -20,7 +20,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
   icon,
 }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
     {heroImage ? (
       <>
         <PageStructures.HeroImage

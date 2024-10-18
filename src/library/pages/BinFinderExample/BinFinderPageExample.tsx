@@ -23,7 +23,7 @@ export const BinFinderPageExample: React.FunctionComponent<BinFinderPageExampleP
         rejectButtonText="Reject all cookies"
         acceptCallback={() => {}}
       />
-      <PageStructures.Header />
+      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
       <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs
           breadcrumbsArray={[

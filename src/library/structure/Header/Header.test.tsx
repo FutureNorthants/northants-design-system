@@ -28,7 +28,8 @@ describe('Header', () => {
   it('should render the header', () => {
     const { getByTestId, getAllByRole, getByPlaceholderText } = renderComponent();
     const component = getByTestId('Header');
-    const links = getAllByRole('link');
+    // Include hidden links as they are hidden on mobile by default
+    const links = getAllByRole('link', { hidden: true });
     const search = getByPlaceholderText('Search');
 
     expect(component).toBeVisible();
@@ -54,7 +55,7 @@ describe('Header', () => {
     const { getAllByRole, getByTestId } = renderComponent();
 
     expect(getByTestId('Header')).not.toHaveTextContent('All services');
-    expect(getAllByRole('link')).toHaveLength(2);
+    expect(getAllByRole('link', { hidden: true })).toHaveLength(2);
   });
 
   it('should not have news link', () => {
@@ -63,7 +64,7 @@ describe('Header', () => {
     const { getAllByRole, getByTestId } = renderComponent();
 
     expect(getByTestId('Header')).not.toHaveTextContent('News');
-    expect(getAllByRole('link')).toHaveLength(2);
+    expect(getAllByRole('link', { hidden: true })).toHaveLength(2);
   });
 
   it('should hide the search bar', () => {

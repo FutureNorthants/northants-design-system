@@ -36,7 +36,7 @@ interface SearchResultProps {
 
 export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
   <>
-    <PageStructures.Header hideSearchBar />
+    <PageStructures.Header hideSearchBar hasDirectoryLink hasNewsLink accessibilityLink="/" />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[

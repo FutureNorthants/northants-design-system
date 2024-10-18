@@ -70,4 +70,6 @@ export interface HomePageProps {
    * Footer links
    */
   footerLinksArray: Array<PageLinkProp>;
+
+  showSearch: boolean;
 }

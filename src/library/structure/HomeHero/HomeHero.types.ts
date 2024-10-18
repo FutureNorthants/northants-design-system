@@ -1,3 +1,5 @@
+import { PromotedServicesTabsProps } from '../PromotedServicesTabs/PromotedServicesTabs.types';
+
 export interface HomeHeroProps {
   /**
    * The line of text before the logo
@@ -14,7 +16,7 @@ export interface HomeHeroProps {
    */
   imageOverrideLogoAltText?: string;
 
-   /**
+  /**
    * The line of text after the logo
    */
   strapline?: string;
@@ -33,6 +35,16 @@ export interface HomeHeroProps {
    * Array of suggestion strings for autocomplete search input
    */
   searchSuggestions?: string[];
+
+  /**
+   * Should the search box be shown?
+   */
+  showSearch?: boolean;
+
+  /**
+   * Optional promoted services tabs
+   */
+  promotedServicesTabs?: PromotedServicesTabsProps;
 }
 
 export interface HeroImageProp {

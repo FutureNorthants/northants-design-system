@@ -10,6 +10,8 @@ import NorthWhite from '../library/components/logos/NorthWhiteLogo/logo';
 import WestColoured from '../library/components/logos/WestColouredLogo/logo';
 import WestWhite from '../library/components/logos/WestWhiteLogo/logo';
 import Heading from '../library/components/Heading/Heading';
+import NorthBlackLogo from '../library/components/logos/NorthBlackLogo/logo';
+import WestBlackLogo from '../library/components/logos/WestBlackLogo/logo';
 
 export default {
   title: 'Documentation/Logos',
@@ -18,6 +20,17 @@ export default {
 
 export const Logos = () => {
   const themeContext = useContext(ThemeContext);
+
+  const blackLogo = () => {
+    switch (themeContext.cardinal_name) {
+      case 'north':
+        return <NorthBlackLogo />;
+      case 'west':
+        return <WestBlackLogo />;
+      default:
+        return <GDSLogo />;
+    }
+  };
 
   const colouredLogo = () => {
     switch (themeContext.cardinal_name) {
@@ -54,6 +67,10 @@ export const Logos = () => {
           <Column small="full" medium="full" large="full">
             <Heading level={2} text="Coloured logo (on white background)" />
             <div style={{ padding: '20px' }}>{colouredLogo()}</div>
+          </Column>
+          <Column small="full" medium="full" large="full">
+            <Heading level={2} text="Black logo (on white background)" />
+            <div style={{ padding: '20px' }}>{blackLogo()}</div>
           </Column>
         </Row>
       </PageMain>
