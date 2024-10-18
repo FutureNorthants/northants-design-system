@@ -10,7 +10,9 @@ const Column: React.FunctionComponent<ColumnProps> = ({
   hasBorder = false,
   isList = false,
   classes,
+  id,
   children,
+  role,
 }) => (
   <Styles.Container
     data-testid="Column"
@@ -21,6 +23,8 @@ const Column: React.FunctionComponent<ColumnProps> = ({
     $hasBorder={hasBorder}
     as={isList ? 'li' : 'div'}
     className={classes}
+    role={role}
+    id={id}
   >
     {children}
   </Styles.Container>

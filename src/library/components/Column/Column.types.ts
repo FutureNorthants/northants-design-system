@@ -36,7 +36,17 @@ export interface ColumnProps {
   classes?: string;
 
   /**
+   * The optional id
+   */
+  id?: string;
+
+  /**
    * The contents of the column
    */
   children?: React.ReactNode;
+
+  /**
+   * The optional role for aria
+   */
+  role?: string;
 }

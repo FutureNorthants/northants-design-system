@@ -96,4 +96,19 @@ describe('Column', () => {
     expect(listItem).toBeVisible();
     expect(listItem).toHaveTextContent('example content');
   });
+
+  it('should render the custom class, role and id', () => {
+    props.classes = 'my-custom-class my-second-custom-class';
+    props.role = 'tabpanel';
+    props.id = 'myCustomId';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('Column');
+
+    expect(component).toHaveClass('my-custom-class');
+    expect(component).toHaveClass('my-second-custom-class');
+    expect(component).toHaveRole('tabpanel');
+    expect(component).toHaveAttribute('id', 'myCustomId');
+  });
 });
