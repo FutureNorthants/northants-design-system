@@ -1,4 +1,1 @@
-
-export interface LogoProps {
-
-}
+export interface LogoProps {}
