@@ -26,13 +26,19 @@ const PromotedServicesTabContent: React.FunctionComponent<PromotedServicesTabsPr
             $isActive={contentIndex === activeTab}
             onClick={() => toggleTab(contentIndex)}
             aria-label={contentIndex === activeTab ? `Hide ${tab.title}` : `Show ${tab.title}`}
-            aria-expanded={contentIndex === activeTab ? 'true' : 'false'}
-            aria-controls={`promoted-services-tab-${contentIndex}`}
+            aria-selected={contentIndex === activeTab ? 'true' : 'false'}
+            aria-controls={`promoted-services-tabpanel-${contentIndex}`}
+            role="tab"
           >
             <span>{tab.title}</span>
             <ChevronIcon direction={contentIndex === activeTab ? 'up' : 'down'} colourFill="#000" />
           </Styles.TabMobile>
-          <Styles.TabContent $isActive={contentIndex === activeTab} id={`promoted-services-tab-${contentIndex}`}>
+          <Styles.TabContent
+            $isActive={contentIndex === activeTab}
+            id={`promoted-services-tabpanel-${contentIndex}`}
+            aria-labelledby={`promoted-services-tab-${contentIndex}`}
+            role="tabpanel"
+          >
             <Row>
               {tab.services.map((serviceLink, serviceLinkIndex) => (
                 <Column key={serviceLinkIndex} small="full" medium="one-half" large="one-third">

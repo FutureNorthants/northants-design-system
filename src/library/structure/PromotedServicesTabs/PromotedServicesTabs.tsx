@@ -13,7 +13,7 @@ const PromotedServicesTabs: React.FunctionComponent<PromotedServicesTabsProps> =
     setActiveTab(index);
   };
   return (
-    <Styles.Container data-testid="PromotedServicesTabs">
+    <Styles.Container data-testid="PromotedServicesTabs" role="tablist">
       <Row>
         {tabs.map((tab, index) => (
           <Column
@@ -27,8 +27,10 @@ const PromotedServicesTabs: React.FunctionComponent<PromotedServicesTabsProps> =
               $isActive={index === activeTab}
               onClick={() => toggleTab(index)}
               aria-label={index === activeTab ? `Hide ${tab.title}` : `Show ${tab.title}`}
-              aria-expanded={index === activeTab ? 'true' : 'false'}
-              aria-controls={`promoted-services-tab-${index}`}
+              aria-selected={index === activeTab ? 'true' : 'false'}
+              aria-controls={`promoted-services-tabpanel-${index}`}
+              id={`promoted-services-tab-${index}`}
+              role="tab"
             >
               {tab.title}
             </Styles.Tab>

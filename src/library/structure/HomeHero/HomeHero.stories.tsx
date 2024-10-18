@@ -4,6 +4,7 @@ import { HomeHeroProps } from './HomeHero.types';
 import { StoryFn } from '@storybook/react';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
 import Header from '../Header/Header';
+import { ExamplePromotedServicesData } from '../PromotedServicesTabs/PromotedServicesTabs.storydata';
 
 export default {
   title: 'Library/structure/Home Hero',
@@ -40,7 +41,6 @@ export default {
 
 const Template: StoryFn<HomeHeroProps> = (args) => (
   <>
-    <Header />
     <HomeHero {...args}></HomeHero>
   </>
 );
@@ -81,4 +81,12 @@ HomeHeroExampleOverriddenLogo.args = {
   ...HomeHeroCommon,
   imageOverrideLogo: 'http://placehold.it/520x150',
   imageOverrideLogoAltText: 'My logo',
+};
+
+export const HomeHeroHasTabs = Template.bind({});
+HomeHeroHasTabs.args = {
+  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
+  promotedServicesTabs: ExamplePromotedServicesData,
+  showSearch: false,
+  ...HomeHeroCommon,
 };
