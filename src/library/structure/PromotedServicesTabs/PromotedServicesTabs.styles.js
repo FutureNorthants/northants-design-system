@@ -43,6 +43,7 @@ export const Tab = styled.button`
     props.$isActive ? props.theme.theme_vars.colours.action_light : props.theme.theme_vars.colours.white};
   border-radius: ${(props) => `${props.theme.theme_vars.border_radius} ${props.theme.theme_vars.border_radius} 0 0`};
   cursor: pointer;
+  text-align: left;
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
 
@@ -104,6 +105,8 @@ export const TabContent = styled.div`
   padding: ${(props) => `${props.theme.theme_vars.spacingSizes.medium} ${props.theme.theme_vars.spacingSizes.small}`};
   background: ${(props) => props.theme.theme_vars.colours.action_light};
   display: ${(props) => (props.$isActive ? 'flex' : 'none')};
+  border-bottom-left-radius: ${(props) => props.theme.theme_vars.border_radius};
+  border-bottom-right-radius: ${(props) => props.theme.theme_vars.border_radius};
 `;
 
 export const ServiceLink = styled.a`
