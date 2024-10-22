@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledTextarea = styled.textarea`
   ${(props) => props.theme.fontStyles}
   margin-top: 0 !important;
-  margin-bottom: 25px;
+  margin-bottom: ${(props) => (props.maxLength ? '0' : '25px')};
   padding: 5px;
   border: solid
     ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
