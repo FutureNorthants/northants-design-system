@@ -45,7 +45,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />}
+      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />}
       <PageStructures.HomeHero
         promotedLinksArray={promotedLinksArray}
         imagesArray={heroArray}
@@ -84,7 +84,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
 
-      <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
+      <PageStructures.Footer footerLinksArray={footerLinksArray} />
     </>
   );
 };

@@ -20,7 +20,7 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
   icon,
 }) => (
   <>
-    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     {heroImage ? (
       <>
         <PageStructures.HeroImage
@@ -87,6 +87,6 @@ export const ServiceLandingPageExample: React.FunctionComponent<ServiceLandingPa
         ))}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
-    <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
+    <PageStructures.Footer footerLinksArray={footerLinksArray} />
   </>
 );

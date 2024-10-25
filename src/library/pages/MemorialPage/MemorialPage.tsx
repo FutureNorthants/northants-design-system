@@ -66,7 +66,7 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
       </PageStructures.AlertBanner>
 
       <ThemeProvider theme={lb_theme_west}>
-        <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" isHomepage />
+        <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" isHomepage hasTranslate />
 
         <PageStructures.MemorialHero {...ExampleMemorialHeroArgs}>
           <PageStructures.ServicesLinksList

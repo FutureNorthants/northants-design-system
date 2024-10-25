@@ -25,6 +25,11 @@ export interface HeaderProps {
   hasDirectoryLink?: boolean;
 
   /**
+   * Should the footer have google translate? Defaults to false.
+   */
+  hasTranslate?: boolean;
+
+  /**
    * Link to the list of all services displayed at top right (#all-services anchor added to this)
    */
   allServicesLink?: string;
