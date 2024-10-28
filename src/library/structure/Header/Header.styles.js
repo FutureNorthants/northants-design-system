@@ -271,6 +271,16 @@ export const LinkButton = styled(Link)`
   cursor: pointer;
   font-size: 19px;
   line-height: 1.45;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    span {
+      text-decoration-style: dotted;
+    }
+  }
 `;
 
 export const LinkButtonText = styled.span`
