@@ -191,12 +191,16 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             </Styles.MenuContainer>
           )}
         </Styles.NavContainer>
-        {hasTranslate && (
-          <Styles.TranslateContainer $showTranslate={showTranslate} id="header-translate-container">
-            <GoogleTranslate />
-          </Styles.TranslateContainer>
-        )}
       </MaxWidthContainer>
+      {hasTranslate && (
+        <Styles.TranslateContainer $showTranslate={showTranslate} id="header-translate-container">
+          <MaxWidthContainer noPadding noBackground>
+            <Styles.TranslateInner>
+              <GoogleTranslate />
+            </Styles.TranslateInner>
+          </MaxWidthContainer>
+        </Styles.TranslateContainer>
+      )}
     </Styles.Container>
   );
 };

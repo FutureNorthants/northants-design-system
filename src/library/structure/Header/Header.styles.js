@@ -271,6 +271,7 @@ export const LinkButton = styled(Link)`
   cursor: pointer;
   font-size: 19px;
   line-height: 1.45;
+  text-align: left;
 
   span {
     text-decoration: underline;
@@ -307,9 +308,18 @@ export const SearchBarContainer = styled.div`
 `;
 
 export const TranslateContainer = styled.div`
-  background: ${(props) => props.theme.theme_vars.colours.white};
-  display: ${(props) => (props.$showTranslate ? 'flex' : 'none')};
-  justify-content: flex-end;
-  align-items: center;
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
+  display: ${(props) => (props.$showTranslate ? 'block' : 'none')};
   width: 100%;
+`;
+
+export const TranslateInner = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    justify-content: flex-end;
+  }
 `;
