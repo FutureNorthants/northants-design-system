@@ -6,7 +6,7 @@ import * as Styles from './Header.styles';
 import GDSLogo from '../../components/logos/GDSLogo/logo';
 import NorthColoured from '../../components/logos/NorthColouredLogo/logo';
 import Searchbar from '../Searchbar/Searchbar';
-import { MaxWidthContainer } from '../PageStructures';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import WestColouredLogo from '../../components/logos/WestColouredLogo/logo';
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import WestBlackLogo from '../../components/logos/WestBlackLogo/logo';
