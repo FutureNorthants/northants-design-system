@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import { HomePageProps } from './HomePage.types';
 import { ThemeContext } from 'styled-components';
+import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -22,6 +23,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
   promoBlocksArray,
   newsArticlesArray,
   footerLinksArray,
+  showSearch,
 }) => {
   const themeContext = useContext(ThemeContext);
 
@@ -43,8 +45,13 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      <PageStructures.HomeHero promotedLinksArray={promotedLinksArray} imagesArray={heroArray} />
-
+      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />}
+      <PageStructures.HomeHero
+        promotedLinksArray={promotedLinksArray}
+        imagesArray={heroArray}
+        showSearch={showSearch}
+        promotedServicesTabs={ExamplePromotedServicesData}
+      />
       <PageStructures.MaxWidthContainer>
         <PageStructures.PageMain>
           {themeContext.cardinal_name === 'north' && (
