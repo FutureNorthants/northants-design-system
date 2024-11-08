@@ -29,6 +29,7 @@ import PageWrapper from './PageWrapper/PageWrapper';
 import PhaseBanner from './PhaseBanner/PhaseBanner';
 import PromoBanner from './PromoBanner/PromoBanner';
 import PromoBlock from './PromoBlock/PromoBlock';
+import PromoTabs from './PromoTabs/PromoTabs';
 import PromotedServicesTabs from './PromotedServicesTabs/PromotedServicesTabs';
 import RateThisPage from './RateThisPage/RateThisPage';
 import Searchbar from './Searchbar/Searchbar';
@@ -74,6 +75,7 @@ export {
   PageWrapper,
   PromoBanner,
   PromoBlock,
+  PromoTabs,
   PromotedServicesTabs,
   RateThisPage,
   Searchbar,
