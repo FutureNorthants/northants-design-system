@@ -36,9 +36,11 @@ describe('Promoted Services Tabs Component', () => {
     expect(tabComponent).toHaveTextContent('Council tax');
     expect(tabContentComponent).toHaveTextContent('Council tax payments');
 
-    expect(allLinks.length).toBe(15);
+    expect(allLinks.length).toBe(18);
     expect(visibleLinks.length).toBe(6);
     expect(visibleLinks[0]).toHaveAttribute('href', '/first-service/first-sub-service');
     expect(visibleLinks[0]).toHaveTextContent('Council tax payments');
+    expect(visibleLinks[5]).toHaveAttribute('href', '/first-service');
+    expect(visibleLinks[5]).toHaveTextContent('All council tax services');
   });
 });

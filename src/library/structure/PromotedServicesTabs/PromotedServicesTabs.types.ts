@@ -24,6 +24,11 @@ export interface PromotedServicesTab {
   title: string;
 
   /**
+   * URL of the page
+   */
+  url?: string;
+
+  /**
    * An array of service links
    */
   services: ServiceLink[];

@@ -4,6 +4,7 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
   tabs: [
     {
       title: 'Council tax',
+      url: '/first-service',
       services: [
         {
           title: 'Council tax payments',
@@ -25,14 +26,11 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
           title: 'Valuation and banding',
           url: '/first-service/second-sub-service',
         },
-        {
-          title: 'All council tax services',
-          url: '/first-service/second-sub-service',
-        },
       ],
     },
     {
       title: 'Bins and recycling',
+      url: '/second-service',
       services: [
         {
           title: 'Bin collection day',
@@ -50,6 +48,7 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
     },
     {
       title: 'Housing',
+      url: '/third-service',
       services: [
         {
           title: 'Housing register',
@@ -67,6 +66,7 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
     },
     {
       title: 'Planning',
+      url: '/fourth-service',
       services: [
         {
           title: 'View and comment on a planning application',
