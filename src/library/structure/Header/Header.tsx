@@ -103,7 +103,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     <Styles.Container $isHomepage={isHomepage} data-testid="Header">
       {!hideSearchBar && (
         <Styles.SearchContainer>
-          <MaxWidthContainer noPadding noBackground>
+          <MaxWidthContainer noPadding noBackground overflowVisible>
             <Styles.SearchWrapper>
               <Styles.SearchBarContainer>
                 <Searchbar

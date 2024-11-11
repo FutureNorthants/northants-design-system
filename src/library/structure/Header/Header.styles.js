@@ -41,6 +41,7 @@ export const Container = styled.header`
 export const SearchContainer = styled.div`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   padding: 3px 0;
+  overflow: visible;
   ${headerThemeStyles}
 `;
 
