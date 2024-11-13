@@ -39,7 +39,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
   }, []);
 
   return (
-    <div data-testid="HomeHero">
+    <Styles.Outer data-testid="HomeHero">
       <Styles.Wrapper as={showSearch ? 'header' : 'div'}>
         <Styles.Container className={random !== 999 ? 'loaded' : 'loading'} $showSearch={showSearch}>
           {random !== 999 && (
@@ -116,7 +116,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
           <PromotedServicesTabContent {...promotedServicesTabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         </MaxWidthContainer>
       )}
-    </div>
+    </Styles.Outer>
   );
 };
 

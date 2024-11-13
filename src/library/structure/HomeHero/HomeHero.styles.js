@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { VisuallyHidden } from '../../helpers/style-helpers';
 
+export const Outer = styled.div`
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
+`;
+
 export const Wrapper = styled.header`
   background: ${(props) =>
     props.noBackground

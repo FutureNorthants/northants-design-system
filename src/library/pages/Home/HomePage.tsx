@@ -3,6 +3,7 @@ import * as PageStructures from '../../structure/PageStructures';
 import { HomePageProps } from './HomePage.types';
 import { ThemeContext } from 'styled-components';
 import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
+import Heading from '../../components/Heading/Heading';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -58,6 +59,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
           )}
 
+          <Heading text="Featured updates" level={2} />
           {numberOfPromos > 0 && <PageStructures.PromoTabs promos={promoBlocksArray} />}
           <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
 
