@@ -97,6 +97,7 @@ export const PromoLink = styled.a`
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   display: block;
 
   &:hover {
