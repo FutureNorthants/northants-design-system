@@ -214,6 +214,7 @@ export const LinksNav = styled.nav`
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: flex;
+    flex-grow: 1;
   }
 `;
 
@@ -226,7 +227,8 @@ export const LinksList = styled.ul`
   width: 100%;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 `;
 
