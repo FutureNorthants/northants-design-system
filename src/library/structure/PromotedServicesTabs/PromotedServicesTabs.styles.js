@@ -78,6 +78,7 @@ export const TabMobile = styled.button`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   outline: none;
   border: none;
   width: 100%;
@@ -122,6 +123,7 @@ export const TabContent = styled.div`
 
 export const ServiceLink = styled.a`
   display: block;
+  height: 100%;
   background: ${(props) => props.theme.theme_vars.colours.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border: ${(props) => `${props.theme.theme_vars.border_width_thin} solid ${props.theme.theme_vars.colours.grey}`};
