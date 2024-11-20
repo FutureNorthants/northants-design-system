@@ -60,7 +60,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
           )}
 
           <Heading text="Featured updates" level={2} />
-          {numberOfPromos > 0 && <PageStructures.PromoTabs promos={promoBlocksArray} />}
+          {numberOfPromos > 0 && <PageStructures.PromoTabsDisplay promos={promoBlocksArray} />}
           <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
 
           {themeContext.cardinal_name === 'west' && (

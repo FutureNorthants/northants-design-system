@@ -14,6 +14,7 @@ export const Container = styled.div`
 
 export const TabContentContainer = styled.div`
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     margin-top: 0;
@@ -22,6 +23,14 @@ export const TabContentContainer = styled.div`
 
 export const TabContentInner = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+
+  &:first-of-type {
+    border-top: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      border: none;
+    }
+  }
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     border: none;
@@ -89,6 +98,8 @@ export const TabMobile = styled.button`
   &:focus {
     ${(props) => props.theme.linkStylesFocus};
     background: ${(props) => props.theme.theme_vars.colours.focus};
+    position: relative;
+    z-index: 1;
   }
 
   &:active {
