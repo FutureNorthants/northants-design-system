@@ -65,7 +65,7 @@ export const ExamplePromotedServicesData: PromotedServicesTabsProps = {
       ],
     },
     {
-      title: 'Planning',
+      title: 'Planning and building control',
       url: '/fourth-service',
       services: [
         {
