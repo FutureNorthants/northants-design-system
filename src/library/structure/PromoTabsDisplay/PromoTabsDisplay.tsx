@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { PromoTabsDisplayProps } from './PromoTabsDisplay.types';
 import * as Styles from './PromoTabsDisplay.styles';
-import { PromoBlock, PromoTabs } from '../PageStructures';
+import PromoBlock from '../PromoBlock/PromoBlock';
+import PromoTabs from '../PromoTabs/PromoTabs';
 
 const PromoTabsDisplay: React.FunctionComponent<PromoTabsDisplayProps> = ({ promos }) => (
   <Styles.Container data-testid="PromoTabsDisplay">
