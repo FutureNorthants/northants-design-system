@@ -6,6 +6,7 @@ import Row from '../../components/Row/Row';
 import Heading from '../../components/Heading/Heading';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import sanitizeHtml from 'sanitize-html';
+import { PromoBlock } from '../PageStructures';
 
 const PromoTabs: React.FunctionComponent<PromoTabsProps> = ({ promos }) => {
   const [activeTab, setActiveTab] = useState(0);

@@ -58,7 +58,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
           )}
 
-          {numberOfPromos > 0 && <PageStructures.PromoTabs promos={promoBlocksArray} />}
+          {numberOfPromos > 0 && <PageStructures.PromoTabsDisplay promos={promoBlocksArray} />}
           <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
 
           {themeContext.cardinal_name === 'west' && (
