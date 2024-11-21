@@ -20,7 +20,7 @@ export interface NewsProps {
 export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
   return (
     <>
-      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
+      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
 
       <PageStructures.MaxWidthContainer noPadding={true}>
         <PageStructures.Breadcrumbs

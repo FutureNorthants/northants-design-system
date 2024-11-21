@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
 import { ThemeProvider } from 'styled-components';
@@ -73,5 +73,28 @@ describe('Header', () => {
     const { queryByPlaceholderText } = renderComponent();
 
     expect(queryByPlaceholderText('Search')).toBeNull();
+  });
+
+  it('should show the translate bar when hasTranslate and translate clicked', () => {
+    props.hasTranslate = true;
+
+    const { getByText, getByTestId } = renderComponent();
+
+    const translateButton = getByText('Translate');
+    const menuButton = getByText('Menu');
+    const translateDropdown = getByTestId('GoogleTranslate');
+
+    // Mobile by default so translate button hidden
+    expect(translateButton).not.toBeVisible();
+    expect(translateDropdown).not.toBeVisible();
+
+    fireEvent.click(menuButton);
+
+    expect(translateButton).toBeVisible();
+    expect(translateDropdown).not.toBeVisible();
+
+    fireEvent.click(translateButton);
+
+    expect(translateDropdown).toBeVisible();
   });
 });

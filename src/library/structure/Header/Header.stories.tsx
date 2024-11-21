@@ -47,6 +47,7 @@ HeaderExample.args = {
   allServicesLink: '/',
   hideSearchBar: false,
   searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+  hasTranslate: true,
 };
 
 export const HeaderNoNewsExample = Template.bind({});

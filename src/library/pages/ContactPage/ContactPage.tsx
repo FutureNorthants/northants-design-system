@@ -28,7 +28,7 @@ const queues = [
 
 export const ContactPage: React.FunctionComponent<ContactPageProps> = () => (
   <>
-    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <PageStructures.PageWithSidebarContainer>

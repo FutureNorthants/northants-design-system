@@ -11,6 +11,7 @@ import WestColouredLogo from '../../components/logos/WestColouredLogo/logo';
 import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import WestBlackLogo from '../../components/logos/WestBlackLogo/logo';
 import NorthBlackLogo from '../../components/logos/NorthBlackLogo/logo';
+import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
 
 /**
  * The header that should appear at the top of every page.
@@ -25,10 +26,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   allServicesLink = '/',
   isHomepage = false,
   searchSuggestions = [],
+  hasTranslate = false,
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showTranslate, setShowTranslate] = useState<boolean>(false);
 
   /*
       north homepage - no header
@@ -91,11 +94,16 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     setShowMenu(!show);
   };
 
+  const toggleTranslate = () => {
+    const show = showTranslate;
+    setShowTranslate(!show);
+  };
+
   return (
     <Styles.Container $isHomepage={isHomepage} data-testid="Header">
       {!hideSearchBar && (
         <Styles.SearchContainer>
-          <MaxWidthContainer noPadding noBackground>
+          <MaxWidthContainer noPadding noBackground overflowVisible>
             <Styles.SearchWrapper>
               <Styles.SearchBarContainer>
                 <Searchbar
@@ -161,12 +169,38 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                       <Styles.Link href={accessibilityLink}>Accessibility</Styles.Link>
                     </Styles.LinksItem>
                   )}
+                  {hasTranslate && (
+                    <Styles.LinksItem>
+                      <Styles.LinkButton
+                        as="button"
+                        onClick={() => toggleTranslate()}
+                        aria-label={showTranslate ? 'Hide translate' : 'Show translate'}
+                        aria-expanded={showTranslate ? 'true' : 'false'}
+                        aria-controls="header-translate-container"
+                      >
+                        <Styles.LinkButtonText>Translate</Styles.LinkButtonText>
+                        <ChevronIcon
+                          direction={showTranslate ? 'up' : 'down'}
+                          colourFill={themeContext.theme_vars.colours.action}
+                        />
+                      </Styles.LinkButton>
+                    </Styles.LinksItem>
+                  )}
                 </Styles.LinksList>
               </Styles.LinksNav>
             </Styles.MenuContainer>
           )}
         </Styles.NavContainer>
       </MaxWidthContainer>
+      {hasTranslate && (
+        <Styles.TranslateContainer $showTranslate={showTranslate} id="header-translate-container">
+          <MaxWidthContainer noPadding noBackground>
+            <Styles.TranslateInner>
+              <GoogleTranslate />
+            </Styles.TranslateInner>
+          </MaxWidthContainer>
+        </Styles.TranslateContainer>
+      )}
     </Styles.Container>
   );
 };

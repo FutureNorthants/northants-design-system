@@ -41,6 +41,7 @@ export const Container = styled.header`
 export const SearchContainer = styled.div`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   padding: 3px 0;
+  overflow: visible;
   ${headerThemeStyles}
 `;
 
@@ -213,6 +214,7 @@ export const LinksNav = styled.nav`
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: flex;
+    flex-grow: 1;
   }
 `;
 
@@ -225,7 +227,8 @@ export const LinksList = styled.ul`
   width: 100%;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 `;
 
@@ -264,6 +267,31 @@ export const Link = styled.a`
   }
 `;
 
+export const LinkButton = styled(Link)`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1.45;
+  text-align: left;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    span {
+      text-decoration-style: dotted;
+    }
+  }
+`;
+
+export const LinkButtonText = styled.span`
+  display: inline-block;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+`;
+
 export const SearchWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -279,5 +307,22 @@ export const SearchBarContainer = styled.div`
   }
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     width: 40%;
+  }
+`;
+
+export const TranslateContainer = styled.div`
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
+  display: ${(props) => (props.$showTranslate ? 'block' : 'none')};
+  width: 100%;
+`;
+
+export const TranslateInner = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    justify-content: flex-end;
   }
 `;

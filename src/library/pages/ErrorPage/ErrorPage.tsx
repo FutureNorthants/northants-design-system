@@ -16,7 +16,7 @@ export interface ErrorPageProps {
 
 export const ErrorPage: React.FC<ErrorPageProps> = ({ pageTitle, errorCode }) => (
   <>
-    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <Heading level={1} text={pageTitle} />

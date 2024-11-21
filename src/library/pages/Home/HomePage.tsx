@@ -3,6 +3,7 @@ import * as PageStructures from '../../structure/PageStructures';
 import { HomePageProps } from './HomePage.types';
 import { ThemeContext } from 'styled-components';
 import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
+import Heading from '../../components/Heading/Heading';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -45,7 +46,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />}
+      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />}
       <PageStructures.HomeHero
         promotedLinksArray={promotedLinksArray}
         imagesArray={heroArray}
@@ -58,6 +59,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
           )}
 
+          <Heading text="Featured updates" level={2} />
           {numberOfPromos > 0 && <PageStructures.PromoTabsDisplay promos={promoBlocksArray} />}
           <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
 
@@ -72,7 +74,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
 
-      <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
+      <PageStructures.Footer footerLinksArray={footerLinksArray} />
     </>
   );
 };

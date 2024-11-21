@@ -47,7 +47,7 @@ export const CouncilTaxPageExample: React.FC<CouncilTaxPageExampleProps> = ({ ve
 
   return (
     <>
-      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" />
+      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
       <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs
           breadcrumbsArray={[

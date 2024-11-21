@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: block;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
 
   .promo-tab-column {
     padding-top: 0;
@@ -97,6 +97,7 @@ export const PromoLink = styled.a`
   ${(props) => props.theme.fontStyles};
   ${(props) => props.theme.linkStyles};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   display: block;
 
   &:hover {
