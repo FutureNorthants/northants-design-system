@@ -39,7 +39,7 @@ export const Button = styled.button`
   background: ${(props) =>
     props.$isLight ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.grey_darkest};
   color: ${(props) => props.theme.theme_vars.colours.white};
-  border: 1px solid transparent;
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
   border-top-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
 
