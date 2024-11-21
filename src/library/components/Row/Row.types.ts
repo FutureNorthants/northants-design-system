@@ -21,4 +21,9 @@ export interface RowProps {
    * The contents of the Row (should be Column)
    */
   children?: React.ReactNode;
+
+  /**
+   * Any optional classes to add to the column
+   */
+  classes?: string;
 }
