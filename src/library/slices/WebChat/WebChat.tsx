@@ -136,6 +136,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       errorText={errors.name ? errors.name.message : null}
                       isFullWidth
                       autocomplete="name"
+                      maxLength={50}
                     />
                   )}
                 />
@@ -185,6 +186,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       errorText={errors.email ? errors.email.message : null}
                       isFullWidth
                       autocomplete="email"
+                      maxLength={100}
                     />
                   )}
                 />
@@ -207,6 +209,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       errorText={errors.telephone ? errors.telephone.message : null}
                       isFullWidth
                       autocomplete="tel"
+                      maxLength={20}
                     />
                   )}
                 />
@@ -228,6 +231,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       isErrored={errors.reference ? true : false}
                       errorText={errors.reference ? errors.reference.message : null}
                       isFullWidth
+                      maxLength={50}
                     />
                   )}
                 />
@@ -250,6 +254,7 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
                       isErrored={errors.subject ? true : false}
                       errorText={errors.subject ? errors.subject.message : null}
                       isFullWidth
+                      maxLength={100}
                     />
                   )}
                 />
