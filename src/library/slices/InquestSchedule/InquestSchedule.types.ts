@@ -25,3 +25,8 @@ export interface CaseAppointmentProps {
   appointmentType: string;
   startDateTime: string;
 }
+
+export enum CaseAppointmentType {
+  Hearing = 'AP Inquest Hearing',
+  Opening = 'AP Inquest Opening',
+}

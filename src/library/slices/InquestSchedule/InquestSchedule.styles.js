@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  box-sizing: border-box;
+`;
+
+export const GroupContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
 `;
 
 export const InquestContainer = styled.div`

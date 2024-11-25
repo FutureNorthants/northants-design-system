@@ -34,12 +34,22 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
   },
   {
     fullName: 'A Name',
+    age: 86,
+    placeOfDeath: 'A location',
+    dateTimeOfDeath: '2023-01-02T09:10:00',
+    coroner: 'Coroner Name',
+    courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
+    appointmentType: 'AP Inquest Opening',
+    startDateTime: '2023-02-01T09:30:00',
+  },
+  {
+    fullName: 'A Name',
     age: 87,
     placeOfDeath: 'A location',
     dateTimeOfDeath: '2023-01-03T14:30:00',
     coroner: 'Coroner Name',
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
-    appointmentType: 'AP Inquest Hearing',
+    appointmentType: 'AP Inquest Opening',
     startDateTime: '2023-02-02T09:00:00',
   },
   {
