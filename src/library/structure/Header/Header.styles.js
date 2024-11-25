@@ -33,9 +33,31 @@ const headerThemeStyles = (props) => {
 };
 
 export const Container = styled.header`
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+`;
+
+export const SearchContainer = styled.div`
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   padding: 3px 0;
+  overflow: visible;
   ${headerThemeStyles}
+`;
+
+export const NavContainer = styled.div`
+  background-color: ${(props) => props.theme.theme_vars.colours.white};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 `;
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
@@ -82,9 +104,7 @@ export const LogoWhite = styled.div`
   ${LogoStyles}
 `;
 
-export const LogoWrapper = styled.div`
-  grid-area: headerlogo;
-`;
+export const LogoWrapper = styled.div``;
 
 export const HomeLink = styled.a`
   display: inline-block;
@@ -98,7 +118,8 @@ export const HomeLink = styled.a`
   }
   &:focus {
     outline: 2px transparent solid;
-    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+    box-shadow:
+      ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
       ${(props) =>
           props.theme.cardinal_name === 'north'
             ? props.theme.theme_vars.colours.black
@@ -111,9 +132,9 @@ export const HomeLink = styled.a`
 const commonLinkStyles = (props) => {
   if (props.theme.is_memorial === true) {
     return css`
-      color: ${props.theme.theme_vars.colours.white};
+      color: ${props.theme.theme_vars.colours.black};
       &:hover {
-        color: ${props.theme.theme_vars.colours.white};
+        color: ${props.theme.theme_vars.colours.black};
         opacity: 0.8;
       }
     `;
@@ -130,9 +151,9 @@ const commonLinkStyles = (props) => {
       break;
     case 'west':
       return css`
-        color: ${props.theme.theme_vars.colours.white};
+        color: ${props.theme.theme_vars.colours.action};
         &:hover {
-          color: ${props.theme.theme_vars.colours.white};
+          color: ${props.theme.theme_vars.colours.action_dark};
           opacity: 0.8;
         }
       `;
@@ -140,24 +161,36 @@ const commonLinkStyles = (props) => {
   }
 };
 
-export const LinksWrapper = styled.div`
-  grid-area: headerlinks;
-  text-align: right;
-  padding-right: 1em;
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    padding-right: 0;
-  }
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    padding-right: 0;
-    text-align: center;
+export const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  width: 100%;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    border: none;
+    width: auto;
+    margin: 0;
   }
 `;
 
-export const Link = styled.a`
+export const MenuButton = styled.button`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  background: white;
   ${(props) => props.theme.linkStyles};
-  padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.small};
-  vertical-align: middle;
-  margin-top: -10px;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1.45;
 
   &:hover {
     ${(props) => props.theme.linkStylesHover};
@@ -169,14 +202,127 @@ export const Link = styled.a`
     ${(props) => props.theme.linkStylesActive}
   }
 
-  display: inline-block;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: none;
+  }
+`;
 
+export const MenuIconContainer = styled.div``;
+
+export const LinksNav = styled.nav`
+  display: ${(props) => (props.$showMenu ? 'flex' : 'none')};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: flex;
+    flex-grow: 1;
+  }
+`;
+
+export const LinksList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+`;
+
+export const LinksItem = styled.li`
+  padding: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+export const Link = styled.a`
+  ${(props) => props.theme.linkStyles};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  display: block;
+  width: 100%;
   ${commonLinkStyles}
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
+  }
+`;
+
+export const LinkButton = styled(Link)`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1.45;
+  text-align: left;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    span {
+      text-decoration-style: dotted;
+    }
+  }
+`;
+
+export const LinkButtonText = styled.span`
+  display: inline-block;
+  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
 
 export const SearchWrapper = styled.div`
-  grid-area: headersearch;
-  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  display: flex;
+  justify-content: flex-end;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  width: auto;
+`;
+
+export const SearchBarContainer = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    width: 60%;
+  }
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    width: 40%;
+  }
+`;
+
+export const TranslateContainer = styled.div`
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
+  display: ${(props) => (props.$showTranslate ? 'block' : 'none')};
+  width: 100%;
+`;
+
+export const TranslateInner = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    justify-content: flex-end;
+  }
 `;

@@ -14,7 +14,8 @@ const hideLabel = (props) => {
 export const Label = styled.label`
   display: block;
   margin-bottom: 5px;
-  ${hideLabel}
+  font-weight: ${(props) => (props.$hasBoldLabel ? 'bold' : 'normal')};
+  ${hideLabel};
 `;
 
 export const Select = styled.select`
@@ -27,10 +28,12 @@ export const Select = styled.select`
   padding: 5px;
   border: 2px solid
     ${(props) => (props.$isErrored ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.black)};
+  margin-bottom: ${(props) => (props.$hasBottomMargin ? '25px' : '0')};
 
   &:focus {
     outline: 2px transparent solid;
-    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+    box-shadow:
+      ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
       ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
     transition: box-shadow 0.3s ease 0s;
   }

@@ -14,7 +14,7 @@ export const SignpostPageExample: React.FunctionComponent<SignpostPageExamplePro
   showServiceAlert = false,
 }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[

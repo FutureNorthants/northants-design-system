@@ -8,6 +8,11 @@ export interface PromotedLinksProps {
    * One column layout
    */
   oneCol?: boolean;
+
+  /**
+   * Should the promoted links be displayed as tabs?
+   */
+  hasTabs?: boolean;
 }
 
 export interface PromotedLinkProp {

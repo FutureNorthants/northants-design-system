@@ -14,26 +14,46 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
   hideLabel = false,
   isErrored = false,
   errorText,
+  value = undefined,
+  hasBottomMargin = false,
+  hasBoldLabel = false,
 }) => {
   return (
     <Styles.Container>
-      <Styles.Label htmlFor={id} $hideLabel={hideLabel}>
+      <Styles.Label htmlFor={id} $hideLabel={hideLabel} $hasBoldLabel={hasBoldLabel}>
         {label}
       </Styles.Label>
-      {errorText && <Styles.ErrorText>{errorText}</Styles.ErrorText>}
-      <Styles.Select
-        id={id}
-        name={id}
-        onChange={onChange && onChange}
-        defaultValue={selected && selected}
-        $isErrored={isErrored}
-      >
-        {options.map((option, i) => (
-          <Styles.Option key={i} value={option.value}>
-            {option.title}
-          </Styles.Option>
-        ))}
-      </Styles.Select>
+      {errorText && <Styles.ErrorText id={`${id}Error`}>{errorText}</Styles.ErrorText>}
+      {typeof value !== 'undefined' ? (
+        <Styles.Select
+          id={id}
+          name={id}
+          onChange={onChange && onChange}
+          value={value}
+          $isErrored={isErrored}
+          $hasBottomMargin={hasBottomMargin}
+        >
+          {options.map((option, i) => (
+            <Styles.Option key={i} value={option.value}>
+              {option.title}
+            </Styles.Option>
+          ))}
+        </Styles.Select>
+      ) : (
+        <Styles.Select
+          id={id}
+          name={id}
+          onChange={onChange && onChange}
+          defaultValue={selected && selected}
+          $isErrored={isErrored}
+        >
+          {options.map((option, i) => (
+            <Styles.Option key={i} value={option.value}>
+              {option.title}
+            </Styles.Option>
+          ))}
+        </Styles.Select>
+      )}
     </Styles.Container>
   );
 };

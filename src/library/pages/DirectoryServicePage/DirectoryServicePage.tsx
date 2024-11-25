@@ -23,7 +23,7 @@ const breadcrumbs: BreadcrumbProp[] = [
 
 export const DirectoryServicePage: React.FunctionComponent = () => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <PageStructures.Breadcrumbs breadcrumbsArray={breadcrumbs} hasMargin />

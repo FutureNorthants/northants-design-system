@@ -13,7 +13,7 @@ const MaxWidthContainer: React.FC<MaxWidthContainerProps> = ({
   overflowVisible = false,
   ...props
 }) => (
-  <Styles.Container $noBackground={noBackground} $noPadding={noPadding}>
+  <Styles.Container $noBackground={noBackground} $noPadding={noPadding} $overflowVisible={overflowVisible}>
     <Styles.MaxWidth className={classes} $overflowVisible={overflowVisible} {...props}>
       {children}
     </Styles.MaxWidth>

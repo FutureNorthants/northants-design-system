@@ -5,6 +5,11 @@ export interface HeaderProps {
   hideSearchBar?: boolean;
 
   /**
+   * Set to true to include a link to /accessibility in the header
+   */
+  accessibilityLink?: string;
+
+  /**
    * Link to the root of the website that will be used on the logo
    */
   homeLink?: string;
@@ -13,6 +18,16 @@ export interface HeaderProps {
    * Set to true to include a link to /news in the header
    */
   hasNewsLink?: boolean;
+
+  /**
+   * Set to true to include a link to /directory in the header
+   */
+  hasDirectoryLink?: boolean;
+
+  /**
+   * Should the footer have google translate? Defaults to false.
+   */
+  hasTranslate?: boolean;
 
   /**
    * Link to the list of all services displayed at top right (#all-services anchor added to this)

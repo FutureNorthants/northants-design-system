@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
 import { ThemeProvider } from 'styled-components';
@@ -28,7 +28,8 @@ describe('Header', () => {
   it('should render the header', () => {
     const { getByTestId, getAllByRole, getByPlaceholderText } = renderComponent();
     const component = getByTestId('Header');
-    const links = getAllByRole('link');
+    // Include hidden links as they are hidden on mobile by default
+    const links = getAllByRole('link', { hidden: true });
     const search = getByPlaceholderText('Search');
 
     expect(component).toBeVisible();
@@ -54,7 +55,7 @@ describe('Header', () => {
     const { getAllByRole, getByTestId } = renderComponent();
 
     expect(getByTestId('Header')).not.toHaveTextContent('All services');
-    expect(getAllByRole('link')).toHaveLength(2);
+    expect(getAllByRole('link', { hidden: true })).toHaveLength(2);
   });
 
   it('should not have news link', () => {
@@ -63,7 +64,7 @@ describe('Header', () => {
     const { getAllByRole, getByTestId } = renderComponent();
 
     expect(getByTestId('Header')).not.toHaveTextContent('News');
-    expect(getAllByRole('link')).toHaveLength(2);
+    expect(getAllByRole('link', { hidden: true })).toHaveLength(2);
   });
 
   it('should hide the search bar', () => {
@@ -72,5 +73,28 @@ describe('Header', () => {
     const { queryByPlaceholderText } = renderComponent();
 
     expect(queryByPlaceholderText('Search')).toBeNull();
+  });
+
+  it('should show the translate bar when hasTranslate and translate clicked', () => {
+    props.hasTranslate = true;
+
+    const { getByText, getByTestId } = renderComponent();
+
+    const translateButton = getByText('Translate');
+    const menuButton = getByText('Menu');
+    const translateDropdown = getByTestId('GoogleTranslate');
+
+    // Mobile by default so translate button hidden
+    expect(translateButton).not.toBeVisible();
+    expect(translateDropdown).not.toBeVisible();
+
+    fireEvent.click(menuButton);
+
+    expect(translateButton).toBeVisible();
+    expect(translateDropdown).not.toBeVisible();
+
+    fireEvent.click(translateButton);
+
+    expect(translateDropdown).toBeVisible();
   });
 });

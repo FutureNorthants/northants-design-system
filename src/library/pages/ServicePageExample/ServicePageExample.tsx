@@ -18,7 +18,7 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
   contents,
 }) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[
@@ -149,7 +149,6 @@ export const ServicePageExample: React.FunctionComponent<ServicePageExampleProps
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
-      hasTranslate
       footerLinksArray={[
         {
           title: 'About',

@@ -13,9 +13,9 @@ export const Container = styled.div`
     props.$noBackground
       ? 'transparent'
       : props.theme.cardinal_name === 'north'
-      ? props.theme.theme_vars.colours.grey_light + '7a'
-      : props.theme.theme_vars.colours.white};
-  overflow: ${(props) => (props.$noPadding ? 'hidden' : 'visible')};
+        ? props.theme.theme_vars.colours.grey_light + '7a'
+        : props.theme.theme_vars.colours.white};
+  overflow: ${(props) => (props.$overflowVisible ? 'visible' : 'hidden')};
   padding-bottom: ${({ $noBackground, $noPadding }) => handleContainerPadding($noBackground, $noPadding)};
 `;
 

@@ -51,6 +51,7 @@ import SearchBox from './library/slices/SearchBox/SearchBox';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
 import WarningTextDisclaimer from './library/slices/WarningTextDisclaimer/WarningTextDisclaimer';
+import WebChat from './library/slices/WebChat/WebChat';
 
 export {
   Accordion,
@@ -70,6 +71,7 @@ export {
   Video,
   WarningText,
   WarningTextDisclaimer,
+  WebChat,
 };
 
 // Structure

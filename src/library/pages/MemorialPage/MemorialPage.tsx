@@ -65,8 +65,8 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      <ThemeProvider theme={lb_theme_north}>
-        <PageStructures.Header />
+      <ThemeProvider theme={lb_theme_west}>
+        <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" isHomepage hasTranslate />
 
         <PageStructures.MemorialHero {...ExampleMemorialHeroArgs}>
           <PageStructures.ServicesLinksList
@@ -97,20 +97,8 @@ export const MemorialPage: React.FunctionComponent<MemorialPageProps> = ({
           <PageStructures.PageMain>
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
 
-            {numberOfPromos > 0 && (
-              <>
-                <PageStructures.PromoBanner
-                  title={promoBannerData.title}
-                  ctaUrl={promoBannerData.ctaUrl}
-                  ctaText={promoBannerData.ctaText}
-                  image1440x810={promoBannerData.image1440x810}
-                  image144x81={promoBannerData.image144x81}
-                >
-                  {promoBannerContent}
-                </PageStructures.PromoBanner>
-                <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
-              </>
-            )}
+            {numberOfPromos > 0 && <PageStructures.PromoTabsDisplay promos={promoBlocksArray} />}
+            <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
           </PageStructures.PageMain>
         </PageStructures.MaxWidthContainer>
 
