@@ -43,33 +43,25 @@ const WebChat: React.FunctionComponent<WebChatProps> = ({
   const onSubmit: SubmitHandler<WebChatFormInputs> = (data) => {
     const params = [];
 
-    if (data.enquiryType) {
-      params.push({
-        key: 'queue',
-        value: data.enquiryType,
-      });
-    }
+    params.push({
+      key: 'queue',
+      value: data.enquiryType ?? '',
+    });
 
-    if (data.email) {
-      params.push({
-        key: 'email',
-        value: data.email,
-      });
-    }
+    params.push({
+      key: 'email',
+      value: data.email ?? '',
+    });
 
-    if (data.telephone) {
-      params.push({
-        key: 'telephone',
-        value: data.telephone,
-      });
-    }
+    params.push({
+      key: 'telephone',
+      value: data.telephone ?? '',
+    });
 
-    if (data.reference) {
-      params.push({
-        key: 'reference',
-        value: data.reference,
-      });
-    }
+    params.push({
+      key: 'reference',
+      value: data.reference ?? '',
+    });
 
     params.push({
       key: 'im_name',

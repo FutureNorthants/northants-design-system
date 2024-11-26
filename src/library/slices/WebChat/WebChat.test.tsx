@@ -13,7 +13,7 @@ describe('WebChat Slice', () => {
   beforeEach(() => {
     props = {
       buttonText: 'Open WebChat',
-      action: '',
+      action: 'http://example.com/1234',
       queues: [
         {
           title: 'Select an option',
@@ -33,6 +33,9 @@ describe('WebChat Slice', () => {
         },
       ],
     };
+
+    // Mock window.open
+    global.open = jest.fn();
   });
 
   const renderComponent = () =>
@@ -158,6 +161,41 @@ describe('WebChat Slice', () => {
 
     await waitFor(() => {
       expect(component).toHaveTextContent('Invalid email address.');
+    });
+  });
+
+  it('submits the data to the url', async () => {
+    const { getByTestId, getByRole, getByLabelText } = renderComponent();
+    const component = getByTestId('WebChat');
+    const startButton = getByRole('button', { name: props.buttonText });
+
+    fireEvent.click(startButton);
+
+    fireEvent.input(getByLabelText('Name'), {
+      target: {
+        value: 'Test Name',
+      },
+    });
+    fireEvent.input(getByLabelText('Subject'), {
+      target: {
+        value: 'An example subject',
+      },
+    });
+    fireEvent.change(getByLabelText('Enquiry Type'), {
+      target: {
+        value: 'council_tax',
+      },
+    });
+
+    fireEvent.submit(getByRole('button', { name: 'Connect to webchat (opens in new window)' }));
+
+    await waitFor(() => {
+      expect(component).not.toHaveTextContent('There is a problem');
+      expect(global.open).toHaveBeenCalled();
+      expect(global.open).toHaveBeenCalledWith(
+        'http://example.com/1234?queue=council_tax&email=&telephone=&reference=&im_name=Test%20Name&im_subject=An%20example%20subject',
+        '_blank'
+      );
     });
   });
 });
