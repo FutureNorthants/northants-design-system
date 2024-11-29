@@ -24,13 +24,12 @@ describe('Test Component', () => {
     );
 
   it('should render title text correctly', () => {
-    props.title = 'Example Title';
+    props.title = 'Upcoming Inquests';
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('InquestSchedule');
 
-    expect(component).toHaveTextContent('Example Title');
-    expect(component).toHaveTextContent('Hearings');
+    expect(component).toHaveTextContent('Upcoming Inquests');
     expect(component).toHaveTextContent('A Name');
     expect(component).toHaveTextContent('100');
     expect(component).toHaveTextContent('A location');
@@ -40,7 +39,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE');
     expect(component).toHaveTextContent('Wednesday 1 February 2023');
 
-    expect(component).not.toHaveTextContent('Openings');
+    expect(component).not.toHaveTextContent('Inquest Openings');
   });
 
   it('should display the message when no results are returned', () => {
@@ -52,14 +51,15 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent("We can't find any results at the moment.");
   });
 
-  it('should display hearings and openings when set', () => {
+  it('should display hearings, openings and in writing when set', () => {
     props.caseAppointments = ExampleInquestScheduleArray;
 
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('InquestSchedule');
 
-    expect(component).toHaveTextContent('Hearings');
-    expect(component).toHaveTextContent('Openings');
+    expect(component).toHaveTextContent('Upcoming Inquests');
+    expect(component).toHaveTextContent('Inquest Openings');
+    expect(component).toHaveTextContent('Inquests in Writing');
   });
 });

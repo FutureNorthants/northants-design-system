@@ -17,6 +17,9 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   const openings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType === CaseAppointmentType.Opening;
   });
+  const writings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
+    return appointment.appointmentType === CaseAppointmentType.Writing;
+  });
 
   const groupHearingsByDay = (appointments: CaseAppointmentProps[]) => {
     return appointments.reduce((acc, inquest) => {
@@ -32,6 +35,7 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
 
   const hearingDayGrouped = groupHearingsByDay(hearings);
   const openingDayGrouped = groupHearingsByDay(openings);
+  const writingDayGrouped = groupHearingsByDay(writings);
 
   const formatDate = (inquestDay: Date) => {
     return inquestDay
@@ -55,7 +59,7 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         title: formatDate(inquestDayDate),
         content: (
           <Row>
-            {hearingDayGrouped[day]
+            {groupedData[day]
               .sort((a, b) => {
                 return new Date(a.startDateTime).getTime() - new Date(b.startDateTime).getTime();
               })
@@ -90,19 +94,24 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
 
   return (
     <Styles.Container data-testid="InquestSchedule">
-      <Heading level={2} text={title} />
-
       {Object.keys(hearingDayGrouped).length > 0 && (
         <Styles.GroupContainer>
-          <Heading level={3} text="Hearings" />
+          <Heading level={2} text={title} />
           <Accordion sections={transformToSections(hearingDayGrouped)} />
         </Styles.GroupContainer>
       )}
 
       {Object.keys(openingDayGrouped).length > 0 && (
         <Styles.GroupContainer>
-          <Heading level={3} text="Openings" />
+          <Heading level={2} text="Inquest Openings" />
           <Accordion sections={transformToSections(openingDayGrouped)} />
+        </Styles.GroupContainer>
+      )}
+
+      {Object.keys(writingDayGrouped).length > 0 && (
+        <Styles.GroupContainer>
+          <Heading level={2} text="Inquests in Writing" />
+          <Accordion sections={transformToSections(writingDayGrouped)} />
         </Styles.GroupContainer>
       )}
 
