@@ -30,18 +30,18 @@ const Template: StoryFn<InquestScheduleProps> = (args) => (
 export const ExampleInquestSchedule = Template.bind({});
 ExampleInquestSchedule.args = {
   caseAppointments: ExampleInquestScheduleArray,
-  title: 'Upcoming inquests',
+  title: 'Upcoming Inquests',
 };
 
 export const InquestScheduleNoItems = Template.bind({});
 InquestScheduleNoItems.args = {
   caseAppointments: [],
-  title: 'Upcoming inquests',
+  title: 'Upcoming Inquests',
 };
 
 export const InquestScheduleError = Template.bind({});
 InquestScheduleError.args = {
   caseAppointments: [],
-  title: 'Upcoming inquests',
+  title: 'Upcoming Inquests',
   error: true,
 };
