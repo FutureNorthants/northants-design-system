@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import RateThisPage from './RateThisPage';
 import { RateThisPageProps } from './RateThisPage.types';
 import { ThemeProvider } from 'styled-components';
@@ -52,5 +52,21 @@ describe('RateThisPage Component', () => {
     fireEvent.click(getByText('I have feedback about the information on this page'));
 
     expect(component).toHaveTextContent('Did you come across any barriers or issues with this webpage?');
+  });
+
+  it('should not require additional questions when you select yes', async () => {
+    const { getByTestId, getByLabelText, getByText } = renderComponent();
+
+    const component = getByTestId('RateThisPage');
+    const isHelpfulYesRadio = getByLabelText('Yes');
+    const submitButton = getByText('Submit');
+
+    fireEvent.click(isHelpfulYesRadio);
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(component).not.toHaveTextContent('There is a problem');
+      expect(component).not.toHaveTextContent('The field how easy is it to find what you are looking for is required.');
+    });
   });
 });

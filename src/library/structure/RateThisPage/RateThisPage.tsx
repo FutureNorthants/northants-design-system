@@ -235,7 +235,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         message: 'The field how easy is it to find what you are looking for is invalid.',
                       },
                       required: {
-                        value: true,
+                        value: showFullForm,
                         message: 'The field how easy is it to find what you are looking for is required.',
                       },
                     }}
@@ -277,7 +277,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         message: 'The field how easy was this content to understand is invalid.',
                       },
                       required: {
-                        value: true,
+                        value: showFullForm,
                         message: 'The field how easy was this content to understand is required.',
                       },
                     }}
@@ -320,7 +320,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                         'The field did you come across any barriers or issues with this webpage must be less than 3000 characters.',
                     },
                     required: {
-                      value: true,
+                      value: showFullForm,
                       message: 'The field did you come across any barriers or issues with this webpage is required.',
                     },
                   }}
