@@ -10,6 +10,23 @@ export const FormContainer = styled(Container)`
   }
 `;
 
+export const PanelWrapper = styled.div`
+  display: ${(props) => (props.$show ? 'flex' : 'none')};
+`;
+
+export const FormWrapper = styled.div`
+  display: ${(props) => (props.$show ? 'flex' : 'none')};
+`;
+
+export const ShowQuestion = styled.div`
+  display: ${(props) => (props.$show ? 'flex' : 'none')};
+`;
+
+export const ShowFullForm = styled.div`
+  display: ${(props) => (props.$show ? 'flex' : 'none')};
+  flex-direction: column;
+`;
+
 export const Legend = styled.legend`
   margin-bottom: 5px;
   font-weight: bold;

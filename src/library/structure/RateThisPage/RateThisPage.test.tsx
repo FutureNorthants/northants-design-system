@@ -39,12 +39,15 @@ describe('RateThisPage Component', () => {
 
     const component = getByTestId('RateThisPage');
     const isHelpfulNoRadio = getByLabelText('No');
+    const question = getByText('Did you come across any barriers or issues with this webpage?');
+    const feedbackMessage = getByText('Your feedback will help us improve our website and the content we include.');
 
-    expect(component).not.toHaveTextContent('Did you come across any barriers or issues with this webpage?');
+    expect(question).not.toBeVisible();
+    expect(feedbackMessage).not.toBeVisible();
 
     fireEvent.click(isHelpfulNoRadio);
 
-    expect(component).toHaveTextContent('Your feedback will help us improve our website and the content we include.');
+    expect(feedbackMessage).toBeVisible();
 
     fireEvent.click(getByText('I have feedback about the information on this page'));
 
