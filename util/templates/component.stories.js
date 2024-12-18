@@ -1,12 +1,10 @@
 module.exports = (componentName) => ({
   content: `
 import React from "react";
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ${componentName} from "./${componentName}";
-import { ${componentName}Props } from "./${componentName}.types";
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof ${componentName} = {
     title: 'Library/Components/${componentName}',
     component: ${componentName},
     parameters: {
@@ -16,16 +14,22 @@ export default {
     },
 };
 
+export default meta;
+type Story = StoryObj<typeof ${componentName}>;
+
 const Template: StoryFn<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;
 
-export const Example${componentName} = Template.bind({});    
-Example${componentName}.args = {
-  foo: "bar"
+export const Example${componentName}: Story = {     
+  args: {
+    foo: "bar"
+  },
 };
 
-export const AnotherExample${componentName} = Template.bind({});    
-AnotherExample${componentName}.args = {
-  foo: "foo"
+export const AnotherExample${componentName}: Story = {
+  ...Example${componentName},    
+  args: {
+    foo: "foo"
+  }
 };
 `,
   extension: `.stories.tsx`,

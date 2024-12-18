@@ -1,10 +1,8 @@
 import React from 'react';
 import TextInput from './TextInput';
-import { TextInputProps } from './TextInput.types';
-import { StoryFn } from '@storybook/react';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof TextInput> = {
   title: 'Library/Components/TextInput',
   component: TextInput,
   parameters: {
@@ -46,17 +44,14 @@ export default {
   },
 };
 
-const Template: StoryFn<TextInputProps> = (args) => (
-  <SBPadding>
-    <TextInput {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof TextInput>;
 
-export const DefaultTextInput = Template.bind({});
-DefaultTextInput.args = {};
+export const DefaultTextInput: Story = {};
 
-export const LargeTextInputWithPlaceholder = Template.bind({});
-LargeTextInputWithPlaceholder.args = {
-  isLarge: true,
-  placeholder: 'Enter some text here',
+export const LargeTextInputWithPlaceholder: Story = {
+  args: {
+    isLarge: true,
+    placeholder: 'Enter some text here',
+  },
 };

@@ -1,11 +1,9 @@
 import React from 'react';
 import PostCodeSearch from './PostCodeSearch';
-import { PostCodeSearchProps } from './PostCodeSearch.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PostCodeSearch> = {
   title: 'Library/Components/Postcode Search',
   component: PostCodeSearch,
   parameters: {
@@ -15,15 +13,16 @@ export default {
   },
 };
 
-const Template: StoryFn<PostCodeSearchProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof PostCodeSearch>;
+
+export const Example: Story = {
+  args: {
+    otherCouncilLink: 'https://www.westnorthants.gov.uk',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PostCodeSearch {...args} />
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  otherCouncilLink: 'https://www.westnorthants.gov.uk',
+  ),
 };

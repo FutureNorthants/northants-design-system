@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import WebsiteIcon from './WebsiteIcon';
-import { WebsiteIconProps } from './WebsiteIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof WebsiteIcon> = {
   title: 'Library/Icons/Website',
   component: WebsiteIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<WebsiteIconProps> = (args) => (
-  <SBPadding>
-    <WebsiteIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof WebsiteIcon>;
 
-export const ExampleWebsiteIcon = Template.bind({});
-ExampleWebsiteIcon.args = {
-  colourFill: '#333',
+export const ExampleWebsiteIcon: Story = {
+  args: {
+    colourFill: '#333',
+  },
 };

@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ToggleButtons from './ToggleButtons';
-import { ToggleButtonsProps } from './ToggleButtons.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof ToggleButtons> = {
   title: 'Library/Components/Toggle Buttons',
   component: ToggleButtons,
   parameters: {
@@ -16,28 +14,29 @@ export default {
   },
 };
 
-const Template: StoryFn<ToggleButtonsProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof ToggleButtons>;
+
+export const ExampleToggleButtons: Story = {
+  args: {
+    buttons: [
+      {
+        label: 'Most used',
+        ariaLabel: 'View the list in most used order',
+        onClick: () => {},
+      },
+      {
+        label: 'Alphabetical',
+        ariaLabel: 'View the list in alphabetical order',
+        onClick: () => {},
+      },
+    ],
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <ToggleButtons {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleToggleButtons = Template.bind({});
-ExampleToggleButtons.args = {
-  buttons: [
-    {
-      label: 'Most used',
-      ariaLabel: 'View the list in most used order',
-      onClick: () => {},
-    },
-    {
-      label: 'Alphabetical',
-      ariaLabel: 'View the list in alphabetical order',
-      onClick: () => {},
-    },
-  ],
+  ),
 };

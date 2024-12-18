@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import RemoveAllFilters from './RemoveAllFilters';
-import { RemoveAllFiltersProps } from './RemoveAllFilters.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof RemoveAllFilters> = {
   title: 'Library/Components/Remove All Filters',
   component: RemoveAllFilters,
   parameters: {
@@ -14,10 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<RemoveAllFiltersProps> = (args) => (
-  <SBPadding>
-    <RemoveAllFilters {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof RemoveAllFilters>;
 
-export const ExampleRemoveAllFilters = Template.bind({});
+export const ExampleRemoveAllFilters: Story = {};

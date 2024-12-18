@@ -1,12 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PostCodeAddressDropdown from './PostCodeAddressDropdown';
-import { PostCodeAddressDropdownProps } from './PostCodeAddressDropdown.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from './../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import PostCodeAddressSearch from '../PostCodeAddressSearch/PostCodeAddressSearch';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-export default {
+
+const meta: Meta<typeof PostCodeAddressDropdown> = {
   title: 'Library/Prototypes/Post Code Address Dropdown',
   component: PostCodeAddressDropdown,
   parameters: {
@@ -16,16 +15,16 @@ export default {
   },
 };
 
-const Template: StoryFn<PostCodeAddressDropdownProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof PostCodeAddressDropdown>;
+
+export const ExamplePostCodeAddressDropdown: Story = {
+  render: (args) => (
     <MaxWidthContainer>
       <PostCodeAddressProvider>
         <PostCodeAddressSearch />
         <PostCodeAddressDropdown {...args} />
       </PostCodeAddressProvider>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExamplePostCodeAddressDropdown = Template.bind({});
-ExamplePostCodeAddressDropdown.args = {};
+  ),
+};

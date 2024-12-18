@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PhoneIcon from './PhoneIcon';
-import { PhoneIconProps } from './PhoneIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PhoneIcon> = {
   title: 'Library/Icons/Phone',
   component: PhoneIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<PhoneIconProps> = (args) => (
-  <SBPadding>
-    <PhoneIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof PhoneIcon>;
 
-export const ExamplePhoneIcon = Template.bind({});
-ExamplePhoneIcon.args = {
-  colourFill: '#333',
+export const ExamplePhoneIcon: Story = {
+  args: {
+    colourFill: '#333',
+  },
 };

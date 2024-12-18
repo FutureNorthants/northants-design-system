@@ -1,11 +1,11 @@
 import React from 'react';
 import PostCodeAddressSearch from './PostCodeAddressSearch';
-import { PostCodeAddressSearchProps } from './PostCodeAddressSearch.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
-export default {
+
+const meta: Meta<typeof PostCodeAddressSearch> = {
   title: 'Library/Prototypes/Post Code Address Search',
   component: PostCodeAddressSearch,
   parameters: {
@@ -14,6 +14,9 @@ export default {
     },
   },
 };
+
+export default meta;
+type Story = StoryObj<typeof PostCodeAddressSearch>;
 
 const value = {
   postcodeValue: {
@@ -24,15 +27,14 @@ const value = {
   },
 };
 
-const Template: StoryFn<PostCodeAddressSearchProps> = (args) => (
-  <SBPadding>
-    <MaxWidthContainer>
-      <PostCodeAddressProvider value={value}>
-        <PostCodeAddressSearch {...args} />
-      </PostCodeAddressProvider>
-    </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const PostCodeAddressSearchExample = Template.bind({});
-PostCodeAddressSearchExample.args = {};
+export const PostCodeAddressSearchExample: Story = {
+  render: (args) => (
+    <SBPadding>
+      <MaxWidthContainer>
+        <PostCodeAddressProvider>
+          <PostCodeAddressSearch {...args} />
+        </PostCodeAddressProvider>
+      </MaxWidthContainer>
+    </SBPadding>
+  ),
+};

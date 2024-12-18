@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import HeartIcon from './HeartIcon';
-import { HeartIconProps } from './HeartIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof HeartIcon> = {
   title: 'Library/Icons/Heart',
   component: HeartIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<HeartIconProps> = (args) => (
-  <SBPadding>
-    <HeartIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof HeartIcon>;
 
-export const ExampleHeartIcon = Template.bind({});
-ExampleHeartIcon.args = {
-  colourFill: '#111',
+export const ExampleHeartIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };

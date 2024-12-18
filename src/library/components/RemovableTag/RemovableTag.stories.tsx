@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import RemovableTag from './RemovableTag';
-import { RemovableTagProps } from './RemovableTag.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof RemovableTag> = {
   title: 'Library/components/Removable Tag',
   component: RemovableTag,
   parameters: {
@@ -14,14 +12,12 @@ export default {
   },
 };
 
-const Template: StoryFn<RemovableTagProps> = (args) => (
-  <SBPadding>
-    <RemovableTag {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof RemovableTag>;
 
-export const ExampleRemovableTag = Template.bind({});
-ExampleRemovableTag.args = {
-  label: 'Bins',
-  value: 'bins',
+export const ExampleRemovableTag: Story = {
+  args: {
+    label: 'Bins',
+    value: 'bins',
+  },
 };

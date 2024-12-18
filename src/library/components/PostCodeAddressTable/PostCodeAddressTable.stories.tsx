@@ -1,12 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PostCodeAddressTable from './PostCodeAddressTable';
-import { PostCodeAddressTableProps } from './PostCodeAddressTable.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from './../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import PostCodeAddressSearch from '../PostCodeAddressSearch/PostCodeAddressSearch';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-export default {
+
+const meta: Meta<typeof PostCodeAddressTable> = {
   title: 'Library/Prototypes/Post Code Address Table',
   component: PostCodeAddressTable,
   parameters: {
@@ -16,16 +15,16 @@ export default {
   },
 };
 
-const Template: StoryFn<PostCodeAddressTableProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof PostCodeAddressTable>;
+
+export const ExamplePostCodeAddressTable: Story = {
+  render: (args) => (
     <MaxWidthContainer>
       <PostCodeAddressProvider>
         <PostCodeAddressSearch />
         <PostCodeAddressTable {...args} />
       </PostCodeAddressProvider>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExamplePostCodeAddressTable = Template.bind({});
-ExamplePostCodeAddressTable.args = {};
+  ),
+};

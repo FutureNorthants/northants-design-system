@@ -1,10 +1,8 @@
 import React from 'react';
 import FormButton from './FormButton';
-import { FormButtonProps } from './FormButton.types';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof FormButton> = {
   title: 'Library/Components/FormButton',
   component: FormButton,
   parameters: {
@@ -14,32 +12,36 @@ export default {
   },
 };
 
-const Template: StoryFn<FormButtonProps> = (args) => (
-  <SBPadding>
-    <FormButton {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof FormButton>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  text: 'FormButton label',
+export const Primary: Story = {
+  args: {
+    primary: true,
+    text: 'FormButton label',
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  primary: false,
-  text: 'FormButton label',
+export const Secondary: Story = {
+  ...Primary,
+  args: {
+    primary: false,
+    text: 'FormButton label',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  text: 'FormButton label',
+export const Large: Story = {
+  ...Primary,
+  args: {
+    size: 'large',
+    text: 'FormButton label',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  text: 'FormButton label',
+export const Small: Story = {
+  ...Primary,
+  args: {
+    size: 'small',
+    text: 'FormButton label',
+  },
 };

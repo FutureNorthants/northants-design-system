@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import RadioCheckboxInput from './RadioCheckboxInput';
-import { RadioCheckboxInputProps } from './RadioCheckboxInput.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof RadioCheckboxInput> = {
   title: 'Library/Components/RadioCheckboxInput',
   component: RadioCheckboxInput,
   parameters: {
@@ -16,36 +14,39 @@ export default {
   },
 };
 
-const Template: StoryFn<RadioCheckboxInputProps> = (args) => (
-  <SBPadding>
-    <MaxWidthContainer>
-      <PageMain>
-        <RadioCheckboxInput {...args} />
-      </PageMain>
-    </MaxWidthContainer>
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof RadioCheckboxInput>;
 
 /**
  * TODO - the component is a controlled react component so story can
  * be updated in future to demo state change
  */
 
-export const ExampleCheckboxInput = Template.bind({});
-ExampleCheckboxInput.args = {
-  label: 'Example',
-  singleSelection: false,
-  value: 'example',
-  name: 'Example item',
-  checked: true,
-  onChange: () => {},
+export const ExampleCheckboxInput: Story = {
+  args: {
+    label: 'Example',
+    singleSelection: false,
+    value: 'example',
+    name: 'Example item',
+    checked: true,
+    onChange: () => {},
+  },
+  render: (args) => (
+    <MaxWidthContainer>
+      <PageMain>
+        <RadioCheckboxInput {...args} />
+      </PageMain>
+    </MaxWidthContainer>
+  ),
 };
 
-export const ExampleRadioInput = Template.bind({});
-ExampleRadioInput.args = {
-  label: 'Example',
-  singleSelection: true,
-  value: 'example',
-  name: 'Example item',
-  checked: true,
+export const ExampleRadioInput: Story = {
+  ...ExampleCheckboxInput,
+  args: {
+    label: 'Example',
+    singleSelection: true,
+    value: 'example',
+    name: 'Example item',
+    checked: true,
+  },
 };

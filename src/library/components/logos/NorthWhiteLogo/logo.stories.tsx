@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import NorthWhiteLogo from './logo';
-import { LogoProps } from './logo.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof NorthWhiteLogo> = {
   title: 'Library/Logos/North White',
   component: NorthWhiteLogo,
   parameters: {
@@ -14,12 +12,13 @@ export default {
   },
 };
 
-const Template: StoryFn<LogoProps> = (args) => (
-  <div style={{ backgroundColor: 'black' }}>
-    <SBPadding>
-      <NorthWhiteLogo {...args} />
-    </SBPadding>
-  </div>
-);
+export default meta;
+type Story = StoryObj<typeof NorthWhiteLogo>;
 
-export const LogoExample = Template.bind({});
+export const LogoExample: Story = {
+  render: (args) => (
+    <div style={{ backgroundColor: 'black' }}>
+      <NorthWhiteLogo {...args} />
+    </div>
+  ),
+};

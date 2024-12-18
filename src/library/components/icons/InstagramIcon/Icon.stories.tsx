@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Icon from './Icon';
-import { IconProps } from '../services/Icon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof Icon> = {
   title: 'Library/Icons/Instagram',
   component: Icon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<IconProps> = (args) => (
-  <SBPadding>
-    <Icon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof Icon>;
 
-export const ExampleInstagramIcon = Template.bind({});
-ExampleInstagramIcon.args = {
-  colourFill: '#111',
+export const ExampleInstagramIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };
