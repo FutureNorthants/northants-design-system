@@ -9,7 +9,7 @@ import { noSearchResults, searchResultsWithServiceArea } from './../../structure
 import ToggleButtons from '../../components/ToggleButtons/ToggleButtons';
 
 export interface SearchResultsPageExampleProps {
-  results: Array<SearchResultProps>;
+  results: boolean;
 }
 interface SearchResultProps {
   /**

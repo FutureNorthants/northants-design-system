@@ -4,6 +4,7 @@ import { HeroImageProps } from '../../structure/HeroImage/HeroImage.types';
 import { SectionLinksProps } from '../../structure/SectionLinks/SectionLinks.types';
 import { ServicesLinksListProps } from '../../structure/ServicesLinksList/ServicesLinksList.types';
 import { AlertBannerServiceProps } from '../../structure/AlertBannerService/AlertBannerService.types';
+import { ReactNode } from 'react';
 
 export interface ServiceLandingPageExampleProps {
   /**
@@ -19,7 +20,7 @@ export interface ServiceLandingPageExampleProps {
   /**
    * Body text below service links
    */
-  bodyText?: string;
+  bodyText?: string | ReactNode;
 
   /**
    * Array of breadcrumbs

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Templates, TemplatesProps } from './Templates';
 
-export default {
+const meta: Meta<typeof Templates> = {
   title: 'Page Examples/Templates',
   component: Templates,
   parameters: {
@@ -10,18 +10,35 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<TemplatesProps> = (args) => <Templates {...args} />;
+export default meta;
+type Story = StoryObj<typeof Templates>;
 
-export const SingleColTemplate = Template.bind({});
-SingleColTemplate.args = { type: 'singleCol' };
+export const SingleColTemplate: Story = {
+  args: { type: 'singleCol' },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
 
-export const TwoColTemplate = Template.bind({});
-TwoColTemplate.args = { type: 'twoCol' };
+export const TwoColTemplate: Story = {
+  args: { type: 'twoCol' },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
 
-export const TwoColLeftTemplate = Template.bind({});
-TwoColLeftTemplate.args = { type: 'twoColLeft' };
+export const TwoColLeftTemplate: Story = {
+  args: { type: 'twoColLeft' },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
 
-export const TwoColLeftWithHeaderTemplate = Template.bind({});
-TwoColLeftWithHeaderTemplate.args = { type: 'twoColLeftHeader' };
+export const TwoColLeftWithHeaderTemplate: Story = {
+  args: { type: 'twoColLeftHeader' },
+  parameters: {
+    pageLayout: 'page',
+  },
+};

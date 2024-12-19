@@ -1,8 +1,8 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import { ContactPage, ContactPageProps } from './ContactPage';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ContactPage } from './ContactPage';
 
-export default {
+const meta: Meta<typeof ContactPage> = {
   title: 'Page Examples/Contact Page',
   component: ContactPage,
   parameters: {
@@ -10,8 +10,13 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<ContactPageProps> = (args) => <ContactPage {...args} />;
+export default meta;
+type Story = StoryObj<typeof ContactPage>;
 
-export const ExampleContactPage = Template.bind({});
+export const ExampleContactPage: Story = {
+  parameters: {
+    pageLayout: 'page',
+  },
+};

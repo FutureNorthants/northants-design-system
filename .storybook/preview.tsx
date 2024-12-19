@@ -81,9 +81,15 @@ export const decorators = [
     </>
   ),
   // Wrap all stories in SBPadding component
-  (Story) => (
-    <SBPadding>
-      <Story />
-    </SBPadding>
-  ),
+  (Story, { parameters }) => {
+    if (parameters.pageLayout && parameters.pageLayout === 'page') {
+      return <Story />;
+    } else {
+      return (
+        <SBPadding>
+          <Story />
+        </SBPadding>
+      );
+    }
+  },
 ];

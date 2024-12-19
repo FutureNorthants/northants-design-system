@@ -1,8 +1,8 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { DirectoryServicePage } from './DirectoryServicePage';
 
-export default {
+const meta: Meta<typeof DirectoryServicePage> = {
   title: 'Page Examples/Directory Service Page',
   component: DirectoryServicePage,
   parameters: {
@@ -12,5 +12,11 @@ export default {
   },
 };
 
-const Template: Story = (args) => <DirectoryServicePage {...args} />;
-export const ExampleDirectoryServicePage = Template.bind({});
+export default meta;
+type Story = StoryObj<typeof DirectoryServicePage>;
+
+export const ExampleDirectoryServicePage: Story = {
+  parameters: {
+    pageLayout: 'page',
+  },
+};
