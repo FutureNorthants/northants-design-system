@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import WebChat from './WebChat';
-import { WebChatProps } from './WebChat.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof WebChat> = {
   title: 'Library/Slices/WebChat',
   component: WebChat,
   parameters: {
@@ -16,44 +14,47 @@ export default {
   },
 };
 
-const Template: StoryFn<WebChatProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof WebChat>;
+
+export const ExampleWebChat: Story = {
+  args: {
+    buttonText: 'Chat to an advisor',
+    action: '/',
+    queues: [
+      {
+        title: 'Select an option',
+        value: '',
+      },
+      {
+        title: 'Council tax',
+        value: 'council_tax',
+      },
+      {
+        title: 'Benefits application',
+        value: 'benefits',
+      },
+      {
+        title: 'Road and highways faults',
+        value: 'highways',
+      },
+    ],
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <WebChat {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleWebChat = Template.bind({});
-ExampleWebChat.args = {
-  buttonText: 'Chat to an advisor',
-  action: '/',
-  queues: [
-    {
-      title: 'Select an option',
-      value: '',
-    },
-    {
-      title: 'Council tax',
-      value: 'council_tax',
-    },
-    {
-      title: 'Benefits application',
-      value: 'benefits',
-    },
-    {
-      title: 'Road and highways faults',
-      value: 'highways',
-    },
-  ],
+  ),
 };
 
-export const WebChatUnavailable = Template.bind({});
-WebChatUnavailable.args = {
-  buttonText: 'Chat to an advisor',
-  action: '/',
-  forceUnavailable: true,
-  unavailableMessage: 'Sorry, webchat is currently unavailable.',
+export const WebChatUnavailable: Story = {
+  ...ExampleWebChat,
+  args: {
+    buttonText: 'Chat to an advisor',
+    action: '/',
+    forceUnavailable: true,
+    unavailableMessage: 'Sorry, webchat is currently unavailable.',
+  },
 };

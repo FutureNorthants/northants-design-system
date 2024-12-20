@@ -1,10 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import WarningTextDisclaimer from './WarningTextDisclaimer';
-import { WarningTextDisclaimerProps } from './WarningTextDisclaimer.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
-export default {
+const meta: Meta<typeof WarningTextDisclaimer> = {
   title: 'Library/Slices/WarningTextDisclaimer',
   component: WarningTextDisclaimer,
   parameters: {
@@ -14,14 +13,17 @@ export default {
   },
 };
 
-const Template: StoryFn<WarningTextDisclaimerProps> = (args) => (
-  <MaxWidthContainer>
-    <WarningTextDisclaimer {...args}>
-      Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit
-      aliquet. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere
-      velit aliquet.
-    </WarningTextDisclaimer>
-  </MaxWidthContainer>
-);
+export default meta;
+type Story = StoryObj<typeof WarningTextDisclaimer>;
 
-export const ExampleWarningTextDisclaimer = Template.bind({});
+export const ExampleWarningTextDisclaimer: Story = {
+  render: (args) => (
+    <MaxWidthContainer>
+      <WarningTextDisclaimer {...args}>
+        Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit
+        aliquet. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere
+        velit aliquet.
+      </WarningTextDisclaimer>
+    </MaxWidthContainer>
+  ),
+};

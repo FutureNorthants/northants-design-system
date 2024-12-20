@@ -1,13 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import InquestSchedule from './InquestSchedule';
-import { InquestScheduleProps } from './InquestSchedule.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
-import { ExampleInquestScheduleArray, ExampleInquestScheduleData } from './InquestSchedule.storydata';
+import { ExampleInquestScheduleArray } from './InquestSchedule.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof InquestSchedule> = {
   title: 'Library/Slices/InquestSchedule',
   component: InquestSchedule,
   parameters: {
@@ -17,31 +15,36 @@ export default {
   },
 };
 
-const Template: StoryFn<InquestScheduleProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof InquestSchedule>;
+
+export const ExampleInquestSchedule: Story = {
+  args: {
+    caseAppointments: ExampleInquestScheduleArray,
+    title: 'Upcoming inquests',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <InquestSchedule {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleInquestSchedule = Template.bind({});
-ExampleInquestSchedule.args = {
-  caseAppointments: ExampleInquestScheduleArray,
-  title: 'Upcoming inquests',
+  ),
 };
 
-export const InquestScheduleNoItems = Template.bind({});
-InquestScheduleNoItems.args = {
-  caseAppointments: [],
-  title: 'Upcoming inquests',
+export const InquestScheduleNoItems: Story = {
+  ...ExampleInquestSchedule,
+  args: {
+    caseAppointments: [],
+    title: 'Upcoming inquests',
+  },
 };
 
-export const InquestScheduleError = Template.bind({});
-InquestScheduleError.args = {
-  caseAppointments: [],
-  title: 'Upcoming inquests',
-  error: true,
+export const InquestScheduleError: Story = {
+  ...ExampleInquestSchedule,
+  args: {
+    caseAppointments: [],
+    title: 'Upcoming inquests',
+    error: true,
+  },
 };
