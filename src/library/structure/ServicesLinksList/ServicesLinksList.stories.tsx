@@ -1,11 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ServicesLinksList from './ServicesLinksList';
-import { ServicesLinksListProps } from './ServicesLinksList.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { ServiceLinksArray, ServiceLinksArrayNoIcons } from './ServicesLinksList.storydata';
 
-export default {
+const meta: Meta<typeof ServicesLinksList> = {
   title: 'library/Structure/Service Links List',
   component: ServicesLinksList,
   parameters: {
@@ -15,32 +14,41 @@ export default {
   },
 };
 
-const Template: StoryFn<ServicesLinksListProps> = (args) => (
-  <MaxWidthContainer overflowVisible={true}>
-    <ServicesLinksList {...args} />
-  </MaxWidthContainer>
-);
+export default meta;
+type Story = StoryObj<typeof ServicesLinksList>;
 
-export const ExampleServicesLinksList = Template.bind({});
-ExampleServicesLinksList.args = {
-  serviceLinksArray: ServiceLinksArray,
+export const ExampleServicesLinksList: Story = {
+  args: {
+    serviceLinksArray: ServiceLinksArray,
+  },
+  render: (args) => (
+    <MaxWidthContainer overflowVisible={true}>
+      <ServicesLinksList {...args} />
+    </MaxWidthContainer>
+  ),
 };
 
-export const ServicesLinksListWithoutIcons = Template.bind({});
-ServicesLinksListWithoutIcons.args = {
-  serviceLinksArray: ServiceLinksArrayNoIcons,
+export const ServicesLinksListWithoutIcons: Story = {
+  ...ExampleServicesLinksList,
+  args: {
+    serviceLinksArray: ServiceLinksArrayNoIcons,
+  },
 };
 
-export const ExampleServicesLinksListWithCard = Template.bind({});
-ExampleServicesLinksListWithCard.args = {
-  serviceLinksArray: ServiceLinksArray,
-  hasBackground: true,
-  hideHeader: true,
-  oneCol: true,
+export const ExampleServicesLinksListWithCard: Story = {
+  ...ExampleServicesLinksList,
+  args: {
+    serviceLinksArray: ServiceLinksArray,
+    hasBackground: true,
+    hideHeader: true,
+    oneCol: true,
+  },
 };
 
-export const ServicesLinksBoxed = Template.bind({});
-ServicesLinksBoxed.args = {
-  serviceLinksArray: ServiceLinksArray,
-  isBoxed: true,
+export const ServicesLinksBoxed: Story = {
+  ...ExampleServicesLinksList,
+  args: {
+    serviceLinksArray: ServiceLinksArray,
+    isBoxed: true,
+  },
 };

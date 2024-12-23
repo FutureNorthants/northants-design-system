@@ -1,12 +1,10 @@
 import React from 'react';
 import PageWithSidebarContainer from './PageWithSidebarContainer';
-import { PageWithSidebarContainerProps } from './PageWithSidebarContainer.types';
-import { StoryFn } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import PageMain from '../PageMain/PageMain';
 import PageSidebar from '../PageSidebar/PageSidebar';
 
-export default {
+const meta: Meta<typeof PageWithSidebarContainer> = {
   title: 'Library/structure/Page With Sidebar Container',
   component: PageWithSidebarContainer,
   parameters: {
@@ -16,20 +14,23 @@ export default {
   },
 };
 
-const Template: StoryFn<PageWithSidebarContainerProps> = (args) => (
-  <PageWithSidebarContainer {...args}>Children of the page container goes here</PageWithSidebarContainer>
-);
+export default meta;
+type Story = StoryObj<typeof PageWithSidebarContainer>;
 
-export const ExampleOfPageWithSidebar = () => (
-  <PageWithSidebarContainer>
-    <PageMain>this is the main contaniner</PageMain>
-    <PageSidebar>this is the sidebar</PageSidebar>
-  </PageWithSidebarContainer>
-);
+export const ExampleOfPageWithSidebar: Story = {
+  render: () => (
+    <PageWithSidebarContainer>
+      <PageMain>this is the main contaniner</PageMain>
+      <PageSidebar>this is the sidebar</PageSidebar>
+    </PageWithSidebarContainer>
+  ),
+};
 
-export const ExampleOfPageWithSidebarLeft = () => (
-  <PageWithSidebarContainer>
-    <PageSidebar>this is the sidebar</PageSidebar>
-    <PageMain>this is the main contaniner</PageMain>
-  </PageWithSidebarContainer>
-);
+export const ExampleOfPageWithSidebarLeft: Story = {
+  render: () => (
+    <PageWithSidebarContainer>
+      <PageSidebar>this is the sidebar</PageSidebar>
+      <PageMain>this is the main contaniner</PageMain>
+    </PageWithSidebarContainer>
+  ),
+};

@@ -17,12 +17,11 @@ const meta: Meta<typeof ${componentName} = {
 export default meta;
 type Story = StoryObj<typeof ${componentName}>;
 
-const Template: StoryFn<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;
-
 export const Example${componentName}: Story = {     
   args: {
     foo: "bar"
   },
+  render: (args) => <${componentName} {...args} />
 };
 
 export const AnotherExample${componentName}: Story = {

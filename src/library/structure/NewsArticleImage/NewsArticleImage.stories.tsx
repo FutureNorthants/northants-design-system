@@ -1,11 +1,9 @@
 import React from 'react';
 import NewsArticleImage from './NewsArticleImage';
-import { NewsArticleImageProps } from './NewsArticleImage.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof NewsArticleImage> = {
   title: 'Library/Structure/News Article Image',
   component: NewsArticleImage,
   parameters: {
@@ -15,30 +13,34 @@ export default {
   },
 };
 
-const Template: StoryFn<NewsArticleImageProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof NewsArticleImage>;
+
+export const Example: Story = {
+  args: {
+    image1440x810: 'https://picsum.photos/id/93/1440/810',
+    image144x81: 'https://picsum.photos/id/93/144/81',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <NewsArticleImage {...args} />
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  image1440x810: 'http://placehold.it/1440x810',
-  image144x81: 'http://placehold.it/144x81',
+  ),
+};
+export const ExampleWithAle: Story = {
+  ...Example,
+  args: {
+    image1440x810: 'https://picsum.photos/id/93/1440/810',
+    image144x81: 'https://picsum.photos/id/93/144/81',
+    imageAltText: 'This is the alt text',
+  },
 };
 
-export const ExampleWithAlt = Template.bind({});
-ExampleWithAlt.args = {
-  image1440x810: 'http://placehold.it/1440x810',
-  image144x81: 'http://placehold.it/144x81',
-  imageAltText: 'This is the alt text',
-};
-
-export const ExampleWithCaption = Template.bind({});
-ExampleWithCaption.args = {
-  image1440x810: 'http://placehold.it/1440x810',
-  image144x81: 'http://placehold.it/144x81',
-  imageCaption: 'This is the caption',
+export const ExampleWithCaptioe: Story = {
+  ...Example,
+  args: {
+    image1440x810: 'https://picsum.photos/id/93/1440/810',
+    image144x81: 'https://picsum.photos/id/93/144/81',
+    imageCaption: 'This is the caption',
+  },
 };

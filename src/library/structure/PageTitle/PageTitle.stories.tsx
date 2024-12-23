@@ -1,10 +1,9 @@
 import React from 'react';
 import PageTitle from './PageTitle';
-import { PageTitleProps } from './PageTitle.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Heading from '../../components/Heading/Heading';
 
-export default {
+const meta: Meta<typeof PageTitle> = {
   title: 'Library/structure/Page Title Container',
   component: PageTitle,
   parameters: {
@@ -14,14 +13,17 @@ export default {
   },
 };
 
-const Template: StoryFn<PageTitleProps> = (args) => (
-  <PageTitle {...args}>
-    {' '}
-    <Heading level={1} text="News" />
-  </PageTitle>
-);
+export default meta;
+type Story = StoryObj<typeof PageTitle>;
 
-export const PageTitleExample = Template.bind({});
-PageTitleExample.args = {
-  classes: 'testclass',
+export const PageTitleExample: Story = {
+  args: {
+    classes: 'testclass',
+  },
+  render: (args) => (
+    <PageTitle {...args}>
+      {' '}
+      <Heading level={1} text="News" />
+    </PageTitle>
+  ),
 };

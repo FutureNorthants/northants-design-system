@@ -1,11 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Summary from './Summary';
 import { SummaryProps } from './Summary.types';
 import PageMain from '../../structure/PageMain/PageMain';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
-export default {
+const meta: Meta<typeof Summary> = {
   title: 'Library/Structure/Summary',
   component: Summary,
   parameters: {
@@ -27,34 +27,43 @@ export default {
   },
 };
 
-const Template: StoryFn<SummaryProps> = (args: SummaryProps) => (
-  <PageMain>
-    <MaxWidthContainer>
-      <Summary {...args}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta semper velit. Fusce viverra arcu eu
-          leo tincidunt pulvinar.
-        </p>
-        <p>Ut a porttitor elit, nec sollicitudin leo. Praesent volutpat nulla erat, in dictum lorem elementum porta.</p>
-      </Summary>
-    </MaxWidthContainer>
-  </PageMain>
-);
+export default meta;
+type Story = StoryObj<typeof Summary>;
 
-export const ExampleSummary = Template.bind({});
-ExampleSummary.args = {
-  hasBackground: true,
-  hasPadding: true,
+export const ExampleSummary: Story = {
+  args: {
+    hasBackground: true,
+    hasPadding: true,
+  },
+  render: (args: SummaryProps) => (
+    <PageMain>
+      <MaxWidthContainer>
+        <Summary {...args}>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta semper velit. Fusce viverra arcu
+            eu leo tincidunt pulvinar.
+          </p>
+          <p>
+            Ut a porttitor elit, nec sollicitudin leo. Praesent volutpat nulla erat, in dictum lorem elementum porta.
+          </p>
+        </Summary>
+      </MaxWidthContainer>
+    </PageMain>
+  ),
 };
 
-export const SummaryWithoutBackground = Template.bind({});
-SummaryWithoutBackground.args = {
-  hasBackground: false,
-  hasPadding: true,
+export const SummaryWithoutBackground: Story = {
+  ...ExampleSummary,
+  args: {
+    hasBackground: false,
+    hasPadding: true,
+  },
 };
 
-export const SummaryWithoutPadding = Template.bind({});
-SummaryWithoutPadding.args = {
-  hasBackground: true,
-  hasPadding: false,
+export const SummaryWithoutPadding: Story = {
+  ...ExampleSummary,
+  args: {
+    hasBackground: true,
+    hasPadding: false,
+  },
 };

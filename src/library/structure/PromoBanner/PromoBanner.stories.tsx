@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PromoBanner from './PromoBanner';
-import { PromoBannerProps } from './PromoBanner.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
-import { PromoBannerContent, PromoBannerData } from './PromoBanner.storydata';
+import { PromoBannerData } from './PromoBanner.storydata';
 
-export default {
+const meta: Meta<typeof PromoBanner> = {
   title: 'library/Structure/Promo Banner',
   component: PromoBanner,
   parameters: {
@@ -35,18 +33,23 @@ export default {
   },
 };
 
-const Template: StoryFn<PromoBannerProps> = (args) => (
-  <SBPadding>
-    <PromoBanner {...args}>{PromoBannerContent}</PromoBanner>
-  </SBPadding>
-);
-export const PromoBannerExample = Template.bind({});
-PromoBannerExample.args = PromoBannerData;
+export default meta;
+type Story = StoryObj<typeof PromoBanner>;
 
-export const PromoBannerMobileExample = Template.bind({});
-PromoBannerMobileExample.args = PromoBannerData;
-PromoBannerMobileExample.parameters = {
-  viewport: {
-    defaultViewport: 'iphonex',
+export const PromoBannerExample: Story = {
+  args: PromoBannerData,
+  parameters: {
+    viewport: {
+      defaultViewport: 'default',
+    },
+  },
+};
+
+export const PromoBannerMobileExample: Story = {
+  args: PromoBannerData,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
   },
 };

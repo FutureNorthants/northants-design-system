@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import BackLink from './BackLink';
-import { BackLinkProps } from './BackLink.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof BackLink> = {
   title: 'Library/Structure/Back Link',
   component: BackLink,
   parameters: {
@@ -14,18 +12,17 @@ export default {
   },
 };
 
-const Template: StoryFn<BackLinkProps> = (args) => (
-  <SBPadding>
-    <BackLink {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof BackLink>;
 
-export const ExampleBackLink = Template.bind({});
-ExampleBackLink.args = {
-  link: '/',
+export const ExampleBackLink: Story = {
+  args: {
+    link: '/',
+  },
 };
 
-export const ExampleBackLinkUseHistory = Template.bind({});
-ExampleBackLinkUseHistory.args = {
-  useHistory: true,
+export const ExampleBackLinkUseHistory: Story = {
+  args: {
+    useHistory: true,
+  },
 };

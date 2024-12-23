@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ContentsNavigation from './ContentsNavigation';
-import { ContentsProps } from '../Contents/Contents.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ContentsExampleData } from '../Contents/Contents.storydata';
 
-export default {
+const meta: Meta<typeof ContentsNavigation> = {
   title: 'Library/Structure/Contents Navigation',
   component: ContentsNavigation,
   parameters: {
@@ -15,26 +13,26 @@ export default {
   },
 };
 
-const Template: StoryFn<ContentsProps> = (args) => (
-  <SBPadding>
-    <ContentsNavigation {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof ContentsNavigation>;
 
-export const ExampleContentsNavigation = Template.bind({});
-ExampleContentsNavigation.args = {
-  contents: ContentsExampleData,
-  currentPath: '/second-page',
+export const ExampleContentsNavigation: Story = {
+  args: {
+    contents: ContentsExampleData,
+    currentPath: '/second-page',
+  },
 };
 
-export const ExampleContentsNavigationFirstPage = Template.bind({});
-ExampleContentsNavigationFirstPage.args = {
-  contents: ContentsExampleData,
-  currentPath: '/first-page',
+export const ExampleContentsNavigationFirstPage: Story = {
+  args: {
+    contents: ContentsExampleData,
+    currentPath: '/first-page',
+  },
 };
 
-export const ExampleContentsNavigationLastPage = Template.bind({});
-ExampleContentsNavigationLastPage.args = {
-  contents: ContentsExampleData,
-  currentPath: '/fourth-page',
+export const ExampleContentsNavigationLastPage: Story = {
+  args: {
+    contents: ContentsExampleData,
+    currentPath: '/fourth-page',
+  },
 };

@@ -1,9 +1,6 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
 import type { Meta, StoryObj } from '@storybook/react';
 import ChevronIcon from './ChevronIcon';
-import { ChevronIconProps } from './ChevronIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
 const meta: Meta<typeof ChevronIcon> = {
   title: 'Library/Icons/Chevron',

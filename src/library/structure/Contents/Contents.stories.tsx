@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Contents from './Contents';
-import { ContentsProps } from './Contents.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ContentsExampleData } from './Contents.storydata';
 
-export default {
+const meta: Meta<typeof Contents> = {
   title: 'Library/Structure/Contents',
   component: Contents,
   parameters: {
@@ -15,27 +13,27 @@ export default {
   },
 };
 
-const Template: StoryFn<ContentsProps> = (args) => (
-  <SBPadding>
-    <Contents {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof Contents>;
 
-export const ExampleContents = Template.bind({});
-ExampleContents.args = {
-  currentPath: '/first-page',
-  contents: ContentsExampleData,
+export const ExampleContents: Story = {
+  args: {
+    currentPath: '/first-page',
+    contents: ContentsExampleData,
+  },
 };
 
-export const ExampleContentsWithSecondPageCurrent = Template.bind({});
-ExampleContentsWithSecondPageCurrent.args = {
-  currentPath: '/second-page',
-  contents: ContentsExampleData,
+export const ExampleContentsWithSecondPageCurrent: Story = {
+  args: {
+    currentPath: '/second-page',
+    contents: ContentsExampleData,
+  },
 };
 
-export const ExampleContentsWithCustomTitle = Template.bind({});
-ExampleContentsWithCustomTitle.args = {
-  currentPath: '/first-page',
-  contents: ContentsExampleData,
-  title: 'Contents on this page',
+export const ExampleContentsWithCustomTitle: Story = {
+  args: {
+    currentPath: '/first-page',
+    contents: ContentsExampleData,
+    title: 'Contents on this page',
+  },
 };

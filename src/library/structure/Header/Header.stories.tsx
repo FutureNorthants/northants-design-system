@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import { HeaderProps } from './Header.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Header> = {
   title: 'Library/structure/Header',
   component: Header,
   parameters: {
@@ -12,9 +11,6 @@ export default {
     },
   },
   argTypes: {
-    id: {
-      table: { category: 'Component' },
-    },
     isHomepage: {
       table: { category: 'Links' },
     },
@@ -32,35 +28,47 @@ export default {
     },
     searchSuggestions: {
       table: { category: 'Search bar' },
-      control: { type: 'array' },
     },
   },
 };
 
-const Template: StoryFn<HeaderProps> = (args) => <Header {...args}>Children of the page container go here</Header>;
+export default meta;
+type Story = StoryObj<typeof Header>;
 
-export const HeaderExample = Template.bind({});
-HeaderExample.args = {
-  hasNewsLink: true,
-  hasDirectoryLink: true,
-  accessibilityLink: '/',
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
-  hasTranslate: true,
+export const HeaderExample: Story = {
+  args: {
+    hasNewsLink: true,
+    hasDirectoryLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+    hasTranslate: true,
+  },
+  render: (args) => <Header {...args}>Children of the page container go here</Header>,
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const HeaderNoNewsExample = Template.bind({});
-HeaderNoNewsExample.args = {
-  hasNewsLink: false,
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+export const HeaderNoNewsExample: Story = {
+  ...HeaderExample,
+  args: {
+    hasNewsLink: false,
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+  },
 };
 
-export const HeaderNoSearchExample = Template.bind({});
-HeaderNoSearchExample.args = {
-  hasNewsLink: false,
-  allServicesLink: false,
-  hideSearchBar: true,
+export const HeaderNoSearchExample: Story = {
+  ...HeaderExample,
+  args: {
+    hasNewsLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: true,
+    hasDirectoryLink: true,
+    hasTranslate: true,
+  },
 };

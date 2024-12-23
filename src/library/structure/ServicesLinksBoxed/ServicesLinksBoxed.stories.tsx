@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ServiceLinksBoxed from './ServicesLinksBoxed';
-import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { serviceLinksArray } from './ServicesLinksBoxed.storydata';
 
-export default {
+const meta: Meta<typeof ServiceLinksBoxed> = {
   title: 'Library/Structure/Services Links Boxed',
   component: ServiceLinksBoxed,
   parameters: {
@@ -15,13 +13,11 @@ export default {
   },
 };
 
-const Template: StoryFn<ServiceLinksBoxedProps> = (args) => (
-  <SBPadding>
-    <ServiceLinksBoxed {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof ServiceLinksBoxed>;
 
-export const ExampleServiceLinksBoxed = Template.bind({});
-ExampleServiceLinksBoxed.args = {
-  serviceLinksArray: serviceLinksArray,
+export const ExampleServiceLinksBoxed: Story = {
+  args: {
+    serviceLinksArray: serviceLinksArray,
+  },
 };

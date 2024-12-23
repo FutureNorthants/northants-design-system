@@ -1,13 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PromoTabs from './PromoTabs';
-import { PromoTabsProps } from './PromoTabs.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';
 import { PromoBlocksData } from '../PromoBlock/PromoBlock.storydata';
 
-export default {
+const meta: Meta<typeof PromoTabs> = {
   title: 'Library/Structure/Promo Tabs',
   component: PromoTabs,
   parameters: {
@@ -17,17 +15,18 @@ export default {
   },
 };
 
-const Template: StoryFn<PromoTabsProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof PromoTabs>;
+
+export const ExamplePromoTabs: Story = {
+  args: {
+    promos: PromoBlocksData,
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <PromoTabs {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExamplePromoTabs = Template.bind({});
-ExamplePromoTabs.args = {
-  promos: PromoBlocksData,
+  ),
 };

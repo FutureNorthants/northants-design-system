@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SkipToMainContent from './SkipToMainContent';
-import { SkipToMainContentProps } from './SkipToMainContent.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof SkipToMainContent> = {
   title: 'Library/Structure/Skip to main content',
   component: SkipToMainContent,
   parameters: {
@@ -14,10 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<SkipToMainContentProps> = (args) => (
-  <SBPadding>
-    <SkipToMainContent {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SkipToMainContent>;
 
-export const ExampleSkipToMainContent = Template.bind({});
+export const ExampleSkipToMainContent: Story = {};

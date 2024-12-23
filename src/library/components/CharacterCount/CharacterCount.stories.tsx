@@ -1,9 +1,6 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CharacterCount from './CharacterCount';
-import { CharacterCountProps } from './CharacterCount.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
 const meta: Meta<typeof CharacterCount> = {
   title: 'Library/Components/Character Count',
@@ -17,12 +14,6 @@ const meta: Meta<typeof CharacterCount> = {
 
 export default meta;
 type Story = StoryObj<typeof CharacterCount>;
-
-const Template: StoryFn<CharacterCountProps> = (args) => (
-  <SBPadding>
-    <CharacterCount {...args} />
-  </SBPadding>
-);
 
 export const ExampleCharacterCount: Story = {
   args: {

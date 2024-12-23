@@ -1,11 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import NewsArticleFeaturedBlock from './NewsArticleFeaturedBlock';
-import { NewsArticleFeaturedBlockProps } from './NewsArticleFeaturedBlock.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { NewsArticleData } from './NewsArticleFeaturedBlock.storydata';
 
-export default {
+const meta: Meta<typeof NewsArticleFeaturedBlock> = {
   title: 'Library/Structure/News Article Featured Block',
   component: NewsArticleFeaturedBlock,
   parameters: {
@@ -15,41 +14,54 @@ export default {
   },
 };
 
-const Template: StoryFn<NewsArticleFeaturedBlockProps> = (args) => (
-  <MaxWidthContainer>
-    <NewsArticleFeaturedBlock {...args} />
-  </MaxWidthContainer>
-);
+export default meta;
+type Story = StoryObj<typeof NewsArticleFeaturedBlock>;
 
-export const ExampleNewsArticleFeaturedBlock = Template.bind({});
-ExampleNewsArticleFeaturedBlock.args = {
-  articles: NewsArticleData,
-  viewAllLink: '/',
+export const ExampleNewsArticleFeaturedBlock: Story = {
+  args: {
+    articles: NewsArticleData,
+    viewAllLink: '/',
+  },
+  render: (args) => (
+    <MaxWidthContainer>
+      <NewsArticleFeaturedBlock {...args} />
+    </MaxWidthContainer>
+  ),
 };
 
-export const ExampleNoNewsArticleFeaturedBlock = Template.bind({});
-ExampleNoNewsArticleFeaturedBlock.args = {
-  articles: [],
+export const ExampleNoNewsArticleFeaturedBlock: Story = {
+  ...ExampleNewsArticleFeaturedBlock,
+  args: {
+    articles: [],
+  },
 };
 
-export const ExampleNoTitleOrButton = Template.bind({});
-ExampleNoTitleOrButton.args = {
-  articles: NewsArticleData,
-  withoutTitle: true,
-  viewAllLink: '',
+export const ExampleNoTitleOrButton: Story = {
+  ...ExampleNewsArticleFeaturedBlock,
+  args: {
+    articles: NewsArticleData,
+    withoutTitle: true,
+    viewAllLink: '',
+  },
 };
 
-export const Example3Articles = Template.bind({});
-Example3Articles.args = {
-  articles: NewsArticleData.slice(0, 3),
+export const Example3Articles: Story = {
+  ...ExampleNewsArticleFeaturedBlock,
+  args: {
+    articles: NewsArticleData.slice(0, 3),
+  },
 };
 
-export const Example2Articles = Template.bind({});
-Example2Articles.args = {
-  articles: NewsArticleData.slice(0, 2),
+export const Example2Articles: Story = {
+  ...ExampleNewsArticleFeaturedBlock,
+  args: {
+    articles: NewsArticleData.slice(0, 2),
+  },
 };
 
-export const Example1Article = Template.bind({});
-Example1Article.args = {
-  articles: NewsArticleData.slice(0, 1),
+export const Example1Article: Story = {
+  ...ExampleNewsArticleFeaturedBlock,
+  args: {
+    articles: NewsArticleData.slice(0, 1),
+  },
 };

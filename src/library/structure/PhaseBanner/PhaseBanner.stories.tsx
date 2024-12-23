@@ -1,11 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PhaseBanner from './PhaseBanner';
-import { PhaseBannerProps } from './PhaseBanner.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PhaseBanner> = {
   title: 'library/Structure/Phase Banner',
+  component: PhaseBanner,
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
@@ -13,11 +12,13 @@ export default {
   },
 };
 
-const Template: StoryFn<PhaseBannerProps> = (args) => <PhaseBanner {...args} />;
+export default meta;
+type Story = StoryObj<typeof PhaseBanner>;
 
-export const PhaseBannerExample = Template.bind({});
+export const PhaseBannerExample: Story = {};
 
-export const PhaseBannerHomeExample = Template.bind({});
-PhaseBannerHomeExample.args = {
-  isHome: true,
+export const PhaseBannerHomeExample: Story = {
+  args: {
+    isHome: true,
+  },
 };

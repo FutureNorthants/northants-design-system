@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Searchbar from './Searchbar';
-import { SearchbarProps } from './Searchbar.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof Searchbar> = {
   title: 'Library/structure/Searchbar',
   component: Searchbar,
   parameters: {
@@ -19,15 +17,6 @@ export default {
       table: { category: 'Input control' },
     },
     searchTerm: {
-      table: { category: 'Input control' },
-    },
-    size: {
-      control: {
-        type: 'number',
-        min: 10,
-        max: 200,
-        step: 1,
-      },
       table: { category: 'Input control' },
     },
     placeholder: {
@@ -66,6 +55,9 @@ export default {
   },
 };
 
+export default meta;
+type Story = StoryObj<typeof Searchbar>;
+
 const CommonArgs = {
   size: 43,
   minimumMatchLength: 2,
@@ -78,62 +70,61 @@ const CommonArgs = {
   },
 };
 
-const Template: StoryFn<SearchbarProps> = (args) => (
-  <SBPadding>
-    <Searchbar {...args} />
-  </SBPadding>
-);
+export const ExampleSearchbarDefaultNorth: Story = {
+  parameters: {
+    backgrounds: { default: 'north' },
+  },
+  args: {
+    ...CommonArgs,
+  },
+};
 
-const TemplatePage: StoryFn<SearchbarProps> = (args) => (
-  <SBPadding>
+export const ExampleSearchbarDefaultWest: Story = {
+  parameters: {
+    backgrounds: { default: 'west' },
+  },
+  args: {
+    ...CommonArgs,
+  },
+};
+
+export const ExampleSearchbarWhiteBackground: Story = {
+  args: {
+    ...CommonArgs,
+    isLight: true,
+  },
+};
+
+export const ExampleSearchPage: Story = {
+  args: {
+    ...CommonArgs,
+    isLight: true,
+    isLarge: true,
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <Searchbar {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleSearchbarDefaultNorth = Template.bind({});
-ExampleSearchbarDefaultNorth.parameters = {
-  backgrounds: { default: 'north' },
-};
-ExampleSearchbarDefaultNorth.args = {
-  ...CommonArgs,
+  ),
 };
 
-export const ExampleSearchbarDefaultWest = Template.bind({});
-ExampleSearchbarDefaultWest.parameters = {
-  backgrounds: { default: 'west' },
-};
-ExampleSearchbarDefaultWest.args = {
-  ...CommonArgs,
-};
-
-export const ExampleSearchbarWhiteBackground = Template.bind({});
-ExampleSearchbarWhiteBackground.args = {
-  ...CommonArgs,
-  isLight: true,
+export const ExampleSearchPageSmall: Story = {
+  ...ExampleSearchPage,
+  args: {
+    ...CommonArgs,
+    isLight: true,
+    isLarge: false,
+  },
 };
 
-export const ExampleSearchPage = TemplatePage.bind({});
-ExampleSearchPage.args = {
-  ...CommonArgs,
-  isLight: true,
-  isLarge: true,
-};
-
-export const ExampleSearchPageSmall = TemplatePage.bind({});
-ExampleSearchPageSmall.args = {
-  ...CommonArgs,
-  isLight: true,
-  isLarge: false,
-};
-
-export const ExampleSearchPageWithTerm = TemplatePage.bind({});
-ExampleSearchPageWithTerm.args = {
-  ...CommonArgs,
-  isLight: true,
-  isLarge: true,
-  searchTerm: 'council tax',
+export const ExampleSearchPageWithTerm: Story = {
+  ...ExampleSearchPage,
+  args: {
+    ...CommonArgs,
+    isLight: true,
+    isLarge: true,
+    searchTerm: 'council tax',
+  },
 };
