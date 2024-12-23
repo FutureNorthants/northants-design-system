@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DynamicIcon from './DynamicIcon';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
 const meta: Meta<typeof DynamicIcon> = {
   title: 'Library/Components/Dynamic Icon',

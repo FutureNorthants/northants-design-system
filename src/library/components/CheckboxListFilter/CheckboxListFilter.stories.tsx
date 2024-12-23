@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CheckboxListFilter from './CheckboxListFilter';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { articleOptions } from './CheckboxListFilterData';
 import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 

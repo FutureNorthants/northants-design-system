@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import BinCollection from './BinCollection';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import dayjs from 'dayjs';
@@ -54,12 +53,10 @@ export const ExampleBinCollection: Story = {
     calendarSize: '0.2MB',
   },
   render: (args) => (
-    <SBPadding>
-      <MaxWidthContainer>
-        <PageMain>
-          <BinCollection {...args} />
-        </PageMain>
-      </MaxWidthContainer>
-    </SBPadding>
+    <MaxWidthContainer>
+      <PageMain>
+        <BinCollection {...args} />
+      </PageMain>
+    </MaxWidthContainer>
   ),
 };

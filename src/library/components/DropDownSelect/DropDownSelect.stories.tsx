@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DropDownSelect from './DropDownSelect';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
 const meta: Meta<typeof DropDownSelect> = {

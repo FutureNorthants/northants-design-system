@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DropDownFilter from './DropDownFilter';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { serviceOptions } from './DropDownFilterData';
-import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
+import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
 const meta: Meta<typeof DropDownFilter> = {
   title: 'Library/Components/Drop Down Filter',

@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Card from './Card';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import Row from '../Row/Row';
 import Column from '../Column/Column';
@@ -25,15 +24,13 @@ export const CardWithHeading: Story = {
     content: '<p>Some example content</p>',
   },
   render: (args) => (
-    <SBPadding>
-      <MaxWidthContainer>
-        <Row>
-          <Column>
-            <Card {...args} />
-          </Column>
-        </Row>
-      </MaxWidthContainer>
-    </SBPadding>
+    <MaxWidthContainer>
+      <Row>
+        <Column>
+          <Card {...args} />
+        </Column>
+      </Row>
+    </MaxWidthContainer>
   ),
 };
 

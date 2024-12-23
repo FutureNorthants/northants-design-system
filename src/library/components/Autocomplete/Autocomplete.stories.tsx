@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Autocomplete from './Autocomplete';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { action } from '@storybook/addon-actions';
 import {
   EmptyWithHiddenLabelData,
@@ -120,11 +119,9 @@ export const EmptyWithHiddenLabel: Story = {
     ...EmptyWithHiddenLabelData,
   },
   render: (args) => (
-    <SBPadding>
-      <div style={{ width: '750px' }}>
-        <Autocomplete {...args} />
-      </div>
-    </SBPadding>
+    <div style={{ width: '750px' }}>
+      <Autocomplete {...args} />
+    </div>
   ),
 };
 

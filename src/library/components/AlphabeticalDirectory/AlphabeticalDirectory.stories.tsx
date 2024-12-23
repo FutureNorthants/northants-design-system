@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import AlphabeticalDirectory from './AlphabeticalDirectory';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
 const meta: Meta<typeof AlphabeticalDirectory> = {
   title: 'Library/Components/Alphabetical Directory',

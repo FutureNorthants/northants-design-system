@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CustomSearch from './CustomSearch';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleCustomSearchProps } from './CustomSearch.storydata';
 
 const meta: Meta<typeof CustomSearch> = {

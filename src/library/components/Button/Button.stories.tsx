@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from './Button';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
 const meta: Meta<typeof Button> = {
   title: 'Library/Components/Button',

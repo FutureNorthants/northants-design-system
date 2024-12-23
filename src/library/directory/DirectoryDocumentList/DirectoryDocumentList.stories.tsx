@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DirectoryDocumentList from './DirectoryDocumentList';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import { ExampleDirectoryDocument, ExampleDirectoryLink } from './DirectoryDocumentList.storydata';
@@ -35,13 +34,11 @@ export const ExampleDirectoryDocumentList: Story = {
     isLoading: false,
   },
   render: (args) => (
-    <SBPadding>
-      <MaxWidthContainer>
-        <PageMain>
-          <DirectoryDocumentList {...args} />
-        </PageMain>
-      </MaxWidthContainer>
-    </SBPadding>
+    <MaxWidthContainer>
+      <PageMain>
+        <DirectoryDocumentList {...args} />
+      </PageMain>
+    </MaxWidthContainer>
   ),
 };
 

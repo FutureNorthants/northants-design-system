@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DirectoryServiceList from './DirectoryServiceList';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
@@ -64,23 +63,21 @@ export const ExampleDirectoryServiceList: Story = {
     const [minimumAge, setMinimumAge] = useState(args.minimumAge);
     const [maximumAge, setMaximumAge] = useState(args.maximumAge);
     return (
-      <SBPadding>
-        <MaxWidthContainer>
-          <PageMain>
-            <DirectoryShortListProvider>
-              <DirectoryServiceList
-                {...args}
-                categories={categories}
-                setCategories={setCategories}
-                minimumAge={minimumAge}
-                setMinimumAge={setMinimumAge}
-                maximumAge={maximumAge}
-                setMaximumAge={setMaximumAge}
-              />
-            </DirectoryShortListProvider>
-          </PageMain>
-        </MaxWidthContainer>
-      </SBPadding>
+      <MaxWidthContainer>
+        <PageMain>
+          <DirectoryShortListProvider>
+            <DirectoryServiceList
+              {...args}
+              categories={categories}
+              setCategories={setCategories}
+              minimumAge={minimumAge}
+              setMinimumAge={setMinimumAge}
+              maximumAge={maximumAge}
+              setMaximumAge={setMaximumAge}
+            />
+          </DirectoryShortListProvider>
+        </PageMain>
+      </MaxWidthContainer>
     );
   },
 };

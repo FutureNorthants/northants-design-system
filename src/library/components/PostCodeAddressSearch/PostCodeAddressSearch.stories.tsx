@@ -2,7 +2,6 @@ import React from 'react';
 import PostCodeAddressSearch from './PostCodeAddressSearch';
 import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 
 const meta: Meta<typeof PostCodeAddressSearch> = {
@@ -29,12 +28,10 @@ const value = {
 
 export const PostCodeAddressSearchExample: Story = {
   render: (args) => (
-    <SBPadding>
-      <MaxWidthContainer>
-        <PostCodeAddressProvider>
-          <PostCodeAddressSearch {...args} />
-        </PostCodeAddressProvider>
-      </MaxWidthContainer>
-    </SBPadding>
+    <MaxWidthContainer>
+      <PostCodeAddressProvider>
+        <PostCodeAddressSearch {...args} />
+      </PostCodeAddressProvider>
+    </MaxWidthContainer>
   ),
 };
