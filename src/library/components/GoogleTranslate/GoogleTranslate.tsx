@@ -15,6 +15,10 @@ const GoogleTranslate: React.FunctionComponent<GoogleTranslateProps> = ({
       },
       'google_translate_element'
     );
+    const popupForm = document.getElementById('goog-gt-vt');
+    if (popupForm) {
+      popupForm.remove();
+    }
   };
 
   useEffect(() => {
