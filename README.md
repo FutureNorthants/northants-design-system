@@ -1,8 +1,6 @@
 # 🎨 Northants Design Sytem
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/19c44b04-97ec-4066-84f8-fd7106d00996/deploy-status)](https://app.netlify.com/sites/elated-pasteur-e85c66/deploys)
-
-👉 **[You can view the design system here](https://northants-design-system.netlify.app)**
+👉 **[You can view the design system here](https://design-system.westnorthants.gov.uk)**
 
 The design system for North Northamptonshire & West Northamptonshire, two brand new unitary councils encompassing Wellingborough, Corby, Daventry, East Northants, Kettering, Northampton, Northamptonshire County and South Northants.
 
