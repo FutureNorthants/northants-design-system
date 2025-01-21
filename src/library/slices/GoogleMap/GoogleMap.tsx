@@ -25,15 +25,16 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
   let embed_url = src_matches?.length == 1 ? src_matches[0].replace('src="', '').replace('"', '') : '';
   if (embed_url) {
     const acceptable_embedded_url_matches = embed_url.match(
-      /^https:\/\/www.google.com\/maps|https:\/\/one.network|api.gb.one.network/gi
+      /^https:\/\/www.google.com\/maps|https:\/\/api-gb\.one\.network\/embedded\/\?options=%7B%22organisationID%22%3A2247%2C%22embedded%22%3Atrue/gi
     );
+
     embed_url = acceptable_embedded_url_matches?.length == 1 ? embed_url : '';
   }
 
   /* We also check the non-embed link goes to goo.gl/maps or www.google.com/maps or one.network*/
   if (link_url) {
     const acceptable_non_embedded_url_matches = link_url.match(
-      /^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps|https:\/\/maps.app.goo.gl|https:\/\/one.network|api.gb.one.network/gi
+      /^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps|https:\/\/maps.app.goo.gl|https:\/\/one.network/gi
     );
     link_url = acceptable_non_embedded_url_matches?.length == 1 ? link_url : '';
   }
