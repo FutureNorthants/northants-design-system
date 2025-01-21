@@ -8,6 +8,17 @@ const Common = {
     '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d19510.86230700187!2d-0.895762!3d52.318583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7967b834f2732438!2sBrixworth%20Country%20Park!5e0!3m2!1sen!2suk!4v1644496039794!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
 };
 
+const NotSoCommon = {
+  title: 'Angel Street Northampton Map',
+  description: 'Angel Street lies in the centre of Northampton, close to the Derngate theatre',
+  link_title: 'Click here for the map',
+  link_url: 'https://one.network',
+  iframe_html:
+    '<iframe src="https://one.network/" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
+};
+
+// 'api.gb.one.network',
+
 export const GoogleMapWithTitleAndDescription = {
   ...Common,
   allowCookies: true,
@@ -49,4 +60,12 @@ export const GoogleMapWithInvalidLinks = {
 export const GoogleMapWithUpdatedLinkFormat = {
   ...Common,
   link_url: 'https://maps.app.goo.gl/fwHnJrT7RfAQQ3FN7',
+};
+
+export const GoogleMapWithANonGoogleLink = {
+  title: NotSoCommon.title,
+  link_title: NotSoCommon.link_title,
+  link_url: NotSoCommon.link_url,
+  iframe_html: NotSoCommon.iframe_html,
+  allowCookies: true,
 };
