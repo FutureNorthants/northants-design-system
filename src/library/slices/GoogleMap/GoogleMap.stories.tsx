@@ -46,5 +46,5 @@ GoogleMapWithUpdatedLink.args = storydata.GoogleMapWithUpdatedLinkFormat;
 export const OneNetworkMap = Template.bind({});
 OneNetworkMap.args = storydata.OneNetworkMapLink;
 
-export const OneNetworkMapIncorrectOrgDetails = Template.bind({});
-OneNetworkMapIncorrectOrgDetails.args = storydata.OneNetworkMapIncorrectOrgDetailsLink;
+export const OneNetworkMapIncorrectURL = Template.bind({});
+OneNetworkMapIncorrectURL.args = storydata.OneNetworkMapIncorrectURLLink;
