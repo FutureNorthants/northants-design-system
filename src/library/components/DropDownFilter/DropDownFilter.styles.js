@@ -1,6 +1,5 @@
-import styled, {css} from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`  
-  ${props => props.theme.fontStyles};
-`
-
+export const Container = styled.div`
+  margin-bottom: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.small : 0)};
+`;

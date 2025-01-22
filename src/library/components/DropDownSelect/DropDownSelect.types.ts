@@ -30,6 +30,11 @@ export interface DropDownSelectProps {
   hideLabel?: boolean;
 
   /**
+   * Should the label be bold
+   */
+  hasBoldLabel?: boolean;
+
+  /**
    * Is the dropdown in error state? Defaults to false
    */
   isErrored?: boolean;
@@ -40,9 +45,15 @@ export interface DropDownSelectProps {
   errorText?: string;
 
   /**
-   * The value used for a controlled component
+   * The optional value for a controlled component.
+   * Don't set both selected and value.
    */
-  value?: string;
+  value?: string | number;
+
+  /**
+   * Should the select have bottom margin
+   */
+  hasBottomMargin?: boolean;
 }
 
 export interface DropDownSelectOptionsProps {

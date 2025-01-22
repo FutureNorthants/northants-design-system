@@ -11,12 +11,16 @@ const NewsArticleFilterAccordion: React.FunctionComponent<NewsArticleFilterAccor
   const [searchValue, setSearchValue] = useState([]);
   const [servicesValue, setServices] = useState([]);
   const [articleTypeValue, setArticleTypes] = useState([]);
+  const [years, setYears] = useState([]);
+  const [months, setMonths] = useState([]);
 
   useEffect(() => {
     setCount(countParams(NewsArticleFilterFields.removeFiltersList));
     setSearchValue(getParamValue(NewsArticleFilterFields.search.queryParamKey));
     setServices(getDropDownValues(NewsArticleFilterFields.services.queryParamKey));
     setArticleTypes(getCheckboxValues(NewsArticleFilterFields.articleType.queryParamKey));
+    setYears(getDropDownValues(NewsArticleFilterFields.year.queryParamKey));
+    setMonths(getDropDownValues(NewsArticleFilterFields.month.queryParamKey));
   }, []);
 
   const [isFullScreen, setFullScreen] = useState(false);
@@ -43,6 +47,10 @@ const NewsArticleFilterAccordion: React.FunctionComponent<NewsArticleFilterAccor
     } else if (section.title === NewsArticleFilterFields.services.title && servicesValue.length > 0) {
       section.isExpanded = true;
     } else if (section.title === NewsArticleFilterFields.articleType.title && articleTypeValue.length > 0) {
+      section.isExpanded = true;
+    } else if (section.title === NewsArticleFilterFields.year.title && years.length > 0) {
+      section.isExpanded = true;
+    } else if (section.title === NewsArticleFilterFields.month.title && months.length > 0) {
       section.isExpanded = true;
     } else {
       section.isExpanded = false;

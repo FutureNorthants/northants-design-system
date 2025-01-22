@@ -42,9 +42,12 @@ const Template: StoryFn<HeaderProps> = (args) => <Header {...args}>Children of t
 export const HeaderExample = Template.bind({});
 HeaderExample.args = {
   hasNewsLink: true,
+  hasDirectoryLink: true,
+  accessibilityLink: '/',
   allServicesLink: '/',
   hideSearchBar: false,
   searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+  hasTranslate: true,
 };
 
 export const HeaderNoNewsExample = Template.bind({});

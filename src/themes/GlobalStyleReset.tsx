@@ -161,4 +161,8 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
   iframe.skiptranslate {
     display: none !important;
   }
+  /* Hide the rate this translation popup */
+  #goog-gt-tt {
+    display: none !important;
+  }
 `;

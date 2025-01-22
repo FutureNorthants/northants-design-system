@@ -139,11 +139,12 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
 
   return (
     <Styles.FormContainer as="section" data-testid="RateThisPage" aria-label="Rate This Page">
-      {isSuccessful ? (
+      <Styles.PanelWrapper $show={isSuccessful}>
         <Panel heading="Thank you for your feedback.">
           {String(watchIsHelpful) === 'No' && <p>Your comments will help us improve the website.</p>}
         </Panel>
-      ) : (
+      </Styles.PanelWrapper>
+      <Styles.FormWrapper $show={!isSuccessful}>
         <form onSubmit={executeCaptcha} ref={fullFormRef}>
           <Row>
             {errors && Object.keys(errors).length > 0 && <ErrorSummary errors={errors} />}
@@ -179,229 +180,224 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
               </fieldset>
             </Column>
 
-            {showQuestion && (
-              <>
-                <Column small="full" medium="full" large="one-half">
-                  <Styles.QuestionContainer>
-                    <Styles.QuestionTitle>Content</Styles.QuestionTitle>
-                    <p>You may have comments about the content on the webpage. For example:</p>
-                    <ul>
-                      <li>The information on this page is difficult to understand</li>
-                      <li>This page isn't giving me the information I need</li>
-                      <li>This page contains information that is wrong or out of date</li>
-                      <li>This page could have been written or presented better</li>
-                    </ul>
-                    <p>Your feedback will help us improve our website and the content we include.</p>
-                    <Styles.QuestionButton>
-                      <FormButton
-                        text="I have feedback about the information on this page"
-                        type="button"
-                        size="medium"
-                        onClick={handleQuestionButton}
-                      />
-                    </Styles.QuestionButton>
-                  </Styles.QuestionContainer>
-                </Column>
-                <Column small="full" medium="full" large="one-half">
-                  <Styles.QuestionContainer>
-                    <Styles.QuestionTitle>Service</Styles.QuestionTitle>
-                    <p>You may have comments about the quality of the service that's been provided. For example:</p>
-                    <ul>
-                      <li>I have waited too long for something to happen</li>
-                      <li>I'm struggling to contact the service</li>
-                      <li>I don't think I have been treated fairly</li>
-                      <li>I feel as if I have been misled</li>
-                    </ul>
-                    <Styles.QuestionButton>
-                      <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
-                    </Styles.QuestionButton>
-                  </Styles.QuestionContainer>
-                </Column>
-              </>
-            )}
-
-            {showFullForm && (
-              <>
-                <Column small="full" medium="full" large="full">
-                  <fieldset aria-describedby="HowEasyToFindLegend">
-                    <Styles.Legend id="HowEasyToFindLegend">
-                      How easy was it to find what you were looking for?
-                    </Styles.Legend>
-                    <Styles.Hint>1 being very easy and 5 being extremely difficult.</Styles.Hint>
-                    <Controller
-                      name="HowEasyToFind"
-                      control={control}
-                      rules={{
-                        pattern: {
-                          value: /^[1-5]+$/i,
-                          message: 'The field how easy is it to find what you are looking for is invalid.',
-                        },
-                        required: {
-                          value: true,
-                          message: 'The field how easy is it to find what you are looking for is required.',
-                        },
-                      }}
-                      render={({ field: { onChange, value } }) => (
-                        <>
-                          {errors.HowEasyToFind && (
-                            <Styles.FormErrorText id="HowEasyToFindError">
-                              <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToFind.message}
-                            </Styles.FormErrorText>
-                          )}
-                          {RatingValues.map((ratingValue, index) => (
-                            <RadioCheckboxInput
-                              key={index}
-                              value={ratingValue.value}
-                              label={ratingValue.label}
-                              checked={String(value) == ratingValue.value}
-                              name="HowEasyToFind"
-                              singleSelection={true}
-                              onChange={onChange}
-                              isErrored={errors.HowEasyToFind ? true : false}
-                            />
-                          ))}
-                        </>
-                      )}
+            <Styles.ShowQuestion $show={showQuestion}>
+              <Column small="full" medium="full" large="one-half">
+                <Styles.QuestionContainer>
+                  <Styles.QuestionTitle>Content</Styles.QuestionTitle>
+                  <p>You may have comments about the content on the webpage. For example:</p>
+                  <ul>
+                    <li>The information on this page is difficult to understand</li>
+                    <li>This page isn't giving me the information I need</li>
+                    <li>This page contains information that is wrong or out of date</li>
+                    <li>This page could have been written or presented better</li>
+                  </ul>
+                  <p>Your feedback will help us improve our website and the content we include.</p>
+                  <Styles.QuestionButton>
+                    <FormButton
+                      text="I have feedback about the information on this page"
+                      type="button"
+                      size="medium"
+                      onClick={handleQuestionButton}
                     />
-                  </fieldset>
-                </Column>
+                  </Styles.QuestionButton>
+                </Styles.QuestionContainer>
+              </Column>
+              <Column small="full" medium="full" large="one-half">
+                <Styles.QuestionContainer>
+                  <Styles.QuestionTitle>Service</Styles.QuestionTitle>
+                  <p>You may have comments about the quality of the service that's been provided. For example:</p>
+                  <ul>
+                    <li>I have waited too long for something to happen</li>
+                    <li>I'm struggling to contact the service</li>
+                    <li>I don't think I have been treated fairly</li>
+                    <li>I feel as if I have been misled</li>
+                  </ul>
+                  <Styles.QuestionButton>
+                    <Button url={complaintsFormLink}>I have a comment or complaint about this service</Button>
+                  </Styles.QuestionButton>
+                </Styles.QuestionContainer>
+              </Column>
+            </Styles.ShowQuestion>
 
-                <Column small="full" medium="full" large="full">
-                  <fieldset aria-describedby="HowEasyToUnderstandLegend">
-                    <Styles.Legend id="HowEasyToUnderstandLegend">
-                      How easy was this content to understand?
-                    </Styles.Legend>
-                    <Styles.Hint>1 being very easy and 5 being extremely difficult.</Styles.Hint>
-                    <Controller
-                      name="HowEasyToUnderstand"
-                      control={control}
-                      rules={{
-                        pattern: {
-                          value: /^[1-5]+$/i,
-                          message: 'The field how easy was this content to understand is invalid.',
-                        },
-                        required: {
-                          value: true,
-                          message: 'The field how easy was this content to understand is required.',
-                        },
-                      }}
-                      render={({ field: { onChange, value } }) => (
-                        <>
-                          {errors.HowEasyToUnderstand && (
-                            <Styles.FormErrorText id="HowEasyToUnderstandError">
-                              <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToUnderstand.message}
-                            </Styles.FormErrorText>
-                          )}
-                          {RatingValues.map((ratingValue, index) => (
-                            <RadioCheckboxInput
-                              key={index}
-                              value={ratingValue.value}
-                              label={ratingValue.label}
-                              checked={String(value) == ratingValue.value}
-                              name="HowEasyToUnderstand"
-                              singleSelection={true}
-                              onChange={onChange}
-                              isErrored={errors.HowEasyToUnderstand ? true : false}
-                            />
-                          ))}
-                        </>
-                      )}
-                    />
-                  </fieldset>
-                </Column>
-
-                <Column small="full" medium="full" large="full">
-                  <Styles.Label htmlFor="BarriersOrIssues">
-                    Did you come across any barriers or issues with this webpage?
-                  </Styles.Label>
+            <Styles.ShowFullForm $show={showFullForm}>
+              <Column small="full" medium="full" large="full">
+                <fieldset aria-describedby="HowEasyToFindLegend">
+                  <Styles.Legend id="HowEasyToFindLegend">
+                    How easy was it to find what you were looking for?
+                  </Styles.Legend>
+                  <Styles.Hint>1 being very easy and 5 being extremely difficult.</Styles.Hint>
                   <Controller
-                    name="BarriersOrIssues"
+                    name="HowEasyToFind"
                     control={control}
                     rules={{
-                      maxLength: {
-                        value: 3000,
-                        message:
-                          'The field did you come across any barriers or issues with this webpage must be less than 3000 characters.',
+                      pattern: {
+                        value: /^[1-5]+$/i,
+                        message: 'The field how easy is it to find what you are looking for is invalid.',
                       },
                       required: {
-                        value: true,
-                        message: 'The field did you come across any barriers or issues with this webpage is required.',
+                        value: showFullForm,
+                        message: 'The field how easy is it to find what you are looking for is required.',
                       },
                     }}
                     render={({ field: { onChange, value } }) => (
                       <>
-                        <Textarea
-                          id="BarriersOrIssues"
-                          name="BarriersOrIssues"
-                          value={value}
-                          placeholder=""
-                          onChange={onChange}
-                          isErrored={errors.BarriersOrIssues ? true : false}
-                          errorText={errors.BarriersOrIssues ? errors.BarriersOrIssues.message : null}
-                          isFullWidth
-                        />
+                        {errors.HowEasyToFind && (
+                          <Styles.FormErrorText id="HowEasyToFindError">
+                            <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToFind.message}
+                          </Styles.FormErrorText>
+                        )}
+                        {RatingValues.map((ratingValue, index) => (
+                          <RadioCheckboxInput
+                            key={index}
+                            value={ratingValue.value}
+                            label={ratingValue.label}
+                            checked={String(value) == ratingValue.value}
+                            name="HowEasyToFind"
+                            singleSelection={true}
+                            onChange={onChange}
+                            isErrored={errors.HowEasyToFind ? true : false}
+                          />
+                        ))}
                       </>
                     )}
                   />
-                </Column>
+                </fieldset>
+              </Column>
 
-                <Column small="full" medium="full" large="full">
-                  <Styles.Label htmlFor="HowCanWeImprove">How could this page be improved? (optional)</Styles.Label>
+              <Column small="full" medium="full" large="full">
+                <fieldset aria-describedby="HowEasyToUnderstandLegend">
+                  <Styles.Legend id="HowEasyToUnderstandLegend">How easy was this content to understand?</Styles.Legend>
+                  <Styles.Hint>1 being very easy and 5 being extremely difficult.</Styles.Hint>
                   <Controller
-                    name="HowCanWeImprove"
+                    name="HowEasyToUnderstand"
                     control={control}
                     rules={{
-                      maxLength: {
-                        value: 3000,
-                        message: 'The field how could this page be improved must be less than 3000 characters.',
+                      pattern: {
+                        value: /^[1-5]+$/i,
+                        message: 'The field how easy was this content to understand is invalid.',
+                      },
+                      required: {
+                        value: showFullForm,
+                        message: 'The field how easy was this content to understand is required.',
                       },
                     }}
                     render={({ field: { onChange, value } }) => (
-                      <Textarea
-                        id="HowCanWeImprove"
-                        name="HowCanWeImprove"
-                        value={value}
-                        placeholder=""
-                        onChange={onChange}
-                        isErrored={errors.HowCanWeImprove ? true : false}
-                        errorText={errors.HowCanWeImprove ? errors.HowCanWeImprove.message : null}
-                        isFullWidth
-                      />
+                      <>
+                        {errors.HowEasyToUnderstand && (
+                          <Styles.FormErrorText id="HowEasyToUnderstandError">
+                            <Styles.Hidden>Error:</Styles.Hidden> {errors.HowEasyToUnderstand.message}
+                          </Styles.FormErrorText>
+                        )}
+                        {RatingValues.map((ratingValue, index) => (
+                          <RadioCheckboxInput
+                            key={index}
+                            value={ratingValue.value}
+                            label={ratingValue.label}
+                            checked={String(value) == ratingValue.value}
+                            name="HowEasyToUnderstand"
+                            singleSelection={true}
+                            onChange={onChange}
+                            isErrored={errors.HowEasyToUnderstand ? true : false}
+                          />
+                        ))}
+                      </>
                     )}
                   />
-                </Column>
+                </fieldset>
+              </Column>
 
-                <Column small="full" medium="full" large="full">
-                  <Styles.Label htmlFor="Email">
-                    Please leave your email below if you are happy for us to contact you further (optional)
-                  </Styles.Label>
-                  <Controller
-                    name="Email"
-                    control={control}
-                    rules={{
-                      maxLength: { value: 150, message: 'The email address must be less than 150 characters.' },
-                      pattern: {
-                        value:
-                          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                        message: 'Invalid email address.',
-                      },
-                    }}
-                    render={({ field: { onChange, onBlur, value, ref } }) => (
-                      <Input
-                        id="Email"
-                        name="Email"
+              <Column small="full" medium="full" large="full">
+                <Styles.Label htmlFor="BarriersOrIssues">
+                  Did you come across any barriers or issues with this webpage?
+                </Styles.Label>
+                <Controller
+                  name="BarriersOrIssues"
+                  control={control}
+                  rules={{
+                    maxLength: {
+                      value: 3000,
+                      message:
+                        'The field did you come across any barriers or issues with this webpage must be less than 3000 characters.',
+                    },
+                    required: {
+                      value: showFullForm,
+                      message: 'The field did you come across any barriers or issues with this webpage is required.',
+                    },
+                  }}
+                  render={({ field: { onChange, value } }) => (
+                    <>
+                      <Textarea
+                        id="BarriersOrIssues"
+                        name="BarriersOrIssues"
                         value={value}
                         placeholder=""
                         onChange={onChange}
-                        isErrored={errors.Email ? true : false}
-                        errorText={errors.Email ? errors.Email.message : null}
+                        isErrored={errors.BarriersOrIssues ? true : false}
+                        errorText={errors.BarriersOrIssues ? errors.BarriersOrIssues.message : null}
                         isFullWidth
                       />
-                    )}
-                  />
-                </Column>
-              </>
-            )}
+                    </>
+                  )}
+                />
+              </Column>
+
+              <Column small="full" medium="full" large="full">
+                <Styles.Label htmlFor="HowCanWeImprove">How could this page be improved? (optional)</Styles.Label>
+                <Controller
+                  name="HowCanWeImprove"
+                  control={control}
+                  rules={{
+                    maxLength: {
+                      value: 3000,
+                      message: 'The field how could this page be improved must be less than 3000 characters.',
+                    },
+                  }}
+                  render={({ field: { onChange, value } }) => (
+                    <Textarea
+                      id="HowCanWeImprove"
+                      name="HowCanWeImprove"
+                      value={value}
+                      placeholder=""
+                      onChange={onChange}
+                      isErrored={errors.HowCanWeImprove ? true : false}
+                      errorText={errors.HowCanWeImprove ? errors.HowCanWeImprove.message : null}
+                      isFullWidth
+                    />
+                  )}
+                />
+              </Column>
+
+              <Column small="full" medium="full" large="full">
+                <Styles.Label htmlFor="Email">
+                  Please leave your email below if you are happy for us to contact you further (optional)
+                </Styles.Label>
+                <Controller
+                  name="Email"
+                  control={control}
+                  rules={{
+                    maxLength: { value: 150, message: 'The email address must be less than 150 characters.' },
+                    pattern: {
+                      value:
+                        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: 'Invalid email address.',
+                    },
+                  }}
+                  render={({ field: { onChange, onBlur, value, ref } }) => (
+                    <Input
+                      id="Email"
+                      name="Email"
+                      value={value}
+                      placeholder=""
+                      onChange={onChange}
+                      isErrored={errors.Email ? true : false}
+                      errorText={errors.Email ? errors.Email.message : null}
+                      isFullWidth
+                    />
+                  )}
+                />
+              </Column>
+            </Styles.ShowFullForm>
+
             <Column small="full" medium="full" large="full">
               <input type="hidden" {...register('ReCaptcha')} />
               {/* Terms are required when recaptcha badge is hidden */}
@@ -431,7 +427,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
             )}
           </Row>
         </form>
-      )}
+      </Styles.FormWrapper>
       <div id={recaptchaContainerId} className="g-recaptcha" />
     </Styles.FormContainer>
   );

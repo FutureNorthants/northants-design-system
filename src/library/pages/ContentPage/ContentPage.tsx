@@ -26,7 +26,7 @@ export interface ContentPageProps {}
 
 export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
   <>
-    <PageStructures.Header />
+    <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
       <PageStructures.PageMain>
         <Heading level={1} text="Example page with all slices" />
@@ -269,7 +269,6 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
     <PageStructures.Footer
-      hasTranslate
       footerLinksArray={[
         {
           title: 'About',

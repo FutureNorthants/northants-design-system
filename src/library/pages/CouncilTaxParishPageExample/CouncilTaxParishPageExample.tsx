@@ -11,7 +11,7 @@ export interface CouncilTaxParishPageExampleProps {
 export const CouncilTaxParishPageExample: React.FC<CouncilTaxParishPageExampleProps> = ({ version }) => {
   return (
     <>
-      <PageStructures.Header />
+      <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
       <PageStructures.MaxWidthContainer>
         <PageStructures.Breadcrumbs
           breadcrumbsArray={[

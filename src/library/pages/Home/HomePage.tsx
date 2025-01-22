@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import { HomePageProps } from './HomePage.types';
 import { ThemeContext } from 'styled-components';
+import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
+import Heading from '../../components/Heading/Heading';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -22,6 +24,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
   promoBlocksArray,
   newsArticlesArray,
   footerLinksArray,
+  showSearch,
 }) => {
   const themeContext = useContext(ThemeContext);
 
@@ -43,27 +46,21 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      <PageStructures.HomeHero promotedLinksArray={promotedLinksArray} imagesArray={heroArray} />
-
+      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />}
+      <PageStructures.HomeHero
+        promotedLinksArray={promotedLinksArray}
+        imagesArray={heroArray}
+        showSearch={showSearch}
+        promotedServicesTabs={ExamplePromotedServicesData}
+      />
       <PageStructures.MaxWidthContainer>
         <PageStructures.PageMain>
           {themeContext.cardinal_name === 'north' && (
             <PageStructures.ServicesLinksList serviceLinksArray={servicesArray} isBoxed={isBoxed} />
           )}
 
-          {numberOfPromos > 0 && (
-            <>
-              <PageStructures.PromoBanner
-                title={promoBannerData.title}
-                ctaUrl={promoBannerData.ctaUrl}
-                ctaText={promoBannerData.ctaText}
-                image1440x810={promoBannerData.image1440x810}
-                image144x81={promoBannerData.image144x81}
-              >
-                {promoBannerContent}
-              </PageStructures.PromoBanner>
-            </>
-          )}
+          <Heading text="Featured updates" level={2} />
+          {numberOfPromos > 0 && <PageStructures.PromoTabsDisplay promos={promoBlocksArray} />}
           <PageStructures.PromoBlock promos={promoBlocksArray.slice(0, numberOfPromos - 1)} />
 
           {themeContext.cardinal_name === 'west' && (
@@ -77,7 +74,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
 
-      <PageStructures.Footer footerLinksArray={footerLinksArray} hasTranslate />
+      <PageStructures.Footer footerLinksArray={footerLinksArray} />
     </>
   );
 };

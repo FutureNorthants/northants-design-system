@@ -1,7 +1,7 @@
 import React from 'react';
 import Textarea from './Textarea';
 import { TextareaProps } from './Textarea.types';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<TextareaProps> = (args) => (
+const Template: StoryFn<TextareaProps> = (args) => (
   <SBPadding>
     <MaxWidthContainer>
       <PageMain>
