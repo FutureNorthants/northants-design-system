@@ -25,7 +25,7 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
   let embed_url = src_matches?.length == 1 ? src_matches[0].replace('src="', '').replace('"', '') : '';
   if (embed_url) {
     const acceptable_embedded_url_matches = embed_url.match(
-      /^https:\/\/www.google.com\/maps|https:\/\/api-gb\.one\.network\/embedded\/\?options=%7B%22organisationID%22%3A2247%2C%22embedded%22%3Atrue/gi
+      /^https:\/\/www.google.com\/maps|https:\/\/api-gb\.one\.network\/embedded\//gi
     );
 
     embed_url = acceptable_embedded_url_matches?.length == 1 ? embed_url : '';
