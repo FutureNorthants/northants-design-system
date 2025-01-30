@@ -12,13 +12,13 @@ import Accordion from '../Accordion/Accordion';
  */
 const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAppointments, title, error = false }) => {
   const hearings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
-    return appointment.appointmentType === CaseAppointmentType.Hearing;
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Hearing);
   });
   const openings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
-    return appointment.appointmentType === CaseAppointmentType.Opening;
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Opening);
   });
   const writings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
-    return appointment.appointmentType === CaseAppointmentType.Writing;
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Writing);
   });
 
   const groupHearingsByDay = (appointments: CaseAppointmentProps[]) => {
