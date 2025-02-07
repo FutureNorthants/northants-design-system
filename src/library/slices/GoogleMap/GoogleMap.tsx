@@ -20,20 +20,23 @@ const GoogleMap: React.FunctionComponent<GoogleMapProps> = ({
   const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
   const [notServer, setNotServer] = useState(false);
 
-  /* We extract the iframe source URL and check it actually goes to www.google.com/maps */
+  /* We extract the iframe source URL and check it actually goes to www.google.com/maps or one.network*/
   const src_matches = iframe_html.match(/src="([^"]+)"/gi);
-  let embed_url = src_matches?.length == 1 ? src_matches[0].replace('src="', '') : '';
+  let embed_url = src_matches?.length == 1 ? src_matches[0].replace('src="', '').replace('"', '') : '';
   if (embed_url) {
-    const map_matches = embed_url.match(/^https:\/\/www.google.com\/maps/gi);
-    embed_url = map_matches?.length == 1 ? embed_url : '';
+    const acceptable_embedded_url_matches = embed_url.match(
+      /^https:\/\/www.google.com\/maps|https:\/\/api-gb\.one\.network\/embedded\//gi
+    );
+
+    embed_url = acceptable_embedded_url_matches?.length == 1 ? embed_url : '';
   }
 
-  /* We also check the non-embed link goes to goo.gl/maps or www.google.com/maps */
+  /* We also check the non-embed link goes to goo.gl/maps or www.google.com/maps or one.network*/
   if (link_url) {
-    const googl_matches = link_url.match(
-      /^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps|https:\/\/maps.app.goo.gl/gi
+    const acceptable_non_embedded_url_matches = link_url.match(
+      /^https:\/\/goo.gl\/maps|https:\/\/www.google.com\/maps|https:\/\/maps.app.goo.gl|https:\/\/one.network/gi
     );
-    link_url = googl_matches?.length == 1 ? link_url : '';
+    link_url = acceptable_non_embedded_url_matches?.length == 1 ? link_url : '';
   }
 
   useEffect(() => {

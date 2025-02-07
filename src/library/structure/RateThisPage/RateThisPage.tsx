@@ -392,6 +392,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
                       isErrored={errors.Email ? true : false}
                       errorText={errors.Email ? errors.Email.message : null}
                       isFullWidth
+                      autocomplete="email"
                     />
                   )}
                 />
