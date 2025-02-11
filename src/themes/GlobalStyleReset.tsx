@@ -133,6 +133,10 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
     left: 1.25rem;
     padding-right: 1.25rem;
   }
+  li a {
+    padding-bottom: 11px;
+    padding-top: 12px;
+  }
   blockquote,
   q {
     quotes: none;
