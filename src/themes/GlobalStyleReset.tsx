@@ -134,7 +134,7 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
     padding-right: 1.25rem;
   }
 
-  li > a {
+  main > ul > li > a {
     display: inline-block;
     min-height: 44px;
   }
