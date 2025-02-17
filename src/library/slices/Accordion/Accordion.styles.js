@@ -47,6 +47,7 @@ export const VisuallyHidden = styled.span`
 
 export const Section = styled.div`
   padding-top: 0;
+  padding-left: 0px;
 `;
 
 export const SectionHeader = styled.div`
@@ -68,22 +69,24 @@ export const SectionHeader = styled.div`
 export const SectionHeading = styled.div`
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 `;
 
 const SectionButtonIsFilteredStyles = (props) => {
   if (props.$isFilter) {
     return css`
       ${(props) => props.theme.theme_vars.h4}
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       margin-top: 0;
       margin-bottom: 0;
     `;
   } else {
     return css`
       ${(props) => props.theme.theme_vars.h3}
-      padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
-      padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+      padding-top: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+      padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
       margin-top: 0;
       margin-bottom: 0;
     `;
@@ -93,9 +96,10 @@ const SectionButtonIsFilteredStyles = (props) => {
 export const SectionButton = styled.button`
   display: inline-block;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 70;
   margin-left: 0;
-  padding: 0;
+  padding: 0 ${(props) => props.theme.theme_vars.spacingSizes.extra_small} 0
+    ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-width: 0;
   color: inherit;
   background: none;
@@ -149,7 +153,10 @@ export const ReadMore = styled.button`
   border: none;
   margin-top: 15px;
   margin-bottom: 10px;
-  padding: 0;
+  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  //padding: 0 0 0 ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-left: 15px;
+  padding: 0px;
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
 `;
 export const ShowLessButton = styled.button`
@@ -157,7 +164,8 @@ export const ShowLessButton = styled.button`
   background: none;
   border: none;
   margin-top: 15px;
-  padding: 0;
+  margin-left: 0;
+  padding: 0 2px 0 2px;
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   cursor: pointer;
 
@@ -174,10 +182,13 @@ export const ShowLessButton = styled.button`
 
 export const AccordionIcon = styled.span`
   position: absolute;
-  top: 22px;
+  top: 15px;
   right: 4px;
   width: 34px;
   height: 32px;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  margin-bottom: 35px;
 
   &:before {
     border-style: solid;
@@ -189,7 +200,7 @@ export const AccordionIcon = styled.span`
     vertical-align: top;
     width: 12px;
     border-color: ${(props) => props.theme.theme_vars.colours.black};
-    top: 0;
+    top: 0px;
     left: 6px;
     transform: rotate(135deg);
   }
@@ -197,21 +208,26 @@ export const AccordionIcon = styled.span`
   &:before {
     .accordion__section--expanded & {
       transform: rotate(-45deg);
-      top: 10px;
+      top: 5px;
     }
   }
 `;
 
 export const SectionSummary = styled.div`
-  margin-top: 10px;
+margin-left: 0px  
+// margin-top: 40px;
   margin-bottom: 0;
+  padding-top: 10px;
+  padding-left: 15px;
   color: ${(props) => props.theme.theme_vars.colours.black};
-`;
+  `;
 
 export const SectionContent = styled.div`
   display: none;
-  padding-top: 5px;
+  padding-top: 15px;
   padding-bottom: 15px;
+  // padding-left: 25px;
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
   h2,
   h3,
@@ -220,6 +236,11 @@ export const SectionContent = styled.div`
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  p {
+    padding-left: 3px;
+    margin-left: 0px;
   }
 
   @media (min-width: 40.0625em) {
