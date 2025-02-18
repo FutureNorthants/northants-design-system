@@ -95,7 +95,7 @@ export const SectionButton = styled.button`
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding: 0;
+  padding: 0px 3px 0px 3px;
   border-width: 0;
   color: inherit;
   background: none;
@@ -205,14 +205,19 @@ export const AccordionIcon = styled.span`
 export const SectionSummary = styled.div`
   margin-top: 10px;
   margin-bottom: 0;
-  color: ${(props) => props.theme.theme_vars.colours.black};
+  padding-top: 5px;
+  padding-right: 0;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  color: ${(props) => props.theme.theme_vars.colours.negative};
 `;
 
 export const SectionContent = styled.div`
   display: none;
   padding-top: 5px;
+  padding-right: 0;
   padding-bottom: 15px;
-
+  padding-left: 15px;
   h2,
   h3,
   h4,
