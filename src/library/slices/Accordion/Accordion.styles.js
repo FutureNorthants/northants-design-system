@@ -209,7 +209,7 @@ export const SectionSummary = styled.div`
   padding-right: 0;
   padding-bottom: 15px;
   padding-left: 15px;
-  color: ${(props) => props.theme.theme_vars.colours.negative};
+  color: ${(props) => props.theme.theme_vars.colours.black};
 `;
 
 export const SectionContent = styled.div`
