@@ -28,5 +28,18 @@ describe('Test Component', () => {
     const component = getByTestId('RoadworksList');
 
     expect(component).toHaveTextContent('Western Avenue');
+    expect(component).toHaveTextContent('Off peak closure for carriageway repairs.');
+    expect(component).toHaveTextContent('Friday 21 March 2025 - all day');
+  });
+
+  it('should only show the start date and hours when ending the same day', () => {
+    props.roadworks[0].startTime = '2025-03-20T04:00:00+00:00';
+    props.roadworks[0].endTime = '2025-03-20T06:00:00+00:00';
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('RoadworksList');
+
+    expect(component).toHaveTextContent('Thursday 20 March 2025 at 4am to 6am');
   });
 });

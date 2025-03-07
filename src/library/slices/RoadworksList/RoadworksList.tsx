@@ -5,7 +5,6 @@ import Input from '../../components/Input/Input';
 import DynamicIcon from '../../components/DynamicIcon/DynamicIcon';
 import Heading from '../../components/Heading/Heading';
 import dayjs from 'dayjs';
-import CallToAction from '../CallToAction/CallToAction';
 
 /**
  * A filterable list of roadworks
@@ -82,7 +81,7 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks 
               <Styles.IconContainer>
                 <DynamicIcon icon="mappin" />
                 <Styles.IconText>
-                  <Heading text={roadwork.detailedLocation} level={2} />
+                  <Heading text={roadwork.detailedLocation} level={3} />
                 </Styles.IconText>
               </Styles.IconContainer>
               <Styles.IconContainer>
@@ -94,22 +93,10 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks 
               <Styles.IconContainer>
                 <DynamicIcon icon="bollard" />
                 <Styles.IconText>
-                  <ul>
-                    <li>
-                      <p>{roadwork.description}</p>
-                    </li>
-                    <li>
-                      <p>{roadwork.trafficManagement}</p>
-                    </li>
-                  </ul>
+                  <p>{roadwork.description}</p>
+                  <p>{roadwork.trafficManagement}</p>
                 </Styles.IconText>
               </Styles.IconContainer>
-              {/* <Styles.CallToActionContainer>
-                <CallToAction
-                  url={'https://one.network/?tmi=GB' + roadwork.id.substring(roadwork.id.indexOf('/') + 1)}
-                  text="View on map"
-                />
-              </Styles.CallToActionContainer> */}
             </Styles.Roadwork>
           );
         })}

@@ -28,7 +28,7 @@ export const Roadwork = styled.li`
       ? props.theme.theme_vars.colours.grey_light + '7a'
       : props.theme.theme_vars.colours.white};
 
-  h2 {
+  h3 {
     margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium} !important;
   }
 `;
@@ -39,13 +39,13 @@ export const IconContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 export const IconText = styled.div`
   padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
-`;
-
-export const CallToActionContainer = styled.div`
-  display: flex;
-  justify-content: center;
 `;

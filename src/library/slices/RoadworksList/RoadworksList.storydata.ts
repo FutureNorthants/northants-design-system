@@ -39,5 +39,5 @@ export const ThirdExampleRoadwork: Roadwork = {
   description: 'Off peak closure for carriageway repairs.',
   trafficManagement:
     'Road closure scheduled 06/03/2025 - 07/03/2025 due to Roadworks / License - Roadworks works (West Northamptonshire)',
-  responsibility: 'West Northamptonshire',
+  responsibility: 'Western Power Distribution',
 };
