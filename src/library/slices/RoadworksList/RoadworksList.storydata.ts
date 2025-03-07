@@ -20,8 +20,8 @@ export const AnotherExampleRoadwork: Roadwork = {
   detailedLocation: 'Cold Ashby Road, Thornby, West Northamptonshire',
   latitude: 52.37688,
   longitude: -1.028989,
-  startTime: '2025-03-20T00:00:00+00:00',
-  endTime: '2025-03-20T23:59:00+00:00',
+  startTime: '2025-03-20T04:00:00+00:00',
+  endTime: '2025-03-20T06:00:00+00:00',
   description: 'Off peak closure for carriageway repairs.',
   trafficManagement:
     'Diversion route scheduled 20/03/2025 - 20/03/2025 due to Roadworks / License - Roadworks works (West Northamptonshire)',
@@ -29,15 +29,15 @@ export const AnotherExampleRoadwork: Roadwork = {
 };
 
 export const ThirdExampleRoadwork: Roadwork = {
-  id: '142353732/37523639',
-  location: 'Homestead Way',
-  detailedLocation: 'Homestead Way, Northampton, West Northamptonshire',
-  latitude: 52.252438,
-  longitude: -0.883129,
-  startTime: '2025-03-13T00:00:00+00:00',
-  endTime: '2025-03-13T23:59:00+00:00',
+  id: '142351872/37522767',
+  location: 'West End',
+  detailedLocation: 'West End, Silverstone, West Northamptonshire',
+  latitude: 52.08847,
+  longitude: -1.034667,
+  startTime: '2025-03-06T00:00:00+00:00',
+  endTime: '2025-03-07T23:59:00+00:00',
   description: 'Off peak closure for carriageway repairs.',
   trafficManagement:
-    'Diversion route scheduled 13/03/2025 - 13/03/2025 due to Roadworks / License - Roadworks works (West Northamptonshire)',
+    'Road closure scheduled 06/03/2025 - 07/03/2025 due to Roadworks / License - Roadworks works (West Northamptonshire)',
   responsibility: 'West Northamptonshire',
 };
