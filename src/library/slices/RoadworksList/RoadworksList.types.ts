@@ -3,6 +3,11 @@ export interface RoadworksListProps {
    * A list of roadworks
    */
   roadworks: Roadwork[];
+
+  /**
+   * The title tag
+   */
+  title: string;
 }
 
 export interface Roadwork {
@@ -24,12 +29,12 @@ export interface Roadwork {
   /**
    * The optional latitude
    */
-  latitude?: number;
+  latitude?: string;
 
   /**
    * The optional longitude
    */
-  longitude?: number;
+  longitude?: string;
 
   /**
    * The start date and time of the roadworks

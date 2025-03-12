@@ -9,7 +9,7 @@ import dayjs from 'dayjs';
 /**
  * A filterable list of roadworks
  */
-const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks }) => {
+const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks, title }) => {
   const [filteredRoadworks, setFilteredRoadworks] = useState<Roadwork[]>(roadworks);
 
   const handleSearch = (e) => {
@@ -70,14 +70,15 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks 
 
   return (
     <Styles.Container data-testid="RoadworksList">
+      <Heading level={2} text={title} />
       <Styles.Label htmlFor="roadworksSearch">Search roadworks</Styles.Label>
       <Input name="roadworksSearch" onChange={handleSearch} />
       <Styles.RoadworkList>
-        {filteredRoadworks.map((roadwork) => {
+        {filteredRoadworks.map((roadwork, index) => {
           const startDate = new Date(roadwork.startTime);
           const endDate = new Date(roadwork.endTime);
           return (
-            <Styles.Roadwork key={roadwork.id}>
+            <Styles.Roadwork key={index}>
               <Styles.IconContainer>
                 <DynamicIcon icon="mappin" />
                 <Styles.IconText>
