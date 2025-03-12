@@ -1,7 +1,6 @@
 import { Roadwork } from './RoadworksList.types';
 
 export const ExampleRoadwork: Roadwork = {
-  id: '142489130/37750220',
   location: 'Western Avenue',
   detailedLocation: 'Western Avenue, Daventry, West Northamptonshire',
   latitude: '52.252644',
@@ -15,7 +14,6 @@ export const ExampleRoadwork: Roadwork = {
 };
 
 export const AnotherExampleRoadwork: Roadwork = {
-  id: '142491536/37752791',
   location: 'Cold Ashby Road',
   detailedLocation: 'Cold Ashby Road, Thornby, West Northamptonshire',
   latitude: '52.37688',
@@ -29,7 +27,6 @@ export const AnotherExampleRoadwork: Roadwork = {
 };
 
 export const ThirdExampleRoadwork: Roadwork = {
-  id: '142351872/37522767',
   location: 'West End',
   detailedLocation: 'West End, Silverstone, West Northamptonshire',
   latitude: '52.08847',
