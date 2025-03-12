@@ -12,6 +12,7 @@ describe('Test Component', () => {
   beforeEach(() => {
     props = {
       roadworks: [ExampleRoadwork],
+      title: 'Current roadworks',
     };
   });
 

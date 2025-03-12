@@ -29,5 +29,6 @@ const Template: StoryFn<RoadworksListProps> = (args) => (
 
 export const ExampleRoadworksList = Template.bind({});
 ExampleRoadworksList.args = {
+  title: 'Current roadworks',
   roadworks: [ExampleRoadwork, AnotherExampleRoadwork, ThirdExampleRoadwork],
 };
