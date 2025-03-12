@@ -47,6 +47,7 @@ import Image from './library/slices/Image/Image';
 import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import InquestSchedule from './library/slices/InquestSchedule/InquestSchedule';
 import Promotions from './library/slices/Promotions/Promotions';
+import RoadworksList from './library/slices/RoadworksList/RoadworksList';
 import SearchBox from './library/slices/SearchBox/SearchBox';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
@@ -67,6 +68,7 @@ export {
   ImageAndText,
   InquestSchedule,
   Promotions,
+  RoadworksList,
   SearchBox,
   Video,
   WarningText,
