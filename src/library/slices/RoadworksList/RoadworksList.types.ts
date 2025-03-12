@@ -12,11 +12,6 @@ export interface RoadworksListProps {
 
 export interface Roadwork {
   /**
-   * Unique identifier
-   */
-  id: string;
-
-  /**
    * The road name
    */
   location: string;
