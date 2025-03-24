@@ -44,6 +44,10 @@ export const IconContainer = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  & span svg {
+    vertical-align: middle;
+  }
 `;
 
 export const IconText = styled.div`

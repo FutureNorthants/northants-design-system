@@ -92,10 +92,15 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks,
                 </Styles.IconText>
               </Styles.IconContainer>
               <Styles.IconContainer>
+                <DynamicIcon icon="roadworks" />
+                <Styles.IconText>
+                  <span>{roadwork.description}</span>
+                </Styles.IconText>
+              </Styles.IconContainer>
+              <Styles.IconContainer>
                 <DynamicIcon icon="bollard" />
                 <Styles.IconText>
-                  <p>{roadwork.description}</p>
-                  <p>{roadwork.trafficManagement}</p>
+                  <span>{roadwork.trafficManagement}</span>
                 </Styles.IconText>
               </Styles.IconContainer>
             </Styles.Roadwork>
