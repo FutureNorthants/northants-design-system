@@ -32,3 +32,9 @@ ExampleRoadworksList.args = {
   title: 'Current roadworks',
   roadworks: [ExampleRoadwork, AnotherExampleRoadwork, ThirdExampleRoadwork],
 };
+
+export const RoadworksListNoResults = Template.bind({});
+RoadworksListNoResults.args = {
+  title: 'Current roadworks',
+  roadworks: [],
+};

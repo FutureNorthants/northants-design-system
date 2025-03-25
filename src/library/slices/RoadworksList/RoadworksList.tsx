@@ -107,6 +107,16 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks,
           );
         })}
       </Styles.RoadworkList>
+      {roadworks.length > 0 && filteredRoadworks.length === 0 && (
+        <Styles.NoMatches>
+          We couldn't find any results for your search term. Please try a different search.
+        </Styles.NoMatches>
+      )}
+      {roadworks.length == 0 && (
+        <Styles.NoMatches>
+          Sorry, we're not able to find any results at the moment. Please try again later.
+        </Styles.NoMatches>
+      )}
     </Styles.Container>
   );
 };

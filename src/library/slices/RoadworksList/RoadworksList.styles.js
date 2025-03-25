@@ -53,3 +53,7 @@ export const IconContainer = styled.div`
 export const IconText = styled.div`
   padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
+
+export const NoMatches = styled.p`
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+`;
