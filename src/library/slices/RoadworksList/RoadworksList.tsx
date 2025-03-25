@@ -72,7 +72,14 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks,
     <Styles.Container data-testid="RoadworksList">
       <Heading level={2} text={title} />
       <Styles.Label htmlFor="roadworksSearch">Search roadworks</Styles.Label>
-      <Input name="roadworksSearch" onChange={handleSearch} />
+      <Input
+        id="roadworksSearch"
+        name="roadworksSearch"
+        type="text"
+        placeholder="Enter a search term"
+        maxLength={255}
+        onChange={handleSearch}
+      />
       <Styles.RoadworkList>
         {filteredRoadworks.map((roadwork, index) => {
           const startDate = new Date(roadwork.startTime);
