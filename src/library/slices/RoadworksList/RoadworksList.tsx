@@ -79,6 +79,7 @@ const RoadworksList: React.FunctionComponent<RoadworksListProps> = ({ roadworks,
         placeholder="Enter a search term"
         maxLength={255}
         onChange={handleSearch}
+        isFullWidth
       />
       <Styles.RoadworkList>
         {filteredRoadworks.map((roadwork, index) => {

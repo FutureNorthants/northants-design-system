@@ -13,10 +13,12 @@ export const RoadworkList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  max-width: 100% !important;
 `;
 
 export const Roadwork = styled.li`
   display: block;
+  width: 100%;
   margin-left: 0;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium} !important;
   padding: ${(props) => `${props.theme.theme_vars.spacingSizes.small} ${props.theme.theme_vars.spacingSizes.medium}`};
