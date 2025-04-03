@@ -67,11 +67,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0;
 
     li {
-      padding-right: 0;
+      padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
       left: 0;
       line-height: 1.5;
 

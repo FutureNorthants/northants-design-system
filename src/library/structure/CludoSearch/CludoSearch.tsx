@@ -2,6 +2,7 @@ import React from 'react';
 import { CludoSearchProps } from './CludoSearch.types';
 import * as Styles from './CludoSearch.styles';
 import {
+  CludoSearchAutocomplete,
   CludoSearchOptions,
   CludoWrapper,
   CustomResult,
@@ -31,6 +32,9 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     },
     behavior: {
       enableRelatedSearches: true,
+    },
+    components: {
+      autocomplete: CludoSearchAutocomplete,
     },
   };
   return (
