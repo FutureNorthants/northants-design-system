@@ -3,6 +3,7 @@ import AlertBanner from './AlertBanner/AlertBanner';
 import AlertBannerService from './AlertBannerService/AlertBannerService';
 import BackLink from './BackLink/BackLink';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import CludoSearch from './CludoSearch/CludoSearch';
 import Contents from './Contents/Contents';
 import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
 import CookieBanner from './CookieBanner/CookieBanner';
@@ -50,6 +51,7 @@ export {
   AlertBannerService,
   BackLink,
   Breadcrumbs,
+  CludoSearch,
   Contents,
   ContentsNavigation,
   CookieBanner,

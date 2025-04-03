@@ -173,7 +173,7 @@ export const Container = styled.div`
         color: ${(props) => props.theme.theme_vars.colours.white};
         outline: none;
         border: none;
-        padding: 15px 15px;
+        padding: 15px 19px;
         border-radius: ${(props) => props.theme.theme_vars.border_radius};
         cursor: pointer;
 
