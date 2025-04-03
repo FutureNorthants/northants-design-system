@@ -54,6 +54,11 @@ export const Container = styled.div`
     }
   }
 
+  .wnc-cludo-did-you-mean {
+    display: block;
+    margin: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
+  }
+
   .wnc-cludo-facet-list {
     margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 

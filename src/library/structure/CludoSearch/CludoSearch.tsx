@@ -42,7 +42,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
       <CludoWrapper config={cludoSearchConfig}>
         <SearchInput className="wnc-cludo-input" formId="search" ariaLabel="Search the website" />
         <ResultCount />
-        <DidYouMean />
+        <DidYouMean className="wnc-cludo-did-you-mean" />
 
         <FacetGroup>
           <StandardFacet
