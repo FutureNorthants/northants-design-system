@@ -5,10 +5,10 @@ export const Container = styled.div`
 
   a {
     text-decoration: none !important;
-    font-weight: normal;
+    font-weight: normal !important;
 
     b {
-      font-weight: bold;
+      font-weight: bold !important;
     }
   }
 
