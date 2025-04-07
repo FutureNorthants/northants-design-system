@@ -92,8 +92,20 @@ export const Container = styled.div`
           background-color: ${(props) => props.theme.theme_vars.colours.action};
           color: ${(props) => props.theme.theme_vars.colours.white};
         }
+        .cludo-theme-facet-count {
+          &:before {
+            content: '(';
+          }
+          &:after {
+            content: ')';
+          }
+        }
       }
     }
+  }
+
+  .cludo_results-list {
+    list-style: none;
   }
 
   .cludo_results-list li {

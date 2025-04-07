@@ -36,6 +36,10 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     components: {
       autocomplete: CludoSearchAutocomplete,
     },
+    autocomplete: {
+      disable: false,
+      useSearchAsYouType: true,
+    },
   };
   return (
     <Styles.Container data-testid="CludoSearch">
@@ -48,7 +52,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
           <StandardFacet
             field="Category"
             hideClear
-            hideCount
+            hideCount={false}
             hideSearchBar
             hideShowMore
             className="wnc-cludo-facet-list"
