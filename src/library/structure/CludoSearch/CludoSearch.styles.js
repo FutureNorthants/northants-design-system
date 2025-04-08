@@ -88,6 +88,11 @@ export const Container = styled.div`
         color: ${(props) => props.theme.theme_vars.colours.action};
         font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
 
+        &:hover {
+          text-decoration: underline !important;
+          text-decoration-style: dotted !important;
+        }
+
         &.cludo-active {
           background-color: ${(props) => props.theme.theme_vars.colours.action};
           color: ${(props) => props.theme.theme_vars.colours.white};
@@ -128,6 +133,38 @@ export const Container = styled.div`
     color: ${(props) => props.theme.theme_vars.colours.black};
     width: 100%;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+
+    a {
+      text-decoration: underline !important;
+      font-weight: 700 !important;
+    }
+
+    button {
+      outline: none;
+      background: transparent;
+      border: none;
+
+      a {
+        background-color: ${(props) => props.theme.theme_vars.colours.action};
+        color: ${(props) => props.theme.theme_vars.colours.white} !important;
+        padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+        display: inline-block;
+        border-radius: ${(props) => props.theme.theme_vars.border_radius};
+        text-decoration: none !important;
+        font-weight: 700 !important;
+
+        &:hover {
+          background-color: ${(props) => props.theme.theme_vars.colours.action_dark};
+        }
+
+        &:focus,
+        &:active {
+          color: ${(props) => props.theme.theme_vars.colours.black} !important;
+          background-color: ${(props) => props.theme.theme_vars.colours.focus};
+          box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+        }
+      }
+    }
   }
 
   .wnc-cludo-result {
