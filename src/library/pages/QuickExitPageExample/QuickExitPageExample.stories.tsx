@@ -38,6 +38,8 @@ export const AnotherQuickExitExamplePage = Template.bind({});
 AnotherQuickExitExamplePage.args = {
   quickExitButtonLabel: 'Quick exit >>>',
   quickExitHyperlink: 'https://www.google.co.uk',
+  quickExitButtonSolidOrTransparent: 'transparent',
+  quickExitButtonIncludeIcon: false,
   children: <QuickExitPageExample1 />,
 };
 
@@ -45,22 +47,10 @@ export const AQuickExitExamplePageWithBackToTopIncluded = Template.bind({});
 AQuickExitExamplePageWithBackToTopIncluded.args = {
   quickExitButtonLabel: 'Quick exit >>>',
   quickExitHyperlink: 'https://www.google.co.uk',
+  quickExitButtonSolidOrTransparent: 'solid',
+  quickExitButtonIncludeIcon: true,
   includeBackToTopInExample: true,
   children: <QuickExitPageExample1 />,
 };
 
-/* 
 
-  quickExitButtonColour: '#21c106',
-  quickExitButtonSecondaryColour: 'blue',
-  quickExitButtonTextColour: 'white',
-  quickExitButtonFontFamily: 'Calibri',
-  quickExitButtonFontSize: '32px',
-
-  quickExitButtonColour: '#21c106',
-  quickExitButtonSecondaryColour: 'blue',
-  quickExitButtonTextColour: 'white',
-  quickExitButtonFontFamily: 'Calibri',
-  quickExitButtonFontSize: '32px',
-
-  */
