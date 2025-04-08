@@ -8,7 +8,9 @@ export interface QuickExitProps {
 
   quickExitHyperlink?: string;
 
-  children?: React.ReactElement;
+  quickExitButtonSolidOrTransparent?: 'solid' | 'transparent';
+
+  quickExitButtonIncludeIcon?: boolean;
 }
 
 /*
@@ -21,4 +23,6 @@ quickExitButtonTextColour?: string;
 quickExitButtonFontFamily?: string;
 
 quickExitButtonFontSize?: string;
+
+children?: React.ReactElement;
 */

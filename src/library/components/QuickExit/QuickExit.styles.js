@@ -6,67 +6,37 @@ export const Container = styled.div`
 
 export const QuickExitButtonContainer = styled.div`
   border-radius: ${(props) => props.theme.theme_vars.border_radius_large};
-  background-color: ${(props) => props.theme.theme_vars.colours.positive};
-  //color: ${(props) => props.theme.theme_vars.colours.positive};
-  color: ${(props) => props.theme.theme_vars.colours.white} !important;
-  opacity: 0.50;
-
+  background-color: ${(props) => props.theme.theme_vars.colours.positive } !important;
+  color: ${(props) => props.theme.theme_vars.colours.white } !important;
+  opacity: ${(props) => props.$quickExitButtonSolidOrTransparent === 'transparent' ? 0.50 : 1};
   position: fixed;
-  //width: 6.71em;
-  //width: 10em;
-  //height: 1em;
   top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   right: ${(props) => props.theme.theme_vars.spacingSizes.small};
   z-index: 2;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   border-style: solid;
-  border-color: lightgreen;
+  border-color: ${(props) => props.$quickExitButtonSolidOrTransparent === 'transparent' ? 'limegreen' : 'black'};
   cursor: pointer;
 
-  &:focus {
-    //color: ${(props) => props.theme.theme_vars.colours.white} !important;
-    //background-color: ${(props) => props.theme.theme_vars.colours.action};
+  &:focus, &:active, &:hover {
     opacity: 1;
-    border-color: black;
-    color: ${(props) => props.theme.theme_vars.colours.white} !important;
-  }
-
-  &:active {
-    //color: ${(props) => props.theme.theme_vars.colours.white} !important;
-    //background-color: ${(props) => props.theme.theme_vars.colours.action};
-    opacity: 1;
-    border-color: black;
-    color: ${(props) => props.theme.theme_vars.colours.white} !important;
-  }
-
-  &:hover {
-    //color: ${(props) => props.theme.theme_vars.colours.white} !important;
-    //background-color: ${(props) => props.theme.theme_vars.colours.action};
-    opacity: 1;
-    border-color: black;
-    color: ${(props) => props.theme.theme_vars.colours.white} !important;
+    border-color: ${(props) => props.$quickExitButtonSolidOrTransparent === 'transparent' ? 'black' : 'white'};
+    color: ${(props) => props.theme.theme_vars.colours.white } !important;
+    background-color: ${(props) => props.$quickExitButtonSolidOrTransparent === 'solid' ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.positive } !important;    
   }
 
   @media only screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
-    //background-color: pink;
   }
 
   @media only screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
-    //background-color: cyan;
   }
 
   @media only screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     font-size: ${(props) => props.theme.theme_vars.fontSizes.medium};
-    //background-color: yellow;
   }
-`;
-
-export const QuickExitPageContentContainer = styled.div`
-  z-index: 1;
-  position: relative;
 `;
 
 export const QuickExitButton = styled.button`
@@ -92,7 +62,7 @@ export const QuickExitButton = styled.button`
   text-shadow: none;
 
   &:hover {
-    text-shadow: darkgreen 1px 1px 2px;
+    text-shadow: ${(props) => props.$quickExitButtonSolidOrTransparent === 'transparent' ? 'darkgreen 1px 1px 2px' : 'inherit' } !important;
   }
 `;
 

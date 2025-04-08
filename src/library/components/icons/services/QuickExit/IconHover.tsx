@@ -9,9 +9,8 @@ const ServiceIcon: React.FunctionComponent<IconProps> = ({ colourFill="none" }) 
    viewBox="0 0 135.46667 135.46667"
    version="1.1"
    id="svg1"
-   xml:space="preserve"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   xmlSpace="preserve"
+   xmlns="http://www.w3.org/2000/svg"><defs
      id="defs1" /><g
      id="layer1"
      transform="matrix(2.0333959,0,0,2.0333959,-124.88903,-344.15187)">

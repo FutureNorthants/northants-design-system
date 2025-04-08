@@ -3,8 +3,6 @@ import { StoryFn } from '@storybook/react';
 import QuickExit from './QuickExit';
 import { QuickExitProps } from './QuickExit.types';
 
-import { TestPageContent } from './QuickExit.SharedContent';
-
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {
@@ -23,14 +21,29 @@ const Template: StoryFn<QuickExitProps> = (args) => (
   </SBPadding>
 );
 
-export const ExampleQuickExit = Template.bind({});
-ExampleQuickExit.args = {
-  children: <TestPageContent />,
-};
+export const DefaultQuickExit = Template.bind({});
+DefaultQuickExit.args = {};
 
-export const AnotherExampleQuickExit = Template.bind({});
-AnotherExampleQuickExit.args = {
+export const QuickExitTransparent = Template.bind({});
+QuickExitTransparent.args = {
   quickExitButtonLabel: 'Quick exit >>>',
   quickExitHyperlink: 'https://www.google.co.uk',
-  children: <TestPageContent />,
+  quickExitButtonSolidOrTransparent: 'transparent',
+  quickExitButtonIncludeIcon: false
+};
+
+export const QuickExitSolid = Template.bind({});
+QuickExitSolid.args = {
+  quickExitButtonLabel: 'Quick exit >>>',
+  quickExitHyperlink: 'https://www.google.co.uk',
+  quickExitButtonSolidOrTransparent: 'solid',
+  quickExitButtonIncludeIcon: false
+};
+
+export const QuickExitSolidWithIcon = Template.bind({});
+QuickExitSolidWithIcon.args = {
+  quickExitButtonLabel: 'Quick exit',
+  quickExitHyperlink: 'https://www.google.co.uk',
+  quickExitButtonSolidOrTransparent: 'solid',
+  quickExitButtonIncludeIcon: true
 };
