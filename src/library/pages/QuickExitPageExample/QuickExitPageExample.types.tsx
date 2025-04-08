@@ -26,5 +26,8 @@ export interface QuickExitPageExampleProps {
   */
   includeBackToTopInExample?: boolean;
 
-  children?: React.ReactElement;
+  /**
+  Children
+  */
+  children: React.ReactElement;
 }

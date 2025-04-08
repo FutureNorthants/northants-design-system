@@ -12,7 +12,8 @@ const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> =
   quickExitHyperlink,
   quickExitButtonSolidOrTransparent,
   quickExitButtonIncludeIcon,
-  includeBackToTopInExample
+  includeBackToTopInExample,
+  children
 }) => {
   return (
     <MaxWidthContainer>
@@ -23,6 +24,7 @@ const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> =
         quickExitButtonSolidOrTransparent={quickExitButtonSolidOrTransparent}
         quickExitButtonIncludeIcon={quickExitButtonIncludeIcon}
         />
+        {children}
         <BackToTop isActive={includeBackToTopInExample} />
       </PageMain>
     </MaxWidthContainer>
