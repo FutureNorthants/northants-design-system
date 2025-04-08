@@ -10,18 +10,20 @@ import { PageMain } from '../../structure/PageStructures';
 const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> = ({
   quickExitButtonLabel,
   quickExitHyperlink,
-  includeBackToTopInExample,
-  children,
+  quickExitButtonSolidOrTransparent,
+  quickExitButtonIncludeIcon,
+  includeBackToTopInExample
 }) => {
   return (
     <MaxWidthContainer>
       <PageMain>
-        <QuickExit quickExitButtonLabel={quickExitButtonLabel} quickExitHyperlink={quickExitHyperlink}>
-          <>
-            {children}
-            <BackToTop isActive={includeBackToTopInExample} />
-          </>
-        </QuickExit>
+        <QuickExit
+        quickExitButtonLabel={quickExitButtonLabel}
+        quickExitHyperlink={quickExitHyperlink}
+        quickExitButtonSolidOrTransparent={quickExitButtonSolidOrTransparent}
+        quickExitButtonIncludeIcon={quickExitButtonIncludeIcon}
+        />
+        <BackToTop isActive={includeBackToTopInExample} />
       </PageMain>
     </MaxWidthContainer>
   );

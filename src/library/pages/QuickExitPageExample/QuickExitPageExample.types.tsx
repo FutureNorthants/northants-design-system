@@ -5,7 +5,9 @@ export interface QuickExitPageExampleProps {
 
   quickExitHyperlink: string;
 
-  includeBackToTopInExample?: boolean;
+  quickExitButtonSolidOrTransparent?: 'solid' | 'transparent';
 
-  children: React.ReactElement;
+  quickExitButtonIncludeIcon?: false;
+
+  includeBackToTopInExample?: boolean;
 }
