@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CludoSearchProps } from './CludoSearch.types';
 import * as Styles from './CludoSearch.styles';
 import {
@@ -22,6 +22,12 @@ import {
 } from '@cludosearch/cludo-search-components';
 
 const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, customerId, engineId }) => {
+  const [notServer, setNotServer] = useState<boolean>(false);
+
+  useEffect(() => {
+    setNotServer(true);
+  }, []);
+
   const cludoSearchConfig: CludoSearchOptions = {
     customerId: customerId,
     engineId: engineId,
@@ -41,37 +47,40 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
       useSearchAsYouType: true,
     },
   };
+
   return (
     <Styles.Container data-testid="CludoSearch">
-      <CludoWrapper config={cludoSearchConfig}>
-        <SearchInput className="wnc-cludo-input" formId="search" ariaLabel="Search the website" />
-        <ResultCount />
-        <DidYouMean className="wnc-cludo-did-you-mean" />
+      {notServer && (
+        <CludoWrapper config={cludoSearchConfig}>
+          <SearchInput className="wnc-cludo-input" formId="search" ariaLabel="Search the website" />
+          <ResultCount />
+          <DidYouMean className="wnc-cludo-did-you-mean" />
 
-        <FacetGroup>
-          <StandardFacet
-            field="Category"
-            hideClear
-            hideCount={false}
-            hideSearchBar
-            hideShowMore
-            className="wnc-cludo-facet-list"
+          <FacetGroup>
+            <StandardFacet
+              field="Category"
+              hideClear
+              hideCount={false}
+              hideSearchBar
+              hideShowMore
+              className="wnc-cludo-facet-list"
+            />
+          </FacetGroup>
+
+          <ResultsList
+            template={(currResult) => (
+              <CustomResult result={currResult} wrapWithLink={true} className="wnc-cludo-result">
+                <ResultTitle className="wnc-cludo-title" />
+                <ResultImage />
+                <ResultDescription maxWordCount={20} className="wnc-cludo-description" />
+                <ResultBadge className="wnc-cludo-badge" />
+                <ResultUrl className="wnc-cludo-result-link" />
+              </CustomResult>
+            )}
           />
-        </FacetGroup>
-
-        <ResultsList
-          template={(currResult) => (
-            <CustomResult result={currResult} wrapWithLink={true} className="wnc-cludo-result">
-              <ResultTitle className="wnc-cludo-title" />
-              <ResultImage />
-              <ResultDescription maxWordCount={20} className="wnc-cludo-description" />
-              <ResultBadge className="wnc-cludo-badge" />
-              <ResultUrl className="wnc-cludo-result-link" />
-            </CustomResult>
-          )}
-        />
-        <Pagination className="wnc-cludo-pagination" />
-      </CludoWrapper>
+          <Pagination className="wnc-cludo-pagination" />
+        </CludoWrapper>
+      )}
     </Styles.Container>
   );
 };
