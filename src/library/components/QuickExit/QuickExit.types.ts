@@ -4,20 +4,20 @@ export interface QuickExitProps {
   /**
   The text for the 'Quick Exit' button
   */  
-  quickExitButtonLabel?: string;
+  label?: string;
 
   /**
   The hyperlink that the 'Quick exit' button redirects to
   */
-  quickExitHyperlink?: string;
+  url?: string;
 
   /**
   Whether the 'Quick Exit' button is Solid or Transparent
   */
-  quickExitButtonSolidOrTransparent?: 'solid' | 'transparent';
+  isSolid?: boolean;
 
   /**
   Whether the text for the 'Quick Exit' button is accompanied by the 'Quick Exit' icon.
   */
-  quickExitButtonIncludeIcon?: boolean;
+  hasIcon?: boolean;
 }

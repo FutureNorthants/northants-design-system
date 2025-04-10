@@ -36,21 +36,19 @@ QuickExitExamplePageWithBackToTop.args = {
 
 export const AnotherQuickExitExamplePage = Template.bind({});
 AnotherQuickExitExamplePage.args = {
-  quickExitButtonLabel: 'Quick exit >>>',
-  quickExitHyperlink: 'https://www.google.co.uk',
-  quickExitButtonSolidOrTransparent: 'transparent',
-  quickExitButtonIncludeIcon: false,
+  label: 'Quick exit >>>',
+  url: 'https://www.google.co.uk',
+  isSolid: false,
+  hasIcon: false,
   children: <QuickExitPageExample1 />,
 };
 
 export const AQuickExitExamplePageWithBackToTopIncluded = Template.bind({});
 AQuickExitExamplePageWithBackToTopIncluded.args = {
-  quickExitButtonLabel: 'Quick exit >>>',
-  quickExitHyperlink: 'https://www.google.co.uk',
-  quickExitButtonSolidOrTransparent: 'solid',
-  quickExitButtonIncludeIcon: true,
+  label: 'Quick exit >>>',
+  url: 'https://www.google.co.uk',
+  isSolid: true,
+  hasIcon: true,
   includeBackToTopInExample: true,
   children: <QuickExitPageExample1 />,
 };
-
-

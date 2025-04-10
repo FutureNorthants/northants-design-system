@@ -26,24 +26,24 @@ DefaultQuickExit.args = {};
 
 export const QuickExitTransparent = Template.bind({});
 QuickExitTransparent.args = {
-  quickExitButtonLabel: 'Quick exit >>>',
-  quickExitHyperlink: 'https://www.google.co.uk',
-  quickExitButtonSolidOrTransparent: 'transparent',
-  quickExitButtonIncludeIcon: false
+  label: 'Quick exit >>>',
+  url: 'https://www.google.co.uk',
+  isSolid: false,
+  hasIcon: false
 };
 
 export const QuickExitSolid = Template.bind({});
 QuickExitSolid.args = {
-  quickExitButtonLabel: 'Quick exit >>>',
-  quickExitHyperlink: 'https://www.google.co.uk',
-  quickExitButtonSolidOrTransparent: 'solid',
-  quickExitButtonIncludeIcon: false
+  label: 'Quick exit >>>',
+  url: 'https://www.google.co.uk',
+  isSolid: true,
+  hasIcon: false
 };
 
 export const QuickExitSolidWithIcon = Template.bind({});
 QuickExitSolidWithIcon.args = {
-  quickExitButtonLabel: 'Quick exit',
-  quickExitHyperlink: 'https://www.google.co.uk',
-  quickExitButtonSolidOrTransparent: 'solid',
-  quickExitButtonIncludeIcon: true
+  label: 'Quick exit',
+  url: 'https://www.google.co.uk',
+  isSolid: true,
+  hasIcon: true
 };
