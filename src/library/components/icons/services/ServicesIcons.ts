@@ -180,7 +180,6 @@ import WasteSackIcon from './WasteSack/Icon';
 import WasteSackIconHover from './WasteSack/IconHover';
 import WasteSortingIcon from './WasteSorting/Icon';
 import WasteSortingIconHover from './WasteSorting/IconHover';
-import Icon from './CultureNorth/Icon';
 
 let components = {
   accessibleparking: AccessibleParkingIcon,
