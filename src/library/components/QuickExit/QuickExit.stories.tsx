@@ -24,26 +24,33 @@ const Template: StoryFn<QuickExitProps> = (args) => (
 export const DefaultQuickExit = Template.bind({});
 DefaultQuickExit.args = {};
 
+export const QuickExitCustomTextAndURL = Template.bind({});
+QuickExitCustomTextAndURL.args = {
+  label: 'Quick exit >>>',
+  url: 'https://www.google.co.uk',
+};
+
 export const QuickExitTransparent = Template.bind({});
 QuickExitTransparent.args = {
   label: 'Quick exit >>>',
-  url: 'https://www.google.co.uk',
-  isSolid: false,
-  hasIcon: false
+  isTransparent: true,
 };
 
-export const QuickExitSolid = Template.bind({});
-QuickExitSolid.args = {
-  label: 'Quick exit >>>',
-  url: 'https://www.google.co.uk',
-  isSolid: true,
-  hasIcon: false
-};
-
-export const QuickExitSolidWithIcon = Template.bind({});
-QuickExitSolidWithIcon.args = {
-  label: 'Quick exit',
-  url: 'https://www.google.co.uk',
-  isSolid: true,
+export const QuickExitWithIcon = Template.bind({});
+QuickExitWithIcon.args = {
   hasIcon: true
+};
+
+export const QuickExitWithIconAndNoLabel = Template.bind({});
+QuickExitWithIconAndNoLabel.args = {
+  label: '',
+  hasIcon: true
+};
+
+
+export const QuickExitWithTransparentIconAndNoLabel = Template.bind({});
+QuickExitWithTransparentIconAndNoLabel.args = {
+  label: '',
+  hasIcon: true,
+  isTransparent: true
 };

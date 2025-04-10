@@ -14,7 +14,7 @@ export interface QuickExitProps {
   /**
   Whether the 'Quick Exit' button is Solid or Transparent
   */
-  isSolid?: boolean;
+  isTransparent?: boolean;
 
   /**
   Whether the text for the 'Quick Exit' button is accompanied by the 'Quick Exit' icon.

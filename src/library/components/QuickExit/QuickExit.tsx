@@ -8,7 +8,7 @@ import HeadingWithIcon from '../HeadingWithIcon/HeadingWithIcon';
 const QuickExit: React.FunctionComponent<QuickExitProps> = ({
   label = 'Quick exit',
   url = 'https://www.bbc.co.uk/weather',
-  isSolid = false,
+  isTransparent = false,
   hasIcon = false}) => {
 
   const handleClick = (e) => {
@@ -20,7 +20,7 @@ const QuickExit: React.FunctionComponent<QuickExitProps> = ({
     <>
       <Styles.Container data-testid="QuickExit">
         <Styles.QuickExitButtonContainer className="quickExitButtonContainer"
-        $isSolid={isSolid}>
+        $isTransparent={isTransparent}>
           <Styles.QuickExitButton onClick={(e) => handleClick(e)}>
             {hasIcon && (<HeadingWithIcon icon='quickExit' level={3} text={label} hasHover={false}/>)}
             {!hasIcon && label}
