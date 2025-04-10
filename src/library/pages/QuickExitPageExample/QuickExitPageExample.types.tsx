@@ -2,32 +2,32 @@ import React from 'react';
 
 export interface QuickExitPageExampleProps {
   /**
-  The text for the 'Quick Exit' button (Default: 'Quick exit')
-  */  
+    * The text for the 'Quick Exit' button (Default: 'Quick exit')
+    */  
   label?: string;
 
   /**
-  The hyperlink that the 'Quick exit' button redirects to  (default: www.bbc.co.uk/iplayer)
-  */
+    * The hyperlink that the 'Quick exit' button redirects to  (default: www.bbc.co.uk/iplayer)
+    */
   url?: string;
 
   /**
-  Whether the 'Quick Exit' button is Solid or Transparent
-  */
-  isSolid?: boolean;
+    * Whether the 'Quick Exit' button is Transparent or not.
+    */
+  isTransparent?: boolean;
 
   /**
-  Whether the 'Quick Exit' button includes the 'Quick Exit' icon.
-  */
+    * Whether the 'Quick Exit' button includes the 'Quick Exit' icon.
+    */
   hasIcon?: boolean;
 
   /**
-  Whether 'Quick Exit Page Example' includes the 'Back to Top' icon for comparison.
-  */
+    * Whether 'Quick Exit Page Example' includes the 'Back to Top' icon for comparison.
+    */
   includeBackToTopInExample?: boolean;
 
   /**
-  Children
-  */
+    * Children
+    */
   children: React.ReactElement;
 }

@@ -10,7 +10,7 @@ import { PageMain } from '../../structure/PageStructures';
 const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> = ({
   label = "Quick exit",
   url = "https://www.bbc.co.uk/weather",
-  isSolid = true,
+  isTransparent = false,
   hasIcon = false,
   includeBackToTopInExample = false,
   children
@@ -21,7 +21,7 @@ const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> =
         <QuickExit
         label={label}
         url={url}
-        isSolid={isSolid}
+        isTransparent={isTransparent}
         hasIcon={hasIcon}
         />
         {children}
