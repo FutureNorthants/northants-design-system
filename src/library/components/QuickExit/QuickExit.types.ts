@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface QuickExitProps {
   /**
   The text for the 'Quick Exit' button
