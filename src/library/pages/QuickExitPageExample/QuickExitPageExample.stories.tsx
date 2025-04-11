@@ -45,9 +45,26 @@ AnotherQuickExitExamplePage.args = {
 
 export const AQuickExitExamplePageWithBackToTopIncluded = Template.bind({});
 AQuickExitExamplePageWithBackToTopIncluded.args = {
-  label: 'Quick exit >>>',
-  url: 'https://www.google.co.uk',
+  label: 'Quick exit',
   isTransparent: false,
+  hasIcon: true,
+  includeBackToTopInExample: true,
+  children: <QuickExitPageExample1 />,
+};
+
+export const AQuickExitExamplePageWithIconOnly = Template.bind({});
+AQuickExitExamplePageWithIconOnly.args = {
+  label: '',
+  isTransparent: false,
+  hasIcon: true,
+  includeBackToTopInExample: true,
+  children: <QuickExitPageExample1 />,
+};
+
+export const AQuickExitExamplePageWithTransparentIconOnly = Template.bind({});
+AQuickExitExamplePageWithTransparentIconOnly.args = {
+  label: '',
+  isTransparent: true,
   hasIcon: true,
   includeBackToTopInExample: true,
   children: <QuickExitPageExample1 />,
