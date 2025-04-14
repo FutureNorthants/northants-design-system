@@ -41,6 +41,12 @@ QuickExitWithIcon.args = {
   hasIcon: true
 };
 
+export const QuickExitTransparentWithIcon = Template.bind({});
+QuickExitTransparentWithIcon.args = {
+  hasIcon: true,
+  isTransparent: true
+};
+
 export const QuickExitWithIconAndNoLabel = Template.bind({});
 QuickExitWithIconAndNoLabel.args = {
   label: '',

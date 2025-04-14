@@ -96,4 +96,8 @@ export const QuickExitButton = styled.button`
   & > div {
     justify-content: space-evenly;
   }
+
+  & > div > span  {
+    padding: 0;
+  }
 `;
