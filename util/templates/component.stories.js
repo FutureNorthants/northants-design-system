@@ -1,11 +1,11 @@
-module.exports = (componentName) => ({
+module.exports = (componentName, componentType) => ({
   content: `
 import React from "react";
 import type { Meta, StoryObj } from '@storybook/react';
 import ${componentName} from "./${componentName}";
 
-const meta: Meta<typeof ${componentName} = {
-    title: 'Library/Components/${componentName}',
+const meta: Meta<typeof ${componentName}> = {
+    title: 'Library/${componentType}/${componentName}',
     component: ${componentName},
     parameters: {
       status: {
