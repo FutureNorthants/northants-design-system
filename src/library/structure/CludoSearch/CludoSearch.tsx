@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { CludoSearchProps } from './CludoSearch.types';
 import * as Styles from './CludoSearch.styles';
 import {
+  autocompleteHandleInputBlur,
+  autocompleteHandleInputChange,
+  autocompleteHandleInputKeyDown,
   CludoSearchAutocomplete,
   CludoSearchOptions,
   CludoWrapper,
@@ -17,12 +20,17 @@ import {
   ResultsPerPage,
   ResultTitle,
   ResultUrl,
+  SaytSuggestion,
   SearchInput,
   StandardFacet,
+  useAutocomplete,
 } from '@cludosearch/cludo-search-components';
+import Input from '../../components/Input/Input';
+import CludoAutoComplete from './CludoAutocomplete';
 
 const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, customerId, engineId }) => {
   const [notServer, setNotServer] = useState<boolean>(false);
+  const [autocompleteState, autocompleteDispatchers] = useAutocomplete();
 
   useEffect(() => {
     setNotServer(true);
@@ -36,23 +44,21 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     facets: {
       keys: ['Category'],
     },
-    behavior: {
-      enableRelatedSearches: true,
-    },
     components: {
-      autocomplete: CludoSearchAutocomplete,
-    },
-    autocomplete: {
-      disable: false,
-      useSearchAsYouType: true,
+      // results: CludoResultsTemplate,
+      // controls: CludoControlsTemplate,
+      autocomplete: CludoAutoComplete,
     },
   };
+
+  const autocompleteContainerCSS =
+    'cludo-bg-color-white cludo-list-style-none cludo-border-1-neutral cludo-border-radius-card cludo-box-shadow-card cludo-p-4 cludo-mt-1 cludo-max-h-96 cludo-overflow-y-auto';
 
   return (
     <Styles.Container data-testid="CludoSearch">
       {notServer && (
         <CludoWrapper config={cludoSearchConfig}>
-          <SearchInput className="wnc-cludo-input" formId="search" ariaLabel="Search the website" />
+          <CludoAutoComplete />
           <ResultCount />
           <DidYouMean className="wnc-cludo-did-you-mean" />
 

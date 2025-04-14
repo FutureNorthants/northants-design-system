@@ -15,7 +15,6 @@ export const Container = styled.div`
   .wnc-cludo-input {
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
     display: flex;
     flex-direction: row;
   }
@@ -242,6 +241,35 @@ export const Container = styled.div`
           color: ${(props) => props.theme.theme_vars.colours.black};
         }
       }
+    }
+  }
+`;
+
+export const AutocompleteContainer = styled.div`
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const AutocompleteList = styled.ul`
+  list-style: none;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+
+  position: absolute;
+  z-index: 2;
+  background: ${(props) => props.theme.theme_vars.colours.white};
+
+  li {
+    cursor: pointer;
+    border-color: ${(props) => props.theme.theme_vars.colours.black};
+    border-style: solid;
+    border-width: 1px 2px;
+    left: 0 !important;
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    margin-bottom: 0;
+
+    &:hover {
+      background: ${(props) => props.theme.theme_vars.colours.action};
+      color: ${(props) => props.theme.theme_vars.colours.white};
     }
   }
 `;
