@@ -265,7 +265,7 @@ export const AutocompleteList = styled.ul`
     border-width: 1px 2px;
     left: 0 !important;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 
     &:hover {
       background: ${(props) => props.theme.theme_vars.colours.action};
