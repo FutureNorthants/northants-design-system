@@ -43,3 +43,11 @@ export const GoogleMapWithInvalidLinks: Story = {
 export const GoogleMapWithUpdatedLink: Story = {
   args: storydata.GoogleMapWithUpdatedLinkFormat,
 };
+
+export const OneNetworkMap: Story = {
+  args: storydata.OneNetworkMapLink,
+}
+
+export const OneNetworkMapIncorrectURL: Story = {
+  args: storydata.OneNetworkMapIncorrectURLLink,
+}

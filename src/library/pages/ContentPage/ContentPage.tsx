@@ -82,13 +82,18 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <p>text inbetween lists</p>
         <ul>
           <li>
-            <a href="#">list link 1</a>
+            This is a long <a href="#">list link 1</a> that should wrap onto the next line so you get an idea of how the
+            adjusted <a href="#">line height</a> will look.
           </li>
           <li>
-            <a href="#">list link 2</a>
+            This is another example of how a <a href="#">list link 2</a> looks when it wraps onto another line for
+            comparison.
           </li>
           <li>
             <a href="#">list link 3</a>
+          </li>
+          <li>
+            <a href="#">list link 4</a>
           </li>
         </ul>
         <Divider />

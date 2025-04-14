@@ -117,15 +117,10 @@ export const HomeLink = styled.a`
     }
   }
   &:focus {
-    outline: 2px transparent solid;
-    box-shadow:
-      ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
-      ${(props) =>
-          props.theme.cardinal_name === 'north'
-            ? props.theme.theme_vars.colours.black
-            : props.theme.theme_vars.colours.focus}
-        0 0 0 4px;
-    transition: box-shadow 0.3s ease 0s;
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive}
   }
 `;
 

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import Heading from '../../components/Heading/Heading';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  li {
+    line-height: 1.5;
+  }
+`;
 
 export const SectionTitle = styled(Heading)`
   background: ${(props) =>
