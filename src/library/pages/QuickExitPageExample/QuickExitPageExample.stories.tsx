@@ -20,13 +20,13 @@ export const QuickExitExamplePage: Story = {
   args: { children: <QuickExitPageExample1 />},
   render: (args) =>   
   (<QuickExitPageExample {...args} />)
-
 };
 
 export const QuickExitExamplePageWithBackToTop: Story = {
   ...QuickExitExamplePage,    
   args: {
     includeBackToTopInExample: true,
+    children: <QuickExitPageExample1 />
  }
 };
 
@@ -37,6 +37,7 @@ export const AnotherQuickExitExamplePage: Story = {
     url: 'https://www.google.co.uk',
     isTransparent: true,
     hasIcon: false,
+    children: <QuickExitPageExample1 />
   }
 };
 
@@ -47,6 +48,7 @@ export const AQuickExitExamplePageWithBackToTopIncluded: Story = {
     isTransparent: false,
     hasIcon: true,
     includeBackToTopInExample: true,
+    children: <QuickExitPageExample1 />
   }
 }
 export const AQuickExitExamplePageWithIconOnly: Story = {
@@ -56,6 +58,7 @@ export const AQuickExitExamplePageWithIconOnly: Story = {
     isTransparent: false,
     hasIcon: true,
     includeBackToTopInExample: true,
+    children: <QuickExitPageExample1 />
   }
 };
 
@@ -66,5 +69,6 @@ export const AQuickExitExamplePageWithTransparentIconOnly: Story = {
     isTransparent: true,
     hasIcon: true,
     includeBackToTopInExample: true,
+    children: <QuickExitPageExample1 />
   }
 };
