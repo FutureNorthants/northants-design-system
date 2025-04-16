@@ -1,13 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DropDownFilter from './DropDownFilter';
-import { DropDownFilterProps } from './DropDownFilter.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
-
 import { serviceOptions } from './DropDownFilterData';
-import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
+import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
-export default {
+const meta: Meta<typeof DropDownFilter> = {
   title: 'Library/Components/Drop Down Filter',
   component: DropDownFilter,
   parameters: {
@@ -17,22 +14,22 @@ export default {
   },
 };
 
-const Template: StoryFn<DropDownFilterProps> = (args) => (
-  <SBPadding>
-    <DropDownFilter {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof DropDownFilter>;
 
-export const ExampleDropDownFilter = Template.bind({});
-ExampleDropDownFilter.args = {
-  options: serviceOptions,
-  selected: NewsArticleFilters.services,
+export const ExampleDropDownFilter: Story = {
+  args: {
+    options: serviceOptions,
+    selected: NewsArticleFilters.services,
+  },
 };
 
-export const ExampleDropDownFilterHideLabel = Template.bind({});
-ExampleDropDownFilterHideLabel.args = {
-  hideLabel: true,
-  label: 'News Articles',
-  options: serviceOptions,
-  selected: NewsArticleFilters.services,
+export const ExampleDropDownFilterHideLabel: Story = {
+  ...ExampleDropDownFilter,
+  args: {
+    hideLabel: true,
+    label: 'News Articles',
+    options: serviceOptions,
+    selected: NewsArticleFilters.services,
+  },
 };

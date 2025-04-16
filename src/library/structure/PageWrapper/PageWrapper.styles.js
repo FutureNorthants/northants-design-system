@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const backgroundDecider = (props) => {
   const colourString = props.theme.theme_vars.colours[props.$colour];
-  if (props.colour) {
+  if (props.$colour) {
     return css`
       background-color: ${colourString};
     `;

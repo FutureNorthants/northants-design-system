@@ -1,11 +1,8 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
+import { SearchResultsPageExample } from './SearchResultsPageExample';
 
-import { SearchResultsPageExample, SearchResultsPageExampleProps } from './SearchResultsPageExample';
-import { isExpressionWithTypeArguments } from 'typescript';
-
-export default {
+const meta: Meta<typeof SearchResultsPageExample> = {
   title: 'Page Examples/Search Results Page Examples',
   component: SearchResultsPageExample,
   parameters: {
@@ -13,16 +10,25 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
-
-const Template: StoryFn<SearchResultsPageExampleProps> = (args) => <SearchResultsPageExample {...args} />;
-
-export const SearchResultsExample = Template.bind({});
-SearchResultsExample.args = {
-  results: true,
 };
 
-export const SearchNoResultsExample = Template.bind({});
-SearchNoResultsExample.args = {
-  results: false,
+export default meta;
+type Story = StoryObj<typeof SearchResultsPageExample>;
+
+export const SearchResultsExample: Story = {
+  args: {
+    results: true,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+
+export const SearchNoResultsExample: Story = {
+  args: {
+    results: false,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };

@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ChevronIcon from './ChevronIcon';
-import { ChevronIconProps } from './ChevronIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof ChevronIcon> = {
   title: 'Library/Icons/Chevron',
   component: ChevronIcon,
   parameters: {
@@ -14,32 +12,33 @@ export default {
   },
 };
 
-const Template: StoryFn<ChevronIconProps> = (args) => (
-  <SBPadding>
-    <ChevronIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof ChevronIcon>;
 
-export const DownChevronIcon = Template.bind({});
-DownChevronIcon.args = {
-  colourFill: '#333',
-  direction: 'down',
+export const DownChevronIcon: Story = {
+  args: {
+    colourFill: '#333',
+    direction: 'down',
+  },
 };
 
-export const LeftChevronIcon = Template.bind({});
-LeftChevronIcon.args = {
-  colourFill: '#333',
-  direction: 'left',
+export const LeftChevronIcon: Story = {
+  args: {
+    colourFill: '#333',
+    direction: 'left',
+  },
 };
 
-export const UpChevronIcon = Template.bind({});
-UpChevronIcon.args = {
-  colourFill: '#333',
-  direction: 'up',
+export const UpChevronIcon: Story = {
+  args: {
+    colourFill: '#333',
+    direction: 'up',
+  },
 };
 
-export const RightChevronIcon = Template.bind({});
-RightChevronIcon.args = {
-  colourFill: '#333',
-  direction: 'right',
+export const RightChevronIcon: Story = {
+  args: {
+    colourFill: '#333',
+    direction: 'right',
+  },
 };

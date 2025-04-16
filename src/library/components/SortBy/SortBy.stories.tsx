@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SortBy from './SortBy';
-import { SortByProps } from './SortBy.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import sortByOptions from './SortByData';
 
-export default {
+const meta: Meta<typeof SortBy> = {
   title: 'Library/Components/Sort by',
   component: SortBy,
   parameters: {
@@ -15,14 +13,12 @@ export default {
   },
 };
 
-const Template: StoryFn<SortByProps> = (args) => (
-  <SBPadding>
-    <SortBy {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SortBy>;
 
-export const ExampleSortBy = Template.bind({});
-ExampleSortBy.args = {
-  selected: 'recentDesc',
-  options: sortByOptions,
+export const ExampleSortBy: Story = {
+  args: {
+    selected: 'recentDesc',
+    options: sortByOptions,
+  },
 };

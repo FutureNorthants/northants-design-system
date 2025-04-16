@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import type { Meta, StoryObj } from '@storybook/react';
 import Promotions from './Promotions';
-import { PromoBlockProps } from '../../structure/PromoBlock/PromoBlock.types';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
 
-export default {
+const meta: Meta<typeof Promotions> = {
   title: 'library/Slices/Promotions',
   component: Promotions,
   parameters: {
@@ -15,17 +13,17 @@ export default {
   },
 };
 
-const Template: StoryFn<PromoBlockProps> = (args) => (
-  <SBPadding>
-    <Promotions {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof Promotions>;
 
-export const PromotionsExampleBannerOnly = Template.bind({});
-PromotionsExampleBannerOnly.args = { promos: PromoBlocksData.slice(0, 1) };
+export const PromotionsExampleBannerOnly: Story = {
+  args: { promos: PromoBlocksData.slice(0, 1) },
+};
 
-export const PromotionsExampleBannerAnd2Promos = Template.bind({});
-PromotionsExampleBannerAnd2Promos.args = { promos: PromoBlocksData.slice(0, 3) };
+export const PromotionsExampleBannerAnd2Promos: Story = {
+  args: { promos: PromoBlocksData.slice(0, 3) },
+};
 
-export const PromotionsExampleBannerAnd3Promos = Template.bind({});
-PromotionsExampleBannerAnd3Promos.args = { promos: PromoBlocksData.slice(0, 4) };
+export const PromotionsExampleBannerAnd3Promos: Story = {
+  args: { promos: PromoBlocksData.slice(0, 4) },
+};

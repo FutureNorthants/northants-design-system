@@ -1,9 +1,8 @@
 import React from 'react';
 import PageSidebar from './PageSidebar';
-import { PageSidebarProps } from './PageSidebar.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof PageSidebar> = {
   title: 'Library/structure/Page Sidebar Container',
   component: PageSidebar,
   parameters: {
@@ -13,8 +12,9 @@ export default {
   },
 };
 
-const Template: StoryFn<PageSidebarProps> = (args) => (
-  <PageSidebar {...args}>Children of the page container goes here</PageSidebar>
-);
+export default meta;
+type Story = StoryObj<typeof PageSidebar>;
 
-export const ExampleOfPageWithSidebar = () => <PageSidebar>This is where sidebar components would live</PageSidebar>;
+export const ExampleOfPageWithSidebar: Story = {
+  render: (args) => <PageSidebar {...args}>This is where sidebar components would live</PageSidebar>,
+};

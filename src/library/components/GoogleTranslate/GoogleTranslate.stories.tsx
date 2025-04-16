@@ -1,13 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import GoogleTranslate from './GoogleTranslate';
-import { GoogleTranslateProps } from './GoogleTranslate.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import Summary from '../../structure/Summary/Summary';
 
-export default {
+const meta: Meta<typeof GoogleTranslate> = {
   title: 'Library/Components/Google Translate',
   component: GoogleTranslate,
   parameters: {
@@ -17,8 +15,15 @@ export default {
   },
 };
 
-const Template: StoryFn<GoogleTranslateProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof GoogleTranslate>;
+
+export const ExampleGoogleTranslate: Story = {
+  args: {
+    pageLanguage: 'en',
+    label: 'Translate this page',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <GoogleTranslate {...args} />
@@ -27,22 +32,23 @@ const Template: StoryFn<GoogleTranslateProps> = (args) => (
         </Summary>
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleGoogleTranslate = Template.bind({});
-ExampleGoogleTranslate.args = {
-  pageLanguage: 'en',
-  label: 'Translate this page',
+  ),
 };
 
-export const ExampleGoogleTranslateNoLabel = Template.bind({});
-ExampleGoogleTranslateNoLabel.args = {
-  pageLanguage: 'fr',
+export const ExampleGoogleTranslateNoLabel: Story = {
+  ...ExampleGoogleTranslate,
+  args: {
+    pageLanguage: 'fr',
+  },
 };
 
-const DarkBackgroundTemplate: StoryFn<GoogleTranslateProps> = (args) => (
-  <SBPadding>
+export const ExampleGoogleTranslateDarkBackground: Story = {
+  args: {
+    pageLanguage: 'en',
+    label: 'Translate this page',
+    hasDarkBackground: true,
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <div style={{ backgroundColor: 'black', padding: '10px' }}>
@@ -53,12 +59,5 @@ const DarkBackgroundTemplate: StoryFn<GoogleTranslateProps> = (args) => (
         </Summary>
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleGoogleTranslateDarkBackground = DarkBackgroundTemplate.bind({});
-ExampleGoogleTranslateDarkBackground.args = {
-  pageLanguage: 'en',
-  label: 'Translate this page',
-  hasDarkBackground: true,
+  ),
 };

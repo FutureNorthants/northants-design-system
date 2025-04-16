@@ -1,14 +1,12 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DirectoryDocumentList from './DirectoryDocumentList';
-import { DirectoryDocumentListProps } from './DirectoryDocumentList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import { ExampleDirectoryDocument, ExampleDirectoryLink } from './DirectoryDocumentList.storydata';
 import { LocalOfferTaxonomy } from '../DirectoryServiceList/DirectoryServiceList.storydata';
 
-export default {
+const meta: Meta<typeof DirectoryDocumentList> = {
   title: 'Library/Directory/DirectoryDocumentList',
   component: DirectoryDocumentList,
   parameters: {
@@ -18,59 +16,64 @@ export default {
   },
 };
 
-const Template: StoryFn<DirectoryDocumentListProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof DirectoryDocumentList>;
+
+export const ExampleDirectoryDocumentList: Story = {
+  args: {
+    directoryPath: '/directory/local-offer',
+    documents: [ExampleDirectoryDocument, ExampleDirectoryLink],
+    search: 'Example',
+    setSearch: () => {},
+    totalResults: 125,
+    pageNumber: 1,
+    setPageNumber: () => {},
+    perPage: 10,
+    categories: [LocalOfferTaxonomy],
+    setCategories: () => {},
+    isLoading: false,
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <DirectoryDocumentList {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleDirectoryDocumentList = Template.bind({});
-ExampleDirectoryDocumentList.args = {
-  directoryPath: '/directory/local-offer',
-  documents: [ExampleDirectoryDocument, ExampleDirectoryLink],
-  search: 'Example',
-  setSearch: () => {},
-  totalResults: 125,
-  pageNumber: 1,
-  setPageNumber: () => {},
-  perPage: 10,
-  categories: [LocalOfferTaxonomy],
-  setCategories: () => {},
-  isLoading: false,
+  ),
 };
 
-export const ExampleDirectoryDocumentListNoResults = Template.bind({});
-ExampleDirectoryDocumentListNoResults.args = {
-  isError: false,
-  directoryPath: '/directory/local-offer',
-  documents: [],
-  search: 'Example',
-  setSearch: () => {},
-  totalResults: 0,
-  pageNumber: 1,
-  setPageNumber: () => {},
-  perPage: 10,
-  categories: [LocalOfferTaxonomy],
-  setCategories: () => {},
-  isLoading: false,
+export const ExampleDirectoryDocumentListNoResults: Story = {
+  ...ExampleDirectoryDocumentList,
+  args: {
+    isError: false,
+    directoryPath: '/directory/local-offer',
+    documents: [],
+    search: 'Example',
+    setSearch: () => {},
+    totalResults: 0,
+    pageNumber: 1,
+    setPageNumber: () => {},
+    perPage: 10,
+    categories: [LocalOfferTaxonomy],
+    setCategories: () => {},
+    isLoading: false,
+  },
 };
 
-export const ExampleDirectoryDocumentListError = Template.bind({});
-ExampleDirectoryDocumentListError.args = {
-  isError: true,
-  directoryPath: '/directory/local-offer',
-  documents: [],
-  search: 'Example',
-  setSearch: () => {},
-  totalResults: 0,
-  pageNumber: 1,
-  setPageNumber: () => {},
-  perPage: 10,
-  categories: [],
-  setCategories: () => {},
-  isLoading: false,
+export const ExampleDirectoryDocumentListError: Story = {
+  ...ExampleDirectoryDocumentList,
+  args: {
+    isError: true,
+    directoryPath: '/directory/local-offer',
+    documents: [],
+    search: 'Example',
+    setSearch: () => {},
+    totalResults: 0,
+    pageNumber: 1,
+    setPageNumber: () => {},
+    perPage: 10,
+    categories: [],
+    setCategories: () => {},
+    isLoading: false,
+  },
 };

@@ -1,11 +1,9 @@
 import React from 'react';
 import FormWithLine from './FormWithLine';
-import { FormWithLineProps } from './FormWithLine.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof FormWithLine> = {
   title: 'Library/Components/Forms - Form container with line',
   component: FormWithLine,
   parameters: {
@@ -15,13 +13,14 @@ export default {
   },
 };
 
-const Template: StoryFn<FormWithLineProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof FormWithLine>;
+
+export const Example: Story = {
+  args: {},
+  render: (args) => (
     <MaxWidthContainer>
       <FormWithLine {...args}>Test content</FormWithLine>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {};
+  ),
+};
