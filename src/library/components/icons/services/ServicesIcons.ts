@@ -367,5 +367,3 @@ let components = {
 };
 
 export default components;
-
-//   quickExit: QuickExitIcon,
