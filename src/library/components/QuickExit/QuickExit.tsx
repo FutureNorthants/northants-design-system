@@ -19,12 +19,10 @@ const QuickExit: React.FunctionComponent<QuickExitProps> = ({
   return (
     <>
       <Styles.Container data-testid="QuickExit">
-        <Styles.QuickExitButtonContainer $isTransparent={isTransparent}>
-          <Styles.QuickExitButton onClick={(e) => handleClick(e)}>
+          <Styles.QuickExitButton onClick={(e) => handleClick(e)} $isTransparent={isTransparent}>
             {hasIcon && (<HeadingWithIcon icon='quickExit' level={3} text={label} hasHover={false}/>)}
             {!hasIcon && label}
             </Styles.QuickExitButton>
-        </Styles.QuickExitButtonContainer>
       </Styles.Container>
     </>
   );
