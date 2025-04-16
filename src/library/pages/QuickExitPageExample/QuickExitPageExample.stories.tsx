@@ -1,13 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
-import QuickExit from '../../components/QuickExit/QuickExit';
-import { QuickExitPageExampleProps } from './QuickExitPageExample.types';
+import { StoryObj, Meta } from '@storybook/react';
 import QuickExitPageExample from './QuickExitPageExample';
 import { QuickExitPageExample1 } from './QuickExitPageExample.storydata';
 
-import { SBPadding } from '../../../../.storybook/SBPadding';
-
-export default {
+const meta: Meta<typeof QuickExitPageExample> = {
   title: 'Page Examples/Quick Exit Page example',
   component: QuickExitPageExample,
   parameters: {
@@ -17,55 +13,58 @@ export default {
   },
 };
 
-const Template: StoryFn<QuickExitPageExampleProps> = (args) => (
-  <SBPadding>
-    <QuickExitPageExample {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof QuickExitPageExample>;
 
-export const QuickExitExamplePage = Template.bind({});
-QuickExitExamplePage.args = {
-  children: <QuickExitPageExample1 />,
+export const QuickExitExamplePage: Story = {
+  args: { children: <QuickExitPageExample1 />},
+  render: (args) =>   
+  (<QuickExitPageExample {...args} />)
+
 };
 
-export const QuickExitExamplePageWithBackToTop = Template.bind({});
-QuickExitExamplePageWithBackToTop.args = {
-  includeBackToTopInExample: true,
-  children: <QuickExitPageExample1 />,
+export const QuickExitExamplePageWithBackToTop: Story = {
+  ...QuickExitExamplePage,    
+  args: {
+    includeBackToTopInExample: true,
+ }
 };
 
-export const AnotherQuickExitExamplePage = Template.bind({});
-AnotherQuickExitExamplePage.args = {
-  label: 'Quick exit >>>',
-  url: 'https://www.google.co.uk',
-  isTransparent: true,
-  hasIcon: false,
-  children: <QuickExitPageExample1 />,
+export const AnotherQuickExitExamplePage: Story = {
+  ...QuickExitExamplePage,    
+  args: {
+    label: 'Quick exit >>>',
+    url: 'https://www.google.co.uk',
+    isTransparent: true,
+    hasIcon: false,
+  }
 };
 
-export const AQuickExitExamplePageWithBackToTopIncluded = Template.bind({});
-AQuickExitExamplePageWithBackToTopIncluded.args = {
-  label: 'Quick exit',
-  isTransparent: false,
-  hasIcon: true,
-  includeBackToTopInExample: true,
-  children: <QuickExitPageExample1 />,
+export const AQuickExitExamplePageWithBackToTopIncluded: Story = {
+  ...QuickExitExamplePage,    
+  args: {
+    label: 'Quick exit',
+    isTransparent: false,
+    hasIcon: true,
+    includeBackToTopInExample: true,
+  }
+}
+export const AQuickExitExamplePageWithIconOnly: Story = {
+  ...QuickExitExamplePage,    
+  args: {
+    label: '',
+    isTransparent: false,
+    hasIcon: true,
+    includeBackToTopInExample: true,
+  }
 };
 
-export const AQuickExitExamplePageWithIconOnly = Template.bind({});
-AQuickExitExamplePageWithIconOnly.args = {
-  label: '',
-  isTransparent: false,
-  hasIcon: true,
-  includeBackToTopInExample: true,
-  children: <QuickExitPageExample1 />,
-};
-
-export const AQuickExitExamplePageWithTransparentIconOnly = Template.bind({});
-AQuickExitExamplePageWithTransparentIconOnly.args = {
-  label: '',
-  isTransparent: true,
-  hasIcon: true,
-  includeBackToTopInExample: true,
-  children: <QuickExitPageExample1 />,
+export const AQuickExitExamplePageWithTransparentIconOnly: Story = {
+  ...QuickExitExamplePage,    
+  args: {
+    label: '',
+    isTransparent: true,
+    hasIcon: true,
+    includeBackToTopInExample: true,
+  }
 };
