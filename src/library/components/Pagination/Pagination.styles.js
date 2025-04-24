@@ -11,7 +11,7 @@ const resetButtonStyles = `
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px 15px;
+  padding: 10px 15px;
 `;
 
 export const Previous = styled.button`
@@ -64,7 +64,7 @@ export const NumberContainer = styled.li`
 
 export const Number = styled.button`
   ${resetButtonStyles}
-  padding: 8px 12px;
+  padding: 10px 12px;
   ${(props) => props.theme.fontStyles}
   ${(props) => props.theme.linkStyles}
 
