@@ -6,6 +6,14 @@ export const Container = styled.div`
   border-bottom: ${(props) => (props.$hasBorder ? `1px solid ${props.theme.theme_vars.colours.grey}` : 'none')};
   margin-top: ${(props) => (props.$hasMargin ? `${props.theme.theme_vars.spacingSizes.medium}` : 0)};
   margin-bottom: ${(props) => (props.$hasMargin ? `${props.theme.theme_vars.spacingSizes.medium}` : 0)};
+
+  & > div > div {
+    width: 100%;
+  }
+
+  & > div > div > div > h4 {
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+  }
 `;
 
 export const EventRow = styled.div`

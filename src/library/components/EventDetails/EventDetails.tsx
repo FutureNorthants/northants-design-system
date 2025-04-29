@@ -1,8 +1,8 @@
 import React from 'react';
 import { EventDetailsProps } from './EventDetails.types';
 import * as Styles from './EventDetails.styles';
-import DynamicIcon from '../DynamicIcon/DynamicIcon';
 import dayjs from 'dayjs';
+import HeadingWithIcon from '../HeadingWithIcon/HeadingWithIcon';
 
 const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   startTime,
@@ -52,22 +52,10 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   return (
     <Styles.Container data-testid="EventDetails" $hasBorder={hasBorder} $hasMargin={hasMargin}>
       <Styles.EventRow>
-        <Styles.IconContainer>
-          <DynamicIcon icon="events" />
-        </Styles.IconContainer>
-        <Styles.Details>
-          <div>
-            <span>{formatDate()}</span>
-          </div>
-        </Styles.Details>
+        <HeadingWithIcon icon="events" level={4} text={formatDate()} />
       </Styles.EventRow>
       <Styles.EventRow>
-        <Styles.IconContainer>
-          <DynamicIcon icon="address" />
-        </Styles.IconContainer>
-        <Styles.Details>
-          <span>{location}</span>
-        </Styles.Details>
+        <HeadingWithIcon icon="address" level={4} text={location} />
       </Styles.EventRow>
     </Styles.Container>
   );
