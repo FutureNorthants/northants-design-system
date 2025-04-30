@@ -52,10 +52,10 @@ const EventDetails: React.FunctionComponent<EventDetailsProps> = ({
   return (
     <Styles.Container data-testid="EventDetails" $hasBorder={hasBorder} $hasMargin={hasMargin}>
       <Styles.EventRow>
-        <HeadingWithIcon icon="events" level={4} text={formatDate()} />
+        <HeadingWithIcon icon="events" level={4} text={formatDate()} hasHover={false} />
       </Styles.EventRow>
       <Styles.EventRow>
-        <HeadingWithIcon icon="address" level={4} text={location} />
+        <HeadingWithIcon icon="address" level={4} text={location} hasHover={false} />
       </Styles.EventRow>
     </Styles.Container>
   );
