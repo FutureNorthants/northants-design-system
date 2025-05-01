@@ -3,16 +3,23 @@ import styled, { css } from 'styled-components';
 const promotedStyles = (props) => {
   if (props.$isPromoted) {
     return css`
-      border: 5px solid ${(props) => props.theme.theme_vars.colours.action_light};
-      background: ${(props) => props.theme.theme_vars.colours.white} !important;
+      border: 1px solid ${(props) => props.theme.theme_vars.colours.action};
+      border-bottom: 6px solid ${(props) => props.theme.theme_vars.colours.action};
+
+      &:hover {
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25) !important;
+        -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25) !important;
+        -moz-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25) !important;
+      }
     `;
   } else {
     return css`
-      border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
+      border: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+
       background: ${(props) =>
         props.theme.cardinal_name === 'north'
-          ? props.theme.theme_vars.colours.white
-          : props.theme.theme_vars.colours.grey_light} !important;
+          ? props.theme.theme_vars.colours.grey_light
+          : props.theme.theme_vars.colours.white} !important;
     `;
   }
 };
@@ -22,9 +29,10 @@ export const Container = styled.a`
   flex-direction: row;
   flex-wrap: wrap;
   cursor: pointer;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
-  -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
-  -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08) !important;
+  background: ${(props) => props.theme.theme_vars.colours.white} !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
   transition: box-shadow 0.3s ease;
   ${promotedStyles};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
@@ -38,9 +46,6 @@ export const Container = styled.a`
   }
 
   &:hover {
-    border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action_dark};
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
-
     .event-list__title {
       ${(props) => props.theme.linkStylesHover};
     }
@@ -48,8 +53,6 @@ export const Container = styled.a`
 
   &:focus {
     outline: none;
-    border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
 
     .event-list__title {
       ${(props) => props.theme.linkStylesFocus};
@@ -58,8 +61,6 @@ export const Container = styled.a`
 
   &:active {
     outline: none;
-    border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15) !important;
 
     .event-list__title {
       ${(props) => props.theme.linkStylesActive};
@@ -80,14 +81,15 @@ export const Container = styled.a`
 
 export const Promoted = styled.div`
   border: 2px solid ${(props) => props.theme.theme_vars.colours.action_light};
-  background-color: ${(props) => props.theme.theme_vars.colours.action_light};
-  color: ${(props) => props.theme.theme_vars.colours.action_dark};
+  background-color: ${(props) => props.theme.theme_vars.colours.featured};
+  color: ${(props) => props.theme.theme_vars.colours.white};
   display: inline-block;
   padding: ${(props) =>
     `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  cursor: default;
 `;
 
 export const EventContent = styled.div`
@@ -117,11 +119,13 @@ export const Description = styled.div`
 `;
 
 export const Parent = styled.div`
-  border: 2px solid ${(props) => props.theme.theme_vars.colours.action_light};
+  border: 2px solid ${(props) => props.theme.theme_vars.colours.grey};
   background: transparent;
   display: inline-block;
   padding: ${(props) =>
     `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
+  cursor: default;
 `;
