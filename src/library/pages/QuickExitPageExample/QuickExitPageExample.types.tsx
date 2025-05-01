@@ -12,11 +12,6 @@ export interface QuickExitPageExampleProps {
   url?: string;
 
   /**
-   * Whether the 'Quick Exit' button includes the 'Quick Exit' icon.
-   */
-  hasIcon?: boolean;
-
-  /**
    * Whether 'Quick Exit Page Example' includes the 'Back to Top' icon for comparison.
    */
   includeBackToTopInExample?: boolean;

@@ -22,15 +22,8 @@ export const DefaultQuickExit: Story = {
 export const QuickExitCustomTextAndURL: Story = {
   ...DefaultQuickExit,
   args: {
-    label: 'Quick exit >>>',
+    label: 'Quick Exit',
     url: 'https://www.google.co.uk',
-  },
-};
-
-export const QuickExitWithIcon: Story = {
-  ...DefaultQuickExit,
-  args: {
-    hasIcon: true,
   },
 };
 
@@ -38,6 +31,5 @@ export const QuickExitWithIconAndNoLabel: Story = {
   ...DefaultQuickExit,
   args: {
     label: '',
-    hasIcon: true,
   },
 };

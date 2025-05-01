@@ -32,9 +32,8 @@ export const QuickExitExamplePageWithBackToTop: Story = {
 export const AnotherQuickExitExamplePage: Story = {
   ...QuickExitExamplePage,
   args: {
-    label: 'Quick exit >>>',
+    label: 'Quick Exit',
     url: 'https://www.google.co.uk',
-    hasIcon: false,
     children: <QuickExitPageExample1 />,
   },
 };
@@ -43,7 +42,6 @@ export const AQuickExitExamplePageWithBackToTopIncluded: Story = {
   ...QuickExitExamplePage,
   args: {
     label: 'Quick exit',
-    hasIcon: true,
     includeBackToTopInExample: true,
     children: <QuickExitPageExample1 />,
   },
@@ -52,7 +50,6 @@ export const AQuickExitExamplePageWithIconOnly: Story = {
   ...QuickExitExamplePage,
   args: {
     label: '',
-    hasIcon: true,
     includeBackToTopInExample: true,
     children: <QuickExitPageExample1 />,
   },

@@ -10,14 +10,13 @@ import { PageMain } from '../../structure/PageStructures';
 const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> = ({
   label = 'Quick exit',
   url = 'https://www.bbc.co.uk/weather',
-  hasIcon = false,
   includeBackToTopInExample = false,
   children,
 }) => {
   return (
     <MaxWidthContainer>
       <PageMain>
-        <QuickExit label={label} url={url} hasIcon={hasIcon} />
+        <QuickExit label={label} url={url} />
         {children}
         <BackToTop isActive={includeBackToTopInExample} />
       </PageMain>
