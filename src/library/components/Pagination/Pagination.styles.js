@@ -65,6 +65,7 @@ export const NumberContainer = styled.li`
 export const Number = styled.button`
   ${resetButtonStyles}
   padding: 10px 12px;
+  min-width: 44px;
   ${(props) => props.theme.fontStyles}
   ${(props) => props.theme.linkStyles}
 
