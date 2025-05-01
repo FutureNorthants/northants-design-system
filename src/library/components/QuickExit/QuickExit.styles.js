@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: block;  
+  display: block;
   position: fixed;
   top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   right: ${(props) => props.theme.theme_vars.spacingSizes.small};
@@ -9,10 +9,8 @@ export const Container = styled.div`
 `;
 
 export const QuickExitButton = styled.button`
-  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  padding-right: ${(props) => props.$hasIcon ? 0 : props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-right: ${(props) => (props.$hasIcon ? 0 : props.theme.theme_vars.spacingSizes.small)};
   text-align: center;
   vertical-align: middle;
   width: 100%;
@@ -20,14 +18,13 @@ export const QuickExitButton = styled.button`
   text-decoration: none;
   display: inline-block;
   border-radius: ${(props) => props.theme.theme_vars.border_radius_large};
-  background-color: ${(props) => props.theme.theme_vars.colours.positive } !important;
+  background-color: ${(props) => props.theme.theme_vars.colours.positive} !important;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
-  color: ${(props) => props.theme.theme_vars.colours.white } !important;
+  color: ${(props) => props.theme.theme_vars.colours.white} !important;
   border-style: solid;
-  border-color: ${(props) => props.$isTransparent ? 'limegreen' : 'black'};
+  border-color: ${(props) => props.theme.theme_vars.colours.black};
   cursor: pointer;
-  opacity: ${(props) => props.$isTransparent ? 0.5 : 1 };
   text-shadow: none;
   justify-items: right;
 
@@ -43,18 +40,18 @@ export const QuickExitButton = styled.button`
     font-size: ${(props) => props.theme.theme_vars.fontSizes.medium};
   }
 
-  &:focus, 
+  &:focus,
   &:active,
   &:hover {
     opacity: 1;
-    border-color: ${(props) => props.$isTransparent ? 'black' : 'white' };
-    color: ${(props) => props.theme.theme_vars.colours.white } !important;
-    background-color: ${(props) => props.$isTransparent ? props.theme.theme_vars.colours.positive : props.theme.theme_vars.colours.action } !important;    
-    text-shadow: ${(props) => props.$isTransparent ? 'inherit' : 'darkgreen 1px 1px 2px' } !important;
+    border-color: ${(props) => props.theme.theme_vars.colours.black};
+    color: ${(props) => props.theme.theme_vars.colours.white} !important;
+    background-color: ${(props) => props.theme.theme_vars.colours.action} !important;
+    text-shadow: darkgreen 1px 1px 2px !important;
 
     svg path {
       fill: white;
-      stroke: ${(props) => props.theme.theme_vars.colours.action } !important;    
+      stroke: ${(props) => props.theme.theme_vars.colours.action} !important;
     }
   }
 
@@ -70,21 +67,20 @@ export const QuickExitButton = styled.button`
     border-style: solid;
 
     @media only screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
-    padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
-  }
+      padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
+      padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+    }
   }
 
   & > div > div {
     justify-self: flex-end;
-
   }
 
   & > div {
     justify-content: space-evenly;
   }
 
-  & > div > span  {
+  & > div > span {
     padding: 0;
   }
 `;

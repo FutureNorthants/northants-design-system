@@ -8,22 +8,16 @@ import { MaxWidthContainer } from '../../structure/PageStructures';
 import { PageMain } from '../../structure/PageStructures';
 
 const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> = ({
-  label = "Quick exit",
-  url = "https://www.bbc.co.uk/weather",
-  isTransparent = false,
+  label = 'Quick exit',
+  url = 'https://www.bbc.co.uk/weather',
   hasIcon = false,
   includeBackToTopInExample = false,
-  children
+  children,
 }) => {
   return (
     <MaxWidthContainer>
       <PageMain>
-        <QuickExit
-        label={label}
-        url={url}
-        isTransparent={isTransparent}
-        hasIcon={hasIcon}
-        />
+        <QuickExit label={label} url={url} hasIcon={hasIcon} />
         {children}
         <BackToTop isActive={includeBackToTopInExample} />
       </PageMain>

@@ -17,58 +17,43 @@ export default meta;
 type Story = StoryObj<typeof QuickExitPageExample>;
 
 export const QuickExitExamplePage: Story = {
-  args: { children: <QuickExitPageExample1 />},
-  render: (args) =>   
-  (<QuickExitPageExample {...args} />)
+  args: { children: <QuickExitPageExample1 /> },
+  render: (args) => <QuickExitPageExample {...args} />,
 };
 
 export const QuickExitExamplePageWithBackToTop: Story = {
-  ...QuickExitExamplePage,    
+  ...QuickExitExamplePage,
   args: {
     includeBackToTopInExample: true,
-    children: <QuickExitPageExample1 />
- }
+    children: <QuickExitPageExample1 />,
+  },
 };
 
 export const AnotherQuickExitExamplePage: Story = {
-  ...QuickExitExamplePage,    
+  ...QuickExitExamplePage,
   args: {
     label: 'Quick exit >>>',
     url: 'https://www.google.co.uk',
-    isTransparent: true,
     hasIcon: false,
-    children: <QuickExitPageExample1 />
-  }
+    children: <QuickExitPageExample1 />,
+  },
 };
 
 export const AQuickExitExamplePageWithBackToTopIncluded: Story = {
-  ...QuickExitExamplePage,    
+  ...QuickExitExamplePage,
   args: {
     label: 'Quick exit',
-    isTransparent: false,
     hasIcon: true,
     includeBackToTopInExample: true,
-    children: <QuickExitPageExample1 />
-  }
-}
-export const AQuickExitExamplePageWithIconOnly: Story = {
-  ...QuickExitExamplePage,    
-  args: {
-    label: '',
-    isTransparent: false,
-    hasIcon: true,
-    includeBackToTopInExample: true,
-    children: <QuickExitPageExample1 />
-  }
+    children: <QuickExitPageExample1 />,
+  },
 };
-
-export const AQuickExitExamplePageWithTransparentIconOnly: Story = {
-  ...QuickExitExamplePage,    
+export const AQuickExitExamplePageWithIconOnly: Story = {
+  ...QuickExitExamplePage,
   args: {
     label: '',
-    isTransparent: true,
     hasIcon: true,
     includeBackToTopInExample: true,
-    children: <QuickExitPageExample1 />
-  }
+    children: <QuickExitPageExample1 />,
+  },
 };
