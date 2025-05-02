@@ -3,6 +3,7 @@ import Autocomplete from './library/components/Autocomplete/Autocomplete';
 import BackToTop from './library/components/BackToTop/BackToTop';
 import Button from './library/components/Button/Button';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
+import EventDetails from './library/components/EventDetails/EventDetails';
 import Heading from './library/components/Heading/Heading';
 import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
 import Map from './library/components/Map/Map';
@@ -11,7 +12,10 @@ import Pagination from './library/components/Pagination/Pagination';
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import RelatedEvents from './library/components/RelatedEvents/RelatedEvents';
+import ResponsiveImage from './library/components/ResponsiveImage/ResponsiveImage';
 import StaticMap from './library/components/StaticMap/StaticMap';
+import SummaryList from './library/components/SummaryList/SummaryList';
 import TextInput from './library/components/TextInput/TextInput';
 import ToggleButtons from './library/components/ToggleButtons/ToggleButtons';
 
@@ -20,6 +24,7 @@ export {
   BackToTop,
   Button,
   DynamicIcon,
+  EventDetails,
   Heading,
   HeadingWithIcon,
   Map,
@@ -28,7 +33,10 @@ export {
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  RelatedEvents,
+  ResponsiveImage,
   StaticMap,
+  SummaryList,
   TextInput,
   ToggleButtons,
 };

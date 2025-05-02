@@ -47,6 +47,7 @@ export interface ThemeColourTypes {
   action_light: string;
   action_dark: string;
   positive: string;
+  featured: string;
   negative: string;
   visited?: string;
   focus: string;

@@ -46,6 +46,7 @@ export const lb_vars_north: ThemeVars = {
     action_light: '#C6C6C6',
     action_dark: '#333333',
     positive: '#147DAD',
+    featured: '#000000',
     negative: '#B73131',
 
     focus: '#E2CA76',

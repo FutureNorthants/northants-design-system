@@ -46,6 +46,7 @@ export const north_vars: ThemeVars = {
     action_light: '#F3F9F5',
     action_dark: '#065325',
     positive: '#147DAD',
+    featured: '#085325',
     negative: '#B73131',
 
     focus: '#E2CA76',
