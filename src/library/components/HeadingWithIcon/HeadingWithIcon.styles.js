@@ -19,24 +19,15 @@ export const HeadingWrapper = styled.div`
     display: inline-block;
   }
 
-  /* unless otherwise mandated, hide the 'hover version' of the Service Icon */
   .service-icon-hover {
     display: none;
   }
 
-  /* in the event that this 'heading wrapper' is hovered over.. */
   &:hover {
-    /* (a1) hide/show the 'regular version' of the Service Icon, depending on whether 'hasHover' is set to true/false */
     .service-icon {
       display: ${(props) => (props.$hasHover ? 'none' : 'block')};
-
-      /* (a2) ...and hide/show the SVG that makes up the 'regular version' of the Service Icon to match */
-      & > svg {
-        display: ${(props) => (props.$hasHover ? 'none' : 'auto')};
-      }
     }
 
-    /* (b) show/hide the 'hover version' of the service icon, depending on whether 'hasHover' is set to true/false */
     .service-icon-hover {
       display: ${(props) => (props.$hasHover ? 'block' : 'none')};
     }
