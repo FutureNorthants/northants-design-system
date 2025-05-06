@@ -18,12 +18,13 @@ export const QuickExitButton = styled.button`
   text-decoration: none;
   display: inline-block;
   border-radius: ${(props) => props.theme.theme_vars.border_radius_large};
-  background-color: ${(props) => props.theme.theme_vars.colours.positive} !important;
+  background-color: ${(props) => props.theme.theme_vars.colours.positive};
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
-  color: ${(props) => props.theme.theme_vars.colours.white} !important;
-  border-style: solid;
-  border-color: ${(props) => props.theme.theme_vars.colours.black};
+  color: ${(props) => props.theme.theme_vars.colours.white};
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: none;
   cursor: pointer;
   text-shadow: none;
   justify-items: right;
@@ -40,14 +41,9 @@ export const QuickExitButton = styled.button`
     font-size: ${(props) => props.theme.theme_vars.fontSizes.medium};
   }
 
-  &:focus,
-  &:active,
   &:hover {
-    opacity: 1;
-    border-color: ${(props) => props.theme.theme_vars.colours.black};
-    color: ${(props) => props.theme.theme_vars.colours.white} !important;
-    background-color: ${(props) => props.theme.theme_vars.colours.action} !important;
-    text-shadow: darkgreen 1px 1px 2px !important;
+    color: ${(props) => props.theme.theme_vars.colours.white};
+    background-color: ${(props) => props.theme.theme_vars.colours.action};
 
     svg path {
       fill: white;
@@ -55,16 +51,28 @@ export const QuickExitButton = styled.button`
     }
   }
 
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+    h3 {
+      color: ${(props) => props.theme.theme_vars.colours.black};
+    }
+  }
+
+  &:active {
+    ${(props) => props.theme.linklStylesActive}
+    h3 {
+      color: ${(props) => props.theme.theme_vars.colours.black};
+    }
+  }
+
   & span svg path {
     stroke-width: 1px;
-    stroke: darkgreen;
+    stroke: ${(props) => props.theme.theme_vars.colours.positive};
   }
 
   & h3 {
     color: white;
-    text-shadow: darkgreen 1px 1px 2px;
-    border-color: yellow;
-    border-style: solid;
+    line-height: 1;
 
     @media only screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
       padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};

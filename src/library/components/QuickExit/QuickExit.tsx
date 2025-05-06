@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { QuickExitProps } from './QuickExit.types';
 import * as Styles from './QuickExit.styles';
-
 import HeadingWithIcon from '../HeadingWithIcon/HeadingWithIcon';
 
 const QuickExit: React.FunctionComponent<QuickExitProps> = ({
