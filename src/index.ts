@@ -14,6 +14,7 @@ import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
 import StaticMap from './library/components/StaticMap/StaticMap';
 import TextInput from './library/components/TextInput/TextInput';
 import ToggleButtons from './library/components/ToggleButtons/ToggleButtons';
+import QuickExit from './library/components/QuickExit/QuickExit';
 
 export {
   Autocomplete,
@@ -28,6 +29,7 @@ export {
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  QuickExit,
   StaticMap,
   TextInput,
   ToggleButtons,
