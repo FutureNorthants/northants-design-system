@@ -24,7 +24,7 @@ import {
   SearchInput,
   StandardFacet,
   useAutocomplete,
-} from '@cludosearch/cludo-search-components';
+} from '@cludosearch/cludo-search-components/ssr';
 import Input from '../../components/Input/Input';
 import CludoAutoComplete from './CludoAutocomplete';
 

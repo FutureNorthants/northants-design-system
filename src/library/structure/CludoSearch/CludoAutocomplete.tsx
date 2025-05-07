@@ -6,7 +6,7 @@ import {
   SaytSuggestion,
   SearchInput,
   useAutocomplete,
-} from '@cludosearch/cludo-search-components';
+} from '@cludosearch/cludo-search-components/ssr';
 import * as Styles from './CludoSearch.styles';
 
 const CludoAutoComplete = () => {
