@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CludoSearchBarProps } from './CludoSearchBar.types';
 import * as Styles from './CludoSearchBar.styles';
-import { CludoSearchOptions, CludoWrapper, SearchInput } from '@cludosearch/cludo-search-components';
+import { CludoSearchOptions, CludoWrapper, SearchInput } from '@cludosearch/cludo-search-components/ssr';
 
 const CludoSearchBar: React.FunctionComponent<CludoSearchBarProps> = ({ customerId, engineId }) => {
   const [notServer, setNotServer] = useState<boolean>(false);
