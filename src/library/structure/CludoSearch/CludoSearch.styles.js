@@ -210,7 +210,7 @@ export const Container = styled.div`
     font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   }
 
-  .wnc-cludo-pagination {
+  .wnc-cludo-pagination ul {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -267,7 +267,8 @@ export const AutocompleteList = styled.ul`
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
     margin-bottom: 0 !important;
 
-    &:hover {
+    &:hover,
+    &.active {
       background: ${(props) => props.theme.theme_vars.colours.action};
       color: ${(props) => props.theme.theme_vars.colours.white};
     }
