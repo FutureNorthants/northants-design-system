@@ -245,6 +245,12 @@ export const Container = styled.div`
   }
 `;
 
+export const ImageContainer = styled.div`
+  img {
+    width: 100%;
+  }
+`;
+
 export const AutocompleteContainer = styled.div`
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
