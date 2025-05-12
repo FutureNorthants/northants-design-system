@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   input[type='text'] {
     margin-bottom: 0;
+    min-height: 44px;
   }
 `;
 
@@ -50,7 +51,7 @@ export const Button = styled.button`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
-  min-height: 42px;
+  min-height: 44px;
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   font-weight: bold;
 
@@ -79,7 +80,7 @@ export const ButtonText = styled.span`
 export const ResultInfo = styled.div`
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
-  color: ${(props) => props.theme.theme_vars.colours.grey_dark};
+  color: ${(props) => props.theme.theme_vars.colours.grey_darkest};
 `;
 
 const serviceBackground = (props) => {
@@ -170,8 +171,8 @@ export const LegendButton = styled.button`
   cursor: pointer;
   text-align: left;
   padding-right: 30px;
-  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-top: 12px;
+  padding-bottom: 12px;
   ${(props) => props.theme.theme_vars.h4}
   ${(props) => props.theme.linkStyles}
   &:hover {
@@ -241,7 +242,7 @@ export const TextLink = styled.button`
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
+  padding: 12.5px 0;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   border-width: 0;
   color: ${(props) => props.theme.theme_vars.colours.action};
@@ -276,7 +277,7 @@ export const MapToggle = styled.button`
   background: ${(props) => props.theme.theme_vars.colours.white};
   color: ${(props) => props.theme.theme_vars.colours.action};
   cursor: pointer;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: 12.5px ${(props) => props.theme.theme_vars.spacingSizes.small};
   font-weight: bold;
   display: flex;
   flex-direction: row;
