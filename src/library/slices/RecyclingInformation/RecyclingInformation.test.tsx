@@ -5,7 +5,7 @@ import { west_theme } from '../../../themes/theme_generator';
 import RecyclingInformation from './RecyclingInformation';
 import { RecyclingInformationProps } from './RecyclingInformation.types';
 
-describe('Test Component', () => {
+describe('Recycling Information Slice', () => {
   let props: RecyclingInformationProps;
 
   beforeEach(() => {
@@ -19,13 +19,11 @@ describe('Test Component', () => {
       </ThemeProvider>
     );
 
-  /*
-  it('should render foo text correctly', () => {
+  it('should be visible', () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId('RecyclingInformation');
 
-    expect(component).toHaveTextContent('example content');
+    expect(component).toBeVisible();
   });
-  */
 });
