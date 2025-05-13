@@ -68,7 +68,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 value={eventSearch}
                 onChange={(e) => setEventSearch(e.target.value)}
               />
-              <Styles.ServiceSelect className="MyServiceSelect">
+              <Styles.ServiceSelect>
                 <DropDownSelect
                   label="Services"
                   options={services ? services : [{ title: 'All services', value: 'all-services' }]}
