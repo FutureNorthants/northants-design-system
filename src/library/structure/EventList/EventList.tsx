@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EventListProps } from './EventList.types';
+import { EventItemProps, EventListProps } from './EventList.types';
 import * as Styles from './EventList.styles';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
@@ -11,6 +11,9 @@ import EventLink from '../../components/EventLink/EventLink';
 import { transformSnippet } from '../../directory/DirectoryService/DirectoryServiceTransform';
 import Heading from '../../components/Heading/Heading';
 import FormButton from '../../components/FormButton/FormButton';
+
+import CheckboxListFilterInput from '../../components/CheckboxListFilterInput/CheckboxListFilterInput';
+import { AlertBanner } from '../PageStructures';
 
 const EventList: React.FunctionComponent<EventListProps> = ({
   results,
@@ -32,6 +35,18 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   eventsPagePath = '/events',
 }) => {
   const [showFilters, setShowFilters] = useState(false);
+
+  const [promotedOnlyCheckboxState, setPromotedOnlyCheckboxState] = useState(false);
+
+  const isPromoted = function (event: EventItemProps) {
+    return !promotedOnlyCheckboxState || event.isPromoted;
+  };
+
+  if (results && Array.isArray(results) && promotedOnlyCheckboxState) {
+    results = results.filter(isPromoted);
+    totalResults = results.length;
+  }
+
   const sortByOptions: DropDownSelectOptionsProps[] = [
     {
       title: 'Latest date',
@@ -97,6 +112,14 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 onChange={(e) => setEndDate(e.target.value)}
               />
 
+              <CheckboxListFilterInput
+                name="promotedTickbox"
+                id="promotedTickbox"
+                label="Show Promoted Only?"
+                value={promotedOnlyCheckboxState}
+                setCheckboxState={() => setPromotedOnlyCheckboxState(!promotedOnlyCheckboxState)}
+              />
+
               <FormButton text="Search" size="large" />
             </form>
             {(eventSearch || startDate || endDate || service) && (
@@ -128,7 +151,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
           {results && Array.isArray(results) && results.length > 0 ? (
             <>
               <Row isList>
-                {results.map((result) => (
+                {results.filter(isPromoted).map((result) => (
                   <Column isList small="full" medium="full" large="full" key={result.id}>
                     <EventLink
                       {...result}
