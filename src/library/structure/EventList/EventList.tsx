@@ -68,10 +68,10 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 value={eventSearch}
                 onChange={(e) => setEventSearch(e.target.value)}
               />
-              <Styles.ServiceSelect>
+              <Styles.ServiceSelect className="MyServiceSelect">
                 <DropDownSelect
                   label="Services"
-                  options={services}
+                  options={services ? services : [{ title: 'All services', value: 'all-services' }]}
                   onChange={(e) => setService(e.target.value)}
                   value={service}
                 />
@@ -125,7 +125,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
             </Row>
           </Styles.EventListHeader>
 
-          {results && results.length > 0 ? (
+          {results && Array.isArray(results) && results.length > 0 ? (
             <>
               <Row isList>
                 {results.map((result) => (

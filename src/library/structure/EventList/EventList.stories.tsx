@@ -37,3 +37,6 @@ export const ExampleEventListNoResults = Template.bind({});
 ExampleEventListNoResults.args = {
   results: [],
 };
+
+export const ExampleEventListWithDefaults = Template.bind({});
+ExampleEventListWithDefaults.args = null;
