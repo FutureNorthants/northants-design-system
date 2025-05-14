@@ -5,7 +5,7 @@ export const ExampleEventListResults: EventListProps = {
   totalResults: 10,
   pageNumber: 1,
   services: [
-    { title: 'All services', value: 'all-services' },
+    { title: 'All services', value: 'all' },
     { title: 'Adult social care and wellbeing', value: 'adult-social-care-and-wellbeing' },
     { title: 'Bins, recycling and waste', value: 'bins' },
     { title: 'Council tax', value: 'council-tax' },

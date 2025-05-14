@@ -71,9 +71,10 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               <Styles.ServiceSelect>
                 <DropDownSelect
                   label="Services"
-                  options={services ? services : [{ title: 'All services', value: 'all-services' }]}
+                  options={services ? services : [{ title: 'All services', value: 'all' }]}
                   onChange={(e) => setService(e.target.value)}
                   value={service}
+                  isFullWidth
                 />
               </Styles.ServiceSelect>
 

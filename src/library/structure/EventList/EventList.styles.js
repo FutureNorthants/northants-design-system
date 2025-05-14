@@ -67,10 +67,6 @@ export const ResultInfo = styled.div`
 
 export const ServiceSelect = styled.div`
   margin-bottom: 25px;
-
-  & select {
-    width: 100%;
-  }
 `;
 
 export const ClearFilters = styled.button`
