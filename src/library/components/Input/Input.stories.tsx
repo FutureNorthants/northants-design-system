@@ -59,8 +59,8 @@ ExampleHasError.args = {
   isFullWidth: true,
 };
 
-export const ExampleDateBox = Template.bind({});
-ExampleDateBox.args = {
+export const ExampleDateInput = Template.bind({});
+ExampleDateInput.args = {
   name: 'exampleDateBox',
   placeholder: 'Select a Date',
   id: 'ExampleDataBox',

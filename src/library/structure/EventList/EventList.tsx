@@ -160,11 +160,3 @@ const EventList: React.FunctionComponent<EventListProps> = ({
 };
 
 export default EventList;
-/*
-                value={new Date(Math.max(Date.parse(startDate), Date.parse(endDate))).toUTCString().substring(0, 10)}
-
-                                  /*
-                  if (e.target.value > endDate) {
-                  setEndDate('');                    
-                  }
-                  */
