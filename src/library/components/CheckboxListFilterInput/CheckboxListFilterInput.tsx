@@ -39,22 +39,4 @@ const CheckboxListFilterInput: React.FunctionComponent<CheckboxListFilterInputPr
 };
 
 export default CheckboxListFilterInput;
-
-/* 
-
-              value={value}
-              checked={value}
-
-      <Styles.CheckboxInput id={id} name={name} type="checkbox" onChange={onChange} />
-
-
-
-            
-
-
-
-      </Styles.Checkbox>
-
-
-
-      */
+q;
