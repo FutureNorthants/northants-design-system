@@ -58,3 +58,12 @@ ExampleHasError.args = {
   errorText: 'The field example textarea is required.',
   isFullWidth: true,
 };
+
+export const ExampleDateBox = Template.bind({});
+ExampleDateBox.args = {
+  name: 'exampleDateBox',
+  placeholder: 'Select a Date',
+  id: 'ExampleDataBox',
+  type: 'date',
+  minValue: new Date().toISOString().substring(0, 10),
+};

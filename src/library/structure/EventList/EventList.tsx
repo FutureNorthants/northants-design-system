@@ -85,7 +85,10 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 type="date"
                 isFullWidth
                 value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
+                onChange={(e) => {
+                  setStartDate(e.target.value);
+                  e.target.value > endDate && setEndDate('');
+                }}
               />
 
               <label htmlFor="endDate">End Date</label>
@@ -94,6 +97,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 id="endDate"
                 type="date"
                 isFullWidth
+                minValue={startDate}
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
               />
@@ -156,3 +160,11 @@ const EventList: React.FunctionComponent<EventListProps> = ({
 };
 
 export default EventList;
+/*
+                value={new Date(Math.max(Date.parse(startDate), Date.parse(endDate))).toUTCString().substring(0, 10)}
+
+                                  /*
+                  if (e.target.value > endDate) {
+                  setEndDate('');                    
+                  }
+                  */

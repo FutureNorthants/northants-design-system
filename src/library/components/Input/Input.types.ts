@@ -60,4 +60,9 @@ export interface InputProps {
    * Is the input full width. Defaults to false
    */
   isFullWidth?: boolean;
+
+  /**
+   * The min value for the input component (if appropriate)
+   */
+  minValue?: string | number;
 }
