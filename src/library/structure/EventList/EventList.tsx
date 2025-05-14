@@ -115,7 +115,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               <CheckboxListFilterInput
                 name="promotedTickbox"
                 id="promotedTickbox"
-                label="Show Promoted Only?"
+                label="Show Featured Only?"
                 value={promotedOnlyCheckboxState}
                 setCheckboxState={() => setPromotedOnlyCheckboxState(!promotedOnlyCheckboxState)}
               />
