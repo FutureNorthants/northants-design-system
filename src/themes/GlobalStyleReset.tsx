@@ -133,6 +133,15 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
     left: 1.25rem;
     padding-right: 1.25rem;
   }
+  main li {
+    line-height: 44px;
+  }
+  main li > a {
+    display: inline-flex;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+  }
   blockquote,
   q {
     quotes: none;

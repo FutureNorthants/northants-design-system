@@ -18,6 +18,7 @@ import StaticMap from './library/components/StaticMap/StaticMap';
 import SummaryList from './library/components/SummaryList/SummaryList';
 import TextInput from './library/components/TextInput/TextInput';
 import ToggleButtons from './library/components/ToggleButtons/ToggleButtons';
+import QuickExit from './library/components/QuickExit/QuickExit';
 
 export {
   Autocomplete,
@@ -35,6 +36,7 @@ export {
   PromotedLinks,
   RelatedEvents,
   ResponsiveImage,
+  QuickExit,
   StaticMap,
   SummaryList,
   TextInput,
@@ -55,6 +57,7 @@ import Image from './library/slices/Image/Image';
 import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import InquestSchedule from './library/slices/InquestSchedule/InquestSchedule';
 import Promotions from './library/slices/Promotions/Promotions';
+import RoadworksList from './library/slices/RoadworksList/RoadworksList';
 import SearchBox from './library/slices/SearchBox/SearchBox';
 import Video from './library/slices/Video/Video';
 import WarningText from './library/slices/WarningText/WarningText';
@@ -75,6 +78,7 @@ export {
   ImageAndText,
   InquestSchedule,
   Promotions,
+  RoadworksList,
   SearchBox,
   Video,
   WarningText,

@@ -45,8 +45,8 @@ export const west_vars: ThemeVars = {
     action: '#385889',
     action_light: '#E9EEF3',
     action_dark: '#0E335B',
-    positive: '#6C9A36',
     featured: '#085325',
+    positive: '#00703C',
     negative: '#9D0B1D',
 
     focus: '#E2CA76',

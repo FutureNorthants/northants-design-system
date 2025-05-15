@@ -136,6 +136,8 @@ import PreventingFallsIcon from './PreventingFalls/Icon';
 import PreventingFallsIconHover from './PreventingFalls/IconHover';
 import ProtectIcon from './Protect/Icon';
 import ProtectIconHover from './Protect/IconHover';
+import QuickExitIcon from './QuickExit/Icon';
+import QuickExitIconHover from './QuickExit/IconHover';
 import RatePayIcon from './RatePay/Icon';
 import RatePayIconHover from './RatePay/IconHover';
 import RecyclingBoxIcon from './RecyclingBox/Icon';
@@ -318,6 +320,8 @@ let components = {
   preventingfallsHover: PreventingFallsIconHover,
   protect: ProtectIcon,
   protectHover: ProtectIconHover,
+  quickExit: QuickExitIcon,
+  quickExitHover: QuickExitIconHover,
   ratepay: RatePayIcon,
   ratepayHover: RatePayIconHover,
   recyclingbox: RecyclingBoxIcon,
