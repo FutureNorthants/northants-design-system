@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { CludoSearchProps } from './CludoSearch.types';
 import * as Styles from './CludoSearch.styles';
 import {
@@ -43,37 +43,56 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
         <ResultCount />
         <DidYouMean className="wnc-cludo-did-you-mean" />
 
-        <FacetGroup>
-          <StandardFacet
-            field="Category"
-            hideClear
-            hideCount={false}
-            hideSearchBar
-            hideShowMore
-            className="wnc-cludo-facet-list"
-          />
-        </FacetGroup>
-
-        <ResultsList
-          template={(currResult) => (
-            <CustomResult result={currResult} wrapWithLink={true} className="wnc-cludo-result">
-              <Row>
-                <Column small="full" medium="one-third" large="one-quarter">
-                  <Styles.ImageContainer>
-                    <ResultImage className="wnc-cludo-image" />
-                  </Styles.ImageContainer>
-                </Column>
-                <Column small="full" medium="two-thirds" large="three-quarters">
-                  <ResultTitle className="wnc-cludo-title" />
-                  <ResultDescription maxWordCount={20} className="wnc-cludo-description" />
-                  <ResultBadge className="wnc-cludo-badge" />
-                  <ResultUrl className="wnc-cludo-result-link" />
-                </Column>
-              </Row>
-            </CustomResult>
-          )}
-        />
-        <Pagination className="wnc-cludo-pagination" />
+        <Row>
+          <Column small="full" medium="two-thirds" large="three-quarters">
+            <Styles.MobileFacets>
+              <FacetGroup>
+                <StandardFacet
+                  field="Category"
+                  hideClear
+                  hideCount={false}
+                  hideSearchBar
+                  hideShowMore
+                  className="wnc-cludo-facet-list"
+                />
+              </FacetGroup>
+            </Styles.MobileFacets>
+            <ResultsList
+              template={(currResult) => (
+                <CustomResult result={currResult} wrapWithLink={true} className="wnc-cludo-result">
+                  <Row>
+                    <Column small="full" medium="one-third" large="one-quarter">
+                      <Styles.ImageContainer>
+                        <ResultImage className="wnc-cludo-image" />
+                      </Styles.ImageContainer>
+                    </Column>
+                    <Column small="full" medium="two-thirds" large="three-quarters">
+                      <ResultTitle className="wnc-cludo-title" />
+                      <ResultDescription maxWordCount={20} className="wnc-cludo-description" />
+                      <ResultBadge className="wnc-cludo-badge" />
+                      <ResultUrl className="wnc-cludo-result-link" />
+                    </Column>
+                  </Row>
+                </CustomResult>
+              )}
+            />
+            <Pagination className="wnc-cludo-pagination" />
+          </Column>
+          <Column small="full" medium="one-third" large="one-quarter">
+            <Styles.DesktopFacets>
+              <FacetGroup>
+                <StandardFacet
+                  field="Category"
+                  hideClear
+                  hideCount={false}
+                  hideSearchBar
+                  hideShowMore
+                  className="wnc-cludo-facet-list"
+                />
+              </FacetGroup>
+            </Styles.DesktopFacets>
+          </Column>
+        </Row>
       </CludoWrapper>
     </Styles.Container>
   );

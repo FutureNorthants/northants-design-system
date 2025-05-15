@@ -42,6 +42,7 @@ export const Container = styled.div`
     border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
     border-radius: 0 6px 6px 0;
     background-color: ${(props) => props.theme.theme_vars.colours.action};
+    cursor: pointer;
 
     &:hover {
       background-color: ${(props) => props.theme.theme_vars.action_dark};
@@ -63,6 +64,7 @@ export const Container = styled.div`
 
     h3 {
       ${(props) => props.theme.theme_vars.h3};
+      margin-top: 0;
     }
   }
 
@@ -85,7 +87,7 @@ export const Container = styled.div`
         padding: ${(props) =>
           `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
         color: ${(props) => props.theme.theme_vars.colours.action};
-        font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+        font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
 
         &:hover {
           text-decoration: underline !important;
@@ -278,5 +280,21 @@ export const AutocompleteList = styled.ul`
       background: ${(props) => props.theme.theme_vars.colours.action};
       color: ${(props) => props.theme.theme_vars.colours.white};
     }
+  }
+`;
+
+export const MobileFacets = styled.div`
+  display: block;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: none;
+  }
+`;
+
+export const DesktopFacets = styled.div`
+  display: none;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+    display: block;
   }
 `;
