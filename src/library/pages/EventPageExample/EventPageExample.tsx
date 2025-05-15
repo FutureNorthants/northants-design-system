@@ -4,10 +4,9 @@ import Heading from '../../components/Heading/Heading';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import EventDetails from '../../components/EventDetails/EventDetails';
 import GoogleMap from '../../slices/GoogleMap/GoogleMap';
-import { GoogleMapWithTitleAndDescription } from '../../slices/GoogleMap/GoogleMap.storydata';
-import { EventItemProps, EventListProps } from '../../structure/EventList/EventList.types';
-import Button from '../../components/Button/Button';
+import { EventItemProps } from '../../structure/EventList/EventList.types';
 import SummaryList from '../../components/SummaryList/SummaryList';
+import sanitizeHtml from 'sanitize-html';
 
 export interface EventPageExampleProps {
   event: EventItemProps;
@@ -60,13 +59,13 @@ export const EventPageExample: React.FunctionComponent<EventPageExampleProps> = 
 
             <EventDetails startTime={event.startTime} location={event.location} />
 
-            <div dangerouslySetInnerHTML={{ __html: event.description }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(event.description) }} />
 
             <Heading level={2} text="Venue" />
             {event.address && (
               <>
                 <Heading level={3} text="Address" />
-                <p dangerouslySetInnerHTML={{ __html: event.address.split(',').join('<br />') }} />
+                <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(event.address.split(',').join('<br />')) }} />
               </>
             )}
 

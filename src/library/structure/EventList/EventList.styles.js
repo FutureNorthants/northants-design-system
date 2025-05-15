@@ -66,7 +66,7 @@ export const ResultInfo = styled.div`
 `;
 
 export const ServiceSelect = styled.div`
-  margin-bottom: 25px;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const ClearFilters = styled.button`
