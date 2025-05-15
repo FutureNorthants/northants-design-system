@@ -3,6 +3,7 @@ import { VisuallyHidden } from '../../helpers/style-helpers';
 
 export const Container = styled.div`
   ${(props) => props.theme.fontStyles};
+  width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
 `;
 
 const hideLabel = (props) => {
@@ -23,6 +24,7 @@ export const Select = styled.select`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   box-sizing: border-box;
   max-width: 100%;
+  width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
   height: 44px;
   height: 2.75rem;
   padding: 5px;

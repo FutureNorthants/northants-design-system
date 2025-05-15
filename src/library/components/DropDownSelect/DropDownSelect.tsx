@@ -17,9 +17,10 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
   value = undefined,
   hasBottomMargin = false,
   hasBoldLabel = false,
+  isFullWidth = false,
 }) => {
   return (
-    <Styles.Container>
+    <Styles.Container $isFullWidth={isFullWidth}>
       <Styles.Label htmlFor={id} $hideLabel={hideLabel} $hasBoldLabel={hasBoldLabel}>
         {label}
       </Styles.Label>
@@ -32,6 +33,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
           value={value}
           $isErrored={isErrored}
           $hasBottomMargin={hasBottomMargin}
+          $isFullWidth={isFullWidth}
         >
           {options.map((option, i) => (
             <Styles.Option key={i} value={option.value}>

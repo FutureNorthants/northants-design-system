@@ -18,6 +18,7 @@ const Input: React.FunctionComponent<InputProps> = ({
   id,
   value,
   autocomplete,
+  minValue = '',
   isFullWidth = false,
 }) => {
   return (
@@ -35,6 +36,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           id={id}
           autoComplete={autocomplete}
           $isFullWidth={isFullWidth}
+          min={minValue}
         />
       ) : (
         <Styles.StyledInput
@@ -48,6 +50,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           id={id}
           autoComplete={autocomplete}
           $isFullWidth={isFullWidth}
+          min={minValue}
         />
       )}
     </>

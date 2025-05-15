@@ -54,6 +54,11 @@ export interface DropDownSelectProps {
    * Should the select have bottom margin
    */
   hasBottomMargin?: boolean;
+
+  /**
+   * Should the drop-down be full-width
+   */
+  isFullWidth?: boolean;
 }
 
 export interface DropDownSelectOptionsProps {
