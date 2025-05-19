@@ -254,7 +254,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const AutocompleteContainer = styled.div`
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  margin-bottom: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.medium : '0')};
 `;
 
 export const AutocompleteList = styled.ul`

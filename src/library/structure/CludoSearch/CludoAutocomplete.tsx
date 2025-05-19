@@ -8,8 +8,9 @@ import {
   useAutocomplete,
 } from '@cludosearch/cludo-search-components/ssr';
 import * as Styles from './CludoSearch.styles';
+import { CludoAutoCompleteProps } from './CludoAutocomplete.types';
 
-const CludoAutoComplete = () => {
+const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ hasMargin = true }) => {
   const [autocompleteState, autocompleteDispatchers] = useAutocomplete();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,7 +29,7 @@ const CludoAutoComplete = () => {
     autocompleteHandleInputKeyDown(e, autocompleteDispatchers);
   };
   return (
-    <Styles.AutocompleteContainer>
+    <Styles.AutocompleteContainer $hasMargin={hasMargin}>
       <SearchInput
         className="wnc-cludo-input"
         formId="search"

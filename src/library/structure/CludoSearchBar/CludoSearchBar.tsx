@@ -19,7 +19,7 @@ const CludoSearchBar: React.FunctionComponent<CludoSearchBarProps> = ({ customer
   return (
     <Styles.Container data-testid="CludoSearchBar">
       <CludoWrapper config={cludoSearchConfig}>
-        <CludoAutoComplete />
+        <CludoAutoComplete hasMargin={false} />
       </CludoWrapper>
     </Styles.Container>
   );
