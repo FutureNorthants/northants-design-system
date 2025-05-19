@@ -29,6 +29,9 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     language: 'en',
     facets: {
       keys: ['Category'],
+      defaultValues: {
+        Category: ['West Northamptonshire Council'],
+      },
     },
     instanceId: '',
     components: {
