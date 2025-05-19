@@ -79,7 +79,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                 </CustomResult>
               )}
             />
-            <Pagination className="wnc-cludo-pagination" />
+            <Pagination className="wnc-cludo-pagination" previousButtonIcon="Previous" nextButtonIcon="Next" />
           </Column>
           <Column small="full" medium="one-third" large="one-quarter">
             <Styles.DesktopFacets>
