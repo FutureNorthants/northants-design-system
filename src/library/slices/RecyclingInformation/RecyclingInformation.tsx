@@ -25,7 +25,8 @@ const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> =
          --theme-c9-disposal-options-card-color: ${themeContext.theme_vars.colours.grey_light};
          --theme-c9-disposal-options-card-border-radius: ${themeContext.theme_vars.border_radius};
          --theme-c9-body-font-family: ${themeContext.theme_vars.fontstack};
-         --theme-c9-heading-font-family: ${themeContext.theme_vars.fontstack};"/>`;
+         --theme-c9-heading-font-family: ${themeContext.theme_vars.fontstack};
+         overflow-y: visible !important"/>`;
 
   return (
     <Styles.Container data-testid="RecyclingInformation">
