@@ -7,6 +7,7 @@ import Contents from './Contents/Contents';
 import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
 import CookieBanner from './CookieBanner/CookieBanner';
 import DisplayDate from './DisplayDate/DisplayDate';
+import EventList from './EventList/EventList';
 import Footer from './Footer/Footer';
 import FullWidthContainer from './FullWidthContainer/FullWidthContainer';
 import Header from './Header/Header';
@@ -54,6 +55,7 @@ export {
   ContentsNavigation,
   CookieBanner,
   DisplayDate,
+  EventList,
   Footer,
   FullWidthContainer,
   Header,

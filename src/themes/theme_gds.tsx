@@ -36,6 +36,7 @@ export const gds_vars: ThemeVars = {
     action_light: '#FAFAFA',
     action_dark: '#003078',
     positive: '#6C9A36',
+    featured: '#085325',
     negative: '#d4351c',
 
     visited: '#4c2c92',

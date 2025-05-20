@@ -12,9 +12,13 @@ export const StyledInput = styled.input`
   display: block;
   width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
 
+  color: ${(props) =>
+    props.value != 0 ? props.theme.theme_vars.colours.black : props.theme.theme_vars.colours.grey_dark};
+
   &:focus {
     outline: none;
-    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+    box-shadow:
+      ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
       ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
     transition: box-shadow 0.3s ease 0s;
   }
