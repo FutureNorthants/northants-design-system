@@ -48,4 +48,10 @@ export interface HeaderProps {
    * The Header contents
    */
   children?: React.ReactNode;
+
+  hasCludo?: boolean;
+
+  customerId?: number;
+
+  engineId?: number;
 }
