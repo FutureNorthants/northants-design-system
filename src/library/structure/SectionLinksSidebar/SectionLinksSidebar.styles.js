@@ -89,9 +89,8 @@ const focusListItem = css`
   color: ${(props) => props.theme.theme_vars.colours.black};
   background-color: ${(props) => props.theme.theme_vars.colours.focus};
   outline: none;
-  box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-  -webkit-box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-  -moz-box-shadow: 0px -2px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+  box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+    ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
 `;
 
 export const ListItem = styled.li`
@@ -138,9 +137,8 @@ export const ListItemLink = styled.a`
   }
   &:active {
     transform: translateY(1px);
-    box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+      ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
   }
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
