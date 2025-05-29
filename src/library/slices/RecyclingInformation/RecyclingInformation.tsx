@@ -3,7 +3,7 @@ import { RecyclingInformationProps } from './RecyclingInformation.types';
 import * as Styles from './RecyclingInformation.styles';
 import { ThemeContext } from 'styled-components';
 
-const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> = function () {
+const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> = ({ clientId = 'westnorthants' }) => {
   const themeContext = useContext(ThemeContext);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> =
 
   const innerHTML = `
     <c9-recycling-info
-        client-id="westnorthants"
+        client-id=${clientId}
         style="--theme-c9- --theme-c9-primary-text-color:${themeContext.theme_vars.colours.black};
          --theme-c9-heading-color: ${themeContext.theme_vars.colours.black};
          --theme-c9-link-color: ${themeContext.theme_vars.colours.action};

@@ -5,7 +5,7 @@ import PageMain from '../../structure/PageMain/PageMain';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
 const meta: Meta<typeof RecyclingInformation> = {
-  title: 'Library/Slices/RecyclingInformation',
+  title: 'Library/Slices/Recycling Information',
   component: RecyclingInformation,
   parameters: {
     status: {
