@@ -17,6 +17,7 @@ const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> =
 
   const innerHTML = `
     <c9-recycling-info
+        data-testid="RecyclingInfoInner"
         client-id=${clientId}
         style="--theme-c9- --theme-c9-primary-text-color:${themeContext.theme_vars.colours.black};
          --theme-c9-heading-color: ${themeContext.theme_vars.colours.black};

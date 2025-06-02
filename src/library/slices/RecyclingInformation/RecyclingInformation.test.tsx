@@ -26,4 +26,13 @@ describe('Recycling Information Slice', () => {
 
     expect(component).toBeVisible();
   });
+
+  it('should overwrite the clientId', () => {
+    props.clientId = 'CustomClientId';
+
+    const { getByTestId } = renderComponent();
+    const innerComponent = getByTestId('RecyclingInfoInner');
+
+    expect(innerComponent).toHaveAttribute('client-id', 'CustomClientId');
+  });
 });
