@@ -3,6 +3,9 @@ import { RecyclingInformationProps } from './RecyclingInformation.types';
 import * as Styles from './RecyclingInformation.styles';
 import { ThemeContext } from 'styled-components';
 
+/**
+ *  A 'recycling information' search & combo box
+ */
 const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> = ({ clientId = 'westnorthants' }) => {
   const themeContext = useContext(ThemeContext);
 
