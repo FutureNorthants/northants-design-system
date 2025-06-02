@@ -52,6 +52,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
               <FacetGroup>
                 <StandardFacet
                   field="Category"
+                  label="Show results from"
                   hideClear
                   hideCount={false}
                   hideSearchBar
