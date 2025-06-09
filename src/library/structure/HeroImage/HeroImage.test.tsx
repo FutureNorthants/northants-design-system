@@ -160,7 +160,7 @@ describe('HeroImage slice', () => {
 
     expect(breadcrumb).toBeVisible();
     expect(breadcrumb).toHaveAttribute('href', '/country-parks');
-    expect(breadcrumb).toHaveStyle(`color: ${west_theme.theme_vars.colours.action}`);
+    expect(breadcrumb).toHaveStyle(`color: ${west_theme.theme_vars.colours.black}`);
 
     expect(queryByText('Home')).toBeNull();
   });
