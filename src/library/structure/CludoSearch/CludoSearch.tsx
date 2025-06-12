@@ -93,6 +93,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                   hideSearchBar
                   hideShowMore
                   className="wnc-cludo-facet-list"
+                  exclude={['Documents']}
                 />
               </FacetGroup>
             </Styles.DesktopFacets>
