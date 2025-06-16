@@ -22,9 +22,10 @@ export const Container = styled.div`
 
   .wnc-cludo-input input:focus,
   .wnc-cludo-input input:active {
+    outline: none;
     border: 2px solid ${(props) => props.theme.theme_vars.colours.black};
     border-radius: 6px 0 0 6px;
-    box-shadow: 0 0 0 1px #e2ca76, 0 0 0 3px #000;
+    box-shadow: 0 0 0 2px #e2ca76, 0 0 0 4px #000;
   }
 
   .wnc-cludo-input button {
