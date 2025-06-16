@@ -3,6 +3,8 @@ import { StoryFn } from '@storybook/react';
 import CludoSearchBar from './CludoSearchBar';
 import { CludoSearchBarProps } from './CludoSearchBar.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
+import PageMain from '../PageMain/PageMain';
+import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export default {
   title: 'Library/Structure/Cludo Search Bar',
@@ -16,7 +18,11 @@ export default {
 
 const Template: StoryFn<CludoSearchBarProps> = (args) => (
   <SBPadding>
-    <CludoSearchBar {...args} />
+    <MaxWidthContainer>
+      <PageMain>
+        <CludoSearchBar {...args} />
+      </PageMain>
+    </MaxWidthContainer>
   </SBPadding>
 );
 
