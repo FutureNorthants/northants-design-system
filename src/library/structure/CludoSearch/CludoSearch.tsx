@@ -33,11 +33,23 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
         Category: ['West Northamptonshire Council'],
       },
     },
+    behavior: {
+      enableRelatedSearches: true,
+    },
     instanceId: '',
     components: {
       autocomplete: CludoAutoComplete,
     },
   };
+
+  const filterOrder: string[] = [
+    'West Northamptonshire Council',
+    'News',
+    'Local Organisations',
+    'SEND Local Offer',
+    "Northamptonshire Children's Trust",
+    '*',
+  ];
 
   return (
     <Styles.Container data-testid="CludoSearch">
@@ -58,6 +70,8 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                   hideSearchBar
                   hideShowMore
                   className="wnc-cludo-facet-list"
+                  exclude={['Documents']}
+                  order={filterOrder}
                 />
               </FacetGroup>
             </Styles.MobileFacets>
@@ -94,6 +108,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                   hideShowMore
                   className="wnc-cludo-facet-list"
                   exclude={['Documents']}
+                  order={filterOrder}
                 />
               </FacetGroup>
             </Styles.DesktopFacets>
