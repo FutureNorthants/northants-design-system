@@ -10,6 +10,32 @@ export const ExampleEventListResults: EventListProps = {
     { title: 'Bins, recycling and waste', value: 'bins' },
     { title: 'Council tax', value: 'council-tax' },
   ],
+  eventTypes: [
+    { title: 'All events', value: 'all' },
+    { title: 'Children and families', value: 'children-and-families' },
+    { title: 'Young adults', value: 'young-adults' },
+    { title: 'Jobseekers', value: 'jobseekers' },
+  ],
+  cards: [
+    {
+      imageLarge: 'https://discover-northamptonshire.co.uk/wp-content/colours/logo-online.png',
+      imageSmall: 'https://discover-northamptonshire.co.uk/wp-content/colours/logo-online.png',
+      imageAltText: 'Discover Northamptonshire',
+      footerLink: {
+        url: 'https://discover-northamptonshire.co.uk/whats-on-online/',
+        title: 'Discover Northamptonshire',
+      },
+    },
+    {
+      imageLarge: 'https://www.northamptonmuseums.com/site/images/N_and_A_LARGE_1.png',
+      imageSmall: 'https://www.northamptonmuseums.com/site/images/N_and_A_LARGE_1.png',
+      imageAltText: 'Northampton Museums',
+      footerLink: {
+        url: 'https://www.northamptonmuseums.com/whatson',
+        title: 'Northampton Museums',
+      },
+    },
+  ],
   results: [
     {
       id: '1',
