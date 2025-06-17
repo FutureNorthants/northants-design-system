@@ -12,12 +12,16 @@ import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticle
 import { articleOptions } from './../../components/CheckboxListFilter/CheckboxListFilterData';
 import { serviceOptions } from './../../components/DropDownFilter/DropDownFilterData';
 import { NewsArticleFilterFields } from './../../structure/NewsArticleFilterAccordion/NewsArticleFilterAccordionText';
+import { handleParams } from './../../helpers/url-helpers';
 
 export interface NewsProps {
   hasResults: boolean;
 }
 
 export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
+  const handleChange = (checkedValues: string) => {
+    handleParams('news', [{ key: NewsArticleFilterFields.articleType.queryParamKey, value: checkedValues }], ['page']);
+  };
   return (
     <>
       <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
@@ -83,6 +87,7 @@ export const News: React.FunctionComponent<NewsProps> = ({ hasResults }) => {
                         options={articleOptions}
                         checked={NewsArticleFilters.articleType}
                         displayLegend={false}
+                        onChange={handleChange}
                       />
                     </>
                   ),

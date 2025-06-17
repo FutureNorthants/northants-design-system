@@ -11,9 +11,8 @@ import EventLink from '../../components/EventLink/EventLink';
 import { transformSnippet } from '../../directory/DirectoryService/DirectoryServiceTransform';
 import Heading from '../../components/Heading/Heading';
 import FormButton from '../../components/FormButton/FormButton';
-import Cards from '../../slices/Cards/Cards';
-import { CardProps } from '../../components/Card/Card.types';
 import Card from '../../components/Card/Card';
+import CheckboxListFilter from '../../components/CheckboxListFilter/CheckboxListFilter';
 
 const EventList: React.FunctionComponent<EventListProps> = ({
   results,
@@ -27,7 +26,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   setEventSearch,
   service = '',
   setService,
-  eventType = '',
+  eventType = [''],
   setEventType,
   startDate = '',
   setStartDate,
@@ -111,12 +110,13 @@ const EventList: React.FunctionComponent<EventListProps> = ({
 
               {eventTypes && (
                 <Styles.SelectContainer>
-                  <DropDownSelect
+                  <CheckboxListFilter
                     label="This event is for"
-                    options={eventTypes ? eventTypes : [{ title: 'Any event', value: 'all' }]}
-                    onChange={(e) => setEventType(e.target.value)}
-                    value={eventType}
-                    isFullWidth
+                    hint={null}
+                    options={eventTypes}
+                    checked={eventType}
+                    displayLegend={true}
+                    onChange={setEventType}
                   />
                 </Styles.SelectContainer>
               )}

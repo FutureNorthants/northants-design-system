@@ -11,7 +11,6 @@ export const ExampleEventListResults: EventListProps = {
     { title: 'Council tax', value: 'council-tax' },
   ],
   eventTypes: [
-    { title: 'All events', value: 'all' },
     { title: 'Children and families', value: 'children-and-families' },
     { title: 'Young adults', value: 'young-adults' },
     { title: 'Jobseekers', value: 'jobseekers' },
