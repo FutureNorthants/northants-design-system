@@ -131,8 +131,8 @@ const EventList: React.FunctionComponent<EventListProps> = ({
               <Column small="full" medium="full" large="full">
                 <Heading text="Other events" level={2} />
               </Column>
-              {cards?.map((card) => (
-                <Column small="full" medium="full" large="full">
+              {cards?.map((card, index) => (
+                <Column small="full" medium="full" large="full" key={index}>
                   <Card {...card} />
                 </Column>
               ))}
