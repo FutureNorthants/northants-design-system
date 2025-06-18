@@ -67,7 +67,7 @@ export interface EventListProps {
   /**
    * Function prop passed in to handle updating the event type
    */
-  setEventType?: Dispatch<SetStateAction<string>>;
+  setEventType?: (selected: string) => void;
 
   /**
    * The selected start date filter
