@@ -1,0 +1,104 @@
+:root {
+  .wnc-cludo {
+    --spacer-1: 5px;
+    --spacer-2: 10px;
+    --spacer-3: 20px;
+    --spacer-4: 30px;
+    --spacer-5: 45px;
+    --spacer-6: 50px;
+
+    --font-size-xs: 0.9rem;
+    --font-size-sm: 1.18rem;
+    --font-size-md: 1.3rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+
+    --border-radius-button: 3px;
+    --border-radius-card: 6px;
+
+    --font-color-black: #000000;
+    --font-color-white: #ffffff;
+    --font-color-gray: #757575;
+    --font-color-highlight: #385889;
+
+    --font-family-default: Roboto, Helvetica, Arial, sans-serif;
+    --font-family-header: Roboto, Helvetica, Arial, sans-serif;
+
+    --bg-color-white: #ffffff;
+    --bg-color-gray-light: #f5f5f5;
+    --bg-color-gray-medium: #c6c6c6;
+    --bg-color-gray-dark: #3c3c3b;
+    --bg-color-accent-primary-light: #e9eef3;
+    --bg-color-accent-primary-medium: #385889;
+    --bg-color-accent-primary-dark: #0e335b;
+    --bg-color-accent-secondary-light: #e9eef3;
+    --bg-color-accent-secondary-medium: #385889;
+    --bg-color-accent-secondary-dark: #0e335b;
+
+    --box-shadow-card: none;
+  }
+}
+
+.wnc-cludo .wnc-cludo-input {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wnc-cludo-input input {
+  padding: 10px;
+  min-height: 44px;
+  border: 2px solid var(--font-color-black);
+  border-radius: 6px 0 0 6px;
+}
+
+.wnc-cludo-input input:focus,
+.wnc-cludo-input input:active {
+  border: 2px solid var(--font-color-black);
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0 0 0 1px #e2ca76, 0 0 0 3px #000;
+}
+
+.wnc-cludo-input button {
+  height: 44px;
+  width: 44px;
+  margin-left: 0;
+  border: 2px solid var(--font-color-black);
+  border-radius: 0 6px 6px 0;
+}
+
+.cludo_results-list li {
+  width: 100%;
+}
+
+.cludo-banner {
+  background-color: var(--bg-color-accent-primary-light);
+  color: var(--font-color-black);
+  width: 100%;
+  padding: var(--spacer-2);
+}
+
+.cludo-theme-result-link.wnc-cludo-result {
+  padding: var(--spacer-2);
+}
+
+.cludo-theme-result-title.wnc-cludo-title {
+  color: var(--font-color-highlight);
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+.cludo-theme-result-title.wnc-cludo-title:hover {
+  color: var(--bg-color-accent-primary-dark);
+  text-decoration-style: dotted;
+}
+
+.cludo-theme-result-description.wnc-cludo-description {
+  font-size: var(--font-size-sm);
+  color: var(--font-color-black);
+}
+
+.cludo-theme-result-badge.wnc-cludo-badge {
+  background-color: var(--bg-color-accent-primary-medium);
+  color: var(--font-color-white);
+}
