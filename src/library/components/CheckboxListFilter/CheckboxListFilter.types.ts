@@ -28,6 +28,11 @@ export interface CheckboxListFilterProps {
    * Should the legend be displayed
    */
   displayLegend: boolean;
+
+  /**
+   * Optional on change method
+   */
+  onChange?: (checked: string) => void;
 }
 
 export interface CheckboxValsProps {

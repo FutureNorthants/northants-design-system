@@ -70,6 +70,8 @@ export const Container = styled.a`
   .event-list__image-container {
     position: relative;
     min-height: 200px;
+    padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   }
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {

@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { DropDownSelectOptionsProps } from '../../components/DropDownSelect/DropDownSelect.types';
+import { CardProps } from '../../components/Card/Card.types';
+import { CheckboxValsProps } from '../../components/CheckboxListFilter/CheckboxListFilter.types';
 
 export interface EventListProps {
   /**
@@ -21,6 +23,11 @@ export interface EventListProps {
    * The list of services to select from
    */
   services: DropDownSelectOptionsProps[];
+
+  /**
+   * The list of event types to select from
+   */
+  eventTypes?: CheckboxValsProps[];
 
   /**
    * What the list is sorted by
@@ -51,6 +58,16 @@ export interface EventListProps {
    * Function prop passed in to handle updating the service
    */
   setService?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The event type
+   */
+  eventType?: string[];
+
+  /**
+   * Function prop passed in to handle updating the event type
+   */
+  setEventType?: (selected: string) => void;
 
   /**
    * The selected start date filter
@@ -86,6 +103,11 @@ export interface EventListProps {
    * The optional path for pagination
    */
   eventsPagePath?: string;
+
+  /**
+   * Card links to other events pages
+   */
+  cards?: CardProps[];
 }
 
 export interface EventItemProps {

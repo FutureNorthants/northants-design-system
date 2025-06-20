@@ -55,9 +55,9 @@ const EventLink: React.FunctionComponent<EventLinkProps> = ({
             imageSmall={imageSmall}
             imageLarge={imageLarge}
             imageAltText={imageAltText}
-            smallWidth="400"
-            largeWidth="720"
-            ratio="auto"
+            smallWidth="720"
+            largeWidth="1440"
+            ratio="16by9"
             objectFit="cover"
           />
         </Column>

@@ -39,6 +39,7 @@ export const ToggleFilters = styled.button`
 
 export const FilterContainer = styled.div`
   display: ${(props) => (props.$showFilters ? 'block' : 'none')};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: block;
@@ -65,7 +66,7 @@ export const ResultInfo = styled.div`
   margin: ${(props) => props.theme.theme_vars.spacingSizes.large} 0;
 `;
 
-export const ServiceSelect = styled.div`
+export const SelectContainer = styled.div`
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
