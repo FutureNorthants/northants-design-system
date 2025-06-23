@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DynamicIcon from './DynamicIcon';
-import { DynamicIconProps } from './DynamicIcon.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof DynamicIcon> = {
   title: 'Library/Components/Dynamic Icon',
   component: DynamicIcon,
   parameters: {
@@ -13,21 +11,20 @@ export default {
     },
   },
 };
+export default meta;
+type Story = StoryObj<typeof DynamicIcon>;
 
-const Template: StoryFn<DynamicIconProps> = (args) => (
-  <SBPadding>
-    <DynamicIcon {...args} />
-  </SBPadding>
-);
-
-export const BusDynamicIcon = Template.bind({});
-BusDynamicIcon.args = {
-  level: 2,
-  icon: 'bus',
+export const BusDynamicIcon: Story = {
+  args: {
+    level: 2,
+    icon: 'bus',
+  },
 };
 
-export const BenefitsDynamicIcon = Template.bind({});
-BenefitsDynamicIcon.args = {
-  level: 1,
-  icon: 'benefits',
+export const BenefitsDynamicIcon: Story = {
+  ...BusDynamicIcon,
+  args: {
+    level: 1,
+    icon: 'benefits',
+  },
 };

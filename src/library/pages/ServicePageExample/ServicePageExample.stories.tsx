@@ -1,36 +1,52 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { StoryFn, Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ServicePageExample, ServicePageExampleProps } from './ServicePageExample';
 import { ContentsExampleData } from '../../structure/Contents/Contents.storydata';
 
-export default {
+const meta: Meta<typeof ServicePageExample> = {
   title: 'Page Examples/Service Page Example',
   component: ServicePageExample,
 } as Meta;
 
-const Template: StoryFn<ServicePageExampleProps> = (args) => <ServicePageExample {...args} />;
+export default meta;
+type Story = StoryObj<typeof ServicePageExample>;
 
-export const ServicePageWithContent = Template.bind({});
-
-export const ServicePageWithServiceAlert = Template.bind({});
-ServicePageWithServiceAlert.args = {
-  showServiceAlert: true,
-};
-
-export const ServicePageWithContents = Template.bind({});
-ServicePageWithContents.args = {
-  contents: {
-    currentPath: '/second-page',
-    contents: ContentsExampleData,
+export const ServicePageWithContent: Story = {
+  parameters: {
+    pageLayout: 'page',
   },
 };
 
-export const ServicePageWithContentsAndAlert = Template.bind({});
-ServicePageWithContentsAndAlert.args = {
-  contents: {
-    currentPath: '/second-page',
-    contents: ContentsExampleData,
+export const ServicePageWithServiceAlert: Story = {
+  args: {
+    showServiceAlert: true,
   },
-  showServiceAlert: true,
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+
+export const ServicePageWithContents: Story = {
+  args: {
+    contents: {
+      currentPath: '/second-page',
+      contents: ContentsExampleData,
+    },
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+
+export const ServicePageWithContentsAndAlert: Story = {
+  args: {
+    contents: {
+      currentPath: '/second-page',
+      contents: ContentsExampleData,
+    },
+    showServiceAlert: true,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };

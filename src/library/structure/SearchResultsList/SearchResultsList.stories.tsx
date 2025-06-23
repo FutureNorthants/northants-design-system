@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SearchResultsList from './SearchResultsList';
-import { SearchResultsListProps } from './SearchResultsList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { searchResults, noSearchResults, searchResultsWithServiceArea } from './SearchResultsData';
 
-export default {
+const meta: Meta<typeof SearchResultsList> = {
   title: 'Library/Structure/Search Results List',
   component: SearchResultsList,
   parameters: {
@@ -15,17 +13,17 @@ export default {
   },
 };
 
-const Template: StoryFn<SearchResultsListProps> = (args) => (
-  <SBPadding>
-    <SearchResultsList {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SearchResultsList>;
 
-export const ExampleSearchResultsList = Template.bind({});
-ExampleSearchResultsList.args = searchResults;
+export const ExampleSearchResultsList: Story = {
+  args: searchResults,
+};
 
-export const ExampleNoSearchResultsList = Template.bind({});
-ExampleNoSearchResultsList.args = noSearchResults;
+export const ExampleNoSearchResultsList: Story = {
+  args: noSearchResults,
+};
 
-export const ExampleSearchResultsListWithServiceArea = Template.bind({});
-ExampleSearchResultsListWithServiceArea.args = searchResultsWithServiceArea;
+export const ExampleSearchResultsListWithServiceArea: Story = {
+  args: searchResultsWithServiceArea,
+};

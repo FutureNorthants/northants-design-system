@@ -1,12 +1,10 @@
 import React from 'react';
 import HomeHero from './HomeHero';
-import { HomeHeroProps } from './HomeHero.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
-import Header from '../Header/Header';
 import { ExamplePromotedServicesData } from '../PromotedServicesTabs/PromotedServicesTabs.storydata';
 
-export default {
+const meta: Meta<typeof HomeHero> = {
   title: 'Library/structure/Home Hero',
   component: HomeHero,
   parameters: {
@@ -39,54 +37,67 @@ export default {
   },
 };
 
-const Template: StoryFn<HomeHeroProps> = (args) => (
-  <>
-    <HomeHero {...args}></HomeHero>
-  </>
-);
+export default meta;
+type Story = StoryObj<typeof HomeHero>;
 
-export const HomeHeroExample0Links = Template.bind({});
-HomeHeroExample0Links.args = {
-  promotedLinksArray: [],
-  ...HomeHeroCommon,
+export const HomeHeroExample0Links: Story = {
+  args: {
+    promotedLinksArray: [],
+    ...HomeHeroCommon,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const HomeHeroExample1Link = Template.bind({});
-HomeHeroExample1Link.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 1),
-  ...HomeHeroCommon,
+export const HomeHeroExample1Link: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 1),
+    ...HomeHeroCommon,
+  },
 };
 
-export const HomeHeroExample2Links = Template.bind({});
-HomeHeroExample2Links.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 2),
-  ...HomeHeroCommon,
+export const HomeHeroExample2Links: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 2),
+    ...HomeHeroCommon,
+  },
 };
 
-export const HomeHeroExample3Links = Template.bind({});
-HomeHeroExample3Links.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 3),
-  ...HomeHeroCommon,
+export const HomeHeroExample3Links: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 3),
+    ...HomeHeroCommon,
+  },
 };
 
-export const HomeHeroExample4Links = Template.bind({});
-HomeHeroExample4Links.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
-  ...HomeHeroCommon,
+export const HomeHeroExample4Links: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
+    ...HomeHeroCommon,
+  },
 };
 
-export const HomeHeroExampleOverriddenLogo = Template.bind({});
-HomeHeroExampleOverriddenLogo.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
-  ...HomeHeroCommon,
-  imageOverrideLogo: 'http://placehold.it/520x150',
-  imageOverrideLogoAltText: 'My logo',
+export const HomeHeroExampleOverriddenLogo: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
+    ...HomeHeroCommon,
+    imageOverrideLogo: 'http://placehold.it/520x150',
+    imageOverrideLogoAltText: 'My logo',
+  },
 };
 
-export const HomeHeroHasTabs = Template.bind({});
-HomeHeroHasTabs.args = {
-  promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
-  promotedServicesTabs: ExamplePromotedServicesData,
-  showSearch: false,
-  ...HomeHeroCommon,
+export const HomeHeroHasTabs: Story = {
+  ...HomeHeroExample0Links,
+  args: {
+    promotedLinksArray: HomeHeroPromotedLinks.slice(0, 4),
+    promotedServicesTabs: ExamplePromotedServicesData,
+    showSearch: false,
+    ...HomeHeroCommon,
+  },
 };

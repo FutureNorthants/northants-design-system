@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SearchHeader from './SearchHeader';
-import { SearchHeaderProps } from './SearchHeader.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof SearchHeader> = {
   title: 'Library/structure/Search header',
   component: SearchHeader,
   parameters: {
@@ -14,10 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<SearchHeaderProps> = (args) => (
-  <SBPadding>
-    <SearchHeader {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SearchHeader>;
 
-export const ExampleSearchHeader = Template.bind({});
+export const ExampleSearchHeader: Story = {};
