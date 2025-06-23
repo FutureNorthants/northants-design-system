@@ -68,6 +68,8 @@ export const SectionHeader = styled.div`
 export const SectionHeading = styled.div`
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
 `;
 
 const SectionButtonIsFilteredStyles = (props) => {
@@ -110,12 +112,8 @@ export const SectionButton = styled.button`
     outline: 3px solid transparent;
     color: ${(props) => props.theme.theme_vars.colours.black};
     background-color: ${(props) => props.theme.theme_vars.colours.focus};
-    -webkit-box-shadow:
-      0 -2px ${(props) => props.theme.theme_vars.colours.focus},
-      0 4px ${(props) => props.theme.theme_vars.colours.black};
-    box-shadow:
-      0 -2px ${(props) => props.theme.theme_vars.colours.focus},
-      0 4px ${(props) => props.theme.theme_vars.colours.black};
+    box-shadow: ${(props) => props.theme.theme_vars.colours.focus} 0 0 0 2px,
+      ${(props) => props.theme.theme_vars.colours.black} 0 0 0 4px;
     text-decoration: none;
   }
 

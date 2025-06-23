@@ -7,7 +7,7 @@ export const AddToShortlist = styled.button`
   color: ${(props) =>
     props.$favourite ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.action};
   cursor: pointer;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => `14px ${props.theme.theme_vars.spacingSizes.small}`};
   font-weight: bold;
   display: flex;
   flex-direction: row;
