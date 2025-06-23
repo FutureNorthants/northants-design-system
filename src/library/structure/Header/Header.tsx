@@ -12,6 +12,7 @@ import ChevronIcon from '../../components/icons/ChevronIcon/ChevronIcon';
 import WestBlackLogo from '../../components/logos/WestBlackLogo/logo';
 import NorthBlackLogo from '../../components/logos/NorthBlackLogo/logo';
 import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
+import CludoSearchBar from '../CludoSearchBar/CludoSearchBar';
 
 /**
  * The header that should appear at the top of every page.
@@ -27,6 +28,9 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   isHomepage = false,
   searchSuggestions = [],
   hasTranslate = false,
+  hasCludo = false,
+  engineId,
+  customerId,
   ...props
 }) => {
   const themeContext = useContext(ThemeContext);
@@ -106,17 +110,21 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <MaxWidthContainer noPadding noBackground overflowVisible>
             <Styles.SearchWrapper>
               <Styles.SearchBarContainer>
-                <Searchbar
-                  isLight={themeContext.cardinal_name === 'north' ? true : false}
-                  isLarge
-                  submitInfo={{
-                    postTo: '/search',
-                    params: {
-                      type: 'search',
-                    },
-                  }}
-                  suggestions={searchSuggestions}
-                />
+                {hasCludo ? (
+                  <CludoSearchBar customerId={customerId} engineId={engineId} />
+                ) : (
+                  <Searchbar
+                    isLight={themeContext.cardinal_name === 'north' ? true : false}
+                    isLarge
+                    submitInfo={{
+                      postTo: '/search',
+                      params: {
+                        type: 'search',
+                      },
+                    }}
+                    suggestions={searchSuggestions}
+                  />
+                )}
               </Styles.SearchBarContainer>
             </Styles.SearchWrapper>
           </MaxWidthContainer>
