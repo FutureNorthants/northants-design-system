@@ -27,6 +27,7 @@ export const HeadingWrapper = styled.div`
     .service-icon {
       display: ${(props) => (props.$hasHover ? 'none' : 'block')};
     }
+
     .service-icon-hover {
       display: ${(props) => (props.$hasHover ? 'block' : 'none')};
     }
@@ -38,10 +39,10 @@ export const HeadingContainer = styled.div`
     props.$level === 1
       ? `calc(100% - 65px)`
       : props.$level === 2
-      ? `calc(100% - 45px)`
-      : props.$level === 3
-      ? `calc(100% - 30px)`
-      : `calc(100% - 20px)`};
+        ? `calc(100% - 45px)`
+        : props.$level === 3
+          ? `calc(100% - 30px)`
+          : `calc(100% - 20px)`};
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     width: calc(100% - 85px);
   }

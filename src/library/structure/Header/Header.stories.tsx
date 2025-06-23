@@ -72,3 +72,17 @@ export const HeaderNoSearchExample: Story = {
     hasTranslate: true,
   },
 };
+
+export const HeaderCludoSearch = Template.bind({});
+HeaderCludoSearch.args = {
+  hasNewsLink: true,
+  hasDirectoryLink: true,
+  accessibilityLink: '/',
+  allServicesLink: '/',
+  hideSearchBar: false,
+  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+  hasTranslate: true,
+  hasCludo: true,
+  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+};

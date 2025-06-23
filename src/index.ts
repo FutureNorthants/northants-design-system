@@ -3,6 +3,7 @@ import Autocomplete from './library/components/Autocomplete/Autocomplete';
 import BackToTop from './library/components/BackToTop/BackToTop';
 import Button from './library/components/Button/Button';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
+import EventDetails from './library/components/EventDetails/EventDetails';
 import Heading from './library/components/Heading/Heading';
 import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
 import Map from './library/components/Map/Map';
@@ -11,15 +12,20 @@ import Pagination from './library/components/Pagination/Pagination';
 import CheckboxListFilter from './library/components/CheckboxListFilter/CheckboxListFilter';
 import DropDownFilter from './library/components/DropDownFilter/DropDownFilter';
 import PromotedLinks from './library/components/PromotedLinks/PromotedLinks';
+import RelatedEvents from './library/components/RelatedEvents/RelatedEvents';
+import ResponsiveImage from './library/components/ResponsiveImage/ResponsiveImage';
 import StaticMap from './library/components/StaticMap/StaticMap';
+import SummaryList from './library/components/SummaryList/SummaryList';
 import TextInput from './library/components/TextInput/TextInput';
 import ToggleButtons from './library/components/ToggleButtons/ToggleButtons';
+import QuickExit from './library/components/QuickExit/QuickExit';
 
 export {
   Autocomplete,
   BackToTop,
   Button,
   DynamicIcon,
+  EventDetails,
   Heading,
   HeadingWithIcon,
   Map,
@@ -28,7 +34,11 @@ export {
   CheckboxListFilter,
   DropDownFilter,
   PromotedLinks,
+  RelatedEvents,
+  ResponsiveImage,
+  QuickExit,
   StaticMap,
+  SummaryList,
   TextInput,
   ToggleButtons,
 };
@@ -47,6 +57,7 @@ import Image from './library/slices/Image/Image';
 import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import InquestSchedule from './library/slices/InquestSchedule/InquestSchedule';
 import Promotions from './library/slices/Promotions/Promotions';
+import RecyclingInformation from './library/slices/RecyclingInformation/RecyclingInformation';
 import RoadworksList from './library/slices/RoadworksList/RoadworksList';
 import SearchBox from './library/slices/SearchBox/SearchBox';
 import Video from './library/slices/Video/Video';
@@ -68,6 +79,7 @@ export {
   ImageAndText,
   InquestSchedule,
   Promotions,
+  RecyclingInformation,
   RoadworksList,
   SearchBox,
   Video,

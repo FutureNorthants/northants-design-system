@@ -148,11 +148,8 @@ export const CallToActionLink = styled.a`
   &:hover,
   &:focus {
     text-decoration-style: dotted;
-    text-shadow:
-      2px 2px 4px rgba(150, 150, 150, 0.5),
-      -2px 2px 4px rgba(150, 150, 150, 0.5),
-      2px -2px 4px rgba(150, 150, 150, 0.5),
-      -2px -2px 4px rgba(150, 150, 150, 0.5);
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
+      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5);
   }
   &:active {
     transform: translate(3px);
@@ -165,16 +162,17 @@ export const BreadcrumbLink = styled.a`
   color: ${(props) =>
     props.$backgroundBox ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.white};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   display: block;
 
-  &:hover,
+  &:hover {
+    ${(props) => props.theme.linkStylesHover};
+  }
   &:focus {
-    text-decoration-style: dashed;
-    text-shadow: ${(props) =>
-      props.$backgroundBox
-        ? 'none'
-        : `2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
-      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5)`};
+    ${(props) => props.theme.linkStylesFocus};
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
   }
 `;
 

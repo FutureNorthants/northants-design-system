@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { News, NewsProps } from './News';
+import { News } from './News';
 
 const meta: Meta<typeof News> = {
   title: 'Page Examples/News landing page example',

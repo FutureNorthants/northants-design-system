@@ -3,10 +3,12 @@ import AlertBanner from './AlertBanner/AlertBanner';
 import AlertBannerService from './AlertBannerService/AlertBannerService';
 import BackLink from './BackLink/BackLink';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import CludoSearch from './CludoSearch/CludoSearch';
 import Contents from './Contents/Contents';
 import ContentsNavigation from './ContentsNavigation/ContentsNavigation';
 import CookieBanner from './CookieBanner/CookieBanner';
 import DisplayDate from './DisplayDate/DisplayDate';
+import EventList from './EventList/EventList';
 import Footer from './Footer/Footer';
 import FullWidthContainer from './FullWidthContainer/FullWidthContainer';
 import Header from './Header/Header';
@@ -50,10 +52,12 @@ export {
   AlertBannerService,
   BackLink,
   Breadcrumbs,
+  CludoSearch,
   Contents,
   ContentsNavigation,
   CookieBanner,
   DisplayDate,
+  EventList,
   Footer,
   FullWidthContainer,
   Header,

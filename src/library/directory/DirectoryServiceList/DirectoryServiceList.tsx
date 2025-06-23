@@ -255,6 +255,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
                       url={`${directoryPath}/documents?search=${searchTerm}`}
                       text="View documents and resources"
                       primary={false}
+                      size="large"
                     />
                   </Column>
                 )}

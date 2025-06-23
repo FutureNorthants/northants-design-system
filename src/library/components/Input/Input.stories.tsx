@@ -63,3 +63,12 @@ export const ExampleHasError: Story = {
     isFullWidth: true,
   },
 };
+
+export const ExampleDateInput = Template.bind({});
+ExampleDateInput.args = {
+  name: 'exampleDateBox',
+  placeholder: 'Select a Date',
+  id: 'ExampleDataBox',
+  type: 'date',
+  minValue: new Date().toISOString().substring(0, 10),
+};

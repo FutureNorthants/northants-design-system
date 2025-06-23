@@ -10,6 +10,9 @@ import ToggleButtons from '../../components/ToggleButtons/ToggleButtons';
 
 export interface SearchResultsPageExampleProps {
   results: boolean;
+  cludoSearch?: boolean;
+  customerId?: number;
+  engineId?: number;
 }
 interface SearchResultProps {
   /**
@@ -34,7 +37,12 @@ interface SearchResultProps {
   service: string;
 }
 
-export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({ results }) => (
+export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> = ({
+  results,
+  cludoSearch = false,
+  customerId,
+  engineId,
+}) => (
   <>
     <PageStructures.Header hideSearchBar hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
@@ -48,43 +56,53 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
       />
       <PageStructures.PageMain>
         <Heading level={1} text="Search results" />
-        <Searchbar
-          isLight={true}
-          isLarge={true}
-          searchTerm="council tax"
-          submitInfo={{
-            postTo: '/search',
-            params: {
-              type: 'search',
-              searchTerm: 'council tax',
-            },
-          }}
-        />
+        {cludoSearch && customerId && engineId ? (
+          <PageStructures.CludoSearch customerId={customerId} engineId={engineId} />
+        ) : (
+          <>
+            <Searchbar
+              isLight={true}
+              isLarge={true}
+              searchTerm="council tax"
+              submitInfo={{
+                postTo: '/search',
+                params: {
+                  type: 'search',
+                  searchTerm: 'council tax',
+                },
+              }}
+            />
 
-        <ToggleButtons
-          buttons={[
-            {
-              label: 'Service results',
-              ariaLabel: 'View the service results',
-              onClick: () => {},
-            },
-            {
-              label: 'News results',
-              ariaLabel: 'View the news results',
-              onClick: () => {},
-            },
-          ]}
-          defaultButton={0}
-          hasTopMargin
-        />
+            <ToggleButtons
+              buttons={[
+                {
+                  label: 'Service results',
+                  ariaLabel: 'View the service results',
+                  onClick: () => {},
+                },
+                {
+                  label: 'News results',
+                  ariaLabel: 'View the news results',
+                  onClick: () => {},
+                },
+              ]}
+              defaultButton={0}
+              hasTopMargin
+            />
 
-        {results ? <SearchResultsList {...searchResultsWithServiceArea} /> : <SearchResultsList {...noSearchResults} />}
+            {results ? (
+              <SearchResultsList {...searchResultsWithServiceArea} />
+            ) : (
+              <SearchResultsList {...noSearchResults} />
+            )}
 
-        {results && (
-          <Pagination
-            currentPage={searchResultsWithServiceArea.pageNumber}
-            totalResults={searchResultsWithServiceArea.totalResults}
-          />
+            {results && (
+              <Pagination
+                currentPage={searchResultsWithServiceArea.pageNumber}
+                totalResults={searchResultsWithServiceArea.totalResults}
+              />
+            )}
+          </>
         )}
       </PageStructures.PageMain>
     </PageStructures.MaxWidthContainer>
