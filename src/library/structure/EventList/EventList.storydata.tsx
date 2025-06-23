@@ -10,6 +10,31 @@ export const ExampleEventListResults: EventListProps = {
     { title: 'Bins, recycling and waste', value: 'bins' },
     { title: 'Council tax', value: 'council-tax' },
   ],
+  eventTypes: [
+    { title: 'Children and families', value: 'children-and-families' },
+    { title: 'Young adults', value: 'young-adults' },
+    { title: 'Jobseekers', value: 'jobseekers' },
+  ],
+  cards: [
+    {
+      imageLarge: 'https://discover-northamptonshire.co.uk/wp-content/colours/logo-online.png',
+      imageSmall: 'https://discover-northamptonshire.co.uk/wp-content/colours/logo-online.png',
+      imageAltText: 'Discover Northamptonshire',
+      footerLink: {
+        url: 'https://discover-northamptonshire.co.uk/whats-on-online/',
+        title: 'Discover Northamptonshire',
+      },
+    },
+    {
+      imageLarge: 'https://www.northamptonmuseums.com/site/images/N_and_A_LARGE_1.png',
+      imageSmall: 'https://www.northamptonmuseums.com/site/images/N_and_A_LARGE_1.png',
+      imageAltText: 'Northampton Museums',
+      footerLink: {
+        url: 'https://www.northamptonmuseums.com/whatson',
+        title: 'Northampton Museums',
+      },
+    },
+  ],
   results: [
     {
       id: '1',
@@ -20,9 +45,9 @@ export const ExampleEventListResults: EventListProps = {
       startTime: '16 August 2024 10:00:00',
       endTime: '16 August 2024 11:00:00',
       url: '/events/1',
-      // imageLarge: 'https://via.placeholder.com/720x405?text=Event+image',
-      // imageSmall: 'https://via.placeholder.com/360x203',
-      // imageAltText: 'The example images alt text',
+      imageLarge: 'https://picsum.photos/id/20/720/405',
+      imageSmall: 'https://picsum.photos/id/20/144/81',
+      imageAltText: 'The example images alt text',
       location: 'One Angel Square',
       email: 'example@westnorthants.gov.uk',
       website: 'https://www.westnorthants.gov.uk',

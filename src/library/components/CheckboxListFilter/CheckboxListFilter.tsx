@@ -11,6 +11,7 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
   hint = null,
   displayLegend,
   hintId = 'hint',
+  onChange,
 }) => {
   let labelHidden = label === null || !displayLegend ? true : false;
   let hintHidden = hint === null ? true : false;
@@ -38,7 +39,11 @@ const CheckboxListFilter: React.FunctionComponent<CheckboxListFilterProps> = ({
     checked = newCheckboxState.filter((c) => c.checked === true);
 
     let articleTypes = checked.map((c) => c.value).join(',');
-    handleParams('news', [{ key: NewsArticleFilterFields.articleType.queryParamKey, value: articleTypes }], ['page']);
+    if (onChange) {
+      onChange(articleTypes);
+    } else {
+      handleParams('news', [{ key: NewsArticleFilterFields.articleType.queryParamKey, value: articleTypes }], ['page']);
+    }
   };
 
   const backupLabel = Math.random().toString(36).substring(7);
