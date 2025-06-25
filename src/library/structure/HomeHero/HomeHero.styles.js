@@ -40,8 +40,6 @@ export const StyledMaxWidthContainer = styled.div`
   z-index: 10;
   position: relative;
 
-  background-color: cyan;
-
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     margin-right: 30px;
     margin-left: 30px;
