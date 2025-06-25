@@ -61,11 +61,41 @@ export const Container = styled.div`
   }
 
   .wnc-cludo-facet-list {
-    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+      margin-bottom: 0;
+    }
 
     h3 {
       ${(props) => props.theme.theme_vars.h3};
       margin-top: 0;
+    }
+
+    // Facet clear button styles
+    button {
+      border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
+      border-radius: ${(props) => props.theme.theme_vars.border_radius};
+      padding: ${(props) =>
+        `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
+      color: ${(props) => props.theme.theme_vars.colours.action};
+      font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+      cursor: pointer;
+      background-color: ${(props) => props.theme.theme_vars.colours.white};
+      line-height: 1.5;
+      margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+
+      &:hover {
+        text-decoration: underline !important;
+        text-decoration-style: dotted !important;
+      }
+
+      &:focus {
+        ${(props) => props.theme.linkStylesFocus};
+      }
+
+      &:active {
+        ${(props) => props.theme.linkStylesActive};
+      }
     }
   }
 
@@ -108,6 +138,31 @@ export const Container = styled.div`
           }
         }
       }
+    }
+  }
+
+  .wnc-cludo-clear-facets {
+    border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
+    border-radius: ${(props) => props.theme.theme_vars.border_radius};
+    padding: ${(props) =>
+      `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`};
+    color: ${(props) => props.theme.theme_vars.colours.action};
+    font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+    cursor: pointer;
+    background-color: ${(props) => props.theme.theme_vars.colours.white};
+    line-height: 1.5;
+
+    &:hover {
+      text-decoration: underline !important;
+      text-decoration-style: dotted !important;
+    }
+
+    &:focus {
+      ${(props) => props.theme.linkStylesFocus};
+    }
+
+    &:active {
+      ${(props) => props.theme.linkStylesActive};
     }
   }
 
@@ -211,6 +266,7 @@ export const Container = styled.div`
 
   .wnc-cludo-result-link {
     font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+    word-break: break-all;
   }
 
   .wnc-cludo-pagination ul {

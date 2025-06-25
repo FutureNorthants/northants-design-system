@@ -2,6 +2,7 @@ import React from 'react';
 import { CludoSearchProps } from './CludoSearch.types';
 import * as Styles from './CludoSearch.styles';
 import {
+  ClearAllFacets,
   CludoSearchOptions,
   CludoWrapper,
   CustomResult,
@@ -16,6 +17,7 @@ import {
   ResultTitle,
   ResultUrl,
   StandardFacet,
+  useSearchResults,
 } from '@cludosearch/cludo-search-components/ssr';
 import CludoAutoComplete from './CludoAutocomplete';
 import Row from '../../components/Row/Row';
@@ -51,6 +53,8 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     '*',
   ];
 
+  const [searchResultsState, searchResultsDispatchers] = useSearchResults();
+
   return (
     <Styles.Container data-testid="CludoSearch">
       <CludoWrapper config={cludoSearchConfig}>
@@ -65,7 +69,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                 <StandardFacet
                   field="Category"
                   label="Show results from"
-                  hideClear
+                  hideClear={false}
                   hideCount={false}
                   hideSearchBar
                   hideShowMore
@@ -74,6 +78,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                   order={filterOrder}
                 />
               </FacetGroup>
+              <ClearAllFacets disableTheme={true} label="All services" className="wnc-cludo-clear-facets" />
             </Styles.MobileFacets>
             <ResultsList
               template={(currResult) => (
@@ -102,7 +107,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                 <StandardFacet
                   field="Category"
                   label="Show results from"
-                  hideClear
+                  hideClear={false}
                   hideCount={false}
                   hideSearchBar
                   hideShowMore
@@ -111,6 +116,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
                   order={filterOrder}
                 />
               </FacetGroup>
+              <ClearAllFacets disableTheme={true} label="All services" className="wnc-cludo-clear-facets" />
             </Styles.DesktopFacets>
           </Column>
         </Row>
