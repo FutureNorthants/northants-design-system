@@ -9,7 +9,7 @@ export const BackToTopButton = styled.button`
   position: fixed;
   bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  z-index: 2;
+  z-index: 20;
   background-color: ${(props) => props.theme.theme_vars.colours.action};
   color: ${(props) => props.theme.theme_vars.white};
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};

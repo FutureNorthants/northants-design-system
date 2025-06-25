@@ -69,7 +69,7 @@ export const Checkbox = styled.div`
 export const CheckboxInput = styled.input`
   cursor: pointer;
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: -2px;
   left: -2px;
   width: 44px;
