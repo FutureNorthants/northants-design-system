@@ -46,7 +46,17 @@ export const Container = styled.div`
     cursor: pointer;
 
     &:hover {
-      background-color: ${(props) => props.theme.theme_vars.action_dark};
+      background-color: ${(props) => props.theme.theme_vars.colours.action_dark};
+    }
+    &:focus,
+    &:active {
+      outline: none;
+      background-color: ${(props) => props.theme.theme_vars.colours.focus};
+      box-shadow: 0 0 0 2px ${(props) => props.theme.theme_vars.colours.focus},
+        0 0 0 4px ${(props) => props.theme.theme_vars.colours.black};
+      svg path {
+        fill: ${(props) => props.theme.theme_vars.colours.black} !important;
+      }
     }
 
     svg {
