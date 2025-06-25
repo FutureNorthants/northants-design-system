@@ -17,7 +17,6 @@ import {
   ResultTitle,
   ResultUrl,
   StandardFacet,
-  useSearchResults,
 } from '@cludosearch/cludo-search-components/ssr';
 import CludoAutoComplete from './CludoAutocomplete';
 import Row from '../../components/Row/Row';
@@ -52,8 +51,6 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     "Northamptonshire Children's Trust",
     '*',
   ];
-
-  const [searchResultsState, searchResultsDispatchers] = useSearchResults();
 
   return (
     <Styles.Container data-testid="CludoSearch">
