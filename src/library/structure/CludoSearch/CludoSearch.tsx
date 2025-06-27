@@ -52,6 +52,24 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     '*',
   ];
 
+  const Facets = () => (
+    <FacetGroup>
+      <StandardFacet
+        field="Category"
+        label="Show results from"
+        hideClear={true}
+        hideCount={false}
+        hideSearchBar
+        hideShowMore
+        className="wnc-cludo-facet-list"
+        exclude={['Documents']}
+        order={filterOrder}
+        includeAllResultsOption={true}
+        allResultsOptionLabel="All services"
+      />
+    </FacetGroup>
+  );
+
   return (
     <Styles.Container data-testid="CludoSearch">
       <CludoWrapper config={cludoSearchConfig}>
@@ -62,20 +80,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
         <Row>
           <Column small="full" medium="two-thirds" large="three-quarters">
             <Styles.MobileFacets>
-              <FacetGroup>
-                <StandardFacet
-                  field="Category"
-                  label="Show results from"
-                  hideClear={false}
-                  hideCount={false}
-                  hideSearchBar
-                  hideShowMore
-                  className="wnc-cludo-facet-list"
-                  exclude={['Documents']}
-                  order={filterOrder}
-                />
-              </FacetGroup>
-              <ClearAllFacets disableTheme={true} label="All services" className="wnc-cludo-clear-facets" />
+              <Facets />
             </Styles.MobileFacets>
             <ResultsList
               template={(currResult) => (
@@ -100,20 +105,7 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
           </Column>
           <Column small="full" medium="one-third" large="one-quarter">
             <Styles.DesktopFacets>
-              <FacetGroup>
-                <StandardFacet
-                  field="Category"
-                  label="Show results from"
-                  hideClear={false}
-                  hideCount={false}
-                  hideSearchBar
-                  hideShowMore
-                  className="wnc-cludo-facet-list"
-                  exclude={['Documents']}
-                  order={filterOrder}
-                />
-              </FacetGroup>
-              <ClearAllFacets disableTheme={true} label="All services" className="wnc-cludo-clear-facets" />
+              <Facets />
             </Styles.DesktopFacets>
           </Column>
         </Row>
