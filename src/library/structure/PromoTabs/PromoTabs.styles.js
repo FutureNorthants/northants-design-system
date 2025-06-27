@@ -52,11 +52,11 @@ export const TitleButton = styled.button`
   }
   &:focus {
     ${(props) => props.theme.linkStylesFocus};
-    z-index: 2;
+    z-index: 20;
   }
   &:active {
     ${(props) => props.theme.linkStylesActive};
-    z-index: 2;
+    z-index: 20;
   }
 `;
 

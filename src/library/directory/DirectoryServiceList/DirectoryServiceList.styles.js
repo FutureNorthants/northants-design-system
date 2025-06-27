@@ -240,7 +240,7 @@ export const ClearFilter = styled.div`
 export const TextLink = styled.button`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   position: relative;
-  z-index: 1;
+  z-index: 10;
   margin: 0;
   padding: 12.5px 0;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};

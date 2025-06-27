@@ -35,7 +35,7 @@ const headerThemeStyles = (props) => {
 export const Container = styled.header`
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 2;
+  z-index: 20;
 `;
 
 export const SearchContainer = styled.div`

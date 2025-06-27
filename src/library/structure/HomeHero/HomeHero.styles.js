@@ -10,8 +10,8 @@ export const Wrapper = styled.header`
     props.noBackground
       ? 'transparent'
       : props.theme.cardinal_name === 'north'
-        ? props.theme.theme_vars.colours.grey_light + '7a'
-        : props.theme.theme_vars.colours.white};
+      ? props.theme.theme_vars.colours.grey_light + '7a'
+      : props.theme.theme_vars.colours.white};
   position: relative;
 `;
 
@@ -37,7 +37,7 @@ export const StyledMaxWidthContainer = styled.div`
   ${(props) => props.theme.fontStyles}
   margin-right: 15px;
   margin-left: 15px;
-  z-index: 2;
+  z-index: 10;
   position: relative;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {

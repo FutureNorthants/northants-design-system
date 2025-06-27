@@ -19,7 +19,7 @@ export const AccordionControls = styled.div`
 export const OpenAllButton = styled.button`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
   position: relative;
-  z-index: 1;
+  z-index: 10;
   margin: 0;
   margin-bottom: 5px;
   padding-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
