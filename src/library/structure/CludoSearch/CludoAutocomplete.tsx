@@ -9,6 +9,7 @@ import {
 } from '@cludosearch/cludo-search-components/ssr';
 import * as Styles from './CludoSearch.styles';
 import { CludoAutoCompleteProps } from './CludoAutocomplete.types';
+import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 
 const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ hasMargin = true }) => {
   const [autocompleteState, autocompleteDispatchers] = useAutocomplete();
@@ -33,7 +34,15 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
       <SearchInput
         className="wnc-cludo-input"
         formId="search"
-        ariaLabel="Search the website"
+        attributes={{
+          submitButton: {
+            'aria-label': 'Submit button',
+          },
+          input: {
+            'aria-label': 'Search the website',
+          },
+        }}
+        submitIcon={<SearchIcon colourFill="#fff" />}
         onChange={handleChange}
         onSubmit={handleSubmit}
         onBlur={handleBlur}
