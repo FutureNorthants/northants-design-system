@@ -5,7 +5,7 @@ export const Container = styled.div`
   position: fixed;
   top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   right: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  z-index: 2;
+  z-index: 20;
 `;
 
 export const QuickExitButton = styled.button`

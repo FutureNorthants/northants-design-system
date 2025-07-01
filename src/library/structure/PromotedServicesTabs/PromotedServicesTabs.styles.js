@@ -100,7 +100,7 @@ export const TabMobile = styled.button`
     ${(props) => props.theme.linkStylesFocus};
     background: ${(props) => props.theme.theme_vars.colours.focus};
     position: relative;
-    z-index: 1;
+    z-index: 10;
   }
 
   &:active {

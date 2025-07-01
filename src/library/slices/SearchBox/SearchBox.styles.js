@@ -35,7 +35,7 @@ export const LinkContainer = styled.div`
 `;
 
 export const Inner = styled.div`
-  z-index: 2;
+  z-index: 20;
   position: relative;
   background-color: ${(props) =>
     props.theme.cardinal_name === 'west'

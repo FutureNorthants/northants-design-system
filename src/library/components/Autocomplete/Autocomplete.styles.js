@@ -38,7 +38,7 @@ export const AutocompleteLabel = styled.label`
 export const AutocompleteSuggestionList = styled.ul`
   position: absolute;
   display: block;
-  z-index: 1;
+  z-index: 50;
   width: auto;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   border-radius: ${(props) =>
