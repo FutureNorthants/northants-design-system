@@ -24,6 +24,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   hasNewsLink = false,
   hasDirectoryLink = false,
   accessibilityLink,
+  hasEventsLink = false,
   allServicesLink = '/',
   isHomepage = false,
   searchSuggestions = [],
@@ -163,8 +164,13 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                   {allServicesLink && (
                     <Styles.LinksItem>
                       <Styles.Link href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
-                        All services
+                        Services
                       </Styles.Link>
+                    </Styles.LinksItem>
+                  )}
+                  {hasEventsLink && (
+                    <Styles.LinksItem>
+                      <Styles.Link href="/events">Events</Styles.Link>
                     </Styles.LinksItem>
                   )}
                   {hasDirectoryLink && (

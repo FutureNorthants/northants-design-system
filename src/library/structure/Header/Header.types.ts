@@ -30,6 +30,11 @@ export interface HeaderProps {
   hasTranslate?: boolean;
 
   /**
+   * Should the header have an events link? Defaults to false.
+   */
+  hasEventsLink?: boolean;
+
+  /**
    * Link to the list of all services displayed at top right (#all-services anchor added to this)
    */
   allServicesLink?: string;
