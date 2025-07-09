@@ -161,16 +161,16 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                       <Styles.Link href="/news">News</Styles.Link>
                     </Styles.LinksItem>
                   )}
+                  {hasEventsLink && (
+                    <Styles.LinksItem>
+                      <Styles.Link href="/events">Events</Styles.Link>
+                    </Styles.LinksItem>
+                  )}
                   {allServicesLink && (
                     <Styles.LinksItem>
                       <Styles.Link href={isHomepage ? '#all-services' : allServicesLink + '#all-services'}>
                         Services
                       </Styles.Link>
-                    </Styles.LinksItem>
-                  )}
-                  {hasEventsLink && (
-                    <Styles.LinksItem>
-                      <Styles.Link href="/events">Events</Styles.Link>
                     </Styles.LinksItem>
                   )}
                   {hasDirectoryLink && (
