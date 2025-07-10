@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import CustomSearch from './CustomSearch';
-import { CustomSearchProps } from './CustomSearch.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleCustomSearchProps } from './CustomSearch.storydata';
 
-export default {
+const meta: Meta<typeof CustomSearch> = {
   title: 'Library/Components/CustomSearch',
   component: CustomSearch,
   parameters: {
@@ -15,17 +13,19 @@ export default {
   },
 };
 
-const Template: StoryFn<CustomSearchProps> = (args) => (
-  <SBPadding>
-    <CustomSearch {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof CustomSearch>;
 
-export const ExampleCustomSearch = Template.bind({});
-ExampleCustomSearch.args = ExampleCustomSearchProps;
+export const ExampleCustomSearch: Story = {
+  args: ExampleCustomSearchProps,
+};
 
-export const ExampleCustomSearchWithLabel = Template.bind({});
-ExampleCustomSearchWithLabel.args = { ...ExampleCustomSearchProps, hasHiddenLabel: false };
+export const ExampleCustomSearchWithLabel: Story = {
+  ...ExampleCustomSearch,
+  args: { ...ExampleCustomSearchProps, hasHiddenLabel: false },
+};
 
-export const ExampleCustomSearchWithId = Template.bind({});
-ExampleCustomSearchWithId.args = { ...ExampleCustomSearchProps, id: 'myCustomId' };
+export const ExampleCustomSearchWithId: Story = {
+  ...ExampleCustomSearch,
+  args: { ...ExampleCustomSearchProps, id: 'myCustomId' },
+};

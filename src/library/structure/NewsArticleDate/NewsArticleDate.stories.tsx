@@ -1,11 +1,9 @@
 import React from 'react';
 import NewsArticleDate from './NewsArticleDate';
-import { NewsArticleDateProps } from './NewsArticleDate.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof NewsArticleDate> = {
   title: 'Library/Structure/News Article Date',
   component: NewsArticleDate,
   parameters: {
@@ -15,22 +13,25 @@ export default {
   },
 };
 
-const Template: StoryFn<NewsArticleDateProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof NewsArticleDate>;
+
+export const Example: Story = {
+  args: {
+    text: '1614178638',
+    format: 'X',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <NewsArticleDate {...args} />
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  text: '1614178638',
-  format: 'X',
+  ),
 };
 
-export const OtherExample = Template.bind({});
-OtherExample.args = {
-  text: '15 January 2021',
-  format: 'DD MMMM YYYY',
+export const OtherExample: Story = {
+  ...Example,
+  args: {
+    text: '15 January 2021',
+    format: 'DD MMMM YYYY',
+  },
 };

@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Panel from './Panel';
-import { PanelProps } from './Panel.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof Panel> = {
   title: 'Library/Components/Panel',
   component: Panel,
   parameters: {
@@ -14,14 +12,12 @@ export default {
   },
 };
 
-const Template: StoryFn<PanelProps> = (args) => (
-  <SBPadding>
-    <Panel {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof Panel>;
 
-export const ExamplePanel = Template.bind({});
-ExamplePanel.args = {
-  heading: 'Application complete',
-  children: <p>Your reference number is ABC123.</p>,
+export const ExamplePanel: Story = {
+  args: {
+    heading: 'Application complete',
+    children: <p>Your reference number is ABC123.</p>,
+  },
 };

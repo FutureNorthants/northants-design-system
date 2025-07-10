@@ -1,21 +1,17 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PageWrapper from './PageWrapper';
-import { PageWrapperProps } from './PageWrapper.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PageWrapper> = {
   title: 'Library/Structure/PageWrapper',
   component: PageWrapper,
 };
 
-const Template: StoryFn<PageWrapperProps> = (args) => (
-  <SBPadding>
-    <PageWrapper {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof PageWrapper>;
 
-export const ExamplePageWrapper = Template.bind({});
-ExamplePageWrapper.args = {
-  colour: 'grey',
+export const ExamplePageWrapper: Story = {
+  args: {
+    colour: 'grey',
+  },
 };

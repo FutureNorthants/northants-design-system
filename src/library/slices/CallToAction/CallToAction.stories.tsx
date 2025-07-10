@@ -1,10 +1,8 @@
 import React from 'react';
 import CallToAction from './CallToAction';
-import { ButtonProps } from '../../components/Button/Button.types';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof CallToAction> = {
   title: 'Library/Slices/Call to action',
   component: CallToAction,
   parameters: {
@@ -14,49 +12,51 @@ export default {
   },
 };
 
-const Template: StoryFn<ButtonProps> = (args) => (
-  <SBPadding>
-    <CallToAction {...args} />
-  </SBPadding>
-);
-const Template2: StoryFn<ButtonProps> = (args) => (
-  <SBPadding>
-    <CallToAction {...args} />
-    <CallToAction primary text="Second button" url="#" />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof CallToAction>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Primary: Story = {
+  args: {
+    primary: true,
+    text: 'Button label',
+    url: 'https://futurenorthantswest.org/',
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  primary: false,
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Secondary: Story = {
+  args: {
+    primary: false,
+    text: 'Button label',
+    url: 'https://futurenorthantswest.org/',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Large: Story = {
+  args: {
+    size: 'large',
+    text: 'Button label',
+    url: 'https://futurenorthantswest.org/',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Small: Story = {
+  args: {
+    size: 'small',
+    text: 'Button label',
+    url: 'https://futurenorthantswest.org/',
+  },
 };
 
-export const MultipleBtns = Template2.bind({});
-MultipleBtns.args = {
-  primary: true,
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const MultipleBtns: Story = {
+  args: {
+    primary: true,
+    text: 'Button label',
+    url: 'https://futurenorthantswest.org/',
+  },
+  render: (args) => (
+    <>
+      <CallToAction {...args} />
+      <CallToAction primary text="Second button" url="#" />
+    </>
+  ),
 };

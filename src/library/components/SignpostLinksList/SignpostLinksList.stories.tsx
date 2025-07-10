@@ -1,11 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SignpostLinksList from './SignpostLinksList';
-import { SignpostLinksListProps } from './SignpostLinksList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof SignpostLinksList> = {
   title: 'library/Components/Signpost Links List',
+  component: SignpostLinksList,
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
@@ -13,57 +12,54 @@ export default {
   },
 };
 
-const Template: StoryFn<SignpostLinksListProps> = (args) => (
-  <SBPadding>
-    <SignpostLinksList {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SignpostLinksList>;
 
-export const NorthSignpostLinksExample = Template.bind({});
-
-NorthSignpostLinksExample.args = {
-  signpostLinksArray: [
-    {
-      sovereignCode: 1,
-      areaName: 'Corby',
-      url: '/',
-    },
-    {
-      sovereignCode: 3,
-      areaName: 'East Northamptonshire',
-      url: '/',
-    },
-    {
-      sovereignCode: 4,
-      areaName: 'Kettering',
-      url: '/',
-    },
-    {
-      sovereignCode: 7,
-      areaName: 'Wellingborough',
-      url: '/',
-    },
-  ],
+export const NorthSignpostLinksExample: Story = {
+  args: {
+    signpostLinksArray: [
+      {
+        sovereignCode: 1,
+        areaName: 'Corby',
+        url: '/',
+      },
+      {
+        sovereignCode: 3,
+        areaName: 'East Northamptonshire',
+        url: '/',
+      },
+      {
+        sovereignCode: 4,
+        areaName: 'Kettering',
+        url: '/',
+      },
+      {
+        sovereignCode: 7,
+        areaName: 'Wellingborough',
+        url: '/',
+      },
+    ],
+  },
 };
 
-export const WestSignpostLinksExample = Template.bind({});
-
-WestSignpostLinksExample.args = {
-  signpostLinksArray: [
-    {
-      sovereignCode: 2,
-      areaName: 'Daventry',
-      url: '/',
-    },
-    {
-      sovereignCode: 5,
-      areaName: 'Northampton',
-      url: '/',
-    },
-    {
-      sovereignCode: 6,
-      areaName: 'South Northamptonshire',
-      url: '/',
-    },
-  ],
+export const WestSignpostLinksExample: Story = {
+  args: {
+    signpostLinksArray: [
+      {
+        sovereignCode: 2,
+        areaName: 'Daventry',
+        url: '/',
+      },
+      {
+        sovereignCode: 5,
+        areaName: 'Northampton',
+        url: '/',
+      },
+      {
+        sovereignCode: 6,
+        areaName: 'South Northamptonshire',
+        url: '/',
+      },
+    ],
+  },
 };

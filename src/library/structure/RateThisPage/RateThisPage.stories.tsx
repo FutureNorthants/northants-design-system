@@ -1,11 +1,9 @@
 import React, { Suspense, useState } from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import RateThisPage from './RateThisPage';
-import { RateThisPageProps } from './RateThisPage.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
-export default {
+const meta: Meta<typeof RateThisPage> = {
   title: 'Library/Structure/Rate This Page',
   component: RateThisPage,
   parameters: {
@@ -19,34 +17,38 @@ export default {
   },
 };
 
-const Template: StoryFn<RateThisPageProps> = (args) => {
-  const [isLoading, setIsLoading] = useState(false);
-  return (
-    <SBPadding>
+export default meta;
+type Story = StoryObj<typeof RateThisPage>;
+
+export const ExampleRateThisPage: Story = {
+  args: {
+    onSubmit: (data) => alert(JSON.stringify(data)),
+    complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
+  },
+  render: (args) => {
+    const [isLoading, setIsLoading] = useState(false);
+    return (
       <MaxWidthContainer>
         <p>
           <strong>Note:</strong> Submitting the form will display the form data in an alert.
         </p>
         <RateThisPage {...args} isLoading={isLoading} setIsLoading={setIsLoading} />
       </MaxWidthContainer>
-    </SBPadding>
-  );
+    );
+  },
 };
 
-export const ExampleRateThisPage = Template.bind({});
-ExampleRateThisPage.args = {
-  onSubmit: (data) => alert(JSON.stringify(data)),
-  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
-};
-
-const SuccessTemplate: StoryFn<RateThisPageProps> = (args) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const onSubmit = (data) => {
-    setIsSuccess(true);
-  };
-  return (
-    <SBPadding>
+export const SuccessfulRateThisPage: Story = {
+  args: {
+    complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
+  },
+  render: (args) => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const onSubmit = (data) => {
+      setIsSuccess(true);
+    };
+    return (
       <MaxWidthContainer>
         <p>
           <strong>Note:</strong> Submitting the form will display the success message.
@@ -59,23 +61,21 @@ const SuccessTemplate: StoryFn<RateThisPageProps> = (args) => {
           isSuccessful={isSuccess}
         />
       </MaxWidthContainer>
-    </SBPadding>
-  );
+    );
+  },
 };
 
-export const SuccessfulRateThisPage = SuccessTemplate.bind({});
-SuccessfulRateThisPage.args = {
-  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
-};
-
-const ErrorTemplate: StoryFn<RateThisPageProps> = (args) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const onSubmit = (data) => {
-    setIsError(true);
-  };
-  return (
-    <SBPadding>
+export const ErrorRateThisPage: Story = {
+  args: {
+    complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
+  },
+  render: (args) => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const onSubmit = (data) => {
+      setIsError(true);
+    };
+    return (
       <MaxWidthContainer>
         <p>
           <strong>Note:</strong> Submitting the form will display the error message.
@@ -88,11 +88,6 @@ const ErrorTemplate: StoryFn<RateThisPageProps> = (args) => {
           isError={isError}
         />
       </MaxWidthContainer>
-    </SBPadding>
-  );
-};
-
-export const ErrorRateThisPage = ErrorTemplate.bind({});
-ErrorRateThisPage.args = {
-  complaintsFormLink: 'https://www.westnorthants.gov.uk/communicating-us/comments-compliments-and-complaints',
+    );
+  },
 };

@@ -1,8 +1,6 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Autocomplete from './Autocomplete';
-import { AutocompleteProps } from './Autocomplete.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { action } from '@storybook/addon-actions';
 import {
   EmptyWithHiddenLabelData,
@@ -12,7 +10,7 @@ import {
   SuggestionChosenData,
 } from './Autocomplete.storydata';
 
-export default {
+const meta: Meta<typeof Autocomplete> = {
   title: 'Library/Components/Autocomplete',
   component: Autocomplete,
   parameters: {
@@ -86,15 +84,18 @@ export default {
       table: { category: 'Input control' },
     },
     onChange: {
-      control: null,
+      control: undefined,
       table: { category: 'Events' },
     },
     onSelect: {
-      control: null,
+      control: undefined,
       table: { category: 'Events' },
     },
   },
 };
+
+export default meta;
+type Story = StoryObj<typeof Autocomplete>;
 
 function onSelectStub(selectedValue: string): void {
   action('selected')(selectedValue);
@@ -109,58 +110,64 @@ const CommonEventStubs = {
   onChange: onChangeStub,
 };
 
-const Template: StoryFn<AutocompleteProps> = (args) => (
-  <SBPadding>
-    <div style={{ width: '750px' }}>
-      <Autocomplete {...args} />
-    </div>
-  </SBPadding>
-);
-
 /**
  * Empty, i.e. default state of the Autocomplete component
  */
-export const EmptyWithHiddenLabel = Template.bind({});
-EmptyWithHiddenLabel.args = {
-  ...CommonEventStubs,
-  ...EmptyWithHiddenLabelData,
+export const EmptyWithHiddenLabel: Story = {
+  args: {
+    ...CommonEventStubs,
+    ...EmptyWithHiddenLabelData,
+  },
+  render: (args) => (
+    <div style={{ width: '750px' }}>
+      <Autocomplete {...args} />
+    </div>
+  ),
 };
 
 /**
  * Autocomplete component with some text entered that doesn't match any suggestion
  */
-export const NoMatchingSuggestionEnlargedWithHiddenLabel = Template.bind({});
-NoMatchingSuggestionEnlargedWithHiddenLabel.args = {
-  ...CommonEventStubs,
-  ...NoMatchingSuggestionEnlargedWithHiddenLabelData,
+export const NoMatchingSuggestionEnlargedWithHiddenLabel: Story = {
+  ...EmptyWithHiddenLabel,
+  args: {
+    ...CommonEventStubs,
+    ...NoMatchingSuggestionEnlargedWithHiddenLabelData,
+  },
 };
 
 /**
  * Autocomplete component with some text entered that does match a suggestion,
  * with the list of suggestions shown.
  */
-export const DisplayingSuggestions = Template.bind({});
-DisplayingSuggestions.args = {
-  ...CommonEventStubs,
-  ...DisplayingSuggestionsData,
+export const DisplayingSuggestions: Story = {
+  ...EmptyWithHiddenLabel,
+  args: {
+    ...CommonEventStubs,
+    ...DisplayingSuggestionsData,
+  },
 };
 
 /**
  * Autocomplete component with some text entered that does match a suggestion,
  * with the list of suggestions shown, and isLarge mode on.
  */
-export const DisplayingSuggestionsLarge = Template.bind({});
-DisplayingSuggestionsLarge.args = {
-  ...CommonEventStubs,
-  ...DisplayingSuggestionsLargeData,
+export const DisplayingSuggestionsLarge: Story = {
+  ...EmptyWithHiddenLabel,
+  args: {
+    ...CommonEventStubs,
+    ...DisplayingSuggestionsLargeData,
+  },
 };
 
 /**
  * Autocomplete component with some text entered that matches a suggestion,
  * and the suggestion was chosen.
  */
-export const SuggestionChosen = Template.bind({});
-SuggestionChosen.args = {
-  ...CommonEventStubs,
-  ...SuggestionChosenData,
+export const SuggestionChosen: Story = {
+  ...EmptyWithHiddenLabel,
+  args: {
+    ...CommonEventStubs,
+    ...SuggestionChosenData,
+  },
 };

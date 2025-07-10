@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PinIcon from './PinIcon';
-import { PinIconProps } from './PinIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PinIcon> = {
   title: 'Library/Icons/Pin',
   component: PinIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<PinIconProps> = (args) => (
-  <SBPadding>
-    <PinIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof PinIcon>;
 
-export const ExampleHeartIcon = Template.bind({});
-ExampleHeartIcon.args = {
-  colourFill: '#111',
+export const ExampleHeartIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };
