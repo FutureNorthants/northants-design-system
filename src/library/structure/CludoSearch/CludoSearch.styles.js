@@ -303,7 +303,7 @@ export const AutocompleteList = styled.ul`
   margin-left: 0 !important;
 
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   background: ${(props) => props.theme.theme_vars.colours.white};
 
   li {

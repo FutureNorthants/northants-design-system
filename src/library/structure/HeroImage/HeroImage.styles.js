@@ -41,7 +41,7 @@ export const ImageContainer = styled.div`
     content: '';
     background: ${(props) =>
       !props.$backgroundBox ? `linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75))` : ``};
-    z-index: 2;
+    z-index: 20;
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@ export const InnerContainer = styled.div`
   margin-left: auto;
   flex-grow: 1;
   position: relative;
-  z-index: 3;
+  z-index: 30;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     max-width: ${(props) => props.theme.theme_vars.breakpoints.l};
