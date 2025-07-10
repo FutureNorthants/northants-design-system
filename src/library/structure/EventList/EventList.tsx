@@ -11,6 +11,8 @@ import EventLink from '../../components/EventLink/EventLink';
 import { transformSnippet } from '../../directory/DirectoryService/DirectoryServiceTransform';
 import Heading from '../../components/Heading/Heading';
 import FormButton from '../../components/FormButton/FormButton';
+import Card from '../../components/Card/Card';
+import CheckboxListFilter from '../../components/CheckboxListFilter/CheckboxListFilter';
 
 const EventList: React.FunctionComponent<EventListProps> = ({
   results,
@@ -19,10 +21,13 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   setSortBy,
   totalResults = 0,
   services,
+  eventTypes,
   eventSearch = '',
   setEventSearch,
   service = '',
   setService,
+  eventType = [''],
+  setEventType,
   startDate = '',
   setStartDate,
   endDate = '',
@@ -30,6 +35,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   onSubmit,
   clearFilters,
   eventsPagePath = '/events',
+  cards,
 }) => {
   const [showFilters, setShowFilters] = useState(false);
   const sortByOptions: DropDownSelectOptionsProps[] = [
@@ -68,7 +74,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 value={eventSearch}
                 onChange={(e) => setEventSearch(e.target.value)}
               />
-              <Styles.ServiceSelect>
+              <Styles.SelectContainer>
                 <DropDownSelect
                   label="Services"
                   options={services ? services : [{ title: 'All services', value: 'all' }]}
@@ -76,7 +82,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                   value={service}
                   isFullWidth
                 />
-              </Styles.ServiceSelect>
+              </Styles.SelectContainer>
 
               <label htmlFor="startDate">Start Date</label>
               <Input
@@ -101,12 +107,37 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
               />
+
+              {eventTypes && (
+                <Styles.SelectContainer>
+                  <CheckboxListFilter
+                    label="This event is for"
+                    hint={null}
+                    options={eventTypes}
+                    checked={eventType}
+                    displayLegend={true}
+                    onChange={setEventType}
+                  />
+                </Styles.SelectContainer>
+              )}
               <FormButton text="Search" size="large" />
             </form>
             {(eventSearch || startDate || endDate || service) && (
               <Styles.ClearFilters onClick={() => clearFilters()}>Clear filters</Styles.ClearFilters>
             )}
           </Styles.FilterContainer>
+          {cards && (
+            <Row>
+              <Column small="full" medium="full" large="full">
+                <Heading text="Other events" level={2} />
+              </Column>
+              {cards?.map((card, index) => (
+                <Column small="full" medium="full" large="full" key={index}>
+                  <Card {...card} />
+                </Column>
+              ))}
+            </Row>
+          )}
         </Column>
         <Column small="full" medium="two-thirds" large="two-thirds">
           <Styles.EventListHeader>
