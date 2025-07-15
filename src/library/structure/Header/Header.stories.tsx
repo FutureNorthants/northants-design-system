@@ -48,6 +48,7 @@ HeaderExample.args = {
   hideSearchBar: false,
   searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
   hasTranslate: true,
+  hasEventsLink: true,
 };
 
 export const HeaderNoNewsExample = Template.bind({});
@@ -74,6 +75,7 @@ HeaderCludoSearch.args = {
   hideSearchBar: false,
   searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
   hasTranslate: true,
+  hasEventsLink: true,
   hasCludo: true,
   customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
   engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),

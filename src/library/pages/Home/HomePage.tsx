@@ -47,7 +47,9 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />}
+      {!showSearch && (
+        <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate hasEventsLink />
+      )}
       <PageStructures.HomeHero
         promotedLinksArray={promotedLinksArray}
         imagesArray={heroArray}

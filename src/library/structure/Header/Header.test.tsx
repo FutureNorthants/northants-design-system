@@ -97,4 +97,14 @@ describe('Header', () => {
 
     expect(translateDropdown).toBeVisible();
   });
+
+  it('should show the events link when true', () => {
+    props.hasEventsLink = true;
+
+    const { getByText } = renderComponent();
+
+    const eventsLink = getByText('Events');
+
+    expect(eventsLink).toHaveAttribute('href', '/events');
+  });
 });
