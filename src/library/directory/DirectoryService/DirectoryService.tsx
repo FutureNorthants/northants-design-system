@@ -21,6 +21,7 @@ import { useDirectoryShortListContext } from '../../contexts/DirectoryShortListP
 import Button from '../../components/Button/Button';
 import ServiceSocialLinks from '../ServiceSocialLinks/ServiceSocialLinks';
 import WarningText from '../../slices/WarningText/WarningText';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
   id,
@@ -47,7 +48,7 @@ const DirectoryService: React.FunctionComponent<DirectoryServiceProps> = ({
 }) => {
   const labelLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   const [notServer, setNotServer] = useState<boolean>(false);
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const {
     favourites: { favourites: favourites },
   } = useDirectoryShortListContext();

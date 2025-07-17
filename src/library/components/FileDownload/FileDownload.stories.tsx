@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import FileDownload from './FileDownload';
 import { FileDownloadProps } from './FileDownload.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

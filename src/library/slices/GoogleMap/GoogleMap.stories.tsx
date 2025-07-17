@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import GoogleMap from './GoogleMap';
 import { GoogleMapProps } from './GoogleMap.types';
 import * as storydata from './GoogleMap.storydata';

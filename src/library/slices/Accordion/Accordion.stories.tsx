@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Accordion from './Accordion';
 import { AccordionProps } from './Accordion.types';
 import Divider from './../Divider/Divider';

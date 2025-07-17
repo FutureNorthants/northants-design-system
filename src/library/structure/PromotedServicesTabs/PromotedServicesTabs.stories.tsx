@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import PromotedServicesTabs from './PromotedServicesTabs';
 import PromotedServicesTabContent from './PromotedServicesTabContent';
 import { PromotedServicesTabsProps } from './PromotedServicesTabs.types';

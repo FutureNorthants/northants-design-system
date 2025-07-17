@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import BackToTop from './BackToTop';
 import { BackToTopProps } from './BackToTop.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';

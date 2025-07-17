@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import Promotions from './Promotions';
 import { PromoBlockProps } from '../../structure/PromoBlock/PromoBlock.types';

@@ -12,6 +12,7 @@ import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import PromotedServicesTabs from '../PromotedServicesTabs/PromotedServicesTabs';
 import PromotedServicesTabContent from '../PromotedServicesTabs/PromotedServicesTabContent';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * The Hero that should appear at the top of the home page.
@@ -27,7 +28,7 @@ const HomeHero: React.FunctionComponent<HomeHeroProps> = ({
   showSearch = true,
   promotedServicesTabs,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [random, setRandom] = useState(999);
   const usingMemorialTheme =
     themeContext.theme_vars.theme_name === 'Memorial theme North' ||

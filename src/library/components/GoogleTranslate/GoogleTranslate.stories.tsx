@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import GoogleTranslate from './GoogleTranslate';
 import { GoogleTranslateProps } from './GoogleTranslate.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

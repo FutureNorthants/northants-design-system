@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Summary from './Summary';
 import { SummaryProps } from './Summary.types';
 import PageMain from '../../structure/PageMain/PageMain';

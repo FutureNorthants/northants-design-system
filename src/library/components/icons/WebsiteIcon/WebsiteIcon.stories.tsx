@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import WebsiteIcon from './WebsiteIcon';
 import { WebsiteIconProps } from './WebsiteIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';

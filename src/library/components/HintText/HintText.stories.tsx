@@ -1,7 +1,7 @@
 import React from 'react';
 import HintText from './HintText';
 import { HintTextProps } from './HintText.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 

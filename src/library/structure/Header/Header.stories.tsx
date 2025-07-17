@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 export default {
   title: 'Library/structure/Header',

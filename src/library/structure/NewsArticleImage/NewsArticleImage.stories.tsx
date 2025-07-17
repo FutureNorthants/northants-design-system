@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsArticleImage from './NewsArticleImage';
 import { NewsArticleImageProps } from './NewsArticleImage.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 

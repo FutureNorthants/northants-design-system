@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Cards from './Cards';
 import { CardsProps } from './Cards.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

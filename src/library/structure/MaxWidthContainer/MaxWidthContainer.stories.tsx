@@ -1,7 +1,7 @@
 import React from 'react';
 import MaxWidthContainer from './MaxWidthContainer';
 import { MaxWidthContainerProps } from './MaxWidthContainer.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 export default {
   title: 'Library/structure/Max width Container',

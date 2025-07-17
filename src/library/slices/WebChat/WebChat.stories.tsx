@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import WebChat from './WebChat';
 import { WebChatProps } from './WebChat.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

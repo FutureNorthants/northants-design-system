@@ -1,7 +1,7 @@
 import React from 'react';
 import FormWithLine from './FormWithLine';
 import { FormWithLineProps } from './FormWithLine.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 

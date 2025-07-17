@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import BackLink from './BackLink';
 import { BackLinkProps } from './BackLink.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

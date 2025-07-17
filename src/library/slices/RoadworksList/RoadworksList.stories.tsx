@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import RoadworksList from './RoadworksList';
 import { RoadworksListProps } from './RoadworksList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

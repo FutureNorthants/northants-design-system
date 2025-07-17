@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import ServiceLinksBoxed from './ServicesLinksBoxed';
 import { ServiceLinksBoxedProps } from './ServicesLinksBoxed.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

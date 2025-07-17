@@ -12,13 +12,14 @@ import TwitterIcon from '../../components/icons/TwitterIcon/Icon';
 import LinkedInIcon from '../../components/icons/LinkedInIcon/Icon';
 import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
 import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const Footer: React.FunctionComponent<FooterProps> = ({
   footerLinksArray = null,
   year = new Date().getFullYear(),
   hasTranslate = false,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
 
   return (
     <Styles.Container data-testid="Footer">

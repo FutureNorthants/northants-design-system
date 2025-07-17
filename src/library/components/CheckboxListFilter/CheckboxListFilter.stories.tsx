@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import CheckboxListFilter from './CheckboxListFilter';
 import { CheckboxListFilterProps } from './CheckboxListFilter.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

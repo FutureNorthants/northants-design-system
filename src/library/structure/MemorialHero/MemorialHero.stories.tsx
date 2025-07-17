@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MemorialHero from './MemorialHero';
 import { MemorialHeroProps } from './MemorialHero.types';
 import ServicesLinksList from '../ServicesLinksList/ServicesLinksList';

@@ -1,7 +1,7 @@
 import React from 'react';
 import FullWidthContainer from './FullWidthContainer';
 import { FullWidthContainerProps } from './FullWidthContainer.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 export default {
   title: 'Library/structure/Full width Container',

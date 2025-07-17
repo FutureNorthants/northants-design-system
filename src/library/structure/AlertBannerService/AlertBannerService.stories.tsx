@@ -1,7 +1,7 @@
 import React from 'react';
 import AlertBannerService from './AlertBannerService';
 import { AlertBannerServiceProps } from './AlertBannerService.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';
 

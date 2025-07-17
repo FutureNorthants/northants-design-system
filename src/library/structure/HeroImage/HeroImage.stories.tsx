@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from './HeroImage';
 import { HeroImageProps } from './HeroImage.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import {
   HeroImageExampleGradientData,
   HeroImageExampleBoxedData,

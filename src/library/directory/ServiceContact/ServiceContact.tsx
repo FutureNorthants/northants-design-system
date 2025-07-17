@@ -7,9 +7,10 @@ import WebsiteIcon from '../../components/icons/WebsiteIcon/WebsiteIcon';
 import EmailIcon from '../../components/icons/EmailIcon/EmailIcon';
 import PhoneIcon from '../../components/icons/PhoneIcon/PhoneIcon';
 import { ThemeContext } from 'styled-components';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const ServiceContact: React.FunctionComponent<ServiceContactComponentProps> = ({ website, email, contacts }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
 
   return (
     <Styles.Container data-testid="ServiceContact">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import NewsArticleFeaturedBlock from './NewsArticleFeaturedBlock';
 import { NewsArticleFeaturedBlockProps } from './NewsArticleFeaturedBlock.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';

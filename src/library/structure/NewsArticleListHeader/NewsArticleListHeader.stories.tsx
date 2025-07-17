@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import NewsArticleListHeader from './NewsArticleListHeader';
 import { NewsArticleListHeaderProps } from './NewsArticleListHeader.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

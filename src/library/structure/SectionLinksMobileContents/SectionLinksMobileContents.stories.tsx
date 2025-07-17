@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import SectionLinksMobileContents from './SectionLinksMobileContents';
 import { SectionLinksMobileContentsProps } from './SectionLinksMobileContents.types';
 import PageMain from '../PageMain/PageMain';

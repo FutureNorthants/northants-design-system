@@ -1,7 +1,7 @@
 import React from 'react';
 import PageMain from './PageMain';
 import { PageMainProps } from './PageMain.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 export default {
   title: 'Library/structure/Page Main Container',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import SectionLinksSidebar from './SectionLinksSidebar';
 import { SectionLinksSidebarProps } from './SectionLinksSidebar.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

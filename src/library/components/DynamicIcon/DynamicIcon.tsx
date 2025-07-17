@@ -2,23 +2,24 @@ import React, { useContext } from 'react';
 import { DynamicIconProps } from './DynamicIcon.types';
 import * as Styles from './DynamicIcon.styles';
 import serviceIcons from '../../components/icons/services/ServicesIcons';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext, useTheme } from 'styled-components';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * Display a dynamic service icon with hover effect
  */
 const DynamicIcon: React.FunctionComponent<DynamicIconProps> = ({ level, icon }) => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useTheme() as GeneratedTheme;
 
   const DynamicComponent = ({ name, isHover = false }) => {
     let DynamicServiceIcon;
     if (name === 'culture') {
-      let newName = name + themeContext.cardinal_name;
+      let newName = name + theme.cardinal_name;
       DynamicServiceIcon = serviceIcons[newName + (isHover ? 'Hover' : '')];
     } else {
       DynamicServiceIcon = serviceIcons[name + (isHover ? 'Hover' : '')];
     }
-    return <DynamicServiceIcon colourFill={themeContext.theme_vars.colours.action_dark} />;
+    return <DynamicServiceIcon colourFill={theme.theme_vars.colours.action_dark} />;
   };
 
   return (

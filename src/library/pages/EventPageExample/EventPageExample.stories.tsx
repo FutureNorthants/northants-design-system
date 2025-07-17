@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import { EventPageExample, EventPageExampleProps } from './EventPageExample';
 import { ExampleEventListResults } from '../../structure/EventList/EventList.storydata';
 
