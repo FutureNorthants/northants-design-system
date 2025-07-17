@@ -4,6 +4,7 @@ import { HomePageProps } from './HomePage.types';
 import { ThemeContext } from 'styled-components';
 import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
 import Heading from '../../components/Heading/Heading';
+import BackToTop from '../../components/BackToTop/BackToTop';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -46,7 +47,9 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
         {alertBannerContent}
       </PageStructures.AlertBanner>
 
-      {!showSearch && <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />}
+      {!showSearch && (
+        <PageStructures.Header hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate hasEventsLink />
+      )}
       <PageStructures.HomeHero
         promotedLinksArray={promotedLinksArray}
         imagesArray={heroArray}
@@ -75,6 +78,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
       </PageStructures.MaxWidthContainer>
 
       <PageStructures.Footer footerLinksArray={footerLinksArray} />
+      <BackToTop isActive />
     </>
   );
 };

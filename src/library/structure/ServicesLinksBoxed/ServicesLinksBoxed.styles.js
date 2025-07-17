@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+  isolation: isolate;
 `;
 
 export const ServiceLink = styled.button`
@@ -72,7 +73,7 @@ export const ServiceHeading = styled.span`
   line-height: 1.25;
   ${(props) => props.theme.theme_vars.h3}
   margin-top: 0;
-  margin-bottom:0;
+  margin-bottom: 0;
 `;
 
 export const QuickLinksContainer = styled.div`
@@ -81,7 +82,7 @@ export const QuickLinksContainer = styled.div`
   overflow: hidden;
   top: auto;
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  z-index: 9;
+  z-index: 40;
   left: 0;
   right: 0;
   background: ${(props) => props.theme.theme_vars.colours.white};
