@@ -109,13 +109,23 @@ const MyComponent = () =>
 There is a util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can just run this command to generate all the files you need to start building out a new component. To use it:
 
 ```
-npm run generate NewComponentName
+npm run generate NewComponentName [<<ComponentType>>]
 ```
 
 This will generate:
 
 ```
-/src
+/src/library/components/
+  /NewComponentName
+    NewComponentName.tsx
+    NewComponentName.stories.tsx
+    NewComponentName.test.tsx
+    NewComponentName.types.ts
+    NewComponentName.styles.ts
+```
+
+```
+/src/library/<<ComponentType>>/
   /NewComponentName
     NewComponentName.tsx
     NewComponentName.stories.tsx

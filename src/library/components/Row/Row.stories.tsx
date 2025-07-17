@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Row from './Row';
-import { RowProps } from './Row.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof Row> = {
   title: 'Library/Components/Row',
   component: Row,
   parameters: {
@@ -14,16 +12,16 @@ export default {
   },
 };
 
-const Template: StoryFn<RowProps> = (args) => (
-  <SBPadding>
-    <Row {...args}>Some content</Row>
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof Row>;
 
-export const ExampleRow = Template.bind({});
-ExampleRow.args = {};
+export const ExampleRow: Story = {
+  render: (args) => <Row {...args}>Some content</Row>,
+};
 
-export const ExampleRowList = Template.bind({});
-ExampleRowList.args = {
-  isList: true,
+export const ExampleRowList: Story = {
+  ...ExampleRow,
+  args: {
+    isList: true,
+  },
 };

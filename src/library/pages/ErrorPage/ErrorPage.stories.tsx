@@ -1,8 +1,8 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { ErrorPage, ErrorPageProps } from './ErrorPage';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ErrorPage } from './ErrorPage';
 
-export default {
+const meta: Meta<typeof ErrorPage> = {
   title: 'Page Examples/Error Page',
   component: ErrorPage,
   parameters: {
@@ -10,29 +10,46 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
-
-const Template: StoryFn<ErrorPageProps> = (args) => <ErrorPage {...args} />;
-
-export const ErrorPage404 = Template.bind({});
-ErrorPage404.args = {
-  pageTitle: 'Page not found',
-  errorCode: 404,
 };
 
-export const ErrorPage403 = Template.bind({});
-ErrorPage403.args = {
-  pageTitle: 'This page is forbidden',
-  errorCode: 403,
-};
-export const ErrorPage401 = Template.bind({});
-ErrorPage401.args = {
-  pageTitle: 'This page is unauthorized',
-  errorCode: 401,
+export default meta;
+type Story = StoryObj<typeof ErrorPage>;
+
+export const ErrorPage404: Story = {
+  args: {
+    pageTitle: 'Page not found',
+    errorCode: 404,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const ErrorPage400 = Template.bind({});
-ErrorPage400.args = {
-  pageTitle: 'Bad request',
-  errorCode: 400,
+export const ErrorPage403: Story = {
+  args: {
+    pageTitle: 'This page is forbidden',
+    errorCode: 403,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+export const ErrorPage401: Story = {
+  args: {
+    pageTitle: 'This page is unauthorized',
+    errorCode: 401,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+
+export const ErrorPage400: Story = {
+  args: {
+    pageTitle: 'Bad request',
+    errorCode: 400,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };

@@ -1,13 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DirectoryShortList from './DirectoryShortList';
-import { DirectoryShortListProps } from './DirectoryShortList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof DirectoryShortList> = {
   title: 'Library/Directory/DirectoryShortList',
   component: DirectoryShortList,
   parameters: {
@@ -17,8 +15,14 @@ export default {
   },
 };
 
-const Template: StoryFn<DirectoryShortListProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof DirectoryShortList>;
+
+export const ExampleDirectoryShortList: Story = {
+  args: {
+    directoryPath: '/directory',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <DirectoryShortListProvider>
@@ -26,16 +30,14 @@ const Template: StoryFn<DirectoryShortListProps> = (args) => (
         </DirectoryShortListProvider>
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleDirectoryShortList = Template.bind({});
-ExampleDirectoryShortList.args = {
-  directoryPath: '/directory',
+  ),
 };
 
-const TemplateWithKey: StoryFn<DirectoryShortListProps> = (args) => (
-  <SBPadding>
+export const ExampleDirectoryShortListWithCustomKey: Story = {
+  args: {
+    directoryPath: '/directory',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <DirectoryShortListProvider shortlistKey="ExampleKey">
@@ -43,10 +45,5 @@ const TemplateWithKey: StoryFn<DirectoryShortListProps> = (args) => (
         </DirectoryShortListProvider>
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleDirectoryShortListWithCustomKey = TemplateWithKey.bind({});
-ExampleDirectoryShortListWithCustomKey.args = {
-  directoryPath: '/directory',
+  ),
 };

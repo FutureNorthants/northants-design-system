@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import CouncilTaxAlphabeticalDirectory from './CouncilTaxAlphabeticalDirectory';
-import { CouncilTaxAlphabeticalDirectoryProps } from './CouncilTaxAlphabeticalDirectory.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { MaxWidthContainer, PageMain } from '../../structure/PageStructures';
 import { exampleBandings } from './CouncilTaxAlphabeticalDirectory.storydata';
 
-export default {
+const meta: Meta<typeof CouncilTaxAlphabeticalDirectory> = {
   title: 'Library/Slices/Council Tax Alphabetical Directory',
   component: CouncilTaxAlphabeticalDirectory,
   parameters: {
@@ -15,19 +13,19 @@ export default {
     },
   },
 };
+export default meta;
+type Story = StoryObj<typeof CouncilTaxAlphabeticalDirectory>;
 
-const Template: StoryFn<CouncilTaxAlphabeticalDirectoryProps> = (args) => (
-  <SBPadding>
+export const ExampleCouncilTaxAlphabeticalDirectory: Story = {
+  args: {
+    financialYear: '2022/23',
+    parishes: exampleBandings,
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <CouncilTaxAlphabeticalDirectory {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleCouncilTaxAlphabeticalDirectory = Template.bind({});
-ExampleCouncilTaxAlphabeticalDirectory.args = {
-  financialYear: '2022/23',
-  parishes: exampleBandings,
+  ),
 };

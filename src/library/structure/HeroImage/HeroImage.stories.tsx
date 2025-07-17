@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroImage from './HeroImage';
-import { HeroImageProps } from './HeroImage.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   HeroImageExampleGradientData,
   HeroImageExampleBoxedData,
@@ -10,7 +9,7 @@ import {
   HeroImageExampleBoxedWithCustomSearch,
 } from './HeroImage.storydata';
 
-export default {
+const meta: Meta<typeof HeroImage> = {
   title: 'Library/Structure/Hero Image',
   component: HeroImage,
   parameters: {
@@ -46,22 +45,35 @@ export default {
   },
 };
 
-const Template: StoryFn<HeroImageProps> = (args) => <HeroImage {...args}></HeroImage>;
+export default meta;
+type Story = StoryObj<typeof HeroImage>;
 
-export const HeroImageExampleBoxed = Template.bind({});
-HeroImageExampleBoxed.args = HeroImageExampleBoxedData;
-
-export const HeroImageExampleGradient = Template.bind({});
-HeroImageExampleGradient.args = HeroImageExampleGradientData;
-
-export const HeroImageExampleGradientTitleOnly = Template.bind({});
-HeroImageExampleGradientTitleOnly.args = {
-  headline: 'Example Microsite Title',
-  ...HeroImageExampleMicroSiteData,
+export const HeroImageExampleBoxed: Story = {
+  args: HeroImageExampleBoxedData,
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const HeroImageWithBreadcrumb = Template.bind({});
-HeroImageWithBreadcrumb.args = HeroImageExampleBoxedWithBreadcrumbData;
+export const HeroImageExampleGradient: Story = {
+  ...HeroImageExampleBoxed,
+  args: HeroImageExampleGradientData,
+};
 
-export const HeroImageWithCustomSearch = Template.bind({});
-HeroImageWithCustomSearch.args = HeroImageExampleBoxedWithCustomSearch;
+export const HeroImageExampleGradientTitleOnly: Story = {
+  ...HeroImageExampleBoxed,
+  args: {
+    headline: 'Example Microsite Title',
+    ...HeroImageExampleMicroSiteData,
+  },
+};
+
+export const HeroImageWithBreadcrumb: Story = {
+  ...HeroImageExampleBoxed,
+  args: HeroImageExampleBoxedWithBreadcrumbData,
+};
+
+export const HeroImageWithCustomSearch: Story = {
+  ...HeroImageExampleBoxed,
+  args: HeroImageExampleBoxedWithCustomSearch,
+};

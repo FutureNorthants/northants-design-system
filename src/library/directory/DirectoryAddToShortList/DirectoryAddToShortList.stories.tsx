@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DirectoryAddToShortList from './DirectoryAddToShortList';
-import { DirectoryAddToShortListProps } from './DirectoryAddToShortList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { DirectoryShortListProvider } from '../../contexts/DirectoryShortListProvider/DirectoryShortListProvider';
 
-export default {
+const meta: Meta<typeof DirectoryAddToShortList> = {
   title: 'Library/Directory/DirectoryAddToShortList',
   component: DirectoryAddToShortList,
   parameters: {
@@ -15,18 +13,19 @@ export default {
   },
 };
 
-const Template: StoryFn<DirectoryAddToShortListProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof DirectoryAddToShortList>;
+
+export const ExampleDirectoryAddToShortList: Story = {
+  args: {
+    id: 'abc111',
+    name: 'Service name',
+    snippet:
+      'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry,...',
+  },
+  render: (args) => (
     <DirectoryShortListProvider>
       <DirectoryAddToShortList {...args} />
     </DirectoryShortListProvider>
-  </SBPadding>
-);
-
-export const ExampleDirectoryAddToShortList = Template.bind({});
-ExampleDirectoryAddToShortList.args = {
-  id: 'abc111',
-  name: 'Service name',
-  snippet:
-    'West Northamptonshire Council is the single unitary council responsible for providing a range of public services to residents and businesses in the areas of Daventry,...',
+  ),
 };

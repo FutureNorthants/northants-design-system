@@ -1,13 +1,11 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ImageAndText from './ImageAndText';
-import { ImageAndTextProps } from './ImageAndText.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 import { ImageAndTextWithHeading } from './ImageAndText.storydata';
 
-export default {
+const meta: Meta<typeof ImageAndText> = {
   title: 'Library/Slices/ImageAndText',
   component: ImageAndText,
   parameters: {
@@ -17,21 +15,24 @@ export default {
   },
 };
 
-const Template: StoryFn<ImageAndTextProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof ImageAndText>;
+
+export const ExampleImageAndText: Story = {
+  args: ImageAndTextWithHeading,
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <ImageAndText {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
+  ),
+};
 
-export const ExampleImageAndText = Template.bind({});
-ExampleImageAndText.args = ImageAndTextWithHeading;
-
-export const ExampleImageAndTextWithoutHeading = Template.bind({});
-ExampleImageAndTextWithoutHeading.args = {
-  ...ImageAndTextWithHeading,
-  heading: undefined,
+export const ExampleImageAndTextWithoutHeading: Story = {
+  ...ExampleImageAndText,
+  args: {
+    ...ImageAndTextWithHeading,
+    heading: undefined,
+  },
 };

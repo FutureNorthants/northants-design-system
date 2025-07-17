@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import LoadingSpinner from './LoadingSpinner';
-import { LoadingSpinnerProps } from './LoadingSpinner.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof LoadingSpinner> = {
   title: 'Library/Components/Loading Spinner',
   component: LoadingSpinner,
   parameters: {
@@ -14,11 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<LoadingSpinnerProps> = (args) => (
-  <SBPadding>
-    <LoadingSpinner {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof LoadingSpinner>;
 
-export const ExampleLoadingSpinner = Template.bind({});
-ExampleLoadingSpinner.args = {};
+export const ExampleLoadingSpinner: Story = {};

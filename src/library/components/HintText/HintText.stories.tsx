@@ -1,11 +1,9 @@
 import React from 'react';
 import HintText from './HintText';
-import { HintTextProps } from './HintText.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof HintText> = {
   title: 'Library/Components/Forms - Hint text',
   component: HintText,
   parameters: {
@@ -15,15 +13,16 @@ export default {
   },
 };
 
-const Template: StoryFn<HintTextProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof HintText>;
+
+export const Example: Story = {
+  args: {
+    text: 'Example hint text',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <HintText {...args} />
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  text: 'Example hint text',
+  ),
 };

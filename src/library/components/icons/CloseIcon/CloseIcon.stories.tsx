@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import CloseIcon from './CloseIcon';
-import { CloseIconProps } from './CloseIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof CloseIcon> = {
   title: 'Library/Icons/Close',
   component: CloseIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<CloseIconProps> = (args) => (
-  <SBPadding>
-    <CloseIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof CloseIcon>;
 
-export const ExampleCloseIcon = Template.bind({});
-ExampleCloseIcon.args = {
-  colourFill: '#111',
+export const ExampleCloseIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };

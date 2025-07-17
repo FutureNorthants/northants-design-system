@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import EmailIcon from './EmailIcon';
-import { EmailIconProps } from './EmailIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof EmailIcon> = {
   title: 'Library/Icons/Email',
   component: EmailIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<EmailIconProps> = (args) => (
-  <SBPadding>
-    <EmailIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof EmailIcon>;
 
-export const ExampleEmailIcon = Template.bind({});
-ExampleEmailIcon.args = {
-  colourFill: '#333',
+export const ExampleEmailIcon: Story = {
+  args: {
+    colourFill: '#333',
+  },
 };
