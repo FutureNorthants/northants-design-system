@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import PostCodeAddressTable from './PostCodeAddressTable';
 import { PostCodeAddressTableProps } from './PostCodeAddressTable.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Map from './Map';
 import { MapProps } from './Map.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

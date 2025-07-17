@@ -1,7 +1,7 @@
 import React from 'react';
 import TextInput from './TextInput';
 import { TextInputProps } from './TextInput.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 
 export default {

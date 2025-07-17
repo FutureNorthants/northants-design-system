@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import DropDownFilter from './DropDownFilter';
 import { DropDownFilterProps } from './DropDownFilter.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

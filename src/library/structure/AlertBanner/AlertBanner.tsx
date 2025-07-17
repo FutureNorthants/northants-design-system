@@ -6,12 +6,13 @@ import * as Styles from './AlertBanner.styles';
 import CloseIcon from '../../components/icons/CloseIcon/CloseIcon';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import useLocalStorage from '../../helpers/UseLocalStorage';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * A site wide alert banner, once dismissed it won't be shown again
  */
 const AlertBanner: React.FunctionComponent<AlertBannerProps> = ({ uid, title, alertType = 'alert', children }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const elementRef = useRef(null);
   const [showAlert, setShowAlert] = useLocalStorage('alert_' + uid, true);
   const [notServer, setNotServer] = useState(false);

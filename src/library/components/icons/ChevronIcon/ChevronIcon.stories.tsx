@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import ChevronIcon from './ChevronIcon';
 import { ChevronIconProps } from './ChevronIcon.types';
 import { SBPadding } from '../../../../../.storybook/SBPadding';

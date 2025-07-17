@@ -9,6 +9,7 @@ import LinkedInIcon from '../../components/icons/LinkedInIcon/Icon';
 import TwitterIcon from '../../components/icons/TwitterIcon/Icon';
 import YouTubeIcon from '../../components/icons/YouTubeIcon/Icon';
 import { ThemeContext } from 'styled-components';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const ServiceSocialLinks: React.FunctionComponent<ServiceSocialLinksProps> = ({ profiles }) => (
   <Styles.Container data-testid="ServiceSocialLinks">
@@ -26,7 +27,7 @@ const ServiceSocialLinks: React.FunctionComponent<ServiceSocialLinksProps> = ({ 
 );
 
 const getIcon = (profile: SocialProfile) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   switch (profile.social_network) {
     case 'facebook':
       return <FacebookIcon colourFill={themeContext.theme_vars.colours.black} />;

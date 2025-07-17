@@ -2,12 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import { RecyclingInformationProps } from './RecyclingInformation.types';
 import * as Styles from './RecyclingInformation.styles';
 import { ThemeContext } from 'styled-components';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  *  A 'recycling information' search & combo box
  */
 const RecyclingInformation: React.FunctionComponent<RecyclingInformationProps> = ({ clientId = 'westnorthants' }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
 
   useEffect(() => {
     const script = document.createElement('script');

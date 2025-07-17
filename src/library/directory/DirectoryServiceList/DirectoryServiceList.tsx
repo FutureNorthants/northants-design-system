@@ -21,6 +21,7 @@ import { transformSnippet, transformAge } from '../DirectoryService/DirectorySer
 import RadioCheckboxInput from '../../components/RadioCheckboxInput/RadioCheckboxInput';
 import Button from '../../components/Button/Button';
 import { AlertBannerService } from '../../structure/PageStructures';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> = ({
   directoryPath,
@@ -62,7 +63,7 @@ const DirectoryServiceList: React.FunctionComponent<DirectoryServiceListProps> =
   const [notServer, setNotServer] = useState(false);
   const [searchTerm, setSearchTerm] = useState(search);
   const [postcodeSearch, setPostcodeSearch] = useState(postcode);
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [filtersActive, setFiltersActive] = useState(false);
 
   useEffect(() => {

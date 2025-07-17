@@ -59,7 +59,7 @@ const Autocomplete: React.FunctionComponent<AutocompleteProps> = ({
    * Breaks the suggestion text up into bits that match the input and bits that
    * don't, so we can apply different styling to highlight the match(es).
    */
-  function getItemTextChunks(item: string, input: string): JSX.Element[] {
+  function getItemTextChunks(item: string, input: string): React.JSX.Element[] {
     const escapedInput = input.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
     let regex = new RegExp('(' + escapedInput + ')', 'ig');
     let chunks = item.split(regex);

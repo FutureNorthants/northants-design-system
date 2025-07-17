@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Breadcrumbs from './Breadcrumbs';
 import { BreadcrumbsProps } from './Breadcrumbs.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
