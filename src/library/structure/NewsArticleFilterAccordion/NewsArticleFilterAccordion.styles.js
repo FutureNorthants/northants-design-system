@@ -19,7 +19,7 @@ export const ShowFiltersButton = styled.button`
   padding: 0;
   margin: 0;
   ${(props) => props.theme.linkStyles}
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 5px;
   display: block;
 
@@ -53,7 +53,7 @@ const handleFullScreen = (props) => {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
+      z-index: 30;
       padding: 20px;
       box-sizing: border-box;
       overflow: auto;
@@ -95,8 +95,3 @@ export const FilterHeading = styled.h2`
     ${(props) => props.theme.theme_vars.h3}
   }
 `;
-
-// margin: 0;
-// padding: 0;
-// display: block;
-// overflow: hidden;
