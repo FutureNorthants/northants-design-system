@@ -15,9 +15,37 @@ export default {
 
 const Template: StoryFn<PhaseBannerProps> = (args) => <PhaseBanner {...args} />;
 
-export const PhaseBannerExample = Template.bind({});
+export const PhaseBannerExampleWithDefaults = Template.bind({});
 
-export const PhaseBannerHomeExample = Template.bind({});
-PhaseBannerHomeExample.args = {
+export const PhaseBannerHomeExampleWithDefaults = Template.bind({});
+PhaseBannerHomeExampleWithDefaults.args = {
   isHome: true,
+};
+
+export const PhaseBannerCustomTitleAndTextExample = Template.bind({});
+PhaseBannerCustomTitleAndTextExample.args = {
+  ...PhaseBannerExampleWithDefaults,
+  phaseTitle: 'Our trendy new website',
+  phaseText: "We're where it's at",
+};
+
+export const PhaseBannerCustomTitleAndTextHomeExample = Template.bind({});
+PhaseBannerCustomTitleAndTextHomeExample.args = {
+  ...PhaseBannerCustomTitleAndTextExample,
+  isHome: true,
+};
+
+export const PhaseBannerCustomisedWithHyperlinkExample = Template.bind({});
+PhaseBannerCustomisedWithHyperlinkExample.args = {
+  phaseTitle: 'New search',
+  phaseText: 'Let us know what you think!',
+  phaseLink: '#',
+};
+
+export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample = Template.bind({});
+PhaseBannerCustomisedHomeWithHyperlinkHomeExample.args = {
+  isHome: true,
+  phaseTitle: 'New search technology',
+  phaseText: 'Click here to let us know what you think!',
+  phaseLink: '#',
 };

@@ -13,6 +13,7 @@ export interface SearchResultsPageExampleProps {
   cludoSearch?: boolean;
   customerId?: number;
   engineId?: number;
+  includePhaseBanner?: boolean;
 }
 interface SearchResultProps {
   /**
@@ -42,10 +43,19 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
   cludoSearch = false,
   customerId,
   engineId,
+  includePhaseBanner = true,
 }) => (
   <>
     <PageStructures.Header hideSearchBar hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
     <PageStructures.MaxWidthContainer>
+      {includePhaseBanner && (
+        <PageStructures.PhaseBanner
+          isHome
+          phaseTitle="New Search technology"
+          phaseText="Click here to let us know what you think"
+          phaseLink="#"
+        />
+      )}
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[
           {
