@@ -19,8 +19,11 @@ export const ShowFiltersButton = styled.button`
   padding: 0;
   margin: 0;
   ${(props) => props.theme.linkStyles}
-  font-size: 1em;
-  margin-bottom: 5px;
+  font-size: 1.1em;
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: block;
 
   &:hover {
@@ -77,8 +80,8 @@ export const FilterHeader = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 40px;
-  padding-bottom: 10px;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     display: block;
