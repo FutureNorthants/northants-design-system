@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCodeAddressSearch from './PostCodeAddressSearch';
 import { PostCodeAddressSearchProps } from './PostCodeAddressSearch.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { PostCodeAddressProvider } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';

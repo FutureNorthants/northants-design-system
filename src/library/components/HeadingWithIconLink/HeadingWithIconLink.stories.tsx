@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import { HeadingWithIconLinkProps } from './HeadingWithIconLink.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import HeadingWithIconLink from './HeadingWithIconLink';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import DirectoryServiceList from './DirectoryServiceList';
 import { DirectoryServiceListProps } from './DirectoryServiceList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

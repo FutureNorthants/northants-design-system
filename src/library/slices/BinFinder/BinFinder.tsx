@@ -22,6 +22,7 @@ import Heading from '../../components/Heading/Heading';
 import { ThemeContext } from 'styled-components';
 import sanitizeHtml from 'sanitize-html';
 import { wereCookiesAccepted, getCookie } from '../../helpers/cookies';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 interface AddressOptionProps {
   title: string;
@@ -43,7 +44,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
   const [binCollections, setBinCollections] = useState<BinCollectionRecordProps[]>([]);
   const [selectAddressError, setSelectAddressError] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<string>('');
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [showFirstLine, setShowFirstLine] = useState<boolean>(false);
 
   const {
@@ -102,7 +103,9 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
     const formattedHouseNumber = data.houseNumber.trim();
 
     axios
-      .get<PostcodeResultsProps>(`${PostcodeSearchApiUrl}${formattedPostcode}?address=${formattedHouseNumber}&defaultSearch=false&recordLimit=50`)
+      .get<PostcodeResultsProps>(
+        `${PostcodeSearchApiUrl}${formattedPostcode}?address=${formattedHouseNumber}&defaultSearch=false&recordLimit=50`
+      )
       .then((response) => {
         setIsLoading(false);
 
@@ -251,7 +254,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
                         onChange={onChange}
                         value={value}
                         isErrored={errors.postcode ? true : false}
-                        autocomplete='postal-code'
+                        autocomplete="postal-code"
                         errorText={
                           !errors.postcode
                             ? ''
@@ -285,7 +288,7 @@ const BinFinder: React.FunctionComponent<BinFinderProps> = ({ title, contactInfo
                             value={value}
                             isErrored={errors.houseNumber ? true : false}
                             isFullWidth
-                            autocomplete='street-address'
+                            autocomplete="street-address"
                             errorText={
                               !errors.houseNumber
                                 ? ''

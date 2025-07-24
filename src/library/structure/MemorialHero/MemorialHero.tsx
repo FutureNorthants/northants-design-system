@@ -3,6 +3,7 @@ import { MemorialHeroProps } from './MemorialHero.types';
 import * as Styles from './MemorialHero.styles';
 import { ThemeContext, ThemeProvider } from 'styled-components';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const MemorialHero: React.FunctionComponent<MemorialHeroProps> = ({
   src,
@@ -12,7 +13,7 @@ const MemorialHero: React.FunctionComponent<MemorialHeroProps> = ({
   children,
   councilServices,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   return (
     <>
       <Styles.Wrapper aria-label="Memorial Hero">

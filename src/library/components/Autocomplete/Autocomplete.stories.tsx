@@ -1,9 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Autocomplete from './Autocomplete';
 import { AutocompleteProps } from './Autocomplete.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import {
   EmptyWithHiddenLabelData,
   NoMatchingSuggestionEnlargedWithHiddenLabelData,

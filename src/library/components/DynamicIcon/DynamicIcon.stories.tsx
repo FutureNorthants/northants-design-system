@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import DynamicIcon from './DynamicIcon';
 import { DynamicIconProps } from './DynamicIcon.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

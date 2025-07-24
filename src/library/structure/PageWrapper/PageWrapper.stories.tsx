@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import PageWrapper from './PageWrapper';
 import { PageWrapperProps } from './PageWrapper.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import ResponsiveImage from './ResponsiveImage';
 import { ResponsiveImageProps } from './ResponsiveImage.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

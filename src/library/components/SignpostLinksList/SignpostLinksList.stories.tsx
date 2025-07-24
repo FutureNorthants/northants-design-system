@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import SignpostLinksList from './SignpostLinksList';
 import { SignpostLinksListProps } from './SignpostLinksList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

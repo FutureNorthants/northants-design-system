@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { BackToTopProps } from './BackToTop.types';
 import * as Styles from './BackToTop.styles';
 import ChevronIcon from '../icons/ChevronIcon/ChevronIcon';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext, useTheme } from 'styled-components';
+import { GeneratedTheme, ThemeVars } from '../../../themes/ThemeVars.types';
 
 const BackToTop: React.FunctionComponent<BackToTopProps> = ({ isActive = false }) => {
-  const themeContext = useContext(ThemeContext);
+  // const themeContext = useContext(ThemeContext);
+  const theme = useTheme() as GeneratedTheme;
   const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
@@ -35,7 +37,7 @@ const BackToTop: React.FunctionComponent<BackToTopProps> = ({ isActive = false }
           type="button"
           aria-label="Go to the top of the page"
         >
-          <ChevronIcon colourFill={themeContext.theme_vars.colours.white} direction="up" />
+          <ChevronIcon colourFill={theme.theme_vars.colours.white} direction="up" />
         </Styles.BackToTopButton>
       )}
     </Styles.Container>

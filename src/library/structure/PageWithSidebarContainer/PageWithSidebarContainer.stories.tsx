@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWithSidebarContainer from './PageWithSidebarContainer';
 import { PageWithSidebarContainerProps } from './PageWithSidebarContainer.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 import PageMain from '../PageMain/PageMain';
 import PageSidebar from '../PageSidebar/PageSidebar';

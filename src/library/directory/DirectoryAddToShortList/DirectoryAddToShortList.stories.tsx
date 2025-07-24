@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import DirectoryAddToShortList from './DirectoryAddToShortList';
 import { DirectoryAddToShortListProps } from './DirectoryAddToShortList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

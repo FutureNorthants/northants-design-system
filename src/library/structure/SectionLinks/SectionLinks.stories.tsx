@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import SectionLinks from './SectionLinks';
 import { SectionLinksProps } from './SectionLinks.types';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
