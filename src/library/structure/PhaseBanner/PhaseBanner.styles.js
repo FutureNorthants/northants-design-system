@@ -9,6 +9,23 @@ export const Wrapper = styled.div`
         ? props.theme.theme_vars.colours.grey_dark
         : props.theme.theme_vars.colours.action
       : 'transparent'};
+
+  &:hover {
+    background-color: ${(props) =>
+      props.isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
+  }
+
+  &:hover a {
+    ${(props) => props.theme.linkStylesHover}
+
+    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+  }
+
+  &:focus a {
+    ${(props) => props.theme.linkStylesFocus}
+
+    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+  }
 `;
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
@@ -44,13 +61,6 @@ export const PhaseHyperlink = styled.a`
   &:visited {
     color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
     text-decoration: none;
-  }
-
-  &:hover {
-    ${(props) => props.theme.linkStylesHover}
-  }
-  &:focus {
-    ${(props) => props.theme.linkStylesFocus}
   }
 `;
 
