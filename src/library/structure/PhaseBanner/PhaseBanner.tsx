@@ -27,7 +27,7 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({
         </Styles.PhaseContainer>
         {phaseLink ? (
           <Styles.PhaseHyperlinkContainer>
-            {phaseText.map(spreadPhaseHyperlinksOverSeperateLines)}
+            {Array.isArray(phaseText) ? phaseText.map(spreadPhaseHyperlinksOverSeperateLines) : phaseText}
           </Styles.PhaseHyperlinkContainer>
         ) : (
           <Styles.PhaseText>{phaseText}</Styles.PhaseText>
