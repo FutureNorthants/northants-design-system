@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
   &:hover {
     background-color: ${(props) =>
-      props.isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
+      props.isHome ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.action_light};
   }
 
   &:hover a {
@@ -64,9 +64,18 @@ export const PhaseHyperlink = styled.a`
   }
 `;
 
+export const PhaseHyperlinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`;
+
 export const PhaseContainer = styled.div`
   padding: 5px 0;
-
+  border-color: green;
+  margin-top: auto;
+  margin-bottom: auto;
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     padding: 0;
   }

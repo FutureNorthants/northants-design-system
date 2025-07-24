@@ -8,21 +8,27 @@ import { ThemeContext } from 'styled-components';
 const PhaseBanner: React.FC<PhaseBannerProps> = ({
   isHome = false,
   phaseTitle = 'New website',
-  phaseText = 'This site is new and we are improving it every day.',
+  phaseText = ['This site is new and we are improving it every day.'],
   phaseLink = '',
 }) => {
   const themeContext = useContext(ThemeContext);
 
+  const spreadPhaseHyperlinksOverSeperateLines = (currentValue: string) => (
+    <Styles.PhaseHyperlink href={phaseLink} isHome={isHome}>
+      {currentValue}
+    </Styles.PhaseHyperlink>
+  );
+
   return (
     <Styles.Wrapper isHome={isHome}>
       <Styles.StyledMaxWidthContainer noPadding noBackground isHome={isHome}>
-        <Styles.PhaseContainer>
+        <Styles.PhaseContainer className="phaseContainer">
           <Styles.Phase isHome={isHome}>{phaseTitle}</Styles.Phase>
         </Styles.PhaseContainer>
         {phaseLink ? (
-          <Styles.PhaseHyperlink href={phaseLink} isHome={isHome}>
-            {phaseText}
-          </Styles.PhaseHyperlink>
+          <Styles.PhaseHyperlinkContainer>
+            {phaseText.map(spreadPhaseHyperlinksOverSeperateLines)}
+          </Styles.PhaseHyperlinkContainer>
         ) : (
           <Styles.PhaseText>{phaseText}</Styles.PhaseText>
         )}

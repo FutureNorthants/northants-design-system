@@ -3,7 +3,7 @@ export interface PhaseBannerProps {
 
   phaseTitle?: string;
 
-  phaseText?: string;
+  phaseText?: string[];
 
   phaseLink?: string;
 }
