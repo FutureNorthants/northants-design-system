@@ -51,6 +51,11 @@
   "resolutions": {
     "@storybook/react/webpack": "^5"
   },
+  "overrides": {
+    "react-hook-recaptcha": {
+      "react": "19.1.0"
+    }
+  },
   "devDependencies": {
     "@cludosearch/cludo-search-components": "^1.0.59",
     "@etchteam/storybook-addon-status": "^7.0.0",
