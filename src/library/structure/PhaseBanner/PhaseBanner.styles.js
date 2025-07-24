@@ -45,6 +45,13 @@ export const PhaseHyperlink = styled.a`
     color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
     text-decoration: none;
   }
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
 `;
 
 export const PhaseContainer = styled.div`
@@ -63,6 +70,7 @@ export const Phase = styled.div`
     props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action + '1A'};
   float: left;
   vertical-align: middle;
+  text-align: center;
   color: ${(props) => props.theme.theme_vars.colours.black};
   border-radius: 4px;
   cursor: default;
