@@ -1,3 +1,11 @@
 export interface PhaseBannerProps {
-    isHome?: boolean;
+  isHome?: boolean;
+
+  phaseTitle?: string;
+
+  phaseText?: string;
+
+  phaseLink?: string;
+
+  phaseHyperlinkText?: string;
 }

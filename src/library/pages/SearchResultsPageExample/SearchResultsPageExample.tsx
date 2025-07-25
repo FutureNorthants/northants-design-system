@@ -13,6 +13,7 @@ export interface SearchResultsPageExampleProps {
   cludoSearch?: boolean;
   customerId?: number;
   engineId?: number;
+  includePhaseBanner?: boolean;
 }
 interface SearchResultProps {
   /**
@@ -42,6 +43,7 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
   cludoSearch = false,
   customerId,
   engineId,
+  includePhaseBanner = true,
 }) => (
   <>
     <PageStructures.Header hideSearchBar hasDirectoryLink hasNewsLink accessibilityLink="/" hasTranslate />
@@ -54,6 +56,14 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
           },
         ]}
       />
+      {includePhaseBanner && (
+        <PageStructures.PhaseBanner
+          phaseTitle="Beta"
+          phaseText="You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback."
+          phaseLink="https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search"
+          phaseHyperlinkText="Click here to answer a questionnaire"
+        />
+      )}
       <PageStructures.PageMain>
         <Heading level={1} text="Search results" />
         {cludoSearch && customerId && engineId ? (
