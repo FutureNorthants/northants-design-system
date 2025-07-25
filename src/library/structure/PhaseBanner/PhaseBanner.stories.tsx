@@ -38,66 +38,18 @@ PhaseBannerCustomTitleAndTextHomeExample.args = {
 export const PhaseBannerCustomisedWithHyperlinkExample = Template.bind({});
 PhaseBannerCustomisedWithHyperlinkExample.args = {
   phaseTitle: 'New search',
-  phaseText: 'Let us know what you think!',
-  phaseLink: '#',
+  phaseText:
+    'You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
+  phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
+  phaseHyperlinkText: 'Click here to let us know what you think!',
 };
 
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample.args = {
+export const PhaseBannerCustomisedWithHyperlinkExample2 = Template.bind({});
+PhaseBannerCustomisedWithHyperlinkExample2.args = {
   isHome: true,
-  phaseTitle: 'New search technology',
-  phaseText: 'Click here to let us know what you think!',
-  phaseLink: '#',
-};
-
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample2 = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample2.args = {
   phaseTitle: 'New search',
   phaseText:
     'You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
   phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
-};
-
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample3 = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample3.args = {
-  phaseTitle: 'New search',
-  phaseText: [
-    'You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
-    'Click here to let us know what you think!',
-  ],
-  phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
-};
-
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample4 = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample4.args = {
-  isHome: true,
-  phaseTitle: 'New search',
-  phaseText: [
-    'You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
-    'Click here to let us know what you think!',
-  ],
-  phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
-};
-
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample5 = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample5.args = {
-  phaseTitle: 'New search',
-  phaseText: [
-    'You are using our new search experience.',
-    'We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
-    'Click here to let us know what you think!',
-  ],
-  phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
-};
-
-export const PhaseBannerCustomisedHomeWithHyperlinkHomeExample6 = Template.bind({});
-PhaseBannerCustomisedHomeWithHyperlinkHomeExample6.args = {
-  phaseTitle: 'New search',
-  phaseText: [
-    'You are using our new search experience.',
-    'We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback.',
-    'Click here to let us know what you think!',
-  ],
-  phaseLink: 'https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search',
-  isHome: true,
+  phaseHyperlinkText: 'Click here to let us know what you think!',
 };

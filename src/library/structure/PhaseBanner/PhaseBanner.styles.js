@@ -12,19 +12,7 @@ export const Wrapper = styled.div`
 
   &:hover {
     background-color: ${(props) =>
-      props.isHome ? props.theme.theme_vars.colours.action_dark : props.theme.theme_vars.colours.action_light};
-  }
-
-  &:hover a {
-    ${(props) => props.theme.linkStylesHover}
-
-    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-  }
-
-  &:focus a {
-    ${(props) => props.theme.linkStylesFocus}
-
-    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+      props.isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
   }
 `;
 
@@ -56,15 +44,27 @@ export const PhaseHyperlink = styled.a`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
 
   color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-  text-decoration: none;
+
+  font-size: 1.1em;
 
   &:visited {
     color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-    text-decoration: none;
+  }
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+
+    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+  }
+
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+
+    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
   }
 `;
 
-export const PhaseHyperlinkContainer = styled.div`
+export const PhaseContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;

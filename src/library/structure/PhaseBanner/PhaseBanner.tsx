@@ -10,6 +10,7 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({
   phaseTitle = 'New website',
   phaseText = ['This site is new and we are improving it every day.'],
   phaseLink = '',
+  phaseHyperlinkText = '',
 }) => {
   const themeContext = useContext(ThemeContext);
 
@@ -25,10 +26,14 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({
         <Styles.PhaseContainer className="phaseContainer">
           <Styles.Phase isHome={isHome}>{phaseTitle}</Styles.Phase>
         </Styles.PhaseContainer>
-        {phaseLink ? (
-          <Styles.PhaseHyperlinkContainer>
-            {Array.isArray(phaseText) ? phaseText.map(spreadPhaseHyperlinksOverSeperateLines) : phaseText}
-          </Styles.PhaseHyperlinkContainer>
+
+        {!!phaseLink && !!phaseHyperlinkText ? (
+          <Styles.PhaseContentContainer>
+            <Styles.PhaseText>{phaseText}</Styles.PhaseText>
+            <Styles.PhaseHyperlink href={phaseLink} isHome={isHome}>
+              {phaseHyperlinkText}
+            </Styles.PhaseHyperlink>
+          </Styles.PhaseContentContainer>
         ) : (
           <Styles.PhaseText>{phaseText}</Styles.PhaseText>
         )}
@@ -38,3 +43,13 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({
 };
 
 export default PhaseBanner;
+
+/* 
+        {!!phaseLink && !!phaseHyperlinkText ? <br /> : <Styles.PhaseText>{phaseText}</Styles.PhaseText>}
+          <Styles.PhaseHyperlinkContainer>
+            <Styles.PhaseText>{phaseText}</Styles.PhaseText>
+            <Styles.PhaseHyperlink href={phaseLink} isHome={isHome}>
+              {phaseHyperlinkText}
+            </Styles.PhaseHyperlink>
+          </Styles.PhaseHyperlinkContainer>
+          */
