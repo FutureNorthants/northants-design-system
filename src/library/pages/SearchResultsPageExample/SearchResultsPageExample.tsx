@@ -2,7 +2,6 @@ import React from 'react';
 import * as PageStructures from '../../structure/PageStructures';
 import Heading from '../../components/Heading/Heading';
 import SearchResultsList from '../../structure/SearchResultsList/SearchResultsList';
-import Searchbar from '../../structure/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
 import { SignpostLinkProp } from '../../components/SignpostLinksList/SignpostLinksList.types';
 import { noSearchResults, searchResultsWithServiceArea } from './../../structure/SearchResultsList/SearchResultsData';
@@ -60,7 +59,7 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
           <PageStructures.CludoSearch customerId={customerId} engineId={engineId} />
         ) : (
           <>
-            <Searchbar
+            <PageStructures.Searchbar
               isLight={true}
               isLarge={true}
               searchTerm="council tax"
