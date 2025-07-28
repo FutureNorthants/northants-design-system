@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+const apiKey: string = process?.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const Template: StoryFn<google.maps.MarkerOptions> = (args) => (
   <SBPadding>

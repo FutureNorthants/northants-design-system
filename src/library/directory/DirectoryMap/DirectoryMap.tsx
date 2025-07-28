@@ -9,7 +9,7 @@ import MapMarker from '../../components/MapMarker/MapMarker';
 
 const DirectoryMap: React.FunctionComponent<DirectoryMapProps> = ({ allowCookies, mapProps }) => {
   const cookiesAccepted: boolean = wereCookiesAccepted(allowCookies);
-  const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+  const apiKey: string = process?.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
   const latLong = mapProps.centre.split(',');
   const center: google.maps.LatLngLiteral = {
     lat: parseFloat(latLong[0]),
