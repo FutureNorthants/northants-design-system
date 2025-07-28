@@ -28,6 +28,6 @@ const Template: StoryFn<CludoSearchBarProps> = (args) => (
 
 export const ExampleCludoSearchBar = Template.bind({});
 ExampleCludoSearchBar.args = {
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
 };

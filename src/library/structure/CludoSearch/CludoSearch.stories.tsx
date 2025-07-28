@@ -29,6 +29,6 @@ const Template: StoryFn<CludoSearchProps> = (args) => (
 export const ExampleCludoSearch = Template.bind({});
 ExampleCludoSearch.args = {
   searchTerm: 'test',
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
 };

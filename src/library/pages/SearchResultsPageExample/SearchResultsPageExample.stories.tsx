@@ -1,9 +1,6 @@
 import React from 'react';
-// also exported from '@storybook/react-webpack5' if you can deal with breaking changes in 6.1
 import { StoryFn, Meta } from '@storybook/react-webpack5';
-
 import { SearchResultsPageExample, SearchResultsPageExampleProps } from './SearchResultsPageExample';
-import { isExpressionWithTypeArguments } from 'typescript';
 
 export default {
   title: 'Page Examples/Search Results Page Examples',
@@ -31,6 +28,6 @@ export const SearchResultsCludo = Template.bind({});
 SearchResultsCludo.args = {
   results: true,
   cludoSearch: true,
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
 };
