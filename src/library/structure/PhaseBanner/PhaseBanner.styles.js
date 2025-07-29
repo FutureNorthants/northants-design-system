@@ -67,8 +67,11 @@ export const PhaseContentContainer = styled.div`
   }
 
   p {
-    margin: 0;
-    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    visibility: middle;
   }
 `;
 

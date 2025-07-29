@@ -27,7 +27,7 @@ export const PhaseBannerCustomTitleAndTextExample = Template.bind({});
 PhaseBannerCustomTitleAndTextExample.args = {
   ...PhaseBannerExampleWithDefaults,
   phaseTitle: 'Our trendy new website',
-  phaseText: "We're where it's at",
+  children: <p>We're where it's at</p>,
 };
 
 export const PhaseBannerCustomTitleAndTextHomeExample = Template.bind({});

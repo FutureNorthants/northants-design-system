@@ -5,7 +5,11 @@ import * as Styles from './PhaseBanner.styles';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-const PhaseBanner: React.FC<PhaseBannerProps> = ({ isHome = false, phaseTitle = 'New website', children }) => {
+const PhaseBanner: React.FC<PhaseBannerProps> = ({
+  isHome = false,
+  phaseTitle = 'New website',
+  children = <p>This site is new and we are improving it every day.</p>,
+}) => {
   const themeContext = useContext(ThemeContext);
 
   return (
