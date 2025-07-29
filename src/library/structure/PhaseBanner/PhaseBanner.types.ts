@@ -1,11 +1,9 @@
+import * as React from 'react';
+
 export interface PhaseBannerProps {
   isHome?: boolean;
 
   phaseTitle?: string;
 
-  phaseText?: string;
-
-  phaseLink?: string;
-
-  phaseHyperlinkText?: string;
+  children?: React.ReactNode;
 }

@@ -3,7 +3,7 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 export const Wrapper = styled.div`
   background: ${(props) =>
-    props.isHome
+    props.$isHome
       ? props.theme.theme_vars.theme_name === 'Memorial theme North' ||
         props.theme.theme_vars.theme_name === 'Memorial theme West'
         ? props.theme.theme_vars.colours.grey_dark
@@ -12,22 +12,22 @@ export const Wrapper = styled.div`
 
   &:hover {
     background-color: ${(props) =>
-      props.isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
+      props.$isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
   }
 `;
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
-  padding-top: ${(props) => (props.isHome ? '5px' : '10px')};
-  padding-bottom: ${(props) => (props.isHome ? '5px' : '10px')};
-  border-bottom: ${(props) => (props.isHome ? 'none' : '1px solid ' + props.theme.theme_vars.colours.grey + '80')};
+  padding-top: ${(props) => (props.$isHome ? '5px' : '10px')};
+  padding-bottom: ${(props) => (props.$isHome ? '5px' : '10px')};
+  border-bottom: ${(props) => (props.$isHome ? 'none' : '1px solid ' + props.theme.theme_vars.colours.grey + '80')};
   display: flex;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   align-items: flex-start;
-  margin: ${(props) => (props.isHome ? '' : '0 auto !important')};
-  color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+  margin: ${(props) => (props.$isHome ? '' : '0 auto !important')};
+  color: ${(props) => (props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
 `;
 
 export const PhaseText = styled.span`
@@ -39,36 +39,37 @@ export const PhaseText = styled.span`
   }
 `;
 
-export const PhaseHyperlink = styled.a`
-  vertical-align: middle;
-  padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
-
-  color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-
-  font-size: 1.1em;
-
-  &:visited {
-    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-  }
-
-  &:hover {
-    ${(props) => props.theme.linkStylesHover}
-
-    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-  }
-
-  &:focus {
-    ${(props) => props.theme.linkStylesFocus}
-
-    color: ${(props) => (props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
-  }
-`;
-
 export const PhaseContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+  margin: 0 0 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
   padding: 0;
+
+  a {
+    color: ${(props) =>
+      props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black} !important;
+    &:hover {
+      ${(props) => props.theme.linkStylesHover}
+
+      color: ${(props) =>
+        props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black} !important;
+    }
+
+    &:focus {
+      ${(props) => props.theme.linkStylesFocus}
+
+      color: ${(props) =>
+        props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black} !important;
+    }
+
+    &:visited {
+      color: ${(props) =>
+        props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black} !important;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export const PhaseContainer = styled.div`
@@ -86,7 +87,7 @@ export const Phase = styled.div`
   padding: 2px 7px;
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   background: ${(props) =>
-    props.isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action + '1A'};
+    props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action + '1A'};
   float: left;
   vertical-align: middle;
   text-align: center;
