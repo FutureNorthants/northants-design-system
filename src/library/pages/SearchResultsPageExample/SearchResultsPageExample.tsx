@@ -57,12 +57,15 @@ export const SearchResultsPageExample: React.FC<SearchResultsPageExampleProps> =
         ]}
       />
       {includePhaseBanner && (
-        <PageStructures.PhaseBanner
-          phaseTitle="Beta"
-          phaseText="You are using our new search experience. We are still refining how this works so you may notice some changes. To help us improve it, we would love your feedback."
-          phaseLink="https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search"
-          phaseHyperlinkText="Click here to answer a questionnaire"
-        />
+        <PageStructures.PhaseBanner phaseTitle="Beta">
+          <p>
+            You are using our new search experience. We are still refining how this works so you may notice some
+            changes. To help us improve it,&nbsp;
+            <a href="https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search">
+              we would love your feedback
+            </a>
+          </p>
+        </PageStructures.PhaseBanner>
       )}
       <PageStructures.PageMain>
         <Heading level={1} text="Search results" />
