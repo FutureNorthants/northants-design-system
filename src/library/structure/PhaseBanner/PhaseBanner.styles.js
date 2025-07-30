@@ -26,9 +26,6 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
   -ms-flex-direction: row;
   flex-direction: row;
   align-items: flex-start;
-  /*
-  margin: ${(props) => (props.$isHome ? '' : '0 auto !important')};
-  */
   margin: auto;
   margin-left: 30px;
   margin-right: 30px;
@@ -39,11 +36,6 @@ export const PhaseText = styled.span`
   vertical-align: middle;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   cursor: default;
-
-  /*
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-  }
-  */
 `;
 
 export const PhaseContentContainer = styled.div`
@@ -88,16 +80,10 @@ export const PhaseContainer = styled.div`
   border-color: green;
   margin-top: auto;
   margin-bottom: auto;
-  /*
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    padding: 0;
-  }
-    */
 `;
 
 export const Phase = styled.div`
   font-weight: bold;
-  /* padding: 5px 10px; */
   padding: ${(props) => (props.$isHome ? '5px 10px' : '7px 12px')};
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   background: ${(props) =>
@@ -108,13 +94,4 @@ export const Phase = styled.div`
   color: ${(props) => props.theme.theme_vars.colours.black};
   border-radius: 5px;
   cursor: default;
-
-  /*
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: inline-block;
-    float: none;
-    margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
-
-    vertical-align: sub;
-  }*/
 `;
