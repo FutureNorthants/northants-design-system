@@ -26,7 +26,12 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
   -ms-flex-direction: row;
   flex-direction: row;
   align-items: flex-start;
+  /*
   margin: ${(props) => (props.$isHome ? '' : '0 auto !important')};
+  */
+  margin: auto;
+  margin-left: 30px;
+  margin-right: 30px;
   color: ${(props) => (props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
 `;
 
@@ -35,8 +40,10 @@ export const PhaseText = styled.span`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   cursor: default;
 
+  /*
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
   }
+  */
 `;
 
 export const PhaseContentContainer = styled.div`
@@ -69,8 +76,9 @@ export const PhaseContentContainer = styled.div`
   p {
     margin-top: auto;
     margin-bottom: auto;
-    padding-top: 5px;
+    padding-top: 9px;
     padding-bottom: 2px;
+    padding-left: 20px;
     visibility: middle;
   }
 `;
@@ -80,14 +88,17 @@ export const PhaseContainer = styled.div`
   border-color: green;
   margin-top: auto;
   margin-bottom: auto;
+  /*
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     padding: 0;
   }
+    */
 `;
 
 export const Phase = styled.div`
   font-weight: bold;
-  padding: 2px 7px;
+  /* padding: 5px 10px; */
+  padding: ${(props) => (props.$isHome ? '5px 10px' : '7px 12px')};
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   background: ${(props) =>
     props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action + '1A'};
@@ -95,14 +106,15 @@ export const Phase = styled.div`
   vertical-align: middle;
   text-align: center;
   color: ${(props) => props.theme.theme_vars.colours.black};
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: default;
 
+  /*
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     display: inline-block;
     float: none;
     margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
     vertical-align: sub;
-  }
+  }*/
 `;

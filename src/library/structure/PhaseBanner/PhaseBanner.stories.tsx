@@ -39,7 +39,7 @@ PhaseBannerCustomTitleAndTextHomeExample.args = {
 export const PhaseBannerCustomisedWithHyperlinkExample2 = Template.bind({});
 PhaseBannerCustomisedWithHyperlinkExample2.args = {
   isHome: true,
-  phaseTitle: 'New search',
+  phaseTitle: 'Beta',
   children: (
     <p>
       You are using our new search experience. We are still refining how this works so you may notice some changes. To
@@ -53,7 +53,7 @@ PhaseBannerCustomisedWithHyperlinkExample2.args = {
 
 export const PhaseBannerCustomisedWithHyperlinkExample3 = Template.bind({});
 PhaseBannerCustomisedWithHyperlinkExample3.args = {
-  phaseTitle: 'New search',
+  phaseTitle: 'Beta',
   children: (
     <p>
       You are using our new search experience. We are still refining how this works so you may notice some changes. To

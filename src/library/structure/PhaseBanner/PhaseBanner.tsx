@@ -13,10 +13,12 @@ const PhaseBanner: React.FC<PhaseBannerProps> = ({
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Styles.Wrapper $isHome={isHome}>
-      <Styles.StyledMaxWidthContainer noPadding noBackground $isHome={isHome}>
+    <Styles.Wrapper $isHome={isHome} className="Wrapper">
+      <Styles.StyledMaxWidthContainer noPadding noBackground $isHome={isHome} className="StyledMaxWidthContainer">
         <Styles.PhaseContainer className="phaseContainer">
-          <Styles.Phase $isHome={isHome}>{phaseTitle}</Styles.Phase>
+          <Styles.Phase $isHome={isHome} className="Phase">
+            {phaseTitle}
+          </Styles.Phase>
         </Styles.PhaseContainer>
         <Styles.PhaseContentContainer $isHome={isHome} className="phaseContentContainer">
           {children}
