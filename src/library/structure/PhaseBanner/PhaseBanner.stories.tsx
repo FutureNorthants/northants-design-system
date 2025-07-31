@@ -2,8 +2,6 @@ import React from 'react';
 import { StoryFn } from '@storybook/react';
 import PhaseBanner from './PhaseBanner';
 import { PhaseBannerProps } from './PhaseBanner.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
-import Heading from '../../components/Heading/Heading';
 
 export default {
   title: 'library/Structure/Phase Banner',
