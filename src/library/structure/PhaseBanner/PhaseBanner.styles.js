@@ -18,9 +18,6 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     props.$isHome ? props.theme.theme_vars.spacingSizes.extra_small : props.theme.theme_vars.spacingSizes.small};
   border-bottom: ${(props) => (props.$isHome ? 'none' : '1px solid ' + props.theme.theme_vars.colours.grey + '80')};
   display: flex;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   align-items: flex-start;
   margin: auto;
