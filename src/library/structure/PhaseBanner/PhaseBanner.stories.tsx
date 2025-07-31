@@ -43,9 +43,9 @@ PhaseBannerCustomisedWithHyperlinkExample2.args = {
   children: (
     <p>
       You are using our new search experience. We are still refining how this works so you may notice some changes. To
-      help us improve it, we would love&nbsp;
+      help us improve it,&nbsp;
       <a href="https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search">
-        your feedback
+        we would love your feedback
       </a>
     </p>
   ),
@@ -57,9 +57,9 @@ PhaseBannerCustomisedWithHyperlinkExample3.args = {
   children: (
     <p>
       You are using our new search experience. We are still refining how this works so you may notice some changes. To
-      help us improve it, we would love&nbsp;
+      help us improve it,&nbsp;
       <a href="https://forms.westnorthants.gov.uk/xfp/form/556?FormName=West%20Northamptonshire%20Website%20Search">
-        your feedback
+        we would love your feedback
       </a>
     </p>
   ),

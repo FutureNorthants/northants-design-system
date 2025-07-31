@@ -9,11 +9,6 @@ export const Wrapper = styled.div`
         ? props.theme.theme_vars.colours.grey_dark
         : props.theme.theme_vars.colours.action
       : 'transparent'};
-
-  &:hover {
-    background-color: ${(props) =>
-      props.$isHome ? props.theme.theme_vars.colours.action : props.theme.theme_vars.colours.action_light};
-  }
 `;
 
 export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
@@ -71,7 +66,6 @@ export const PhaseContentContainer = styled.div`
     padding-top: 9px;
     padding-bottom: 2px;
     padding-left: 20px;
-    visibility: middle;
   }
 `;
 
