@@ -1,7 +1,7 @@
 import React from 'react';
 import PageTitle from './PageTitle';
 import { PageTitleProps } from './PageTitle.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import Heading from '../../components/Heading/Heading';
 
 export default {

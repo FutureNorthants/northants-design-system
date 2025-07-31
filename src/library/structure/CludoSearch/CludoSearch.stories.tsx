@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import CludoSearch from './CludoSearch';
 import { CludoSearchProps } from './CludoSearch.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -29,6 +29,6 @@ const Template: StoryFn<CludoSearchProps> = (args) => (
 export const ExampleCludoSearch = Template.bind({});
 ExampleCludoSearch.args = {
   searchTerm: 'test',
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
 };

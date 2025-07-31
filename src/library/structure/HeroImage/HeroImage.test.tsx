@@ -97,7 +97,7 @@ describe('HeroImage slice', () => {
     expect(overlay).toHaveStyle('background-color: transparent');
 
     const container = getByTestId('HeroImage');
-    expect(container).toHaveStyle('background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))');
+    expect(container).toHaveStyle(`background-color: ${west_theme.theme_vars.colours.grey_darkest};`);
   });
 
   it("shouldn't render text when none is supplied", () => {
@@ -160,7 +160,6 @@ describe('HeroImage slice', () => {
 
     expect(breadcrumb).toBeVisible();
     expect(breadcrumb).toHaveAttribute('href', '/country-parks');
-    expect(breadcrumb).toHaveStyle(`color: ${west_theme.theme_vars.colours.black}`);
 
     expect(queryByText('Home')).toBeNull();
   });

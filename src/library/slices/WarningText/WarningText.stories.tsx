@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import WarningText from './WarningText';
 import { WarningTextProps } from './WarningText.types';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';

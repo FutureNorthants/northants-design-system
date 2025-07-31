@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import EventList from './EventList';
 import { EventListProps } from './EventList.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

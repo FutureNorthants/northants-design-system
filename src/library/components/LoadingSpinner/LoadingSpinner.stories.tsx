@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import LoadingSpinner from './LoadingSpinner';
 import { LoadingSpinnerProps } from './LoadingSpinner.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

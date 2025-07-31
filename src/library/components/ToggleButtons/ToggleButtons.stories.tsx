@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import ToggleButtons from './ToggleButtons';
 import { ToggleButtonsProps } from './ToggleButtons.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';

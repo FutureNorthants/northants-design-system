@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import CludoSearchBar from './CludoSearchBar';
 import { CludoSearchBarProps } from './CludoSearchBar.types';
 import { SBPadding } from '../../../../.storybook/SBPadding';
@@ -28,6 +28,6 @@ const Template: StoryFn<CludoSearchBarProps> = (args) => (
 
 export const ExampleCludoSearchBar = Template.bind({});
 ExampleCludoSearchBar.args = {
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
 };

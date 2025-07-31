@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHero from './HomeHero';
 import { HomeHeroProps } from './HomeHero.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
 import Header from '../Header/Header';
 import { ExamplePromotedServicesData } from '../PromotedServicesTabs/PromotedServicesTabs.storydata';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 import MapMarker from './MapMarker';
 import { SBPadding } from '../../../../.storybook/SBPadding';
 import { Wrapper } from '@googlemaps/react-wrapper';
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+const apiKey: string = process?.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const Template: StoryFn<google.maps.MarkerOptions> = (args) => (
   <SBPadding>

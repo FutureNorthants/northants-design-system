@@ -1,7 +1,7 @@
 import React from 'react';
 import PageSidebar from './PageSidebar';
 import { PageSidebarProps } from './PageSidebar.types';
-import { StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react-webpack5';
 
 export default {
   title: 'Library/structure/Page Sidebar Container',
