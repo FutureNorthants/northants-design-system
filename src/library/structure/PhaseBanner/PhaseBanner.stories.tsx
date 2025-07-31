@@ -7,6 +7,7 @@ import Heading from '../../components/Heading/Heading';
 
 export default {
   title: 'library/Structure/Phase Banner',
+  component: PhaseBanner,
   parameters: {
     status: {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
