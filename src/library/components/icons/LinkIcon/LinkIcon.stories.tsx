@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import LinkIcon from './LinkIcon';
-import { LinkIconProps } from './LinkIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof LinkIcon> = {
   title: 'Library/Icons/Link',
   component: LinkIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<LinkIconProps> = (args) => (
-  <SBPadding>
-    <LinkIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof LinkIcon>;
 
-export const ExampleLinkIcon = Template.bind({});
-ExampleLinkIcon.args = {
-  colourFill: '#111',
+export const ExampleLinkIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };

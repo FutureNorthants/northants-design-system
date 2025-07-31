@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ServiceSocialLinks from './ServiceSocialLinks';
-import { ServiceSocialLinksProps } from './ServiceSocialLinks.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { ExampleSocialProfiles } from './ServiceSocialLinks.storydata';
 import { MaxWidthContainer, PageMain } from '../../structure/PageStructures';
 
-export default {
+const meta: Meta<typeof ServiceSocialLinks> = {
   title: 'Library/Directory/ServiceSocialLinks',
   component: ServiceSocialLinks,
   parameters: {
@@ -16,15 +14,16 @@ export default {
   },
 };
 
-const Template: StoryFn<ServiceSocialLinksProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof ServiceSocialLinks>;
+
+export const ExampleServiceSocialLinks: Story = {
+  args: ExampleSocialProfiles,
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <ServiceSocialLinks {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleServiceSocialLinks = Template.bind({});
-ExampleServiceSocialLinks.args = ExampleSocialProfiles;
+  ),
+};

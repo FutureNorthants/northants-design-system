@@ -1,9 +1,8 @@
 import React from 'react';
 import FullWidthContainer from './FullWidthContainer';
-import { FullWidthContainerProps } from './FullWidthContainer.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof FullWidthContainer> = {
   title: 'Library/structure/Full width Container',
   component: FullWidthContainer,
   parameters: {
@@ -13,24 +12,32 @@ export default {
   },
 };
 
-const Template: StoryFn<FullWidthContainerProps> = (args) => (
-  <FullWidthContainer {...args}>Children of the page container go here</FullWidthContainer>
-);
+export default meta;
+type Story = StoryObj<typeof FullWidthContainer>;
 
-export const FullWidthContainerExample = Template.bind({});
-FullWidthContainerExample.args = {
-  hasBackground: true,
-  hasPadding: true,
+export const FullWidthContainerExample: Story = {
+  args: {
+    hasBackground: true,
+    hasPadding: true,
+  },
+  render: (args) => <FullWidthContainer {...args}>Children of the page container go here</FullWidthContainer>,
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const FullWidthContainerWithoutPadding = Template.bind({});
-FullWidthContainerWithoutPadding.args = {
-  hasBackground: true,
-  hasPadding: false,
+export const FullWidthContainerWithoutPadding: Story = {
+  ...FullWidthContainerExample,
+  args: {
+    hasBackground: true,
+    hasPadding: false,
+  },
 };
 
-export const FullWidthContainerWithoutBackground = Template.bind({});
-FullWidthContainerWithoutBackground.args = {
-  hasBackground: false,
-  hasPadding: true,
+export const FullWidthContainerWithoutBackground: Story = {
+  ...FullWidthContainerExample,
+  args: {
+    hasBackground: false,
+    hasPadding: true,
+  },
 };

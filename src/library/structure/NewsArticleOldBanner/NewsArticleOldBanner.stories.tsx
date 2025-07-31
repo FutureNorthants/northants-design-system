@@ -1,11 +1,9 @@
 import React from 'react';
 import NewsArticleOldBanner from './NewsArticleOldBanner';
-import { NewsArticleOldBannerProps } from './NewsArticleOldBanner.types';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof NewsArticleOldBanner> = {
   title: 'Library/Structure/News Article Old Banner',
   component: NewsArticleOldBanner,
   parameters: {
@@ -15,15 +13,16 @@ export default {
   },
 };
 
-const Template: StoryFn<NewsArticleOldBannerProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof NewsArticleOldBanner>;
+
+export const Example: Story = {
+  args: {
+    text: 'Example News Article Date',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <NewsArticleOldBanner {...args} />
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  text: 'Example News Article Date',
+  ),
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { CouncilTaxPageExample, CouncilTaxPageExampleProps } from './CouncilTaxPageExample';
+import { CouncilTaxPageExample } from './CouncilTaxPageExample';
 
-export default {
+const meta: Meta<typeof CouncilTaxPageExample> = {
   title: 'Page Examples/Council Tax By Address',
   component: CouncilTaxPageExample,
   parameters: {
@@ -12,11 +12,16 @@ export default {
       type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<CouncilTaxPageExampleProps> = (args) => <CouncilTaxPageExample {...args} />;
+export default meta;
+type Story = StoryObj<typeof CouncilTaxPageExample>;
 
-export const AddressDropdown = Template.bind({});
-AddressDropdown.args = {
-  version: 'b',
+export const AddressDropdown: Story = {
+  args: {
+    version: 'b',
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };

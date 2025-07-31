@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import NewsArticleList from './NewsArticleList';
-import { NewsArticleListProps } from './NewsArticleList.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { newsArticleData } from './NewsArticleData';
 
-export default {
+const meta: Meta<typeof NewsArticleList> = {
   title: 'Library/Structure/News Article List',
   component: NewsArticleList,
   parameters: {
@@ -15,20 +13,19 @@ export default {
   },
 };
 
-const Template: StoryFn<NewsArticleListProps> = (args) => (
-  <SBPadding>
-    <NewsArticleList {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof NewsArticleList>;
 
-export const ExampleNewsArticleList = Template.bind({});
-ExampleNewsArticleList.args = {
-  results: newsArticleData.results,
-  sortBy: null,
+export const ExampleNewsArticleList: Story = {
+  args: {
+    results: newsArticleData.results,
+    sortBy: undefined,
+  },
 };
 
-export const ExampleNoNewsArticleList = Template.bind({});
-ExampleNoNewsArticleList.args = {
-  results: [],
-  sortBy: null,
+export const ExampleNoNewsArticleList: Story = {
+  args: {
+    results: [],
+    sortBy: undefined,
+  },
 };

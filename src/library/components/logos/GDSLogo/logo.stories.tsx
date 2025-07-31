@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import GDSLogo from './logo';
-import { LogoProps } from './logo.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof GDSLogo> = {
   title: 'Library/Logos/GDS Logo',
   component: GDSLogo,
   parameters: {
@@ -14,10 +12,13 @@ export default {
   },
 };
 
-const Template: StoryFn<LogoProps> = (args) => (
-  <SBPadding>
-    <GDSLogo {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof GDSLogo>;
 
-export const LogoExample = Template.bind({});
+export const LogoExample: Story = {
+  render: () => (
+    <div style={{ backgroundColor: 'black' }}>
+      <GDSLogo />
+    </div>
+  ),
+};

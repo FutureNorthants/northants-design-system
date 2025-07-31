@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DownloadFileIcon from './DownloadFileIcon';
-import { DownloadFileIconProps } from './DownloadFileIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof DownloadFileIcon> = {
   title: 'Library/Icons/Download File',
   component: DownloadFileIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<DownloadFileIconProps> = (args) => (
-  <SBPadding>
-    <DownloadFileIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof DownloadFileIcon>;
 
-export const ExampleDownloadFileIcon = Template.bind({});
-ExampleDownloadFileIcon.args = {
-  colourFill: '#111',
+export const ExampleDownloadFileIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };

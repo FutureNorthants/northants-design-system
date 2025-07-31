@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import SearchIcon from './SearchIcon';
-import { SearchIconProps } from './SearchIcon.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof SearchIcon> = {
   title: 'Library/Icons/Search',
   component: SearchIcon,
   parameters: {
@@ -14,13 +12,11 @@ export default {
   },
 };
 
-const Template: StoryFn<SearchIconProps> = (args) => (
-  <SBPadding>
-    <SearchIcon {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof SearchIcon>;
 
-export const ExampleSearchIcon = Template.bind({});
-ExampleSearchIcon.args = {
-  colourFill: '#111',
+export const ExampleSearchIcon: Story = {
+  args: {
+    colourFill: '#111',
+  },
 };
