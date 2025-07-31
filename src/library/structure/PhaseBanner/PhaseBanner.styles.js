@@ -30,7 +30,6 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
 `;
 
 export const PhaseText = styled.span`
-  vertical-align: middle;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   cursor: default;
 `;
@@ -65,25 +64,26 @@ export const PhaseContentContainer = styled.div`
   p {
     margin-top: auto;
     margin-bottom: auto;
-    padding-top: 9px;
-    padding-bottom: 2px;
+    padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    padding-bottom: ${(props) => `calc(${props.theme.theme_vars.spacingSizes.small} - 3px)`};
     padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   }
 `;
 
 export const PhaseContainer = styled.div`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.extra_small} 0;
-  border-color: green;
   margin-top: auto;
   margin-bottom: auto;
 `;
 
 export const Phase = styled.div`
   font-weight: bold;
+
   padding: ${(props) =>
     props.$isHome
       ? `${props.theme.theme_vars.spacingSizes.extra_small} ${props.theme.theme_vars.spacingSizes.small}`
-      : '7px 12px'};
+      : `calc(${props.theme.theme_vars.spacingSizes.extra_small} + 2px) calc(${props.theme.theme_vars.spacingSizes.small} + 2px)`};
+
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   background: ${(props) =>
     props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.action + '1A'};
