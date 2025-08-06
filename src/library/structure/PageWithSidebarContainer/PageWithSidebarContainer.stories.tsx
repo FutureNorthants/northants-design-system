@@ -15,12 +15,12 @@ const meta: Meta<typeof PageWithSidebarContainer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PageWithSidebarContainer>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleOfPageWithSidebar: Story = {
   render: () => (
     <PageWithSidebarContainer>
-      <PageMain>this is the main contaniner</PageMain>
+      <PageMain>this is the main container</PageMain>
       <PageSidebar>this is the sidebar</PageSidebar>
     </PageWithSidebarContainer>
   ),
@@ -30,7 +30,7 @@ export const ExampleOfPageWithSidebarLeft: Story = {
   render: () => (
     <PageWithSidebarContainer>
       <PageSidebar>this is the sidebar</PageSidebar>
-      <PageMain>this is the main contaniner</PageMain>
+      <PageMain>this is the main container</PageMain>
     </PageWithSidebarContainer>
   ),
 };

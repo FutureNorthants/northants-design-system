@@ -15,7 +15,7 @@ const meta: Meta<typeof AlertBannerService> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AlertBannerService>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleAlert: Story = {
   args: {

@@ -14,7 +14,7 @@ const meta: Meta<typeof ContentsNavigation> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ContentsNavigation>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleContentsNavigation: Story = {
   args: {

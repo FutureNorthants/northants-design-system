@@ -18,7 +18,7 @@ const meta: Meta<typeof RateThisPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RateThisPage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRateThisPage: Story = {
   args: {

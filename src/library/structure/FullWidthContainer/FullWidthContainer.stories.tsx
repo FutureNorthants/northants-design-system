@@ -13,7 +13,7 @@ const meta: Meta<typeof FullWidthContainer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FullWidthContainer>;
+type Story = StoryObj<typeof meta>;
 
 export const FullWidthContainerExample: Story = {
   args: {

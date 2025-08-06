@@ -13,7 +13,7 @@ const meta: Meta<typeof PageMain> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PageMain>;
+type Story = StoryObj<typeof meta>;
 
 export const PageMainExample: Story = {
   args: {

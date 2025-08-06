@@ -13,7 +13,7 @@ const meta: Meta<typeof PageSidebar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PageSidebar>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleOfPageWithSidebar: Story = {
   render: (args) => <PageSidebar {...args}>This is where sidebar components would live</PageSidebar>,

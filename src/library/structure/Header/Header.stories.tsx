@@ -33,7 +33,7 @@ const meta: Meta<typeof Header> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof meta>;
 
 export const HeaderExample: Story = {
   args: {
@@ -74,17 +74,18 @@ export const HeaderNoSearchExample: Story = {
   },
 };
 
-export const HeaderCludoSearch = Template.bind({});
-HeaderCludoSearch.args = {
-  hasNewsLink: true,
-  hasDirectoryLink: true,
-  accessibilityLink: '/',
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
-  hasTranslate: true,
-  hasEventsLink: true,
-  hasCludo: true,
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+export const HeaderCludoSearch: Story = {
+  args: {
+    hasNewsLink: true,
+    hasDirectoryLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+    hasTranslate: true,
+    hasEventsLink: true,
+    hasCludo: true,
+    customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  },
 };

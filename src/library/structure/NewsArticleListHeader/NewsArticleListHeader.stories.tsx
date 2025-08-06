@@ -15,7 +15,7 @@ const meta: Meta<typeof NewsArticleListHeader> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NewsArticleListHeader>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleNewsArticleListHeader: Story = {
   args: {

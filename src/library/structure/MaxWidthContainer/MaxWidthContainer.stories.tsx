@@ -13,7 +13,7 @@ const meta: Meta<typeof MaxWidthContainer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MaxWidthContainer>;
+type Story = StoryObj<typeof meta>;
 
 export const MaxWidthContainerExample: Story = {
   args: {

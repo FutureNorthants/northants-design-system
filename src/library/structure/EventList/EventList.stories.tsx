@@ -16,7 +16,7 @@ const meta: Meta<typeof EventList> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof EventList>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleEventList: Story = {
   args: ExampleEventListResults,
@@ -34,9 +34,7 @@ export const ExampleEventList: Story = {
 
 export const ExampleEventListNoResults: Story = {
   ...ExampleEventList,
-  args: {
-    results: [],
-  },
+  args: ExampleEventListResults,
 };
 
 export const ExampleEventListWithDefaults: Story = {

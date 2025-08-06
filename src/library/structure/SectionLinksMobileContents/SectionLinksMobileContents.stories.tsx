@@ -15,7 +15,7 @@ const meta: Meta<typeof SectionLinksMobileContents> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SectionLinksMobileContents>;
+type Story = StoryObj<typeof meta>;
 
 export const SectionLinksMobileContentsExample: Story = {
   args: {

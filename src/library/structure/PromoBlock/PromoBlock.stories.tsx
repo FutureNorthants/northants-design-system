@@ -23,7 +23,7 @@ const meta: Meta<typeof PromoBlock> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PromoBlock>;
+type Story = StoryObj<typeof meta>;
 
 /**
  * Very simple selection of stories for this structure just showing it handles varying numbers of promo tiles;

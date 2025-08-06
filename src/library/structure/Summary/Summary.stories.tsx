@@ -28,7 +28,7 @@ const meta: Meta<typeof Summary> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Summary>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSummary: Story = {
   args: {

@@ -13,7 +13,7 @@ const meta: Meta<typeof NewsArticleFilterAccordion> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NewsArticleFilterAccordion>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleNewsArticleFilterAccordion: Story = {
   args: {

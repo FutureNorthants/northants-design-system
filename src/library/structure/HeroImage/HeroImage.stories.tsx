@@ -46,7 +46,7 @@ const meta: Meta<typeof HeroImage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HeroImage>;
+type Story = StoryObj<typeof meta>;
 
 export const HeroImageExampleBoxed: Story = {
   args: HeroImageExampleBoxedData,

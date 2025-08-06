@@ -15,7 +15,7 @@ const meta: Meta<typeof NewsArticleFeaturedBlock> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NewsArticleFeaturedBlock>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleNewsArticleFeaturedBlock: Story = {
   args: {

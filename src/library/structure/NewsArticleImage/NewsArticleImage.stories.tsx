@@ -14,7 +14,7 @@ const meta: Meta<typeof NewsArticleImage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NewsArticleImage>;
+type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
@@ -27,20 +27,26 @@ export const Example: Story = {
     </MaxWidthContainer>
   ),
 };
-export const ExampleWithAle: Story = {
+export const ExampleWithAltText: Story = {
   ...Example,
   args: {
-    image1440x810: 'https://picsum.photos/id/93/1440/810',
-    image144x81: 'https://picsum.photos/id/93/144/81',
+    ...Example.args,
     imageAltText: 'This is the alt text',
   },
 };
 
-export const ExampleWithCaptioe: Story = {
+export const ExampleWithAltTextAndNoImage: Story = {
+  args: {
+    image1440x810: 'about:blank',
+    image144x81: 'about:blank',
+    imageAltText: 'This is the alt text',
+  },
+};
+
+export const ExampleWithCaption: Story = {
   ...Example,
   args: {
-    image1440x810: 'https://picsum.photos/id/93/1440/810',
-    image144x81: 'https://picsum.photos/id/93/144/81',
+    ...Example.args,
     imageCaption: 'This is the caption',
   },
 };

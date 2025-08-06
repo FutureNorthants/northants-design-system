@@ -38,7 +38,7 @@ const meta: Meta<typeof HomeHero> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HomeHero>;
+type Story = StoryObj<typeof meta>;
 
 export const HomeHeroExample0Links: Story = {
   args: {

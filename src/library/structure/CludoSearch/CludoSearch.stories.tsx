@@ -15,7 +15,7 @@ const meta: Meta<typeof CludoSearch> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CludoSearch>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCludoSearch: Story = {
   args: {

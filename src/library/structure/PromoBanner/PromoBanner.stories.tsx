@@ -34,7 +34,7 @@ const meta: Meta<typeof PromoBanner> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PromoBanner>;
+type Story = StoryObj<typeof meta>;
 
 export const PromoBannerExample: Story = {
   args: PromoBannerData,

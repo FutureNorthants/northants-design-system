@@ -14,7 +14,7 @@ const meta: Meta<typeof PageTitle> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PageTitle>;
+type Story = StoryObj<typeof meta>;
 
 export const PageTitleExample: Story = {
   args: {

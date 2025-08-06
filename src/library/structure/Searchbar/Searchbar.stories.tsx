@@ -56,7 +56,7 @@ const meta: Meta<typeof Searchbar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Searchbar>;
+type Story = StoryObj<typeof meta>;
 
 const CommonArgs = {
   size: 43,

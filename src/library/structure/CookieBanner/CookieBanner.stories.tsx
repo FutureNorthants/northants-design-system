@@ -14,7 +14,7 @@ const meta: Meta<typeof CookieBanner> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CookieBanner>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCookieBanner: Story = {
   args: {

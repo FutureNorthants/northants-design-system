@@ -14,7 +14,7 @@ const meta: Meta<typeof PromoTabsDisplay> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PromoTabsDisplay>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePromoTabsDisplay: Story = {
   args: {

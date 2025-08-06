@@ -13,7 +13,7 @@ const meta: Meta<typeof BackLink> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BackLink>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleBackLink: Story = {
   args: {

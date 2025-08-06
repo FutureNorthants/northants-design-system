@@ -13,6 +13,6 @@ const meta: Meta<typeof SkipToMainContent> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SkipToMainContent>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSkipToMainContent: Story = {};

@@ -13,7 +13,7 @@ const meta: Meta<typeof AccessibleLinks> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AccessibleLinks>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleAccessibleLinks: Story = {
   args: {

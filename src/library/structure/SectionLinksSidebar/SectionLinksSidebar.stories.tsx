@@ -13,7 +13,7 @@ const meta: Meta<typeof SectionLinksSidebar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SectionLinksSidebar>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSection: Story = {
   args: {

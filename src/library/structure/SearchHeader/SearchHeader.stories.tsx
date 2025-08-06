@@ -13,6 +13,6 @@ const meta: Meta<typeof SearchHeader> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SearchHeader>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSearchHeader: Story = {};

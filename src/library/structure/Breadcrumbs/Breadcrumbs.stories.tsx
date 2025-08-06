@@ -13,7 +13,7 @@ const meta: Meta<typeof Breadcrumbs> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Breadcrumbs>;
+type Story = StoryObj<typeof meta>;
 
 export const BreadcrumbsExample1: Story = {
   args: {

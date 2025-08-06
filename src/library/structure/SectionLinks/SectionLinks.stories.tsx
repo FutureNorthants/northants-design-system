@@ -32,7 +32,7 @@ const meta: Meta<typeof SectionLinks> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SectionLinks>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSectionLinks: Story = {
   args: {

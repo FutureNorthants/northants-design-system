@@ -11,7 +11,7 @@ const meta: Meta<typeof MemorialHero> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MemorialHero>;
+type Story = StoryObj<typeof meta>;
 
 const condolenceLinksArray = [
   {

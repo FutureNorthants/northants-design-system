@@ -14,7 +14,7 @@ const meta: Meta<typeof ServiceLinksBoxed> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ServiceLinksBoxed>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleServiceLinksBoxed: Story = {
   args: {

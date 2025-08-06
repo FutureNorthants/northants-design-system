@@ -15,7 +15,7 @@ const meta: Meta<typeof AlertBanner> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AlertBanner>;
+type Story = StoryObj<typeof meta>;
 
 const childrenMessage = (
   <p>
