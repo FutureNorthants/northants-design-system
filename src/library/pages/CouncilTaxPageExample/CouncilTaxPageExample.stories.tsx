@@ -15,7 +15,7 @@ const meta: Meta<typeof CouncilTaxPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CouncilTaxPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const AddressDropdown: Story = {
   args: {

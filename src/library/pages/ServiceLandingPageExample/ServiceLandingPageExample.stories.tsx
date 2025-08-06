@@ -29,7 +29,7 @@ const meta: Meta<typeof ServiceLandingPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ServiceLandingPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const BinCollectionExample: Story = {
   args: {

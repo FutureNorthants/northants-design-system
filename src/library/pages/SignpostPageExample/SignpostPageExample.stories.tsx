@@ -13,7 +13,7 @@ const meta: Meta<typeof SignpostPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SignpostPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const FindYourBinCollectionDayNorthExample: Story = {
   args: {

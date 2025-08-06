@@ -13,7 +13,7 @@ const meta: Meta<typeof Templates> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Templates>;
+type Story = StoryObj<typeof meta>;
 
 export const SingleColTemplate: Story = {
   args: { type: 'singleCol' },

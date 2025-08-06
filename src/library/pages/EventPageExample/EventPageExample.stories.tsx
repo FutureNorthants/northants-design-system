@@ -14,7 +14,7 @@ const meta: Meta<typeof EventPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof EventPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const EventPage: Story = {
   args: {

@@ -13,7 +13,7 @@ const meta: Meta<typeof SearchResultsPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SearchResultsPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const SearchResultsExample: Story = {
   args: {

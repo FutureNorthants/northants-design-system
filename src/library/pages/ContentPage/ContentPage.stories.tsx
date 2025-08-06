@@ -13,7 +13,7 @@ const meta: Meta<typeof ContentPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ContentPage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleContentPage: Story = {
   parameters: {

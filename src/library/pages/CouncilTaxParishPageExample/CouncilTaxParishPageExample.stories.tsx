@@ -14,7 +14,7 @@ const meta: Meta<typeof CouncilTaxParishPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CouncilTaxParishPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const AlphabeticalList: Story = {
   parameters: {

@@ -13,7 +13,7 @@ const meta: Meta<typeof DirectoryServicePage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DirectoryServicePage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDirectoryServicePage: Story = {
   parameters: {

@@ -17,7 +17,7 @@ const meta: Meta<typeof HomePage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HomePage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleHome: Story = {
   args: {

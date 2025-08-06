@@ -13,7 +13,7 @@ const meta: Meta<typeof ErrorPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ErrorPage>;
+type Story = StoryObj<typeof meta>;
 
 export const ErrorPage404: Story = {
   args: {

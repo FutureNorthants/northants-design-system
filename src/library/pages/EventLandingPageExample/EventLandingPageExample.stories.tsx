@@ -13,7 +13,7 @@ const meta: Meta<typeof EventLandingPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof EventLandingPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const EventLandingPage: Story = {
   parameters: {

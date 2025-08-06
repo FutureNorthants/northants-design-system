@@ -14,7 +14,7 @@ const meta: Meta<typeof BinFinderPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BinFinderPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const BinFinderExamplePage: Story = {
   args: {

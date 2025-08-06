@@ -13,7 +13,7 @@ const meta: Meta<typeof ContactPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ContactPage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleContactPage: Story = {
   parameters: {

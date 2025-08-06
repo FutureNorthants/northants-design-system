@@ -9,7 +9,7 @@ const meta: Meta<typeof ServicePageExample> = {
 } as Meta;
 
 export default meta;
-type Story = StoryObj<typeof ServicePageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const ServicePageWithContent: Story = {
   parameters: {

@@ -14,7 +14,7 @@ const meta: Meta<typeof QuickExitPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof QuickExitPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const QuickExitExamplePage: Story = {
   args: { children: <QuickExitPageExample1 /> },
