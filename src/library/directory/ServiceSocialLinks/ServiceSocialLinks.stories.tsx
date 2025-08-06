@@ -15,7 +15,7 @@ const meta: Meta<typeof ServiceSocialLinks> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ServiceSocialLinks>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleServiceSocialLinks: Story = {
   args: ExampleSocialProfiles,

@@ -16,7 +16,7 @@ const meta: Meta<typeof DirectoryShortList> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DirectoryShortList>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDirectoryShortList: Story = {
   args: {

@@ -13,7 +13,7 @@ const meta: Meta<typeof DirectoryMap> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DirectoryMap>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDirectoryMap: Story = {
   args: {
@@ -32,15 +32,7 @@ export const ExampleDirectoryMap: Story = {
 
 export const ExampleDirectoryMapWithoutCookies: Story = {
   args: {
+    ...ExampleDirectoryMap.args,
     allowCookies: false,
-    mapProps: {
-      centre: '52.23555414368587,-0.8957390701320571',
-      imageAltText: 'A static google map',
-      mapType: 'roadmap',
-      mapMarkers: [
-        { lat: 52.23555414368587, lng: -0.8957390701320571, label: 'A', title: 'One Angel Square' },
-        { lat: 52.237139432507114, lng: -0.8948307081133049, label: 'B', title: 'The Guildhall' },
-      ],
-    },
   },
 };

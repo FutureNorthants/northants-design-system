@@ -14,7 +14,7 @@ const meta: Meta<typeof ServiceContact> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ServiceContact>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleServiceContact: Story = {
   args: {

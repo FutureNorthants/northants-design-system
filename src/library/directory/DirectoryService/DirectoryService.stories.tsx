@@ -21,7 +21,7 @@ const meta: Meta<typeof DirectoryService> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DirectoryService>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDirectoryService: Story = {
   args: ExampleService,
