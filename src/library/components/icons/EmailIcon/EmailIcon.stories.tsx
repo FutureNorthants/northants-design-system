@@ -13,7 +13,7 @@ const meta: Meta<typeof EmailIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof EmailIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleEmailIcon: Story = {
   args: {

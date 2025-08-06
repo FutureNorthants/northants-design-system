@@ -13,7 +13,7 @@ const meta: Meta<typeof Icon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Icon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleInstagramIcon: Story = {
   args: {

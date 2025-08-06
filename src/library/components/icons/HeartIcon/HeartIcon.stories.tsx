@@ -13,7 +13,7 @@ const meta: Meta<typeof HeartIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HeartIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleHeartIcon: Story = {
   args: {

@@ -13,7 +13,7 @@ const meta: Meta<typeof PhoneIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PhoneIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePhoneIcon: Story = {
   args: {

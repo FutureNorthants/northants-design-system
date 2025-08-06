@@ -13,7 +13,7 @@ const meta: Meta<typeof ChevronIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ChevronIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const DownChevronIcon: Story = {
   args: {

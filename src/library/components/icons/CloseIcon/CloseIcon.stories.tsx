@@ -13,7 +13,7 @@ const meta: Meta<typeof CloseIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CloseIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCloseIcon: Story = {
   args: {

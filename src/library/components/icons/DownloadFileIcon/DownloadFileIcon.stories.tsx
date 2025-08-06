@@ -13,7 +13,7 @@ const meta: Meta<typeof DownloadFileIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DownloadFileIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDownloadFileIcon: Story = {
   args: {
