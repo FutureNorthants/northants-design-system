@@ -16,7 +16,7 @@ const meta: Meta<typeof InquestSchedule> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof InquestSchedule>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleInquestSchedule: Story = {
   args: {

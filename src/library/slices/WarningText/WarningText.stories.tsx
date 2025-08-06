@@ -14,7 +14,7 @@ const meta: Meta<typeof WarningText> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof WarningText>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleHighlightText: Story = {
   args: {

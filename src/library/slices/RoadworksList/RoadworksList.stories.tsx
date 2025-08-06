@@ -16,7 +16,7 @@ const meta: Meta<typeof RoadworksList> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RoadworksList>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRoadWorksList: Story = {
   args: {
@@ -33,9 +33,9 @@ export const ExampleRoadWorksList: Story = {
 };
 
 export const RoadworksListNoResults: Story = {
-   ...ExampleRoadWorksList,
+  ...ExampleRoadWorksList,
   args: {
     title: 'Current roadworks',
     roadworks: [],
-  }
+  },
 };

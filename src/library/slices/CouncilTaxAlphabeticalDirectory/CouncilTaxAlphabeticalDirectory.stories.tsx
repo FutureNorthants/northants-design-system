@@ -14,7 +14,7 @@ const meta: Meta<typeof CouncilTaxAlphabeticalDirectory> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof CouncilTaxAlphabeticalDirectory>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCouncilTaxAlphabeticalDirectory: Story = {
   args: {

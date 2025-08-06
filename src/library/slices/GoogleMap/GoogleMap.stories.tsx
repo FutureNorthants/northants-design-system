@@ -14,7 +14,7 @@ const meta: Meta<typeof GoogleMap> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof GoogleMap>;
+type Story = StoryObj<typeof meta>;
 
 export const GoogleMapWithTitleAndDescription: Story = {
   args: storydata.GoogleMapWithTitleAndDescription,
@@ -46,8 +46,8 @@ export const GoogleMapWithUpdatedLink: Story = {
 
 export const OneNetworkMap: Story = {
   args: storydata.OneNetworkMapLink,
-}
+};
 
 export const OneNetworkMapIncorrectURL: Story = {
   args: storydata.OneNetworkMapIncorrectURLLink,
-}
+};

@@ -15,7 +15,7 @@ const meta: Meta<typeof SearchBox> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SearchBox>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSearchBox: Story = {
   args: ExampleSearchBoxProps,

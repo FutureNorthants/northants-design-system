@@ -14,7 +14,7 @@ const meta: Meta<typeof Promotions> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Promotions>;
+type Story = StoryObj<typeof meta>;
 
 export const PromotionsExampleBannerOnly: Story = {
   args: { promos: PromoBlocksData.slice(0, 1) },

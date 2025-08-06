@@ -16,7 +16,7 @@ const meta: Meta<typeof ImageAndText> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ImageAndText>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleImageAndText: Story = {
   args: ImageAndTextWithHeading,

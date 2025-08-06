@@ -14,7 +14,7 @@ const meta: Meta<typeof Video> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Video>;
+type Story = StoryObj<typeof meta>;
 
 export const YoutubeVideo: Story = {
   args: {

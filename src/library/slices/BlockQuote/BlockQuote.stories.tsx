@@ -13,7 +13,7 @@ const meta: Meta<typeof BlockQuote> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BlockQuote>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleBlockQuote: Story = {
   args: {

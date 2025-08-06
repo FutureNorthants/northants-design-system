@@ -15,7 +15,7 @@ const meta: Meta<typeof Image> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Image>;
+type Story = StoryObj<typeof meta>;
 
 export const StandardImage: Story = {
   args: {

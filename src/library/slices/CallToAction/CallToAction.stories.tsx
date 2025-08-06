@@ -13,50 +13,43 @@ const meta: Meta<typeof CallToAction> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CallToAction>;
+type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const DefaultPrimaryExample: Story = {
   args: {
-    primary: true,
     text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
+    url: 'https://www.westnorthants.gov.uk',
   },
 };
 
 export const Secondary: Story = {
   args: {
+    ...DefaultPrimaryExample.args,
     primary: false,
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const Large: Story = {
   args: {
+    ...DefaultPrimaryExample.args,
     size: 'large',
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const Small: Story = {
   args: {
+    ...DefaultPrimaryExample.args,
     size: 'small',
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const MultipleBtns: Story = {
-  args: {
-    primary: true,
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
-  },
+  args: {},
   render: (args) => (
     <>
       <CallToAction {...args} />
-      <CallToAction primary text="Second button" url="#" />
+      <CallToAction text="Primary Button" url="#" />
+      <CallToAction text="Secondary Button" url="#" primary={false} />
     </>
   ),
 };

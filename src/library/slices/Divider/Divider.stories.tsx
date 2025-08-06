@@ -13,6 +13,6 @@ const meta: Meta<typeof Divider> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Divider>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDivider: Story = {};

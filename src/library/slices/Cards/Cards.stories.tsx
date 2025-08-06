@@ -14,7 +14,7 @@ const meta: Meta<typeof Cards> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Cards>;
+type Story = StoryObj<typeof meta>;
 
 const longContent = `<p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet eleifend ante, ut pretium nibh laoreet ac.
@@ -70,7 +70,7 @@ export const ExampleCardsWithLongContent: Story = {
       },
       {
         header: 'Example heading',
-        content: '<p>Some example content</p>',
+        content: longContent,
         footerLink: {
           url: '/test',
           title: 'Example link text',
@@ -80,7 +80,7 @@ export const ExampleCardsWithLongContent: Story = {
   },
 };
 
-export const ExampleCardsWithFooterLinks: Story = {
+export const ExampleCardsWithContentAndFooters: Story = {
   ...ExampleCards,
   args: {
     cards: [
@@ -112,65 +112,65 @@ export const ExampleCardsWithFooterLinks: Story = {
   },
 };
 
-export const ExampleCardsWithImages: Story = {
+export const ExampleCardsWithImagesOnly: Story = {
   ...ExampleCards,
   args: {
     cards: [
       {
-        header: 'Example heading',
-        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
-        footerLink: {
-          url: '/test',
-          title: 'Example link text',
-        },
       },
       {
-        header: 'Example heading',
-        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
-        footerLink: {
-          url: '/test',
-          title: 'Example link text',
-        },
       },
       {
-        header: 'Example heading',
-        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
-        footerLink: {
-          url: '/test',
-          title: 'Example link text',
-        },
       },
     ],
   },
 };
 
-export const ExampleCardsWithOnlyImages: Story = {
+export const ExampleCardsWithImagesContentAndFooters: Story = {
   ...ExampleCards,
   args: {
     cards: [
       {
+        header: 'Example heading',
+        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
+        footerLink: {
+          url: '/test',
+          title: 'Example link text',
+        },
       },
       {
+        header: 'Example heading',
+        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
+        footerLink: {
+          url: '/test',
+          title: 'Example link text',
+        },
       },
       {
+        header: 'Example heading',
+        content: '<p>Some example content</p>',
         imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
         imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
         imageAltText: 'Parkland',
+        footerLink: {
+          url: '/test',
+          title: 'Example link text',
+        },
       },
     ],
   },

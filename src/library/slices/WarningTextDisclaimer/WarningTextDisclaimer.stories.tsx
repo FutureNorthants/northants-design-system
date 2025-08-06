@@ -14,7 +14,7 @@ const meta: Meta<typeof WarningTextDisclaimer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof WarningTextDisclaimer>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleWarningTextDisclaimer: Story = {
   render: (args) => (

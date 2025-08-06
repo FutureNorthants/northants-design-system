@@ -15,7 +15,7 @@ const meta: Meta<typeof WebChat> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof WebChat>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleWebChat: Story = {
   args: {
