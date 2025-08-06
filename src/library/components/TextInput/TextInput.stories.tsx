@@ -45,7 +45,7 @@ const meta: Meta<typeof TextInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof TextInput>;
+type Story = StoryObj<typeof meta>;
 
 export const DefaultTextInput: Story = {};
 

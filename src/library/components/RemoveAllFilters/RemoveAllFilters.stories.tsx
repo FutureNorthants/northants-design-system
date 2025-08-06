@@ -13,6 +13,6 @@ const meta: Meta<typeof RemoveAllFilters> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RemoveAllFilters>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRemoveAllFilters: Story = {};

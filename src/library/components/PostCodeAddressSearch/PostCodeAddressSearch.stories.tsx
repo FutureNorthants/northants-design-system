@@ -15,7 +15,7 @@ const meta: Meta<typeof PostCodeAddressSearch> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PostCodeAddressSearch>;
+type Story = StoryObj<typeof meta>;
 
 const value = {
   postcodeValue: {

@@ -14,7 +14,7 @@ const meta: Meta<typeof CustomSearch> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CustomSearch>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCustomSearch: Story = {
   args: ExampleCustomSearchProps,
@@ -22,10 +22,10 @@ export const ExampleCustomSearch: Story = {
 
 export const ExampleCustomSearchWithLabel: Story = {
   ...ExampleCustomSearch,
-  args: { ...ExampleCustomSearchProps, hasHiddenLabel: false },
+  args: { ...ExampleCustomSearch.args, hasHiddenLabel: false },
 };
 
 export const ExampleCustomSearchWithId: Story = {
   ...ExampleCustomSearch,
-  args: { ...ExampleCustomSearchProps, id: 'myCustomId' },
+  args: { ...ExampleCustomSearch.args, id: 'myCustomId' },
 };

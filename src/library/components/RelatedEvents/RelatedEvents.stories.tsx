@@ -13,7 +13,7 @@ const meta: Meta<typeof RelatedEvents> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RelatedEvents>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRelatedEvents: Story = {
   args: {
@@ -31,10 +31,10 @@ export const ExampleRelatedEvents: Story = {
         location: 'One Angel Square',
       },
       {
-        title: 'An example event',
-        summary: 'The example events summary that describes the event.',
-        startTime: '16 August 2024 10:00:00',
-        endTime: '16 August 2024 11:00:00',
+        title: 'A second example event',
+        summary: 'A second example events summary that describes the event.',
+        startTime: '17 August 2024 10:00:00',
+        endTime: '17 August 2024 11:00:00',
         url: '/events/2',
         imageLarge: 'https://via.placeholder.com/720x405',
         imageSmall: 'https://via.placeholder.com/360x203',

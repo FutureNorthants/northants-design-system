@@ -13,7 +13,7 @@ const meta: Meta<typeof Row> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Row>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRow: Story = {
   render: (args) => <Row {...args}>Some content</Row>,

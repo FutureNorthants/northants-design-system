@@ -15,7 +15,7 @@ const meta: Meta<typeof StaticMap> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof StaticMap>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleStaticMap: Story = {
   args: {

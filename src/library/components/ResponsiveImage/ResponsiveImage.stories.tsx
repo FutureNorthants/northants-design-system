@@ -13,7 +13,7 @@ const meta: Meta<typeof ResponsiveImage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ResponsiveImage>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleResponsiveImageCover: Story = {
   args: {
@@ -27,9 +27,7 @@ export const ExampleResponsiveImageCover: Story = {
 
 export const ExampleResponsiveImageContain: Story = {
   args: {
-    imageLarge: 'https://via.placeholder.com/800x600?text=4+by+3+image',
-    imageSmall: 'https://via.placeholder.com/400x300',
-    imageAltText: 'Parkland',
+    ...ExampleResponsiveImageCover.args,
     ratio: '4by3',
     objectFit: 'contain',
   },
@@ -37,11 +35,8 @@ export const ExampleResponsiveImageContain: Story = {
 
 export const ExampleResponsiveImageAutoRatio: Story = {
   args: {
-    imageLarge: 'https://via.placeholder.com/800x600?text=4+by+3+image',
-    imageSmall: 'https://via.placeholder.com/400x300',
-    imageAltText: 'Parkland',
+    ...ExampleResponsiveImageCover.args,
     ratio: 'auto',
-    objectFit: 'cover',
   },
   render: (args) => (
     <>

@@ -13,7 +13,7 @@ const meta: Meta<typeof SignpostLinksList> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SignpostLinksList>;
+type Story = StoryObj<typeof meta>;
 
 export const NorthSignpostLinksExample: Story = {
   args: {

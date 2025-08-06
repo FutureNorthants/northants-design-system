@@ -15,7 +15,7 @@ const meta: Meta<typeof Input> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
@@ -35,9 +35,7 @@ export const Example: Story = {
 export const ExampleWithDefaultValue: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     defaultValue: 'Some default text',
   },
 };
@@ -45,9 +43,7 @@ export const ExampleWithDefaultValue: Story = {
 export const ExampleFullWidth: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     isFullWidth: true,
   },
 };
@@ -55,20 +51,19 @@ export const ExampleFullWidth: Story = {
 export const ExampleHasError: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     isErrored: true,
     errorText: 'The field example textarea is required.',
-    isFullWidth: true,
   },
 };
 
-export const ExampleDateInput = Template.bind({});
-ExampleDateInput.args = {
-  name: 'exampleDateBox',
-  placeholder: 'Select a Date',
-  id: 'ExampleDataBox',
-  type: 'date',
-  minValue: new Date().toISOString().substring(0, 10),
+export const ExampleDateInput: Story = {
+  ...Example,
+  args: {
+    name: 'exampleDateBox',
+    placeholder: 'Select a Date',
+    id: 'ExampleDataBox',
+    type: 'date',
+    minValue: new Date().toISOString().substring(0, 10),
+  },
 };

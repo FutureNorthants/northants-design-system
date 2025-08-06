@@ -13,7 +13,7 @@ const meta: Meta<typeof Heading> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Heading>;
+type Story = StoryObj<typeof meta>;
 
 export const H1: Story = {
   args: {
@@ -23,7 +23,6 @@ export const H1: Story = {
 };
 
 export const H2: Story = {
-  ...H1,
   args: {
     level: 2,
     text: 'Heading 2',
@@ -31,7 +30,6 @@ export const H2: Story = {
 };
 
 export const H3: Story = {
-  ...H1,
   args: {
     level: 3,
     text: 'Heading 3',
@@ -39,7 +37,6 @@ export const H3: Story = {
 };
 
 export const H4: Story = {
-  ...H1,
   args: {
     level: 4,
     text: 'Heading 4',

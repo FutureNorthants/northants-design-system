@@ -16,7 +16,7 @@ const meta: Meta<typeof PostCodeAddressDropdown> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PostCodeAddressDropdown>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePostCodeAddressDropdown: Story = {
   render: (args) => (

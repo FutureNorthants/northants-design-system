@@ -15,7 +15,7 @@ const meta: Meta<typeof ErrorSummary> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ErrorSummary>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleErrorSummary: Story = {
   args: {

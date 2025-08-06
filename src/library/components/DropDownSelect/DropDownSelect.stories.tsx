@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DropDownSelect from './DropDownSelect';
-import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
 const meta: Meta<typeof DropDownSelect> = {
   title: 'Library/Components/Drop Down Select',
@@ -14,7 +13,7 @@ const meta: Meta<typeof DropDownSelect> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DropDownSelect>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDropDownSelect: Story = {
   args: {
@@ -32,7 +31,22 @@ export const ExampleDropDownSelect: Story = {
         value: 'council-tax',
       },
     ],
-    selected: NewsArticleFilters.services,
+  },
+};
+
+export const ExampleDropDownSelectWithLabel: Story = {
+  ...ExampleDropDownSelect,
+  args: {
+    label: 'Services',
+    ...ExampleDropDownSelect.args,
+  },
+};
+
+export const ExampleDropDownSelectWithLabelHidden: Story = {
+  ...ExampleDropDownSelectWithLabel,
+  args: {
+    ...ExampleDropDownSelectWithLabel.args,
+    hideLabel: true,
   },
 };
 
@@ -69,29 +83,5 @@ export const ExampleDropDownFakeData: Story = {
         value: '6',
       },
     ],
-    selected: NewsArticleFilters.services,
-  },
-};
-
-export const ExampleDropDownSelectHiddenLabel: Story = {
-  ...ExampleDropDownSelect,
-  args: {
-    hideLabel: true,
-    label: 'Services',
-    options: [
-      {
-        title: 'All services',
-        value: 'all-services',
-      },
-      {
-        title: 'Bins',
-        value: 'bins',
-      },
-      {
-        title: 'Council Tax',
-        value: 'council-tax',
-      },
-    ],
-    selected: NewsArticleFilters.services,
   },
 };

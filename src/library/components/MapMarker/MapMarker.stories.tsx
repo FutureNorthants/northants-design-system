@@ -17,7 +17,7 @@ const meta: Meta<typeof MapMarker> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MapMarker>;
+type Story = StoryObj<typeof meta>;
 
 const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 

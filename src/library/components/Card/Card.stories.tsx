@@ -16,11 +16,10 @@ const meta: Meta<typeof Card> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<typeof meta>;
 
-export const CardWithHeading: Story = {
+export const CardWithContentOnly: Story = {
   args: {
-    header: 'Example Heading',
     content: '<p>Some example content</p>',
   },
   render: (args) => (
@@ -34,56 +33,47 @@ export const CardWithHeading: Story = {
   ),
 };
 
-export const CardWithoutHeading: Story = {
-  ...CardWithHeading,
+export const CardWithHeadingAndContent: Story = {
+  ...CardWithContentOnly,
   args: {
-    content: '<p>Some example content</p>',
+    ...CardWithContentOnly.args,
+    header: 'Example Heading',
   },
 };
 
 export const CardWithFooterLink: Story = {
-  ...CardWithHeading,
+  ...CardWithHeadingAndContent,
   args: {
-    header: 'Example Heading',
-    content: '<p>Some example content</p>',
+    ...CardWithHeadingAndContent.args,
     footerLink: {
       url: '/test',
-      title: 'Example link text',
+      title: 'Example footer link text',
     },
   },
 };
 
-export const CardWithImage: Story = {
-  ...CardWithHeading,
+export const CardWithImageOnly: Story = {
+  ...CardWithHeadingAndContent,
   args: {
-    header: 'Example Heading',
-    content: '<p>Some example content</p>',
     imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
     imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
     imageAltText: 'Parkland',
+  },
+};
+
+export const CardWithImageAndContent: Story = {
+  ...CardWithContentOnly,
+  ...CardWithImageOnly,
+  args: {
+    ...CardWithContentOnly.args,
+    ...CardWithImageOnly.args,
   },
 };
 
 export const CardWithImageLink: Story = {
-  ...CardWithHeading,
+  ...CardWithImageAndContent,
   args: {
-    header: 'Example Heading',
-    content: '<p>Some example content</p>',
-    imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
-    imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
-    imageAltText: 'Parkland',
-    footerLink: {
-      url: '/test',
-      title: 'Example link text',
-    },
-  },
-};
-
-export const CardWithOnlyImage: Story = {
-  ...CardWithHeading,
-  args: {
-    imageLarge: 'https://via.placeholder.com/800x600?text=800+by+600+image',
-    imageSmall: 'https://via.placeholder.com/400x300?text=400+by+300+image',
-    imageAltText: 'Parkland',
+    ...CardWithImageAndContent.args,
+    ...CardWithFooterLink.args,
   },
 };

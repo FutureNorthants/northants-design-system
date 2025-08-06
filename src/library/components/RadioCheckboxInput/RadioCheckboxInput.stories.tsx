@@ -15,7 +15,7 @@ const meta: Meta<typeof RadioCheckboxInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RadioCheckboxInput>;
+type Story = StoryObj<typeof meta>;
 
 /**
  * TODO - the component is a controlled react component so story can
@@ -43,10 +43,7 @@ export const ExampleCheckboxInput: Story = {
 export const ExampleRadioInput: Story = {
   ...ExampleCheckboxInput,
   args: {
-    label: 'Example',
+    ...ExampleCheckboxInput.args,
     singleSelection: true,
-    value: 'example',
-    name: 'Example item',
-    checked: true,
   },
 };

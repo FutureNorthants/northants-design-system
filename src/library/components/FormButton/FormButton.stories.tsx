@@ -13,7 +13,7 @@ const meta: Meta<typeof FormButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FormButton>;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
@@ -23,7 +23,6 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
-  ...Primary,
   args: {
     primary: false,
     text: 'FormButton label',
@@ -33,15 +32,15 @@ export const Secondary: Story = {
 export const Large: Story = {
   ...Primary,
   args: {
+    ...Primary.args,
     size: 'large',
-    text: 'FormButton label',
   },
 };
 
 export const Small: Story = {
   ...Primary,
   args: {
+    ...Primary.args,
     size: 'small',
-    text: 'FormButton label',
   },
 };

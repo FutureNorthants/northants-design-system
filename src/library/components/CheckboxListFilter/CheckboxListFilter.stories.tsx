@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CheckboxListFilter from './CheckboxListFilter';
 import { articleOptions } from './CheckboxListFilterData';
-import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
+import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
 const meta: Meta<typeof CheckboxListFilter> = {
   title: 'Library/Components/Checkbox List Filter',
@@ -15,7 +15,7 @@ const meta: Meta<typeof CheckboxListFilter> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CheckboxListFilter>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleCheckboxListFilter: Story = {
   args: {
@@ -30,8 +30,7 @@ export const ExampleCheckboxListFilter: Story = {
 export const ExampleCheckboxListFilterHiddenLabelHint: Story = {
   ...ExampleCheckboxListFilter,
   args: {
-    options: articleOptions,
-    checked: NewsArticleFilters.articleType,
+    ...ExampleCheckboxListFilter.args,
     hint: null,
     label: null,
   },

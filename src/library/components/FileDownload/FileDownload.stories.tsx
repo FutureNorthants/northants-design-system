@@ -15,7 +15,7 @@ const meta: Meta<typeof FileDownload> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FileDownload>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleFileDownload: Story = {
   args: {

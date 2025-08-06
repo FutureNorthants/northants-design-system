@@ -17,7 +17,7 @@ const meta: Meta<typeof BackToTop> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BackToTop>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleBackToTop: Story = {
   args: {

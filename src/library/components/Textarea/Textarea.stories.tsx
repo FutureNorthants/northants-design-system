@@ -3,6 +3,7 @@ import Textarea from './Textarea';
 import type { Meta, StoryObj } from '@storybook/react';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
+import { ExampleSortBy } from '../SortBy/SortBy.stories';
 
 const meta: Meta<typeof Textarea> = {
   title: 'Library/Components/Textarea',
@@ -15,7 +16,7 @@ const meta: Meta<typeof Textarea> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Textarea>;
+type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
@@ -35,9 +36,7 @@ export const Example: Story = {
 export const ExampleWithDefaultValue: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     defaultValue: 'Some default text',
   },
 };
@@ -45,9 +44,7 @@ export const ExampleWithDefaultValue: Story = {
 export const ExampleFullWidth: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     isFullWidth: true,
   },
 };
@@ -55,11 +52,8 @@ export const ExampleFullWidth: Story = {
 export const ExampleHasError: Story = {
   ...Example,
   args: {
-    name: 'exampleInput',
-    placeholder: 'Enter some text',
-    id: 'ExampleTextarea',
+    ...Example.args,
     isErrored: true,
     errorText: 'The field example textarea is required.',
-    isFullWidth: true,
   },
 };

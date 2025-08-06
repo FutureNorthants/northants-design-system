@@ -95,7 +95,7 @@ const meta: Meta<typeof Autocomplete> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Autocomplete>;
+type Story = StoryObj<typeof meta>;
 
 function onSelectStub(selectedValue: string): void {
   action('selected')(selectedValue);

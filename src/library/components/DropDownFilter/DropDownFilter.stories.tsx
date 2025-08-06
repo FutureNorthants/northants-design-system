@@ -15,7 +15,7 @@ const meta: Meta<typeof DropDownFilter> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DropDownFilter>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleDropDownFilter: Story = {
   args: {
@@ -24,12 +24,18 @@ export const ExampleDropDownFilter: Story = {
   },
 };
 
-export const ExampleDropDownFilterHideLabel: Story = {
+export const ExampleDropDownFilterWithLabel: Story = {
   ...ExampleDropDownFilter,
   args: {
-    hideLabel: true,
+    ...ExampleDropDownFilter.args,
     label: 'News Articles',
-    options: serviceOptions,
-    selected: NewsArticleFilters.services,
+  },
+};
+
+export const ExampleDropDownFilterWithLabelHidden: Story = {
+  ...ExampleDropDownFilterWithLabel,
+  args: {
+    ...ExampleDropDownFilterWithLabel.args,
+    hideLabel: true,
   },
 };

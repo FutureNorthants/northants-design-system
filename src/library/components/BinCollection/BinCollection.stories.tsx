@@ -16,7 +16,7 @@ const meta: Meta<typeof BinCollection> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BinCollection>;
+type Story = StoryObj<typeof meta>;
 
 const now = dayjs();
 

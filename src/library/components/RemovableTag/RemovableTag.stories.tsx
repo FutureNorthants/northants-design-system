@@ -13,7 +13,7 @@ const meta: Meta<typeof RemovableTag> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RemovableTag>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleRemovableTag: Story = {
   args: {

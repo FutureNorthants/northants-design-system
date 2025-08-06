@@ -15,7 +15,7 @@ const meta: Meta<typeof ToggleButtons> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ToggleButtons>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleToggleButtons: Story = {
   args: {

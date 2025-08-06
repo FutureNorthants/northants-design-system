@@ -13,7 +13,7 @@ const meta: Meta<typeof Panel> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Panel>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePanel: Story = {
   args: {

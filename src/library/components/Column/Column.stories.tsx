@@ -14,7 +14,7 @@ const meta: Meta<typeof Column> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof Column>;
+type Story = StoryObj<typeof meta>;
 
 const divStyle = {
   backgroundColor: '#386193',
@@ -47,6 +47,7 @@ export const DefaultColumnWidths: Story = {
 export const FullWidthColumns: Story = {
   ...DefaultColumnWidths,
   args: {
+    ...DefaultColumnWidths.args,
     small: 'full',
     medium: 'full',
     large: 'full',
@@ -57,6 +58,7 @@ export const FullWidthColumns: Story = {
 export const HalfWidthColumns: Story = {
   ...DefaultColumnWidths,
   args: {
+    ...DefaultColumnWidths.args,
     small: 'one-half',
     medium: 'one-half',
     large: 'one-half',
@@ -65,11 +67,9 @@ export const HalfWidthColumns: Story = {
 };
 
 export const HalfWidthColumnsWithoutPadding: Story = {
-  ...DefaultColumnWidths,
+  ...HalfWidthColumns,
   args: {
-    small: 'one-half',
-    medium: 'one-half',
-    large: 'one-half',
+    ...HalfWidthColumns.args,
     hasPadding: false,
   },
 };
@@ -77,6 +77,7 @@ export const HalfWidthColumnsWithoutPadding: Story = {
 export const OneThirdWidthColumns: Story = {
   ...DefaultColumnWidths,
   args: {
+    ...DefaultColumnWidths.args,
     small: 'one-third',
     medium: 'one-third',
     large: 'one-third',
@@ -87,6 +88,7 @@ export const OneThirdWidthColumns: Story = {
 export const AutoWidthColumns: Story = {
   ...DefaultColumnWidths,
   args: {
+    ...DefaultColumnWidths.args,
     small: 'auto',
     medium: 'auto',
     large: 'auto',

@@ -13,49 +13,41 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
     primary: true,
     text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
+    url: 'https://www.westnorthants.gov.uk/',
   },
 };
 
 export const Secondary: Story = {
-  ...Primary,
   args: {
+    ...Primary.args,
     primary: false,
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const Large: Story = {
-  ...Primary,
   args: {
+    ...Primary.args,
     size: 'large',
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const Small: Story = {
-  ...Primary,
   args: {
+    ...Primary.args,
     size: 'small',
-    text: 'Button label',
-    url: 'https://futurenorthantswest.org/',
   },
 };
 
 export const ColourOverride: Story = {
-  ...Primary,
   args: {
-    primary: true,
+    ...Primary.args,
     text: 'This might not be accessible if the overrided colour is too light!',
-    url: 'https://futurenorthantswest.org/',
     colourOverride: 'pink',
   },
 };

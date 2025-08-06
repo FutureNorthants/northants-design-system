@@ -12,7 +12,7 @@ const meta: Meta<typeof DynamicIcon> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof DynamicIcon>;
+type Story = StoryObj<typeof meta>;
 
 export const BusDynamicIcon: Story = {
   args: {
@@ -22,7 +22,6 @@ export const BusDynamicIcon: Story = {
 };
 
 export const BenefitsDynamicIcon: Story = {
-  ...BusDynamicIcon,
   args: {
     level: 1,
     icon: 'benefits',

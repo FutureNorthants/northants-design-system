@@ -13,7 +13,7 @@ const meta: Meta<typeof HeadingWithIconLink> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HeadingWithIconLink>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleIconWithHeading: Story = {
   args: {
@@ -24,7 +24,6 @@ export const ExampleIconWithHeading: Story = {
 };
 
 export const ExampleWithoutIcon: Story = {
-  ...ExampleIconWithHeading,
   args: {
     iconKey: undefined,
     link: '#',
@@ -33,7 +32,6 @@ export const ExampleWithoutIcon: Story = {
 };
 
 export const ExampleWithIconAndLongHeading: Story = {
-  ...ExampleIconWithHeading,
   args: {
     iconKey: 'births',
     link: '#',

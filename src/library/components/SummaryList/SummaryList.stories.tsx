@@ -14,7 +14,7 @@ const meta: Meta<typeof SummaryList> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SummaryList>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSummaryList: Story = {
   args: {

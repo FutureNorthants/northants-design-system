@@ -16,7 +16,7 @@ const meta: Meta<typeof PostCodeAddressTable> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PostCodeAddressTable>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePostCodeAddressTable: Story = {
   render: (args) => (

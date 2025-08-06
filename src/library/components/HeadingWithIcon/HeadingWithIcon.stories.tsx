@@ -13,9 +13,9 @@ const meta: Meta<typeof HeadingWithIcon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HeadingWithIcon>;
+type Story = StoryObj<typeof meta>;
 
-export const H1: Story = {
+export const H1WithBinIcon: Story = {
   args: {
     level: 1,
     text: 'Heading With Icon 1',
@@ -23,18 +23,24 @@ export const H1: Story = {
   },
 };
 
-export const H1WithHover: Story = {
-  ...H1,
+export const H1WithHoverEffect: Story = {
+  ...H1WithBinIcon,
   args: {
-    level: 1,
+    ...H1WithBinIcon.args,
     text: 'Heading With Icon & Hover Effect',
-    icon: 'bins',
     hasHover: true,
   },
 };
 
-export const H2: Story = {
-  ...H1,
+export const H1WithSubHeading: Story = {
+  ...H1WithBinIcon,
+  args: {
+    ...H1WithBinIcon.args,
+    subHeading: 'Example sub heading',
+  },
+};
+
+export const H2WithCouncilTaxIcon: Story = {
   args: {
     level: 2,
     text: 'Heading With Icon 2',
@@ -42,8 +48,7 @@ export const H2: Story = {
   },
 };
 
-export const H3: Story = {
-  ...H1,
+export const H3WithCovidIcon: Story = {
   args: {
     level: 3,
     text: 'Heading With Icon 3',
@@ -51,21 +56,10 @@ export const H3: Story = {
   },
 };
 
-export const H4: Story = {
-  ...H1,
+export const H4WithRoadsIcon: Story = {
   args: {
     level: 4,
     text: 'Heading With Icon 4',
     icon: 'roads',
-  },
-};
-
-export const H1WithSubHeading: Story = {
-  ...H1,
-  args: {
-    level: 1,
-    text: 'Heading with Icon 1',
-    icon: 'roads',
-    subHeading: 'Example sub heading',
   },
 };

@@ -13,7 +13,7 @@ const meta: Meta<typeof AlphabeticalDirectory> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AlphabeticalDirectory>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleAlphabeticalDirectory: Story = {
   args: {

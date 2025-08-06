@@ -14,7 +14,7 @@ const meta: Meta<typeof SortBy> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SortBy>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleSortBy: Story = {
   args: {

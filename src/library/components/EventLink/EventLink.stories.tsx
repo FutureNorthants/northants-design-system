@@ -13,7 +13,7 @@ const meta: Meta<typeof EventLink> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof EventLink>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleEventLink: Story = {
   args: {
@@ -32,49 +32,21 @@ export const ExampleEventLink: Story = {
 
 export const ExamplePromotedEventLink: Story = {
   args: {
-    title: 'An example event',
-    summary: 'The example events summary that describes the event.',
-    startTime: '16 August 2024 10:00:00',
-    endTime: '16 August 2024 11:00:00',
-    url: '/events/1',
-    imageLarge: 'https://picsum.photos/id/18/1440/810',
-    imageSmall: 'https://picsum.photos/id/18/720/405',
-    imageAltText: 'The example images alt text',
-    location: 'One Angel Square',
+    ...ExampleEventLink.args,
     isPromoted: true,
-    parentTitle: 'Bins, recycling and waste',
   },
 };
 
 export const ExampleEventLinkWithSummary: Story = {
   args: {
-    title: 'An example event',
-    summary: 'The example events summary that describes the event.',
-    startTime: '16 August 2024 10:00:00',
-    endTime: '16 August 2024 11:00:00',
-    url: '/events/1',
-    imageLarge: 'https://picsum.photos/id/18/1440/810',
-    imageSmall: 'https://picsum.photos/id/18/720/405',
-    imageAltText: 'The example images alt text',
-    location: 'One Angel Square',
+    ...ExampleEventLink.args,
     showSummary: true,
-    parentTitle: 'Bins, recycling and waste',
   },
 };
 
 export const ExampleEventLinkNoPadding: Story = {
   args: {
-    title: 'An example event',
-    summary: 'The example events summary that describes the event.',
-    startTime: '16 August 2024 10:00:00',
-    endTime: '16 August 2024 11:00:00',
-    url: '/events/1',
-    imageLarge: 'https://picsum.photos/id/18/1440/810',
-    imageSmall: 'https://picsum.photos/id/18/720/405',
-    imageAltText: 'The example images alt text',
-    location: 'One Angel Square',
-    showSummary: false,
+    ...ExampleEventLink.args,
     hasPadding: false,
-    parentTitle: 'Bins, recycling and waste',
   },
 };

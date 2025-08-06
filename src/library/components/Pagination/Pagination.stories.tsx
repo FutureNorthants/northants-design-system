@@ -13,7 +13,7 @@ const meta: Meta<typeof Pagination> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Pagination>;
+type Story = StoryObj<typeof meta>;
 
 const totalResults = 100;
 const resultsPerPage = 10;

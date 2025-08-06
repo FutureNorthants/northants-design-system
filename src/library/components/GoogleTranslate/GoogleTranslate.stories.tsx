@@ -16,7 +16,7 @@ const meta: Meta<typeof GoogleTranslate> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof GoogleTranslate>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleGoogleTranslate: Story = {
   args: {
@@ -44,8 +44,7 @@ export const ExampleGoogleTranslateNoLabel: Story = {
 
 export const ExampleGoogleTranslateDarkBackground: Story = {
   args: {
-    pageLanguage: 'en',
-    label: 'Translate this page',
+    ...ExampleGoogleTranslate.args,
     hasDarkBackground: true,
   },
   render: (args) => (

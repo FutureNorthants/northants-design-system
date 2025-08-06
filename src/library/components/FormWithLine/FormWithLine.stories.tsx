@@ -14,7 +14,7 @@ const meta: Meta<typeof FormWithLine> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FormWithLine>;
+type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {},

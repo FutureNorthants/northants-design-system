@@ -13,6 +13,6 @@ const meta: Meta<typeof LoadingSpinner> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof LoadingSpinner>;
+type Story = StoryObj<typeof meta>;
 
 export const ExampleLoadingSpinner: Story = {};

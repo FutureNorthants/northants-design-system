@@ -8,7 +8,7 @@ const meta: Meta<typeof PromotedLinks> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PromotedLinks>;
+type Story = StoryObj<typeof meta>;
 
 export const ExamplePromotedLinks: Story = {
   args: {
@@ -30,42 +30,26 @@ export const ExamplePromotedLinks: Story = {
 };
 
 export const ExamplePromotedLinksOneCol: Story = {
+  ...ExamplePromotedLinks,
   args: {
-    promotedLinksArray: [
-      {
-        title: 'Make a payment',
-        url: '/',
-      },
-      {
-        title: 'Contact the council',
-        url: '/',
-      },
-      {
-        title: 'About our new website',
-        url: '/',
-      },
-    ],
+    ...ExamplePromotedLinks.args,
     oneCol: true,
   },
 };
 
 export const ExamplePromotedLinksHasTabs: Story = {
+  ...ExamplePromotedLinks,
   args: {
-    promotedLinksArray: [
-      {
-        title: 'Make a payment',
-        url: '/',
-      },
-      {
-        title: 'Contact the council',
-        url: '/',
-      },
-      {
-        title: 'About our new website',
-        url: '/',
-      },
-    ],
-    oneCol: false,
+    ...ExamplePromotedLinks.args,
+    hasTabs: true,
+  },
+};
+
+export const ExamplePromotedLinksOneColHasTabs: Story = {
+  ...ExamplePromotedLinks,
+  args: {
+    ...ExamplePromotedLinks.args,
+    oneCol: true,
     hasTabs: true,
   },
 };
