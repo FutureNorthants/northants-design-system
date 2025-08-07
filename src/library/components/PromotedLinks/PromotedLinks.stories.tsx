@@ -1,73 +1,55 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PromotedLinks from './PromotedLinks';
-import { PromotedLinksProps } from './PromotedLinks.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof PromotedLinks> = {
   title: 'Library/Components/Promoted Links',
   component: PromotedLinks,
 };
 
-const Template: StoryFn<PromotedLinksProps> = (args) => (
-  <SBPadding>
-    <PromotedLinks {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExamplePromotedLinks = Template.bind({});
-ExamplePromotedLinks.args = {
-  promotedLinksArray: [
-    {
-      title: 'Make a payment',
-      url: '/',
-    },
-    {
-      title: 'Contact the council',
-      url: '/',
-    },
-    {
-      title: 'About our new website',
-      url: '/',
-    },
-  ],
+export const ExamplePromotedLinks: Story = {
+  args: {
+    promotedLinksArray: [
+      {
+        title: 'Make a payment',
+        url: '/',
+      },
+      {
+        title: 'Contact the council',
+        url: '/',
+      },
+      {
+        title: 'About our new website',
+        url: '/',
+      },
+    ],
+  },
 };
 
-export const ExamplePromotedLinksOneCol = Template.bind({});
-ExamplePromotedLinksOneCol.args = {
-  promotedLinksArray: [
-    {
-      title: 'Make a payment',
-      url: '/',
-    },
-    {
-      title: 'Contact the council',
-      url: '/',
-    },
-    {
-      title: 'About our new website',
-      url: '/',
-    },
-  ],
-  oneCol: true,
+export const ExamplePromotedLinksOneCol: Story = {
+  ...ExamplePromotedLinks,
+  args: {
+    ...ExamplePromotedLinks.args,
+    oneCol: true,
+  },
 };
 
-export const ExamplePromotedLinksHasTabs = Template.bind({});
-ExamplePromotedLinksHasTabs.args = {
-  promotedLinksArray: [
-    {
-      title: 'Make a payment',
-      url: '/',
-    },
-    {
-      title: 'Contact the council',
-      url: '/',
-    },
-    {
-      title: 'About our new website',
-      url: '/',
-    },
-  ],
-  oneCol: false,
-  hasTabs: true,
+export const ExamplePromotedLinksHasTabs: Story = {
+  ...ExamplePromotedLinks,
+  args: {
+    ...ExamplePromotedLinks.args,
+    hasTabs: true,
+  },
+};
+
+export const ExamplePromotedLinksOneColHasTabs: Story = {
+  ...ExamplePromotedLinks,
+  args: {
+    ...ExamplePromotedLinks.args,
+    oneCol: true,
+    hasTabs: true,
+  },
 };

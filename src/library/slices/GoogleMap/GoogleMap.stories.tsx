@@ -1,11 +1,9 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import GoogleMap from './GoogleMap';
-import { GoogleMapProps } from './GoogleMap.types';
 import * as storydata from './GoogleMap.storydata';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof GoogleMap> = {
   title: 'Library/Slices/GoogleMap',
   component: GoogleMap,
   parameters: {
@@ -15,36 +13,41 @@ export default {
   },
 };
 
-const Template: StoryFn<GoogleMapProps> = (args) => (
-  <SBPadding>
-    <GoogleMap {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const GoogleMapWithTitleAndDescription = Template.bind({});
-GoogleMapWithTitleAndDescription.args = storydata.GoogleMapWithTitleAndDescription;
+export const GoogleMapWithTitleAndDescription: Story = {
+  args: storydata.GoogleMapWithTitleAndDescription,
+};
 
-export const GoogleMapWithTitleOnly = Template.bind({});
-GoogleMapWithTitleOnly.args = storydata.GoogleMapWithTitleOnly;
+export const GoogleMapWithTitleOnly: Story = {
+  args: storydata.GoogleMapWithTitleOnly,
+};
 
-export const GoogleMapNoTitleOrDescription = Template.bind({});
-GoogleMapNoTitleOrDescription.args = storydata.GoogleMapNoTitleOrDescription;
+export const GoogleMapNoTitleOrDescription: Story = {
+  args: storydata.GoogleMapNoTitleOrDescription,
+};
 
-export const GoogleMapWithTitleAndDescriptionDataWithoutCookies = Template.bind({});
-GoogleMapWithTitleAndDescriptionDataWithoutCookies.args = storydata.GoogleMapWithTitleAndDescriptionDataWithoutCookies;
+export const GoogleMapWithTitleAndDescriptionDataWithoutCookies: Story = {
+  args: storydata.GoogleMapWithTitleAndDescriptionDataWithoutCookies,
+};
 
-export const GoogleMapWithTitleAndDescriptionDataAutodetectCookies = Template.bind({});
-GoogleMapWithTitleAndDescriptionDataAutodetectCookies.args =
-  storydata.GoogleMapWithTitleAndDescriptionDataAutodetectCookies;
+export const GoogleMapWithTitleAndDescriptionDataAutodetectCookies: Story = {
+  args: storydata.GoogleMapWithTitleAndDescriptionDataAutodetectCookies,
+};
 
-export const GoogleMapWithInvalidLinks = Template.bind({});
-GoogleMapWithInvalidLinks.args = storydata.GoogleMapWithInvalidLinks;
+export const GoogleMapWithInvalidLinks: Story = {
+  args: storydata.GoogleMapWithInvalidLinks,
+};
 
-export const GoogleMapWithUpdatedLink = Template.bind({});
-GoogleMapWithUpdatedLink.args = storydata.GoogleMapWithUpdatedLinkFormat;
+export const GoogleMapWithUpdatedLink: Story = {
+  args: storydata.GoogleMapWithUpdatedLinkFormat,
+};
 
-export const OneNetworkMap = Template.bind({});
-OneNetworkMap.args = storydata.OneNetworkMapLink;
+export const OneNetworkMap: Story = {
+  args: storydata.OneNetworkMapLink,
+};
 
-export const OneNetworkMapIncorrectURL = Template.bind({});
-OneNetworkMapIncorrectURL.args = storydata.OneNetworkMapIncorrectURLLink;
+export const OneNetworkMapIncorrectURL: Story = {
+  args: storydata.OneNetworkMapIncorrectURLLink,
+};

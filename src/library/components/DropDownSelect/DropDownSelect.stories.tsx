@@ -1,12 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import DropDownSelect from './DropDownSelect';
-import { DropDownSelectProps } from './DropDownSelect.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
-
-export default {
+const meta: Meta<typeof DropDownSelect> = {
   title: 'Library/Components/Drop Down Select',
   component: DropDownSelect,
   parameters: {
@@ -16,83 +12,76 @@ export default {
   },
 };
 
-const Template: StoryFn<DropDownSelectProps> = (args) => (
-  <SBPadding>
-    <DropDownSelect {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExampleDropDownSelect = Template.bind({});
-ExampleDropDownSelect.args = {
-  options: [
-    {
-      title: 'All services',
-      value: 'all-services',
-    },
-    {
-      title: 'Bins',
-      value: 'bins',
-    },
-    {
-      title: 'Council Tax',
-      value: 'council-tax',
-    },
-  ],
-  selected: NewsArticleFilters.services,
+export const ExampleDropDownSelect: Story = {
+  args: {
+    options: [
+      {
+        title: 'All services',
+        value: 'all-services',
+      },
+      {
+        title: 'Bins',
+        value: 'bins',
+      },
+      {
+        title: 'Council Tax',
+        value: 'council-tax',
+      },
+    ],
+  },
 };
 
-export const ExampleDropDownFakeData = Template.bind({});
-ExampleDropDownFakeData.args = {
-  options: [
-    {
-      title: 'Click me to see nonsense',
-      value: '0',
-    },
-    {
-      title: 'Foo',
-      value: '1',
-    },
-    {
-      title: 'Bar',
-      value: '2',
-    },
-    {
-      title: 'Hello',
-      value: '3',
-    },
-    {
-      title: 'World',
-      value: '4',
-    },
-    {
-      title: 'Lorem',
-      value: '5',
-    },
-    {
-      title: 'Ipsum',
-      value: '6',
-    },
-  ],
-  selected: NewsArticleFilters.services,
+export const ExampleDropDownSelectWithLabel: Story = {
+  ...ExampleDropDownSelect,
+  args: {
+    label: 'Services',
+    ...ExampleDropDownSelect.args,
+  },
 };
 
-export const ExampleDropDownSelectHiddenLabel = Template.bind({});
-ExampleDropDownSelectHiddenLabel.args = {
-  hideLabel: true,
-  label: 'Services',
-  options: [
-    {
-      title: 'All services',
-      value: 'all-services',
-    },
-    {
-      title: 'Bins',
-      value: 'bins',
-    },
-    {
-      title: 'Council Tax',
-      value: 'council-tax',
-    },
-  ],
-  selected: NewsArticleFilters.services,
+export const ExampleDropDownSelectWithLabelHidden: Story = {
+  ...ExampleDropDownSelectWithLabel,
+  args: {
+    ...ExampleDropDownSelectWithLabel.args,
+    hideLabel: true,
+  },
+};
+
+export const ExampleDropDownFakeData: Story = {
+  ...ExampleDropDownSelect,
+  args: {
+    options: [
+      {
+        title: 'Click me to see nonsense',
+        value: '0',
+      },
+      {
+        title: 'Foo',
+        value: '1',
+      },
+      {
+        title: 'Bar',
+        value: '2',
+      },
+      {
+        title: 'Hello',
+        value: '3',
+      },
+      {
+        title: 'World',
+        value: '4',
+      },
+      {
+        title: 'Lorem',
+        value: '5',
+      },
+      {
+        title: 'Ipsum',
+        value: '6',
+      },
+    ],
+  },
 };

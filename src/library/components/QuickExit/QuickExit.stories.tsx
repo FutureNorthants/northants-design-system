@@ -13,7 +13,7 @@ const meta: Meta<typeof QuickExit> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof QuickExit>;
+type Story = StoryObj<typeof meta>;
 
 export const DefaultQuickExit: Story = {
   render: (args) => <QuickExit {...args} />,
