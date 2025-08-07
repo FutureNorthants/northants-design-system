@@ -70,7 +70,7 @@ const NewsArticleFilterAccordion: React.FunctionComponent<NewsArticleFilterAccor
       <Styles.Filters $isFullScreen={isFullScreen} id="PageFilters" aria-labelledby="PageFiltersLabel">
         <Styles.FilterHeader>
           <Styles.FilterHeading id="PageFiltersLabel">Search and filters</Styles.FilterHeading>
-          <Styles.ShowFiltersButton onClick={hideFullscreenFilters}>Close window</Styles.ShowFiltersButton>
+          <Styles.ShowFiltersButton onClick={hideFullscreenFilters}>Hide search and filters</Styles.ShowFiltersButton>
         </Styles.FilterHeader>
         <Accordion isFilter={true} sections={sections} withReadMore={false} />
         {count > 0 && <RemoveAllFilters count={count} />}
