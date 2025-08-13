@@ -14,6 +14,7 @@ import { SignpostLinks } from '../../structure/PageStructures';
 import DropDownSelect from '../DropDownSelect/DropDownSelect';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import { PostcodeResultsProps, PostcodeSearchApiUrl } from '../../helpers/api-helpers';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * The functionality for searching for a postcode
@@ -25,7 +26,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
   signPostLinks,
   isUnitary = false,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [open, setOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setisError] = useState<boolean>(formError);

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof Header> = {
   title: 'Library/structure/Header',
@@ -85,7 +85,7 @@ export const HeaderCludoSearch: Story = {
     hasTranslate: true,
     hasEventsLink: true,
     hasCludo: true,
-    customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-    engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+    customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
   },
 };

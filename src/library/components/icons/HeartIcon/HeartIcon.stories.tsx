@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import HeartIcon from './HeartIcon';
 
 const meta: Meta<typeof HeartIcon> = {

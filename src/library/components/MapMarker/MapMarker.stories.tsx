@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MapMarker from './MapMarker';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import Map from '../Map/Map';
@@ -19,7 +19,7 @@ const meta: Meta<typeof MapMarker> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+const apiKey: string = process?.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 export const ExampleGoogleMapMarker: Story = {
   args: {

@@ -13,6 +13,7 @@ import WestBlackLogo from '../../components/logos/WestBlackLogo/logo';
 import NorthBlackLogo from '../../components/logos/NorthBlackLogo/logo';
 import GoogleTranslate from '../../components/GoogleTranslate/GoogleTranslate';
 import CludoSearchBar from '../CludoSearchBar/CludoSearchBar';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * The header that should appear at the top of every page.
@@ -34,7 +35,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   customerId,
   ...props
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [showTranslate, setShowTranslate] = useState<boolean>(false);
 

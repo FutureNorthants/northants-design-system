@@ -62,7 +62,7 @@ const RateThisPage: React.FunctionComponent<RateThisPageProps> = ({
   const [showQuestion, setShowQuestion] = useState<boolean>(false);
   const [showFullForm, setShowFullForm] = useState<boolean>(false);
   const [showSubmit, setShowSubmit] = useState<boolean>(true);
-  const recaptchaKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
+  const recaptchaKey: string = process?.env?.NEXT_PUBLIC_RECAPTCHA_KEY ?? '';
   const recaptchaContainerId = 'recaptchaContainer';
   const fullFormRef = useRef(null);
 

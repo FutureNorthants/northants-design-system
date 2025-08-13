@@ -1,6 +1,6 @@
 import React from 'react';
 import TextInput from './TextInput';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof TextInput> = {
   title: 'Library/Components/TextInput',

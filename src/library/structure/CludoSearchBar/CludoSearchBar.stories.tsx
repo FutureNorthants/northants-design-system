@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import CludoSearchBar from './CludoSearchBar';
 import PageMain from '../PageMain/PageMain';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -19,8 +19,8 @@ type Story = StoryObj<typeof meta>;
 
 export const ExampleCludoSearchBar: Story = {
   args: {
-    customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-    engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+    customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
   },
   render: (args) => (
     <MaxWidthContainer>
