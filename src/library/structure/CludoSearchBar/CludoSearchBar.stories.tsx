@@ -1,12 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import CludoSearchBar from './CludoSearchBar';
-import { CludoSearchBarProps } from './CludoSearchBar.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import PageMain from '../PageMain/PageMain';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
-export default {
+const meta: Meta<typeof CludoSearchBar> = {
   title: 'Library/Structure/Cludo Search Bar',
   component: CludoSearchBar,
   parameters: {
@@ -16,18 +14,19 @@ export default {
   },
 };
 
-const Template: StoryFn<CludoSearchBarProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ExampleCludoSearchBar: Story = {
+  args: {
+    customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <CludoSearchBar {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const ExampleCludoSearchBar = Template.bind({});
-ExampleCludoSearchBar.args = {
-  customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  ),
 };

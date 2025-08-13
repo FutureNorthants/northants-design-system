@@ -1,10 +1,8 @@
 import React from 'react';
 import Button from './Button';
-import { ButtonProps } from './Button.types';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Library/Components/Button',
   component: Button,
   parameters: {
@@ -14,44 +12,42 @@ export default {
   },
 };
 
-const Template: StoryFn<ButtonProps> = (args) => (
-  <SBPadding>
-    <Button {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Primary: Story = {
+  args: {
+    primary: true,
+    text: 'Button label',
+    url: 'https://www.westnorthants.gov.uk/',
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  primary: false,
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Secondary: Story = {
+  args: {
+    ...Primary.args,
+    primary: false,
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Large: Story = {
+  args: {
+    ...Primary.args,
+    size: 'large',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  text: 'Button label',
-  url: 'https://futurenorthantswest.org/',
+export const Small: Story = {
+  args: {
+    ...Primary.args,
+    size: 'small',
+  },
 };
 
-export const ColourOverride = Template.bind({});
-ColourOverride.args = {
-  primary: true,
-  text: 'This might not be accessible if the overrided colour is too light!',
-  url: 'https://futurenorthantswest.org/',
-  colourOverride: 'pink',
+export const ColourOverride: Story = {
+  args: {
+    ...Primary.args,
+    text: 'This might not be accessible if the overrided colour is too light!',
+    colourOverride: 'pink',
+  },
 };

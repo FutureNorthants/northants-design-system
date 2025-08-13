@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroImageProp } from '../../structure/HomeHero/HomeHero.types';
-import { NewsArticleProps } from '../../structure/NewsArticleList/NewsArticleList.types';
+import { NewsArticleProps } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.types';
 import { PromoBannerProps } from '../../structure/PromoBanner/PromoBanner.types';
 import { PromoProps } from '../../structure/PromoBlock/PromoBlock.types';
 import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';
@@ -49,7 +49,7 @@ export interface HomePageProps {
   /**
    * News articles
    */
-  newsArticlesArray: Array<NewsArticleProps>;
+  newsArticlesArray: NewsArticleProps[];
 
   /**
    * Promo banner

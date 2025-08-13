@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewsArticleProps } from '../../structure/NewsArticleList/NewsArticleList.types';
+import { NewsArticleProps } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.types';
 import { PromoBannerProps } from '../../structure/PromoBanner/PromoBanner.types';
 import { PromoProps } from '../../structure/PromoBlock/PromoBlock.types';
 import { PageLinkProp } from '../../structure/ServicesLinksList/ServicesLinksList.types';

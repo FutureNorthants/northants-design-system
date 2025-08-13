@@ -20,7 +20,7 @@ const meta: Meta<typeof RecyclingInformationPageExample> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RecyclingInformationPageExample>;
+type Story = StoryObj<typeof meta>;
 
 export const RecyclingInformationPageExampleDefaultPage: Story = {
   render: (args) => <RecyclingInformationPageExample {...args} />,

@@ -4,6 +4,7 @@ import { themes } from '../src/themes/theme_generator';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { GlobalStyleReset } from '../src/themes/GlobalStyleReset';
 import { Preview } from '@storybook/react';
+import { SBPadding } from './SBPadding';
 
 const preview: Preview = {
   parameters: {
@@ -39,7 +40,7 @@ const preview: Preview = {
     },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;
@@ -79,4 +80,16 @@ export const decorators = [
       {style()}
     </>
   ),
+  // Wrap all stories in SBPadding component
+  (Story, { parameters }) => {
+    if (parameters.pageLayout && parameters.pageLayout === 'page') {
+      return <Story />;
+    } else {
+      return (
+        <SBPadding>
+          <Story />
+        </SBPadding>
+      );
+    }
+  },
 ];

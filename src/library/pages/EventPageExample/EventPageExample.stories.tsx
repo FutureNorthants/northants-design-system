@@ -1,9 +1,9 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { EventPageExample, EventPageExampleProps } from './EventPageExample';
 import { ExampleEventListResults } from '../../structure/EventList/EventList.storydata';
 
-export default {
+const meta: Meta<typeof EventPageExample> = {
   title: 'Page Examples/Event page example',
   component: EventPageExample,
   parameters: {
@@ -11,11 +11,16 @@ export default {
       type: 'stable',
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<EventPageExampleProps> = (args) => <EventPageExample {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const EventPage = Template.bind({});
-EventPage.args = {
-  event: ExampleEventListResults.results[0],
+export const EventPage: Story = {
+  args: {
+    event: ExampleEventListResults.results[0],
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };

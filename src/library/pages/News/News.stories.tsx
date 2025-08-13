@@ -1,8 +1,8 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import { News, NewsProps } from './News';
+import type { Meta, StoryObj } from '@storybook/react';
+import { News } from './News';
 
-export default {
+const meta: Meta<typeof News> = {
   title: 'Page Examples/News landing page example',
   component: News,
   parameters: {
@@ -10,16 +10,25 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
-
-const Template: StoryFn<NewsProps> = (args) => <News {...args} />;
-
-export const ExampleNewsArticleList = Template.bind({});
-ExampleNewsArticleList.args = {
-  hasResults: true,
 };
 
-export const ExampleNoNewsArticleList = Template.bind({});
-ExampleNoNewsArticleList.args = {
-  hasResults: false,
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ExampleNewsArticleList: Story = {
+  args: {
+    hasResults: true,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
+};
+
+export const ExampleNoNewsArticleList: Story = {
+  args: {
+    hasResults: false,
+  },
+  parameters: {
+    pageLayout: 'page',
+  },
 };
