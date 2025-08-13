@@ -15,7 +15,7 @@ const meta: Meta<typeof RecyclingInformation> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RecyclingInformation>;
+type Story = StoryObj<typeof meta>;
 
 export const DefaultRecyclingInformation: Story = {
   render: (args) => (

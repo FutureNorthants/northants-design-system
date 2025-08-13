@@ -1,8 +1,8 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react-webpack5';
-import { ContentPage, ContentPageProps } from './ContentPage';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
+import { ContentPage } from './ContentPage';
 
-export default {
+const meta: Meta<typeof ContentPage> = {
   title: 'Page Examples/Content Page',
   component: ContentPage,
   parameters: {
@@ -10,8 +10,13 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<ContentPageProps> = (args) => <ContentPage {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExampleContentPage = Template.bind({});
+export const ExampleContentPage: Story = {
+  parameters: {
+    pageLayout: 'page',
+  },
+};

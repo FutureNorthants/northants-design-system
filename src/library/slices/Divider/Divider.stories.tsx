@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react-webpack5';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import Divider from './Divider';
-import { DividerProps } from './Divider.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof Divider> = {
   title: 'Library/Slices/Divider',
   component: Divider,
   parameters: {
@@ -14,10 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<DividerProps> = (args) => (
-  <SBPadding>
-    <Divider {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExampleDivider = Template.bind({});
+export const ExampleDivider: Story = {};

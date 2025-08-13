@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react-webpack5';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import WestColouredLogo from './logo';
-import { LogoProps } from './logo.types';
-import { SBPadding } from '../../../../../.storybook/SBPadding';
 
-export default {
+const meta: Meta<typeof WestColouredLogo> = {
   title: 'Library/Logos/West Coloured',
   component: WestColouredLogo,
   parameters: {
@@ -14,10 +12,7 @@ export default {
   },
 };
 
-const Template: StoryFn<LogoProps> = (args) => (
-  <SBPadding>
-    <WestColouredLogo {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof WestColouredLogo>;
 
-export const LogoExample = Template.bind({});
+export const LogoExample: Story = {};

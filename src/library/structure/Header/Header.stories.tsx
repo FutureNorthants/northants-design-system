@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import { HeaderProps } from './Header.types';
-import { StoryFn } from '@storybook/react-webpack5';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
-export default {
+const meta: Meta<typeof Header> = {
   title: 'Library/structure/Header',
   component: Header,
   parameters: {
@@ -12,9 +11,6 @@ export default {
     },
   },
   argTypes: {
-    id: {
-      table: { category: 'Component' },
-    },
     isHomepage: {
       table: { category: 'Links' },
     },
@@ -32,51 +28,64 @@ export default {
     },
     searchSuggestions: {
       table: { category: 'Search bar' },
-      control: { type: 'array' },
     },
   },
 };
 
-const Template: StoryFn<HeaderProps> = (args) => <Header {...args}>Children of the page container go here</Header>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const HeaderExample = Template.bind({});
-HeaderExample.args = {
-  hasNewsLink: true,
-  hasDirectoryLink: true,
-  accessibilityLink: '/',
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
-  hasTranslate: true,
-  hasEventsLink: true,
+export const HeaderExample: Story = {
+  args: {
+    hasNewsLink: true,
+    hasDirectoryLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+    hasTranslate: true,
+    hasEventsLink: true,
+  },
+  render: (args) => <Header {...args}>Children of the page container go here</Header>,
+  parameters: {
+    pageLayout: 'page',
+  },
 };
 
-export const HeaderNoNewsExample = Template.bind({});
-HeaderNoNewsExample.args = {
-  hasNewsLink: false,
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+export const HeaderNoNewsExample: Story = {
+  ...HeaderExample,
+  args: {
+    hasNewsLink: false,
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+  },
 };
 
-export const HeaderNoSearchExample = Template.bind({});
-HeaderNoSearchExample.args = {
-  hasNewsLink: false,
-  allServicesLink: false,
-  hideSearchBar: true,
+export const HeaderNoSearchExample: Story = {
+  ...HeaderExample,
+  args: {
+    hasNewsLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: true,
+    hasDirectoryLink: true,
+    hasTranslate: true,
+  },
 };
 
-export const HeaderCludoSearch = Template.bind({});
-HeaderCludoSearch.args = {
-  hasNewsLink: true,
-  hasDirectoryLink: true,
-  accessibilityLink: '/',
-  allServicesLink: '/',
-  hideSearchBar: false,
-  searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
-  hasTranslate: true,
-  hasEventsLink: true,
-  hasCludo: true,
-  customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-  engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+export const HeaderCludoSearch: Story = {
+  args: {
+    hasNewsLink: true,
+    hasDirectoryLink: true,
+    accessibilityLink: '/',
+    allServicesLink: '/',
+    hideSearchBar: false,
+    searchSuggestions: ['Apply for a parking permit', 'Bin collections', 'Council tax payments'],
+    hasTranslate: true,
+    hasEventsLink: true,
+    hasCludo: true,
+    customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  },
 };

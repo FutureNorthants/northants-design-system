@@ -1,10 +1,8 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react-webpack5';
-import { HeadingWithIconLinkProps } from './HeadingWithIconLink.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import HeadingWithIconLink from './HeadingWithIconLink';
 
-export default {
+const meta: Meta<typeof HeadingWithIconLink> = {
   title: 'Library/Components/Heading with Icon Link',
   component: HeadingWithIconLink,
   parameters: {
@@ -14,29 +12,29 @@ export default {
   },
 };
 
-const Template: StoryFn<HeadingWithIconLinkProps> = (args) => (
-  <SBPadding>
-    <HeadingWithIconLink {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExampleIconWithHeading = Template.bind({});
-ExampleIconWithHeading.args = {
-  iconKey: 'adults',
-  link: '#',
-  title: 'Adults',
+export const ExampleIconWithHeading: Story = {
+  args: {
+    iconKey: 'adults',
+    link: '#',
+    title: 'Adults',
+  },
 };
 
-export const ExampleWithoutIcon = Template.bind({});
-ExampleWithoutIcon.args = {
-  iconKey: null,
-  link: '#',
-  title: 'Adults',
+export const ExampleWithoutIcon: Story = {
+  args: {
+    iconKey: undefined,
+    link: '#',
+    title: 'Adults',
+  },
 };
 
-export const ExampleWithIconAndLongHeading = Template.bind({});
-ExampleWithIconAndLongHeading.args = {
-  iconKey: 'births',
-  link: '#',
-  title: 'Births, deaths, marriages and civil partnerships',
+export const ExampleWithIconAndLongHeading: Story = {
+  args: {
+    iconKey: 'births',
+    link: '#',
+    title: 'Births, deaths, marriages and civil partnerships',
+  },
 };

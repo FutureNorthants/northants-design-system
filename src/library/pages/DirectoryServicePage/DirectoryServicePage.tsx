@@ -34,7 +34,7 @@ export const DirectoryServicePage: React.FunctionComponent = () => (
           <p>
             Publication on the Local Offer does not endorse a provider, so please take reasonable steps to ensure that
             any service found on the Local Offer is suitable for your family member. For more information please read
-            our <a href={process?.env?.LOCAL_OFFER_DISCLAIMER_URL}>disclaimer</a>.
+            our <a href="#">disclaimer</a>.
           </p>
         </WarningText>
         <p>

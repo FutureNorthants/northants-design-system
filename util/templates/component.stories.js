@@ -1,13 +1,11 @@
-module.exports = (componentName) => ({
+module.exports = (componentName, componentType) => ({
   content: `
 import React from "react";
-import { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ${componentName} from "./${componentName}";
-import { ${componentName}Props } from "./${componentName}.types";
-import { SBPadding } from '../../../../.storybook/SBPadding';
 
-export default {
-    title: 'Library/Components/${componentName}',
+const meta: Meta<typeof ${componentName}> = {
+    title: 'Library/${componentType}/${componentName}',
     component: ${componentName},
     parameters: {
       status: {
@@ -16,16 +14,21 @@ export default {
     },
 };
 
-const Template: StoryFn<${componentName}Props> = (args) => <SBPadding><${componentName} {...args} /></SBPadding>;
+export default meta;
+type Story = StoryObj<typeof ${componentName}>;
 
-export const Example${componentName} = Template.bind({});    
-Example${componentName}.args = {
-  foo: "bar"
+export const Example${componentName}: Story = {     
+  args: {
+    foo: "bar"
+  },
+  render: (args) => <${componentName} {...args} />
 };
 
-export const AnotherExample${componentName} = Template.bind({});    
-AnotherExample${componentName}.args = {
-  foo: "foo"
+export const AnotherExample${componentName}: Story = {
+  ...Example${componentName},    
+  args: {
+    foo: "foo"
+  }
 };
 `,
   extension: `.stories.tsx`,

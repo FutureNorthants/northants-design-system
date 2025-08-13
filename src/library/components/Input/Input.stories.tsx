@@ -1,12 +1,10 @@
 import React from 'react';
 import Input from './Input';
-import { InputProps } from './Input.types';
-import { StoryFn } from '@storybook/react-webpack5';
-import { SBPadding } from '../../../../.storybook/SBPadding';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'Library/Components/Input',
   component: Input,
   parameters: {
@@ -16,54 +14,56 @@ export default {
   },
 };
 
-const Template: StoryFn<InputProps> = (args) => (
-  <SBPadding>
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    name: 'exampleInput',
+    placeholder: 'Enter some text',
+    id: 'ExampleTextarea',
+  },
+  render: (args) => (
     <MaxWidthContainer>
       <PageMain>
         <Input {...args} />
       </PageMain>
     </MaxWidthContainer>
-  </SBPadding>
-);
-
-export const Example = Template.bind({});
-Example.args = {
-  name: 'exampleInput',
-  placeholder: 'Enter some text',
-  id: 'ExampleTextarea',
+  ),
 };
 
-export const ExampleWithDefaultValue = Template.bind({});
-ExampleWithDefaultValue.args = {
-  name: 'exampleInput',
-  placeholder: 'Enter some text',
-  id: 'ExampleTextarea',
-  defaultValue: 'Some default text',
+export const ExampleWithDefaultValue: Story = {
+  ...Example,
+  args: {
+    ...Example.args,
+    defaultValue: 'Some default text',
+  },
 };
 
-export const ExampleFullWidth = Template.bind({});
-ExampleFullWidth.args = {
-  name: 'exampleInput',
-  placeholder: 'Enter some text',
-  id: 'ExampleTextarea',
-  isFullWidth: true,
+export const ExampleFullWidth: Story = {
+  ...Example,
+  args: {
+    ...Example.args,
+    isFullWidth: true,
+  },
 };
 
-export const ExampleHasError = Template.bind({});
-ExampleHasError.args = {
-  name: 'exampleInput',
-  placeholder: 'Enter some text',
-  id: 'ExampleTextarea',
-  isErrored: true,
-  errorText: 'The field example textarea is required.',
-  isFullWidth: true,
+export const ExampleHasError: Story = {
+  ...Example,
+  args: {
+    ...Example.args,
+    isErrored: true,
+    errorText: 'The field example textarea is required.',
+  },
 };
 
-export const ExampleDateInput = Template.bind({});
-ExampleDateInput.args = {
-  name: 'exampleDateBox',
-  placeholder: 'Select a Date',
-  id: 'ExampleDataBox',
-  type: 'date',
-  minValue: new Date().toISOString().substring(0, 10),
+export const ExampleDateInput: Story = {
+  ...Example,
+  args: {
+    name: 'exampleDateBox',
+    placeholder: 'Select a Date',
+    id: 'ExampleDataBox',
+    type: 'date',
+    minValue: new Date().toISOString().substring(0, 10),
+  },
 };

@@ -1,10 +1,8 @@
 import React from 'react';
-// also exported from '@storybook/react-webpack5' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { CouncilTaxParishPageExample } from './CouncilTaxParishPageExample';
 
-import { CouncilTaxParishPageExample, CouncilTaxParishPageExampleProps } from './CouncilTaxParishPageExample';
-
-export default {
+const meta: Meta<typeof CouncilTaxParishPageExample> = {
   title: 'Page Examples/Council Tax By Parish',
   component: CouncilTaxParishPageExample,
   parameters: {
@@ -12,8 +10,13 @@ export default {
       type: 'stable', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<CouncilTaxParishPageExampleProps> = (args) => <CouncilTaxParishPageExample {...args} />;
-export const AlphabeticalList = Template.bind({});
-AlphabeticalList.args = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const AlphabeticalList: Story = {
+  parameters: {
+    pageLayout: 'page',
+  },
+};

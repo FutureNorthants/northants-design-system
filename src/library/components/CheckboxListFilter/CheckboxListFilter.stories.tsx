@@ -1,13 +1,10 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react-webpack5';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import CheckboxListFilter from './CheckboxListFilter';
-import { CheckboxListFilterProps } from './CheckboxListFilter.types';
-import { SBPadding } from '../../../../.storybook/SBPadding';
 import { articleOptions } from './CheckboxListFilterData';
+import { NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
 
-import { newsArticleData, NewsArticleFilters } from '../../structure/NewsArticleList/NewsArticleData';
-
-export default {
+const meta: Meta<typeof CheckboxListFilter> = {
   title: 'Library/Components/Checkbox List Filter',
   component: CheckboxListFilter,
   parameters: {
@@ -17,25 +14,24 @@ export default {
   },
 };
 
-const Template: StoryFn<CheckboxListFilterProps> = (args) => (
-  <SBPadding>
-    <CheckboxListFilter {...args} />
-  </SBPadding>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const ExampleCheckboxListFilter = Template.bind({});
-ExampleCheckboxListFilter.args = {
-  options: articleOptions,
-  checked: NewsArticleFilters.articleType,
-  label: 'An example label',
-  hint: 'Some example hint text',
-  displayLegend: true,
+export const ExampleCheckboxListFilter: Story = {
+  args: {
+    options: articleOptions,
+    checked: NewsArticleFilters.articleType,
+    label: 'An example label',
+    hint: 'Some example hint text',
+    displayLegend: true,
+  },
 };
 
-export const ExampleCheckboxListFilterHiddenLabelHint = Template.bind({});
-ExampleCheckboxListFilterHiddenLabelHint.args = {
-  options: articleOptions,
-  checked: NewsArticleFilters.articleType,
-  hint: null,
-  label: null,
+export const ExampleCheckboxListFilterHiddenLabelHint: Story = {
+  ...ExampleCheckboxListFilter,
+  args: {
+    ...ExampleCheckboxListFilter.args,
+    hint: null,
+    label: null,
+  },
 };

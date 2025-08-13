@@ -1,8 +1,8 @@
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react-webpack5';
-import { EventLandingPageExample, EventLandingPageExampleProps } from './EventLandingPageExample';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
+import { EventLandingPageExample } from './EventLandingPageExample';
 
-export default {
+const meta: Meta<typeof EventLandingPageExample> = {
   title: 'Page Examples/Event landing page example',
   component: EventLandingPageExample,
   parameters: {
@@ -10,9 +10,13 @@ export default {
       type: 'stable',
     },
   },
-} as Meta;
+};
 
-const Template: StoryFn<EventLandingPageExampleProps> = (args) => <EventLandingPageExample {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const EventLandingPage = Template.bind({});
-EventLandingPage.args = {};
+export const EventLandingPage: Story = {
+  parameters: {
+    pageLayout: 'page',
+  },
+};

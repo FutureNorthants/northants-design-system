@@ -36,7 +36,7 @@ describe('NewsArticleFeaturedBlock structure', () => {
     expect(imageSpans).toHaveLength(storydata.NewsArticleData.length);
     imageSpans.forEach((imageSpan, index) => {
       expect(imageSpan).toBeVisible();
-      expect(imageSpan).toHaveAttribute('src', storydata.NewsArticleData[index].image720x450);
+      expect(imageSpan).toHaveAttribute('src', storydata.NewsArticleData[index].image720x405);
       if (storydata.NewsArticleData[index].imageAltText) {
         expect(imageSpan).toHaveAttribute('alt', storydata.NewsArticleData[index].imageAltText);
       } else {
