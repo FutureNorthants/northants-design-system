@@ -24,10 +24,12 @@ export interface CaseAppointmentProps {
   courtroomFullAddress: string;
   appointmentType: string;
   startDateTime: string;
+  endDateTime?: string;
 }
 
 export enum CaseAppointmentType {
-  Hearing = 'hearing',
+  Hearing = 'inquest hearing',
+  PreInquest = 'pre-inquest review',
   Opening = 'opening',
   Writing = 'writing',
 }

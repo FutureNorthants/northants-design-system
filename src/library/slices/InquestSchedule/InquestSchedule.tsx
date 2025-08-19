@@ -6,6 +6,7 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import { AccordionSectionProps } from '../Accordion/Accordion.types';
 import Accordion from '../Accordion/Accordion';
+import { formatDate, formatTime, formatDateTime } from '../../helpers/date-time-helpers';
 
 /**
  * A table displaying a schedule of inquests
@@ -13,6 +14,9 @@ import Accordion from '../Accordion/Accordion';
 const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAppointments, title, error = false }) => {
   const hearings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Hearing);
+  });
+  const preInquest: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.PreInquest);
   });
   const openings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Opening);
@@ -34,29 +38,15 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   };
 
   const hearingDayGrouped = groupHearingsByDay(hearings);
+  const preInquestDayGrouped = groupHearingsByDay(preInquest);
   const openingDayGrouped = groupHearingsByDay(openings);
   const writingDayGrouped = groupHearingsByDay(writings);
-
-  const formatDate = (inquestDay: Date) => {
-    return inquestDay
-      .toLocaleDateString('en-GB', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
-      .replace(',', '');
-  };
-
-  const formatTime = (inquestDate: Date) => {
-    return inquestDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
 
   const transformToSections = (groupedData): AccordionSectionProps[] => {
     return Object.keys(groupedData).map((day) => {
       const inquestDayDate = new Date(day);
       return {
-        title: formatDate(inquestDayDate),
+        title: formatDate(day),
         content: (
           <Row>
             {groupedData[day]
@@ -64,23 +54,28 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                 return new Date(a.startDateTime).getTime() - new Date(b.startDateTime).getTime();
               })
               .map((inquest, key) => {
-                const startDateTime = new Date(inquest.startDateTime);
-                const timeOfDeath = new Date(inquest.dateTimeOfDeath);
                 return (
                   <Column small="full" medium="full" large="full" key={key}>
                     <Styles.InquestContainer>
                       <Styles.InquestTime>
-                        <strong>{formatTime(startDateTime)}</strong>
+                        <strong>{formatTime(inquest.startDateTime)}</strong>
                       </Styles.InquestTime>
                       <Styles.InquestDetails>
                         <strong>Name:</strong> {inquest.fullName}.
                         <br />
-                        <strong>Died:</strong> {formatDate(timeOfDeath)} at {inquest.placeOfDeath}. Aged {inquest.age}{' '}
-                        years.
+                        <strong>Died:</strong> {formatDate(inquest.dateTimeOfDeath)} at {inquest.placeOfDeath}. Aged{' '}
+                        {inquest.age} years.
                         <br />
                         <strong>Court location:</strong> {inquest.courtroomFullAddress}.
                         <br />
                         <strong>Coroner:</strong> {inquest.coroner}.
+                        {inquest.endDateTime && (
+                          <>
+                            <br />
+                            <strong>End date:</strong> <span>{formatDateTime(inquest.endDateTime)}.</span>
+                            <br />
+                          </>
+                        )}
                       </Styles.InquestDetails>
                     </Styles.InquestContainer>
                   </Column>
@@ -101,10 +96,10 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         </Styles.GroupContainer>
       )}
 
-      {Object.keys(openingDayGrouped).length > 0 && (
+      {Object.keys(preInquestDayGrouped).length > 0 && (
         <Styles.GroupContainer>
-          <Heading level={2} text="Inquest Openings" />
-          <Accordion sections={transformToSections(openingDayGrouped)} />
+          <Heading level={2} text="Pre-inquest Review Hearings" />
+          <Accordion sections={transformToSections(preInquestDayGrouped)} />
         </Styles.GroupContainer>
       )}
 
@@ -112,6 +107,13 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         <Styles.GroupContainer>
           <Heading level={2} text="Inquests in Writing" />
           <Accordion sections={transformToSections(writingDayGrouped)} />
+        </Styles.GroupContainer>
+      )}
+
+      {Object.keys(openingDayGrouped).length > 0 && (
+        <Styles.GroupContainer>
+          <Heading level={2} text="Inquest Openings" />
+          <Accordion sections={transformToSections(openingDayGrouped)} />
         </Styles.GroupContainer>
       )}
 

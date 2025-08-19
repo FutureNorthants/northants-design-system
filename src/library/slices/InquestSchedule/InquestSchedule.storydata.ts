@@ -9,6 +9,7 @@ export const ExampleInquestScheduleData: CaseAppointmentProps = {
   courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
   appointmentType: 'AP - Inquest Hearing',
   startDateTime: '2023-02-01T10:00:00',
+  endDateTime: '2023-02-01T15:00:00',
 };
 
 export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
@@ -21,6 +22,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'BC - Inquest Hearings',
     startDateTime: '2023-02-01T10:00:00',
+    endDateTime: '2023-02-01T10:45:00',
   },
   {
     fullName: 'A Name',
@@ -31,6 +33,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'C D - Inquest Hearing',
     startDateTime: '2023-02-01T09:30:00',
+    endDateTime: '2023-02-01T10:45:00',
   },
   {
     fullName: 'A Name',
@@ -41,6 +44,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'AP Inquest Opening',
     startDateTime: '2023-02-01T09:30:00',
+    endDateTime: '2023-02-01T10:45:00',
   },
   {
     fullName: 'A Name',
@@ -51,6 +55,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'AP Inquest In Writing',
     startDateTime: '2023-02-01T10:15:00',
+    endDateTime: '2023-02-01T11:45:00',
   },
   {
     fullName: 'A Name',
@@ -61,6 +66,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'AD - Inquest Opening',
     startDateTime: '2023-02-02T09:00:00',
+    endDateTime: '2023-02-02T10:00:00',
   },
   {
     fullName: 'A Name',
@@ -71,8 +77,8 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'AP Inquest Hearing',
     startDateTime: '2023-02-02T10:15:00',
+    endDateTime: '2023-02-02T11:45:00',
   },
-
   {
     fullName: 'A Name',
     age: 89,
@@ -82,5 +88,28 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'AZ - Inquest In Writing',
     startDateTime: '2023-02-02T10:15:00',
+    endDateTime: '2023-02-02T12:45:00',
+  },
+  {
+    fullName: 'A Name',
+    age: 89,
+    placeOfDeath: 'A location',
+    dateTimeOfDeath: '2023-01-06T11:15:00',
+    coroner: 'Coroner Name',
+    courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
+    appointmentType: 'AZ - Pre-Inquest Review Hearing',
+    startDateTime: '2023-02-02T10:30:00',
+    endDateTime: '2023-02-02T14:45:00',
+  },
+  {
+    fullName: 'A Name',
+    age: 89,
+    placeOfDeath: 'A location',
+    dateTimeOfDeath: '2023-01-07T11:15:00',
+    coroner: 'Coroner Name',
+    courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
+    appointmentType: 'Pre-Inquest Review Hearing',
+    startDateTime: '2023-02-03T10:30:00',
+    endDateTime: '2023-02-03T14:45:00',
   },
 ];
