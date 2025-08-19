@@ -174,4 +174,10 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
   #goog-gt-tt {
     display: none !important;
   }
+
+  #g-recaptcha-response {
+    border-color: black;
+    border-width: 0;
+    border-style: solid;
+  }
 `;
