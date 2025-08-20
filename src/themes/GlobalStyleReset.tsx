@@ -176,8 +176,6 @@ export const GlobalStyleReset: any = createGlobalStyle<any>`
   }
 
   #g-recaptcha-response {
-    border-color: black;
-    border-width: 0;
-    border-style: solid;
+    border-color: black !important;
   }
 `;
