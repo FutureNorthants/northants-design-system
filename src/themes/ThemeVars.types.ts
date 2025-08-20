@@ -61,4 +61,6 @@ export interface ThemeSizeTypes {
   medium: string;
   large: string;
   x_large?: string;
+  xx_large?: string;
+  xxx_large?: string;
 }
