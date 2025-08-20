@@ -43,6 +43,9 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Wednesday 1 February 2023 at 3pm.');
 
     expect(component).not.toHaveTextContent('Inquest Openings');
+    expect(component).not.toHaveTextContent('Pre-inquest Review Hearings');
+    expect(component).not.toHaveTextContent('Inquests in Writing');
+    expect(component).not.toHaveTextContent('Formal Suspension Hearings');
   });
 
   it('should display the message when no results are returned', () => {
@@ -65,6 +68,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Pre-inquest Review Hearings');
     expect(component).toHaveTextContent('Inquest Openings');
     expect(component).toHaveTextContent('Inquests in Writing');
+    expect(component).toHaveTextContent('Formal Suspension Hearings');
   });
 
   it('should hide end date if not set', () => {

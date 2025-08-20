@@ -24,6 +24,9 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   const writings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Writing);
   });
+  const formal: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Formal);
+  });
 
   const groupHearingsByDay = (appointments: CaseAppointmentProps[]) => {
     return appointments.reduce((acc, inquest) => {
@@ -41,6 +44,7 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   const preInquestDayGrouped = groupHearingsByDay(preInquest);
   const openingDayGrouped = groupHearingsByDay(openings);
   const writingDayGrouped = groupHearingsByDay(writings);
+  const formalDayGrouped = groupHearingsByDay(formal);
 
   const transformToSections = (groupedData): AccordionSectionProps[] => {
     return Object.keys(groupedData).map((day) => {
@@ -96,6 +100,13 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         </Styles.GroupContainer>
       )}
 
+      {Object.keys(openingDayGrouped).length > 0 && (
+        <Styles.GroupContainer>
+          <Heading level={2} text="Inquest Openings" />
+          <Accordion sections={transformToSections(openingDayGrouped)} />
+        </Styles.GroupContainer>
+      )}
+
       {Object.keys(preInquestDayGrouped).length > 0 && (
         <Styles.GroupContainer>
           <Heading level={2} text="Pre-inquest Review Hearings" />
@@ -110,10 +121,10 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         </Styles.GroupContainer>
       )}
 
-      {Object.keys(openingDayGrouped).length > 0 && (
+      {Object.keys(formalDayGrouped).length > 0 && (
         <Styles.GroupContainer>
-          <Heading level={2} text="Inquest Openings" />
-          <Accordion sections={transformToSections(openingDayGrouped)} />
+          <Heading level={2} text="Formal Suspension Hearings" />
+          <Accordion sections={transformToSections(formalDayGrouped)} />
         </Styles.GroupContainer>
       )}
 

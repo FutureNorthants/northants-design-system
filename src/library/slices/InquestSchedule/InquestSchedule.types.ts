@@ -28,8 +28,9 @@ export interface CaseAppointmentProps {
 }
 
 export enum CaseAppointmentType {
+  Formal = 'formal',
   Hearing = 'inquest hearing',
-  PreInquest = 'pre-inquest review',
   Opening = 'opening',
+  PreInquest = 'pre-inquest review',
   Writing = 'writing',
 }
