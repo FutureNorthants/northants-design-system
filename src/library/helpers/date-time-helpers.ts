@@ -3,7 +3,13 @@ import dayjs from 'dayjs';
 // Format the time to match Gov UK style guide
 // https://www.gov.uk/guidance/style-guide/a-to-z#times
 export const formatTime = (timeToFormat: string): string => {
-  const dayJsInstance = dayjs(timeToFormat);
+  let dayJsInstance = null;
+  try {
+    dayJsInstance = dayjs(timeToFormat);
+  } catch (error) {
+    return '';
+  }
+
   if (dayJsInstance.format('HH:mm') === '00:00') {
     return 'midnight';
   }
