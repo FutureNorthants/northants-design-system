@@ -70,9 +70,9 @@ export const lb_vars_north: ThemeVars = {
     small: '10px',
     medium: '20px',
     large: '30px',
-    x_large: '45px;',
-    xx_large: '90px;',
-    xxx_large: '135px;',
+    x_large: '45px',
+    xx_large: '90px',
+    xxx_large: '135px',
   },
   h1: `
         font-size: 32px;

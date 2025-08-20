@@ -18,6 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 export const QuickExitExamplePage: Story = {
   args: { children: <QuickExitPageExample1 /> },
+  parameters: {
+    pageLayout: 'page',
+  },
   render: (args) => <QuickExitPageExample {...args} />,
 };
 
