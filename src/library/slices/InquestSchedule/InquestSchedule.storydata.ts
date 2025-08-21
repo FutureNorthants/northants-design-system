@@ -21,7 +21,7 @@ export const ExampleInquestScheduleArray: CaseAppointmentProps[] = [
     coroner: 'Coroner Name',
     courtroomFullAddress: 'The Guildhall, St. Giles Square, Northampton, NN1 1DE',
     appointmentType: 'BC - Inquest Hearings',
-    startDateTime: '2023-02-01T10:00:00',
+    startDateTime: '2023-02-01T12:00:00',
     endDateTime: '2023-02-01T10:45:00',
   },
   {

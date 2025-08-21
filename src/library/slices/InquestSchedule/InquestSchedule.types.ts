@@ -24,7 +24,7 @@ export interface CaseAppointmentProps {
   courtroomFullAddress: string;
   appointmentType: string;
   startDateTime: string;
-  endDateTime?: string;
+  endDateTime?: string | null;
 }
 
 export enum CaseAppointmentType {
