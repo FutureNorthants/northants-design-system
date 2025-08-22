@@ -10,6 +10,16 @@ export interface SummaryListProps {
    * Option to remove margin (default is true)
    */
   hasMargin?: boolean;
+
+  /**
+   * Option to remove borders (default is true)
+   */
+  hasBorders?: boolean;
+
+  /**
+   * Optional heading text
+   */
+  heading?: string;
 }
 
 export interface SummaryRowProps {

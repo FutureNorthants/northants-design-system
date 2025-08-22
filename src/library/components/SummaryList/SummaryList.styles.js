@@ -1,15 +1,30 @@
 import styled from 'styled-components';
 
+export const SummaryContainer = styled.div`
+  border: ${(props) => (props.$hasHeading ? `1px solid ${props.theme.theme_vars.colours.grey}` : `none`)};
+  margin: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.medium : 0)} 0;
+`;
+
+export const SummaryHeading = styled.div`
+  background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
+  width: 100%;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+
+  h3 {
+    margin: 0;
+  }
+`;
+
 export const SummaryList = styled.dl`
   display: table;
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  margin: ${(props) => (props.$hasMargin ? props.theme.theme_vars.spacingSizes.medium : 0)} 0;
 `;
 
 export const SummaryRow = styled.div`
-  border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
+  border-bottom: ${(props) => (props.$hasBorders ? `1px solid ${props.theme.theme_vars.colours.grey}` : `none`)};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {

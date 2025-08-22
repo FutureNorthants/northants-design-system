@@ -34,4 +34,14 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('The term');
     expect(component).toHaveTextContent('The detail');
   });
+
+  it('should render the heading', () => {
+    props.heading = 'Example heading text';
+
+    const { getByRole } = renderComponent();
+
+    const heading = getByRole('heading');
+
+    expect(heading).toHaveTextContent('Example heading text');
+  });
 });
