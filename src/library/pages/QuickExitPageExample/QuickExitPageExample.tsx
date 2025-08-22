@@ -1,10 +1,8 @@
 import React from 'react';
 import QuickExit from '../../components/QuickExit/QuickExit';
-
 import { QuickExitPageExampleProps } from './QuickExitPageExample.types';
 import BackToTop from '../../components/BackToTop/BackToTop';
-
-import { MaxWidthContainer } from '../../structure/PageStructures';
+import { Header, MaxWidthContainer } from '../../structure/PageStructures';
 import { PageMain } from '../../structure/PageStructures';
 
 const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> = ({
@@ -14,13 +12,24 @@ const QuickExitPageExample: React.FunctionComponent<QuickExitPageExampleProps> =
   children,
 }) => {
   return (
-    <MaxWidthContainer>
-      <PageMain>
-        <QuickExit label={label} url={url} />
-        {children}
-        <BackToTop isActive={includeBackToTopInExample} />
-      </PageMain>
-    </MaxWidthContainer>
+    <>
+      <Header
+        accessibilityLink="/"
+        allServicesLink="/"
+        hasDirectoryLink
+        hasEventsLink
+        hasNewsLink
+        hasTranslate
+        searchSuggestions={['Apply for a parking permit', 'Bin collections', 'Council tax payments']}
+      />
+      <MaxWidthContainer>
+        <PageMain>
+          <QuickExit label={label} url={url} />
+          {children}
+          <BackToTop isActive={includeBackToTopInExample} />
+        </PageMain>
+      </MaxWidthContainer>
+    </>
   );
 };
 

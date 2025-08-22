@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: block;
   position: fixed;
-  top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  top: ${(props) => props.theme.theme_vars.spacingSizes.xxx_large};
   right: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  z-index: 20;
+  z-index: 30;
 `;
 
 export const QuickExitButton = styled.button`
