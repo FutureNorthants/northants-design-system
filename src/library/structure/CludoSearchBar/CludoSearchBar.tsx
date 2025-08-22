@@ -14,6 +14,10 @@ const CludoSearchBar: React.FunctionComponent<CludoSearchBarProps> = ({ customer
     components: {
       autocomplete: CludoAutoComplete,
     },
+    autocomplete: {
+      showInstantSuggestions: true,
+      useSearchAsYouType: true,
+    },
   };
 
   return (
