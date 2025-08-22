@@ -33,4 +33,10 @@ export const InquestTime = styled.div`
 
 export const InquestDetails = styled.div`
   flex-grow: 1;
+  h3 {
+    display: block;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 `;

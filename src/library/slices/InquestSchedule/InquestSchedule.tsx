@@ -92,11 +92,8 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                 return (
                   <Column small="full" medium="full" large="full" key={key}>
                     <Styles.InquestContainer>
-                      <Styles.InquestTime>
-                        <strong>{formatTime(inquest.startDateTime)}</strong>
-                      </Styles.InquestTime>
                       <Styles.InquestDetails>
-                        <SummaryList terms={terms} />
+                        <SummaryList terms={terms} hasBorders={false} heading={formatTime(inquest.startDateTime)} />
                       </Styles.InquestDetails>
                     </Styles.InquestContainer>
                   </Column>
