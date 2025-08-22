@@ -22,6 +22,13 @@ export const InquestContainer = styled.div`
 export const InquestTime = styled.div`
   flex-grow: 1;
   flex-shrink: 0;
+
+  strong {
+    display: block;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 `;
 
 export const InquestDetails = styled.div`

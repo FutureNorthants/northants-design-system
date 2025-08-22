@@ -6,6 +6,7 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import { AccordionSectionProps } from '../Accordion/Accordion.types';
 import Accordion from '../Accordion/Accordion';
+import SummaryList from '../../components/SummaryList/SummaryList';
 import { formatDate, formatTime, formatDateTime } from '../../helpers/date-time-helpers';
 
 /**
@@ -48,7 +49,6 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
 
   const transformToSections = (groupedData): AccordionSectionProps[] => {
     return Object.keys(groupedData).map((day) => {
-      const inquestDayDate = new Date(day);
       return {
         title: formatDate(day),
         content: (
@@ -58,6 +58,37 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                 return new Date(a.startDateTime).getTime() - new Date(b.startDateTime).getTime();
               })
               .map((inquest, key) => {
+                const terms = [
+                  {
+                    term: 'Name',
+                    detail: inquest.fullName,
+                  },
+                  {
+                    term: 'Died',
+                    detail:
+                      formatDate(inquest.dateTimeOfDeath) +
+                      ' at ' +
+                      inquest.placeOfDeath +
+                      '. Aged ' +
+                      inquest.age +
+                      ' years.',
+                  },
+                  {
+                    term: 'Court location',
+                    detail: inquest.courtroomFullAddress + '.',
+                  },
+                  {
+                    term: 'Coroner',
+                    detail: inquest.coroner + '.',
+                  },
+                ];
+                if (inquest.endDateTime) {
+                  terms.push({
+                    term: 'End date',
+                    detail: formatDateTime(inquest.endDateTime) + '.',
+                  });
+                }
+
                 return (
                   <Column small="full" medium="full" large="full" key={key}>
                     <Styles.InquestContainer>
@@ -65,21 +96,7 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                         <strong>{formatTime(inquest.startDateTime)}</strong>
                       </Styles.InquestTime>
                       <Styles.InquestDetails>
-                        <strong>Name:</strong> {inquest.fullName}.
-                        <br />
-                        <strong>Died:</strong> {formatDate(inquest.dateTimeOfDeath)} at {inquest.placeOfDeath}. Aged{' '}
-                        {inquest.age} years.
-                        <br />
-                        <strong>Court location:</strong> {inquest.courtroomFullAddress}.
-                        <br />
-                        <strong>Coroner:</strong> {inquest.coroner}.
-                        {inquest.endDateTime && (
-                          <>
-                            <br />
-                            <strong>End date:</strong> <span>{formatDateTime(inquest.endDateTime)}.</span>
-                            <br />
-                          </>
-                        )}
+                        <SummaryList terms={terms} />
                       </Styles.InquestDetails>
                     </Styles.InquestContainer>
                   </Column>

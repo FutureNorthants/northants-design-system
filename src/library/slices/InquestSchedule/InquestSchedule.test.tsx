@@ -37,7 +37,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Sunday 1 January 2023');
     expect(component).not.toHaveTextContent('12:08:00');
     expect(component).toHaveTextContent('Coroner Name');
-    expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE');
+    expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE.');
     expect(component).toHaveTextContent('Wednesday 1 February 2023');
     expect(component).toHaveTextContent('End date');
     expect(component).toHaveTextContent('Wednesday 1 February 2023 at 3pm.');
