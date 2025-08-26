@@ -60,6 +60,17 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
             />
           );
         })}
+        {autocompleteState.instantSuggestions.map((suggestion, index) => {
+          return (
+            <SaytSuggestion
+              disableTheme={true}
+              key={suggestion.title + index}
+              suggestion={suggestion}
+              isSelected={autocompleteState.selectedSuggestion === index}
+              suggestionIndex={index}
+            />
+          );
+        })}
       </Styles.AutocompleteList>
     </Styles.AutocompleteContainer>
   );
