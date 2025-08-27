@@ -6,6 +6,8 @@ import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import { AccordionSectionProps } from '../Accordion/Accordion.types';
 import Accordion from '../Accordion/Accordion';
+import SummaryList from '../../components/SummaryList/SummaryList';
+import { formatDate, formatTime, formatDateTime } from '../../helpers/date-time-helpers';
 
 /**
  * A table displaying a schedule of inquests
@@ -14,11 +16,17 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   const hearings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Hearing);
   });
+  const preInquest: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.PreInquest);
+  });
   const openings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Opening);
   });
   const writings: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
     return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Writing);
+  });
+  const formal: CaseAppointmentProps[] = caseAppointments.filter((appointment) => {
+    return appointment.appointmentType.toLowerCase().includes(CaseAppointmentType.Formal);
   });
 
   const groupHearingsByDay = (appointments: CaseAppointmentProps[]) => {
@@ -34,29 +42,15 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
   };
 
   const hearingDayGrouped = groupHearingsByDay(hearings);
+  const preInquestDayGrouped = groupHearingsByDay(preInquest);
   const openingDayGrouped = groupHearingsByDay(openings);
   const writingDayGrouped = groupHearingsByDay(writings);
-
-  const formatDate = (inquestDay: Date) => {
-    return inquestDay
-      .toLocaleDateString('en-GB', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
-      .replace(',', '');
-  };
-
-  const formatTime = (inquestDate: Date) => {
-    return inquestDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
+  const formalDayGrouped = groupHearingsByDay(formal);
 
   const transformToSections = (groupedData): AccordionSectionProps[] => {
     return Object.keys(groupedData).map((day) => {
-      const inquestDayDate = new Date(day);
       return {
-        title: formatDate(inquestDayDate),
+        title: formatDate(day),
         content: (
           <Row>
             {groupedData[day]
@@ -64,23 +58,42 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
                 return new Date(a.startDateTime).getTime() - new Date(b.startDateTime).getTime();
               })
               .map((inquest, key) => {
-                const startDateTime = new Date(inquest.startDateTime);
-                const timeOfDeath = new Date(inquest.dateTimeOfDeath);
+                const terms = [
+                  {
+                    term: 'Name',
+                    detail: inquest.fullName,
+                  },
+                  {
+                    term: 'Died',
+                    detail:
+                      formatDate(inquest.dateTimeOfDeath) +
+                      ' at ' +
+                      inquest.placeOfDeath +
+                      '. Aged ' +
+                      inquest.age +
+                      ' years.',
+                  },
+                  {
+                    term: 'Court location',
+                    detail: inquest.courtroomFullAddress + '.',
+                  },
+                  {
+                    term: 'Coroner',
+                    detail: inquest.coroner + '.',
+                  },
+                ];
+                if (inquest.endDateTime) {
+                  terms.push({
+                    term: 'End date',
+                    detail: formatDateTime(inquest.endDateTime) + '.',
+                  });
+                }
+
                 return (
                   <Column small="full" medium="full" large="full" key={key}>
                     <Styles.InquestContainer>
-                      <Styles.InquestTime>
-                        <strong>{formatTime(startDateTime)}</strong>
-                      </Styles.InquestTime>
                       <Styles.InquestDetails>
-                        <strong>Name:</strong> {inquest.fullName}.
-                        <br />
-                        <strong>Died:</strong> {formatDate(timeOfDeath)} at {inquest.placeOfDeath}. Aged {inquest.age}{' '}
-                        years.
-                        <br />
-                        <strong>Court location:</strong> {inquest.courtroomFullAddress}.
-                        <br />
-                        <strong>Coroner:</strong> {inquest.coroner}.
+                        <SummaryList terms={terms} hasBorders={false} heading={formatTime(inquest.startDateTime)} />
                       </Styles.InquestDetails>
                     </Styles.InquestContainer>
                   </Column>
@@ -108,10 +121,24 @@ const InquestSchedule: React.FunctionComponent<InquestScheduleProps> = ({ caseAp
         </Styles.GroupContainer>
       )}
 
+      {Object.keys(preInquestDayGrouped).length > 0 && (
+        <Styles.GroupContainer>
+          <Heading level={2} text="Pre-inquest Review Hearings" />
+          <Accordion sections={transformToSections(preInquestDayGrouped)} />
+        </Styles.GroupContainer>
+      )}
+
       {Object.keys(writingDayGrouped).length > 0 && (
         <Styles.GroupContainer>
           <Heading level={2} text="Inquests in Writing" />
           <Accordion sections={transformToSections(writingDayGrouped)} />
+        </Styles.GroupContainer>
+      )}
+
+      {Object.keys(formalDayGrouped).length > 0 && (
+        <Styles.GroupContainer>
+          <Heading level={2} text="Formal Suspension Hearings" />
+          <Accordion sections={transformToSections(formalDayGrouped)} />
         </Styles.GroupContainer>
       )}
 
