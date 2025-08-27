@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   autocompleteHandleInputBlur,
   autocompleteHandleInputChange,
@@ -13,6 +13,7 @@ import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 
 const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ hasMargin = true }) => {
   const [autocompleteState, autocompleteDispatchers] = useAutocomplete();
+  const [searchIsFocused, setSearchIsFocused] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     autocompleteHandleInputBlur(e, autocompleteDispatchers);
+    setSearchIsFocused(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -47,6 +49,7 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
         onSubmit={handleSubmit}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
+        onFocus={() => setSearchIsFocused(true)}
       />
       <Styles.AutocompleteList>
         {autocompleteState.suggestions.map((suggestion, index) => {
@@ -60,17 +63,21 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
             />
           );
         })}
-        {autocompleteState.instantSuggestions.map((suggestion, index) => {
-          return (
-            <SaytSuggestion
-              disableTheme={true}
-              key={suggestion.title + index}
-              suggestion={suggestion}
-              isSelected={autocompleteState.selectedSuggestion === index}
-              suggestionIndex={index}
-            />
-          );
-        })}
+        {searchIsFocused && (
+          <>
+            {autocompleteState.instantSuggestions.map((suggestion, index) => {
+              return (
+                <SaytSuggestion
+                  disableTheme={true}
+                  key={suggestion.title + index}
+                  suggestion={suggestion}
+                  isSelected={autocompleteState.selectedSuggestion === index}
+                  suggestionIndex={index}
+                />
+              );
+            })}
+          </>
+        )}
       </Styles.AutocompleteList>
     </Styles.AutocompleteContainer>
   );
