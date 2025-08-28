@@ -28,18 +28,15 @@ export const StyledButton = styled.a`
     &:focus {
       outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
-      background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesFocus}
     }
     &:active {
       transform: translateY(2px);
+      outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
-      background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesActive}
     }
   }
   &.button--secondary {
@@ -56,20 +53,15 @@ export const StyledButton = styled.a`
     &:focus {
       outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
-      background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      border-color: transparent;
-      box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesFocus}
     }
     &:active {
+      outline: none;
       transform: translateY(2px);
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
-      background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      border-color: transparent !important;
-      box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesActive}
     }
   }
   &.button--small {
@@ -78,14 +70,14 @@ export const StyledButton = styled.a`
   }
   &.button--medium {
     font-size: 14px;
-    padding: 11px 20px;
+    padding: 12px 20px;
 
     &.button--secondary {
-      padding: 8px 12px;
+      padding: 12px 12px;
     }
   }
   &.button--large {
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 16px 24px;
   }
 `;

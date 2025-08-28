@@ -324,23 +324,11 @@ export const ReorderButton = styled.button`
     }
   }
   &:focus:not(.chosen) {
-    outline: none;
-    border-color: transparent;
-    background: ${(props) => props.theme.theme_vars.colours.focus};
-    color: ${(props) => props.theme.theme_vars.colours.black};
     border-color: ${(props) => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -webkit-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -moz-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+    ${(props) => props.theme.linkStylesFocus}
   }
   &:active:not(.chosen) {
     transform: translateY(2px);
-    border-color: transparent;
-    background: ${(props) => props.theme.theme_vars.colours.focus};
-    color: ${(props) => props.theme.theme_vars.colours.black};
-    border-color: ${(props) => props.theme.theme_vars.colours.focus};
-    box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-    -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+    ${(props) => props.theme.linkStylesActive}
   }
 `;
