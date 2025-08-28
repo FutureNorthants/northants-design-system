@@ -85,7 +85,7 @@ export const HeaderCludoSearch: Story = {
     hasTranslate: true,
     hasEventsLink: true,
     hasCludo: true,
-    customerId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
-    engineId: parseInt(process?.env?.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+    customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
+    engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
   },
 };
