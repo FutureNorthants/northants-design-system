@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import QuickExit from './QuickExit';
+import Header from '../../structure/Header/Header';
 
 const meta: Meta<typeof QuickExit> = {
   title: 'Library/Components/QuickExit',

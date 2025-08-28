@@ -49,3 +49,27 @@ export const ExampleSummaryList: Story = {
     </MaxWidthContainer>
   ),
 };
+
+export const SummaryListWithHeading: Story = {
+  ...ExampleSummaryList,
+  args: {
+    ...ExampleSummaryList.args,
+    heading: 'Example heading text',
+  },
+};
+
+export const SummaryListNoMargin: Story = {
+  ...ExampleSummaryList,
+  args: {
+    ...ExampleSummaryList.args,
+    hasMargin: false,
+  },
+};
+
+export const SummaryListNoBorders: Story = {
+  ...ExampleSummaryList,
+  args: {
+    ...ExampleSummaryList.args,
+    hasBorders: false,
+  },
+};

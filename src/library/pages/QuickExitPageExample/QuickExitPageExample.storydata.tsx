@@ -1,7 +1,5 @@
 import React from 'react';
 import Heading from '../../components/Heading/Heading';
-import { SBPadding } from '../../../../.storybook/SBPadding';
-import BackToTop from '../../components/BackToTop/BackToTop';
 
 interface QuickExitPageExample1Props {}
 

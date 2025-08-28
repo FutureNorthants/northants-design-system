@@ -30,16 +30,22 @@ describe('Test Component', () => {
     const component = getByTestId('InquestSchedule');
 
     expect(component).toHaveTextContent('Upcoming Inquests');
+    expect(component).toHaveTextContent('10am');
     expect(component).toHaveTextContent('A Name');
     expect(component).toHaveTextContent('100');
     expect(component).toHaveTextContent('A location');
     expect(component).toHaveTextContent('Sunday 1 January 2023');
     expect(component).not.toHaveTextContent('12:08:00');
     expect(component).toHaveTextContent('Coroner Name');
-    expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE');
+    expect(component).toHaveTextContent('The Guildhall, St. Giles Square, Northampton, NN1 1DE.');
     expect(component).toHaveTextContent('Wednesday 1 February 2023');
+    expect(component).toHaveTextContent('End date');
+    expect(component).toHaveTextContent('Wednesday 1 February 2023 at 3pm.');
 
     expect(component).not.toHaveTextContent('Inquest Openings');
+    expect(component).not.toHaveTextContent('Pre-inquest Review Hearings');
+    expect(component).not.toHaveTextContent('Inquests in Writing');
+    expect(component).not.toHaveTextContent('Formal Suspension Hearings');
   });
 
   it('should display the message when no results are returned', () => {
@@ -51,7 +57,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent("We can't find any results at the moment.");
   });
 
-  it('should display hearings, openings and in writing when set', () => {
+  it('should display hearings, pre-inquest reviews, openings and in writing when set', () => {
     props.caseAppointments = ExampleInquestScheduleArray;
 
     const { getByTestId } = renderComponent();
@@ -59,7 +65,18 @@ describe('Test Component', () => {
     const component = getByTestId('InquestSchedule');
 
     expect(component).toHaveTextContent('Upcoming Inquests');
+    expect(component).toHaveTextContent('Pre-inquest Review Hearings');
     expect(component).toHaveTextContent('Inquest Openings');
     expect(component).toHaveTextContent('Inquests in Writing');
+    expect(component).toHaveTextContent('Formal Suspension Hearings');
+  });
+
+  it('should hide end date if not set', () => {
+    props.caseAppointments[0].endDateTime = null;
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('InquestSchedule');
+    expect(component).not.toHaveTextContent('End date');
   });
 });
