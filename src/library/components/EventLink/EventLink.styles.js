@@ -30,9 +30,7 @@ export const Container = styled.a`
   flex-wrap: wrap;
   cursor: pointer;
   background: ${(props) => props.theme.theme_vars.colours.white} !important;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
-  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease;
   ${promotedStyles};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
@@ -52,7 +50,7 @@ export const Container = styled.a`
   }
 
   &:focus {
-    outline: none;
+    ${(props) => props.theme.linkStylesFocus};
 
     .event-list__title {
       ${(props) => props.theme.linkStylesFocus};
@@ -60,7 +58,7 @@ export const Container = styled.a`
   }
 
   &:active {
-    outline: none;
+    ${(props) => props.theme.linkStylesActive};
 
     .event-list__title {
       ${(props) => props.theme.linkStylesActive};

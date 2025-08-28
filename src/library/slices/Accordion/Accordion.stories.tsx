@@ -229,3 +229,40 @@ export const ExampleLongTitleAccordion: Story = {
     ],
   },
 };
+
+export const ExampleShortTitleAccordion: Story = {
+  args: {
+    sections: [
+      {
+        title: 'A',
+        content: (
+          <p>
+            <h2>Cras justo odio</h2>, dapibus ac facilisis in, <strong>egestas eget quam.</strong> Fusce dapibus, tellus
+            ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas
+            faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent
+            commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor
+            fringilla. Etiam porta sem malesuada magna mollis euismod.
+          </p>
+        ),
+      },
+      {
+        title: 'B',
+        content: (
+          <p>
+            Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.
+          </p>
+        ),
+      },
+      {
+        title: 'C',
+        content: (
+          <p>
+            Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.
+          </p>
+        ),
+      },
+    ],
+  },
+};

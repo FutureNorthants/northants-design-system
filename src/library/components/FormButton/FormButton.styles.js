@@ -24,20 +24,15 @@ export const StyledButton = styled.button`
       background-color: ${(props) => props.theme.theme_vars.colours.action_dark};
     }
     &:focus {
-      outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
       background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -3px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      ${(props) => props.theme.linkStylesFocus}
     }
     &:active {
       transform: translateY(2px);
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
       background-color: ${(props) => props.theme.theme_vars.colours.focus};
-      box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -webkit-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
-      -moz-box-shadow: 0px -1px 0px 0px ${(props) => props.theme.theme_vars.colours.black} inset;
+      ${(props) => props.theme.linkStylesActive}
     }
   }
   &.button--secondary {
@@ -49,9 +44,15 @@ export const StyledButton = styled.button`
       background-color: ${(props) => props.theme.theme_vars.colours.action}1A;
     }
     &:focus {
-      outline: none;
-      border: 2px solid ${(props) => props.theme.theme_vars.colours.focus};
-      background-color: ${(props) => props.theme.theme_vars.colours.action}1A;
+      color: ${(props) => props.theme.theme_vars.colours.black} !important;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesFocus}
+    }
+    &:active {
+      transform: translateY(2px);
+      color: ${(props) => props.theme.theme_vars.colours.black} !important;
+      border-color: ${(props) => props.theme.theme_vars.colours.focus};
+      ${(props) => props.theme.linkStylesActive}
     }
   }
   &.button--small {
