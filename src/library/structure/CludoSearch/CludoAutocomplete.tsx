@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   autocompleteHandleInputBlur,
   autocompleteHandleInputChange,
@@ -14,6 +14,7 @@ import SearchIcon from '../../components/icons/SearchIcon/SearchIcon';
 const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ hasMargin = true }) => {
   const [autocompleteState, autocompleteDispatchers] = useAutocomplete();
   const [searchIsFocused, setSearchIsFocused] = useState<boolean>(false);
+  const wrapperRef = useRef(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,14 +26,25 @@ const CludoAutoComplete: React.FunctionComponent<CludoAutoCompleteProps> = ({ ha
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     autocompleteHandleInputBlur(e, autocompleteDispatchers);
-    setSearchIsFocused(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     autocompleteHandleInputKeyDown(e, autocompleteDispatchers);
   };
+
+  // Custom function to handle the instant suggestions and search focus
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setSearchIsFocused(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <Styles.AutocompleteContainer $hasMargin={hasMargin}>
+    <Styles.AutocompleteContainer $hasMargin={hasMargin} ref={wrapperRef}>
       <SearchInput
         className="wnc-cludo-input"
         formId="search"
