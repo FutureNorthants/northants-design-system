@@ -11,7 +11,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node", "jest", "@testing-library/jest-dom", "@testing-library/jest-dom/jest-globals"]
+    "types": ["node", "jest", "@testing-library/jest-dom", "@testing-library/jest-dom/jest-globals", "google.maps"]
+  },
+  "ts-node": {
+    "files": true
   },
   "include": ["./src/**/*", "custom.d.ts"],
   "files": ["custom.d.ts", "custom-translate.d.ts"],

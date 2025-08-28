@@ -1,6 +1,6 @@
 import React from 'react';
 import PageMain from './PageMain';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof PageMain> = {
   title: 'Library/structure/Page Main Container',

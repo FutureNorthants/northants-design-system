@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Templates, TemplatesProps } from './Templates';
+import { Templates } from './Templates';
 
 const meta: Meta<typeof Templates> = {
   title: 'Page Examples/Templates',

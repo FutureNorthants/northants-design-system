@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import RecyclingInformation from './RecyclingInformation';
 import PageMain from '../../structure/PageMain/PageMain';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';

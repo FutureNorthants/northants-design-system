@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
 import { EventLandingPageExample } from './EventLandingPageExample';
 
 const meta: Meta<typeof EventLandingPageExample> = {

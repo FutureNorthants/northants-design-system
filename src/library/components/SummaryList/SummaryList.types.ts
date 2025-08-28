@@ -31,5 +31,5 @@ export interface SummaryRowProps {
   /**
    * The detail content
    */
-  detail: React.ReactChild;
+  detail: string;
 }

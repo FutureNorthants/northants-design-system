@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import RateThisPage from './RateThisPage';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 

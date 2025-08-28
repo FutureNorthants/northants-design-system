@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import PostCodeAddressDropdown from './PostCodeAddressDropdown';
 import { PostCodeAddressProvider } from './../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import PostCodeAddressSearch from '../PostCodeAddressSearch/PostCodeAddressSearch';

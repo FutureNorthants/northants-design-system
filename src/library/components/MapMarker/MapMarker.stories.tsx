@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MapMarker from './MapMarker';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import Map from '../Map/Map';
