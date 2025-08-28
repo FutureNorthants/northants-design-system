@@ -26,14 +26,12 @@ export const StyledButton = styled.a`
         props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action_dark};
     }
     &:focus {
-      outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
       border-color: ${(props) => props.theme.theme_vars.colours.focus};
       ${(props) => props.theme.linkStylesFocus}
     }
     &:active {
       transform: translateY(2px);
-      outline: none;
       color: ${(props) => props.theme.theme_vars.colours.black} !important;
       border-color: ${(props) => props.theme.theme_vars.colours.focus};
       ${(props) => props.theme.linkStylesActive}
