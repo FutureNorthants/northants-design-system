@@ -41,6 +41,10 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
     components: {
       autocomplete: CludoAutoComplete,
     },
+    autocomplete: {
+      showInstantSuggestions: true,
+      useSearchAsYouType: true,
+    },
   };
 
   const filterOrder: string[] = [

@@ -40,4 +40,7 @@ export const SearchResultsCludo: Story = {
     customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
     engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
   },
+  parameters: {
+    pageLayout: 'page',
+  },
 };
