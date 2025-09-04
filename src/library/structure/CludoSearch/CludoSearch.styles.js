@@ -173,6 +173,8 @@ export const Container = styled.div`
     color: ${(props) => props.theme.theme_vars.colours.black};
     width: 100%;
     padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    ${(props) => props.theme.headingStyles}
 
     a {
       text-decoration: underline !important;
