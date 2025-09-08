@@ -184,7 +184,7 @@ export const Container = styled.div`
 
       @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
         width: 40%;
-        margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+        margin-right: ${(props) => props.theme.theme_vars.spacingSizes.x_large} !important;
         margin-bottom: 0;
         float: left;
       }
