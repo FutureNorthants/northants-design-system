@@ -169,12 +169,26 @@ export const Container = styled.div`
   }
 
   .cludo-banner {
-    background-color: ${(props) => props.theme.theme_vars.colours.action_light};
+    background-color: ${(props) => props.theme.theme_vars.colours.grey_light};
     color: ${(props) => props.theme.theme_vars.colours.black};
     width: 100%;
-    padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
+    padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
     margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    overflow: hidden;
     ${(props) => props.theme.headingStyles}
+
+    img {
+      width: 100%;
+      margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+      float: none;
+
+      @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+        width: 40%;
+        margin-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+        margin-bottom: 0;
+        float: left;
+      }
+    }
 
     a {
       text-decoration: underline !important;
