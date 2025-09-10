@@ -144,6 +144,8 @@ export const CallToActionLink = styled.a`
   margin-top: 10px;
   display: inline-block;
   outline: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
 
   &:hover {
     ${(props) => props.theme.linkStylesHover}
