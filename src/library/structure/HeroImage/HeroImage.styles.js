@@ -138,21 +138,26 @@ export const Content = styled.div`
 export const CallToActionLink = styled.a`
   ${(props) => props.theme.fontStyles}
   text-decoration: underline;
-  color: ${(props) => props.theme.theme_vars.colours.white} !important;
+  color: ${(props) => props.theme.theme_vars.colours.white};
   width: 100%;
   padding: 0;
   margin-top: 10px;
   display: inline-block;
   outline: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
 
-  &:hover,
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+    color: ${(props) => props.theme.theme_vars.colours.white};
+  }
+
   &:focus {
-    text-decoration-style: dotted;
-    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5), -2px 2px 4px rgba(150, 150, 150, 0.5),
-      2px -2px 4px rgba(150, 150, 150, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.5);
+    ${(props) => props.theme.linkStylesFocus}
   }
   &:active {
     transform: translate(3px);
+    ${(props) => props.theme.linkStylesActive}
   }
 `;
 
