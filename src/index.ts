@@ -51,6 +51,7 @@ import CallToAction from './library/slices/CallToAction/CallToAction';
 import CouncilTaxAlphabeticalDirectory from './library/slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
 import Cards from './library/slices/Cards/Cards';
 import DownloadableFiles from './library/slices/DownloadableFiles/DownloadableFiles';
+import DirectoryDocuments from './library/slices/DirectoryDocuments/DirectoryDocuments';
 import Divider from './library/slices/Divider/Divider';
 import GoogleMap from './library/slices/GoogleMap/GoogleMap';
 import Image from './library/slices/Image/Image';
@@ -72,6 +73,7 @@ export {
   CallToAction,
   Cards,
   CouncilTaxAlphabeticalDirectory,
+  DirectoryDocuments,
   Divider,
   DownloadableFiles,
   GoogleMap,
