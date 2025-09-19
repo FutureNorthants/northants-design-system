@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  min-height: 46px;
 
   .wnc-cludo-input {
     padding-left: 0;

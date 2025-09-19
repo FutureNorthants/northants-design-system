@@ -303,6 +303,14 @@ export const Container = styled.div`
   }
 `;
 
+export const Loading = styled.div`
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ImageContainer = styled.div`
   img {
     width: 100%;
