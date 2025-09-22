@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import DirectoryServiceList from './DirectoryServiceList';
 import { ExampleService } from '../DirectoryService/DirectoryService.storydata';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';

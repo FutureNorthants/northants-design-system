@@ -4,6 +4,7 @@ import * as Styles from './SearchResultsList.styles';
 import SignpostLinksList from '../../components/SignpostLinksList/SignpostLinksList';
 import { ThemeContext } from 'styled-components';
 import NewsArticleOldBanner from '../NewsArticleOldBanner/NewsArticleOldBanner';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
   searchTerm,
@@ -11,7 +12,7 @@ const SearchResultsList: React.FunctionComponent<SearchResultsListProps> = ({
   totalResults = 0,
   pageNumber = 0,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const isOld = (date): boolean => {
     const currentDate = new Date();
     const dateObject = new Date(date);

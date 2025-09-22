@@ -1,3 +1,22 @@
+import { RuleSet } from 'styled-components';
+
+export interface GeneratedTheme {
+  name: string;
+  full_name: string;
+  cardinal_name: string;
+  is_memorial: boolean;
+  theme_vars: ThemeVars;
+  fontStyles: string;
+  headingStyles: string;
+  linkStyles: string;
+  linkStylesHover: string;
+  linkStylesFocus: RuleSet<object>;
+  linkStylesActive: RuleSet<object>;
+  elementBaseStyles: string;
+  elementFocusStyles: string;
+  visuallyHidden: string;
+}
+
 export interface ThemeVars {
   theme_name: string;
   full_name: string;

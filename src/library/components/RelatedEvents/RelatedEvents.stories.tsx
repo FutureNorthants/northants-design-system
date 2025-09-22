@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import RelatedEvents from './RelatedEvents';
 
 const meta: Meta<typeof RelatedEvents> = {

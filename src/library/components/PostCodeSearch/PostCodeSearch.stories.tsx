@@ -1,6 +1,6 @@
 import React from 'react';
 import PostCodeSearch from './PostCodeSearch';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
 const meta: Meta<typeof PostCodeSearch> = {

@@ -1,6 +1,6 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { SignpostPageExample, SignpostPageExampleProps } from './SignpostPageExample';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { SignpostPageExample } from './SignpostPageExample';
 
 const meta: Meta<typeof SignpostPageExample> = {
   title: 'Page Examples/Signpost Page Examples',

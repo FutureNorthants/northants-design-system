@@ -1,6 +1,5 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import type { Meta, StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
 import { BinFinderPageExample } from './BinFinderPageExample';
 
 const meta: Meta<typeof BinFinderPageExample> = {

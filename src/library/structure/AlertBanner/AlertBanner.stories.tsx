@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import AlertBanner from './AlertBanner';
 import Button from '../../components/Button/Button';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';

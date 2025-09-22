@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeHero from './HomeHero';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import { HomeHeroCommon, HomeHeroPromotedLinks } from './HomeHero.storydata';
 import { ExamplePromotedServicesData } from '../PromotedServicesTabs/PromotedServicesTabs.storydata';
 

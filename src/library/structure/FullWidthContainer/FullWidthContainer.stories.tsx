@@ -1,6 +1,6 @@
 import React from 'react';
 import FullWidthContainer from './FullWidthContainer';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof FullWidthContainer> = {
   title: 'Library/structure/Full width Container',

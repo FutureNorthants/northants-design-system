@@ -1,9 +1,8 @@
 import React from 'react';
 import Textarea from './Textarea';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../../structure/PageMain/PageMain';
-import { ExampleSortBy } from '../SortBy/SortBy.stories';
 
 const meta: Meta<typeof Textarea> = {
   title: 'Library/Components/Textarea',

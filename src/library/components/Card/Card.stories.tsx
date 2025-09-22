@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import Card from './Card';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 import Row from '../Row/Row';

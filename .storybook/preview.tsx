@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { themes } from '../src/themes/theme_generator';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { GlobalStyleReset } from '../src/themes/GlobalStyleReset';
-import { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react-webpack5';
 import { SBPadding } from './SBPadding';
 
 const preview: Preview = {

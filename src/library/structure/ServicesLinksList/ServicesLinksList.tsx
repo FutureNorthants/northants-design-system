@@ -8,6 +8,7 @@ import Heading from '../../components/Heading/Heading';
 import HeadingWithIconLink from '../../components/HeadingWithIconLink/HeadingWithIconLink';
 import ServicesLinksBoxed from '../ServicesLinksBoxed/ServicesLinksBoxed';
 import useLocalStorage from '../../helpers/UseLocalStorage';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   serviceLinksArray,
@@ -17,7 +18,7 @@ const ServicesLinksList: React.FunctionComponent<ServicesLinksListProps> = ({
   serviceId = 'all-services',
   isBoxed = false,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [arrayOrdering, setArrayOrdering] = useState(serviceLinksArray);
   const orderedArray = [...serviceLinksArray].sort((a, b) => (a.title > b.title ? 1 : -1));
   const [open, setOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PageSidebar from './PageSidebar';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof PageSidebar> = {
   title: 'Library/structure/Page Sidebar Container',

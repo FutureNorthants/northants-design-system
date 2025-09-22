@@ -1,6 +1,6 @@
 import React from 'react';
 import PageTitle from './PageTitle';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import Heading from '../../components/Heading/Heading';
 
 const meta: Meta<typeof PageTitle> = {

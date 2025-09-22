@@ -12,6 +12,7 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { defaultResults } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
 import { PostcodeSearchApiUrl } from '../../helpers/api-helpers';
 import { usePostcodeAddressContext } from '../../contexts/PostCodeAddressProvider/PostCodeAddressProvider';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * The functionality for searching for a postcode
@@ -23,7 +24,7 @@ const PostCodeAddressSearch: React.FunctionComponent<PostCodeAddressSearchProps>
   signPostLinks,
   isUnitary = false,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const {
     postcodeValue: { postcode: postcode, setPostcode: setPostCode },
     resultsValue: { results: results, setResults: setResults },

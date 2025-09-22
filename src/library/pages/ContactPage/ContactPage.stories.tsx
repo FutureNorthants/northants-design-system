@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
 import { ContactPage } from './ContactPage';
 
 const meta: Meta<typeof ContactPage> = {

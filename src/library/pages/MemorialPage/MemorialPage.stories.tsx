@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { MemorialPage } from './MemorialPage';
 import { NewsArticleData } from '../../structure/NewsArticleFeaturedBlock/NewsArticleFeaturedBlock.storydata';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';

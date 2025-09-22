@@ -1,6 +1,6 @@
 import React from 'react';
 import MaxWidthContainer from './MaxWidthContainer';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof MaxWidthContainer> = {
   title: 'Library/structure/Max width Container',
