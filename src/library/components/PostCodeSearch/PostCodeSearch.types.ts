@@ -27,6 +27,11 @@ export interface PostCodeSearchProps {
    * Optional - changes it to only give back the area you are from
    */
   isUnitary?: boolean;
+
+  /**
+   * Optional - Type of sovereign
+   */
+  sovereignType?: 'sovereigns' | 'wastesovereigns';
 }
 
 export interface AddressOption {
@@ -51,6 +56,11 @@ export interface AddressOptionInfoProps {
    * An array of sovereigns
    */
   sovereigns: SovereignProps[];
+
+  /**
+   * An array of waste sovereigns
+   */
+  wasteSovereigns?: SovereignProps[];
 
   /**
    * An array of Unitaries
