@@ -111,6 +111,11 @@ export interface AddressProps {
   sovereign: string;
 
   /**
+   * The sovereign council name
+   */
+  wastesovereign: string;
+
+  /**
    * The unitary council name
    */
   unitary: string;

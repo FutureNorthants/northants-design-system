@@ -16,9 +16,21 @@ const meta: Meta<typeof PostCodeSearch> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const DefaultExample: Story = {
   args: {
     otherCouncilLink: 'https://www.westnorthants.gov.uk',
+  },
+  render: (args) => (
+    <MaxWidthContainer>
+      <PostCodeSearch {...args} />
+    </MaxWidthContainer>
+  ),
+};
+
+export const WasteExample: Story = {
+  args: {
+    otherCouncilLink: 'https://www.westnorthants.gov.uk',
+    sovereignType: 'wastesovereigns',
   },
   render: (args) => (
     <MaxWidthContainer>
