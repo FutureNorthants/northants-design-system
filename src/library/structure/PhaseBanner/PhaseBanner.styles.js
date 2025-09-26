@@ -16,14 +16,19 @@ export const StyledMaxWidthContainer = styled(MaxWidthContainer)`
     props.$isHome ? props.theme.theme_vars.spacingSizes.extra_small : props.theme.theme_vars.spacingSizes.small};
   padding-bottom: ${(props) =>
     props.$isHome ? props.theme.theme_vars.spacingSizes.extra_small : props.theme.theme_vars.spacingSizes.small};
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
   border-bottom: ${(props) => (props.$isHome ? 'none' : '1px solid ' + props.theme.theme_vars.colours.grey + '80')};
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  margin: auto;
-  margin-left: ${(props) => props.theme.theme_vars.spacingSizes.large};
-  margin-right: ${(props) => props.theme.theme_vars.spacingSizes.large};
+  width: 100%;
   color: ${(props) => (props.$isHome ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black)};
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    flex-direction: row;
+  }
 `;
 
 export const PhaseText = styled.span`
@@ -32,8 +37,12 @@ export const PhaseText = styled.span`
 `;
 
 export const PhaseContentContainer = styled.div`
-  margin: 0 0 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  margin: 0;
   padding: 0;
+
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
+    margin: 0 0 0 ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  }
 
   a {
     color: ${(props) =>
@@ -63,7 +72,6 @@ export const PhaseContentContainer = styled.div`
     margin-bottom: auto;
     padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
     padding-bottom: ${(props) => `calc(${props.theme.theme_vars.spacingSizes.small} - 3px)`};
-    padding-left: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   }
 `;
 
