@@ -20,6 +20,16 @@ describe('PostCodeSearch', () => {
     };
   });
 
+  interface dataSetProps {
+    sovereignType: 'sovereigns' | 'wastesovereigns';
+    expectedSovereign: string;
+  }
+
+  const dataSet: dataSetProps[] = [
+    { sovereignType: 'sovereigns', expectedSovereign: 'Kettering' },
+    { sovereignType: 'wastesovereigns', expectedSovereign: 'Daventry' },
+  ];
+
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
@@ -90,60 +100,71 @@ describe('PostCodeSearch', () => {
     });
   });
 
-  it('should find a postcode', async () => {
-    mockedAxios.mockResolvedValue({
-      statusText: 'Ok',
-      headers: {},
-      config: {},
-      status: 200,
-      data: {
-        sovereigns: [
-          {
-            name: 'Kettering',
-            website: '',
-          },
-        ],
-        unitaries: [
-          {
-            name: 'North',
-          },
-        ],
-        addresses: [
-          {
-            single_line_address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
-            sovereign: 'Kettering',
-            unitary: 'North',
-            uprn: '12345678910',
-          },
-        ],
-      },
-    });
+  it.each(dataSet)(
+    'should find a postcode for $sovereignType and expected sovereign $expectedSovereign',
+    async ({ sovereignType, expectedSovereign }) => {
+      mockedAxios.mockResolvedValue({
+        statusText: 'Ok',
+        headers: {},
+        config: {},
+        status: 200,
+        data: {
+          sovereigns: [
+            {
+              name: 'Kettering',
+              website: '',
+            },
+          ],
+          wastesovereigns: [
+            {
+              name: 'Daventry',
+              website: '',
+            },
+          ],
+          unitaries: [
+            {
+              name: 'North',
+            },
+          ],
+          addresses: [
+            {
+              single_line_address: '123, EXAMPLE ROAD, KETTERING, NORTH POSTCODE',
+              sovereign: 'Kettering',
+              unitary: 'North',
+              uprn: '12345678910',
+            },
+          ],
+        },
+      });
 
-    const { getByTestId, getByPlaceholderText, getByText, getByRole } = renderComponent();
-    const component = getByTestId('PostCodeSearch');
-    const expandButton = getByText(props.title);
+      props.sovereignType = sovereignType;
 
-    fireEvent.click(expandButton);
-    const searchInput = getByPlaceholderText('Enter a postcode');
+      const { getByTestId, getByPlaceholderText, getByText, getByRole } = renderComponent();
+      const component = getByTestId('PostCodeSearch');
+      const expandButton = getByText(props.title);
 
-    fireEvent.change(searchInput, { target: { value: 'NORTH POSTCODE' } });
+      fireEvent.click(expandButton);
+      const searchInput = getByPlaceholderText('Enter a postcode');
 
-    fireEvent.submit(getByTestId('FormWithLine'));
+      fireEvent.change(searchInput, { target: { value: 'NORTH POSTCODE' } });
 
-    await waitFor(() => {
-      expect(component).toHaveTextContent(
-        'This postcode NORTH POSTCODE is in North Northamptonshire, in the Kettering area.'
-      );
-      expect(component).toHaveTextContent(
-        'In order to find the right information for you, please visit the North Northamptonshire website and find your local area (Kettering) for this service'
-      );
+      fireEvent.submit(getByTestId('FormWithLine'));
 
-      const councilLink = getByRole('link');
+      await waitFor(() => {
+        expect(component).toHaveTextContent(
+          `This postcode NORTH POSTCODE is in North Northamptonshire, in the ${expectedSovereign} area.`
+        );
+        expect(component).toHaveTextContent(
+          `In order to find the right information for you, please visit the North Northamptonshire website and find your local area (${expectedSovereign}) for this service`
+        );
 
-      expect(councilLink).toHaveAttribute('href', west_theme.theme_vars.other_council_link);
-      expect(councilLink).toHaveTextContent("Go to North Northamptonshire's website");
-    });
-  });
+        const councilLink = getByRole('link');
+
+        expect(councilLink).toHaveAttribute('href', west_theme.theme_vars.other_council_link);
+        expect(councilLink).toHaveTextContent("Go to North Northamptonshire's website");
+      });
+    }
+  );
 
   it('should find multiple unitaries', async () => {
     mockedAxios.mockResolvedValue({
