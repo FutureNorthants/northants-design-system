@@ -14,6 +14,7 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
   signpostLinksArray,
   TopLineText = 'Select your local area for more information:',
   otherCouncilLink,
+  sovereignType = 'sovereigns',
 }) => {
   const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const councilLink = otherCouncilLink ? otherCouncilLink : themeContext.theme_vars.other_council_link;
@@ -26,7 +27,11 @@ const SignpostLinks: React.FC<SignpostLinksProps> = ({
 
           <SignpostLinksList signpostLinksArray={signpostLinksArray} />
 
-          <PostCodeSearch otherCouncilLink={councilLink} signPostLinks={signpostLinksArray} />
+          <PostCodeSearch
+            otherCouncilLink={councilLink}
+            signPostLinks={signpostLinksArray}
+            sovereignType={sovereignType}
+          />
 
           {(otherCouncilLink || themeContext.theme_vars.other_council_link) && (
             <Styles.LastParagraph>
