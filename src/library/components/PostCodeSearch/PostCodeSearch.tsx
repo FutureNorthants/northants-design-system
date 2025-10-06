@@ -233,6 +233,13 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
 
                   <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                 </div>
+              ) : !responseData[sovereignType] ? (
+                <div className="result">
+                  <p>
+                    This service is currently unavailable. We apologise for the inconvenience. Please try again later.
+                  </p>
+                  <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
+                </div>
               ) : (
                 <div className="result">
                   <p>
