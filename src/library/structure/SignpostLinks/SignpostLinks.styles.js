@@ -45,9 +45,3 @@ export const SingleButtonContainer = styled.div`
     }
   }
 `;
-
-export const RenderingMessage = styled.p`
-  color: red;
-  margin-top: 0;
-  margin-bottom: 12px;
-`;

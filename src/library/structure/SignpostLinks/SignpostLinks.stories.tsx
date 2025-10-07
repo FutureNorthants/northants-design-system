@@ -43,9 +43,9 @@ export const NorthSignpostLinksExample: Story = {
   },
   render: (args) => (
     <>
-      <Styles.RenderingMessage>
+      <p style={{ color: 'red', marginTop: '0px', marginBottom: '12px' }}>
         Make sure you have the right theme chosen for the corresponding example, otherwise this might not work right.
-      </Styles.RenderingMessage>
+      </p>
       <SignpostLinks {...args} />
     </>
   ),
@@ -135,9 +135,9 @@ export const NorthSignpostLinksWasteExample: Story = {
   },
   render: (args) => (
     <>
-      <Styles.RenderingMessage>
+      <p style={{ color: 'red', marginTop: '0px', marginBottom: '12px' }}>
         Make sure you have the right theme chosen for the corresponding example, otherwise this might not work right.
-      </Styles.RenderingMessage>
+      </p>
       <SignpostLinks {...args} />
     </>
   ),
