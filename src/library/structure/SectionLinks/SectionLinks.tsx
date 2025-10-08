@@ -22,7 +22,7 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
     <Row isList>
       {pageLinksArray.map((link, i) => (
         <Column isList small="full" medium="one-half" large="one-third" key={i}>
-          {hasCards ? (
+          {hasCards && hasImages ? (
             <Card
               footerLink={link}
               imageAltText={link.imageAltText}
@@ -30,6 +30,8 @@ const SectionLinks: React.FunctionComponent<SectionLinksProps> = ({
               imageSmall={link.imageSmall}
               content={link.summary}
             />
+          ) : hasCards && !hasImages ? (
+            <Card footerLink={link} header={link.title} content={link.summary} />
           ) : (
             <Styles.Pagelink href={link.url} title={link.title}>
               {hasImages && (
