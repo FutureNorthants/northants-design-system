@@ -8,7 +8,7 @@ import CallToAction from '../../slices/CallToAction/CallToAction';
 import Accordion from '../../slices/Accordion/Accordion';
 import WarningTextDisclaimer from '../../slices/WarningTextDisclaimer/WarningTextDisclaimer';
 import Summary from '../../structure/Summary/Summary';
-import { smallTable, largeTable } from './ContentPage.storydata';
+import { smallTable, largeTable, ExampleLinkBlockData } from './ContentPage.storydata';
 import Promotions from '../../slices/Promotions/Promotions';
 import { PromoBlocksData } from '../../structure/PromoBlock/PromoBlock.storydata';
 import { GoogleMapWithTitleAndDescription } from '../../slices/GoogleMap/GoogleMap.storydata';
@@ -21,6 +21,7 @@ import SearchBox from '../../slices/SearchBox/SearchBox';
 import { ExampleSearchBoxProps } from '../../slices/SearchBox/SearchBox.storydata';
 import BackToTop from '../../components/BackToTop/BackToTop';
 import RateThisPage from '../../structure/RateThisPage/RateThisPage';
+import LinkBlock from '../../slices/LinkBlock/LinkBlock';
 
 export interface ContentPageProps {}
 
@@ -266,6 +267,7 @@ export const ContentPage: React.FunctionComponent<ContentPageProps> = ({}) => (
         <Image {...ImageWithCaption} />
         <ImageAndText {...ImageAndTextWithHeading} />
         <SearchBox {...ExampleSearchBoxProps} />
+        <LinkBlock {...ExampleLinkBlockData} />
         <WarningTextDisclaimer />
         <RateThisPage
           onSubmit={() => {}}
