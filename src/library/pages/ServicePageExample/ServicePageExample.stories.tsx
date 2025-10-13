@@ -1,6 +1,6 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { ServicePageExample, ServicePageExampleProps } from './ServicePageExample';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
+import { ServicePageExample } from './ServicePageExample';
 import { ContentsExampleData } from '../../structure/Contents/Contents.storydata';
 
 const meta: Meta<typeof ServicePageExample> = {

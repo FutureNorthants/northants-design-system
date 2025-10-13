@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import PromoTabs from './PromoTabs';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';

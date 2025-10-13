@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import RateThisPage from './RateThisPage';
 import { RateThisPageProps } from './RateThisPage.types';
@@ -9,7 +9,10 @@ describe('RateThisPage Component', () => {
   let props: RateThisPageProps;
 
   const mockSave = jest.fn();
+  const mockLoading = jest.fn();
   window.scrollTo = jest.fn();
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isSuccess, setIsSuccess] = useState(false);
 
   beforeEach(() => {
     props = {
@@ -19,12 +22,13 @@ describe('RateThisPage Component', () => {
     };
   });
 
-  const renderComponent = () =>
-    render(
+  const renderComponent = () => {
+    return render(
       <ThemeProvider theme={west_theme}>
         <RateThisPage {...props} />
       </ThemeProvider>
     );
+  };
 
   it('should render the first question correctly', () => {
     const { getByTestId } = renderComponent();

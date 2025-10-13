@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-webpack5';
 import { SearchResultsPageExample } from './SearchResultsPageExample';
 
 const meta: Meta<typeof SearchResultsPageExample> = {
@@ -39,5 +39,8 @@ export const SearchResultsCludo: Story = {
     cludoSearch: true,
     customerId: parseInt(process.env.NEXT_PUBLIC_CLUDO_CUSTOMER_ID ?? ''),
     engineId: parseInt(process.env.NEXT_PUBLIC_CLUDO_ENGINE_ID ?? ''),
+  },
+  parameters: {
+    pageLayout: 'page',
   },
 };

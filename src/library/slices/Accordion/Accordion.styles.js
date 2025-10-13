@@ -105,6 +105,7 @@ export const SectionButton = styled.button`
   cursor: pointer;
   -webkit-appearance: none;
   text-decoration: underline;
+  min-width: ${(props) => props.theme.theme_vars.spacingSizes.x_large};
 
   ${SectionButtonIsFilteredStyles}
 

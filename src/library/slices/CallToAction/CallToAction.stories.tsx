@@ -1,6 +1,6 @@
 import React from 'react';
 import CallToAction from './CallToAction';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 const meta: Meta<typeof CallToAction> = {
   title: 'Library/Slices/Call to action',

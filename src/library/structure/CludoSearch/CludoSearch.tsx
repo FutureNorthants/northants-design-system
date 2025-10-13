@@ -21,6 +21,7 @@ import {
 import CludoAutoComplete from './CludoAutocomplete';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, customerId, engineId }) => {
   const cludoSearchConfig: CludoSearchOptions = {
@@ -83,6 +84,11 @@ const CludoSearch: React.FunctionComponent<CludoSearchProps> = ({ searchTerm, cu
               <Facets />
             </Styles.MobileFacets>
             <ResultsList
+              customLoader={
+                <Styles.Loading>
+                  <LoadingSpinner />
+                </Styles.Loading>
+              }
               template={(currResult) => (
                 <CustomResult result={currResult} wrapWithLink={true} className="wnc-cludo-result">
                   <Row>

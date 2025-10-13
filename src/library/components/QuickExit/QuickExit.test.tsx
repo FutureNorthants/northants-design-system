@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import QuickExit from './QuickExit';
 import { QuickExitProps } from './QuickExit.types';
+import { replace } from 'stylis';
 
 describe('Test Component', () => {
   let props: QuickExitProps;

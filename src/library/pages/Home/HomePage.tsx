@@ -5,6 +5,7 @@ import { ThemeContext } from 'styled-components';
 import { ExamplePromotedServicesData } from '../../structure/PromotedServicesTabs/PromotedServicesTabs.storydata';
 import Heading from '../../components/Heading/Heading';
 import BackToTop from '../../components/BackToTop/BackToTop';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * An example home page layout constructed from the structures and components defined in the
@@ -27,7 +28,7 @@ export const HomePage: React.FunctionComponent<HomePageProps> = ({
   footerLinksArray,
   showSearch,
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
 
   return (
     <>

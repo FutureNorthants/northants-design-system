@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroImage from './HeroImage';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import {
   HeroImageExampleGradientData,
   HeroImageExampleBoxedData,

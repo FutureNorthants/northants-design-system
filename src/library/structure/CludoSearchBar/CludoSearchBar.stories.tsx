@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import CludoSearchBar from './CludoSearchBar';
 import PageMain from '../PageMain/PageMain';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';

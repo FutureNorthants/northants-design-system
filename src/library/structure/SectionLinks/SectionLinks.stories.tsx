@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import SectionLinks from './SectionLinks';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import { pageLinksArray } from './SectionLinks.storydata';

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MemorialHero from './MemorialHero';
 import ServicesLinksList from '../ServicesLinksList/ServicesLinksList';
 import { west_theme, lb_theme_west } from './../../../themes/theme_generator';

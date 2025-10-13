@@ -1,6 +1,6 @@
 import React from 'react';
 import PageWithSidebarContainer from './PageWithSidebarContainer';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import PageMain from '../PageMain/PageMain';
 import PageSidebar from '../PageSidebar/PageSidebar';
 

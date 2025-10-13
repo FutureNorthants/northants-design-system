@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import EventList from './EventList';
 import { ExampleEventListResults } from './EventList.storydata';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';

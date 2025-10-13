@@ -1,6 +1,6 @@
 import React from 'react';
 import AlertBannerService from './AlertBannerService';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import PageMain from '../PageMain/PageMain';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import NewsArticleDate from './NewsArticleDate';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 const meta: Meta<typeof NewsArticleDate> = {

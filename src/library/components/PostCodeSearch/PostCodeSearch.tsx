@@ -14,6 +14,7 @@ import { SignpostLinks } from '../../structure/PageStructures';
 import DropDownSelect from '../DropDownSelect/DropDownSelect';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import { PostcodeResultsProps, PostcodeSearchApiUrl } from '../../helpers/api-helpers';
+import { GeneratedTheme } from '../../../themes/ThemeVars.types';
 
 /**
  * The functionality for searching for a postcode
@@ -24,8 +25,9 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
   otherCouncilLink,
   signPostLinks,
   isUnitary = false,
+  sovereignType = 'sovereigns',
 }) => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext) as GeneratedTheme;
   const [open, setOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setisError] = useState<boolean>(formError);
@@ -36,6 +38,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
 
   const defaultArray: AddressOptionInfoProps = {
     sovereigns: [],
+    wasteSovereigns: [],
     unitaries: [],
     addresses: [],
   };
@@ -89,11 +92,11 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
   };
 
   useEffect(() => {
-    if (responseData.unitaries?.length > 0) {
+    if (responseData[sovereignType]?.length > 0) {
       if (isError) {
         handleError(false, '');
       }
-      if (responseData.unitaries?.length > 1) {
+      if (responseData[sovereignType]?.length > 1) {
         setIsMultiple(true);
         responseData.addresses.map((address) => {
           setAddressOptions((addressOptions) => [
@@ -115,6 +118,11 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                   sovereigns: [
                     {
                       name: address.sovereign,
+                    },
+                  ],
+                  wasteSovereigns: [
+                    {
+                      name: address.wastesovereign,
                     },
                   ],
                   unitaries: [
@@ -170,7 +178,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                 <Styles.Label htmlFor="postcode">
                   Enter your postcode
                   <HintText
-                    text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1DE'}
+                    text={themeContext.cardinal_name === 'north' ? 'For example NN16 0AP' : 'For example NN1 1ED'}
                   />
                   <Input
                     type="text"
@@ -207,7 +215,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                   <p>
                     This postcode <strong>{currentPostcode}</strong> is in{' '}
                     <strong>{responseData.unitaries[0].name}</strong>, in the{' '}
-                    <strong>{responseData.sovereigns[0].name}</strong> area.
+                    <strong>{responseData[sovereignType][0].name}</strong> area.
                   </p>
 
                   {themeContext.theme_vars.cardinal_name !== responseData.unitaries[0].name.toLowerCase() ? (
@@ -225,12 +233,19 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
 
                   <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
                 </div>
+              ) : !responseData[sovereignType] ? (
+                <div className="result">
+                  <p>
+                    This service is currently unavailable. We apologise for the inconvenience. Please try again later.
+                  </p>
+                  <Styles.StartAgain onClick={() => clearData()}>Check another postcode</Styles.StartAgain>
+                </div>
               ) : (
                 <div className="result">
                   <p>
                     This postcode <strong>{currentPostcode}</strong> is in{' '}
                     <strong>{responseData.unitaries[0].name} Northamptonshire</strong>, in the{' '}
-                    <strong>{responseData.sovereigns[0].name}</strong> area.
+                    <strong>{responseData[sovereignType][0].name}</strong> area.
                   </p>
                   {themeContext.theme_vars.cardinal_name !==
                     responseData.unitaries[0].name.split(' ')[0].toLowerCase() && (
@@ -238,7 +253,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
                       <p>
                         In order to find the right information for you, please visit the{' '}
                         {responseData.unitaries[0].name} Northamptonshire website and find your local area (
-                        {responseData.sovereigns[0].name}) for this service.
+                        {responseData[sovereignType][0].name}) for this service.
                       </p>
 
                       <Button

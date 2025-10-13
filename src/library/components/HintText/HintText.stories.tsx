@@ -1,6 +1,6 @@
 import React from 'react';
 import HintText from './HintText';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import MaxWidthContainer from '../../structure/MaxWidthContainer/MaxWidthContainer';
 
 const meta: Meta<typeof HintText> = {

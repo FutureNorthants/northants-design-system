@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
 import RoadworksList from './RoadworksList';
 import { AnotherExampleRoadwork, ExampleRoadwork, ThirdExampleRoadwork } from './RoadworksList.storydata';
 import PageMain from '../../structure/PageMain/PageMain';
