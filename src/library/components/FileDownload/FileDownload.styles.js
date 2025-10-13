@@ -64,7 +64,9 @@ export const FileDetails = styled.div`
   display: inline-block;
   max-width: calc(100% - 45px);
   transition: transform 0.3s;
+  padding-left: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
+
 export const Title = styled.p`
   display: block;
   color: ${(props) => props.theme.theme_vars.colours.action};
