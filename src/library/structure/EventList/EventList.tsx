@@ -23,11 +23,14 @@ const EventList: React.FunctionComponent<EventListProps> = ({
   services,
   eventTypes,
   eventSearch = '',
+  locations = [],
   setEventSearch,
   service = '',
   setService,
   eventType = [''],
   setEventType,
+  location = '',
+  setLocation,
   startDate = '',
   setStartDate,
   endDate = '',
@@ -83,6 +86,18 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                   isFullWidth
                 />
               </Styles.SelectContainer>
+
+              {locations.length > 0 && (
+                <Styles.SelectContainer>
+                  <DropDownSelect
+                    label="Location"
+                    options={locations ? locations : [{ title: 'All locations', value: 'all' }]}
+                    onChange={(e) => setLocation(e.target.value)}
+                    value={location}
+                    isFullWidth
+                  />
+                </Styles.SelectContainer>
+              )}
 
               <label htmlFor="startDate">Start Date</label>
               <Input

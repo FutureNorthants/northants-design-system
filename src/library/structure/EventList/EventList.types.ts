@@ -30,6 +30,11 @@ export interface EventListProps {
   eventTypes?: CheckboxValsProps[];
 
   /**
+   * The optional list of locations to select from
+   */
+  locations?: DropDownSelectOptionsProps[];
+
+  /**
    * What the list is sorted by
    */
   sortBy?: string;
@@ -48,6 +53,16 @@ export interface EventListProps {
    * Function prop passed in to handle updating event search
    */
   setEventSearch?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * The location name
+   */
+  location?: string;
+
+  /**
+   * Function prop passed in to handle updating location search
+   */
+  setLocation?: Dispatch<SetStateAction<string>>;
 
   /**
    * The selected service filter
