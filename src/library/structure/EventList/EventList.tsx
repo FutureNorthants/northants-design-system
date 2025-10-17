@@ -84,6 +84,7 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                   onChange={(e) => setService(e.target.value)}
                   value={service}
                   isFullWidth
+                  id="servicesDropdown"
                 />
               </Styles.SelectContainer>
 
@@ -91,10 +92,11 @@ const EventList: React.FunctionComponent<EventListProps> = ({
                 <Styles.SelectContainer>
                   <DropDownSelect
                     label="Location"
-                    options={locations ? locations : [{ title: 'All locations', value: 'all' }]}
+                    options={locations ? locations : [{ title: 'All locations', value: '' }]}
                     onChange={(e) => setLocation(e.target.value)}
                     value={location}
                     isFullWidth
+                    id="locationDropdown"
                   />
                 </Styles.SelectContainer>
               )}
