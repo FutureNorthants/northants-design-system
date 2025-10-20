@@ -26,7 +26,7 @@ export const ConsultationPageExample: React.FunctionComponent<ConsultationPageEx
       rejectButtonText="No, thanks"
       acceptCallback={() => {}}
     />
-    <PageStructures.Header />
+    <PageStructures.Header hasEventsLink hasNewsLink hasTranslate accessibilityLink="/accessibility" hasDirectoryLink />
     <PageStructures.MaxWidthContainer>
       <PageStructures.Breadcrumbs
         breadcrumbsArray={[
