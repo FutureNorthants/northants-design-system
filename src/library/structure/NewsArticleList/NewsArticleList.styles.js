@@ -32,9 +32,9 @@ export const ArticleContainer = styled.a`
   border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   overflow: hidden;
-  /* display: block; */
   text-decoration: none !important;
   font-weight: normal !important;
+  min-width: 100%;
 
   &:hover {
     border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action_dark};
@@ -60,10 +60,6 @@ export const ArticleContainer = styled.a`
   }
 
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    display: flex;
-  }
 `;
 
 export const ArticleContent = styled.div`
@@ -71,9 +67,20 @@ export const ArticleContent = styled.div`
 
   ${(props) => props.theme.fontStyles};
 
+  /* Tiny-width screens (at most 550px) */
+  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
+    justify-self: ${(props) => (props.$withImage ? 'none' : 'left')} !important;
+  }
+  /* Small-width screens (at least 550px) */
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+    min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
+  }
+  /* Medium-width screens (at least 1160px) */
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     width: ${(props) => (props.$withImage ? '50%' : '100%')};
   }
+  /* large-width screens (at least 1440px) */
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.l}) {
     width: ${(props) => (props.$withImage ? '66%' : '100%')};
   }

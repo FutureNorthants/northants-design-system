@@ -15,9 +15,9 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
         <Row isList>
           {results.map((article) => (
             <Column isList small="full" medium="full" large="full" key={article.id}>
-              <Styles.ArticleContainer href={article.url} title={article.title}>
+              <Styles.ArticleContainer data-testid="NewsArticleContainer" href={article.url} title={article.title}>
                 {article.image720x405 && (
-                  <Styles.ImageContainer className="news-article-list__image">
+                  <Styles.ImageContainer data-testid="NewsArticleImageContainer" className="news-article-list__image">
                     <ResponsiveImage
                       imageSmall={article.image72x41}
                       imageLarge={article.image720x405}
@@ -29,7 +29,10 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
                     />
                   </Styles.ImageContainer>
                 )}
-                <Styles.ArticleContent $withImage={article.image720x405 ? true : false}>
+                <Styles.ArticleContent
+                  data-testid="NewsArticleContent"
+                  $withImage={article.image720x405 ? true : false}
+                >
                   <Styles.Title className="news-article-list__title">{article.title}</Styles.Title>
                   {article.excerpt.length > extractLength
                     ? article.excerpt.substr(0, extractLength - 1).trim() + String.fromCharCode(8230)

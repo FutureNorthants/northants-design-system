@@ -25,6 +25,24 @@ export const newsArticleData: NewsArticleListProps = {
 
   results: [
     {
+      id: '6036694e46512345337f784e',
+      title: 'Pariatur sint occaecat sit.',
+      excerpt: 'Sint Lorem consectetur in commodo esse\r\n',
+      date: 1614178638,
+      image720x405: '',
+      image72x41: '',
+      url: 'http://',
+    },
+    {
+      id: '6036694e46512345337f784e',
+      title: 'Pariatur sint.',
+      excerpt: 'Sint Lorem',
+      date: 1614178638,
+      image720x405: '',
+      image72x41: '',
+      url: 'http://',
+    },
+    {
       id: '6036694e465dd0e61e7f784e',
       title: 'Pariatur sint occaecat sit eiusmod proident id dolor eiusmod consectetur Lorem exercitation.',
       excerpt:
