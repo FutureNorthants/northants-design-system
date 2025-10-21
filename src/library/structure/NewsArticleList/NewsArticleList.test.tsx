@@ -28,6 +28,6 @@ describe('News Article List', () => {
 
     expect(component).toBeVisible();
 
-    expect(articles).toHaveLength(14);
+    expect(articles).toHaveLength(16);
   });
 });

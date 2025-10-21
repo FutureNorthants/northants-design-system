@@ -67,8 +67,8 @@ export const ArticleContent = styled.div`
 
   ${(props) => props.theme.fontStyles};
 
-  /* Tiny-width screens (at most 550px) */
-  @media screen and (max-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
+  /* Tiny-width screens (at most 549px) */
+  @media screen and (max-width: calc(${(props) => props.theme.theme_vars.breakpoints.s} - 1px)) {
     min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
     justify-self: ${(props) => (props.$withImage ? 'none' : 'left')} !important;
   }
