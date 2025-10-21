@@ -70,7 +70,6 @@ export const ArticleContent = styled.div`
   /* Tiny-width screens (at most 549px) */
   @media screen and (max-width: calc(${(props) => props.theme.theme_vars.breakpoints.s} - 1px)) {
     min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
-    justify-self: ${(props) => (props.$withImage ? 'none' : 'left')} !important;
   }
   /* Small-width screens (at least 550px) */
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
