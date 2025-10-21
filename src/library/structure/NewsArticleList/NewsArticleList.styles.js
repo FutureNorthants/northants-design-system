@@ -34,7 +34,7 @@ export const ArticleContainer = styled.a`
   overflow: hidden;
   text-decoration: none !important;
   font-weight: normal !important;
-  min-width: 100%;
+  width: 100%;
 
   &:hover {
     border-bottom: 5px solid ${(props) => props.theme.theme_vars.colours.action_dark};
