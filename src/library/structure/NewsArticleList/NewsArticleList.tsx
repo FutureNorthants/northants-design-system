@@ -29,7 +29,7 @@ const NewsArticleList: React.FunctionComponent<NewsArticleListProps> = ({ result
                     />
                   </Styles.ImageContainer>
                 )}
-                <Styles.ArticleContent $withImage={article.image720x405 ? true : false}>
+                <Styles.ArticleContent $withImage={!!article.image720x405}>
                   <Styles.Title className="news-article-list__title">{article.title}</Styles.Title>
                   {article.excerpt.length > extractLength
                     ? article.excerpt.substring(0, extractLength - 1).trim() + String.fromCharCode(8230)
