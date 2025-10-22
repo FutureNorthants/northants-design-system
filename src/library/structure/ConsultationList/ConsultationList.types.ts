@@ -158,15 +158,15 @@ export interface ConsultationItemProps {
   /**
    * The optional contact name
    */
-  contact?: string;
+  contact?: string | null;
 
   /**
    * The optional contact role
    */
-  role?: string;
+  role?: string | null;
 
   /**
    * The optional contact email
    */
-  email?: string;
+  email?: string | null;
 }
