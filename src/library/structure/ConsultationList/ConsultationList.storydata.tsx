@@ -53,15 +53,15 @@ export const ExampleConsultationListData: ConsultationListProps = {
     },
     {
       title: 'Consultations',
-      value: '1',
+      value: 'consultations',
     },
     {
       title: 'Engagement activities',
-      value: '2',
+      value: 'engagement_activities',
     },
     {
       title: 'Traffic regulation orders',
-      value: '3',
+      value: 'traffic_regulation_orders',
     },
   ],
   totalResults: 56,

@@ -14,7 +14,7 @@ import Pagination from '../../components/Pagination/Pagination';
 const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
   results,
   pageNumber = 1,
-  sortBy,
+  sortBy = 'asc',
   setSortBy,
   totalResults = 0,
   consultationSearch,
@@ -138,6 +138,7 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
                 <Styles.SortCol>
                   <DropDownSelect
                     label="Sort by"
+                    id="sortBy"
                     value={sortBy}
                     options={sortByOptions}
                     onChange={(e) => setSortBy(e.target.value)}
