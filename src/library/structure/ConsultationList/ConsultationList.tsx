@@ -121,7 +121,7 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
 
               <FormButton text="Search" size="large" />
             </form>
-            {(consultationSearch || service) && (
+            {(consultationSearch || service || activityType || status) && (
               <Styles.ClearFilters onClick={() => clearFilters()}>Clear filters</Styles.ClearFilters>
             )}
           </Styles.FilterContainer>
