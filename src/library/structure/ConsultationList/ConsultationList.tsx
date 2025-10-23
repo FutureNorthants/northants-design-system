@@ -90,7 +90,7 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
                     id="activityType"
                     options={activityTypes ? activityTypes : [{ title: 'All activity types', value: 'all' }]}
                     onChange={(e) => setActivityType(e.target.value)}
-                    value={service}
+                    value={activityType}
                     isFullWidth
                   />
                 </Styles.SelectContainer>
