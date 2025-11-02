@@ -57,6 +57,28 @@ export const ExampleSectionLinksWithoutTitle: Story = {
   },
 };
 
+export const SectionLinksAsCards: Story = {
+  ...ExampleSectionLinks,
+  args: {
+    sectionTitle: 'Section With Cards',
+    displayTitle: true,
+    hasImages: true,
+    hasCards: true,
+    pageLinksArray: pageLinksArray.slice(0, 4),
+  },
+};
+
+export const SectionLinksAsCardsNoImages: Story = {
+  ...ExampleSectionLinks,
+  args: {
+    sectionTitle: 'Section With Cards',
+    displayTitle: true,
+    hasImages: false,
+    hasCards: true,
+    pageLinksArray: pageLinksArray.slice(0, 4),
+  },
+};
+
 export const SectionLinksWithImages: Story = {
   ...ExampleSectionLinks,
   args: {

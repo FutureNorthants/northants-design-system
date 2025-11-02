@@ -23,6 +23,11 @@ export interface SectionLinksProps {
    * Should the section links have images
    */
   hasImages?: boolean;
+
+  /**
+   * Should the section links be cards? Defaults to false.
+   */
+  hasCards?: boolean;
 }
 
 export interface PageLinkProp {
