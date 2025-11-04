@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import ConsultationList from './ConsultationList';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -20,11 +20,12 @@ type Story = StoryObj<typeof ConsultationList>;
 
 export const ExampleConsultationList: Story = {
   args: ExampleConsultationListData,
-  render: (args) => (
+  render: (args) => {
+    return (
     <MaxWidthContainer>
       <PageMain>
         <ConsultationList {...args} />
       </PageMain>
     </MaxWidthContainer>
-  ),
+  )},
 };

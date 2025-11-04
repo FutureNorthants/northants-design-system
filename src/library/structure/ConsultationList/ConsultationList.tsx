@@ -10,6 +10,8 @@ import DropDownSelect from '../../components/DropDownSelect/DropDownSelect';
 import FormButton from '../../components/FormButton/FormButton';
 import ConsultationLink from '../../components/ConsultationLink/ConsultationLink';
 import Pagination from '../../components/Pagination/Pagination';
+import CheckboxListFilter from '../../components/CheckboxListFilter/CheckboxListFilter';
+import { CheckboxValsProps } from '../../components/CheckboxListFilter/CheckboxListFilter.types';
 
 const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
   results,
@@ -25,8 +27,13 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
   activityTypes,
   activityType,
   setActivityType,
-  status,
+  status = [''],
   setStatus,
+  allYears,
+  year,
+  setYear,
+  month,
+  setMonth,
   onSubmit,
   clearFilters,
   consultationsPagePath,
@@ -43,20 +50,24 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
     },
   ];
 
-  const statusOptions: DropDownSelectOptionsProps[] = [
+  const statusOptions: CheckboxValsProps[] = [
     {
-      title: 'Any status',
-      value: '',
-    },
-    {
-      title: 'Open',
+      title: 'Open consultations',
       value: 'open',
     },
     {
-      title: 'Closed',
+      title: 'Closed consultations',
       value: 'closed',
     },
   ];
+
+  const allMonths: DropDownSelectOptionsProps[] = [{ title: 'Select an option', value: '' }];
+  Array.from({ length: 12 }, (item, index) =>
+    allMonths.push({
+      title: new Date(0, index).toLocaleString('en-GB', { month: 'long' }),
+      value: (index + 1).toString(),
+    })
+  );
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -107,15 +118,39 @@ const ConsultationList: React.FunctionComponent<ConsultationListProps> = ({
                   />
                 </Styles.SelectContainer>
               )}
+              {allYears && (
+                <>
+                  <Styles.SelectContainer>
+                    <DropDownSelect
+                      label="Year"
+                      options={allYears}
+                      id="yearsDropdown"
+                      onChange={(e) => setYear(e.target.value)}
+                      value={year}
+                      isFullWidth
+                    />
+                  </Styles.SelectContainer>
+                  <Styles.SelectContainer>
+                    <DropDownSelect
+                      label="Month"
+                      options={allMonths}
+                      id="monthsDropdown"
+                      onChange={(e) => setMonth(e.target.value)}
+                      value={month}
+                      isFullWidth
+                    />
+                  </Styles.SelectContainer>
+                </>
+              )}
 
               <Styles.SelectContainer>
-                <DropDownSelect
-                  label="Status"
-                  id="status"
+                <CheckboxListFilter
+                  label="Consultation status"
+                  hint={null}
                   options={statusOptions}
-                  onChange={(e) => setStatus(e.target.value)}
-                  value={status}
-                  isFullWidth
+                  checked={status}
+                  displayLegend={false}
+                  onChange={setStatus}
                 />
               </Styles.SelectContainer>
 

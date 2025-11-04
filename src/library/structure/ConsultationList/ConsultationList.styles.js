@@ -67,7 +67,8 @@ export const ResultInfo = styled.div`
 `;
 
 export const SelectContainer = styled.div`
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    display: flex;
 `;
 
 export const ClearFilters = styled.button`

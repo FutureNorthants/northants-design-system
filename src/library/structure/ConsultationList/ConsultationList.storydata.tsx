@@ -64,6 +64,11 @@ export const ExampleConsultationListData: ConsultationListProps = {
       value: 'traffic_regulation_orders',
     },
   ],
+  allYears: [
+    { title: 'Select an option', value: '' },
+    { title: '2024', value: '2024' },
+    { title: '2025', value: '2025' },
+  ],
   totalResults: 56,
   pageNumber: 1,
   consultationsPagePath: '/consultations/',

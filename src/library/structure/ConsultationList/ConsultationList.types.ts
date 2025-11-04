@@ -71,12 +71,37 @@ export interface ConsultationListProps {
   /**
    * The selected status, defaults to ''
    */
-  status?: string;
+  status?: string[];
 
   /**
    * Function prop passed in to handle updating the status
    */
-  setStatus?: Dispatch<SetStateAction<string>>;
+  setStatus?: (selected: string) => void;
+
+  /**
+   * Optional years to filter consultations by
+   */
+  allYears?: DropDownSelectOptionsProps[];
+
+  /**
+   * Optional year filter
+   */
+  year?: string;
+
+  /**
+   * Function prop passed in to set the year filter
+   */
+  setYear?: Dispatch<SetStateAction<string>>;
+
+  /**
+   * Optional month filter
+   */
+  month?: string;
+
+  /**
+   * Function prop passed in to set the month filter
+   */
+  setMonth?: Dispatch<SetStateAction<string>>;
 
   /**
    * The function prop passed in to handle the filters being submitted

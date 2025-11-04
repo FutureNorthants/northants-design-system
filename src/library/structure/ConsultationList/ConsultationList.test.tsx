@@ -40,15 +40,15 @@ describe('Consultation List Component', () => {
     const services = getByLabelText('Services');
     expect(services).toHaveValue('');
 
-    const status = getByLabelText('Status');
-    expect(status).toHaveValue('');
+    const status = getByLabelText('Open consultations');
+    expect(status).not.toBeChecked();
   });
 
   const filterDataset = [
     {
       field: 'consultationSearch',
       value: 'test',
-      label: 'Search'
+      label: 'Search',
     },
     {
       field: 'activityType',
@@ -61,13 +61,18 @@ describe('Consultation List Component', () => {
       label: 'Services',
     },
     {
-      field: 'status',
-      value: 'open',
-      label: 'Status',
-    }
+      field: 'year',
+      value: '2025',
+      label: 'Year',
+    },
+    {
+      field: 'month',
+      value: '1',
+      label: 'Month',
+    },
   ];
 
-  it.each(filterDataset)('should set the value $value passed in for field $field', ({field, value, label}) => {
+  it.each(filterDataset)('should set the value $value passed in for field $field', ({ field, value, label }) => {
     props[field] = value;
 
     const { getByTestId, getByLabelText } = renderComponent();
@@ -77,5 +82,20 @@ describe('Consultation List Component', () => {
 
     const input = getByLabelText(label);
     expect(input).toHaveValue(value);
+  });
+
+  it('should check the status value passed in', () => {
+    props.status = ['open'];
+
+    const { getByTestId, getByLabelText } = renderComponent();
+
+    const component = getByTestId('ConsultationList');
+    expect(component).toBeVisible();
+
+    const openCheckbox = getByLabelText('Open consultations');
+    expect(openCheckbox).toBeChecked();
+
+    const closedCheckbox = getByLabelText('Closed consultations');
+    expect(closedCheckbox).not.toBeChecked();
   });
 });
