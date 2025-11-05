@@ -86,22 +86,22 @@ export interface ConsultationListProps {
   /**
    * Optional year filter
    */
-  year?: string;
+  year?: number | null;
 
   /**
    * Function prop passed in to set the year filter
    */
-  setYear?: Dispatch<SetStateAction<string>>;
+  setYear?: Dispatch<SetStateAction<number | null | undefined>>;
 
   /**
    * Optional month filter
    */
-  month?: string;
+  month?: number | null;
 
   /**
    * Function prop passed in to set the month filter
    */
-  setMonth?: Dispatch<SetStateAction<string>>;
+  setMonth?: Dispatch<SetStateAction<number | null | undefined>>;
 
   /**
    * The function prop passed in to handle the filters being submitted
