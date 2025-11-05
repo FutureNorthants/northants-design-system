@@ -67,16 +67,11 @@ export const ArticleContent = styled.div`
 
   ${(props) => props.theme.fontStyles};
 
-  /* Tiny-width screens (at most 549px) */
-  @media screen and (max-width: calc(${(props) => props.theme.theme_vars.breakpoints.s} - 1px)) {
-    min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
-  }
-  /* Small-width screens (at least 550px) */
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
-    min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
-  }
+  min-width: ${(props) => (props.$withImage ? '50%' : '100%')};
+
   /* Medium-width screens (at least 1160px) */
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
+  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) and (max-width: calc(${(props) =>
+      props.theme.theme_vars.breakpoints.l} - 1px)) {
     width: ${(props) => (props.$withImage ? '50%' : '100%')};
   }
   /* large-width screens (at least 1440px) */
