@@ -13,6 +13,7 @@ export const Container = styled.a`
   text-decoration: none !important;
   font-weight: normal !important;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   background: ${(props) =>
     props.theme.cardinal_name === 'north'
       ? props.theme.theme_vars.colours.grey_light
@@ -20,6 +21,10 @@ export const Container = styled.a`
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     flex-wrap: nowrap;
+  }
+
+  .consultation-list__title {
+    padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
   }
 
   &:hover {

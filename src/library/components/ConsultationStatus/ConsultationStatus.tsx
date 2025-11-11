@@ -20,7 +20,7 @@ const ConsultationStatus: React.FunctionComponent<ConsultationStatusProps> = ({ 
 
   return (
     <Styles.Container data-testid="ConsultationStatus" $isOpen={isOpen}>
-      <SummaryList terms={terms} hasBorders={false} />
+      <SummaryList terms={terms} hasBorders={false} hasMargin={false} />
     </Styles.Container>
   );
 };
