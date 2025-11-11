@@ -41,10 +41,7 @@ export const SubmitButton = styled.input`
   border-top-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   text-align: center;
-  height: 2.28rem;
-  //@media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
   min-height: 44px;
-  //}
 
   &:hover {
     background: ${(props) =>
