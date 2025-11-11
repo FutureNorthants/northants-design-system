@@ -29,7 +29,7 @@ export const LinkContainer = styled.div`
     height: 2.28rem;
     padding: 12px !important;
     @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-      height: 2.6rem;
+      min-height: 44px;
     }
   }
 `;

@@ -31,7 +31,12 @@ const SearchBox: React.FunctionComponent<SearchBoxProps> = ({
         {searchBoxLink && (
           <Column small="full" medium="full" large="one-third">
             <Styles.LinkContainer>
-              <Button text={searchBoxLink.title} url={searchBoxLink.url} primary={searchBoxLinkIsPrimary} />
+              <Button
+                text={searchBoxLink.title}
+                url={searchBoxLink.url}
+                primary={searchBoxLinkIsPrimary}
+                size="large"
+              />
             </Styles.LinkContainer>
           </Column>
         )}
