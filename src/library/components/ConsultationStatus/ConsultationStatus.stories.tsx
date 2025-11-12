@@ -32,8 +32,6 @@ export const ExampleConsultationStatus: Story = {
   ),
 };
 
-const currentDate = new Date();
-
 export const ClosedConsultationStatus: Story = {
   ...ExampleConsultationStatus,
   args: {
