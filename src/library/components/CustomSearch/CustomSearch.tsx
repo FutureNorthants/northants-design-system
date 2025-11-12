@@ -2,7 +2,6 @@ import React, { useId } from 'react';
 import { CustomSearchProps } from './CustomSearch.types';
 import * as Styles from './CustomSearch.styles';
 import Input from '../Input/Input';
-import { uniqueID } from '../../helpers/helpers';
 
 const CustomSearch: React.FunctionComponent<CustomSearchProps> = ({
   method,

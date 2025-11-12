@@ -9,6 +9,7 @@ export const Container = styled.div`
     border-bottom-right-radius: 0;
     flex-grow: 1;
     margin-bottom: 0;
+    min-height: 44px;
   }
 `;
 
@@ -40,10 +41,7 @@ export const SubmitButton = styled.input`
   border-top-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   border-bottom-right-radius: calc(${(props) => props.theme.theme_vars.border_radius} * 2);
   text-align: center;
-  height: 2.28rem;
-  @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
-    height: 2.6rem;
-  }
+  min-height: 44px;
 
   &:hover {
     background: ${(props) =>
