@@ -33,7 +33,7 @@ describe('Consultation Status Component', () => {
   });
 
   it('should show with a red background when closeDate is in the past', () => {
-    props.closeDate = dayjs().subtract(5, 'day').format('Y-m-d');
+    props.closeDate = dayjs().subtract(5, 'days').format('YYYY-MM-DD');
 
     const { getByTestId } = renderComponent();
 
