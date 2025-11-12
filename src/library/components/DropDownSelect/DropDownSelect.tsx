@@ -48,6 +48,7 @@ const DropDownSelect: React.FC<DropDownSelectProps> = ({
           onChange={onChange && onChange}
           defaultValue={selected && selected}
           $isErrored={isErrored}
+          $isFullWidth={isFullWidth}
         >
           {options.map((option, i) => (
             <Styles.Option key={i} value={option.value}>

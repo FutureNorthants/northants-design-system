@@ -2,6 +2,7 @@
 import Autocomplete from './library/components/Autocomplete/Autocomplete';
 import BackToTop from './library/components/BackToTop/BackToTop';
 import Button from './library/components/Button/Button';
+import ConsultationStatus from './library/components/ConsultationStatus/ConsultationStatus';
 import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
 import EventDetails from './library/components/EventDetails/EventDetails';
 import Heading from './library/components/Heading/Heading';
@@ -24,6 +25,7 @@ export {
   Autocomplete,
   BackToTop,
   Button,
+  ConsultationStatus,
   DynamicIcon,
   EventDetails,
   Heading,
