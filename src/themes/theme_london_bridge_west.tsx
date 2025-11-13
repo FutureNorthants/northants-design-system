@@ -53,7 +53,7 @@ export const lb_vars_west: ThemeVars = {
 
     secondary: '#6CC7E1',
   },
-  fontstack: 'Roboto, Helvetica, Arial, sans-serif',
+  fontstack: 'Asap, Helvetica, Arial, sans-serif',
   fontSizes: {
     extra_small: '.9em',
     small: '1em',

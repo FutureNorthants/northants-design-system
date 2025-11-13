@@ -5,6 +5,7 @@ import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { GlobalStyleReset } from '../src/themes/GlobalStyleReset';
 import { Preview } from '@storybook/react-webpack5';
 import { SBPadding } from './SBPadding';
+import './fonts.css';
 
 const preview: Preview = {
   parameters: {
