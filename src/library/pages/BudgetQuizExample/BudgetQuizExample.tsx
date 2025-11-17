@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as PageStructures from './../../structure/PageStructures';
 import Heading from './../../components/Heading/Heading';
 import BudgetSlider from '../../components/BudgetSlider/BudgetSlider';
 import { BudgetSliderProps } from '../../components/BudgetSlider/BudgetSlider.types';
 import Column from '../../components/Column/Column';
 import Row from '../../components/Row/Row';
+import BudgetQuiz from '../../slices/BudgetQuiz/BudgetQuiz';
+import { ExampleBudgetQuizProps } from '../../slices/BudgetQuiz/BudgetQuiz.storydata';
 
-export interface BudgetQuizPageExampleProps {
-  budgetServices: BudgetSliderProps[];
-}
+export interface BudgetQuizPageExampleProps {}
 
-export const BudgetQuizPageExample: React.FunctionComponent<BudgetQuizPageExampleProps> = ({ budgetServices }) => {
-  const [budgetValues, setBudgetValues] = useState([]);
-  const handleValueChange = (index) => {};
+export const BudgetQuizPageExample: React.FunctionComponent<BudgetQuizPageExampleProps> = () => {
   return (
     <>
       <PageStructures.CookieBanner
@@ -49,18 +47,7 @@ export const BudgetQuizPageExample: React.FunctionComponent<BudgetQuizPageExampl
             and rising costs, the money we have to spend is going down. We’ve already restructured, made services more
             efficient, and raised more income, but we still need to save £xx million next year.
           </p>
-          <p>
-            In the budget published in February 2025, we assumed Council Tax would rise in line with government
-            expectations. The rest of the gap will need to come from savings across council services. We’ll set out our
-            detailed proposals in December 2025, and we’d like your views on how we should meet this challenge.
-          </p>
-          <Row>
-            {budgetServices.map((budgetService, index) => (
-              <Column small="full" medium="one-half" large="one-half" key={index}>
-                <BudgetSlider {...budgetService} />
-              </Column>
-            ))}
-          </Row>
+          <BudgetQuiz {...ExampleBudgetQuizProps} />
         </PageStructures.PageMain>
       </PageStructures.MaxWidthContainer>
       <PageStructures.Footer

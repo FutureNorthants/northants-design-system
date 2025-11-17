@@ -24,6 +24,7 @@ export const ExampleBudgetSlider: Story = {
     icon: 'bins',
     min: 10,
     max: 20,
+    initialValue: 12,
     impacts: [
       {
         title: 'low',
@@ -46,11 +47,10 @@ export const ExampleBudgetSlider: Story = {
     ],
   },
   render: (args) => {
-    const [value, setValue] = useState(11);
     return (
       <MaxWidthContainer>
         <PageMain>
-          <BudgetSlider {...args} value={value} setValue={setValue} />
+          <BudgetSlider {...args} />
         </PageMain>
       </MaxWidthContainer>
     );

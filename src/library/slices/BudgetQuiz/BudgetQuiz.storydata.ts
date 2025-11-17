@@ -1,0 +1,231 @@
+import { BudgetQuizProps } from './BudgetQuiz.types';
+
+export const ExampleBudgetQuizProps: BudgetQuizProps = {
+  totalAllowed: 85,
+  budgetServices: [
+    {
+      title: 'Bins, recycling and waste',
+      summary: 'Weekly bin collections, recycling services, and waste management',
+      icon: 'bins',
+      min: 10,
+      max: 20,
+      initialValue: 15,
+      impacts: [
+        {
+          title: 'low',
+          min: 10,
+          max: 14,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 15,
+          max: 16,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 17,
+          max: 20,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Roads and transport',
+      summary: 'Road repairs, streetlights, traffic management, and public transport',
+      icon: 'roads',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Libraries and leisure',
+      summary: 'Libraries, sports centres, parks, and community spaces',
+      icon: 'libraries',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: "Children's services",
+      summary: 'Support for vulnerable children, fostering, and child protection',
+      icon: 'children',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Adult social care',
+      summary: 'Support for elderly and disabled residents, including care homes',
+      icon: 'adults',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Housing and homelessness',
+      summary: 'Emergency housing, homelessness prevention, and housing support',
+      icon: 'housing',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Youth services',
+      summary: 'Youth clubs, activities, counseling, and support programs',
+      icon: 'schools',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+    {
+      title: 'Parks and environment',
+      summary: 'Parks maintenance, green spaces, tree planting, and environmental projects',
+      icon: 'sports',
+      min: 6,
+      max: 14,
+      initialValue: 12,
+      impacts: [
+        {
+          title: 'low',
+          min: 6,
+          max: 8,
+          summary: 'The low impact summary text',
+        },
+        {
+          title: 'medium',
+          min: 9,
+          max: 10,
+          summary: 'The medium impact summary text',
+        },
+        {
+          title: 'high',
+          min: 11,
+          max: 14,
+          summary: 'The high impact summary text',
+        },
+      ],
+    },
+  ],
+};

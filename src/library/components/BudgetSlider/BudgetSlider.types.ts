@@ -29,17 +29,16 @@ export interface BudgetSliderProps {
   /**
    * The value
    */
-  value?: number;
-
-  /**
-   * The function prop to set the state of the value
-   */
-  setValue?: () => void;
+  initialValue?: number;
 
   /**
    * Optional array of impacts
    */
   impacts?: ImpactProps[];
+
+  onChange?: (value: number, index: number) => void;
+
+  index?: number;
 }
 
 export interface ImpactProps {
