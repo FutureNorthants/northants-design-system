@@ -36,8 +36,14 @@ export interface BudgetSliderProps {
    */
   impacts?: ImpactProps[];
 
+  /**
+   * The function passed in that will triggered when the value is updated (for parent component to manage)
+   */
   onChange?: (value: number, index: number) => void;
 
+  /**
+   * The index number of the service from the parent component
+   */
   index?: number;
 }
 

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: block;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.large};
 `;
 
 export const Totalizer = styled.div`

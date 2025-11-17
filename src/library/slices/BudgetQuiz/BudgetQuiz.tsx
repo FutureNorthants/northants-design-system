@@ -37,7 +37,7 @@ const BudgetQuiz: React.FunctionComponent<BudgetQuizProps> = ({ budgetServices =
         <Column small="full" medium="full" large="full">
           <Styles.TotalContainer>
             <Styles.TargetAmount>Target: {totalAllowed}%</Styles.TargetAmount>
-            <Styles.TotalAmount $current={totalBudget} $target={totalAllowed}>
+            <Styles.TotalAmount $current={totalBudget} $target={totalAllowed} aria-live="polite">
               Total: {totalBudget}%
             </Styles.TotalAmount>
           </Styles.TotalContainer>

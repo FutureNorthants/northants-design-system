@@ -17,7 +17,8 @@ export const RangeInput = styled.input`
   appearance: none;
   background: transparent;
   width: 100%;
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium} 0;
 
   &:focus {
     outline: none;
@@ -102,6 +103,11 @@ export const RangeButton = styled.button`
   outline: none;
   border: none;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+
+  svg {
+    width: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    height: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  }
 
   &:disabled {
     background-color: ${(props) => props.theme.theme_vars.colours.grey_dark} !important;

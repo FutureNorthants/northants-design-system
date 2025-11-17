@@ -22,17 +22,24 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
     if (value > min) {
       const updatedValue = value - 1;
       setValue(updatedValue);
-      onChange(updatedValue, index);
+      if (onChange) {
+        onChange(updatedValue, index);
+      }
     }
   };
   const handleIncrement = () => {
     if (value < max) {
       const updatedValue = value + 1;
       setValue(updatedValue);
-      onChange(updatedValue, index);
+      if (onChange) {
+        onChange(updatedValue, index);
+      }
     }
   };
 
+  /**
+   * Transform a title into a string suitable for a html id
+   */
   const createId = (text: string) => {
     return text
       .toLowerCase()
@@ -67,6 +74,10 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
             id={createId(title)}
             readOnly
             tabIndex="-1"
+            aria-valuetext={`${title} value is ${value} percent`}
+            aria-live="polite"
+            aria-valuemin={min}
+            aria-valuemax={max}
           />
         </Column>
         <Column small="one-third" medium="one-third" large="one-third">
@@ -76,7 +87,13 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
             aria-label={`Lower the ${title} value`}
             disabled={value === min}
           >
-            -
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                fillRule="evenodd"
+                d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                clipRule="evenodd"
+              />
+            </svg>
           </Styles.RangeButton>
         </Column>
         <Column small="one-third" medium="one-third" large="one-third">
@@ -90,7 +107,13 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
               aria-label={`Increase the ${title} value`}
               disabled={value === max}
             >
-              +
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fillRule="evenodd"
+                  d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </Styles.RangeButton>
           </Styles.ButtonContainer>
         </Column>
@@ -100,7 +123,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
               {impacts.map((impact, index) => (
                 <React.Fragment key={index}>
                   {value >= impact.min && value <= impact.max && (
-                    <Styles.ImpactContainer key={index} $title={impact.title}>
+                    <Styles.ImpactContainer $title={impact.title}>
                       <Styles.ImpactTitle>{impact.title}</Styles.ImpactTitle>
                       <Styles.ImpactSummary>{impact.summary}</Styles.ImpactSummary>
                     </Styles.ImpactContainer>
