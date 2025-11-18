@@ -7,6 +7,7 @@ import DynamicIcon from './library/components/DynamicIcon/DynamicIcon';
 import EventDetails from './library/components/EventDetails/EventDetails';
 import Heading from './library/components/Heading/Heading';
 import HeadingWithIcon from './library/components/HeadingWithIcon/HeadingWithIcon';
+import LocationLookup from './library/components/LocationLookup/LocationLookup';
 import Map from './library/components/Map/Map';
 import MapMarker from './library/components/MapMarker/MapMarker';
 import Pagination from './library/components/Pagination/Pagination';
@@ -30,6 +31,7 @@ export {
   EventDetails,
   Heading,
   HeadingWithIcon,
+  LocationLookup,
   Map,
   MapMarker,
   Pagination,
