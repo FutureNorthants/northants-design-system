@@ -37,6 +37,14 @@ export const Large: Story = {
   },
 };
 
+export const Medium: Story = {
+  ...Primary,
+  args: {
+    ...Primary.args,
+    size: 'medium',
+  },
+};
+
 export const Small: Story = {
   args: {
     ...Primary.args,

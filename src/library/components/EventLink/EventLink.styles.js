@@ -36,6 +36,7 @@ export const Container = styled.a`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   overflow: hidden;
   text-decoration: none !important;
+  font-size: 21px;
   font-weight: normal !important;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 

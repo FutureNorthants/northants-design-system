@@ -38,7 +38,7 @@ export const H2 = styled.h2`
 `;
 export const H3 = styled.h3`
   color: ${(props) => props.theme.theme_vars.colours.black};
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   margin-top: 25px;
@@ -61,7 +61,8 @@ export const H4 = styled.h4`
   margin-top: 25px;
   margin-bottom: 15px;
 
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   line-height: 1;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
 `;

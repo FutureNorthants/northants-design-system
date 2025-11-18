@@ -71,6 +71,7 @@ export const Title = styled.p`
   display: block;
   color: ${(props) => props.theme.theme_vars.colours.action};
   font-weight: 700;
+  font-size: 20px;
   margin-bottom: 0 !important;
 `;
 export const Type = styled.span`

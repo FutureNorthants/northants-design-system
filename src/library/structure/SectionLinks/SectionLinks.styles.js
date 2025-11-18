@@ -17,6 +17,8 @@ export const SectionTitle = styled(Heading)`
   margin-bottom: 15px;
   max-width: none !important;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  font-weight: 700 !important;
+  font-size: 25px !important;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     width: 100%;
@@ -26,13 +28,14 @@ export const SectionTitle = styled(Heading)`
 `;
 
 export const Pagelink = styled.a`
-  color: ${(props) => props.theme.theme_vars.colours.black};
+  /* color: ${(props) => props.theme.theme_vars.colours.black}; */
   text-decoration: none !important;
   display: block;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   width: 100%;
   height: 100%;
+  color: red !important;
 
   &:hover,
   &:focus {
@@ -61,7 +64,9 @@ export const Title = styled.p`
   ${(props) => props.theme.linkStyles}
   margin-top: 0;
   margin-bottom: 15px;
-
+  /* color: red !important; */
+  font-weight: 600 !important;
+  font-size: 20px !important;
   &:hover {
     ${(props) => props.theme.linkStylesHover}
   }

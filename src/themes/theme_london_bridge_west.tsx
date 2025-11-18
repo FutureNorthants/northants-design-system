@@ -77,7 +77,7 @@ export const lb_vars_west: ThemeVars = {
   h1: `
         font-size: 32px;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 600;
 
         @media (min-width: 40.0625em) {
             font-size: 48px;
@@ -87,7 +87,7 @@ export const lb_vars_west: ThemeVars = {
   h2: `
         font-size: 24px;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
         
         @media (min-width: 40.0625em) {
             font-size: 36px;
@@ -97,7 +97,7 @@ export const lb_vars_west: ThemeVars = {
   h3: `
         font-size: 18px;
         font-size: 1.125rem;
-        font-weight: 700;
+        font-weight: 500;
         
         @media (min-width: 40.0625em) {
             font-size: 24px;
@@ -107,7 +107,7 @@ export const lb_vars_west: ThemeVars = {
   h4: `
         font-size: 16px;
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 400;
         
         @media (min-width: 40.0625em) {
             font-size: 19px;

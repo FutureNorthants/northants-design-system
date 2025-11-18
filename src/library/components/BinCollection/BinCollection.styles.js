@@ -19,7 +19,7 @@ export const CollectionHeader = styled.div`
 `;
 
 export const CollectionDay = styled.p`
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.5rem;
   padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
