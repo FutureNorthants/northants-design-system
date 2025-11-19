@@ -62,7 +62,6 @@ export const QuestionContainer = styled.div`
 
 export const QuestionTitle = styled.p`
   font-weight: bold;
-  color: red !important;
 `;
 
 export const QuestionButton = styled.div`

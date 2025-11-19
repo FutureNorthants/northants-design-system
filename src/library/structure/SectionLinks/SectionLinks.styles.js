@@ -35,7 +35,6 @@ export const Pagelink = styled.a`
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   width: 100%;
   height: 100%;
-  color: red !important;
 
   &:hover,
   &:focus {
@@ -64,7 +63,6 @@ export const Title = styled.p`
   ${(props) => props.theme.linkStyles}
   margin-top: 0;
   margin-bottom: 15px;
-  /* color: red !important; */
   font-weight: 600 !important;
   font-size: 20px !important;
   &:hover {
