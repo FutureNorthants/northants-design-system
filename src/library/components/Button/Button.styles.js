@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.a`
   font-weight: 700;
-  border: 3px solid;
+  border: 0;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
@@ -41,8 +41,8 @@ export const StyledButton = styled.a`
     color: ${(props) =>
       props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action} !important;
     background-color: ${(props) => props.theme.theme_vars.colours.white};
-    border-color: ${(props) => (props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action)};
-    font-size: 14px;
+    border: 3px solid
+      ${(props) => (props.$colourOverride ? props.$colourOverride : props.theme.theme_vars.colours.action)};
 
     &:hover {
       background-color: ${(props) =>

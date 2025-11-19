@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   font-weight: 700;
-  border: 3px solid;
+  border: none;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
