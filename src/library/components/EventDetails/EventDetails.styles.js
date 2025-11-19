@@ -15,6 +15,8 @@ export const EventRow = styled.div`
   & > div > div > h4,
   & > div > span {
     cursor: default;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   /* when the parent Span containing a 'service icon' is hovered over... */

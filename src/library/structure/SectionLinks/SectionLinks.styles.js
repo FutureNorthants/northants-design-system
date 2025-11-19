@@ -17,8 +17,6 @@ export const SectionTitle = styled(Heading)`
   margin-bottom: 15px;
   max-width: none !important;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
-  font-weight: 700 !important;
-  font-size: 25px !important;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.s}) {
     width: 100%;
