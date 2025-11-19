@@ -26,7 +26,7 @@ export const SectionTitle = styled(Heading)`
 `;
 
 export const Pagelink = styled.a`
-  /* color: ${(props) => props.theme.theme_vars.colours.black}; */
+  color: ${(props) => props.theme.theme_vars.colours.black};
   text-decoration: none !important;
   display: block;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};

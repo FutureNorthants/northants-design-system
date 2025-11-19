@@ -118,7 +118,7 @@ export const west_vars: ThemeVars = {
   h4: `
         font-size: 19px;
         font-size: 1.1875rem;
-        font-weight: 400;
+        font-weight: 500;
         margin-top: 25px;
         margin-bottom: 15px;
         
