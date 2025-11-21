@@ -15,7 +15,7 @@ const QuestionAndAnswer: React.FunctionComponent<QuestionAndAnswerProps> = ({
   category,
   icon,
   onSubmit,
-  index,
+  index = null,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string>('');
   const [hasError, setHasError] = useState<boolean>(false);
@@ -56,7 +56,10 @@ const QuestionAndAnswer: React.FunctionComponent<QuestionAndAnswerProps> = ({
 
       <FormWithLine hideLine onSubmit={handleSubmit}>
         <fieldset>
-          <Styles.Legend>{questionText}</Styles.Legend>
+          <Styles.Legend>
+            {index !== null && `${index + 1}. `}
+            {questionText}
+          </Styles.Legend>
           {hintText && <HintText text={hintText} />}
           {hasError && (
             <Styles.FormErrorText id="IsHelpfulError">
