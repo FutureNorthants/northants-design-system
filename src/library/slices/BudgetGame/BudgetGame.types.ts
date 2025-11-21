@@ -1,6 +1,6 @@
 import { BudgetSliderProps } from '../../components/BudgetSlider/BudgetSlider.types';
 
-export interface BudgetQuizProps {
+export interface BudgetGameProps {
   /**
    * The total budget percentage allowed, e.g. 85
    */

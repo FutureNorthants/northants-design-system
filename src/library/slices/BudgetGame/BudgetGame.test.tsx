@@ -2,28 +2,28 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
-import BudgetQuiz from './BudgetQuiz';
-import { BudgetQuizProps } from './BudgetQuiz.types';
-import { ExampleBudgetQuizProps } from './BudgetQuiz.storydata';
+import BudgetGame from './BudgetGame';
+import { BudgetGameProps } from './BudgetGame.types';
+import { ExampleBudgetGameProps } from './BudgetGame.storydata';
 
-describe('Budget Quiz Component', () => {
-  let props: BudgetQuizProps;
+describe('Budget Game Component', () => {
+  let props: BudgetGameProps;
 
   beforeEach(() => {
-    props = ExampleBudgetQuizProps;
+    props = ExampleBudgetGameProps;
   });
 
   const renderComponent = () =>
     render(
       <ThemeProvider theme={west_theme}>
-        <BudgetQuiz {...props} />
+        <BudgetGame {...props} />
       </ThemeProvider>
     );
 
   it('should render foo text correctly', () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('BudgetQuiz');
+    const component = getByTestId('BudgetGame');
 
     expect(component).toHaveTextContent('85%');
   });

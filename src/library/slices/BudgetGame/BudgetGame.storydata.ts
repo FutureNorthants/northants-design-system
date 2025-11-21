@@ -1,6 +1,6 @@
-import { BudgetQuizProps } from './BudgetQuiz.types';
+import { BudgetGameProps } from './BudgetGame.types';
 
-export const ExampleBudgetQuizProps: BudgetQuizProps = {
+export const ExampleBudgetGameProps: BudgetGameProps = {
   totalAllowed: 85,
   budgetServices: [
     {

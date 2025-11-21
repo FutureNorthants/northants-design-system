@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
-import { BudgetQuizProps } from './BudgetQuiz.types';
-import * as Styles from './BudgetQuiz.styles';
+import { BudgetGameProps } from './BudgetGame.types';
+import * as Styles from './BudgetGame.styles';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import BudgetSlider from '../../components/BudgetSlider/BudgetSlider';
 
-const BudgetQuiz: React.FunctionComponent<BudgetQuizProps> = ({ budgetServices = [], totalAllowed }) => {
+const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices = [], totalAllowed }) => {
   const [budgetValues, setBudgetValues] = useState(budgetServices.map((budgetService) => budgetService.initialValue));
 
   const calculateTotal = (): number => {
@@ -32,7 +31,7 @@ const BudgetQuiz: React.FunctionComponent<BudgetQuizProps> = ({ budgetServices =
   }, [budgetValues]);
 
   return (
-    <Styles.Container data-testid="BudgetQuiz">
+    <Styles.Container data-testid="BudgetGame">
       <Row>
         <Column small="full" medium="full" large="full">
           <Styles.TotalContainer>
@@ -58,4 +57,4 @@ const BudgetQuiz: React.FunctionComponent<BudgetQuizProps> = ({ budgetServices =
   );
 };
 
-export default BudgetQuiz;
+export default BudgetGame;
