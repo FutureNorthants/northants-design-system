@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.main`
   padding-top: 30px;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
 
   a {
     ${(props) => props.theme.linkStyles}

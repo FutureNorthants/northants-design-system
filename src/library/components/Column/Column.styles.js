@@ -54,4 +54,5 @@ export const Container = styled.div`
   border: ${(props) => (props.$hasBorder ? `1px solid ${props.theme.theme_vars.colours.negative}` : 'none')};
   left: 0;
   ${widths};
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
 `;

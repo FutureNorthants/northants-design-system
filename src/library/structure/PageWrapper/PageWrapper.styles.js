@@ -16,4 +16,5 @@ const backgroundDecider = (props) => {
 export const Container = styled.div`
   ${backgroundDecider};
   padding-top: 1.5em;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
 `;
