@@ -73,4 +73,23 @@ describe('Event List Component', () => {
     expect(eventSearch).toHaveValue('test search term');
     expect(component).toHaveTextContent('Clear filters');
   });
+
+  it('should show locations dropdown when list provided', () => {
+    props.locations = [
+      {
+        title: 'One Angel Square',
+        value: '1',
+      },
+      {
+        title: 'The Guildhall',
+        value: '2',
+      },
+    ];
+
+    const { getByLabelText } = renderComponent();
+
+    const locationDropdown = getByLabelText('Location');
+    expect(locationDropdown).toHaveTextContent('One Angel Square');
+    expect(locationDropdown).toHaveTextContent('The Guildhall');
+  });
 });

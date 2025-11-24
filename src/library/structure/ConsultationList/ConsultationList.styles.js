@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: block;
 
-  .event-list__results {
+  .consultation-list__results {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -46,7 +46,7 @@ export const FilterContainer = styled.div`
   }
 `;
 
-export const EventListHeader = styled.div`
+export const ConsultationListHeader = styled.div`
   padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   border-bottom: 1px solid ${(props) => props.theme.theme_vars.colours.grey};
@@ -67,8 +67,8 @@ export const ResultInfo = styled.div`
 `;
 
 export const SelectContainer = styled.div`
-  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-  display: flex;
+    margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    display: flex;
 `;
 
 export const ClearFilters = styled.button`

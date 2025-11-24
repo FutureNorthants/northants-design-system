@@ -9,6 +9,7 @@ export const Container = styled.div`
     border-bottom-right-radius: 0;
     flex-grow: 1;
     margin-bottom: 0;
+    min-height: 44px;
   }
 `;
 
@@ -47,6 +48,7 @@ export const SubmitButton = styled.input`
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     height: 2.6rem;
   }
+  min-height: 44px;
 
   &:hover {
     background: ${(props) =>

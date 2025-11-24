@@ -15,6 +15,11 @@ export const ExampleEventListResults: EventListProps = {
     { title: 'Young adults', value: 'young-adults' },
     { title: 'Jobseekers', value: 'jobseekers' },
   ],
+  locations: [
+    { title: 'All locations', value: 'all' },
+    { title: 'One Angel Square', value: 'one-angel-square' },
+    { title: 'The Guildhall', value: 'the-guildhall' },
+  ],
   cards: [
     {
       imageLarge: 'https://discover-northamptonshire.co.uk/wp-content/colours/logo-online.png',
