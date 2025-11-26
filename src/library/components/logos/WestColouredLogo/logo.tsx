@@ -1,19 +1,11 @@
+import React, { useId } from 'react';
+import { LogoProps } from './logo.types';
 
-import React from "react";
+const WestColouredLogo: React.FC<LogoProps> = () => {
+  const randomId = useId();
 
-import { LogoProps } from "./logo.types";
-
-const WestColouredLogo: React.FC<LogoProps> = () =>  {
-  const randomId = Date.now().toString(36) + Math.random().toString(36).substr(2);
-
-    return (
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="974"
-      height="327"
-      fill="none"
-      viewBox="0 0 974 327"
-    >
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="974" height="327" fill="none" viewBox="0 0 974 327">
       <path
         fill={`url(#paint0_linear_${randomId})`}
         d="M104.506 216.165c.4.799.823 1.591 1.254 2.376 11.203-.577 21.323-6.329 27.497-15.541-.177-.33-.353-.669-.523-1.007-6.274-12.495-5.544-26.713.7-38.147a35.024 35.024 0 00-13.356-11.98c-4.422-2.269-9.136-3.553-14.034-3.83a73.7 73.7 0 00-5.575 12.673c-6.097 18.423-4.667 38.116 4.037 55.456z"
@@ -111,9 +103,7 @@ const WestColouredLogo: React.FC<LogoProps> = () =>  {
         </linearGradient>
       </defs>
     </svg>
-    )
-} 
-
+  );
+};
 
 export default WestColouredLogo;
-
