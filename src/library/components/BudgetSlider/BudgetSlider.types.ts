@@ -14,17 +14,17 @@ export interface BudgetSliderProps {
   /**
    * An optional icon name
    */
-  icon?: string;
+  icon?: string | null;
 
   /**
    * The minimum percentage allowed
    */
-  min: number;
+  minimum: number;
 
   /**
    * The maximum percentage allowed
    */
-  max: number;
+  maximum: number;
 
   /**
    * The value
@@ -51,12 +51,12 @@ export interface ImpactProps {
   /**
    * The minimum threshold for the impact
    */
-  min: number;
+  minimum: number;
 
   /**
    * The maximum threshold for the impact
    */
-  max: number;
+  maximum: number;
 
   /**
    * The impact title

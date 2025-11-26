@@ -10,8 +10,8 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
   title,
   summary = '',
   icon,
-  min,
-  max,
+  minimum,
+  maximum,
   initialValue,
   impacts,
   onChange,
@@ -19,7 +19,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
 }) => {
   const [value, setValue] = useState<number>(initialValue);
   const handleDecrement = () => {
-    if (value > min) {
+    if (value > minimum) {
       const updatedValue = value - 1;
       setValue(updatedValue);
       if (onChange) {
@@ -28,7 +28,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
     }
   };
   const handleIncrement = () => {
-    if (value < max) {
+    if (value < maximum) {
       const updatedValue = value + 1;
       setValue(updatedValue);
       if (onChange) {
@@ -62,22 +62,22 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
       <Row>
         <Column small="full" medium="full" large="full">
           <Styles.MinMaxContainer>
-            <Styles.MinMax>{min}%</Styles.MinMax>
-            <Styles.MinMax>{max}%</Styles.MinMax>
+            <Styles.MinMax>{minimum}%</Styles.MinMax>
+            <Styles.MinMax>{maximum}%</Styles.MinMax>
           </Styles.MinMaxContainer>
           <Styles.RangeLabel htmlFor={createId(title)}>{`Range slider for ${title}`}</Styles.RangeLabel>
           <Styles.RangeInput
             type="range"
-            min={min}
-            max={max}
+            min={minimum}
+            max={maximum}
             value={value}
             id={createId(title)}
             readOnly
             tabIndex="-1"
             aria-valuetext={`${title} value is ${value} percent`}
             aria-live="polite"
-            aria-valuemin={min}
-            aria-valuemax={max}
+            aria-valuemin={minimum}
+            aria-valuemax={maximum}
           />
         </Column>
         <Column small="one-third" medium="one-third" large="one-third">
@@ -85,7 +85,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
             onClick={handleDecrement}
             type="button"
             aria-label={`Lower the ${title} value`}
-            disabled={value === min}
+            disabled={value === minimum}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -105,7 +105,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
               onClick={handleIncrement}
               type="button"
               aria-label={`Increase the ${title} value`}
-              disabled={value === max}
+              disabled={value === maximum}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -122,7 +122,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
             <>
               {impacts.map((impact, index) => (
                 <React.Fragment key={index}>
-                  {value >= impact.min && value <= impact.max && (
+                  {value >= impact.minimum && value <= impact.maximum && (
                     <Styles.ImpactContainer $title={impact.title}>
                       <Styles.ImpactTitle>{impact.title}</Styles.ImpactTitle>
                       <Styles.ImpactSummary>{impact.summary}</Styles.ImpactSummary>
