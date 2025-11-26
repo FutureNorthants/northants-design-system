@@ -51,7 +51,8 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.span`
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 21px;
   color: ${(props) =>
     props.$hasDarkBackground ? props.theme.theme_vars.colours.white : props.theme.theme_vars.colours.black};
 `;

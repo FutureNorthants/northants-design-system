@@ -66,7 +66,8 @@ export const ContentsItem = styled.li`
 export const InlineLink = styled.a`
   ${(props) => props.theme.linkStyles}
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
-  font-weight: 400;
+  font-weight: 600 !important;
+  font-size: 1.3rem;
   display: inline-block;
 
   &:hover {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const H1 = styled.h1`
   color: ${(props) => props.theme.theme_vars.colours.black};
   margin-left: 0;
-  font-weight: 700;
+  font-weight: 600;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   margin-bottom: 20px;
 
@@ -20,12 +20,11 @@ export const H1 = styled.h1`
 `;
 export const H2 = styled.h2`
   color: ${(props) => props.theme.theme_vars.colours.black};
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   margin-top: 25px;
   margin-bottom: 15px;
-
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.25;
@@ -38,7 +37,7 @@ export const H2 = styled.h2`
 `;
 export const H3 = styled.h3`
   color: ${(props) => props.theme.theme_vars.colours.black};
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
   margin-top: 25px;
@@ -61,7 +60,8 @@ export const H4 = styled.h4`
   margin-top: 25px;
   margin-bottom: 15px;
 
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 1;
   font-family: ${(props) => props.theme.theme_vars.fontstack};
 `;

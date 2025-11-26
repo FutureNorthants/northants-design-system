@@ -22,7 +22,9 @@ export const ExamplePromoTabsDisplay: Story = {
   },
   render: (args) => (
     <>
-      <p>On tablet and desktop it should display PromoTabs and on mobile it should display PromoBlock.</p>
+      <p style={{ fontFamily: 'Asap, Helvetica, Arial, sans-serif' }}>
+        On tablet and desktop it should display PromoTabs and on mobile it should display PromoBlock.
+      </p>
       <hr />
       <PromoTabsDisplay {...args} />
     </>

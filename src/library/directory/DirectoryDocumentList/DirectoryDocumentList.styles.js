@@ -54,6 +54,8 @@ export const Button = styled.button`
 
 export const ButtonText = styled.span`
   margin-right: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  font-size: 17px;
 `;
 
 export const ResultInfo = styled.div`

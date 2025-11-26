@@ -22,6 +22,7 @@ export const ToggleButton = styled.button`
   font-size: 1rem;
   cursor: ${(props) => (props.$isActive ? 'auto' : 'pointer')};
   outline: none;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
 
   &:hover {
     background: ${(props) =>

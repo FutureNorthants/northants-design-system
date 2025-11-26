@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Asap';
+  src: url('../public/fonts/dyslexia-friendly/Asap-VariableFont_wdth,wght.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Asap';
+  src: url('../public/fonts/dyslexia-friendly/Asap-Italic-VariableFont_wdth,wght.ttf');
+  font-style: italic;
+}

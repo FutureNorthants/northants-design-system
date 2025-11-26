@@ -117,3 +117,7 @@ export const LoadingContainer = styled.div`
 export const FormContainer = styled.div`
   display: ${(props) => (props.$isLoading ? `none` : 'block')};
 `;
+
+export const ButtonLabel = styled.span`
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+`;

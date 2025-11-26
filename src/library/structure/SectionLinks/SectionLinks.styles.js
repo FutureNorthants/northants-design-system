@@ -61,7 +61,8 @@ export const Title = styled.p`
   ${(props) => props.theme.linkStyles}
   margin-top: 0;
   margin-bottom: 15px;
-
+  font-weight: 600 !important;
+  font-size: 20px !important;
   &:hover {
     ${(props) => props.theme.linkStylesHover}
   }

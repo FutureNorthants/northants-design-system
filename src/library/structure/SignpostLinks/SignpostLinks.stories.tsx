@@ -43,7 +43,14 @@ export const NorthSignpostLinksExample: Story = {
   },
   render: (args) => (
     <>
-      <p style={{ color: 'red', marginTop: '0px', marginBottom: '12px' }}>
+      <p
+        style={{
+          color: 'red',
+          marginTop: '0px',
+          marginBottom: '12px',
+          fontFamily: 'Asap, Helvetica, Arial, sans-serif',
+        }}
+      >
         Make sure you have the right theme chosen for the corresponding example, otherwise this might not work right.
       </p>
       <SignpostLinks {...args} />

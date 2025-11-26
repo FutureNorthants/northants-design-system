@@ -41,7 +41,8 @@ export const Content = styled.div`
 export const Contact = styled.div``;
 
 export const ContactName = styled.div`
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1em;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   text-align: center;
 `;
@@ -51,12 +52,16 @@ export const ContactLink = styled.a`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
   text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600 !important;
 `;
 
 export const WebLink = styled.a`
   word-break: break-all;
   display: block;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 `;
 
@@ -64,5 +69,7 @@ export const EmailLink = styled.a`
   word-break: break-all;
   display: block;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small} 0;
 `;

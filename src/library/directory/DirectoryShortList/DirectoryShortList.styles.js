@@ -107,7 +107,8 @@ export const ActionButton = styled.button`
   color: ${(props) => props.theme.theme_vars.colours.white};
   cursor: pointer;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
-  font-weight: bold;
+  font-weight: 500;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -148,7 +149,8 @@ export const ClearShortlistButton = styled.button`
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   min-height: 42px;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
 
   &:hover {
     background: ${(props) => props.theme.theme_vars.colours.action_light};

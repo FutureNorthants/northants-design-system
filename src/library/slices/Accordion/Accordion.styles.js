@@ -18,6 +18,9 @@ export const AccordionControls = styled.div`
 
 export const OpenAllButton = styled.button`
   font-size: ${(props) => props.theme.theme_vars.fontSizes.extra_small};
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  font-weight: 500 !important;
+
   position: relative;
   z-index: 10;
   margin: 0;
@@ -106,6 +109,8 @@ export const SectionButton = styled.button`
   -webkit-appearance: none;
   text-decoration: underline;
   min-width: ${(props) => props.theme.theme_vars.spacingSizes.x_large};
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  font-weight: 600 !important;
 
   ${SectionButtonIsFilteredStyles}
 

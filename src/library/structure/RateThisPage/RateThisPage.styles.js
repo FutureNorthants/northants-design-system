@@ -29,7 +29,8 @@ export const ShowFullForm = styled.div`
 
 export const Legend = styled.legend`
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1em;
 `;
 
 export const Label = styled.label`
@@ -69,4 +70,5 @@ export const QuestionButton = styled.div`
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
+  font-size: 1.25em;
 `;

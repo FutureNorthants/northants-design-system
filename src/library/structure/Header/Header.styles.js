@@ -249,6 +249,7 @@ export const Link = styled.a`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   display: block;
   width: 100%;
+
   ${commonLinkStyles}
 
   &:hover {
@@ -270,6 +271,7 @@ export const LinkButton = styled(Link)`
   font-size: 19px;
   line-height: 1.45;
   text-align: left;
+  font-family: inherit;
 
   span {
     text-decoration: underline;

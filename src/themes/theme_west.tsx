@@ -54,7 +54,7 @@ export const west_vars: ThemeVars = {
 
     secondary: '#6CC7E1',
   },
-  fontstack: 'Roboto, Helvetica, Arial, sans-serif',
+  fontstack: 'Asap, Helvetica, Arial, sans-serif',
   fontSizes: {
     extra_small: '.9em',
     small: '1em',
@@ -78,7 +78,7 @@ export const west_vars: ThemeVars = {
   h1: `
         font-size: 32px;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 600;
         margin-left: 0;
         margin-bottom: 20px;
 
@@ -92,7 +92,7 @@ export const west_vars: ThemeVars = {
   h2: `
         font-size: 24px;
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
         margin-top: 25px;
         margin-bottom: 15px;
         
@@ -105,7 +105,7 @@ export const west_vars: ThemeVars = {
   h3: `
         font-size: 24px;
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 500;
         margin-top: 25px;
         margin-bottom: 15px;
         
@@ -118,7 +118,7 @@ export const west_vars: ThemeVars = {
   h4: `
         font-size: 19px;
         font-size: 1.1875rem;
-        font-weight: 600;
+        font-weight: 500;
         margin-top: 25px;
         margin-bottom: 15px;
         

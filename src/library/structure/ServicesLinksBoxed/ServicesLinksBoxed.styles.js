@@ -74,6 +74,8 @@ export const ServiceHeading = styled.span`
   ${(props) => props.theme.theme_vars.h3}
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 600;
+  font-size: 1.2em;
 `;
 
 export const QuickLinksContainer = styled.div`

@@ -20,6 +20,7 @@ export const ShowFiltersButton = styled.button`
   margin: 0;
   ${(props) => props.theme.linkStyles}
   font-size: 1.1em;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
   margin-top: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.extra_small};
   padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
@@ -93,6 +94,8 @@ export const FilterHeader = styled.div`
 
 export const FilterHeading = styled.h2`
   ${(props) => props.theme.theme_vars.h2}
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
+  font-weight: 500;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {
     ${(props) => props.theme.theme_vars.h3}

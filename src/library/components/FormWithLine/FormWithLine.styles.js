@@ -25,7 +25,7 @@ export const Line = styled.div`
 
 export const ErrorSummary = styled.div`
   color: ${(props) => props.theme.theme_vars.colours.negative};
-  font-weight: bold;
+  font-weight: 700;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
   border: 3px solid ${(props) => props.theme.theme_vars.colours.negative};
   margin-bottom: 15px;

@@ -8,11 +8,14 @@ export const AddToShortlist = styled.button`
     props.$favourite ? props.theme.theme_vars.colours.negative : props.theme.theme_vars.colours.action};
   cursor: pointer;
   padding: ${(props) => `14px ${props.theme.theme_vars.spacingSizes.small}`};
-  font-weight: bold;
+  font-weight: 500;
+  font-family: ${(props) => `${props.theme.theme_vars.fontstack}`};
+  font-size: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+
   &:hover {
     ${(props) => props.theme.linkStylesHover}
     background: ${(props) => props.theme.theme_vars.colours.action_light}

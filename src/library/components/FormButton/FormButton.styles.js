@@ -39,6 +39,7 @@ export const StyledButton = styled.button`
     color: ${(props) => props.theme.theme_vars.colours.action};
     background-color: transparent;
     border: 2px solid ${(props) => props.theme.theme_vars.colours.action};
+    font-weight: 600;
 
     &:hover {
       background-color: ${(props) => props.theme.theme_vars.colours.action}1A;
@@ -56,11 +57,12 @@ export const StyledButton = styled.button`
     }
   }
   &.button--small {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
     padding: 10px 16px;
   }
   &.button--medium {
-    font-size: 14px;
+    font-size: 15px;
     padding: 11px 20px;
   }
   &.button--large {

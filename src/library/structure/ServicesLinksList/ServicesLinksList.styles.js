@@ -300,6 +300,7 @@ export const ReorderButton = styled.button`
   padding: ${(props) => props.theme.theme_vars.spacingSizes.small};
   line-height: 1.5;
   font-size: 0.9em;
+  font-family: ${(props) => props.theme.theme_vars.fontstack};
   cursor: pointer;
 
   @media screen and (min-width: ${(props) => props.theme.theme_vars.breakpoints.m}) {

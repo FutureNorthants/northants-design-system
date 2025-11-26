@@ -155,7 +155,7 @@ const PostCodeSearch: React.FunctionComponent<PostCodeSearchProps> = ({
         <Styles.IconWrapper>
           <ChevronIcon direction={open ? 'down' : 'right'} colourFill={themeContext.theme_vars.colours.black} />
         </Styles.IconWrapper>
-        {title}
+        <Styles.ButtonLabel>{title}</Styles.ButtonLabel>
       </Styles.DropDownButton>
       {open && (
         <Styles.DropDownContent>
