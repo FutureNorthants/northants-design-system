@@ -5,6 +5,7 @@ import { west_theme } from '../../../themes/theme_generator';
 import BudgetGame from './BudgetGame';
 import { BudgetGameProps } from './BudgetGame.types';
 import { ExampleBudgetGameProps } from './BudgetGame.storydata';
+import { axe } from 'jest-axe';
 
 describe('Budget Game Component', () => {
   let props: BudgetGameProps;
@@ -59,5 +60,11 @@ describe('Budget Game Component', () => {
 
     expect(total).toHaveTextContent('Total: 99%');
     expect(total).toHaveStyle(`color: ${west_theme.theme_vars.colours.positive}`);
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = renderComponent();
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

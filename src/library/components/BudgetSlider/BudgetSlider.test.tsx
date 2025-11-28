@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import BudgetSlider from './BudgetSlider';
 import { BudgetSliderProps, ImpactProps } from './BudgetSlider.types';
+import { axe } from 'jest-axe';
 
 describe('BudgetSlider Component', () => {
   let props: BudgetSliderProps;
@@ -122,5 +123,10 @@ describe('BudgetSlider Component', () => {
 
     expect(component).toHaveTextContent(title);
     expect(component).toHaveTextContent(summary);
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = renderComponent();
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

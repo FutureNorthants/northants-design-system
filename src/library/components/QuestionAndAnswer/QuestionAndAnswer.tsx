@@ -5,7 +5,7 @@ import FormWithLine from '../FormWithLine/FormWithLine';
 import FormButton from '../FormButton/FormButton';
 import RadioCheckboxInput from '../RadioCheckboxInput/RadioCheckboxInput';
 import HeadingWithIcon from '../HeadingWithIcon/HeadingWithIcon';
-import { Heading } from '../../../index';
+import Heading from '../Heading/Heading';
 import HintText from '../HintText/HintText';
 
 const QuestionAndAnswer: React.FunctionComponent<QuestionAndAnswerProps> = ({

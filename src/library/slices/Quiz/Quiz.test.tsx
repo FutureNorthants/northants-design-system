@@ -5,6 +5,7 @@ import { west_theme } from '../../../themes/theme_generator';
 import Quiz from './Quiz';
 import { QuizProps } from './Quiz.types';
 import { ExampleQuizProps } from './Quiz.storydata';
+import { axe } from 'jest-axe';
 
 describe('Quiz Slice Component', () => {
   let props: QuizProps;
@@ -66,5 +67,10 @@ describe('Quiz Slice Component', () => {
     fireEvent.click(getByRole('button', { name: 'Try again' }));
 
     expect(component).toHaveTextContent(props.questions[0].questionText);
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = renderComponent();
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

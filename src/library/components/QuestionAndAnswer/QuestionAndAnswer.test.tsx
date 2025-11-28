@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { west_theme } from '../../../themes/theme_generator';
 import QuestionAndAnswer from './QuestionAndAnswer';
 import { AnswerProps, QuestionAndAnswerProps } from './QuestionAndAnswer.types';
+import { axe } from 'jest-axe';
 
 describe('Question And Answer Component', () => {
   let props: QuestionAndAnswerProps;
@@ -76,4 +77,9 @@ describe('Question And Answer Component', () => {
       expect(getByTitle(correctAnswer ? 'Correct' : 'Incorrect')).toBeInTheDocument();
     }
   );
+
+  it('should have no accessibility violations', async () => {
+    const { container } = renderComponent();
+    expect(await axe(container)).toHaveNoViolations();
+  });
 });
