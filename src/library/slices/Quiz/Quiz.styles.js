@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { StyledButton } from '../../components/Button/Button.styles';
 
 export const Container = styled.div`
   display: block;
+  margin-bottom: ${(props) => props.theme.theme_vars.spacingSizes.medium};
 `;
 
 export const Button = styled.button`

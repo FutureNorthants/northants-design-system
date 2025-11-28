@@ -36,7 +36,12 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices =
         <Column small="full" medium="full" large="full">
           <Styles.TotalContainer>
             <Styles.TargetAmount>Target: {totalAllowed}%</Styles.TargetAmount>
-            <Styles.TotalAmount $current={totalBudget} $target={totalAllowed} aria-live="polite">
+            <Styles.TotalAmount
+              $current={totalBudget}
+              $target={totalAllowed}
+              aria-live="polite"
+              data-testid="BudgetTotal"
+            >
               Total: {totalBudget}%
             </Styles.TotalAmount>
           </Styles.TotalContainer>
