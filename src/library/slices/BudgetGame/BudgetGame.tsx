@@ -6,12 +6,14 @@ import Column from '../../components/Column/Column';
 import BudgetSlider from '../../components/BudgetSlider/BudgetSlider';
 
 const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices = [], totalAllowed }) => {
-  const [budgetValues, setBudgetValues] = useState(budgetServices.map((budgetService) => budgetService.initialValue));
+  const [budgetValues, setBudgetValues] = useState(
+    budgetServices.map((budgetService) => budgetService.initialValue ?? 0)
+  );
+  const [totalBudget, setTotalBudget] = useState<number>(0);
 
   const calculateTotal = (): number => {
     return budgetValues.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   };
-  const [totalBudget, setTotalBudget] = useState<number>(calculateTotal);
 
   const handleValueChange = (value: number, index: number) => {
     const valuesToUpdate = budgetValues.map((budgetValue, valueIndex) => {

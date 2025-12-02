@@ -5,7 +5,6 @@ export const Container = styled.div`
   display: block;
   padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  //margin: ${(props) => props.theme.theme_vars.spacingSizes.small};
   border-radius: ${(props) => props.theme.theme_vars.border_radius_large};
 `;
 

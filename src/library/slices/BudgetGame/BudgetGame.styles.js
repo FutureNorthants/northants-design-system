@@ -49,7 +49,7 @@ const calculateTotal = (props) => {
       width: 100%;
     `;
   }
-  const width = Math.floor((props.$target / props.$current) * 100);
+  const width = props.$current > 0 ? Math.floor((props.$target / props.$current) * 100) : 0;
   return css`
     background-color: ${(props) => props.theme.theme_vars.colours.action};
     width: ${width + '%'};
@@ -68,7 +68,7 @@ const calculateOver = (props) => {
       display: none;
     `;
   }
-  const width = Math.ceil(((props.$current - props.$target) / props.$current) * 100);
+  const width = props.$current > 0 ? Math.ceil(((props.$current - props.$target) / props.$current) * 100) : 0;
   return css`
     width: ${width + '%'};
   `;
