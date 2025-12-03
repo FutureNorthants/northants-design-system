@@ -42,4 +42,25 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Recycling Boxes');
     expect(component).toHaveTextContent('Tuesday 5 March 2024');
   });
+
+  it('handles unknow collection types', () => {
+    props.binCollections = [
+      {
+        type: 'food',
+        date: '2024-03-04',
+      },
+      {
+        type: 'clinical', // Unknown collection type
+        date: '2024-03-05',
+      },
+    ];
+
+    const { getByTestId } = renderComponent();
+
+    const component = getByTestId('BinCollection');
+
+    expect(component).toHaveTextContent('4A ANGEL STREET, NORTHAMPTON, NN1 1ED');
+    expect(component).toHaveTextContent('Food Caddy');
+    expect(component).not.toHaveTextContent('Clinical');
+  });
 });
