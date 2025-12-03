@@ -14,6 +14,7 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({
   budgetServices = [],
   totalAllowed,
   onSubmitResults,
+  onTryAgain,
 }) => {
   const [viewResults, setViewResults] = useState<boolean>(false);
   const [budgetValues, setBudgetValues] = useState(
@@ -47,6 +48,14 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({
 
     if (onSubmitResults) {
       onSubmitResults();
+    }
+  };
+
+  const handleTryAgain = () => {
+    setViewResults(false);
+
+    if (onTryAgain) {
+      onTryAgain();
     }
   };
 
@@ -103,7 +112,7 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({
                 ))}
                 <Column small="full" medium="full" large="full">
                   <Styles.ButtonContainer>
-                    <Styles.Retry type="button" onClick={() => setViewResults(false)}>
+                    <Styles.Retry type="button" onClick={handleTryAgain}>
                       Try again
                     </Styles.Retry>
                   </Styles.ButtonContainer>

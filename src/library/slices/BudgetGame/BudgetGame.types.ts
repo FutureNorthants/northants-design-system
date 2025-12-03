@@ -16,4 +16,9 @@ export interface BudgetGameProps {
    * For example, trigger a custom event in Google Analytics
    */
   onSubmitResults?: () => void;
+
+  /**
+   * Optional function that is triggered when try again is pressed
+   */
+  onTryAgain?: () => void;
 }
