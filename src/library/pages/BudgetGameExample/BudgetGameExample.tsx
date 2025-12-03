@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import * as PageStructures from './../../structure/PageStructures';
 import Heading from './../../components/Heading/Heading';
 import BudgetGame from '../../slices/BudgetGame/BudgetGame';
 import { ExampleBudgetGameProps } from '../../slices/BudgetGame/BudgetGame.storydata';
 import Button from '../../components/Button/Button';
 
-export interface BudgetQuizPageExampleProps {}
+export interface BudgetGamePageExampleProps {}
 
-export const BudgetQuizPageExample: React.FunctionComponent<BudgetQuizPageExampleProps> = () => {
+export const BudgetGamePageExample: React.FunctionComponent<BudgetGamePageExampleProps> = () => {
   return (
     <>
       <PageStructures.CookieBanner

@@ -1,10 +1,10 @@
 import React from 'react';
 import { StoryObj, Meta } from '@storybook/react-webpack5';
-import { BudgetQuizPageExample } from './BudgetQuizExample';
+import { BudgetGamePageExample } from './BudgetGameExample';
 
-const meta: Meta<typeof BudgetQuizPageExample> = {
-  title: 'Page Examples/Budget Quiz Example',
-  component: BudgetQuizPageExample,
+const meta: Meta<typeof BudgetGamePageExample> = {
+  title: 'Page Examples/Budget Game Example',
+  component: BudgetGamePageExample,
   parameters: {
     status: {
       type: 'beta', // 'beta' | 'stable' | 'deprecated' | 'releaseCandidate'
@@ -15,7 +15,7 @@ const meta: Meta<typeof BudgetQuizPageExample> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const BudgetQuizExamplePage: Story = {
+export const BudgetGameExamplePage: Story = {
   args: {},
   parameters: {
     pageLayout: 'page',
