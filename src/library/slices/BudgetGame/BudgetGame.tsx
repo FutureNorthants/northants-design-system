@@ -4,8 +4,18 @@ import * as Styles from './BudgetGame.styles';
 import Row from '../../components/Row/Row';
 import Column from '../../components/Column/Column';
 import BudgetSlider from '../../components/BudgetSlider/BudgetSlider';
+import Heading from '../../components/Heading/Heading';
+import HeadingWithIcon from '../../components/HeadingWithIcon/HeadingWithIcon';
 
-const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices = [], totalAllowed }) => {
+/**
+ * A budget game with sliders to set your own budget
+ */
+const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({
+  budgetServices = [],
+  totalAllowed,
+  onSubmitResults,
+}) => {
+  const [viewResults, setViewResults] = useState<boolean>(false);
   const [budgetValues, setBudgetValues] = useState(
     budgetServices.map((budgetService) => budgetService.initialValue ?? 0)
   );
@@ -32,6 +42,14 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices =
     setTotalBudget(updatedTotal);
   }, [budgetValues]);
 
+  const handleSubmitResults = () => {
+    setViewResults(true);
+
+    if (onSubmitResults) {
+      onSubmitResults();
+    }
+  };
+
   return (
     <Styles.Container data-testid="BudgetGame">
       <Row>
@@ -54,11 +72,55 @@ const BudgetGame: React.FunctionComponent<BudgetGameProps> = ({ budgetServices =
             <Styles.OverBudget $current={totalBudget} $target={totalAllowed} />
           </Styles.Totalizer>
         </Column>
-        {budgetServices.map((budgetService, index) => (
-          <Column small="full" medium="one-half" large="one-half" key={index}>
-            <BudgetSlider {...budgetService} onChange={handleValueChange} index={index} />
+        {totalBudget <= totalAllowed && (
+          <Column small="full" medium="full" large="full">
+            {!viewResults ? (
+              <Styles.ButtonContainer>
+                <Styles.SubmitResults type="button" onClick={handleSubmitResults}>
+                  See your results
+                </Styles.SubmitResults>
+              </Styles.ButtonContainer>
+            ) : (
+              <Row>
+                {budgetServices.map((budgetService, index) => (
+                  <Column key={index} small="full" medium="one-half" large="one-half">
+                    <Styles.ServiceSummary>
+                      {budgetService.icon ? (
+                        <HeadingWithIcon text={budgetService.title} icon={budgetService.icon} level={3} />
+                      ) : (
+                        <Heading level={3} text={budgetService.title} />
+                      )}
+                      <Styles.ServiceResult>
+                        <Styles.ServiceValue>{budgetValues[index]}%</Styles.ServiceValue>
+                        <Styles.ServiceChange
+                          $change={budgetValues[index] - budgetService.initialValue < 0 ? 'negative' : 'positive'}
+                        >
+                          {budgetValues[index] - budgetService.initialValue}% change
+                        </Styles.ServiceChange>
+                      </Styles.ServiceResult>
+                    </Styles.ServiceSummary>
+                  </Column>
+                ))}
+                <Column small="full" medium="full" large="full">
+                  <Styles.ButtonContainer>
+                    <Styles.Retry type="button" onClick={() => setViewResults(false)}>
+                      Try again
+                    </Styles.Retry>
+                  </Styles.ButtonContainer>
+                </Column>
+              </Row>
+            )}
           </Column>
-        ))}
+        )}
+        {!viewResults && (
+          <>
+            {budgetServices.map((budgetService, index) => (
+              <Column small="full" medium="one-half" large="one-half" key={index}>
+                <BudgetSlider {...budgetService} onChange={handleValueChange} index={index} />
+              </Column>
+            ))}
+          </>
+        )}
       </Row>
     </Styles.Container>
   );

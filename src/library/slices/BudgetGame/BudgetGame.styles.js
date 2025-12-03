@@ -78,3 +78,73 @@ export const OverBudget = styled.div`
   background-color: ${(props) => props.theme.theme_vars.colours.negative};
   ${calculateOver}
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SubmitResults = styled.button`
+  background-color: ${(props) => props.theme.theme_vars.colours.action};
+  padding: ${(props) => `${props.theme.theme_vars.spacingSizes.medium}`};
+  color: ${(props) => props.theme.theme_vars.colours.white};
+  cursor: pointer;
+  font-weight: bold;
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+  min-width: 45px;
+  outline: none;
+  border: none;
+  border-radius: ${(props) => props.theme.theme_vars.border_radius};
+`;
+
+export const ServiceSummary = styled.div`
+  display: block;
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: ${(props) => props.theme.theme_vars.border_radius_large};
+`;
+
+export const ServiceResult = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const ServiceValue = styled.div`
+  color: ${(props) => props.theme.theme_vars.colours.action};
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.medium};
+  font-weight: bold;
+  padding-right: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+`;
+
+export const ServiceChange = styled.div`
+  color: ${(props) =>
+    props.$change === 'positive' ? props.theme.theme_vars.colours.positive : props.theme.theme_vars.colours.negative};
+  font-weight: bold;
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+`;
+
+export const Retry = styled.button`
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: ${(props) => props.theme.theme_vars.fontSizes.small};
+  margin-top: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+  background: none;
+
+  ${(props) => props.theme.linkStyles}
+
+  &:hover {
+    ${(props) => props.theme.linkStylesHover}
+  }
+  &:focus {
+    ${(props) => props.theme.linkStylesFocus}
+  }
+  &:active {
+    ${(props) => props.theme.linkStylesActive};
+  }
+`;

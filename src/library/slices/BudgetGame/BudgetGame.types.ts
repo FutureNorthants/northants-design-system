@@ -10,4 +10,10 @@ export interface BudgetGameProps {
    * An array of Budget Slider props
    */
   budgetServices: BudgetSliderProps[];
+
+  /**
+   * Optional function that is triggered when results are submitted
+   * For example, trigger a custom event in Google Analytics
+   */
+  onSubmitResults?: () => void;
 }
