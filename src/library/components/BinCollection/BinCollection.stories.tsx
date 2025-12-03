@@ -75,7 +75,7 @@ export const BinCollectionWithInvalidType: Story = {
         type: 'garden',
       },
       {
-        date: now.add(5, 'day').format('YYYY-MM-DD'),
+        date: now.add(10, 'day').format('YYYY-MM-DD'),
         type: 'clinical', // Invalid type
       },
     ],

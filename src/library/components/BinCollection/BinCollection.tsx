@@ -102,6 +102,7 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
             </Styles.DayWrapper>
           );
         }
+        return <React.Fragment key={day}></React.Fragment>;
       })}
 
       {calendar && (

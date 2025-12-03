@@ -43,7 +43,7 @@ describe('Test Component', () => {
     expect(component).toHaveTextContent('Tuesday 5 March 2024');
   });
 
-  it('handles unknow collection types', () => {
+  it('handles unknown collection types', () => {
     props.binCollections = [
       {
         type: 'food',
