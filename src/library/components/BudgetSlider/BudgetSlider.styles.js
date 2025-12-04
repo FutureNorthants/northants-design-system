@@ -93,7 +93,7 @@ export const ButtonContainer = styled.div`
 
 export const RangeButton = styled.button`
   background-color: ${(props) => props.theme.theme_vars.colours.action};
-  padding: ${(props) => `${props.theme.theme_vars.spacingSizes.small} ${props.theme.theme_vars.spacingSizes.medium}`};
+  padding: ${(props) => props.theme.theme_vars.spacingSizes.medium};
   color: ${(props) => props.theme.theme_vars.colours.white};
   cursor: pointer;
   font-weight: bold;
@@ -102,10 +102,14 @@ export const RangeButton = styled.button`
   outline: none;
   border: none;
   border-radius: ${(props) => props.theme.theme_vars.border_radius};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
-    width: ${(props) => props.theme.theme_vars.spacingSizes.medium};
-    height: ${(props) => props.theme.theme_vars.spacingSizes.medium};
+    width: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    height: ${(props) => props.theme.theme_vars.spacingSizes.large};
+    color: ${(props) => props.theme.theme_vars.colours.white};
   }
 
   &:disabled {
