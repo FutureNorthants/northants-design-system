@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: block;
   border-left: ${(props) =>
     props.$isErrored
-      ? `${props.theme.theme_vars.border_width} solid ${props.theme.theme_vars.colours.negative}`
+      ? `${props.theme.theme_vars.border_width_error} solid ${props.theme.theme_vars.colours.negative}`
       : 'none'};
   padding-left: ${(props) => (props.$isErrored ? ` ${props.theme.theme_vars.spacingSizes.extra_small}` : '0')};
   padding-bottom: 10px;
