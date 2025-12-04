@@ -120,15 +120,21 @@ export const RangeButton = styled.button`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.theme_vars.action_dark};
+    background-color: ${(props) => props.theme.theme_vars.colours.action_dark};
   }
 
   &:focus {
     ${(props) => props.theme.linkStylesFocus};
+    svg {
+      color: ${(props) => props.theme.theme_vars.colours.black} !important;
+    }
   }
 
   &:active {
     ${(props) => props.theme.linkStylesActive};
+    svg {
+      color: ${(props) => props.theme.theme_vars.colours.black} !important;
+    }
   }
 `;
 
