@@ -7,7 +7,8 @@ export const Container = styled.div`
       ? `${props.theme.theme_vars.border_width_error} solid ${props.theme.theme_vars.colours.negative}`
       : 'none'};
   padding-left: ${(props) => (props.$isErrored ? ` ${props.theme.theme_vars.spacingSizes.extra_small}` : '0')};
-  padding-bottom: 10px;
+  padding-bottom: ${(props) => props.theme.theme_vars.spacingSizes.small};
+  padding-top: ${(props) => props.theme.theme_vars.spacingSizes.small};
 `;
 
 export const Category = styled.div`
@@ -75,8 +76,6 @@ export const CategoryInputLabel = styled.label`
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   color: #0b0c0c;
-  display: block;
-  margin-bottom: 5px;
 
   &:before {
     content: '';
