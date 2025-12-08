@@ -10,6 +10,7 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
   checked,
   label,
   isErrored = false,
+  isDisabled = false,
 }) => {
   const id = useId();
 
@@ -23,6 +24,7 @@ const RadioCheckboxInput: React.FunctionComponent<RadioCheckboxInputProps> = ({
           name={name}
           onClick={onChange}
           defaultChecked={checked}
+          disabled={isDisabled}
         />
         <Styles.CategoryInputLabel $isChecked={checked} htmlFor={id} $singleSelection={singleSelection}>
           {label}

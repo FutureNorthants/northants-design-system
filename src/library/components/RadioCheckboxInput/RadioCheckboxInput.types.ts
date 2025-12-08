@@ -33,4 +33,9 @@ export interface RadioCheckboxInputProps {
    * Is the field in an error state
    */
   isErrored?: boolean;
+
+  /**
+   * Is the radio button disabled?
+   */
+  isDisabled?: boolean;
 }

@@ -77,6 +77,7 @@ const QuestionAndAnswer: React.FunctionComponent<QuestionAndAnswerProps> = ({
                 label={answer.answerText}
                 onChange={(e) => handleChange(e)}
                 isErrored={hasError}
+                isDisabled={correct !== null}
               />
             ))}
           </Styles.Answers>

@@ -87,12 +87,14 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
             aria-label={`Lower the ${title} value`}
             disabled={value === minimum}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
-                clipRule="evenodd"
-              />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
             </svg>
           </Styles.RangeButton>
         </Column>
@@ -107,12 +109,14 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
               aria-label={`Increase the ${title} value`}
               disabled={value === maximum}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                  clipRule="evenodd"
-                />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={3}
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </Styles.RangeButton>
           </Styles.ButtonContainer>
