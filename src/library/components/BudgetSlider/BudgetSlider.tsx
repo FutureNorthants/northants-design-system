@@ -18,6 +18,10 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
   index = 0,
 }) => {
   const [value, setValue] = useState<number>(initialValue);
+
+  const [intervalID, setIntervalID] = useState(null);
+  const [isNumericallyChanging, setIsNumericallyChanging] = useState(0);
+
   const handleDecrement = () => {
     if (value > minimum) {
       const updatedValue = value - 1;
@@ -35,6 +39,38 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
         onChange(updatedValue, index);
       }
     }
+  };
+
+  useEffect(() => {
+    let newIntervalID: ReturnType<typeof setInterval>;
+
+    if (isNumericallyChanging === 1) {
+      if (intervalID === null) {
+        newIntervalID = setInterval(handleIncrement, 500);
+        setIntervalID(newIntervalID);
+      }
+    } else if (isNumericallyChanging === -1) {
+      if (intervalID === null) {
+        newIntervalID = setInterval(handleDecrement, 500);
+        setIntervalID(newIntervalID);
+      }
+    } else {
+      clearInterval(intervalID);
+      setIntervalID(null);
+    }
+  }, [isNumericallyChanging]);
+
+  const handleIncrementStart = () => {
+    setIsNumericallyChanging(1);
+  };
+  const handleDecrementStart = () => {
+    setIsNumericallyChanging(-1);
+  };
+  const handleIncrementEnd = () => {
+    setIsNumericallyChanging(0);
+  };
+  const handleDecrementEnd = () => {
+    setIsNumericallyChanging(0);
   };
 
   /**
@@ -82,7 +118,9 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
         </Column>
         <Column small="one-third" medium="one-third" large="one-third">
           <Styles.RangeButton
-            onClick={handleDecrement}
+            //onClick={handleDecrement}
+            onmousedown={handleDecrementStart}
+            onmouseup={handleDecrementEnd}
             type="button"
             aria-label={`Lower the ${title} value`}
             disabled={value === minimum}
@@ -104,7 +142,9 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
         <Column small="one-third" medium="one-third" large="one-third">
           <Styles.ButtonContainer>
             <Styles.RangeButton
-              onClick={handleIncrement}
+              //onClick={handleIncrement}
+              onmousedown={handleIncrementStart}
+              onmouseup={handleIncrementEnd}
               type="button"
               aria-label={`Increase the ${title} value`}
               disabled={value === maximum}
