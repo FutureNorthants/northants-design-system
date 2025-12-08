@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BudgetSliderProps } from './BudgetSlider.types';
 import * as Styles from './BudgetSlider.styles';
 import HeadingWithIcon from '../HeadingWithIcon/HeadingWithIcon';
@@ -58,6 +58,10 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
       clearInterval(intervalID);
       setIntervalID(null);
     }
+
+    return () => {
+      clearInterval(intervalID);
+    };
   }, [isNumericallyChanging]);
 
   const handleIncrementStart = () => {
@@ -119,8 +123,8 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
         <Column small="one-third" medium="one-third" large="one-third">
           <Styles.RangeButton
             //onClick={handleDecrement}
-            onmousedown={handleDecrementStart}
-            onmouseup={handleDecrementEnd}
+            onMouseDown={handleDecrementStart}
+            onMouseUp={handleDecrementEnd}
             type="button"
             aria-label={`Lower the ${title} value`}
             disabled={value === minimum}
@@ -143,8 +147,8 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
           <Styles.ButtonContainer>
             <Styles.RangeButton
               //onClick={handleIncrement}
-              onmousedown={handleIncrementStart}
-              onmouseup={handleIncrementEnd}
+              onMouseDown={handleIncrementStart}
+              onMouseUp={handleIncrementEnd}
               type="button"
               aria-label={`Increase the ${title} value`}
               disabled={value === maximum}
