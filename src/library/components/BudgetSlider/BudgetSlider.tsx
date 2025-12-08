@@ -19,7 +19,7 @@ const BudgetSlider: React.FunctionComponent<BudgetSliderProps> = ({
 }) => {
   const [value, setValue] = useState<number>(initialValue);
 
-  const [intervalID, setIntervalID] = useState(null);
+  const [intervalID, setIntervalID] = useState<NodeJS.Timeout | null>(null);
   const [isNumericallyChanging, setIsNumericallyChanging] = useState(0);
 
   const handleDecrement = () => {
