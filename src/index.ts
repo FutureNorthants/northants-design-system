@@ -49,6 +49,7 @@ export {
 import Accordion from './library/slices/Accordion/Accordion';
 import BinFinder from './library/slices/BinFinder/BinFinder';
 import BlockQuote from './library/slices/BlockQuote/BlockQuote';
+import BudgetGame from './library/slices/BudgetGame/BudgetGame';
 import CallToAction from './library/slices/CallToAction/CallToAction';
 import CouncilTaxAlphabeticalDirectory from './library/slices/CouncilTaxAlphabeticalDirectory/CouncilTaxAlphabeticalDirectory';
 import Cards from './library/slices/Cards/Cards';
@@ -60,6 +61,7 @@ import Image from './library/slices/Image/Image';
 import ImageAndText from './library/slices/ImageAndText/ImageAndText';
 import InquestSchedule from './library/slices/InquestSchedule/InquestSchedule';
 import Promotions from './library/slices/Promotions/Promotions';
+import Quiz from './library/slices/Quiz/Quiz';
 import RecyclingInformation from './library/slices/RecyclingInformation/RecyclingInformation';
 import RoadworksList from './library/slices/RoadworksList/RoadworksList';
 import SearchBox from './library/slices/SearchBox/SearchBox';
@@ -72,6 +74,7 @@ export {
   Accordion,
   BinFinder,
   BlockQuote,
+  BudgetGame,
   CallToAction,
   Cards,
   CouncilTaxAlphabeticalDirectory,
@@ -83,6 +86,7 @@ export {
   ImageAndText,
   InquestSchedule,
   Promotions,
+  Quiz,
   RecyclingInformation,
   RoadworksList,
   SearchBox,

@@ -73,7 +73,7 @@ describe('RadioCheckboxInput Component', () => {
     const component = getByTestId('RadioCheckboxInput');
 
     expect(component).toHaveStyle(
-      `border-left: ${west_theme.theme_vars.border_width} solid ${west_theme.theme_vars.colours.negative};`
+      `border-left: ${west_theme.theme_vars.border_width_error} solid ${west_theme.theme_vars.colours.negative};`
     );
   });
 });
