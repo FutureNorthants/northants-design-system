@@ -60,7 +60,12 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
     if (!acc[collectionDay]) {
       acc[collectionDay] = [];
     }
-    acc[collectionDay].push(binCollection);
+
+    // Only add bin collections with known types
+    if (collectionTypes.hasOwnProperty(binCollection.type)) {
+      acc[collectionDay].push(binCollection);
+    }
+
     return acc;
   }, {});
 
@@ -70,30 +75,34 @@ const BinCollection: React.FunctionComponent<BinCollectionProps> = ({
       <p>{address}</p>
 
       {Object.keys(binCollectionsGrouped).map((day) => {
-        const collectionDay = new Date(day);
-        return (
-          <Styles.DayWrapper key={day}>
-            <Row>
-              <Column small="full" medium="full" large="full">
-                <Styles.CollectionHeader>
-                  <Styles.CollectionDay>{formatDate(collectionDay)}</Styles.CollectionDay>
-                </Styles.CollectionHeader>
-              </Column>
-              {binCollectionsGrouped[day]
-                .sort((a, b) => a.type.localeCompare(b.type))
-                .map((binCollection, index) => {
-                  const collectionType = collectionTypes[binCollection.type];
-                  return (
-                    <Column small="full" medium="full" large="full" key={index}>
-                      <Styles.CollectionType>
-                        <HeadingWithIcon level={3} text={collectionType.title} icon={collectionType.icon} />
-                      </Styles.CollectionType>
-                    </Column>
-                  );
-                })}
-            </Row>
-          </Styles.DayWrapper>
-        );
+        // Only show days with bin collections
+        if (binCollectionsGrouped[day].length > 0) {
+          const collectionDay = new Date(day);
+          return (
+            <Styles.DayWrapper key={day}>
+              <Row>
+                <Column small="full" medium="full" large="full">
+                  <Styles.CollectionHeader>
+                    <Styles.CollectionDay>{formatDate(collectionDay)}</Styles.CollectionDay>
+                  </Styles.CollectionHeader>
+                </Column>
+                {binCollectionsGrouped[day]
+                  .sort((a, b) => a.type.localeCompare(b.type))
+                  .map((binCollection, index) => {
+                    const collectionType = collectionTypes[binCollection.type];
+                    return (
+                      <Column small="full" medium="full" large="full" key={index}>
+                        <Styles.CollectionType>
+                          <HeadingWithIcon level={3} text={collectionType.title} icon={collectionType.icon} />
+                        </Styles.CollectionType>
+                      </Column>
+                    );
+                  })}
+              </Row>
+            </Styles.DayWrapper>
+          );
+        }
+        return <React.Fragment key={day}></React.Fragment>;
       })}
 
       {calendar && (
